@@ -1,0 +1,895 @@
+nodes:
+- label: Riesgo
+  source_file: 01_catalogo_riesgos_v8.yaml
+  unique_property: id
+  id_prefix: R
+  id_prefix_local: null
+  properties:
+  - id
+  - nombre
+  - descripcion
+  - bowtie_id
+  - area
+  - aplicabilidad
+  - tags
+  - peligro_asociado
+  descripcion: Un Riesgo representa la posibilidad de que un evento no deseado ocurra
+    y cause daño a personas, equipos o a la operación minera.
+  ejemplo: 'Ejemplo: ''Caída de altura en andamios'' asociado a un peligro de trabajo
+    en altura.'
+- label: Causa
+  source_file: 03_catalogo_causas_v4.yaml
+  unique_property: id
+  id_prefix: R
+  id_prefix_local: CA
+  properties:
+  - id
+  - nombre
+  - descripcion
+  - riesgo_asociado
+  - tipo_causa
+  - area
+  - aplicabilidad
+  - registro_aplicable_a
+  - tags
+  descripcion: Una Causa es un factor que origina o contribuye a la existencia de
+    un Riesgo. Puede ser técnica, humana, organizacional o ambiental.
+  ejemplo: 'Ejemplo: ''Falta de barandas de protección'' como causa de un riesgo de
+    caída de altura.'
+- label: ControlCritico
+  source_file: 02_catalogo_controles_v6.yaml
+  unique_property: id
+  id_prefix: CC
+  descripcion: Un Control Crítico es una medida esencial para la gestión de riesgos
+    de alto potencial. Está asociado a causas y riesgos, y su falla puede derivar
+    en incidentes graves o fatales. Requiere verificación frecuente.
+  properties:
+  - id
+  - nombre
+  - descripcion
+  - tipo_control
+  - riesgo_asociado
+  - es_critico
+  - clase_implementacion
+  - aplicabilidad
+  - area
+  - registro_aplicable_a
+  - tags
+  ejemplo: 'Ejemplo: ''Monitoreo de atmósferas explosivas en espacios confinados'' como control crítico para prevenir fatalidades.'
+- label: ControlPreventivo
+  source_file: 02_catalogo_controles_v6.yaml
+  unique_property: id
+  id_prefix: CP
+  descripcion: Un Control Preventivo es una medida implementada para evitar que una
+    causa origine un Riesgo. Actúa bloqueando las causas y reduciendo la probabilidad
+    de ocurrencia.
+  properties:
+  - id
+  - nombre
+  - descripcion
+  - tipo_control
+  - riesgo_asociado
+  - clase_implementacion
+  - aplicabilidad
+  - area
+  - registro_aplicable_a
+  - tags
+  ejemplo: 'Ejemplo: ''Instalación de barandas de seguridad'' como control preventivo frente a caídas de altura.'
+- label: ControlMitigacion
+  source_file: 02_catalogo_controles_v6.yaml
+  unique_property: id
+  id_prefix: CM
+  descripcion: Un Control de Mitigación es una medida destinada a reducir la severidad
+    de las consecuencias cuando un riesgo ya se materializó. Se asocia principalmente
+    a consecuencias.
+  properties:
+  - id
+  - nombre
+  - descripcion
+  - tipo_control
+  - riesgo_asociado
+  - clase_implementacion
+  - aplicabilidad
+  - area
+  - registro_aplicable_a
+  - tags
+  ejemplo: 'Ejemplo: ''Sistema de supresión de incendios'' como control de mitigación frente a incendios en la planta concentradora.'
+- label: Consecuencia
+  source_file: 04_catalogo_consecuencias_v6.yaml
+  unique_property: id
+  id_prefix: R
+  id_prefix_local: CON
+  properties:
+  - id
+  - nombre
+  - descripcion
+  - tipo_consecuencia
+  - severidad_consecuencia
+  - riesgo_asociado
+  - aplicabilidad
+  - area
+  - registro_aplicable_a
+  - tags
+  descripcion: Una Consecuencia es el efecto o resultado que ocurre si un Riesgo se materializa, pudiendo variar en severidad e impacto.
+  ejemplo: 'Ejemplo: ''Lesión grave por caída desde altura'' como consecuencia del riesgo de trabajo en altura.'
+- label: FactorDegradacion
+  source_file: 05_catalogo_factores_degradacion_v3.yaml
+  unique_property: id
+  id_prefix: R
+  id_prefix_local: FD
+  properties:
+  - id
+  - nombre
+  - descripcion
+  - tipo_factor
+  - riesgo_asociado
+  - aplicabilidad
+  - area
+  - registro_aplicable_a
+  - tags
+  descripcion: Un Factor de Degradación es una condición o tendencia que aumenta la
+    probabilidad de ocurrencia de un Riesgo, debilitando controles existentes.
+  ejemplo: 'Ejemplo: ''Falta de mantenimiento de barandas'' como factor de degradación
+    para el riesgo de caída de altura.'
+- label: BarreraRecuperacion
+  source_file: 06_catalogo_barreras_recuperacion_v3.yaml
+  unique_property: id
+  id_prefix: R
+  id_prefix_local: BR
+  properties:
+  - id
+  - nombre
+  - descripcion
+  - tipo_barrera
+  - riesgo_asociado
+  - aplicabilidad
+  - area
+  - registro_aplicable_a
+  - tags
+- label: Area
+  source_file: 13_catalogo_areas_operacionales_v1.yaml
+  unique_property: id
+  id_prefix: null
+  properties:
+  - id
+  - nombre
+  - descripcion
+  - area
+  - aplicabilidad
+  - registro_aplicable_a
+  - tags
+- label: Rol
+  source_file: 10_catalogo_roles_v2.yaml
+  unique_property: id
+  id_prefix: ROL
+  id_prefix_local: null
+  properties:
+  - id
+  - nombre
+  - descripcion
+  - area_operacional
+  - tareas_asociadas
+  - factores_exposicion_relacionados
+  - epp_requerido
+  descripcion: Un Rol es una función desempeñada por una persona en un Área Operacional,
+    que implica tareas y responsabilidades específicas.
+  ejemplo: 'Ejemplo: ''Supervisor de Turno'' como rol en Mina Rajo Abierto.'
+- label: Tarea
+  source_file: 12_catalogo_tareas_v1.yaml
+  unique_property: id
+  id_prefix: null
+  id_prefix_local:
+  - MRA_TA
+  - PLC_TA
+  - TME_TA
+  - STM_TA
+  - PCO_TA
+  properties:
+  - id
+  - nombre_tarea
+  - descripcion
+  - id_rol
+  - riesgos_asociados
+  - controles_criticos_asociados
+  - factores_de_exposicion
+  - necesidades_epp
+  - area_operacional
+  descripcion: Una Tarea es una acción específica realizada por un Rol en un Área,
+    que puede estar asociada a Riesgos y Controles Críticos.
+  ejemplo: 'Ejemplo: ''Instalar barandas de seguridad'' como tarea asociada al control
+    de caídas de altura.'
+- label: EPP
+  source_file: 14_catalogo_epp_v3.yaml
+  unique_property: id
+  id_prefix: EPP
+  id_prefix_local: null
+  properties:
+  - id
+  - nombre
+  - descripcion
+  - area
+  - aplicabilidad
+  - registro_aplicable_a
+  - tags
+  descripcion: El Equipo de Protección Personal (EPP) es un elemento que las personas
+    deben usar para reducir la exposición a un Riesgo específico.
+  ejemplo: 'Ejemplo: ''Casco de seguridad'' como EPP frente al riesgo de caída de
+    objetos.'
+- label: FactorExposicion
+  source_file: 11_catalogo_factores_exposicion_v3.yaml
+  unique_property: id
+  id_prefix: FE
+  id_prefix_local: null
+  properties:
+  - id
+  - nombre
+  - descripcion
+  - tareas_asociadas
+  - riesgos_asociados
+  - roles_asociados
+  - areas_asociadas
+  descripcion: Un Factor de Exposición representa las condiciones específicas que
+    determinan el grado de exposición de una persona o tarea frente a un Riesgo.
+  ejemplo: 'Ejemplo: ''Trabajo nocturno en altura'' como factor de exposición que
+    aumenta la probabilidad de un incidente.'
+- label: TipoObservacion
+  source_file: 26_tipos_observaciones_v2.yaml
+  unique_property: id
+  id_prefix: null
+  id_prefix_local:
+  - OPG
+  - OCC
+  id_values:
+  - OPG
+  - OCC
+  properties:
+  - id
+  - nombre
+  - descripcion
+  - requiere_control_critico
+  - riesgo_opcional
+  - observacion_valorativa
+  - asociacion_bowtie
+  - area
+  - aplicabilidad
+  - registro_aplicable_a
+  - tags
+  descripcion: Un Tipo de Observación clasifica las observaciones de seguridad, ya
+    sea preventivas generales o de control crítico.
+  ejemplo: 'Ejemplo: ''OCC'' para observación de control crítico.'
+- label: PeligroDetectado
+  source_file: 17_catalogo_peligros_detectados_v2.yaml
+  unique_property: id
+  id_prefix: P
+  id_prefix_local: null
+  properties:
+  - id
+  - nombre
+  - descripcion
+  - riesgo_principal
+  - clasificacion
+  - area
+  - aplicabilidad
+  - registro_aplicable_a
+  - tags
+  descripcion: Un Peligro Detectado es una condición peligrosa identificada en terreno,
+    que puede escalar a un incidente si no se controla.
+  ejemplo: 'Ejemplo: ''Andamio sin barandas'' como peligro detectado.'
+- label: AccionCorrectiva
+  source_file: 19_catalogo_acciones_correctivas_v1.yaml
+  unique_property: id
+  id_prefix: AC
+  id_prefix_local: null
+  properties:
+  - id
+  - nombre
+  - descripcion
+  - riesgo_asociado
+  - tipo_control
+  - aplicable_a
+  - area
+  - aplicabilidad
+  - registro_aplicable_a
+  - tags
+- label: EstructuraObservacion
+  source_file: 24_estructura_observaciones_v3.yaml
+  unique_property: tipo_observacion
+  id_prefix: null
+  id_prefix_local: null
+  properties:
+  - tipo_observacion
+  - nombre
+  - descripcion
+  - metodo_observacion
+  - estructura_campos
+  - asociacion_bowtie
+  - area
+  - aplicabilidad
+  - registro_aplicable_a
+  - tags
+- label: TipoIncidente
+  source_file: 25_tipos_incidentes_v1.yaml
+  unique_property: id
+  id_prefix: null
+  id_prefix_local:
+  - IMAY
+  - IMEN
+  - NMS
+  - HAZARD
+  id_values:
+  - IMAY
+  - IMEN
+  - NMS
+  - HAZARD
+  properties:
+  - id
+  - nombre
+  - descripcion
+  - formato_analisis_id
+  - metodo_analisis_nombre
+  - requiere_control_critico
+  - asociacion_bowtie
+  - campos_obligatorios_reporte
+  - ejemplos_consecuencias
+  descripcion: 'Un Tipo de Incidente clasifica los eventos según severidad e impacto:
+    Mayor, Menor, Near Miss o Hazard.'
+  ejemplo: 'Ejemplo: ''IMAY'' para incidente mayor con consecuencias graves.'
+- label: EstructuraIncidente
+  source_file: 23_estructura_incidentes_v4.yaml
+  unique_property: tipo_incidente
+  id_prefix: null
+  id_prefix_local: null
+  properties:
+  - tipo_incidente
+  - descripcion
+  - campos_obligatorios
+  - formato_registro_asociado
+  - asociacion_bowtie
+  - area
+  - aplicabilidad
+  - registro_aplicable_a
+  - tags
+- label: FormatoAnalisis
+  source_file: 21_formatos_analisis_v3.yaml
+  unique_property: id
+  id_prefix: null
+  id_prefix_local:
+  - ICAM
+  - 5WHY
+  - OBS
+  properties:
+  - id
+  - nombre
+  - descripcion
+  - aplicabilidad
+  - campos_principales
+  - area
+  - registro_aplicable_a
+  - tags
+  descripcion: Un Formato de Análisis es una estructura metodológica usada para investigar
+    incidentes o condiciones inseguras.
+  ejemplo: 'Ejemplo: ''ICAM'' para análisis de incidentes mayores.'
+- label: NivelSeveridad
+  source_file: 27_catalogo_niveles_severidad_v2.yaml
+  unique_property: id
+  id_prefix: SEV
+  id_prefix_local: null
+  properties:
+  - id
+  - nivel
+  - severidad_agrupada
+  - descripcion
+  - aplicable_a
+  - area
+  - aplicabilidad
+  - registro_aplicable_a
+  - tags
+  descripcion: Un Nivel de Severidad es una clasificación del impacto potencial de
+    un incidente o consecuencia.
+  ejemplo: 'Ejemplo: ''SEV3'' para severidad alta con riesgo de fatalidad.'
+- label: EventoPrincipal
+  source_file: 18_catalogo_eventos_principales_v2.yaml
+  unique_property: id
+  id_prefix: EVT
+  id_prefix_local: null
+  properties:
+  - id
+  - nombre
+  - descripcion
+  - riesgo_asociado
+  - area
+  - aplicabilidad
+  - registro_aplicable_a
+  - tags
+- label: FactorICAM
+  source_file: 22_factores_icam_v3.yaml
+  unique_property: id
+  id_prefix: null
+  id_prefix_local:
+  - ORG
+  - HUM
+  - TAR
+  - ENT
+  - TEC
+  properties:
+  - id
+  - nombre
+  - descripcion
+  - metodologia_asociada
+  - area
+  - aplicabilidad
+  - registro_aplicable_a
+  - tags
+  - ejemplos
+  descripcion: Un Factor ICAM corresponde a una categoría de causa dentro de la metodología
+    ICAM (humana, organizacional, técnica, etc.).
+  ejemplo: 'Ejemplo: ''HUM'' para factor humano.'
+- label: Glosario
+  source_file: 28_glosario_seguridad_v4.yaml
+  unique_property: id
+  id_prefix: GLO
+  id_prefix_local: null
+  properties:
+  - id
+  - termino
+  - definicion
+  - contexto_relacionado
+  - categoria
+  - aplicabilidad
+  - area
+  - tags
+  descripcion: El Glosario contiene términos técnicos de seguridad que definen el
+    vocabulario común de la ontología.
+  ejemplo: 'Ejemplo: ''SPDC'' como término para Sistema Personal de Detención de Caídas.'
+relationships:
+- type: ASOCIADA_A_RIESGO
+  from_node: Causa
+  to_node: Riesgo
+  properties: [riesgo_asociado]
+  tipo_relacion: estructural
+  cardinalidad: N:1
+  inversa:
+    type: TIENE_CAUSA
+    from_node: Riesgo
+    to_node: Causa
+  inferencia: Una Causa está siempre asociada a un Riesgo que puede generar incidentes.
+- type: DERIVA_DE_RIESGO
+  from_node: Consecuencia
+  to_node: Riesgo
+  properties: [riesgo_asociado]
+  tipo_relacion: estructural
+  cardinalidad: N:1
+  inversa:
+    type: GENERA_CONSECUENCIA
+    from_node: Riesgo
+    to_node: Consecuencia
+  inferencia: Una Consecuencia deriva de un Riesgo cuando este se materializa.
+- type: PREVIENE_CAUSA_INCIDENTE
+  from_node: ControlCritico
+  to_node: Causa
+  properties: [causas_que_previene]
+  tipo_relacion: estructural
+  cardinalidad: N:M
+  inversa:
+    type: ES_PREVENIDA_POR
+    from_node: Causa
+    to_node: ControlCritico
+  inferencia: Un Control Crítico está diseñado para prevenir causas críticas que pueden escalar a incidentes graves.
+- type: PREVIENE_CAUSA_INCIDENTE
+  from_node: ControlPreventivo
+  to_node: Causa
+  properties: [causas_que_previene]
+  tipo_relacion: estructural
+  cardinalidad: N:M
+  inversa:
+    type: ES_PREVENIDA_POR
+    from_node: Causa
+    to_node: ControlPreventivo
+  inferencia: Un Control Preventivo bloquea causas para reducir la probabilidad de materialización de un riesgo.
+- type: MITIGA_CONSECUENCIA
+  from_node: ControlMitigacion
+  to_node: Consecuencia
+  properties: [controles_mitigacion_asociados]
+  tipo_relacion: estructural
+  cardinalidad: N:M
+  inversa:
+    type: ES_MITIGADA_POR
+    from_node: Consecuencia
+    to_node: ControlMitigacion
+  inferencia: Un Control de Mitigación reduce la severidad de una consecuencia cuando el riesgo ya se ha materializado.
+- type: AYUDA_RECUPERACION_DE_CONSECUENCIA
+  from_node: BarreraRecuperacion
+  to_node: Consecuencia
+  properties: [consecuencias_asociadas]
+  tipo_relacion: estructural
+  cardinalidad: N:M
+  inversa:
+    type: TIENE_BARRERA
+    from_node: Consecuencia
+    to_node: BarreraRecuperacion
+  inferencia: Una Barrera de Recuperación ayuda a contener o reducir el impacto de una Consecuencia.
+- type: DEGRADA_CONTROL
+  from_node: FactorDegradacion
+  to_node: ControlCritico
+  properties: [controles_asociados_criticos_y_preventivos]
+  tipo_relacion: estructural
+  cardinalidad: N:M
+  inversa:
+    type: ES_DEGRADADO_POR
+    from_node: ControlCritico
+    to_node: FactorDegradacion
+  inferencia: Un Factor de Degradación puede afectar la eficacia de un Control Crítico.
+- type: DEGRADA_CONTROL
+  from_node: FactorDegradacion
+  to_node: ControlPreventivo
+  properties: [controles_asociados_criticos_y_preventivos]
+  tipo_relacion: estructural
+  cardinalidad: N:M
+  inversa:
+    type: ES_DEGRADADO_POR
+    from_node: ControlPreventivo
+    to_node: FactorDegradacion
+  inferencia: Un Factor de Degradación puede afectar la eficacia de un Control Preventivo.
+- type: EJECUTADA_POR
+  from_node: Tarea
+  to_node: Rol
+  properties: [id_rol]
+  tipo_relacion: estructural
+  cardinalidad: N:1
+  inversa:
+    type: TIENE_TAREA
+    from_node: Rol
+    to_node: Tarea
+  inferencia: Cada Tarea es ejecutada por un Rol específico dentro de un Área operacional.
+- type: RELACIONADA_CON_RIESGO
+  from_node: Tarea
+  to_node: Riesgo
+  properties: [riesgos_asociados]
+  tipo_relacion: estructural
+  cardinalidad: N:M
+  inversa:
+    type: ES_ASOCIADO_A_TAREA
+    from_node: Riesgo
+    to_node: Tarea
+  inferencia: Una Tarea puede estar relacionada a uno o varios Riesgos según su naturaleza.
+- type: REQUIERE_CONTROL
+  from_node: Tarea
+  to_node: ControlCritico
+  properties: [controles_criticos_asociados]
+  tipo_relacion: estructural
+  cardinalidad: N:M
+  inversa:
+    type: ES_REQUERIDO_EN
+    from_node: ControlCritico
+    to_node: Tarea
+  inferencia: Una Tarea puede requerir la implementación de uno o varios Controles Críticos para ejecutarse de manera segura.
+- type: RELACIONADA_CON_EXPOSICION
+  from_node: Tarea
+  to_node: FactorExposicion
+  properties: [factores_de_exposicion]
+  tipo_relacion: estructural
+  cardinalidad: N:M
+  inversa:
+    type: ES_ASOCIADA_A_TAREA
+    from_node: FactorExposicion
+    to_node: Tarea
+  inferencia: Una Tarea puede estar relacionada con múltiples Factores de Exposición que afectan su riesgo operativo.
+- type: REQUIERE_EPP
+  from_node: Tarea
+  to_node: EPP
+  properties: [necesidades_epp]
+  tipo_relacion: estructural
+  cardinalidad: N:M
+  inversa:
+    type: ES_REQUERIDO_POR_TAREA
+    from_node: EPP
+    to_node: Tarea
+  inferencia: Cada Tarea puede requerir uno o varios Equipos de Protección Personal para su ejecución segura.
+- type: OCURRE_EN_AREA
+  from_node: Tarea
+  to_node: Area
+  properties: [area_operacional]
+  tipo_relacion: estructural
+  cardinalidad: N:1
+  inversa:
+    type: TIENE_TAREA
+    from_node: Area
+    to_node: Tarea
+  inferencia: Cada Tarea ocurre dentro de un Área Operacional específica.
+- type: EJECUTA_TAREA
+  from_node: Rol
+  to_node: Tarea
+  properties: [tareas_asociadas]
+  tipo_relacion: estructural
+  cardinalidad: 1:N
+  inversa:
+    type: ES_EJECUTADA_POR
+    from_node: Tarea
+    to_node: Rol
+  inferencia: Cada Rol ejecuta un conjunto de Tareas dentro de un Área Operacional.
+- type: USA_EPP
+  from_node: Rol
+  to_node: EPP
+  properties: [epp_requerido]
+  tipo_relacion: estructural
+  cardinalidad: N:M
+  inversa:
+    type: ES_UTILIZADO_POR
+    from_node: EPP
+    to_node: Rol
+  inferencia: Cada Rol utiliza ciertos equipos de protección personal requeridos para sus actividades.
+- type: EXPUESTO_A
+  from_node: Rol
+  to_node: FactorExposicion
+  properties: [factores_exposicion_relacionados]
+  tipo_relacion: estructural
+  cardinalidad: N:M
+  inversa:
+    type: EXPONE_A
+    from_node: FactorExposicion
+    to_node: Rol
+  inferencia: Un Rol puede estar expuesto a múltiples Factores de Exposición dependiendo de sus tareas y entorno laboral.
+- type: PERTENECE_A_AREA
+  from_node: Rol
+  to_node: Area
+  properties: [area_operacional]
+  tipo_relacion: estructural
+  cardinalidad: N:1
+  inversa:
+    type: TIENE_ROL
+    from_node: Area
+    to_node: Rol
+  inferencia: Cada Rol pertenece a un Área Operacional definida dentro de la organización.
+- type: CLASIFICADA_COMO
+  from_node: Observacion
+  to_node: TipoObservacion
+  properties: [tipo_observacion]
+  tipo_relacion: observacional
+  cardinalidad: N:1
+  inversa:
+    type: CLASIFICA_OBSERVACION
+    from_node: TipoObservacion
+    to_node: Observacion
+  inferencia: Cada Observación se clasifica en un Tipo de Observación que determina su estructura y criticidad.
+- type: OBSERVA_TAREA
+  from_node: Observacion
+  to_node: Tarea
+  properties: [tarea_asociada]
+  tipo_relacion: observacional
+  cardinalidad: N:1
+  inversa:
+    type: ES_OBSERVADA_EN
+    from_node: Tarea
+    to_node: Observacion
+  inferencia: Una Observación puede estar asociada a una Tarea específica observada en terreno.
+- type: OBSERVA_ROL
+  from_node: Observacion
+  to_node: Rol
+  properties: [rol_observador]
+  tipo_relacion: observacional
+  cardinalidad: N:1
+  inversa:
+    type: ES_OBSERVADO_EN
+    from_node: Rol
+    to_node: Observacion
+  inferencia: Una Observación puede registrar el Rol específico que la realizó o al que se refiere.
+- type: RELACIONADA_CON_CONTROL
+  from_node: Observacion
+  to_node: ControlCritico
+  properties: [controles_relacionados]
+  tipo_relacion: observacional
+  cardinalidad: N:M
+  inversa:
+    type: ES_RELACIONADO_CON_OBSERVACION
+    from_node: ControlCritico
+    to_node: Observacion
+  inferencia: Una Observación de Control Crítico (OCC) está directamente asociada a un Control Crítico.
+- type: OBSERVA_EXPOSICION
+  from_node: Observacion
+  to_node: FactorExposicion
+  properties: [factores_exposicion_relacionados]
+  tipo_relacion: observacional
+  cardinalidad: N:M
+  inversa:
+    type: ES_OBSERVADA_EN
+    from_node: FactorExposicion
+    to_node: Observacion
+  inferencia: Una Observación puede registrar Factores de Exposición presentes en el entorno.
+- type: RELACIONADA_CON_RIESGO
+  from_node: Observacion
+  to_node: Riesgo
+  properties: [riesgo_asociado]
+  tipo_relacion: observacional
+  cardinalidad: N:1
+  inversa:
+    type: TIENE_OBSERVACION
+    from_node: Riesgo
+    to_node: Observacion
+  inferencia: Una Observación puede estar vinculada a un Riesgo específico dentro del área operacional.
+- type: CLASIFICADO_COMO
+  from_node: Incidente
+  to_node: TipoIncidente
+  properties: [tipo_incidente]
+  tipo_relacion: observacional
+  cardinalidad: N:1
+  inversa:
+    type: CLASIFICA_INCIDENTE
+    from_node: TipoIncidente
+    to_node: Incidente
+  inferencia: Cada Incidente debe clasificarse en un Tipo de Incidente según su severidad, consecuencias y estructura de análisis.
+- type: ANALIZADO_CON
+  from_node: Incidente
+  to_node: FormatoAnalisis
+  properties: [formato_registro_asociado]
+  tipo_relacion: observacional
+  cardinalidad: N:1
+  inversa:
+    type: SE_APLICA_EN
+    from_node: FormatoAnalisis
+    to_node: Incidente
+  inferencia: Cada Incidente debe ser analizado con un Formato de Análisis definido según la metodología aplicable.
+- type: TIENE_SEVERIDAD
+  from_node: Incidente
+  to_node: NivelSeveridad
+  properties: [severidad_estimada]
+  tipo_relacion: observacional
+  cardinalidad: N:1
+  inversa:
+    type: CLASIFICA_SEVERIDAD
+    from_node: NivelSeveridad
+    to_node: Incidente
+  inferencia: Un Incidente se clasifica según un Nivel de Severidad en función de su impacto potencial o real.
+- type: INCLUYE_FACTOR_ICAM
+  from_node: Incidente
+  to_node: FactorICAM
+  properties: [factores_contributivos_icam]
+  tipo_relacion: observacional
+  cardinalidad: N:M
+  inversa:
+    type: ES_FACTOR_EN
+    from_node: FactorICAM
+    to_node: Incidente
+  inferencia: Un Incidente puede incluir uno o varios Factores Contributivos ICAM en su análisis causal.
+- type: GENERA_ACCION
+  from_node: Incidente
+  to_node: AccionCorrectiva
+  properties: [acciones_correctivas_implementadas]
+  tipo_relacion: observacional
+  cardinalidad: N:M
+  inversa:
+    type: ES_GENERADA_POR
+    from_node: AccionCorrectiva
+    to_node: Incidente
+  inferencia: Cada Incidente puede generar una o varias Acciones Correctivas como respuesta de mejora.
+- type: RELACIONADO_CON_RIESGO
+  from_node: Incidente
+  to_node: Riesgo
+  properties: [riesgo_asociado]
+  tipo_relacion: observacional
+  cardinalidad: N:1
+  inversa:
+    type: ES_ASOCIADO_A_INCIDENTE
+    from_node: Riesgo
+    to_node: Incidente
+  inferencia: Cada Incidente se relaciona con el Riesgo principal que lo originó o al que está asociado.
+- type: APLICABLE_A
+  from_node: FormatoAnalisis
+  to_node: TipoIncidente
+  properties: [aplicabilidad]
+  tipo_relacion: estructural
+  cardinalidad: N:M
+  inversa:
+    type: ES_APLICADO_EN
+    from_node: TipoIncidente
+    to_node: FormatoAnalisis
+  inferencia: Cada Formato de Análisis es aplicable a uno o varios Tipos de Incidente según la metodología.
+- type: DEFINE_ESTRUCTURA
+  from_node: EstructuraIncidente
+  to_node: TipoIncidente
+  properties: [tipo_incidente]
+  tipo_relacion: estructural
+  cardinalidad: 1:1
+  inversa:
+    type: ES_DEFINIDO_POR
+    from_node: TipoIncidente
+    to_node: EstructuraIncidente
+  inferencia: Cada Tipo de Incidente tiene una Estructura de Incidente que define su formato de registro y análisis.
+- type: DEFINE_ESTRUCTURA
+  from_node: EstructuraObservacion
+  to_node: TipoObservacion
+  properties: [tipo_observacion]
+  tipo_relacion: estructural
+  cardinalidad: 1:1
+  inversa:
+    type: ES_DEFINIDA_POR
+    from_node: TipoObservacion
+    to_node: EstructuraObservacion
+  inferencia: Cada Tipo de Observación tiene una Estructura de Observación que define su formato y contenido esperado.
+- type: DEFINIDO_EN_CONTEXTO_DE
+  from_node: Glosario
+  to_node: Tarea
+  properties: [contexto_relacionado]
+  tipo_relacion: estructural
+  cardinalidad: N:M
+  inversa:
+    type: TIENE_DEFINICION
+    from_node: Tarea
+    to_node: Glosario
+  inferencia: Un término del Glosario puede estar definido en el contexto de una Tarea específica.
+- type: PUEDE_ESCALAR_A
+  from_node: PeligroDetectado
+  to_node: TipoIncidente
+  properties: [condicion, activada_por]
+  tipo_relacion: hipotetica
+  cardinalidad: 1:N
+  inversa:
+    type: PUEDE_SER_CAUSADO_POR
+    from_node: TipoIncidente
+    to_node: PeligroDetectado
+  inferencia: Un Peligro Detectado puede derivar en un Tipo de Incidente, dependiendo de la energía liberada y el contexto operacional.
+- type: PUEDE_EVOLUCIONAR_EN
+  from_node: PeligroDetectado
+  to_node: EventoPrincipal
+  properties: [condicion, activada_por]
+  tipo_relacion: hipotetica
+  cardinalidad: 1:N
+  inversa:
+    type: ES_EVOLUCION_DE
+    from_node: EventoPrincipal
+    to_node: PeligroDetectado
+  inferencia: Un Peligro Detectado puede evolucionar en un Evento Principal si no es controlado a tiempo.
+- type: ESCALAMIENTO_POTENCIAL
+  from_node: Observacion
+  to_node: Incidente
+  properties: [condicion, activada_por]
+  tipo_relacion: hipotetica
+  cardinalidad: N:M
+  inversa:
+    type: PUEDE_ORIGINARSE_EN
+    from_node: Incidente
+    to_node: Observacion
+  inferencia: Una Observación puede escalar a un Incidente si se materializan condiciones de riesgo no controladas.
+- type: ES_INSTANCIA_DE
+  from_node: EventoPrincipal
+  to_node: Incidente
+  properties: [condicion, activada_por]
+  tipo_relacion: hipotetica
+  cardinalidad: N:M
+  inversa:
+    type: TIENE_EVENTO_PRINCIPAL
+    from_node: Incidente
+    to_node: EventoPrincipal
+  inferencia: Un Evento Principal es una instancia específica dentro de un Incidente en desarrollo.
+- type: PUEDE_GATILLAR
+  from_node: FactorExposicion
+  to_node: EventoPrincipal
+  properties: [condicion, activada_por]
+  tipo_relacion: hipotetica
+  cardinalidad: N:M
+  inversa:
+    type: ES_GATILLADO_POR
+    from_node: EventoPrincipal
+    to_node: FactorExposicion
+  inferencia: Un Factor de Exposición puede gatillar un Evento Principal en determinadas condiciones operativas.
+- type: PUEDE_CONDUCIR_A
+  from_node: FactorExposicion
+  to_node: Incidente
+  properties: [condicion, activada_por]
+  tipo_relacion: hipotetica
+  cardinalidad: N:M
+  inversa:
+    type: ES_CONDUCIDO_POR
+    from_node: Incidente
+    to_node: FactorExposicion
+  inferencia: Un Factor de Exposición puede contribuir a la ocurrencia de un Incidente si se combinan condiciones de riesgo.
+- type: PUEDE_CONTRIBUIR_A
+  from_node: FactorDegradacion
+  to_node: Incidente
+  properties: [condicion, activada_por]
+  tipo_relacion: hipotetica
+  cardinalidad: N:M
+  inversa:
+    type: ES_CONTRIBUCION_DE
+    from_node: Incidente
+    to_node: FactorDegradacion
+  inferencia: Un Factor de Degradación puede contribuir al desarrollo de un Incidente si debilita controles u otros elementos de seguridad.

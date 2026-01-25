@@ -1,0 +1,215 @@
+{
+  "version": "1.1",
+  "name": "K9 Canonical Cognitive Language",
+  "status": "approved_for_implementation",
+  "scope": "K9 Mining Safety Core (pre-LLM, deterministic)",
+  "source_of_truth": "Local YAML ontology and synthetic data catalogs",
+
+  "cognitive_level": "request_language",
+  "purpose": "This language represents cognitive requests to the K9 system. It does not describe algorithms, execution steps, or procedural logic. Each command activates a cognitive capability of the system, which is then validated and executed deterministically by the core.",
+
+  "non_goals": [
+    "This language is not natural language",
+    "This language does not interpret raw human intent. Human intent is interpreted upstream and expressed either as a single canonical command or as a composite cognitive plan.",
+    "This language does not define algorithms or calculations",
+    "This language is not a query planner or SQL-like DSL",
+    "This language does not generate narrative or recommendations"
+  ],
+
+  "non_negotiable_principles": [
+    "one_operation_one_semantic",
+    "no_implicit_inference",
+    "no_mixing_of_worlds (ontology ≠ synthetic data, structure ≠ analysis)",
+    "all_navigation_must_be_backed_by_yaml",
+    "operation_name_defines_cognitive_route",
+    "llm_never_decides_operations"
+  ],
+
+  "command_structure": {
+    "intent": "<INTENT_TYPE>",
+    "entity": "<ENTITY_TYPE>",
+    "operation": "<OPERATION_TYPE>",
+    "risk_scope": "<RISK_SCOPE>",
+    "filters": {},
+    "time": {},
+    "relations": {},
+    "output": "<OUTPUT_TYPE>"
+  },
+
+  "risk_scope": {
+    "K9_CORE": {
+      "description": "Risks defined in the active K9 ontology. These are the only risks with full causal, FDO, trajectory and narrative support."
+    },
+    "PROACTIVE_REF": {
+             "description": "Referential risk evaluations produced by the proactive model. This scope may include risks that also exist in the K9 ontology (using the same IDs), as well as additional non-ontological risks. Proactive data is used exclusively for comparative purposes and does not define causality, FDO or narrative."
+         }
+  },
+
+  "semantic_rules": [
+    "If a user query refers to risks without explicitly mentioning the proactive model, the default risk_scope MUST be K9_CORE.",
+    "Only K9_CORE risks are eligible for causal analysis, FDO analysis, trajectory analysis and narrative construction.",
+    "PROACTIVE_REF risks may only be used in comparative or referential operations.",
+    "Risk scope selection never implies inference and must be explicit or defaulted according to these rules.",
+    "A risk identifier may appear in both K9_CORE and PROACTIVE_REF scopes. Scope selection determines the source of metrics and allowed operations, not the identity of the risk.",
+    "proactive_model is a comparative reference entity and never represents an ontological risk or operational entity."
+  ],
+
+  "clarification_rules": [
+    "Never request clarification about which risks are being referenced when risk_scope is K9_CORE and the intent is aggregated (ranking, dominance, pressure, narrative).",
+    "Clarification is only allowed when the user explicitly mixes scopes or requests unsupported operations for a given scope."
+  ],
+
+  "intents": {
+    "OPERATIONAL_QUERY": {
+      "description": "Request for operational evidence about what is happening in the system. This activates factual cognition over synthetic data, not raw querying.",
+      "cognitive_role": "evidence_retrieval",
+      "allowed_entities": [
+        "observations",
+        "events",
+        "audits",
+        "fdo",
+        "trajectories",
+        "signals",
+        "proactive_model",
+        "data_coverage"
+      ]
+    },
+
+    "ANALYTICAL_QUERY": {
+      "description": "Request for deterministic reasoning over operational evidence using explicit rules.",
+      "cognitive_role": "diagnostic_reasoning",
+      "allowed_entities": [
+        "risks",
+        "trajectories",
+        "signals",
+        "fdo"
+      ]
+    },
+
+    "COMPARATIVE_QUERY": {
+      "description": "Request to compare explicitly defined models, periods, or sources.",
+      "cognitive_role": "comparative_reasoning",
+      "allowed_entities": [
+        "risks",
+        "proactive_model",
+        "signals"
+      ]
+    },
+
+    "TEMPORAL_RELATION_QUERY": {
+      "description": "Request to analyze temporal relations such as before/after, sequences, or anchored windows.",
+      "cognitive_role": "temporal_reasoning",
+      "allowed_entities": [
+        "events",
+        "observations",
+        "signals",
+        "trajectories"
+      ]
+    },
+
+    "SYSTEM_QUERY": {
+      "description": "Request about system state, data availability, or diagnostic coverage.",
+      "cognitive_role": "system_introspection",
+      "allowed_entities": [
+        "data_coverage"
+      ]
+    },
+
+    "ONTOLOGY_QUERY": {
+      "description": "Request for semantic knowledge from the Safety Knowledge Corpus (SKC). No synthetic data is accessed.",
+      "cognitive_role": "semantic_knowledge_access",
+      "allowed_entities": [
+        "risk",
+        "control",
+        "cause",
+        "consequence",
+        "bowtie",
+        "task",
+        "role",
+        "area",
+        "ppe"
+      ]
+    },
+
+    "GREETING_QUERY": {
+      "description": "Institutional greeting or system introduction request.",
+      "cognitive_role": "institutional_context",
+      "allowed_entities": []
+    }
+  },
+
+  "operations": {
+    "list": {
+      "meaning": "Enumerate evidence instances",
+      "cognitive_intent": "exploration"
+    },
+    "count": {
+      "meaning": "Quantify operational evidence",
+      "cognitive_intent": "measurement"
+    },
+    "retrieve_by_id": {
+      "meaning": "Access a specific evidence or ontology element by identifier",
+      "cognitive_intent": "focused_inspection"
+    },
+    "summarize": {
+      "meaning": "Produce a factual aggregation without interpretation",
+      "cognitive_intent": "characterization"
+    },
+    "rank": {
+      "meaning": "Establish priority under explicit criteria",
+      "cognitive_intent": "prioritization"
+    },
+    "evolution": {
+      "meaning": "Describe deterministic change over time",
+      "cognitive_intent": "trend_analysis"
+    },
+    "sequence": {
+      "meaning": "Describe ordered temporal relationships",
+      "cognitive_intent": "temporal_structuring"
+    }
+  },
+
+  "time_dimension": {
+    "rule": "If a request depends on time and time is not explicitly declared, the command is invalid.",
+    "structure": {
+      "type": "absolute | relative | window",
+      "value": "ISO_date | last_week | last_month | pre_post"
+    }
+  },
+
+  "relations": {
+    "description": "Explicit relationships between entities. Relations never imply inference.",
+    "examples": [
+      "events ↔ observations",
+      "audits ↔ events",
+      "signals ↔ fdo"
+    ]
+  },
+
+  "output_types": {
+    "raw": "Unprocessed evidence",
+    "summary": "Factual aggregation",
+    "analysis": "Deterministic reasoning result",
+    "trace": "Detailed evidence trace",
+    "narrative": "Human-readable explanation produced after reasoning. Narrative never performs reasoning."
+  },
+
+  "architectural_contract": {
+    "DataEngineNode": "Executes operational evidence retrieval",
+    "OperationalAnalysisNode": "Produces factual, structured outputs",
+    "AnalystNode": "Executes deterministic reasoning and comparison",
+    "MetricsNode": "Produces aggregated metrics and rankings",
+    "NarrativeNode": "Transforms validated outputs into human language",
+    "LLM": "Translates between natural language and canonical language. Never decides."
+  },
+
+  "composite_cognition": {
+    "description": "The K9 language supports composite cognitive requests expressed as a structured plan of canonical commands. This enables the system to answer complex questions that require evidence retrieval followed by interpretation, without embedding reasoning inside a single operation.",
+    "rules": [
+      "Each step in a composite plan must be a valid K9 canonical command",
+      "The composite structure is non-executable by the core",
+      "Execution order and orchestration are external to the language",
+      "Composite commands are produced only by the translation layer (LLM)"
+    ]
+  }
+}

@@ -1,0 +1,330 @@
+# 23_estructura_incidentes
+
+- tipo_incidente: IMAY
+  descripcion: 'Incidente Mayor. Evento no deseado que resulta en consecuencias graves
+    (fatalidades, daños materiales extensos, impacto ambiental significativo).
+    Requiere una investigación exhaustiva para identificar todas las causas y factores
+    contribuyentes.'
+  campos_obligatorios:
+  - id_incidente:
+      type: string
+      description: ID único y consecutivo del incidente.
+  - fecha:
+      type: date
+      format: YYYY-MM-DD
+      description: Fecha de ocurrencia del incidente.
+  - hora:
+      type: time
+      format: HH:MM
+      description: Hora de ocurrencia del incidente (formato 24h).
+  - area_operacional:
+      type: string
+      ref: catalogo_areas_operacionales
+      description: ID del área operacional donde ocurrió el incidente.
+  - roles_involucrados:
+      type: array
+      items_type: string
+      ref: catalogo_roles
+      description: Lista de IDs de los roles de las personas directamente involucradas.
+  - riesgo_asociado:
+      type: string
+      ref: catalogo_riesgos
+      description: ID del riesgo principal asociado al incidente (ej. R01, R02).
+  - eventos_principales:
+      type: array
+      items_type: string
+      ref: catalogo_eventos_principales
+      description: Lista de IDs de los eventos principales que ocurrieron (ej. EVT01).
+  - controles_fallidos:
+      type: array
+      items_type: string
+      ref: catalogo_controles
+      description: Lista de IDs de los controles que fallaron o fueron inefectivos.
+  - causas_inmediatas:
+      type: text
+      description: Descripción de las causas inmediatas del incidente (actos o condiciones).
+  - causas_inmediatas_ids:
+      type: array
+      items_type: string
+      ref: catalogo_causas
+      optional: true
+      description: IDs de causas inmediatas asociadas según BowTie o catálogo de causas.
+  - causas_contributivas_ids:
+      type: array
+      items_type: string
+      ref: catalogo_causas
+      optional: true
+      description: IDs de causas contribuyentes adicionales según BowTie.
+  - causas_latentes_ids:
+      type: array
+      items_type: string
+      ref: catalogo_causas
+      optional: true
+      description: IDs de causas sistémicas o latentes asociadas.
+  - descripcion_incidente:
+      type: text
+      description: Narrativa detallada del incidente, qué pasó, cómo y cuándo.
+  - consecuencias_reportadas:
+      type: text
+      description: Descripción de las consecuencias observadas (lesiones, daños, impacto).
+  - severidad_estimada:
+      type: string
+      ref: catalogo_niveles_severidad
+      description: ID de la severidad estimada del incidente (ej. SEV4, SEV5).
+  - factores_contributivos_icam:
+      type: object
+      description: Clasificación de los factores contributivos según metodología ICAM.
+      properties:
+        organizacionales: { type: array, items_type: string, ref: catalogo_factores_icam, description: "IDs de factores organizacionales." }
+        humanos: { type: array, items_type: string, ref: catalogo_factores_icam, description: "IDs de factores humanos." }
+        tarea: { type: array, items_type: string, ref: catalogo_factores_icam, description: "IDs de factores de la tarea." }
+        entorno: { type: array, items_type: string, ref: catalogo_factores_icam, description: "IDs de factores del entorno." }
+        tecnicos: { type: array, items_type: string, ref: catalogo_factores_icam, description: "IDs de factores técnicos." }
+  - acciones_correctivas_implementadas:
+      type: array
+      items_type: string
+      ref: catalogo_acciones_correctivas
+      description: Lista de IDs de las acciones correctivas y preventivas que se implementarán.
+  formato_registro_asociado: ICAM
+  asociacion_bowtie: true
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Registro y análisis de incidentes
+  registro_aplicable_a:
+  - incidente
+  tags:
+  - incidente mayor
+  - alta severidad
+  - consecuencias graves
+  - análisis raíz
+  - investigación exhaustiva
+
+- tipo_incidente: IMEN
+  descripcion: 'Incidente Menor. Evento con consecuencias menores, como lesión leve que no requiere
+    hospitalización (ej. primeros auxilios, atención médica sin reposo), o daño material
+    menor a equipos. Requiere un análisis causal para identificar las causas inmediatas
+    y sistémicas.'
+  campos_obligatorios:
+  - id_incidente:
+      type: string
+      description: ID único y consecutivo del incidente.
+  - fecha:
+      type: date
+      format: YYYY-MM-DD
+      description: Fecha de ocurrencia del incidente.
+  - hora:
+      type: time
+      format: HH:MM
+      description: Hora de ocurrencia del incidente (formato 24h).
+  - area_operacional:
+      type: string
+      ref: catalogo_areas_operacionales
+      description: ID del área operacional donde ocurrió el incidente.
+  - roles_involucrados:
+      type: array
+      items_type: string
+      ref: catalogo_roles
+      description: Lista de IDs de los roles de las personas directamente involucradas.
+  - riesgo_asociado:
+      type: string
+      ref: catalogo_riesgos
+      description: ID del riesgo principal asociado al incidente (ej. R01, R02).
+  - eventos_principales:
+      type: array
+      items_type: string
+      ref: catalogo_eventos_principales
+      description: Lista de IDs de los eventos principales que ocurrieron (ej. EVT01).
+  - controles_fallidos:
+      type: array
+      items_type: string
+      ref: catalogo_controles
+      description: Lista de IDs de los controles que fallaron o fueron inefectivos.
+  - descripcion_evento:
+      type: text
+      description: Narrativa concisa del evento principal o problema inicial que dispara el análisis 5 Porqués.
+  - potencial_consecuencia_severidad:
+      type: string
+      ref: catalogo_niveles_severidad
+      description: ID de la potencial severidad del incidente si las condiciones persisten (ej. SEV3).
+  - analisis_5whys_detalle:
+      type: object
+      description: Estructura detallada del análisis de los 5 Porqués.
+      properties:
+        problema_inicial: { type: text, description: "El problema o incidente inmediato a analizar (punto de partida del 5 Whys)." }
+        porque_1: { type: text, description: "¿Por qué ocurrió el problema inicial?" }
+        porque_2: { type: text, description: "¿Por qué ocurrió la causa del Porqué 1?" }
+        porque_3: { type: text, description: "¿Por qué ocurrió la causa del Porqué 2?" }
+        porque_4: { type: text, description: "¿Por qué ocurrió la causa del Porqué 3?" }
+        porque_5: { type: text, description: "¿Por qué ocurrió la causa del Porqué 4? (Debe ser la causa raíz sistémica. Si se requieren más 'porqués' para llegar a la causa raíz, se pueden añadir aquí)." }
+        causa_raiz_identificada: { type: text, description: "Descripción clara y concisa de la causa raíz sistémica final, controlable por la organización." }
+        observaciones_5whys: { type: text, optional: true, description: "Cualquier nota o aclaración adicional sobre el proceso de análisis 5 Whys." }
+        causas_relacionadas_ids: 
+          type: array
+          items_type: string
+          ref: catalogo_causas
+          optional: true
+          description: IDs de causas asociadas al análisis de 5 Porqués (alineadas a BowTie).
+        causa_raiz_id:
+          type: string
+          ref: catalogo_causas
+          optional: true
+          description: ID de la causa raíz sistémica final, si está en el catálogo.
+  - acciones_correctivas_sugeridas:
+      type: array
+      items_type: string
+      ref: catalogo_acciones_correctivas
+      description: Lista de IDs de las acciones correctivas propuestas para abordar la causa raíz y prevenir futuras recurrencias.
+  formato_registro_asociado: IMEN
+  asociacion_bowtie: true
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Registro y análisis de incidentes
+  registro_aplicable_a:
+  - incidente
+  tags:
+  - incidente menor
+  - leve
+  - análisis causal
+  - 5 porqués
+  - minería
+
+- tipo_incidente: NMS
+  descripcion: 'Near Miss (Cuasi Accidente). Evento sin consecuencias directas (lesión o daño),
+    pero con potencial de haber causado una. Se registra y analiza para aprender y prevenir
+    futuros incidentes. Representa una oportunidad crítica para la mejora continua de la seguridad.'
+  campos_obligatorios:
+  - id_incidente:
+      type: string
+      description: ID único y consecutivo del near miss.
+  - fecha:
+      type: date
+      format: YYYY-MM-DD
+      description: Fecha de ocurrencia del near miss.
+  - hora:
+      type: time
+      format: HH:MM
+      description: Hora de ocurrencia del near miss (formato 24h).
+  - area_operacional:
+      type: string
+      ref: catalogo_areas_operacionales
+      description: ID del área operacional donde se detectó el near miss.
+  - roles_involucrados:
+      type: array
+      items_type: string
+      ref: catalogo_roles
+      description: Lista de IDs de los roles de las personas directamente involucradas.
+  - riesgo_asociado:
+      type: string
+      ref: catalogo_riesgos
+      description: ID del riesgo principal asociado al near miss (ej. R01, R02).
+  - eventos_principales:
+      type: array
+      items_type: string
+      ref: catalogo_eventos_principales
+      description: Lista de IDs de los eventos principales que ocurrieron (ej. EVT01).
+  - controles_fallidos:
+      type: array
+      items_type: string
+      ref: catalogo_controles
+      description: Lista de IDs de los controles que fallaron o fueron inefectivos.
+  - descripcion_evento:
+      type: text
+      description: Narrativa concisa del evento del near miss o situación de riesgo detectada.
+  - potencial_consecuencia_severidad:
+      type: string
+      ref: catalogo_niveles_severidad
+      description: ID de la potencial severidad del incidente si se hubiera materializado (ej. SEV3).
+  - analisis_5whys_detalle:
+      type: object
+      description: Estructura detallada del análisis de los 5 Porqués para el Near Miss.
+      properties:
+        problema_inicial: { type: text, description: "El problema o near miss inmediato a analizar." }
+        porque_1: { type: text, description: "¿Por qué ocurrió el near miss?" }
+        porque_2: { type: text, description: "¿Por qué ocurrió la causa del Porqué 1?" }
+        porque_3: { type: text, description: "¿Por qué ocurrió la causa del Porqué 2?" }
+        porque_4: { type: text, description: "¿Por qué ocurrió la causa del Porqué 3?" }
+        porque_5: { type: text, description: "¿Por qué ocurrió la causa del Porqué 4? (Debe ser la causa raíz sistémica)." }
+        causa_raiz_identificada: { type: text, description: "Descripción clara y concisa de la causa raíz sistémica final, controlable por la organización." }
+        observaciones_5whys: { type: text, optional: true, description: "Cualquier nota o aclaración adicional sobre el proceso de análisis 5 Whys." }
+        causas_relacionadas_ids: 
+          type: array
+          items_type: string
+          ref: catalogo_causas
+          optional: true
+          description: IDs de causas asociadas al análisis de 5 Porqués (alineadas a BowTie).
+        causa_raiz_id:
+          type: string
+          ref: catalogo_causas
+          optional: true
+          description: ID de la causa raíz sistémica final, si está en el catálogo.
+  - acciones_correctivas_sugeridas:
+      type: array
+      items_type: string
+      ref: catalogo_acciones_correctivas
+      description: Lista de IDs de las acciones correctivas propuestas para abordar la causa raíz y prevenir futuras recurrencias.
+  formato_registro_asociado: NMS
+  asociacion_bowtie: true
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Clasificación de incidentes
+  registro_aplicable_a:
+  - incidente
+  tags:
+  - near miss
+  - cuasi accidente
+  - prevención
+  - gestión de riesgos
+  - análisis rápido
+  - 5 porqués
+
+- tipo_incidente: HAZARD
+  descripcion: 'Peligro Detectado o Hazard. Condición insegura o acto subestándar identificado
+    en campo que tiene el potencial de causar un incidente.'
+  campos_obligatorios:
+  - id_incidente:
+      type: string
+      description: ID único y consecutivo del peligro detectado.
+  - fecha:
+      type: date
+      format: YYYY-MM-DD
+      description: Fecha de detección del peligro.
+  - hora:
+      type: time
+      format: HH:MM
+      description: Hora de detección del peligro (formato 24h).
+  - area_operacional:
+      type: string
+      ref: catalogo_areas_operacionales
+      description: ID del área operacional donde se detectó el peligro.
+  - roles_involucrados:
+      type: array
+      items_type: string
+      ref: catalogo_roles
+      description: Lista de IDs de los roles de las personas que identificaron o están expuestas al peligro.
+  - riesgo_asociado:
+      type: string
+      ref: catalogo_riesgos
+      description: ID del riesgo principal asociado al peligro (ej. R01, R02).
+  - peligro_identificado:
+      type: string
+      ref: catalogo_peligros_detectados
+      description: ID del peligro específico identificado del catálogo de peligros.
+  - causas_potenciales_ids:
+      type: array
+      items_type: string
+      ref: catalogo_causas
+      optional: true
+      description: IDs de causas potenciales relacionadas al peligro detectado.
+  - recomendacion_inmediata:
+      type: text
+      description: Descripción de la acción recomendada de forma inmediata para controlar el peligro.
+  formato_registro_asociado: OBS
+  asociacion_bowtie: true
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Registro y análisis de incidentes
+  registro_aplicable_a:
+  - incidente
+  tags:
+  - near miss
+  - cuasi accidente
+  - prevención
+  - gestión de riesgos
+  - análisis rápido
+  - 5 porqués

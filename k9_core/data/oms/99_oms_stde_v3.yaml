@@ -1,0 +1,889 @@
+# ================================================================
+# OMS STDE v3 — Ontología Mínima Sintética para K9 Mining Safety
+# Escenario sintético de 12 semanas previo al lunes crítico
+# ================================================================
+# Esta ontología consolida todos los elementos necesarios para generar
+# el STDE v3: estructura operacional, factores FDO, observaciones,
+# incidentes, auditorías, riesgos, mapeos, distribuciones semanales
+# y la integración declarativa del “lunes crítico”.
+#
+# Su propósito es servir como única fuente de verdad para la generación
+# de datos sintéticos para el piloto Aster del 7 de enero.
+# No redefine catálogos (roles, tareas, áreas, riesgos), sino que los
+# referencia explícitamente para evitar duplicidad y mantener coherencia
+# con la ontología completa de K9 Mining Safety.
+# ================================================================
+
+id_oms: "OMS_STDE_001"
+version: "3.0"
+nombre: "OMS K9 Mining Safety - Escenario Sintético Aster (STDE v3)"
+
+descripcion_general: >
+  Ontología mínima y declarativa utilizada para la generación del STDE v3,
+  correspondiente a 12 semanas continuas previas al lunes crítico
+  (03-02-2025). Esta OMS estructura los parámetros operacionales, factores
+  dinámicos (FDO), señales observacionales (OPG+/-, OCC+/-), incidentes
+  realistas (HAZARD, NMS, IMEN), auditorías reactivas (AUF), mapeos de riesgo
+  por área y las distribuciones sintéticas semanales. El propósito es
+  permitir la construcción de trayectorias diarias coherentes con la
+  narrativa definida para el piloto Aster, sin inventar tipos ajenos a la
+  ontología oficial.
+
+metadatos:
+  proposito: >
+    Definir la ontología mínima del escenario STDE v3, incluyendo señales,
+    factores dinámicos, parámetros operacionales y el marco necesario para la
+    generación de observaciones, incidentes, auditorías y trayectorias.
+    Proporciona la estructura formal que alimentará el Notebook STDE v3 y la
+    demo proactiva del 7 de enero.
+
+  alcance_temporal: "12 semanas previas al lunes crítico"
+  fecha_lunes_critico: "2025-02-03"
+
+  notas: >
+    - Esta versión elimina auditorías AUC, ya que solo aplican a incidentes
+      mayores y no existen incidentes mayores en el escenario STDE v3.
+    - Se usan exclusivamente los tipos de incidentes definidos en la ontología
+      oficial: HAZARD, NMS e IMEN.
+    - IMAY existe en el catálogo oficial, pero no se utiliza en STDE v3.
+    - Se preserva coherencia estricta con los catálogos de roles, áreas,
+      tareas, riesgos y observaciones.
+    - Ningún elemento se inventa o redefine fuera de su catálogo original.
+
+# ================================================================
+# Referencias a estructuras y catálogos oficiales
+# ================================================================
+# La OMS no duplica contenido de la ontología completa.
+# En su lugar, hace referencia explícita a las fuentes oficiales:
+#   - 23_estructura_incidentes_v5.yaml
+#   - 25_tipos_incidentes_v1.yaml
+#   - 24_estructura_observaciones_v6.yaml
+#   - 26_tipos_observaciones_v2.yaml
+#   - 31_estructura_auditorias_v1.yaml
+#   - 32_tipos_auditoria_v1.yaml
+#   - 10_catalogo_roles_v3.yaml
+#   - 12_catalogo_tareas_v1.yaml
+#   - 13_catalogo_areas_operacionales_v1.yaml
+# Esto asegura alineamiento total con la ontología real de K9 Mining Safety.
+# ================================================================
+
+referencias_estructuras:
+  estructura_incidentes: "23_estructura_incidentes_v5.yaml"
+  tipos_incidentes: "25_tipos_incidentes_v1.yaml"
+  estructura_observaciones: "24_estructura_observaciones_v6.yaml"
+  tipos_observaciones: "26_tipos_observaciones_v2.yaml"
+  estructura_auditorias: "31_estructura_auditorias_v1.yaml"
+  tipos_auditoria: "32_tipos_auditoria_v1.yaml"
+
+# (Las referencias a roles, tareas y áreas se incluyen más abajo
+# cuando aparecen sus secciones específicas.)
+
+
+# ================================================================
+# Factores Dinámicos Operativos (FDO)
+# ================================================================
+# Los FDO representan condiciones variables que modulan la generación
+# de observaciones, incidentes y auditorías a lo largo del STDE v3.
+# Se generan como series continuas normalizadas entre 0 y 1.
+#
+# La narrativa oficial establece que:
+# - FDO climáticos, de fatiga y congestión aumentan progresivamente.
+# - Backlog, dotación y variabilidad influyen en señales OCC y NMS.
+# - La combinación de FDO produce degradación silenciosa (R01) y
+#   degradación acumulativa dominante (R02), coherente con Texto 3 y 4.
+# ================================================================
+
+fdo:
+  descripcion: >
+    Conjunto de factores dinámicos que condicionan la operación diaria y
+    modulan las probabilidades de ocurrencia de señales (OPG/OCC),
+    incidentes (HAZARD, NMS, IMEN) y auditorías reactivas (AUF). Cada factor
+    se genera de forma independiente y normalizada en el rango 0–1. En la
+    narrativa STDE v3, los FDO son el motor principal de la variabilidad y
+    degradación de las trayectorias de riesgo.
+
+  factores:
+    - id: "FDO_CLIMA"
+      nombre: "Condiciones Climáticas"
+      descripcion: >
+        Variaciones climáticas que afectan visibilidad, superficie de trabajo
+        y condiciones de seguridad. En la narrativa, aumenta gradualmente
+        durante semanas 8–12, intensificando señales OCC-.
+      normalizacion: "0-1"
+
+    - id: "FDO_FATIGA"
+      nombre: "Fatiga Operacional"
+      descripcion: >
+        Aumenta con carga de trabajo acumulada, turnos, presión de producción
+        y exceso de actividad en ciertas áreas. Contribuye al incremento de
+        HAZARD y NMS, y a la reducción de OPG+.
+      normalizacion: "0-1"
+
+    - id: "FDO_CONGESTION"
+      nombre: "Congestión Operacional"
+      descripcion: >
+        Congestión de equipos, interacción entre áreas y cruces operacionales
+        que elevan la probabilidad de condiciones críticas sin control (OCC-).
+      normalizacion: "0-1"
+
+    - id: "FDO_BACKLOG"
+      nombre: "Backlog de Mantenimiento"
+      descripcion: >
+        Acumulación de tareas pendientes en talleres y planta. Afecta
+        directamente a OCC y a señales tempranas de R02, coherente con la
+        degradación acumulada descrita en la narrativa.
+      normalizacion: "0-1"
+
+    - id: "FDO_DOTACION"
+      nombre: "Dotación Disponible"
+      descripcion: >
+        Variaciones en cantidad de trabajadores presentes, cambios de turno
+        y cobertura operacional. Impacta la proporción de observaciones OPG/OCC.
+      normalizacion: "0-1"
+
+    - id: "FDO_VARIABILIDAD"
+      nombre: "Variabilidad Operacional"
+      descripcion: >
+        Cambios en carga de trabajo, flujos de producción y estabilidad de la
+        operación. Genera ruido operacional en señales OCC+ y OPG-.
+      normalizacion: "0-1"
+
+    - id: "FDO_ESPECIAL"
+      nombre: "Factor Especial del Escenario"
+      descripcion: >
+        Factor reservado para representar condiciones excepcionales propias
+        del escenario sintético Aster. Puede incluir quiebres, eventos no
+        recurrentes o variaciones abruptas.
+      normalizacion: "0-1"
+
+
+# ================================================================
+# Observaciones (OPG y OCC) y estados valorativos (+/-)
+# ================================================================
+# Las observaciones son señales de conducta y condición registradas en
+# terreno. STDE v3 utiliza:
+#   - OPG: Observaciones Preventivas Generales.
+#   - OCC: Observaciones de Control Crítico.
+#
+# Cada tipo puede expresarse en dos estados valorativos:
+#   - OPG+ / OPG-  → gestión adecuada / gestión débil.
+#   - OCC+ / OCC-  → control crítico cumplido / fallido.
+#
+# Estas señales representan la “alerta temprana” del sistema y son
+# esenciales para explicar degradación silenciosa (R01) y degradación
+# acumulada dominante (R02), tal como describe la narrativa oficial.
+# ================================================================
+
+stde:
+  observaciones:
+    descripcion: >
+      Observaciones operacionales utilizadas para modelar señales tempranas
+      de riesgos. Se definen a partir del catálogo oficial
+      26_tipos_observaciones_v2.yaml. STDE v3 utiliza estados valorativos
+      (+/-) para capturar matices operacionales que preceden a NMS e IMEN.
+
+    # Tipos base de observación (no se redefinen)
+    tipos_observaciones_validos:
+      - codigo: "OPG"
+        nombre: "Observación Preventiva General"
+        observacion_valorativa: true
+        requiere_control_critico: false
+        descripcion: >
+          Observación general sobre actos o prácticas seguras/inseguras.
+          Representa ruido operacional positivo (OPG+) o señales de gestión
+          débil (OPG-).
+
+      - codigo: "OCC"
+        nombre: "Observación de Control Crítico"
+        observacion_valorativa: true
+        requiere_control_critico: true
+        descripcion: >
+          Observación asociada a un control crítico específico. OCC+ indica
+          control cumplido; OCC- indica falla de control, antecedente directo
+          de NMS e IMEN.
+
+    # Estados valorativos permitidos
+    estados_observacion:
+      - codigo: "OPG+"
+        significado: "Práctica segura / buena gestión"
+        base: "OPG"
+
+      - codigo: "OPG-"
+        significado: "Gestión débil / desviación leve"
+        base: "OPG"
+
+      - codigo: "OCC+"
+        significado: "Control crítico cumplido"
+        base: "OCC"
+
+      - codigo: "OCC-"
+        significado: "Falla de control crítico"
+        base: "OCC"
+
+    # Reglas narrativas para la generación sintética
+    reglas_generacion:
+      - id_regla: "R_OPG_RUIDO"
+        descripcion: >
+          Las OPG representan ruido operacional positivo. En STDE v3,
+          OPG+ disminuye gradualmente durante semanas 6–12 debido al efecto
+          combinado de fatiga, clima y congestión. OPG- aumenta en paralelo,
+          reflejando gestión progresivamente más débil.
+
+      - id_regla: "R_OCC_EVENTOS"
+        descripcion: >
+          Las OCC se generan asociadas a peligros detectados, near miss e
+          incidentes. OCC- aumenta conforme aumentan los FDO de congestión,
+          clima y backlog, especialmente en las semanas 8–12.
+
+# ================================================================
+# Incidentes — HAZARD, NMS, IMEN
+# ================================================================
+# Los incidentes utilizados en STDE v3 se basan estrictamente en el
+# catálogo oficial 25_tipos_incidentes_v1.yaml. Este escenario sintético
+# opera solo con tres tipos:
+#
+#   - HAZARD : Peligro detectado sin consecuencia.
+#   - NMS    : Near Miss con potencial de daño.
+#   - IMEN   : Incidente menor (lesión leve, daño menor).
+#
+# IMAY existe en la ontología oficial, pero no se utiliza en STDE v3
+# porque el escenario está diseñado sin incidentes mayores.
+#
+# La progresión narrativa (Texto 3 y 4) define que:
+#   - R02 presenta la degradación acumulada más fuerte
+#   - R01 muestra señales débiles pero crecientes
+#   - R03 se mantiene estable con pequeñas variaciones
+#
+# Esta progresión queda representada en las trayectorias derivadas de
+# HAZARD → NMS → IMEN.
+# ================================================================
+
+
+  incidentes:
+    descripcion: >
+      Tipos de incidentes utilizados en STDE v3 para modelar señales
+      precursoras y eventos de seguridad. Corresponden exactamente a los
+      definidos en el catálogo oficial. No se redefine ninguna categoría.
+
+    tipos_incidentes_validos:
+      - codigo: "HAZARD"
+        nombre: "Peligro Detectado"
+        uso_en_stde_v3: true
+        descripcion: >
+          Representa la detección de una condición insegura sin evento.
+          Es la señal temprana más frecuente antes de un NMS. Aumenta con
+          FDO de fatiga, congestión y variabilidad.
+
+      - codigo: "NMS"
+        nombre: "Near Miss"
+        uso_en_stde_v3: true
+        descripcion: >
+          Evento con potencial de daño que no llegó a materializarse. Es la
+          transición natural desde un HAZARD significativo. En STDE v3, los
+          NMS aumentan particularmente en áreas donde domina R02.
+
+      - codigo: "IMEN"
+        nombre: "Incidente Menor"
+        uso_en_stde_v3: true
+        descripcion: >
+          Evento con lesión leve o daño menor. Representa el punto máximo de
+          severidad del escenario sintético (no se incluyen incidentes mayores).
+          Su probabilidad aumenta lentamente en la narrativa, con énfasis en R02.
+
+      - codigo: "IMAY"
+        nombre: "Incidente Mayor"
+        uso_en_stde_v3: false
+        descripcion: >
+          Existe en la ontología oficial, pero no se utiliza en STDE v3 para
+          mantener el escenario dentro de un marco de control operacional sin
+          consecuencias severas.
+
+    # Secuencia conceptual usada en STDE v3
+    progresion_severidad:
+      - HAZARD
+      - NMS
+      - IMEN
+
+    notas: >
+      Esta sección respeta al 100% el catálogo oficial. No se introducen
+      tipos inventados (IMED, ILEV, INMI). La progresión narrativa se alinea
+      con la degradación observada en las semanas previas al lunes crítico.
+
+
+# ================================================================
+# Auditorías — Solo AUF (no existe AUC en este escenario)
+# ================================================================
+# En la ontología oficial existen dos tipos de auditoría: AUC y AUF.
+# Sin embargo:
+#
+#   - AUC (Auditoría de Cumplimiento) aplica a escenarios con incidentes
+#     mayores (IMAY).
+#   - Como STDE v3 NO incluye incidentes mayores, AUC NO se utiliza.
+#
+# Solo se usa AUF (Auditoría con Hallazgos), generada como respuesta a:
+#   - NMS
+#   - IMEN
+#   - señales negativas de control crítico (OCC-)
+#
+# En la narrativa STDE v3, las AUF aumentan gradualmente y capturan
+# la degradación acumulada, especialmente asociada a R02.
+# ================================================================
+
+  auditorias:
+    descripcion: >
+      Auditorías operacionales generadas como respuesta a señales negativas
+      o eventos relevantes. En STDE v3 solo se utiliza AUF, alineada a los
+      disparadores definidos en la narrativa.
+
+    tipos_auditoria_validos:
+      - codigo: "AUF"
+        nombre: "Auditoría con Hallazgos"
+        referencia_estructura: "31_estructura_auditorias_v1.yaml"
+        descripcion: >
+          Auditoría correctiva o de verificación posterior a eventos o señales
+          críticas. Se dispara por NMS, IMEN y OCC-.
+
+    # Orígenes utilizados durante la generación sintética
+    origenes:
+      - codigo: "post_incidente"
+      - codigo: "post_nm"
+      - codigo: "post_occ"
+      - codigo: "cierre_mes"
+
+    # Reglas de generación de auditorías (triggers)
+    reglas_triggers:
+      - id_regla: "TR_NMS"
+        descripcion: >
+          Todo near miss relevante (NMS) produce una auditoría AUF en un período
+          cercano, reflejando la necesidad de revisar controles críticos.
+
+      - id_regla: "TR_IMEN"
+        descripcion: >
+          Todo incidente menor (IMEN) requiere una auditoría AUF obligatoria
+          dentro de un plazo no mayor a 48 horas, conforme a buenas prácticas.
+
+      - id_regla: "TR_OCC_NEGATIVA"
+        descripcion: >
+          Una observación OCC- (falla de control crítico) genera una AUF de
+          seguimiento para verificar la efectividad del control.
+
+    notas: >
+      AUC no se incluye en STDE v3 porque solo aplica a incidentes mayores
+      (IMAY), los cuales no forman parte del diseño del escenario sintético.
+      AUF es el único tipo utilizado para modelar señales reactivas en la
+      operación diaria.
+
+
+# ================================================================
+# Escenario de Operación Sintético — STDE v3 (12 semanas)
+# ================================================================
+# Este escenario define las condiciones operacionales para la generación
+# del STDE v3. Incluye:
+#   - La fecha de inicio
+#   - Número total de semanas a simular
+#   - El lunes crítico que sirve como hito narrativo y analítico
+#   - Referencias a los catálogos oficiales de áreas, roles y turnos
+#
+# La narrativa oficial establece:
+#   - Un periodo de 12 semanas antes del lunes crítico (03-02-2025)
+#   - Operación realista con mina rajo abierto, plantas, talleres y STM
+#   - Señales de degradación acumulada especialmente en R02
+#   - Señales más débiles en R01 y estabilidad en R03
+# ================================================================
+
+escenario_operacion:
+  id_escenario: "ESC_STDE_12S_001"
+  nombre: "Escenario sintético Aster - 12 semanas previas al lunes crítico"
+  fecha_inicio: "2024-11-11"
+  numero_semanas: 12
+
+  descripcion: >
+    Escenario representativo de una operación minera compleja que combina
+    mina rajo abierto, planta, talleres y sistemas de transporte. Este
+    escenario abarca 12 semanas completas previas al lunes crítico
+    (03-02-2025), fecha en la cual se producen dos near miss relevantes.
+    El STDE v3 es utilizado para analizar trayectorias previas, detectar
+    degradación acumulada y calibrar la coherencia del modelo proactivo
+    v4.4 previo al evento crítico.
+
+  # --------------------------------------------------------------
+  # Lunes Crítico (03-02-2025)
+  # --------------------------------------------------------------
+  lunes_critico:
+    fecha: "2025-02-03"
+    descripcion: >
+      Día de referencia donde se producen dos near miss significativos,
+      uno asociado a R01 (Caída desde Altura) y otro asociado a R02
+      (Caída de Objetos). Estos eventos revelan señales que no fueron
+      completamente anticipadas por el modelo proactivo, permitiendo una
+      recalibración posterior en la demo.
+    notas_modelo: >
+      El lunes crítico actúa como un punto de validación del comportamiento
+      real de la operación frente a las trayectorias generadas durante las
+      12 semanas previas. Sirve para evaluar la capacidad del modelo
+      proactivo de detectar señales débiles y degradaciones acumuladas.
+      También constituye un hito narrativo esencial para la demo del 7 de enero.
+
+    eventos_sinteticos:
+      - id_evento: "LC_EVT_01"
+        tipo_incidente_id: "NMS"
+        riesgo_id: "R01"
+        descripcion: "Caída desde andamio detenida por arnés (caída detenida)."
+
+      - id_evento: "LC_EVT_02"
+        tipo_incidente_id: "NMS"
+        riesgo_id: "R02"
+        descripcion: "Caída de llave desde altura sin impacto en personas."
+
+
+  # ================================================================
+  # Áreas Operacionales
+  # ================================================================
+  areas_operacionales:
+    descripcion: >
+      Las áreas operacionales utilizadas en STDE v3 se obtienen directamente
+      desde el catálogo 13_catalogo_areas_operacionales_v1.yaml. La OMS no
+      redefine áreas, sino que las referencia para seleccionar roles, tareas
+      y asignar pesos de riesgo en los mapeos operacionales.
+    referencia_catalogo_areas: "13_catalogo_areas_operacionales_v1.yaml"
+
+
+  # ================================================================
+  # Turnos Simplificados (2×12 horas)
+  # ================================================================
+  turnos:
+    - id_turno: "T1D"
+      nombre: "Turno Día"
+      hora_inicio: "07:00"
+      hora_fin: "19:00"
+      descripcion: "Turno diurno continuo."
+
+    - id_turno: "T2N"
+      nombre: "Turno Noche"
+      hora_inicio: "19:00"
+      hora_fin: "07:00"
+      descripcion: "Turno nocturno continuo."
+
+
+# ================================================================
+# Roles Clave (Referencia al catálogo oficial)
+# ================================================================
+# Este bloque preserva coherencia con la ontología completa.
+# No se listan roles manualmente (evita duplicación y errores).
+# Los roles se obtienen del catálogo oficial de roles.
+# ================================================================
+
+roles_clave:
+  descripcion: >
+    Los roles del escenario STDE v3 se obtienen íntegramente desde el
+    catálogo oficial 10_catalogo_roles_v3.yaml. La OMS no redefine roles,
+    solo establece su uso como punto de referencia para la selección de
+    tareas y la generación de observaciones e incidentes realistas.
+  referencia_catalogo_roles: "10_catalogo_roles_v3.yaml"
+
+
+# ================================================================
+# Parámetros Específicos para STDE v3
+# ================================================================
+# Este bloque define parámetros operacionales clave para traducir
+# las tasas semanales a lambdas diarias mediante distribuciones Poisson.
+# También preserva las notas originales del diseño del STDE.
+# ================================================================
+
+parametros_STDE:
+  poblacion_base_trabajadores: 120
+  normalizacion_lambdas: "Poisson diaria"
+
+  notas: >
+    - Las tasas de observaciones, incidentes y auditorías definidas en las
+      distribuciones semanales corresponden a valores esperados por 100
+      trabajadores por semana.
+    - El notebook de generación convierte estas tasas en lambdas diarias
+      utilizando distribuciones Poisson para garantizar variabilidad realista.
+    - Este enfoque permite modelar señales débiles, degradaciones acumuladas
+      y picos localizados cercanos al lunes crítico.
+
+
+# ================================================================
+# Riesgos Modelados en STDE v3
+# ================================================================
+# Este bloque define los riesgos incluidos explícitamente en el escenario
+# STDE v3. Se basan en el catálogo oficial de riesgos, pero aquí solo se
+# modelan R01, R02 y R03, de acuerdo con la narrativa del piloto Aster.
+#
+# La narrativa establece:
+#   - R02: riesgo dominante con degradación acumulada más evidente.
+#   - R01: riesgo con señales débiles pero crecientes, especialmente
+#          detectables mediante OCC- y NMS en semanas tardías.
+#   - R03: riesgo estable con pequeñas variaciones, más visible en talleres
+#          y planta.
+# ================================================================
+
+riesgos_modelados:
+  - id_riesgo: "R01"
+    nombre: "Caída desde Altura"
+    descripcion: >
+      Riesgo crítico asociado a trabajos en altura, andamios, plataformas,
+      escaleras, equipos de gran tamaño y bordes de bancos. Su trayectoria
+      muestra un aumento moderado pero sostenido en señales previas al lunes
+      crítico (OCC- y OPG-), consistente con la degradación silenciosa que
+      caracteriza a R01 en la narrativa STDE v3.
+
+  - id_riesgo: "R02"
+    nombre: "Caída de Objetos"
+    descripcion: >
+      Riesgo principal del escenario. Presenta la degradación acumulada más
+      fuerte en las 12 semanas previas al lunes crítico, con aumentos
+      progresivos en HAZARD, NMS e IMEN. Es el riesgo que lidera el ranking
+      del modelo proactivo v4.4 en las semanas finales, reflejando su
+      comportamiento dominante.
+
+  - id_riesgo: "R03"
+    nombre: "Contacto con Energía Eléctrica"
+    descripcion: >
+      Riesgo relevante pero con frecuencia más baja. Muestra variabilidad
+      intermitente, principalmente en talleres eléctricos y planta. Se
+      mantiene relativamente estable, salvo picos aislados asociados a
+      FDO de backlog o dotación.
+
+
+# ================================================================
+# Otros Riesgos en el Catálogo (No Modelados en STDE v3)
+# ================================================================
+# Este bloque preserva coherencia con el catálogo oficial de riesgos.
+# Otros riesgos (R04, R05, etc.) existen a nivel de ontología, pero
+# no se integran en las trayectorias del STDE v3 porque no forman parte
+# del enfoque narrativo del piloto Aster. Se incluyen como referencia.
+# ================================================================
+
+otros_riesgos:
+  descripcion: >
+    El catálogo completo de riesgos incluye otros IDs adicionales, como R04,
+    R05, etc. Estos riesgos existen en la ontología oficial pero no se
+    modelan en STDE v3. La OMS los reconoce para mantener integridad
+    semántica, pero las trayectorias se enfocan exclusivamente en R01, R02
+    y R03 para efectos de la demostración.
+
+  notas: >
+    La exclusión de R04+ no implica su inexistencia en la operación; simplemente
+    no forman parte del alcance del escenario sintético utilizado para el
+    piloto Aster.
+
+
+# ================================================================
+# Mapeos Operacionales — Riesgo por Área
+# ================================================================
+# Este bloque sintetiza cómo cada área operacional contribuye a las
+# probabilidades relativas de aparición de señales (OPG/OCC), HAZARD,
+# NMS y IMEN. Los mapeos no duplican el catálogo de áreas ni los roles;
+# solo establecen pesos iniciales que luego pueden ser ajustados por el
+# notebook STDE v3.
+#
+# Narrativa asociada:
+#   - MRA    → R01 más dominante, seguido de R02.
+#   - CHP    → R02 domina claramente.
+#   - TME    → R02 y R03 tienen pesos similares.
+#   - STM    → R02 dominante; R01 secundario.
+#   - PLC    → R03 con mayor peso (talleres/planta).
+# ================================================================
+
+mapeos_operacionales:
+  descripcion: >
+    Mapeos entre áreas operacionales y riesgos principales. Estos pesos
+    relativos se utilizan para guiar la selección de área en observaciones
+    e incidentes generados sintéticamente, reforzando la narrativa de cada
+    riesgo y su comportamiento esperado.
+
+  riesgo_por_area:
+    MRA:
+      - riesgo_id: "R01"
+        peso_relativo: 0.5
+      - riesgo_id: "R02"
+        peso_relativo: 0.3
+      - riesgo_id: "R03"
+        peso_relativo: 0.2
+
+    CHP:
+      - riesgo_id: "R02"
+        peso_relativo: 0.6
+      - riesgo_id: "R03"
+        peso_relativo: 0.3
+      - riesgo_id: "R01"
+        peso_relativo: 0.1
+
+    TME:
+      - riesgo_id: "R02"
+        peso_relativo: 0.4
+      - riesgo_id: "R03"
+        peso_relativo: 0.4
+      - riesgo_id: "R01"
+        peso_relativo: 0.2
+
+    STM:
+      - riesgo_id: "R02"
+        peso_relativo: 0.5
+      - riesgo_id: "R01"
+        peso_relativo: 0.3
+      - riesgo_id: "R03"
+        peso_relativo: 0.2
+
+    PLC:
+      - riesgo_id: "R03"
+        peso_relativo: 0.5
+      - riesgo_id: "R02"
+        peso_relativo: 0.3
+      - riesgo_id: "R01"
+        peso_relativo: 0.2
+
+  notas: >
+    Estos mapeos se utilizan para asignar áreas dominantes y aumentar la
+    coherencia entre datos sintéticos, narrativa y trayectorias. No afectan
+    directamente las tasas globales del escenario, pero guían la distribución
+    de observaciones e incidentes por área en el notebook STDE v3.
+
+
+
+# ================================================================
+# Distribuciones Sintéticas Semanales — STDE v3 (12 semanas)
+# ================================================================
+# Estas distribuciones representan tasas esperadas por 100 trabajadores
+# por semana. El notebook STDE v3 convierte estas tasas en lambdas diarias
+# mediante distribuciones Poisson, aplicando además los mapeos por área,
+# rol y tarea definidos en esta OMS.
+#
+# Comportamiento narrativo:
+#   - OPG+ disminuye gradualmente (fatiga, clima, congestión).
+#   - OPG- y OCC- aumentan hacia semanas 8–12.
+#   - HAZARD → aumenta ligeramente semana a semana.
+#   - NMS   → aumenta por degradación acumulada de R02.
+#   - IMEN  → aumenta lentamente (sin incidentes mayores).
+#   - AUF   → aumenta por triggers (NMS, IMEN, OCC-).
+#
+# Semana 12 representa la tensión previa al lunes crítico.
+# ================================================================
+
+distribuciones:
+
+  semana_1:
+    nombre: "Semana 1 – Estabilidad Base"
+    observaciones_por_100:
+      OPG: 22
+      OCC: 3
+    incidentes_por_100:
+      HAZARD: 1.8
+      NMS: 0.9
+      IMEN: 0.2
+      IMAY: 0.0    # No se genera en STDE v3
+    auditorias_por_100:
+      AUF: 0.3
+
+  semana_2:
+    nombre: "Semana 2 – Operación Controlada"
+    observaciones_por_100:
+      OPG: 23
+      OCC: 3
+    incidentes_por_100:
+      HAZARD: 1.9
+      NMS: 1.0
+      IMEN: 0.2
+      IMAY: 0.0
+    auditorias_por_100:
+      AUF: 0.3
+
+  semana_3:
+    nombre: "Semana 3 – Señales Tempranas (R02)"
+    observaciones_por_100:
+      OPG: 22
+      OCC: 3
+    incidentes_por_100:
+      HAZARD: 2.1
+      NMS: 1.1
+      IMEN: 0.25
+      IMAY: 0.0
+    auditorias_por_100:
+      AUF: 0.35
+
+  semana_4:
+    nombre: "Semana 4 – R02 en Aumento"
+    observaciones_por_100:
+      OPG: 21
+      OCC: 3
+    incidentes_por_100:
+      HAZARD: 2.3
+      NMS: 1.2
+      IMEN: 0.27
+      IMAY: 0.0
+    auditorias_por_100:
+      AUF: 0.35
+
+  semana_5:
+    nombre: "Semana 5 – Degradación Acumulada (R02)"
+    observaciones_por_100:
+      OPG: 20
+      OCC: 3
+    incidentes_por_100:
+      HAZARD: 2.5
+      NMS: 1.3
+      IMEN: 0.30
+      IMAY: 0.0
+    auditorias_por_100:
+      AUF: 0.40
+
+  semana_6:
+    nombre: "Semana 6 – Señal Débil en R01"
+    observaciones_por_100:
+      OPG: 19
+      OCC: 3
+    incidentes_por_100:
+      HAZARD: 2.6
+      NMS: 1.3
+      IMEN: 0.32
+      IMAY: 0.0
+    auditorias_por_100:
+      AUF: 0.40
+
+  semana_7:
+    nombre: "Semana 7 – Inicio de Variabilidad Operacional"
+    observaciones_por_100:
+      OPG: 20
+      OCC: 4
+    incidentes_por_100:
+      HAZARD: 2.7
+      NMS: 1.4
+      IMEN: 0.33
+      IMAY: 0.0
+    auditorias_por_100:
+      AUF: 0.42
+
+  semana_8:
+    nombre: "Semana 8 – Ruido Operacional por FDO"
+    observaciones_por_100:
+      OPG: 19
+      OCC: 4
+    incidentes_por_100:
+      HAZARD: 2.8
+      NMS: 1.4
+      IMEN: 0.35
+      IMAY: 0.0
+    auditorias_por_100:
+      AUF: 0.45
+
+  semana_9:
+    nombre: "Semana 9 – Congestión y Fatiga (pico intermedio)"
+    observaciones_por_100:
+      OPG: 19
+      OCC: 4
+    incidentes_por_100:
+      HAZARD: 3.0
+      NMS: 1.5
+      IMEN: 0.38
+      IMAY: 0.0
+    auditorias_por_100:
+      AUF: 0.48
+
+  semana_10:
+    nombre: "Semana 10 – R02 Dominante"
+    observaciones_por_100:
+      OPG: 18
+      OCC: 4
+    incidentes_por_100:
+      HAZARD: 3.2
+      NMS: 1.6
+      IMEN: 0.40
+      IMAY: 0.0
+    auditorias_por_100:
+      AUF: 0.50
+
+  semana_11:
+    nombre: "Semana 11 – Tensión Operacional"
+    observaciones_por_100:
+      OPG: 18
+      OCC: 4
+    incidentes_por_100:
+      HAZARD: 3.3
+      NMS: 1.6
+      IMEN: 0.42
+      IMAY: 0.0
+    auditorias_por_100:
+      AUF: 0.52
+
+  semana_12:
+    nombre: "Semana 12 – Preludio del Lunes Crítico"
+    observaciones_por_100:
+      OPG: 17
+      OCC: 4
+    incidentes_por_100:
+      HAZARD: 3.4
+      NMS: 1.7
+      IMEN: 0.45
+      IMAY: 0.0
+    auditorias_por_100:
+      AUF: 0.55
+
+
+# ================================================================
+# Nota General sobre Distribuciones
+# ================================================================
+# - Las tasas anteriores son valores globales para toda la operación.
+# - El Notebook STDE v3 ajusta estas tasas según:
+#      * área operacional (mapeos)
+#      * rol y tarea (catálogos oficiales)
+#      * variación diaria mediante Poisson
+#      * influencia de FDO (clima, congestión, fatiga, etc.)
+# - Este diseño permite reproducir:
+#      * degradación acumulada de R02
+#      * señales débiles de R01
+#      * estabilidad relativa de R03
+#      * contexto previo coherente al lunes crítico
+# ================================================================
+
+
+# ================================================================
+# Modelo Proactivo Semanal — Referencia v4.4
+# ================================================================
+# Este bloque define la relación entre la OMS STDE v3 y el modelo
+# proactivo sintético basado en la versión v4.4. La tabla contiene
+# scores semanales (0–100) y ranking relativo por riesgo (R01–R10).
+#
+# Uso en STDE v3:
+#   - El ranking semanal es un insumo estructural que permite generar
+#     thresholds continuos (0–1) para modelar trayectorias previas.
+#   - No se actualiza en el lunes crítico; el lunes crítico sirve para
+#     evaluar si el modelo logra anticipar señales fuera de patrón.
+#
+# Este módulo asegura coherencia con el comportamiento esperado del
+# modelo proactivo utilizado en BHP, manteniendo consistencia con
+# tu experiencia real y la narrativa definida para el piloto Aster.
+# ================================================================
+
+proactivo:
+  descripcion: >
+    Configuración usada como referencia para el modelo proactivo semanal
+    sintético. La tabla base v4.4 incluye scores entre 0–100 y rankings
+    relativos entre 1 y 10 para los riesgos R01–R10, durante las 12 semanas
+    previas al lunes crítico. No se redefine el modelo; solo se utiliza para
+    calibrar thresholds y generar señales coherentes con el comportamiento
+    observado en el STDE v3.
+
+  archivo_ranking_base: "stde_proactivo_semanal_v4_4.csv"
+
+  campos_esperados:
+    - "semana_id"
+    - "riesgo_id"
+    - "score_proactivo"
+    - "rank_proactivo"
+
+  notas_uso_stde_v3: >
+    - El notebook STDE v3 utiliza esta tabla como entrada para generar
+      thresholds continuos normalizados (0–1) por riesgo y semana.
+    - El lunes crítico no genera un nuevo ranking, pero se utiliza como
+      outlier para evaluar:
+          * sensibilidad a señales débiles,
+          * coherencia con R02 dominante,
+          * recalibración del riesgo en escenarios con NMS inesperados.
+    - La integración con STDE v3 replica la lógica del modelo proactivo
+      tradicional usado en BHP, sin implementar el modelo real; solo la
+      estructura mínima necesaria para el piloto Aster.
+
+
+

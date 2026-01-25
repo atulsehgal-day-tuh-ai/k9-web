@@ -1,0 +1,117 @@
+- id: MRA
+  nombre: Mina Rajo Abierto
+  descripcion: >
+    Área principal de extracción de mineral y material estéril en superficie. Involucra la perforación, voladura, carguío y transporte de grandes volúmenes de roca utilizando maquinaria pesada (camiones de alto tonelaje, palas hidráulicas y perforadoras). Es fundamental para la alimentación de mineral a planta y la conformación del diseño final de la mina.
+  area: Mina Rajo Abierto
+  aplicabilidad: Definición de áreas operacionales
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  tags:
+  - mina
+  - rajo_abierto
+  - extracción_superficial
+  - perforación
+  - voladura
+  - carguío
+  - transporte_pesado
+  - camiones_mina
+  - palas_excavadoras
+  - bancos_mina
+  - operaciones_mineras
+  - minería_superficial
+  - equipo_pesado
+  - movimiento_tierra
+
+- id: CHP
+  nombre: Planta de Chancado Primario
+  descripcion: >
+    Instalación industrial donde el mineral grueso proveniente de la mina es sometido a la primera etapa de reducción de tamaño. Utiliza chancadoras de gran potencia para fragmentar la roca, preparando el material para su transporte y posterior procesamiento en las etapas de chancado secundario y molienda.
+  area: Planta de Chancado Primario
+  aplicabilidad: Definición de áreas operacionales
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  tags:
+  - chancado_primario
+  - trituración
+  - reducción_tamaño
+  - mineral_grueso
+  - chancadoras_primarias
+  - correas_transportadoras
+  - tolvas_alimentación
+  - planta_procesamiento
+  - conminución
+  - ruido
+  - polvo
+
+- id: TME
+  nombre: Taller de Mantenimiento Eléctrico
+  descripcion: >
+    Área especializada en el mantenimiento preventivo y correctivo de componentes y sistemas eléctricos de toda la operación minera. Aquí se realizan diagnósticos, reparaciones, calibraciones y pruebas de motores eléctricos, tableros de control, transformadores y cableado de alta y baja tensión, asegurando la continuidad operativa y la seguridad eléctrica.
+  area: Taller de Mantenimiento Eléctrico
+  aplicabilidad: Definición de áreas operacionales
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  tags:
+  - mantenimiento_eléctrico
+  - reparación_eléctrica
+  - sistemas_eléctricos
+  - motores_eléctricos
+  - tableros_eléctricos
+  - transformadores
+  - cableado
+  - alta_tensión
+  - baja_tensión
+  - seguridad_eléctrica
+  - taller
+
+- id: STM
+  nombre: Sistema de Transporte Mecanizado
+  descripcion: >
+    Conjunto de infraestructura y equipos (principalmente cintas transportadoras, chutes, polines y estructuras de soporte) que permiten el movimiento eficiente y continuo del mineral y otros materiales a granel entre las diferentes etapas del proceso minero, desde las chancadoras hasta la planta concentradora y depósitos.
+  area: Sistema de Transporte Mecanizado
+  aplicabilidad: Definición de áreas operacionales
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  tags:
+  - transporte_mecanizado
+  - cintas_transportadoras
+  - movimiento_material
+  - mineral_granel
+  - polines
+  - chutes
+  - transportadores
+  - automatización
+  - mantenimiento_cintas
+  - ruido
+  - polvo
+
+- id: PLC
+  nombre: Planta Concentradora
+  descripcion: >
+    Instalación central donde el mineral chancado es procesado mediante etapas de molienda y flotación para separar y concentrar los minerales valiosos (ej. cobre, molibdeno) del material estéril. Incluye molinos, celdas de flotación, espesadores y filtros, generando un concentrado de alta ley y relaves.
+  area: Planta Concentradora
+  aplicabilidad: Definición de áreas operacionales
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  tags:
+  - planta_concentradora
+  - molienda
+  - flotación
+  - separación_mineral
+  - molinos
+  - celdas_flotación
+  - espesadores
+  - filtros
+  - concentrado_mineral
+  - relaves
+  - metalurgia
+  - procesamiento_minerales
+  - químicos
+  - agua
+  - ruido
+  - vibración

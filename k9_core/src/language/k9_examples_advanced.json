@@ -1,0 +1,294 @@
+{
+  "description": "Advanced cognitive examples for K9 Mining Safety. These examples define how complex analytical, comparative, temporal and composite results must be translated into human language. They are binding contracts for synthesis, not reasoning instructions.",
+
+  "examples": [
+
+    {
+      "example_id": "ADV_01",
+      "example_type": "advanced",
+      "question_type": "analytical_ranking_with_explanation",
+
+      "human_input": "¿Cuál es el riesgo más importante esta semana y por qué?",
+
+      "interpretation_output": {
+        "type": "K9_COMMAND",
+        "intent": "ANALYTICAL_QUERY",
+        "entity": "risks",
+        "operation": "rank",
+        "filters": { "scope": "K9_CORE" },
+        "time": { "type": "relative", "value": "current_week" },
+        "output": "analysis",
+        "include_explanation": true
+      },
+
+      "system_result": {
+        "analysis": {
+          "ranked_risks": [
+            {
+              "risk_id": "R02",
+              "score": 0.88,
+              "drivers": [
+                "exposure_accumulation",
+                "control_degradation"
+              ]
+            },
+            {
+              "risk_id": "R01",
+              "score": 0.62
+            }
+          ]
+        }
+      },
+
+      "expected_synthesis": "Durante esta semana, el riesgo con mayor nivel de criticidad fue R02. Este comportamiento estuvo asociado principalmente a la acumulación de exposiciones operacionales y a la degradación de controles críticos.",
+
+      "rules_applied": [
+        "Primero se informa el resultado",
+        "Luego se explica usando solo drivers entregados",
+        "No se comparan puntajes explícitos"
+      ]
+    },
+
+    {
+      "example_id": "ADV_02",
+      "example_type": "advanced",
+      "question_type": "comparative_model_gap",
+
+      "human_input": "¿Hay algún riesgo que el modelo proactivo esté subestimando?",
+
+      "interpretation_output": {
+        "type": "K9_COMMAND",
+        "intent": "COMPARATIVE_QUERY",
+        "entity": "risks",
+        "operation": "compare",
+        "filters": {
+          "baseline_model": "proactive_model",
+          "comparison_model": "K9"
+        },
+        "time": { "type": "relative", "value": "last_weeks" },
+        "output": "analysis"
+      },
+
+      "system_result": {
+        "analysis": {
+          "underestimated_risks": ["R01"]
+        }
+      },
+
+      "expected_synthesis": "El análisis muestra que el riesgo R01 está siendo subestimado por el modelo proactivo en comparación con la evaluación realizada por K9.",
+
+      "rules_applied": [
+        "Comparación directa",
+        "No se justifica la causa si no está presente"
+      ]
+    },
+
+    {
+      "example_id": "ADV_03",
+      "example_type": "advanced",
+      "question_type": "analytical_evolution",
+
+      "human_input": "Muéstrame cómo ha evolucionado el riesgo Caída de Objetos en las últimas semanas.",
+
+      "interpretation_output": {
+        "type": "K9_COMMAND",
+        "intent": "ANALYTICAL_QUERY",
+        "entity": "risks",
+        "operation": "evolution",
+        "filters": { "risk_id": ["R02"] },
+        "time": { "type": "relative", "value": "last_4_weeks" },
+        "output": "analysis"
+      },
+
+      "system_result": {
+        "analysis": {
+          "trend": "increasing",
+          "risk_id": "R02"
+        }
+      },
+
+      "expected_synthesis": "En las últimas semanas, el riesgo de Caída de Objetos ha mostrado una tendencia sostenida al aumento.",
+
+      "rules_applied": [
+        "Lenguaje direccional",
+        "No se infieren causas"
+      ]
+    },
+
+    {
+      "example_id": "ADV_04",
+      "example_type": "advanced",
+      "question_type": "temporal_signal_analysis",
+
+      "human_input": "¿Qué señales aparecen antes del lunes crítico?",
+
+      "interpretation_output": {
+        "type": "K9_COMMAND",
+        "intent": "TEMPORAL_RELATION_QUERY",
+        "entity": "signals",
+        "operation": "sequence",
+        "filters": { "anchor_event": "CRITICAL_MONDAY" },
+        "time": { "type": "window", "value": "pre" },
+        "output": "analysis"
+      },
+
+      "system_result": {
+        "analysis": {
+          "signals_detected": [
+            "incremento_exposiciones",
+            "reduccion_efectividad_controles"
+          ]
+        }
+      },
+
+      "expected_synthesis": "Previo al lunes crítico se identificaron señales asociadas al incremento de exposiciones operacionales y a una reducción en la efectividad de los controles.",
+
+      "rules_applied": [
+        "Secuencia temporal",
+        "No se adelantan consecuencias"
+      ]
+    },
+
+    {
+      "example_id": "ADV_05",
+      "example_type": "advanced",
+      "question_type": "operational_summary",
+
+      "human_input": "¿Cuántas observaciones hubo la última semana y de qué tipo fueron?",
+
+      "interpretation_output": {
+        "type": "K9_COMMAND",
+        "intent": "OPERATIONAL_QUERY",
+        "entity": "observations",
+        "operation": "summarize",
+        "time": { "type": "relative", "value": "last_week" },
+        "output": "raw"
+      },
+
+      "system_result": {
+        "analysis": {
+          "total": 12,
+          "by_type": {
+            "near_miss": 7,
+            "hazard": 5
+          }
+        }
+      },
+
+      "expected_synthesis": "Durante la última semana se registraron 12 observaciones, correspondientes principalmente a Near Miss y peligros detectados.",
+
+      "rules_applied": [
+        "Síntesis agregada",
+        "No se detallan proporciones si no se solicitan"
+      ]
+    },
+
+    {
+      "example_id": "ADV_06",
+      "example_type": "advanced",
+      "question_type": "threshold_crossing",
+
+      "human_input": "¿Qué riesgos han superado el umbral crítico definido por K9?",
+
+      "interpretation_output": {
+        "type": "K9_COMMAND",
+        "intent": "ANALYTICAL_QUERY",
+        "entity": "risks",
+        "operation": "detect_threshold_crossing",
+        "filters": { "threshold": "critical" },
+        "time": { "type": "relative", "value": "last_weeks" },
+        "output": "analysis"
+      },
+
+      "system_result": {
+        "analysis": {
+          "critical_risks": ["R02"]
+        }
+      },
+
+      "expected_synthesis": "El riesgo R02 ha superado el umbral crítico definido por K9 durante el período analizado.",
+
+      "rules_applied": [
+        "Declaración directa",
+        "No se agregan recomendaciones"
+      ]
+    },
+
+    {
+      "example_id": "ADV_07",
+      "example_type": "advanced",
+      "question_type": "out_of_domain",
+
+      "human_input": "¿Cuál es la capital de Chile?",
+
+      "interpretation_output": {
+        "type": "K9_COMMAND",
+        "intent": "SYSTEM_QUERY",
+        "entity": "domain_guard",
+        "operation": "reject_out_of_domain",
+        "output": "summary"
+      },
+
+      "system_result": {
+        "analysis": {
+          "status": "out_of_domain"
+        }
+      },
+
+      "expected_synthesis": "La pregunta realizada no corresponde al dominio de análisis de seguridad operacional de K9.",
+
+      "rules_applied": [
+        "Rechazo de dominio",
+        "Respuesta institucional"
+      ]
+    },
+
+    {
+      "example_id": "ADV_08",
+      "example_type": "advanced",
+      "question_type": "composite_explanation",
+
+      "human_input": "¿Qué está pasando esta semana con los riesgos y qué significa?",
+
+      "interpretation_output": {
+        "type": "COMPOSITE_K9_COMMAND",
+        "goal": "Explain current operational situation and its analytical meaning",
+        "plan": [
+          {
+            "step": 1,
+            "intent": "OPERATIONAL_QUERY",
+            "entity": "signals",
+            "operation": "summarize",
+            "time": { "type": "relative", "value": "current_week" },
+            "output": "raw"
+          },
+          {
+            "step": 2,
+            "intent": "ANALYTICAL_QUERY",
+            "entity": "risks",
+            "operation": "interpret_signals",
+            "filters": { "scope": "K9_CORE" },
+            "depends_on": "step_1",
+            "output": "analysis"
+          }
+        ]
+      },
+
+      "system_result": {
+        "analysis": {
+          "key_risk": "R02",
+          "interpretation": "increased operational pressure"
+        }
+      },
+
+      "expected_synthesis": "Durante esta semana, los análisis indican un aumento en la presión operacional, destacando al riesgo R02 como el más relevante en el contexto actual.",
+
+      "rules_applied": [
+        "Síntesis unificada",
+        "No se exponen pasos internos",
+        "La interpretación ya viene resuelta"
+      ]
+    }
+
+  ]
+}

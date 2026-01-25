@@ -1,0 +1,79 @@
+id_bowtie: R03_BOW_ENERGIA_V001
+riesgo:
+  id: R03
+  nombre: Contacto con Energía Eléctrica
+causas: 
+  - R03CA01
+  - R03CA02
+  - R03CA03
+  - R03CA04
+  - R03CA05
+  - R03CA06
+controles_criticos: 
+  - R03CC01
+  - R03CC02 
+  - R03CC03 
+  - R03CC04 
+  - R03CC05 
+  - R03CC06 
+controles_preventivos: 
+  - R03CP01
+  - R03CP02
+  - R03CP03
+  - R03CP04
+  - R03CP05
+  - R03CP06
+controles_mitigacion: 
+  - R03CM01
+  - R03CM02
+  - R03CM03
+  - R03CM04
+consecuencias: 
+  - R03CON01 
+  - R03CON02 
+  - R03CON03 
+  - R01CON01 
+  - R01CON04 
+  - R03CON04
+  - R03CON05
+  - R03CON06
+factores_degradacion:
+  - R03FD01
+  - R03FD02
+  - R03FD03
+  - R03FD04
+barreras_recuperacion: 
+  - R03BR01
+  - R03BR02
+  - R03BR03
+  - R03BR04
+relacion causa-control_critico_control_preventivo:
+  R03CA01: [R03CC04, R03CP01]
+  R03CA02: [R03CC03, R03CP02]
+  R03CA03: [R03CC02, R03CP03]
+  R03CA04: [R03CC05, R03CP04]
+  R03CA05: [R03CC06, R03CP05]
+  R03CA06: [R03CC01, R03CP06]
+relacion consecuencia-control_mitigacion:
+  R03CON01: [R03CM01, R03CM03] 
+  R03CON02: [R03CM01, R03CM04] 
+  R03CON03: [R03CM01, R03CM03] 
+  R01CON01: [R03CM03] 
+  R01CON04: [R03CM02] 
+R03CON04: [R03CM01, R03CM03]
+R03CON05: [R03CM02, R03CM04]
+R03CON06: [R03CM02, R03CM04]
+relacion factor_degradacion-control_critico_control_preventivo:
+  R03FD01: [R03CC04, R03CP01]
+  R03FD02: [R03CC03, R03CP02]
+  R03FD03: [R03CC05, R03CP04]
+  R03FD04: [R03CC06, R03CP05]
+relacion consecuencia-barrera_recuperacion:
+  R03CON01: [R03BR01, R03BR02]
+  R03CON02: [R03BR01, R03BR02]
+  R03CON03: [R03BR01, R03BR02]
+  R01CON01: [R03BR02, R03BR03]
+  R01CON04: [R03BR03, R03BR04]
+R03CON04: [R03BR01, R03BR02]
+R03CON05: [R03BR03, R03BR04]
+R03CON06: [R03BR03, R03BR04]

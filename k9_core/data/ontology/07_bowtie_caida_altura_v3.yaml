@@ -1,0 +1,76 @@
+id_bowtie: R01_BOW_CAIDA_V001
+riesgo:
+  id: R01
+  nombre: Caída desde Altura
+causas: 
+  - R01CA01
+  - R01CA02
+  - R01CA03
+  - R01CA04
+  - R01CA05
+  - R01CA06
+controles_criticos:
+  - R01CC01 
+  - R01CC02
+  - R01CC03 
+  - R01CC04 
+  - R01CC05 
+  - R01CC06 
+controles_preventivos: 
+  - R01CP01
+  - R01CP02
+  - R01CP03
+  - R01CP04
+  - R01CP05
+  - R01CP06
+controles_mitigacion: 
+  - R01CM01
+  - R01CM02
+  - R01CM03
+  - R01CM04
+consecuencias: 
+  - R01CON01 
+  - R01CON02 
+  - R01CON03 
+  - R01CON04 
+  - R01CON05 
+  - R01CON06 
+  - R01CON07
+factores_degradacion: 
+  - R01FD01
+  - R01FD02
+  - R01FD03
+  - R01FD04
+barreras_recuperacion: 
+  - R01BR01
+  - R01BR02
+  - R01BR03
+  - R01BR04
+relacion causa-control_critico_control_preventivo:
+  R01CA01: [R01CC02, R01CC04, R01CP01]
+  R01CA02: [R01CC02, R01CC04, R01CC06, R01CP01, R01CP02]
+  R01CA03: [R01CC03, R01CP03, R01CC01]
+  R01CA04: [R01CP04, R01CC05]
+  R01CA05: [R01CP05, R01CC05]
+  R01CA06: [R01CP06, R01CC03]
+relacion consecuencia-control_mitigacion:
+  R01CON01: [R01CM01, R01CM03]
+  R01CON02: [R01CM01, R01CM02, R01CM03]
+  R01CON03: [R01CM04]
+  R01CON04: [R01CM04]
+  R01CON05:    [R01CM01, R01CM02] 
+  R01CON06: [R01CM02, R01CM04]
+  R01CON07: [R01CM02, R01CM04]
+relacion factor_degradacion-control_critico_control_preventivo:
+  R01FD01: [R01CC02, R01CP02]
+  R01FD02: [R01CC04, R01CP01]
+  R01FD03: [R01CC02, R01CP02]
+  R01FD04: [R01CC03, R01CP06]
+relacion consecuencia-barrera_recuperacion:
+  R01CON01: [R01BR01, R01BR03]
+  R01CON02: [R01BR01, R01BR03]
+  R01CON03: [R01BR02, R01BR04]
+  R01CON04: [R01BR02, R01BR04]
+  R01CON05:    [R01BR03, R01BR04]
+  R01CON06: [R01BR03]
+  R01CON07: [R01BR03]

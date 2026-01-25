@@ -1,0 +1,64 @@
+id_incidente,fecha,semana,dia_semana,turno,id_area,id_rol,tipo_incidente,descripcion_incidente,con_lesion,dias_perdidos
+INC_000001,11/11/2024,1,Lunes,T1D,STM,TME_ROL_01,IMED,Incidente sintético tipo Incidente Mediano con Lesión,TRUE,6
+INC_000002,11/13/2024,1,Miércoles,T2N,MRA,CHP_ROL_01,ILEV,Incidente sintético tipo Incidente Leve con Lesión,TRUE,2
+INC_000003,11/14/2024,1,Jueves,T1D,MRA,TME_ROL_01,INMI,Incidente sintético tipo Incidente sin Lesión / Casi Incidente,FALSE,0
+INC_000004,11/16/2024,1,Sábado,T2N,MRA,MRA_ROL_02,ILEV,Incidente sintético tipo Incidente Leve con Lesión,TRUE,2
+INC_000005,11/17/2024,1,Domingo,T1D,PLC,CHP_ROL_01,IMED,Incidente sintético tipo Incidente Mediano con Lesión,TRUE,8
+INC_000006,11/19/2024,2,Martes,T2N,STM,TME_ROL_02,INMI,Incidente sintético tipo Incidente sin Lesión / Casi Incidente,FALSE,0
+INC_000007,11/23/2024,2,Sábado,T2N,PLC,CHP_ROL_01,INMI,Incidente sintético tipo Incidente sin Lesión / Casi Incidente,FALSE,0
+INC_000008,11/24/2024,2,Domingo,T2N,MRA,STM_ROL_02,ILEV,Incidente sintético tipo Incidente Leve con Lesión,TRUE,0
+INC_000009,11/24/2024,2,Domingo,T2N,TME,MRA_ROL_01,INMI,Incidente sintético tipo Incidente sin Lesión / Casi Incidente,FALSE,0
+INC_000010,11/24/2024,2,Domingo,T2N,CHP,STM_ROL_02,INMI,Incidente sintético tipo Incidente sin Lesión / Casi Incidente,FALSE,0
+INC_000011,11/25/2024,3,Lunes,T2N,CHP,TME_ROL_02,INMI,Incidente sintético tipo Incidente sin Lesión / Casi Incidente,FALSE,0
+INC_000012,11/27/2024,3,Miércoles,T1D,TME,PLC_ROL_01,IMED,Incidente sintético tipo Incidente Mediano con Lesión,TRUE,5
+INC_000013,11/29/2024,3,Viernes,T2N,MRA,STM_ROL_01,IMED,Incidente sintético tipo Incidente Mediano con Lesión,TRUE,7
+INC_000014,11/30/2024,3,Sábado,T2N,CHP,MRA_ROL_02,INMI,Incidente sintético tipo Incidente sin Lesión / Casi Incidente,FALSE,0
+INC_000015,12/1/2024,3,Domingo,T2N,MRA,CHP_ROL_02,IMAY,Incidente sintético tipo Incidente Mayor con Lesión,TRUE,17
+INC_000016,12/2/2024,4,Lunes,T1D,MRA,TME_ROL_02,INMI,Incidente sintético tipo Incidente sin Lesión / Casi Incidente,FALSE,0
+INC_000017,12/3/2024,4,Martes,T1D,CHP,PLC_ROL_02,ILEV,Incidente sintético tipo Incidente Leve con Lesión,TRUE,2
+INC_000018,12/3/2024,4,Martes,T1D,MRA,PLC_ROL_01,INMI,Incidente sintético tipo Incidente sin Lesión / Casi Incidente,FALSE,0
+INC_000019,12/4/2024,4,Miércoles,T1D,PLC,CHP_ROL_02,ILEV,Incidente sintético tipo Incidente Leve con Lesión,TRUE,1
+INC_000020,12/4/2024,4,Miércoles,T1D,TME,CHP_ROL_01,INMI,Incidente sintético tipo Incidente sin Lesión / Casi Incidente,FALSE,0
+INC_000021,12/6/2024,4,Viernes,T1D,TME,CHP_ROL_01,INMI,Incidente sintético tipo Incidente sin Lesión / Casi Incidente,FALSE,0
+INC_000022,12/8/2024,4,Domingo,T1D,PLC,TME_ROL_01,ILEV,Incidente sintético tipo Incidente Leve con Lesión,TRUE,1
+INC_000023,12/8/2024,4,Domingo,T1D,MRA,MRA_ROL_01,INMI,Incidente sintético tipo Incidente sin Lesión / Casi Incidente,FALSE,0
+INC_000024,12/8/2024,4,Domingo,T1D,MRA,TME_ROL_02,INMI,Incidente sintético tipo Incidente sin Lesión / Casi Incidente,FALSE,0
+INC_000025,12/9/2024,5,Lunes,T1D,PLC,TME_ROL_02,INMI,Incidente sintético tipo Incidente sin Lesión / Casi Incidente,FALSE,0
+INC_000026,12/9/2024,5,Lunes,T1D,CHP,TME_ROL_01,INMI,Incidente sintético tipo Incidente sin Lesión / Casi Incidente,FALSE,0
+INC_000027,12/9/2024,5,Lunes,T1D,CHP,STM_ROL_01,INMI,Incidente sintético tipo Incidente sin Lesión / Casi Incidente,FALSE,0
+INC_000028,12/10/2024,5,Martes,T1D,MRA,STM_ROL_02,IMED,Incidente sintético tipo Incidente Mediano con Lesión,TRUE,5
+INC_000029,12/11/2024,5,Miércoles,T2N,TME,PLC_ROL_01,ILEV,Incidente sintético tipo Incidente Leve con Lesión,TRUE,1
+INC_000030,12/11/2024,5,Miércoles,T1D,STM,PLC_ROL_01,INMI,Incidente sintético tipo Incidente sin Lesión / Casi Incidente,FALSE,0
+INC_000031,12/14/2024,5,Sábado,T1D,PLC,MRA_ROL_01,INMI,Incidente sintético tipo Incidente sin Lesión / Casi Incidente,FALSE,0
+INC_000032,12/15/2024,5,Domingo,T2N,STM,MRA_ROL_01,IMED,Incidente sintético tipo Incidente Mediano con Lesión,TRUE,8
+INC_000033,12/16/2024,6,Lunes,T1D,STM,STM_ROL_01,INMI,Incidente sintético tipo Incidente sin Lesión / Casi Incidente,FALSE,0
+INC_000034,12/17/2024,6,Martes,T2N,MRA,STM_ROL_02,INMI,Incidente sintético tipo Incidente sin Lesión / Casi Incidente,FALSE,0
+INC_000035,12/19/2024,6,Jueves,T2N,MRA,MRA_ROL_02,INMI,Incidente sintético tipo Incidente sin Lesión / Casi Incidente,FALSE,0
+INC_000036,12/20/2024,6,Viernes,T2N,PLC,CHP_ROL_01,INMI,Incidente sintético tipo Incidente sin Lesión / Casi Incidente,FALSE,0
+INC_000037,12/21/2024,6,Sábado,T1D,CHP,TME_ROL_01,ILEV,Incidente sintético tipo Incidente Leve con Lesión,TRUE,1
+INC_000038,12/22/2024,6,Domingo,T2N,STM,PLC_ROL_02,ILEV,Incidente sintético tipo Incidente Leve con Lesión,TRUE,3
+INC_000039,12/23/2024,7,Lunes,T2N,STM,PLC_ROL_01,INMI,Incidente sintético tipo Incidente sin Lesión / Casi Incidente,FALSE,0
+INC_000040,12/23/2024,7,Lunes,T2N,MRA,MRA_ROL_02,INMI,Incidente sintético tipo Incidente sin Lesión / Casi Incidente,FALSE,0
+INC_000041,12/24/2024,7,Martes,T1D,STM,STM_ROL_02,IMED,Incidente sintético tipo Incidente Mediano con Lesión,TRUE,7
+INC_000042,12/24/2024,7,Martes,T1D,STM,TME_ROL_02,INMI,Incidente sintético tipo Incidente sin Lesión / Casi Incidente,FALSE,0
+INC_000043,12/25/2024,7,Miércoles,T2N,STM,STM_ROL_01,INMI,Incidente sintético tipo Incidente sin Lesión / Casi Incidente,FALSE,0
+INC_000044,12/31/2024,8,Martes,T1D,TME,STM_ROL_01,IMAY,Incidente sintético tipo Incidente Mayor con Lesión,TRUE,21
+INC_000045,12/31/2024,8,Martes,T2N,TME,TME_ROL_02,INMI,Incidente sintético tipo Incidente sin Lesión / Casi Incidente,FALSE,0
+INC_000046,1/4/2025,8,Sábado,T1D,STM,MRA_ROL_02,ILEV,Incidente sintético tipo Incidente Leve con Lesión,TRUE,0
+INC_000047,1/5/2025,8,Domingo,T1D,MRA,MRA_ROL_02,INMI,Incidente sintético tipo Incidente sin Lesión / Casi Incidente,FALSE,0
+INC_000048,1/6/2025,9,Lunes,T2N,MRA,TME_ROL_02,INMI,Incidente sintético tipo Incidente sin Lesión / Casi Incidente,FALSE,0
+INC_000049,1/7/2025,9,Martes,T1D,PLC,MRA_ROL_01,INMI,Incidente sintético tipo Incidente sin Lesión / Casi Incidente,FALSE,0
+INC_000050,1/8/2025,9,Miércoles,T2N,MRA,STM_ROL_01,INMI,Incidente sintético tipo Incidente sin Lesión / Casi Incidente,FALSE,0
+INC_000051,1/8/2025,9,Miércoles,T2N,STM,MRA_ROL_01,INMI,Incidente sintético tipo Incidente sin Lesión / Casi Incidente,FALSE,0
+INC_000052,1/9/2025,9,Jueves,T2N,PLC,TME_ROL_01,INMI,Incidente sintético tipo Incidente sin Lesión / Casi Incidente,FALSE,0
+INC_000053,1/11/2025,9,Sábado,T2N,MRA,PLC_ROL_02,ILEV,Incidente sintético tipo Incidente Leve con Lesión,TRUE,0
+INC_000054,1/14/2025,10,Martes,T1D,CHP,STM_ROL_02,INMI,Incidente sintético tipo Incidente sin Lesión / Casi Incidente,FALSE,0
+INC_000055,1/17/2025,10,Viernes,T1D,MRA,TME_ROL_02,ILEV,Incidente sintético tipo Incidente Leve con Lesión,TRUE,0
+INC_000056,1/19/2025,10,Domingo,T2N,MRA,TME_ROL_01,INMI,Incidente sintético tipo Incidente sin Lesión / Casi Incidente,FALSE,0
+INC_000057,1/20/2025,11,Lunes,T1D,STM,PLC_ROL_01,ILEV,Incidente sintético tipo Incidente Leve con Lesión,TRUE,1
+INC_000058,1/22/2025,11,Miércoles,T1D,PLC,TME_ROL_01,INMI,Incidente sintético tipo Incidente sin Lesión / Casi Incidente,FALSE,0
+INC_000059,1/25/2025,11,Sábado,T1D,CHP,TME_ROL_01,ILEV,Incidente sintético tipo Incidente Leve con Lesión,TRUE,0
+INC_000060,1/28/2025,12,Martes,T2N,TME,TME_ROL_02,INMI,Incidente sintético tipo Incidente sin Lesión / Casi Incidente,FALSE,0
+INC_000061,1/29/2025,12,Miércoles,T1D,CHP,CHP_ROL_01,INMI,Incidente sintético tipo Incidente sin Lesión / Casi Incidente,FALSE,0
+INC_000062,1/30/2025,12,Jueves,T2N,MRA,CHP_ROL_01,INMI,Incidente sintético tipo Incidente sin Lesión / Casi Incidente,FALSE,0
+INC_000063,2/1/2025,12,Sábado,T1D,MRA,PLC_ROL_01,INMI,Incidente sintético tipo Incidente sin Lesión / Casi Incidente,FALSE,0

@@ -1,0 +1,1355 @@
+- id: R01CC01
+  nombre: Sistema Personal de Detención de Caídas (SPDC)
+  descripcion: 'Implementación y uso obligatorio de arneses de cuerpo completo, líneas
+    de vida con absorbedor de energía y puntos de anclaje certificados. Este sistema
+    debe ser inspeccionado antes de cada uso, garantizar su compatibilidad entre componentes,
+    y ser ajustado adecuadamente por el usuario. Su función principal es detener una
+    caída de forma segura, minimizando las fuerzas de impacto sobre el cuerpo y evitando
+    el contacto con el nivel inferior. Es el último recurso personal para prevenir
+    la caída libre.
+
+    '
+  riesgo_asociado: R01
+  tipo_control: preventivo
+  es_critico: true
+  clase_implementacion: EPP
+  aplicabilidad: Prevención de incidentes
+  tags:
+  - SPDC
+  - arnés
+  - línea de vida
+  - detención de caída
+  - EPP
+  - seguridad en altura
+  - inspección pre-uso
+  - anclaje certificado
+  - fuerza de impacto
+  - prevención de caída libre
+  area: Todas las Áreas Operacionales
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  causas_que_previene:
+  - R01CA04
+  factores_degradacion_que_lo_afectan:
+  - R01FD01
+  - R01FD04
+
+- id: R01CC02
+  nombre: Certificación técnica de andamios, plataformas y puntos de anclaje
+  descripcion: 'Verificación y validación formal, por personal competente o autoridad
+    externa, de que andamios, plataformas elevadas, escaleras y puntos de anclaje
+    (por ejemplo, los diseñados para resistir 5000 lbs por trabajador conectado) cumplen
+    con las normativas de seguridad, están correctamente instalados y son aptos para
+    su uso. Esto incluye la emisión de certificados de conformidad y su seguimiento
+    periódico.
+
+    '
+  riesgo_asociado: R01
+  tipo_control: preventivo
+  es_critico: true
+  clase_implementacion: ingeniería/administrativo
+  aplicabilidad: Prevención de incidentes
+  tags:
+  - andamios
+  - plataformas
+  - certificación
+  - anclaje
+  - seguridad en altura
+  - inspección
+  - normativa
+  - aptitud
+  area: Todas las Áreas Operacionales
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  causas_que_previene:
+  - R01CA02
+  factores_degradacion_que_lo_afectan:
+  - R01FD01
+  - R01FD02
+
+- id: R01CC03
+  nombre: Protecciones colectivas (barandas, cubiertas, rodapiés) instaladas y certificadas
+  descripcion: 'Implementación de sistemas de protección física que evitan la caída
+    de personas y objetos a un nivel inferior, como barandas perimetrales, mallas
+    de seguridad, cubiertas de aberturas, y rodapiés en todas las zonas de riesgo
+    de caída. Estas barreras deben cumplir con normativas de diseño, instalación y
+    resistencia, y ser inspeccionadas periódicamente para asegurar su integridad.
+
+    '
+  riesgo_asociado: R01
+  tipo_control: preventivo
+  es_critico: true
+  clase_implementacion: ingeniería
+  aplicabilidad: Prevención de incidentes
+  tags:
+  - protecciones colectivas
+  - barandas
+  - cubiertas
+  - rodapiés
+  - seguridad en altura
+  - mallas de seguridad
+  - barrera física
+  - inspección
+  area: Todas las Áreas Operacionales
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  causas_que_previene:
+  - R01CA01
+  factores_degradacion_que_lo_afectan:
+  - R01FD01
+  - R01FD02
+
+- id: R01CC04
+  nombre: Procedimiento de permiso de trabajo en altura (PTA) aplicado y auditado
+  descripcion: 'Implementación de un sistema formal de autorización (Permiso de Trabajo
+    en Altura) que exige la evaluación de riesgos, la identificación de controles
+    necesarios, la asignación de roles y responsabilidades, y la verificación en sitio
+    antes de iniciar cualquier tarea en altura. Este procedimiento debe ser auditado
+    regularmente para asegurar su cumplimiento y efectividad.
+
+    '
+  riesgo_asociado: R01
+  tipo_control: preventivo
+  es_critico: true
+  clase_implementacion: administrativo
+  aplicabilidad: Prevención de incidentes
+  tags:
+  - permiso de trabajo
+  - PTA
+  - procedimiento
+  - auditoría
+  - seguridad en altura
+  - evaluación de riesgos
+  - autorización
+  area: Todas las Áreas Operacionales
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  causas_que_previene:
+  - R01CA06
+  factores_degradacion_que_lo_afectan:
+  - R01FD03
+  - R01FD04
+
+- id: R01CC05
+  nombre: Capacitación y entrenamiento certificado en trabajos en altura
+  descripcion: 'Programa de formación teórica y práctica obligatoria para todo el
+    personal que realice o supervise trabajos en altura. La capacitación debe incluir
+    identificación de riesgos, uso y revisión de EPP (SPDC, escaleras), rescate, procedimientos
+    de emergencia, y normativas aplicables. La certificación debe ser periódica para
+    mantener la competencia.
+
+    '
+  riesgo_asociado: R01
+  tipo_control: preventivo
+  es_critico: true
+  clase_implementacion: administrativo
+  aplicabilidad: Prevención de incidentes
+  tags:
+  - capacitación
+  - entrenamiento
+  - trabajos en altura
+  - certificación
+  - competencia
+  - seguridad en altura
+  - EPP
+  - rescate
+  - procedimientos
+  area: Todas las Áreas Operacionales
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  causas_que_previene:
+  - R01CA03
+  - R01CA04
+  factores_degradacion_que_lo_afectan:
+  - R01FD04
+
+- id: R01CC06
+  nombre: Monitoreo meteorológico y suspensión de trabajos en altura por condiciones
+    adversas
+  descripcion: 'Sistema para el monitoreo continuo de las condiciones climáticas (velocidad
+    del viento, lluvia, granizo, tormentas eléctricas, temperaturas extremas) y un
+    protocolo claro para la suspensión inmediata y segura de todas las actividades
+    en altura cuando las condiciones superan los límites establecidos. Incluye sistemas
+    de alerta temprana y refugios seguros.
+
+    '
+  riesgo_asociado: R01
+  tipo_control: preventivo
+  es_critico: true
+  clase_implementacion: administrativo/técnico
+  aplicabilidad: Prevención de incidentes
+  tags:
+  - monitoreo meteorológico
+  - suspensión de trabajos
+  - condiciones climáticas
+  - viento
+  - lluvia
+  - seguridad en altura
+  - protocolo
+  - alerta temprana
+  area: Todas las Áreas Operacionales
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  causas_que_previene:
+  - R01CA05
+  factores_degradacion_que_lo_afectan:
+  - R01FD03
+
+- id: R01CP01
+  nombre: Señalización de seguridad en bordes y aberturas
+  descripcion: 'Instalación de letreros de advertencia, cintas de seguridad y conos
+    para indicar claramente la presencia de bordes y aberturas sin protección, alertando
+    al personal sobre el riesgo de caída.
+    '
+  riesgo_asociado: R01
+  tipo_control: preventivo
+  es_critico: false
+  clase_implementacion: administrativo
+  aplicabilidad: Prevención de incidentes
+  tags:
+  - señalización
+  - advertencia
+  - bordes
+  - aberturas
+  - seguridad en altura
+  area: Todas las Áreas Operacionales
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  causas_que_previene:
+  - R01CA01
+  factores_degradacion_que_lo_afectan:
+  - R01FD01
+  - R01FD03
+
+- id: R01CP02
+  nombre: Inspección pre-uso y periódica de andamios y plataformas
+  descripcion: 'Revisión visual y funcional de andamios y plataformas por personal
+    competente antes de cada uso y de forma programada para detectar daños, deformaciones,
+    o montajes incorrectos.
+    '
+  riesgo_asociado: R01
+  tipo_control: preventivo
+  es_critico: false
+  clase_implementacion: administrativo
+  aplicabilidad: Prevención de incidentes
+  tags:
+  - inspección
+  - andamios
+  - plataformas
+  - pre-uso
+  - seguridad en altura
+  area: Todas las Áreas Operacionales
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  causas_que_previene:
+  - R01CA02
+  factores_degradacion_que_lo_afectan:
+  - R01FD01
+  - R01FD03
+
+- id: R01CP03
+  nombre: Uso de escaleras con base antideslizante y en ángulo seguro
+  descripcion: 'Selección de escaleras equipadas con tacos antideslizantes y aseguramiento
+    de su posicionamiento en un ángulo de 75 grados y sobre superficies estables,
+    fijándolas en la parte superior cuando sea posible.
+    '
+  riesgo_asociado: R01
+  tipo_control: preventivo
+  es_critico: false
+  clase_implementacion: ingeniería/procedimental
+  aplicabilidad: Prevención de incidentes
+  tags:
+  - escaleras
+  - antideslizante
+  - ángulo seguro
+  - seguridad en altura
+  area: Todas las Áreas Operacionales
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  causas_que_previene:
+  - R01CA03
+  factores_degradacion_que_lo_afectan:
+  - R01FD03
+  - R01FD04
+
+- id: R01CP04
+  nombre: Verificación de puntos de anclaje y estado del SPDC antes de cada uso
+  descripcion: 'Rutina obligatoria de revisión del arnés, línea de vida, absorbedor
+    de energía y el punto de anclaje por parte del usuario antes de conectar el SPDC,
+    asegurando su buen estado y compatibilidad.
+    '
+  riesgo_asociado: R01
+  tipo_control: preventivo
+  es_critico: false
+  clase_implementacion: procedimental
+  aplicabilidad: Prevención de incidentes
+  tags:
+  - SPDC
+  - anclaje
+  - verificación
+  - pre-uso
+  - seguridad en altura
+  area: Todas las Áreas Operacionales
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  causas_que_previene:
+  - R01CA04
+  factores_degradacion_que_lo_afectan:
+  - R01FD01
+  - R01FD04
+
+- id: R01CP05
+  nombre: Interrupción de tareas en altura por vientos fuertes o lluvias
+  descripcion: 'Protocolo para detener y asegurar las operaciones en altura cuando
+    se presenten condiciones meteorológicas adversas como ráfagas de viento que superen
+    un límite seguro, lluvias intensas o presencia de hielo.
+    '
+  riesgo_asociado: R01
+  tipo_control: preventivo
+  es_critico: false
+  clase_implementacion: administrativo
+  aplicabilidad: Prevención de incidentes
+  tags:
+  - interrupción de tareas
+  - viento
+  - lluvia
+  - condiciones climáticas
+  - seguridad en altura
+  area: Todas las Áreas Operacionales
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  causas_que_previene:
+  - R01CA05
+  factores_degradacion_que_lo_afectan:
+  - R01FD03
+
+- id: R01CP06
+  nombre: Delimitación de zonas de riesgo y control de acceso
+  descripcion: 'Uso de barreras físicas temporales (vallas, cintas, conos) y personal
+    de vigilancia para restringir el acceso a áreas con riesgo de caída, permitiendo
+    solo a personal autorizado y con EPP adecuado.
+    '
+  riesgo_asociado: R01
+  tipo_control: preventivo
+  es_critico: false
+  clase_implementacion: administrativo
+  aplicabilidad: Prevención de incidentes
+  tags:
+  - delimitación de zonas
+  - control de acceso
+  - seguridad en altura
+  - barreras temporales
+  area: Todas las Áreas Operacionales
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  causas_que_previene:
+  - R01CA06
+  factores_degradacion_que_lo_afectan:
+  - R01FD03
+
+- id: R01CM01
+  nombre: Aplicación de primeros auxilios y evacuación de emergencia
+  descripcion: 'Respuesta inmediata para estabilizar al lesionado, proporcionar los
+    primeros auxilios básicos (control de hemorragias, inmovilización), y coordinar
+    su evacuación rápida y segura a un centro médico.
+    '
+  riesgo_asociado: R01
+  tipo_control: mitigacion
+  es_critico: false
+  clase_implementacion: administrativo
+  aplicabilidad: Prevención de incidentes
+  tags:
+  - primeros auxilios
+  - evacuación
+  - emergencia
+  - respuesta
+  - atención médica
+  area: Todas las Áreas Operacionales
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  consecuencias_que_mitiga:
+  - R01CON01
+  - R01CON02
+  - R01CON03
+  - R01CON05
+
+- id: R01CM02
+  nombre: Estabilización del área y retiro de riesgos adicionales
+  descripcion: 'Aseguramiento inmediato del sitio del incidente para prevenir más
+    caídas, acordonamiento, desenergización si es necesario, y retiro de objetos
+    peligrosos o inestables.
+    '
+  riesgo_asociado: R01
+  tipo_control: mitigacion
+  es_critico: false
+  clase_implementacion: tecnico
+  aplicabilidad: Prevención de incidentes
+  tags:
+  - estabilización de área
+  - retiro de riesgos
+  - seguridad de sitio
+  - contención
+  area: Todas las Áreas Operacionales
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  consecuencias_que_mitiga:
+  - R01CON06
+  - R01CON07
+
+- id: R01CM03
+  nombre: Notificación a autoridades y equipo de emergencia (interno/externo)
+  descripcion: 'Comunicación inmediata del incidente a los entes reguladores, servicios
+    de emergencia externos (bomberos, ambulancia) y al equipo de respuesta interna
+    de la organización.
+    '
+  riesgo_asociado: R01
+  tipo_control: mitigacion
+  es_critico: false
+  clase_implementacion: administrativo
+  aplicabilidad: Prevención de incidentes
+  tags:
+  - notificación
+  - autoridades
+  - equipo de emergencia
+  - comunicación
+  area: Todas las Áreas Operacionales
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  consecuencias_que_mitiga:
+  - R01CON02 # Si implica fatalidad, la notificación es crítica para investigación
+  - R01CON03 # Para incidentes que generen daños significativos
+
+- id: R01CM04
+  nombre: Recolección y almacenamiento de herramientas y materiales caídos
+  descripcion: 'Procedimiento para el recojo seguro y el inventario de herramientas
+    y materiales que hayan caído, minimizando riesgos secundarios y facilitando la
+    investigación del incidente.
+    '
+  riesgo_asociado: R01
+  tipo_control: mitigacion
+  es_critico: false
+  clase_implementacion: operativo
+  aplicabilidad: Prevención de incidentes
+  tags:
+  - recolección
+  - almacenamiento
+  - herramientas
+  - materiales
+  - investigación
+  area: Todas las Áreas Operacionales
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  consecuencias_que_mitiga:
+  - R01CON06
+  - R01CON07
+
+- id: R02CC01
+  nombre: Anclaje y etiquetado de herramientas y objetos en altura
+  descripcion: 'Uso obligatorio de eslingas, cuerdas de seguridad, redes o cajas cerradas
+    para asegurar herramientas, materiales y cualquier objeto suelto mientras se trabaja
+    en altura. Incluye etiquetado claro de los elementos asegurados. Su objetivo
+    es evitar su caída accidental por deslizamiento, viento o impacto.
+    '
+  riesgo_asociado: R02
+  tipo_control: preventivo
+  es_critico: true
+  clase_implementacion: ingeniería/administrativo
+  aplicabilidad: Prevención de incidentes
+  tags:
+  - anclaje
+  - etiquetado
+  - herramientas
+  - objetos
+  - seguridad en altura
+  - contención
+  - prevención de caída
+  area: Todas las Áreas Operacionales
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  causas_que_previene:
+  - R02CA01
+  factores_degradacion_que_lo_afectan:
+  - R02FD01
+  - R02FD04
+
+- id: R02CC02
+  nombre: Delimitación y señalización de zonas de exclusión por caída de objetos
+  descripcion: 'Establecimiento y mantenimiento de zonas de seguridad perimetrales
+    claramente demarcadas (cintas, vallas, letreros de "Peligro: Caída de Objetos")
+    bajo áreas de trabajo elevadas o de izaje. Se prohíbe el acceso a personal no
+    autorizado y se realizan monitoreos para asegurar su cumplimiento.
+    '
+  riesgo_asociado: R02
+  tipo_control: preventivo
+  es_critico: true
+  clase_implementacion: administrativo
+  aplicabilidad: Prevención de incidentes
+  tags:
+  - zonas de exclusión
+  - señalización
+  - caída de objetos
+  - seguridad perimetral
+  - prevención
+  - delimitación
+  area: Todas las Áreas Operacionales
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  causas_que_previene:
+  - R02CA02
+  - R02CA04
+  factores_degradacion_que_lo_afectan:
+  - R02FD03
+  - R02FD04
+
+- id: R02CC03
+  nombre: Certificación de operadores y equipos de izaje
+  descripcion: 'Validación formal y periódica de que los operadores de grúas, montacargas
+    y otros equipos de izaje poseen la capacitación y licencia requeridas, y que los
+    equipos de izaje (incluyendo aparejos, eslingas, cadenas) han sido inspeccionados,
+    probados y certificados para su uso seguro y conforme a la normativa.
+    '
+  riesgo_asociado: R02
+  tipo_control: preventivo
+  es_critico: true
+  clase_implementacion: administrativo/técnico
+  aplicabilidad: Prevención de incidentes
+  tags:
+  - certificación
+  - operadores de izaje
+  - equipos de izaje
+  - grúas
+  - aparejos
+  - seguridad operacional
+  - licencia
+  area: Todas las Áreas Operacionales
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  causas_que_previene:
+  - R02CA03
+  factores_degradacion_que_lo_afectan:
+  - R02FD01
+  - R02FD04
+
+- id: R02CC04
+  nombre: Uso de bandejas/redes de contención de escombros en demolición
+  descripcion: 'Instalación de bandejas de recolección, redes de seguridad o túneles
+    de escombros bajo las áreas de demolición o donde hay riesgo de desprendimiento
+    de material. Estas barreras actúan para capturar y contener los objetos o fragmentos
+    que caen, impidiendo que impacten zonas de tránsito o trabajo.
+    '
+  riesgo_asociado: R02
+  tipo_control: preventivo
+  es_critico: true
+  clase_implementacion: ingeniería
+  aplicabilidad: Prevención de incidentes
+  tags:
+  - redes de contención
+  - bandejas de escombros
+  - demolición
+  - contención de objetos
+  - seguridad en altura
+  area: Todas las Áreas Operacionales
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  causas_que_previene:
+  - R02CA04
+  factores_degradacion_que_lo_afectan:
+  - R02FD01
+  - R02FD02
+
+- id: R02CC05
+  nombre: Inspección geomecánica y sostenimiento activo en frentes de trabajo
+  descripcion: 'Evaluación continua de la estabilidad del macizo rocoso o taludes
+    mediante mapeo geológico y monitoreo, seguida de la implementación inmediata de
+    sistemas de sostenimiento (pernos, shotcrete, cuadros) donde se identifique riesgo
+    de desprendimiento de roca o material.
+    '
+  riesgo_asociado: R02
+  tipo_control: preventivo
+  es_critico: true
+  clase_implementacion: ingeniería/técnico
+  aplicabilidad: Prevención de incidentes
+  tags:
+  - geomecánica
+  - sostenimiento
+  - frentes de trabajo
+  - estabilidad
+  - mina
+  - desprendimiento de roca
+  - monitoreo
+  area: Áreas de Minería Subterránea/Superficial
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  causas_que_previene:
+  - R02CA06
+  factores_degradacion_que_lo_afectan:
+  - R02FD01
+  - R02FD02
+
+- id: R02CC06
+  nombre: Plan de Izaje y Maniobras de Carga Críticas (APROBADO)
+  descripcion: 'Documento formal y detallado que describe paso a paso cómo se realizará
+    cada maniobra de izaje crítica (cargas pesadas, complejas, o sobre áreas sensibles).
+    Incluye cálculos de peso, selección de equipo, puntos de anclaje, personal involucrado,
+    comunicaciones, planes de contingencia, y aprobación por ingeniería.
+    '
+  riesgo_asociado: R02
+  tipo_control: preventivo
+  es_critico: true
+  clase_implementacion: administrativo
+  aplicabilidad: Prevención de incidentes
+  tags:
+  - plan de izaje
+  - maniobras de carga
+  - planificación
+  - seguridad operacional
+  - procedimiento
+  - aprobación
+  area: Todas las Áreas Operacionales
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  causas_que_previene:
+  - R02CA03
+  factores_degradacion_que_lo_afectan:
+  - R02FD03
+  - R02FD04
+
+- id: R02CP01
+  nombre: Uso de cuerdas de seguridad para herramientas en altura
+  descripcion: 'Uso de cuerdas elásticas o retractiles para asegurar herramientas
+    de mano al arnés del trabajador, evitando que caigan si se sueltan accidentalmente.
+    '
+  riesgo_asociado: R02
+  tipo_control: preventivo
+  es_critico: false
+  clase_implementacion: EPP/procedimental
+  aplicabilidad: Prevención de incidentes
+  tags:
+  - cuerdas de seguridad
+  - herramientas
+  - EPP
+  - altura
+  - prevención de caída
+  area: Todas las Áreas Operacionales
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  causas_que_previene:
+  - R02CA01
+  factores_degradacion_que_lo_afectan:
+  - R02FD01
+  - R02FD04
+
+- id: R02CP02
+  nombre: Almacenamiento seguro y ordenado de materiales en elevaciones
+  descripcion: 'Mantener las plataformas y áreas elevadas libres de materiales sueltos
+    o apilados de forma inestable, utilizando contenciones adecuadas o retirando el
+    exceso.
+    '
+  riesgo_asociado: R02
+  tipo_control: preventivo
+  es_critico: false
+  clase_implementacion: operativo
+  aplicabilidad: Prevención de incidentes
+  tags:
+  - almacenamiento seguro
+  - materiales
+  - orden
+  - elevaciones
+  - apilamiento
+  area: Todas las Áreas Operacionales
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  causas_que_previene:
+  - R02CA02
+  factores_degradacion_que_lo_afectan:
+  - R02FD03
+  - R02FD04
+
+- id: R02CP03
+  nombre: Demarcación de la zona de caída de carga durante izaje
+  descripcion: 'Establecer un perímetro de seguridad claro y visible alrededor de
+    la carga suspendida durante las operaciones de izaje, prohibiendo el tránsito
+    de personal bajo ella.
+    '
+  riesgo_asociado: R02
+  tipo_control: preventivo
+  es_critico: false
+  clase_implementacion: administrativo
+  aplicabilidad: Prevención de incidentes
+  tags:
+  - zona de caída
+  - izaje
+  - demarcación
+  - carga suspendida
+  - seguridad operacional
+  area: Todas las Áreas Operacionales
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  causas_que_previene:
+  - R02CA03
+  factores_degradacion_que_lo_afectan:
+  - R02FD03
+
+- id: R02CP04
+  nombre: Coordinación y comunicación constante en trabajos de demolición
+  descripcion: 'Mantener una comunicación efectiva entre todo el personal involucrado
+    en trabajos de demolición o desprendimiento, para alertar sobre la caída de material
+    y asegurar el despeje de la zona.
+    '
+  riesgo_asociado: R02
+  tipo_control: preventivo
+  es_critico: false
+  clase_implementacion: administrativo
+  aplicabilidad: Prevención de incidentes
+  tags:
+  - coordinación
+  - comunicación
+  - demolición
+  - desprendimiento
+  - seguridad operacional
+  area: Todas las Áreas Operacionales
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  causas_que_previene:
+  - R02CA04
+  factores_degradacion_que_lo_afectan:
+  - R02FD03
+  - R02FD04
+
+- id: R02CP05
+  nombre: Inspección visual de redes de contención antes de cada turno
+  descripcion: 'Revisión rápida del estado de las redes y mallas de seguridad por
+    el personal de turno para detectar desgarros, anclajes sueltos o cualquier daño
+    que comprometa su efectividad.
+    '
+  riesgo_asociado: R02
+  tipo_control: preventivo
+  es_critico: false
+  clase_implementacion: procedimental
+  aplicabilidad: Prevención de incidentes
+  tags:
+  - inspección visual
+  - redes de contención
+  - mallas
+  - pre-turno
+  - seguridad en altura
+  area: Todas las Áreas Operacionales
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  causas_que_previene:
+  - R02CA05
+  factores_degradacion_que_lo_afectan:
+  - R02FD01
+  - R02FD03
+
+- id: R02CP06
+  nombre: Monitoreo geomecánico básico por observadores de terreno
+  descripcion: 'Observación y reporte diario de signos de inestabilidad (fisuras,
+    caída de pequeños fragmentos, humedad) en frentes y taludes por personal capacitado,
+    para alertar sobre posibles desprendimientos.
+    '
+  riesgo_asociado: R02
+  tipo_control: preventivo
+  es_critico: false
+  clase_implementacion: operativo
+  aplicabilidad: Prevención de incidentes
+  tags:
+  - monitoreo geomecánico
+  - observadores de terreno
+  - inestabilidad
+  - desprendimiento
+  - seguridad minera
+  area: Áreas de Minería Subterránea/Superficial
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  causas_que_previene:
+  - R02CA06
+  factores_degradacion_que_lo_afectan:
+  - R02FD03
+  - R02FD04
+
+- id: R02CM01
+  nombre: Aislamiento y señalización del área de impacto
+  descripcion: 'Delimitación inmediata de la zona donde han caído objetos para prevenir
+    el acceso y exposición de personal no autorizado, y para facilitar el trabajo
+    de equipos de respuesta.
+    '
+  riesgo_asociado: R02
+  tipo_control: mitigacion
+  es_critico: false
+  clase_implementacion: administrativo
+  aplicabilidad: Prevención de incidentes
+  tags:
+  - aislamiento de área
+  - señalización
+  - área de impacto
+  - seguridad de sitio
+  - contención
+  area: Todas las Áreas Operacionales
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  consecuencias_que_mitiga:
+  - R02CON01
+  - R02CON02
+  - R02CON03
+  - R02CON04
+
+- id: R02CM02
+  nombre: Activación de brigada de respuesta a emergencias (primeros auxilios, rescate)
+  descripcion: 'Movilización de brigadas entrenadas para proporcionar primeros auxilios
+    a los lesionados por impacto de objetos, realizar rescate si es necesario, y asegurar
+    la extracción segura de las víctimas.
+    '
+  riesgo_asociado: R02
+  tipo_control: mitigacion
+  es_critico: false
+  clase_implementacion: administrativo
+  aplicabilidad: Prevención de incidentes
+  tags:
+  - brigada de emergencias
+  - primeros auxilios
+  - rescate
+  - impacto de objetos
+  - atención médica
+  area: Todas las Áreas Operacionales
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  consecuencias_que_mitiga:
+  - R02CON01
+  - R02CON02
+  - R01CON04 # Lesiones leves, si el golpe fue menor
+  - R02CON05 # Si la caída de objetos provocó un derrame y la brigada puede contenerlo
+
+- id: R02CM03
+  nombre: Notificación a personal de mantenimiento y operaciones para evaluación de daños
+  descripcion: 'Comunicación inmediata con los equipos de mantenimiento y operaciones
+    para evaluar los daños causados por la caída de objetos a equipos, infraestructura
+    o la interrupción de procesos, y coordinar las acciones de recuperación.
+    '
+  riesgo_asociado: R02
+  tipo_control: mitigacion
+  es_critico: false
+  clase_implementacion: administrativo
+  aplicabilidad: Prevención de incidentes
+  tags:
+  - notificación
+  - mantenimiento
+  - operaciones
+  - evaluación de daños
+  - recuperación
+  - comunicación
+  area: Todas las Áreas Operacionales
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  consecuencias_que_mitiga:
+  - R02CON03
+  - R02CON04
+
+- id: R02CM04
+  nombre: Retiro inmediato de escombros y objetos caídos
+  descripcion: 'Procedimiento de limpieza rápida y segura del área afectada, retirando
+    todos los escombros, objetos caídos o material desprendido para restablecer las
+    condiciones de seguridad y operación.
+    '
+  riesgo_asociado: R02
+  tipo_control: mitigacion
+  es_critico: false
+  clase_implementacion: operativo
+  aplicabilidad: Prevención de incidentes
+  tags:
+  - retiro de escombros
+  - limpieza
+  - objetos caídos
+  - seguridad de sitio
+  - restablecimiento
+  area: Todas las Áreas Operacionales
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  consecuencias_que_mitiga:
+  - R02CON03
+  - R02CON04
+
+- id: R03CC01
+  nombre: Procedimiento de Bloqueo y Etiquetado (LOTO) implementado y auditado
+  descripcion: 'Implementación rigurosa del procedimiento LOTO para asegurar que todas
+    las fuentes de energía peligrosa sean aisladas, bloqueadas y etiquetadas antes
+    de cualquier intervención en equipos o sistemas. Esto incluye la capacitación
+    del personal y auditorías periódicas para asegurar el cumplimiento.
+    '
+  riesgo_asociado: R03
+  tipo_control: preventivo
+  es_critico: true
+  clase_implementacion: administrativo
+  aplicabilidad: Prevención de incidentes
+  tags:
+  - LOTO
+  - bloqueo
+  - etiquetado
+  - desenergización
+  - seguridad eléctrica
+  - procedimiento
+  - auditoría
+  area: Todas las Áreas Operacionales
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  causas_que_previene:
+  - R03CA01
+  factores_degradacion_que_lo_afectan:
+  - R03FD01
+  - R03FD03
+
+- id: R03CC02
+  nombre: Mantenimiento preventivo y correctivo de instalaciones y equipos eléctricos
+  descripcion: 'Programa sistemático de inspección, pruebas y reparaciones de cables,
+    conexiones, tableros, transformadores y equipos eléctricos, para asegurar su buen
+    estado, aislamiento y operatividad. Esto previene fallas, cortocircuitos y contactos
+    inesperados.
+    '
+  riesgo_asociado: R03
+  tipo_control: preventivo
+  es_critico: true
+  clase_implementacion: técnico
+  aplicabilidad: Prevención de incidentes
+  tags:
+  - mantenimiento eléctrico
+  - instalaciones
+  - equipos eléctricos
+  - pruebas
+  - reparación
+  - seguridad eléctrica
+  - aislamiento
+  area: Todas las Áreas Operacionales
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  causas_que_previene:
+  - R03CA02
+  - R03CA06
+  factores_degradacion_que_lo_afectan:
+  - R03FD01
+  - R03FD02
+  - R03FD03
+
+- id: R03CC03
+  nombre: Uso obligatorio y verificación de EPP dieléctrico certificado
+  descripcion: 'Exigencia del uso de EPP específico para riesgos eléctricos (guantes,
+    calzado, casco, protección facial, ropa ignífuga) que esté certificado, en buen
+    estado y adecuado para el nivel de tensión. Incluye inspección pre-uso y pruebas
+    periódicas.
+    '
+  riesgo_asociado: R03
+  tipo_control: preventivo
+  es_critico: true
+  clase_implementacion: EPP/administrativo
+  aplicabilidad: Prevención de incidentes
+  tags:
+  - EPP dieléctrico
+  - guantes
+  - calzado
+  - casco
+  - ropa ignífuga
+  - certificado
+  - seguridad eléctrica
+  - inspección pre-uso
+  area: Todas las Áreas Operacionales
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  causas_que_previene:
+  - R03CA03
+  factores_degradacion_que_lo_afectan:
+  - R03FD01
+  - R03FD02
+
+- id: R03CC04
+  nombre: Demarcación y control de acceso a zonas de riesgo eléctrico
+  descripcion: 'Establecimiento de perímetros de seguridad con barreras físicas (vallas,
+    puertas con llave) y señalización clara de "Peligro Eléctrico", restringiendo
+    el acceso solo a personal autorizado y capacitado. Incluye sistemas de videovigilancia
+    o guardias para monitoreo.
+    '
+  riesgo_asociado: R03
+  tipo_control: preventivo
+  es_critico: true
+  clase_implementacion: ingeniería/administrativo
+  aplicabilidad: Prevención de incidentes
+  tags:
+  - zonas de riesgo eléctrico
+  - control de acceso
+  - demarcación
+  - seguridad perimetral
+  - señalización
+  - acceso restringido
+  area: Todas las Áreas Operacionales
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  causas_que_previene:
+  - R03CA04
+  factores_degradacion_que_lo_afectan:
+  - R03FD03
+
+- id: R03CC05
+  nombre: Capacitación y certificación de personal para trabajos eléctricos
+  descripcion: 'Programa de entrenamiento especializado para electricistas y personal
+    que interviene sistemas eléctricos, abarcando normativas, procedimientos LOTO,
+    rescate eléctrico, primeros auxilios y uso de EPP. La certificación debe ser
+    renovada periódicamente.
+    '
+  riesgo_asociado: R03
+  tipo_control: preventivo
+  es_critico: true
+  clase_implementacion: administrativo
+  aplicabilidad: Prevención de incidentes
+  tags:
+  - capacitación eléctrica
+  - certificación
+  - personal calificado
+  - seguridad eléctrica
+  - LOTO
+  - rescate eléctrico
+  - primeros auxilios
+  area: Todas las Áreas Operacionales
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  causas_que_previene:
+  - R03CA05
+  factores_degradacion_que_lo_afectan:
+  - R03FD04
+
+- id: R03CC06
+  nombre: Dispositivos de protección eléctrica (interruptores diferenciales, termomagnéticos)
+    operativos
+  descripcion: 'Instalación y mantenimiento de sistemas de protección eléctrica como
+    interruptores diferenciales, termomagnéticos y fusibles, que actúan de forma
+    automática y rápida para cortar el suministro de energía ante sobrecargas, cortocircuitos
+    o fugas a tierra, previniendo choques e incendios.
+    '
+  riesgo_asociado: R03
+  tipo_control: preventivo
+  es_critico: true
+  clase_implementacion: ingeniería
+  aplicabilidad: Prevención de incidentes
+  tags:
+  - interruptores diferenciales
+  - termomagnéticos
+  - fusibles
+  - protección eléctrica
+  - seguridad eléctrica
+  - cortocircuito
+  - sobrecarga
+  - fuga a tierra
+  area: Todas las Áreas Operacionales
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  causas_que_previene:
+  - R03CA06
+  factores_degradacion_que_lo_afectan:
+  - R03FD01
+  - R03FD02
+
+- id: R03CP01
+  nombre: Identificación y aislamiento de fuentes de energía antes de intervenir
+  descripcion: 'Procedimiento para identificar todas las fuentes de energía (eléctrica,
+    hidráulica, neumática) de un equipo antes de iniciar cualquier trabajo, y proceder
+    a su aislamiento seguro.
+    '
+  riesgo_asociado: R03
+  tipo_control: preventivo
+  es_critico: false
+  clase_implementacion: procedimental
+  aplicabilidad: Prevención de incidentes
+  tags:
+  - aislamiento de energía
+  - fuentes de energía
+  - seguridad eléctrica
+  - procedimiento
+  area: Todas las Áreas Operacionales
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  causas_que_previene:
+  - R03CA01
+  factores_degradacion_que_lo_afectan:
+  - R03FD03
+  - R03FD04
+
+- id: R03CP02
+  nombre: Inspección pre-uso de cables y herramientas eléctricas
+  descripcion: 'Revisión visual de cables, extensiones, herramientas eléctricas y
+    equipos portátiles antes de cada jornada o uso, buscando daños en el aislamiento,
+    conexiones sueltas o señales de sobrecalentamiento.
+    '
+  riesgo_asociado: R03
+  tipo_control: preventivo
+  es_critico: false
+  clase_implementacion: procedimental
+  aplicabilidad: Prevención de incidentes
+  tags:
+  - inspección pre-uso
+  - cables
+  - herramientas eléctricas
+  - seguridad eléctrica
+  - aislamiento
+  area: Todas las Áreas Operacionales
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  causas_que_previene:
+  - R03CA02
+  factores_degradacion_que_lo_afectan:
+  - R03FD01
+  - R03FD03
+
+- id: R03CP03
+  nombre: Uso de guantes dieléctricos y calzado aislante
+  descripcion: 'Uso obligatorio de guantes y calzado con propiedades aislantes, adecuados
+    al nivel de tensión, para proteger al trabajador de contactos accidentales con
+    corriente eléctrica.
+    '
+  riesgo_asociado: R03
+  tipo_control: preventivo
+  es_critico: false
+  clase_implementacion: EPP
+  aplicabilidad: Prevención de incidentes
+  tags:
+  - guantes dieléctricos
+  - calzado aislante
+  - EPP
+  - seguridad eléctrica
+  - aislamiento
+  area: Todas las Áreas Operacionales
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  causas_que_previene:
+  - R03CA03
+  factores_degradacion_que_lo_afectan:
+  - R03FD01
+  - R03FD02
+
+- id: R03CP04
+  nombre: Instalación de señalética de advertencia de riesgo eléctrico
+  descripcion: 'Colocación de letreros, pegatinas y barreras visuales que advierten
+    claramente sobre la presencia de riesgo eléctrico y prohíben el acceso a personal
+    no autorizado.
+    '
+  riesgo_asociado: R03
+  tipo_control: preventivo
+  es_critico: false
+  clase_implementacion: administrativo
+  aplicabilidad: Prevención de incidentes
+  tags:
+  - señalización eléctrica
+  - advertencia
+  - acceso restringido
+  - seguridad eléctrica
+  area: Todas las Áreas Operacionales
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  causas_que_previene:
+  - R03CA04
+  factores_degradacion_que_lo_afectan:
+  - R03FD03
+
+- id: R03CP05
+  nombre: Cursos de concientización básica en seguridad eléctrica
+  descripcion: 'Cursos cortos y periódicos para todo el personal sobre los peligros
+    básicos de la electricidad, cómo identificar situaciones de riesgo y la importancia
+    de reportarlas.
+    '
+  riesgo_asociado: R03
+  tipo_control: preventivo
+  es_critico: false
+  clase_implementacion: administrativo
+  aplicabilidad: Prevención de incidentes
+  tags:
+  - concientización eléctrica
+  - capacitación
+  - seguridad básica
+  - peligros
+  area: Todas las Áreas Operacionales
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  causas_que_previene:
+  - R03CA05
+  factores_degradacion_que_lo_afectan:
+  - R03FD04
+
+- id: R03CP06
+  nombre: Reporte y aislamiento inmediato de fallas eléctricas
+  descripcion: 'Procedimiento para que cualquier trabajador reporte inmediatamente
+    cualquier falla, chispa, humo o cableado expuesto a supervisión, y la acción
+    para aislar la zona si es seguro hacerlo.
+    '
+  riesgo_asociado: R03
+  tipo_control: preventivo
+  es_critico: false
+  clase_implementacion: procedimental
+  aplicabilidad: Prevención de incidentes
+  tags:
+  - reporte de fallas
+  - aislamiento de zona
+  - seguridad eléctrica
+  - emergencia
+  area: Todas las Áreas Operacionales
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  causas_que_previene:
+  - R03CA06
+  factores_degradacion_que_lo_afectan:
+  - R03FD03
+
+- id: R03CM01
+  nombre: Interrupción de energía de emergencia y rescate de víctima
+  descripcion: 'Protocolo para el corte inmediato del suministro eléctrico de una
+    zona o equipo en caso de contacto con energía, seguido de la evaluación rápida
+    y rescate de la víctima por personal capacitado.
+    '
+  riesgo_asociado: R03
+  tipo_control: mitigacion
+  es_critico: false
+  clase_implementacion: técnico/administrativo
+  aplicabilidad: Prevención de incidentes
+  tags:
+  - interrupción de emergencia
+  - rescate eléctrico
+  - seguridad eléctrica
+  - corte de energía
+  - víctima
+  area: Todas las Áreas Operacionales
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  consecuencias_que_mitiga:
+  - R03CON01
+  - R03CON02
+  - R03CON04
+  - R01CON01 # Para lesiones graves genéricas
+  - R01CON04 # Para lesiones menores genéricas
+
+- id: R03CM02
+  nombre: Activación de brigada de respuesta a emergencias (incendios/derrames químicos)
+  descripcion: 'Movilización de brigadas entrenadas para controlar incendios eléctricos
+    o derrames de fluidos dieléctricos resultantes de un incidente eléctrico.
+    '
+  riesgo_asociado: R03
+  tipo_control: mitigacion
+  es_critico: false
+  clase_implementacion: administrativo
+  aplicabilidad: Prevención de incidentes
+  tags:
+  - brigada de emergencias
+  - incendios eléctricos
+  - derrames químicos
+  - seguridad eléctrica
+  - respuesta
+  area: Todas las Áreas Operacionales
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  consecuencias_que_mitiga:
+  - R03CON03
+  - R03CON05
+  - R03CON06 # Si el disparo de protecciones puede llevar a un incendio o daño mayor
+
+- id: R03CM03
+  nombre: Suministro de atención médica de emergencia y estabilización de quemaduras
+  descripcion: 'Provisión de personal médico capacitado y equipos para la atención
+    inmediata de quemaduras eléctricas y otras lesiones asociadas, incluyendo soporte
+    vital avanzado (RCP) para electrocutados, manejo de quemaduras eléctricas y acceso
+    a desfibriladores externos automáticos (DEA) y equipos de atención de quemaduras.
+    El objetivo es minimizar las consecuencias de la lesión.
+    '
+  riesgo_asociado: R03
+  tipo_control: mitigacion
+  es_critico: false
+  clase_implementacion: administrativo
+  aplicabilidad: Prevención de incidentes
+  tags:
+  - plan de respuesta
+  - emergencia médica
+  - electrocución
+  - quemadura
+  - seguridad eléctrica
+  - RCP
+  - DEA
+  - atención de emergencia
+  - brigadas de primeros auxilios
+  area: Todas las Áreas Operacionales
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  consecuencias_que_mitiga:
+  - R03CON01
+  - R03CON02
+  - R03CON04
+  - R01CON01 # Para lesiones graves genéricas
+  - R01CON04 # Para lesiones menores genéricas
+
+- id: R03CM04
+  nombre: Instalación de cortocircuitadores y puesta a tierra temporales para descarga
+    rápida
+  descripcion: 'Dispositivos de seguridad instalados para crear un camino de baja
+    resistencia a tierra en caso de una descarga accidental o energización inesperada
+    de un circuito. Actúan como una protección final para disipar la energía y proteger
+    al personal de una sobretensión o choque.
+    '
+  riesgo_asociado: R03
+  tipo_control: mitigacion
+  es_critico: false
+  clase_implementacion: tecnico
+  aplicabilidad: Prevención de incidentes
+  tags:
+  - cortocircuitadores
+  - puesta a tierra
+  - descarga eléctrica
+  - seguridad eléctrica
+  - disipación de energía
+  - sobretensión
+  - choque eléctrico
+  area: Todas las Áreas Operacionales
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  consecuencias_que_mitiga:
+  - R03CON05
+  - R03CON06

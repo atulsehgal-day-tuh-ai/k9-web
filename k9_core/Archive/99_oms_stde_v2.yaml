@@ -1,0 +1,446 @@
+id_oms: "OMS_STDE_001"
+version: "2.0"
+nombre: "OMS K9 Mining Safety - Escenario Sintético Aster 12 semanas"
+descripcion_general: >
+  Ontología mínima sintética (OMS) para generar un STDE de 12 semanas previas
+  al lunes crítico del 3 de febrero de 2025. El foco está en tres riesgos
+  principales (R01, R02, R03) y en el comportamiento combinado de
+  observaciones, incidentes y auditorías por área, rol y turno. El lunes
+  crítico se modela como hito posterior a estas 12 semanas.
+
+metadatos:
+  proposito: >
+    Definir un escenario sintético de operación minera para entrenar y probar
+    el enfoque K9 Mining Safety y su modelo proactivo con datos sintéticos
+    controlados.
+  alcance_temporal: "12 semanas previas al lunes crítico"
+  fecha_lunes_critico: "2025-02-03"
+  notas: >
+    Esta OMS v2 asume que el lunes crítico ocurre el 3 de febrero de 2025.
+    Las 12 semanas definidas corresponden al período entre el 11 de noviembre
+    de 2024 y el 2 de febrero de 2025. El patrón de degradación →
+    intervención → recuperación se refleja en las distribuciones semanales y
+    en la trayectoria relativa de los riesgos R01, R02 y R03.
+
+referencias_estructuras:
+  estructura_incidentes: "23_estructura_incidentes_v5.yaml"
+  estructura_observaciones: "24_estructura_observaciones_v6.txt"
+  tipos_incidentes: "25_tipos_incidentes_v1.yaml"
+  tipos_observaciones: "26_tipos_observaciones_v2.yaml"
+  estructura_auditorias: "31_estructura_auditorias_v1.yaml"
+  tipos_auditoria: "32_tipos_auditoria_v1.yaml"
+
+# --------------------------------------------------------------------
+# Escenario de operación sintético
+# --------------------------------------------------------------------
+escenario_operacion:
+  id_escenario: "ESC_STDE_12S_001"
+  nombre: "Escenario sintético Aster - 12 semanas previas a lunes crítico"
+  fecha_inicio: "2024-11-11"   # Lunes
+  numero_semanas: 12
+
+  descripcion: >
+    Escenario de operación minera a cielo abierto con planta, talleres y
+    sistemas de transporte, definido para 12 semanas consecutivas. El lunes
+    crítico ocurre inmediatamente después de este periodo (03-02-2025) y se
+    utilizará como semana de prueba para el modelo proactivo.
+
+  lunes_critico:
+    fecha: "2025-02-03"
+    descripcion: >
+      Día de referencia donde se produce un evento crítico súbito asociado
+      principalmente a R01 (Caída desde Altura), con un incremento inesperado
+      de criticidad que no estaba reflejado plenamente en el ranking previo.
+      R02 mantiene su degradación acumulada como riesgo dominante de fondo,
+      pero el quiebre operacional del lunes se manifiesta en R01.
+    notas_modelo: >
+      El STDE de 12 semanas se usa para entrenar y calibrar las trayectorias
+      previas. El lunes crítico sirve como hito de validación del modelo en la
+      demo.
+
+
+  # Áreas operacionales (desde 13_catalogo_areas_operacionales_v1.yaml)
+  areas_operacionales:
+    - id_area: "MRA"
+      nombre: "Mina Rajo Abierto"
+      descripcion: "Frentes de carguío, transporte, bancos, bermas y accesos."
+    - id_area: "CHP"
+      nombre: "Chancado Primario"
+      descripcion: "Recepción de mineral, tolvas, chancador primario, correas iniciales."
+    - id_area: "TME"
+      nombre: "Taller de Mantenimiento Equipos Móviles"
+      descripcion: "Taller de camiones, palas, equipos auxiliares y apoyo."
+    - id_area: "STM"
+      nombre: "Sistemas de Transporte de Mineral"
+      descripcion: "Correas principales, traspasos, stockpiles intermedios."
+    - id_area: "PLC"
+      nombre: "Planta Concentradora"
+      descripcion: "Molienda, flotación, espesamiento, filtrado y servicios asociados."
+
+  # Turnos simplificados (2x12 horas)
+  turnos:
+    - id_turno: "T1D"
+      nombre: "Turno Día"
+      hora_inicio: "07:00"
+      hora_fin: "19:00"
+      descripcion: "Turno diurno continuo."
+    - id_turno: "T2N"
+      nombre: "Turno Noche"
+      hora_inicio: "19:00"
+      hora_fin: "07:00"
+      descripcion: "Turno nocturno continuo."
+
+  # Roles clave por área (tomados del catálogo de roles, no sólo mina)
+  roles_clave:
+    # Mina Rajo Abierto
+    - id_rol: "MRA_ROL_01"
+      nombre: "Operador Camión de Extracción"
+      area_operacional: "MRA"
+    - id_rol: "MRA_ROL_02"
+      nombre: "Operador Palas / Cargador Frontal"
+      area_operacional: "MRA"
+
+    # Chancado Primario
+    - id_rol: "CHP_ROL_01"
+      nombre: "Operador Chancado Primario"
+      area_operacional: "CHP"
+    - id_rol: "CHP_ROL_02"
+      nombre: "Mantenedor Mecánico Chancado"
+      area_operacional: "CHP"
+
+    # Taller Mantención Equipos
+    - id_rol: "TME_ROL_01"
+      nombre: "Mecánico Equipos Móviles"
+      area_operacional: "TME"
+    - id_rol: "TME_ROL_02"
+      nombre: "Supervisor Mantención Equipos Móviles"
+      area_operacional: "TME"
+
+    # Sistemas de Transporte
+    - id_rol: "STM_ROL_01"
+      nombre: "Operador Correas de Transporte"
+      area_operacional: "STM"
+    - id_rol: "STM_ROL_02"
+      nombre: "Mantenedor Correas y Traspasos"
+      area_operacional: "STM"
+
+    # Planta Concentradora
+    - id_rol: "PLC_ROL_01"
+      nombre: "Operador Sala de Control Planta"
+      area_operacional: "PLC"
+    - id_rol: "PLC_ROL_02"
+      nombre: "Operador Terreno Planta"
+      area_operacional: "PLC"
+
+  parametros_STDE:
+    poblacion_base_trabajadores: 120
+    unidad_tasas: "por_100_trabajadores_por_semana"
+    notas: >
+      Las tasas definidas en las distribuciones semanales se interpretan como
+      conteos esperados por 100 trabajadores por semana. El notebook de
+      generación de STDE las convertirá en lambdas diarias (distribución
+      Poisson) para observaciones, incidentes y auditorías.
+
+# --------------------------------------------------------------------
+# Riesgos considerados en esta OMS
+# --------------------------------------------------------------------
+riesgos_modelados:
+  - id_riesgo: "R01"
+    nombre: "Caída desde Altura"
+    descripcion: >
+      Riesgo crítico asociado a trabajos en altura, plataformas, escaleras,
+      equipos de gran tamaño y bordes de bancos. Su trayectoria de 12 semanas
+      muestra un aumento moderado de señales previas al lunes crítico, pero
+      no tan pronunciado como R02.
+  - id_riesgo: "R02"
+    nombre: "Caída de Objetos"
+    descripcion: >
+      Riesgo principal de la OMS. Presenta la degradación más fuerte en las
+      12 semanas previas al lunes crítico, con aumento de OCC, casi incidentes
+      e incidentes con lesión. Es el riesgo que lidera el ranking en las
+      últimas semanas.
+  - id_riesgo: "R03"
+    nombre: "Contacto con Energía Eléctrica"
+    descripcion: >
+      Riesgo relevante, pero con frecuencia más baja. Muestra señales
+      intermitentes de degradación, especialmente en Talleres y Planta, sin
+      llegar a los niveles de R02.
+
+otros_riesgos:
+  descripcion: >
+    El catálogo completo de riesgos puede contener otros IDs adicionales
+    (R04, R05, etc.). En esta OMS v2 se asume que dichos riesgos existen como
+    IDs, pero no se modelan trayectorias ni análisis detallado; sólo se
+    consideran explícitamente R01, R02 y R03 para efectos de demostración.
+
+# --------------------------------------------------------------------
+# STDE: definición de tipos de registros
+# --------------------------------------------------------------------
+stde:
+  observaciones:
+    descripcion: >
+      Observaciones de conducta o condición en terreno. Incluye observaciones
+      preventivas de gestión (OPG) y observaciones de condición crítica (OCC).
+    tipo_observaciones_validos:
+      - codigo: "OPG"
+        nombre: "Observación Preventiva de Gestión"
+        referencia_estructura: "24_estructura_observaciones_v6.txt"
+      - codigo: "OCC"
+        nombre: "Observación de Condición Crítica"
+        referencia_estructura: "24_estructura_observaciones_v6.txt"
+
+  incidentes:
+    descripcion: >
+      Eventos no deseados asociados a los riesgos modelados. Se agrupan en
+      incidentes mayores, medianos, leves y sin lesión.
+    tipos_incidentes_validos:
+      - codigo: "IMAY"
+        nombre: "Incidente Mayor con Lesión"
+        referencia_estructura: "23_estructura_incidentes_v5.yaml"
+      - codigo: "IMED"
+        nombre: "Incidente Mediano con Lesión"
+        referencia_estructura: "23_estructura_incidentes_v5.yaml"
+      - codigo: "ILEV"
+        nombre: "Incidente Leve con Lesión"
+        referencia_estructura: "23_estructura_incidentes_v5.yaml"
+      - codigo: "INMI"
+        nombre: "Incidente sin Lesión / Casi Incidente"
+        referencia_estructura: "23_estructura_incidentes_v5.yaml"
+
+  auditorias:
+    descripcion: >
+      Auditorías y verificaciones de campo que capturan el nivel de cumplimiento
+      de controles críticos y otros requisitos.
+    tipos_auditoria_validos:
+      - codigo: "AUC"
+        nombre: "Auditoría / Inspección en Cumplimiento"
+        referencia_estructura: "31_estructura_auditorias_v1.yaml"
+      - codigo: "AUF"
+        nombre: "Auditoría / Inspección con Hallazgos (No Cumplimiento)"
+        referencia_estructura: "31_estructura_auditorias_v1.yaml"
+
+# --------------------------------------------------------------------
+# Distribuciones sintéticas por semana
+# Basadas en el patrón 7S (semanas 1–7) y extendidas a 12 semanas
+# para cubrir todo el periodo previo al lunes crítico.
+# --------------------------------------------------------------------
+distribuciones:
+  semana_1:
+    nombre: "Semana 1 - Base Estable"
+    descripcion: >
+      Semana de referencia. Niveles estables de observaciones,
+      incidentes bajos y auditorías regulares.
+    observaciones_por_100:
+      OPG: 22
+      OCC: 3
+    incidentes_por_100:
+      IMAY: 0.1
+      IMED: 0.5
+      ILEV: 1.0
+      INMI: 2.5
+    auditorias_por_100:
+      AUC: 1.5
+      AUF: 0.3
+
+  semana_2:
+    nombre: "Semana 2 - Inicio Degradación"
+    descripcion: >
+      Leve caída en OPG y leve aumento en OCC y casi incidentes.
+    observaciones_por_100:
+      OPG: 18
+      OCC: 4
+    incidentes_por_100:
+      IMAY: 0.1
+      IMED: 0.6
+      ILEV: 1.2
+      INMI: 3.2
+    auditorias_por_100:
+      AUC: 1.4
+      AUF: 0.4
+
+  semana_3:
+    nombre: "Semana 3 - Degradación Sostenida"
+    descripcion: >
+      Menos observaciones preventivas, más condiciones críticas y
+      aumento gradual de incidentes leves y casi incidentes.
+    observaciones_por_100:
+      OPG: 14
+      OCC: 5
+    incidentes_por_100:
+      IMAY: 0.2
+      IMED: 0.8
+      ILEV: 1.6
+      INMI: 3.8
+    auditorias_por_100:
+      AUC: 1.3
+      AUF: 0.6
+
+  semana_4:
+    nombre: "Semana 4 - Pico de Degradación"
+    descripcion: >
+      Semana de máxima degradación en señales preventivas, OCC alto y
+      pico de incidentes, en especial incidentes con lesión (IMED, ILEV)
+      y un posible IMAY. En el modelo conceptual, esta semana antecede
+      al entorno de lunes crítico del periodo extendido.
+    observaciones_por_100:
+      OPG: 10
+      OCC: 7
+    incidentes_por_100:
+      IMAY: 0.3
+      IMED: 1.1
+      ILEV: 2.2
+      INMI: 4.5
+    auditorias_por_100:
+      AUC: 1.0
+      AUF: 0.9
+
+  semana_5:
+    nombre: "Semana 5 - Intervención y Contención"
+    descripcion: >
+      Se aplican acciones correctivas después del pico de degradación.
+      Aumentan observaciones, se mantienen auditorías con foco fuerte
+      en cumplimiento, disminuyen incidentes graves.
+    observaciones_por_100:
+      OPG: 24
+      OCC: 4
+    incidentes_por_100:
+      IMAY: 0.1
+      IMED: 0.6
+      ILEV: 1.3
+      INMI: 3.0
+    auditorias_por_100:
+      AUC: 2.0
+      AUF: 0.7
+
+  semana_6:
+    nombre: "Semana 6 - Recuperación"
+    descripcion: >
+      Recuperación hacia niveles mejores que la base. Más observaciones
+      preventivas, OCC bajando, incidentes casi al nivel de semana 1.
+    observaciones_por_100:
+      OPG: 26
+      OCC: 3
+    incidentes_por_100:
+      IMAY: 0.05
+      IMED: 0.4
+      ILEV: 1.0
+      INMI: 2.3
+    auditorias_por_100:
+      AUC: 1.8
+      AUF: 0.4
+
+  semana_7:
+    nombre: "Semana 7 - Estabilización"
+    descripcion: >
+      Niveles estabilizados post-intervención, con buena gestión
+      preventiva y tasas bajas de incidentes.
+    observaciones_por_100:
+      OPG: 25
+      OCC: 3
+    incidentes_por_100:
+      IMAY: 0.05
+      IMED: 0.3
+      ILEV: 0.8
+      INMI: 2.0
+    auditorias_por_100:
+      AUC: 1.6
+      AUF: 0.3
+
+  # Extensión a 12 semanas consistente con el Texto 3:
+  # - Se mantiene una recuperación relativa, pero no perfecta.
+  # - R02 sigue mostrando señales más inestables que R01 y R03.
+  # - Semana 12 queda inmediatamente antes del lunes crítico real.
+
+  semana_8:
+    nombre: "Semana 8 - Post-Estabilización Temprana"
+    descripcion: >
+      Se mantiene un buen nivel de observaciones preventivas, con OCC
+      controlado. Algunos incidentes leves aún aparecen, especialmente
+      asociados a R02 (Caída de Objetos) en áreas TME y PLC.
+    observaciones_por_100:
+      OPG: 24
+      OCC: 3
+    incidentes_por_100:
+      IMAY: 0.05
+      IMED: 0.3
+      ILEV: 0.9
+      INMI: 2.1
+    auditorias_por_100:
+      AUC: 1.7
+      AUF: 0.4
+
+  semana_9:
+    nombre: "Semana 9 - Ligera Degradación Localizada"
+    descripcion: >
+      Ligera caída de OPG y aumento de OCC asociado a cambios en la
+      carga de trabajo y a presión de producción. La degradación es
+      más visible en R02 que en R01 y R03.
+    observaciones_por_100:
+      OPG: 22
+      OCC: 4
+    incidentes_por_100:
+      IMAY: 0.1
+      IMED: 0.4
+      ILEV: 1.1
+      INMI: 2.6
+    auditorias_por_100:
+      AUC: 1.6
+      AUF: 0.5
+
+  semana_10:
+    nombre: "Semana 10 - Nuevo Foco Preventivo"
+    descripcion: >
+      Se refuerzan campañas de observaciones preventivas y se ejecutan
+      planes de acción de auditorías anteriores. R01 y R03 mejoran, pero
+      R02 se mantiene como riesgo dominante en el ranking.
+    observaciones_por_100:
+      OPG: 27
+      OCC: 3
+    incidentes_por_100:
+      IMAY: 0.05
+      IMED: 0.3
+      ILEV: 0.9
+      INMI: 2.0
+    auditorias_por_100:
+      AUC: 1.9
+      AUF: 0.4
+
+  semana_11:
+    nombre: "Semana 11 - Consolidación Parcial"
+    descripcion: >
+      La operación parece estable a nivel agregado, pero persisten
+      focos específicos con señales débiles de degradación vinculadas
+      a R02. El modelo proactivo debe ser capaz de detectarlas a pesar
+      de que los agregados no lucen críticos.
+    observaciones_por_100:
+      OPG: 25
+      OCC: 3
+    incidentes_por_100:
+      IMAY: 0.05
+      IMED: 0.3
+      ILEV: 0.8
+      INMI: 2.1
+    auditorias_por_100:
+      AUC: 1.7
+      AUF: 0.4
+
+  semana_12:
+    nombre: "Semana 12 - Semana Previa al Lunes Crítico"
+    descripcion: >
+      Semana inmediatamente anterior al lunes crítico real (03-02-2025).
+      A nivel agregado los indicadores aún parecen razonables, pero se
+      observa un leve aumento de OCC y casi incidentes, especialmente
+      asociados a R02 y en ciertas áreas clave. Esta asimetría es la
+      base para que el modelo proactivo anticipe el riesgo, incluso
+      antes de que los indicadores tradicionales 'exploten'.
+    observaciones_por_100:
+      OPG: 23
+      OCC: 4
+    incidentes_por_100:
+      IMAY: 0.1
+      IMED: 0.4
+      ILEV: 1.0
+      INMI: 2.7
+    auditorias_por_100:
+      AUC: 1.6
+      AUF: 0.5

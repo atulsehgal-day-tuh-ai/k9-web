@@ -1,0 +1,122 @@
+- id: SEV1
+  nivel: Leve
+  severidad_agrupada: BAJA
+  descripcion: Este nivel de severidad se aplica a incidentes con **consecuencias
+    mínimas**. Implica **ningún tiempo perdido** para el trabajador afectado, quien
+    puede continuar sus funciones sin interrupción o solo con un breve descanso. **No
+    requiere atención médica especializada**, limitándose a primeros auxilios básicos
+    (ej. limpieza de rasguños, aplicación de un vendaje). En cuanto a daños materiales,
+    estos son **superficiales o insignificantes**, sin impacto en la operatividad
+    del equipo o infraestructura (ej. un rayón menor, una pieza pequeña fácilmente
+    reemplazable). También se aplica a **condiciones inseguras identificadas que no
+    han generado un evento**, pero que, de materializarse, tendrían un impacto bajo.
+  aplicable_a:
+  - IMEN
+  - NMS
+  - PELI
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Clasificación de severidad
+  registro_aplicable_a:
+  - incidente
+  tags:
+  - clasificación severidad
+  - leve
+  - severidad baja
+  - incidente menor
+  - near miss
+  - peligro detectado
+- id: SEV2
+  nivel: Moderado
+  severidad_agrupada: BAJA
+  descripcion: Este nivel describe incidentes con **consecuencias intermedias**. Se
+    caracteriza por **lesiones leves que requieren atención médica básica**, pero
+    que no impiden el retorno al trabajo en el mismo turno o al día siguiente (ej.
+    esguinces leves, cortes superficiales que necesitan sutura simple, irritación
+    ocular). Puede implicar **un corto período de reposo o la reasignación a tareas
+    livianas** sin que ello signifique una pérdida completa de días laborales. En
+    el ámbito material, los daños son **menores pero requieren reparación o reemplazo**,
+    con una **interrupción mínima de la operación** (ej. falla de un componente menor
+    que detiene un equipo por menos de 2 horas, daño a una herramienta especializada).
+  aplicable_a:
+  - IMEN
+  - NMS
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Clasificación de severidad
+  registro_aplicable_a:
+  - incidente
+  tags:
+  - clasificación severidad
+  - moderado
+  - severidad baja
+  - incidente menor
+  - near miss
+- id: SEV3
+  nivel: Alto Potencial
+  severidad_agrupada: ALTA
+  descripcion: Este nivel se refiere a **eventos que no generaron consecuencias reales
+    o daños visibles, pero que poseían un alto potencial de causar lesiones graves
+    o fatalidad, o daños materiales significativos**. Es crucial para el análisis
+    preventivo, ya que indica una falla crítica en las barreras de control que, bajo
+    circunstancias ligeramente diferentes, habría resultado en un incidente mayor.
+    Ejemplos incluyen un "near miss" donde un objeto pesado cayó a centímetros de
+    un trabajador, una descarga eléctrica que no afectó a la persona por el uso justo
+    de EPP, o un equipo que estuvo a punto de colapsar. No hay lesión ni daño directo,
+    pero la **probabilidad de una consecuencia grave era inminente**.
+  aplicable_a:
+  - NMS
+  - PELI
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Clasificación de severidad
+  registro_aplicable_a:
+  - incidente
+  tags:
+  - clasificación severidad
+  - alto potencial
+  - severidad alta
+  - near miss
+  - peligro detectado
+- id: SEV4
+  nivel: Grave
+  severidad_agrupada: ALTA
+  descripcion: Este nivel indica **incidentes con consecuencias serias y de alto impacto**.
+    Implica **lesiones incapacitantes** que requieren hospitalización, intervenciones
+    quirúrgicas, o que generan una **pérdida prolongada de la capacidad laboral**
+    (ej. fracturas complejas, quemaduras de segundo o tercer grado, amputaciones,
+    traumatismos craneoencefálicos). En el ámbito material, se refiere a **daños extensos
+    a equipos críticos o infraestructura**, que resultan en una **paralización significativa
+    de la operación** (ej. colapso de una estructura, incendio que destruye una sección
+    de la planta, daño irreparable a maquinaria principal). Estos incidentes tienen
+    un **alto impacto en la producción, costos y reputación**.
+  aplicable_a:
+  - IMAY
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Clasificación de severidad
+  registro_aplicable_a:
+  - incidente
+  tags:
+  - clasificación severidad
+  - grave
+  - severidad alta
+  - incidente mayor
+- id: SEV5
+  nivel: Fatal
+  severidad_agrupada: ALTA
+  descripcion: Este es el nivel de severidad más crítico, indicando un incidente con
+    **resultado de muerte**, ya sea de forma inmediata en el lugar del evento o posterior
+    debido a las lesiones. Este tipo de incidente invariablemente involucra **fallas
+    múltiples y sistémicas de los controles de seguridad**. La investigación de un
+    evento fatal es obligatoria y se realiza con metodologías exhaustivas como ICAM,
+    buscando identificar todas las causas raíz y deficiencias. Representa la **máxima
+    expresión de riesgo materializado** y tiene profundas implicaciones éticas, legales,
+    operacionales y de reputación para la organización.
+  aplicable_a:
+  - IMAY
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Clasificación de severidad
+  registro_aplicable_a:
+  - incidente
+  tags:
+  - clasificación severidad
+  - fatal
+  - severidad alta
+  - incidente mayor

@@ -1,0 +1,223 @@
+- tipo_observacion: OPG 
+  nombre: Observación Preventiva General
+  descripcion: Registro de condiciones inseguras o actos inseguros detectados en el entorno laboral que no causan una consecuencia inmediata, pero sí representan un potencial de riesgo.
+  estructura_campos:
+    campos_obligatorios:
+      - tipo_observacion:
+          type: string
+          ref: tipos_observaciones
+          description: Código del tipo de observación, ej. OPG u OCC.
+      - id_observacion:
+          type: string
+          description: ID único y consecutivo de la observación.
+      - fecha:
+          type: date
+          format: YYYY-MM-DD
+          description: Fecha de la observación.
+      - hora:
+          type: time
+          format: HH:MM
+          description: Hora de la observación (formato 24h).
+      - area_operacional:
+          type: string
+          ref: catalogo_areas_operacionales
+          description: Área operacional donde se realizó la observación.
+      - rol_observador:
+          type: string
+          ref: catalogo_roles
+          description: Rol que realizó la observación.
+      - tarea_asociada:
+          type: string
+          ref: catalogo_roles_tareas
+          description: Tarea durante la cual se detectó el peligro.
+      - riesgo_detectado:
+          type: string
+          ref: catalogo_peligros_detectados
+          description: Peligro identificado.
+      - descripcion:
+          type: text
+          description: Descripción detallada de la condición o acto observado.
+      - controles_relacionados:
+          type: list
+          ref: catalogo_controles
+          optional: true
+          description: Lista de controles observados directa o indirectamente durante el evento.
+      - factores_exposicion_relacionados:
+          type: list
+          ref: catalogo_factores_exposicion
+          optional: true
+          description: Lista de factores de exposición presentes en el contexto observado.
+      - evidencia_fotografica:
+          type: string
+          optional: true
+          description: URL o referencia a imagen de evidencia.
+      - accion_inmediata_tomada:
+          type: text
+          optional: true
+          description: Descripción de la acción inmediata tomada.
+      - accion_recomendada_futura:
+          type: string
+          ref: catalogo_acciones_correctivas
+          optional: true
+          description: Acción correctiva recomendada, si aplica.
+      # --- IDs opcionales para tabular determinista ---
+      - area_operacional_id:
+          type: string
+          ref: catalogo_areas_operacionales
+          optional: true
+          description: ID del área operacional (si se conoce).
+      - rol_observador_id:
+          type: string
+          ref: catalogo_roles
+          optional: true
+          description: ID del rol del observador.
+      - tarea_asociada_id:
+          type: string
+          ref: catalogo_roles_tareas
+          optional: true
+          description: ID de la tarea asociada.
+      - riesgo_detectado_id:
+          type: string
+          ref: catalogo_peligros_detectados
+          optional: true
+          description: ID del peligro identificado.
+      - controles_relacionados_ids:
+          type: list
+          ref: catalogo_controles
+          optional: true
+          description: IDs de los controles relacionados.
+      - factores_exposicion_relacionados_ids:
+          type: list
+          ref: catalogo_factores_exposicion
+          optional: true
+          description: IDs de factores de exposición relacionados.
+      - accion_recomendada_futura_id:
+          type: string
+          ref: catalogo_acciones_correctivas
+          optional: true
+          description: ID de la acción correctiva recomendada.
+  metodo_observacion: OBS
+  asociacion_bowtie: false
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Registro de observaciones de seguridad
+  registro_aplicable_a:
+    - observacion
+  tags:
+    - observación preventiva general
+    - condiciones inseguras
+    - actos peligrosos
+    - documentación de campo
+    - recomendaciones
+
+- tipo_observacion: OCC
+  nombre: Observación de Control Crítico
+  descripcion: Registro detallado del estado, uso y efectividad de un control crítico en terreno. Este tipo de observación busca verificar si el control está implementado, mantenido y utilizado correctamente, y si cumple su función de prevenir eventos graves asociados al riesgo principal.
+  estructura_campos:
+    campos_obligatorios:
+      - tipo_observacion:
+          type: string
+          ref: tipos_observaciones
+          description: Código del tipo de observación, ej. OPG u OCC.
+      - id_observacion:
+          type: string
+          description: ID único y consecutivo de la observación.
+      - fecha:
+          type: date
+          format: YYYY-MM-DD
+          description: Fecha de la observación.
+      - hora:
+          type: time
+          format: HH:MM
+          description: Hora de la observación (formato 24h).
+      - area_operacional:
+          type: string
+          ref: catalogo_areas_operacionales
+          description: Área operacional donde se realizó la observación.
+      - rol_observador:
+          type: string
+          ref: catalogo_roles
+          description: Rol que realizó la observación.
+      - tarea_asociada:
+          type: string
+          ref: catalogo_roles_tareas
+          description: Tarea asociada al contexto del control crítico observado.
+      - control_relacionado:
+          type: string
+          ref: catalogo_controles
+          filtro:
+            tipo_control: critico
+          description: Control crítico observado.
+      - descripcion:
+          type: text
+          description: Descripción de la condición, implementación o desempeño del control crítico.
+      - riesgo_asociado:
+          type: string
+          ref: catalogo_riesgos
+          description: Riesgo principal que el control crítico busca prevenir.
+      - factores_exposicion_relacionados:
+          type: list
+          ref: catalogo_factores_exposicion
+          optional: true
+          description: Lista de factores de exposición presentes durante la observación.
+      - evidencia_fotografica:
+          type: string
+          optional: true
+          description: URL o referencia a imagen de evidencia.
+      - accion_inmediata_tomada:
+          type: text
+          optional: true
+          description: Descripción de la acción inmediata tomada frente a hallazgos observados.
+      - accion_recomendada_futura:
+          type: string
+          ref: catalogo_acciones_correctivas
+          optional: true
+          description: Acción correctiva recomendada, si aplica.
+      # --- IDs opcionales para tabular determinista ---
+      - area_operacional_id:
+          type: string
+          ref: catalogo_areas_operacionales
+          optional: true
+          description: ID del área operacional (si se conoce).
+      - rol_observador_id:
+          type: string
+          ref: catalogo_roles
+          optional: true
+          description: ID del rol del observador.
+      - tarea_asociada_id:
+          type: string
+          ref: catalogo_roles_tareas
+          optional: true
+          description: ID de la tarea asociada.
+      - control_relacionado_id:
+          type: string
+          ref: catalogo_controles
+          optional: true
+          description: ID del control crítico observado.
+      - riesgo_asociado_id:
+          type: string
+          ref: catalogo_riesgos
+          optional: true
+          description: ID del riesgo principal que previene el control.
+      - factores_exposicion_relacionados_ids:
+          type: list
+          ref: catalogo_factores_exposicion
+          optional: true
+          description: IDs de factores de exposición relacionados.
+      - accion_recomendada_futura_id:
+          type: string
+          ref: catalogo_acciones_correctivas
+          optional: true
+          description: ID de la acción correctiva recomendada.
+  metodo_observacion: OBS
+  asociacion_bowtie: true
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Observación de controles críticos de seguridad
+  registro_aplicable_a:
+    - observacion
+  tags:
+    - control crítico
+    - verificación de campo
+    - cumplimiento operacional
+    - prevención de incidentes
+    - controles clave
+

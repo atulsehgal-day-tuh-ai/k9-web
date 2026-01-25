@@ -1,0 +1,2669 @@
+- id: P001
+  nombre: Herramientas sueltas en altura
+  descripcion: Presencia de herramientas no aseguradas sobre plataformas elevadas,
+    con riesgo de caída hacia personal u otros niveles.
+  riesgo_principal: Caída de objetos
+  clasificacion: Condición peligrosa
+  area: Planta Concentradora
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - caída_objetos
+  - objetos_sueltos
+  - altura
+  - plataforma
+  - seguridad_operacional
+  riesgo_principal_id: R02
+  area_id: PLC
+- id: P002
+  nombre: Barandas removidas en plataformas
+  descripcion: Se observa plataforma sin protección perimetral, incrementando el riesgo
+    de caída a distinto nivel.
+  riesgo_principal: Caída de altura
+  clasificacion: Condición peligrosa
+  area: Planta de Chancado Primario
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - caída_altura
+  - barandas
+  - protección_perimetral
+  - plataforma
+  - desnivel
+  - seguridad_estructural
+  riesgo_principal_id: R01
+  area_id: CHP
+- id: P003
+  nombre: Cableado eléctrico expuesto
+  descripcion: Instalación eléctrica con conductores a la vista, sin aislamiento ni
+    señalización de energía presente.
+  riesgo_principal: Contacto con energía
+  clasificacion: Condición peligrosa
+  area: Taller de Mantenimiento Eléctrico
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - eléctrico
+  - cableado
+  - exposición_energía
+  - aislamiento_deficiente
+  - riesgo_eléctrico
+  - infraestructura_eléctrica
+  riesgo_principal_id: NA
+  area_id: TME
+- id: P004
+  nombre: Falta de señalización de carga suspendida
+  descripcion: Ausencia de avisos o barreras que adviertan sobre operaciones de izaje
+    de cargas.
+  riesgo_principal: Atrapamiento / Golpe por
+  clasificacion: Condición peligrosa
+  area: Zona de Izaje
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - izaje_cargas
+  - señalización
+  - carga_suspendida
+  - atropellamiento
+  - seguridad_operacional
+  riesgo_principal_id: NA
+  area_id:
+  - MRA
+  - CHP
+  - TME
+  - STM
+  - PLC
+- id: P005
+  nombre: Acumulación de polvo en vías de tránsito
+  descripcion: Presencia excesiva de polvo mineral en accesos peatonales o vehiculares,
+    reduciendo visibilidad y creando riesgo de resbalones.
+  riesgo_principal: Resbalones y Caídas
+  clasificacion: Condición peligrosa
+  area: Vías de Tránsito de Mina
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - polvo_mineral
+  - resbalones
+  - caídas
+  - visibilidad_reducida
+  - vías_tránsito
+  - limpieza
+  riesgo_principal_id: NA
+  area_id: NA
+- id: P006
+  nombre: Equipo pesado sin baliza o alarma de retroceso
+  descripcion: Maquinaria en movimiento sin dispositivos de advertencia sonora o visual.
+  riesgo_principal: Atropellamiento
+  clasificacion: Condición peligrosa
+  area: Área de Movimiento de Maquinaria
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - equipo_pesado
+  - baliza
+  - alarma_retroceso
+  - atropellamiento
+  - visibilidad
+  - seguridad_vehicular
+  riesgo_principal_id: NA
+  area_id:
+  - MRA
+  - CHP
+  - TME
+  - STM
+  - PLC
+- id: P007
+  nombre: Falta de aislamiento de energía (LOTO)
+  descripcion: Realización de mantenimiento o reparación de equipos sin bloqueo y
+    etiquetado de fuentes de energía.
+  riesgo_principal: Contacto con energía
+  clasificacion: Acto inseguro
+  area: Área de Mantenimiento Mecánico
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - LOTO
+  - bloqueo_etiquetado
+  - aislamiento_energía
+  - mantenimiento_equipos
+  - energía_peligrosa
+  - eléctrico
+  - mecánico
+  - hidráulico
+  - neumático
+  riesgo_principal_id: NA
+  area_id:
+  - MRA
+  - CHP
+  - TME
+  - STM
+  - PLC
+- id: P008
+  nombre: Pasillos obstruidos con materiales
+  descripcion: Vías de escape o acceso bloqueadas por materiales, herramientas o escombros.
+  riesgo_principal: Caídas al mismo nivel / Dificultad de evacuación
+  clasificacion: Condición peligrosa
+  area: Almacén de Materiales
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - pasillos_obstruidos
+  - evacuación
+  - acceso_emergencia
+  - orden_limpieza
+  - caídas_mismo_nivel
+  riesgo_principal_id: NA
+  area_id:
+  - MRA
+  - CHP
+  - TME
+  - STM
+  - PLC
+- id: P009
+  nombre: Uso inadecuado de EPP
+  descripcion: Trabajador utilizando EPP incorrecto para la tarea, dañado, o no ajustado.
+  riesgo_principal: Exposición a riesgos
+  clasificacion: Acto inseguro
+  area: Área de Trabajo General
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - EPP_inadecuado
+  - uso_incorrecto_EPP
+  - EPP_dañado
+  - protección_personal
+  - seguridad_trabajador
+  riesgo_principal_id: NA
+  area_id:
+  - MRA
+  - CHP
+  - TME
+  - STM
+  - PLC
+- id: P010
+  nombre: Falta de ventilación en espacios confinados
+  descripcion: Ausencia de sistemas de extracción o inyección de aire fresco en espacios
+    con potencial acumulación de gases o deficiencia de oxígeno.
+  riesgo_principal: Asfixia / Intoxicación
+  clasificacion: Condición peligrosa
+  area: Espacios Confinados
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - espacios_confinados
+  - ventilación_deficiente
+  - gases_tóxicos
+  - deficiencia_oxígeno
+  - asfixia
+  - intoxicación_gases
+  riesgo_principal_id: NA
+  area_id:
+  - MRA
+  - CHP
+  - TME
+  - STM
+  - PLC
+- id: P011
+  nombre: Zanja o excavación sin señalizar/proteger
+  descripcion: Abertura en el terreno sin barreras, tapas o señalización que adviertan
+    de su presencia y profundidad.
+  riesgo_principal: Caída a distinto nivel
+  clasificacion: Condición peligrosa
+  area: Zona de Construcción / Excavación
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - excavación
+  - zanja
+  - caída_distinto_nivel
+  - señalización
+  - protección_perimetral
+  - obra_civil
+  riesgo_principal_id: NA
+  area_id: NA
+- id: P012
+  nombre: Sustancias químicas sin etiquetar
+  descripcion: Contenedores de productos químicos sin identificación clara de su contenido
+    o riesgos.
+  riesgo_principal: Contacto con sustancias peligrosas
+  clasificacion: Condición peligrosa
+  area: Almacén de Químicos
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - sustancias_químicas
+  - sin_etiquetar
+  - riesgo_químico
+  - identificación_peligros
+  - almacenamiento_químicos
+  riesgo_principal_id: NA
+  area_id:
+  - MRA
+  - CHP
+  - TME
+  - STM
+  - PLC
+- id: P013
+  nombre: Ruido excesivo sin protección auditiva
+  descripcion: Niveles de ruido por encima de los límites permisibles en áreas de
+    trabajo, con personal sin EPP auditivo.
+  riesgo_principal: Hipoacusia inducida por ruido
+  clasificacion: Condición peligrosa / Acto inseguro (si el EPP es obligatorio)
+  area: Planta Concentradora / Chancado
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - ruido_excesivo
+  - protección_auditiva
+  - hipoacusia
+  - exposición_ruido
+  - salud_ocupacional
+  riesgo_principal_id: NA
+  area_id:
+  - PLC
+  - CHP
+- id: P014
+  nombre: Ausencia de guardas de seguridad en maquinaria
+  descripcion: Partes móviles de equipos sin protección para evitar atrapamientos
+    o contacto accidental.
+  riesgo_principal: Atrapamiento / Amputación
+  clasificacion: Condición peligrosa
+  area: Taller de Mantenimiento Mecánico
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - guardas_seguridad
+  - maquinaria_peligrosa
+  - atrapamiento
+  - amputación
+  - partes_móviles
+  - seguridad_máquina
+  riesgo_principal_id: NA
+  area_id: NA
+- id: P015
+  nombre: Carga suspendida sin asegurar durante izaje
+  descripcion: Elemento izado que no está correctamente eslingado o anclado, con riesgo
+    de caída.
+  riesgo_principal: Caída de objetos
+  clasificacion: Acto inseguro
+  area: Zona de Izaje
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - izaje_cargas
+  - carga_suspendida
+  - eslingado
+  - anclaje_incorrecto
+  - caída_objetos
+  riesgo_principal_id: R02
+  area_id:
+  - MRA
+  - CHP
+  - TME
+  - STM
+  - PLC
+- id: P016
+  nombre: Falta de orden y limpieza (desorden)
+  descripcion: Acumulación de desechos, herramientas o materiales de forma desordenada
+    que genera tropiezos o incendios.
+  riesgo_principal: Caídas / Incendios
+  clasificacion: Condición peligrosa
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - orden_limpieza
+  - desorden
+  - tropiezos
+  - riesgo_incendio
+  - housekeeping
+  riesgo_principal_id: NA
+  area_id:
+  - MRA
+  - CHP
+  - TME
+  - STM
+  - PLC
+- id: P017
+  nombre: Superficies resbaladizas por derrames
+  descripcion: Presencia de agua, aceite, grasa u otros líquidos en pisos o pasarelas
+    sin limpieza inmediata.
+  riesgo_principal: Resbalones y caídas
+  clasificacion: Condición peligrosa
+  area: Planta Concentradora
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - derrames
+  - resbalones
+  - superficies_húmedas
+  - aceites
+  - grasas
+  - limpieza
+  riesgo_principal_id: NA
+  area_id: PLC
+- id: P018
+  nombre: Iluminación deficiente en áreas de trabajo
+  descripcion: Niveles de luz insuficientes que comprometen la visibilidad y aumentan
+    el riesgo de accidentes.
+  riesgo_principal: Caídas / Golpes / Errores operacionales
+  clasificacion: Condición peligrosa
+  area: Túneles / Áreas Subterráneas
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - iluminación_deficiente
+  - visibilidad
+  - accidentes_operacionales
+  - zonas_oscuras
+  - seguridad_visual
+  riesgo_principal_id: NA
+  area_id: NA
+- id: P019
+  nombre: Vehículos estacionados en zonas no autorizadas
+  descripcion: Equipo móvil o vehículos ligeros aparcados obstruyendo vías o cerca
+    de áreas peligrosas.
+  riesgo_principal: Colisión / Obstrucción
+  clasificacion: Acto inseguro
+  area: Vías de Tránsito de Mina
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - vehículos
+  - estacionamiento_indebido
+  - obstrucción_vías
+  - colisión
+  - seguridad_vehicular
+  riesgo_principal_id: NA
+  area_id: NA
+- id: P020
+  nombre: Personal sin autorización para operar equipo
+  descripcion: Trabajador operando maquinaria o equipo para el cual no posee la capacitación
+    o licencia requerida.
+  riesgo_principal: Mal uso de equipo / Accidente operacional
+  clasificacion: Acto inseguro
+  area: Área de Operación de Equipo
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - personal_no_autorizado
+  - operación_equipo
+  - licencia_inexistente
+  - capacitación_insuficiente
+  - seguridad_operacional
+  riesgo_principal_id: NA
+  area_id:
+  - MRA
+  - CHP
+  - TME
+  - STM
+  - PLC
+- id: P021
+  nombre: Acumulación de gases o vapores inflamables
+  descripcion: Presencia de concentraciones peligrosas de gases o vapores combustibles
+    en el ambiente.
+  riesgo_principal: Incendio / Explosión
+  clasificacion: Condición peligrosa
+  area: Almacén de Combustibles / Labores Subterráneas
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - gases_inflamables
+  - vapores_combustibles
+  - riesgo_incendio
+  - riesgo_explosión
+  - atmósfera_peligrosa
+  - ventilación_deficiente
+  riesgo_principal_id: NA
+  area_id: NA
+- id: P022
+  nombre: Ventilación forzada inadecuada
+  descripcion: Sistemas de ventilación no funcionando correctamente, resultando en
+    acumulación de contaminantes o calor.
+  riesgo_principal: Exposición a contaminantes / Estrés térmico
+  clasificacion: Condición peligrosa
+  area: Labores Subterráneas
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - ventilación_inadecuada
+  - contaminantes_aire
+  - estrés_térmico
+  - calidad_aire
+  - minería_subterránea
+  riesgo_principal_id: NA
+  area_id: NA
+- id: P023
+  nombre: Falta de señalización de zonas calientes
+  descripcion: Ausencia de advertencia sobre áreas con alta temperatura debido a procesos
+    o equipos.
+  riesgo_principal: Quemaduras
+  clasificacion: Condición peligrosa
+  area: Hornos / Fundiciones
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - zona_caliente
+  - alta_temperatura
+  - quemaduras
+  - señalización_peligro
+  - calor_extremo
+  riesgo_principal_id: NA
+  area_id: NA
+- id: P024
+  nombre: Estructuras con deterioro evidente
+  descripcion: Componentes estructurales (vigas, columnas, pasarelas) con signos de
+    corrosión, grietas o deformación.
+  riesgo_principal: Colapso estructural
+  clasificacion: Condición peligrosa
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - deterioro_estructural
+  - corrosión
+  - grietas
+  - deformación
+  - colapso
+  - seguridad_estructural
+  riesgo_principal_id: NA
+  area_id:
+  - MRA
+  - CHP
+  - TME
+  - STM
+  - PLC
+- id: P025
+  nombre: Uso de herramientas manuales defectuosas
+  descripcion: Herramientas con mangos rotos, filos desafilados, cabezas sueltas o
+    aislamiento dañado.
+  riesgo_principal: Cortes / Golpes / Proyecciones
+  clasificacion: Condición peligrosa
+  area: Taller de Mantenimiento
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - herramientas_defectuosas
+  - mangos_rotos
+  - filos_desafilados
+  - cortes
+  - golpes
+  - proyecciones
+  riesgo_principal_id: NA
+  area_id: TME
+- id: P026
+  nombre: Presencia de fauna silvestre peligrosa
+  descripcion: Animales (serpientes, arañas, etc.) en áreas de trabajo que representan
+    un riesgo de mordeduras o picaduras.
+  riesgo_principal: Mordeduras / Picaduras / Ataques
+  clasificacion: Condición peligrosa
+  area: Áreas Exteriores / Bosques Cercanos
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - fauna_silvestre
+  - riesgo_biológico
+  - mordeduras
+  - picaduras
+  - animales_peligrosos
+  riesgo_principal_id: NA
+  area_id: NA
+- id: P027
+  nombre: Falta de entrenamiento en procedimiento
+  descripcion: Trabajador ejecutando una tarea sin haber recibido la capacitación
+    o inducción necesaria para el procedimiento específico.
+  riesgo_principal: Error operacional / Accidente
+  clasificacion: Acto inseguro
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - falta_entrenamiento
+  - procedimiento_no_conocido
+  - error_operacional
+  - capacitación_insuficiente
+  - seguridad_procedimental
+  riesgo_principal_id: NA
+  area_id:
+  - MRA
+  - CHP
+  - TME
+  - STM
+  - PLC
+- id: P028
+  nombre: Conductor de equipo pesado usando celular
+  descripcion: Operador de maquinaria móvil distrayéndose con el uso de dispositivos
+    electrónicos durante la conducción.
+  riesgo_principal: Colisión / Atropellamiento
+  clasificacion: Acto inseguro
+  area: Vías de Tránsito de Mina
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - distracción
+  - uso_celular
+  - conducción_distraída
+  - seguridad_vehicular
+  - equipo_pesado
+  riesgo_principal_id: NA
+  area_id:
+  - MRA
+  - CHP
+- id: P029
+  nombre: Fuga de aire comprimido en mangueras
+  descripcion: Mangueras de aire comprimido con roturas o conexiones defectuosas que
+    generan fugas y pérdida de presión.
+  riesgo_principal: Golpe por manguera / Proyección de partículas
+  clasificacion: Condición peligrosa
+  area: Taller / Área de perforación
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - aire_comprimido
+  - fugas
+  - mangueras_defectuosas
+  - proyección_partículas
+  - golpe_manguera
+  - seguridad_neumática
+  riesgo_principal_id: NA
+  area_id: NA
+- id: P030
+  nombre: Acumulación de material en correas transportadoras
+  descripcion: Exceso de material que desborda o se acumula alrededor de las correas,
+    generando riesgo de atrapamiento o incendio.
+  riesgo_principal: Atrapamiento / Incendio
+  clasificacion: Condición peligrosa
+  area: Planta de Chancado / Correas Transportadoras
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - correas_transportadoras
+  - acumulación_material
+  - atrapamiento
+  - riesgo_incendio
+  - limpieza
+  - desborde
+  riesgo_principal_id: NA
+  area_id:
+  - CHP
+  - STM
+- id: P031
+  nombre: Falta de extintor de incendios accesible
+  descripcion: Ausencia de un extintor en el punto requerido o ubicación inaccesible
+    en caso de emergencia.
+  riesgo_principal: Incendio descontrolado
+  clasificacion: Condición peligrosa
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - extintor
+  - incendio
+  - emergencia
+  - accesibilidad
+  - seguridad_contraincendios
+  riesgo_principal_id: NA
+  area_id:
+  - MRA
+  - CHP
+  - TME
+  - STM
+  - PLC
+- id: P032
+  nombre: Bloqueo de rueda de vehículo pesado mal posicionado
+  descripcion: Calza o cuña utilizada para inmovilizar un vehículo pesado que no está
+    correctamente colocada o es insuficiente.
+  riesgo_principal: Volcamiento / Atropellamiento
+  clasificacion: Acto inseguro / Condición peligrosa
+  area: Área de Estacionamiento de Equipo Pesado
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - vehículo_pesado
+  - bloqueo_rueda
+  - calza
+  - inmovilización
+  - seguridad_vehicular
+  - volcamiento
+  riesgo_principal_id: NA
+  area_id:
+  - MRA
+  - CHP
+  - TME
+  - STM
+  - PLC
+- id: P033
+  nombre: Trabajos en caliente sin permiso
+  descripcion: Operaciones de soldadura, corte o esmerilado con generación de chispas/calor
+    sin la autorización previa o medidas preventivas.
+  riesgo_principal: Incendio / Quemaduras
+  clasificacion: Acto inseguro
+  area: Taller / Área de Mantenimiento
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - trabajos_caliente
+  - permiso_trabajo
+  - soldadura
+  - corte
+  - esmerilado
+  - chispas
+  - calor
+  - riesgo_incendio
+  - quemaduras
+  riesgo_principal_id: NA
+  area_id:
+  - MRA
+  - CHP
+  - TME
+  - STM
+  - PLC
+- id: P034
+  nombre: Uso de eslingas o aparejos dañados
+  descripcion: Elementos de izaje (cables, cadenas, ganchos) con desgaste, deformación
+    o roturas que comprometen la seguridad de la carga.
+  riesgo_principal: Caída de carga / Atrapamiento
+  clasificacion: Condición peligrosa
+  area: Zona de Izaje
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - izaje_cargas
+  - eslingas_dañadas
+  - aparejos
+  - cables
+  - ganchos
+  - caída_carga
+  - seguridad_izaje
+  riesgo_principal_id: NA
+  area_id:
+  - MRA
+  - CHP
+  - TME
+  - STM
+  - PLC
+- id: P035
+  nombre: Falta de señalización de rutas de evacuación
+  descripcion: Ausencia o ilegibilidad de señales que indican las salidas de emergencia
+    y las rutas de evacuación.
+  riesgo_principal: Dificultad de evacuación / Atrapamiento
+  clasificacion: Condición peligrosa
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - rutas_evacuación
+  - señalización_emergencia
+  - salidas_emergencia
+  - plan_emergencia
+  - seguridad_contra_incendios
+  riesgo_principal_id: NA
+  area_id:
+  - MRA
+  - CHP
+  - TME
+  - STM
+  - PLC
+- id: P036
+  nombre: Punto de anclaje de línea de vida improvisado
+  descripcion: Utilización de un elemento no certificado o inadecuado como punto de
+    anclaje para sistemas de detención de caídas.
+  riesgo_principal: Caída de altura
+  clasificacion: Acto inseguro / Condición peligrosa
+  area: Planta de Chancado
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - caída_altura
+  - punto_anclaje_improvisado
+  - línea_vida
+  - anclaje_no_certificado
+  - seguridad_altura
+  riesgo_principal_id: R01
+  area_id: CHP
+- id: P037
+  nombre: Almacenamiento irregular de tambores
+  descripcion: Tambores metálicos apilados sin estructura de retención ni señalización.
+  riesgo_principal: Volcamiento
+  clasificacion: Condición peligrosa
+  area: Almacén de materiales
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - almacenamiento_irregular
+  - tambores
+  - volcamiento
+  - retención
+  - seguridad_almacenamiento
+  - materiales_peligrosos
+  riesgo_principal_id: NA
+  area_id:
+  - MRA
+  - CHP
+  - TME
+  - STM
+  - PLC
+- id: P038
+  nombre: Carga mal amarrada en transporte interno
+  descripcion: Elemento móvil sin sujeción segura sobre carro o bandeja.
+  riesgo_principal: Golpeado por carga
+  clasificacion: Condición peligrosa
+  area: Sistema de Transporte
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - carga_mal_amarrada
+  - transporte_interno
+  - sujeción_carga
+  - golpeado_por_carga
+  - seguridad_logística
+  riesgo_principal_id: NA
+  area_id: STM
+- id: P039
+  nombre: Acceso a techo sin autorización
+  descripcion: Ingreso a techumbre sin permiso ni evaluación estructural.
+  riesgo_principal: Caída de altura
+  clasificacion: Acto inseguro
+  area: Mina Rajo Abierto
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - acceso_no_autorizado
+  - techumbre
+  - caída_altura
+  - evaluación_estructural
+  - permisos_trabajo
+  riesgo_principal_id: R01
+  area_id: MRA
+- id: P040
+  nombre: Equipos sin mantenimiento preventivo al día
+  descripcion: Maquinaria o componentes críticos que superan el tiempo establecido
+    para su revisión o servicio.
+  riesgo_principal: Falla de equipo / Accidente mecánico
+  clasificacion: Condición peligrosa
+  area: Taller de Mantenimiento
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - mantenimiento_preventivo
+  - equipo_sin_mantenimiento
+  - falla_equipo
+  - accidente_mecánico
+  - seguridad_maquinaria
+  riesgo_principal_id: NA
+  area_id: TME
+- id: P041
+  nombre: Uso de bypass en sistema de seguridad
+  descripcion: Desactivación o elusión intencional de un dispositivo o protocolo de
+    seguridad (ej. puenteo de sensores, desconexión de alarmas).
+  riesgo_principal: Accidente mayor / Falla de control
+  clasificacion: Acto inseguro
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - bypass_seguridad
+  - anulación_seguridad
+  - dispositivo_desactivado
+  - protocolo_eludido
+  - falla_control
+  - riesgo_operacional
+  riesgo_principal_id: NA
+  area_id:
+  - MRA
+  - CHP
+  - TME
+  - STM
+  - PLC
+- id: P042
+  nombre: Acumulación de material particulado respirable
+  descripcion: Concentraciones elevadas de polvo fino o partículas en suspensión en
+    el ambiente de trabajo.
+  riesgo_principal: Enfermedades respiratorias
+  clasificacion: Condición peligrosa
+  area: Mina Subterránea / Zonas de Chancado
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - material_particulado
+  - polvo_respirable
+  - silicosis
+  - neumoconiosis
+  - enfermedades_respiratorias
+  - calidad_aire
+  - salud_ocupacional
+  riesgo_principal_id: NA
+  area_id: CHP
+- id: P043
+  nombre: Postura forzada o repetitiva sin pausas
+  descripcion: Trabajador manteniendo posiciones incómodas o realizando movimientos
+    repetitivos sin descansos adecuados.
+  riesgo_principal: Lesiones músculo-esqueléticas (LME)
+  clasificacion: Acto inseguro
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - postura_forzada
+  - movimientos_repetitivos
+  - lesiones_musculoesqueleticas
+  - ergonomía
+  - salud_ocupacional
+  riesgo_principal_id: NA
+  area_id:
+  - MRA
+  - CHP
+  - TME
+  - STM
+  - PLC
+- id: P044
+  nombre: Equipos de protección personal (EPP) defectuosos
+  descripcion: EPP con daños visibles (roturas, desgaste, deformaciones) que comprometen
+    su función protectora.
+  riesgo_principal: Exposición a riesgos / Falla de protección
+  clasificacion: Condición peligrosa
+  area: Área de Uso de EPP
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - EPP_defectuoso
+  - EPP_dañado
+  - falla_EPP
+  - protección_personal
+  - inspección_EPP
+  riesgo_principal_id: NA
+  area_id:
+  - MRA
+  - CHP
+  - TME
+  - STM
+  - PLC
+- id: P045
+  nombre: Pasarela con rejilla rota o faltante
+  descripcion: Superficie de tránsito con secciones rotas, faltantes o sueltas que
+    generan riesgo de caída.
+  riesgo_principal: Caída a distinto nivel / Resbalones
+  clasificacion: Condición peligrosa
+  area: Plantas de Proceso
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - pasarela_dañada
+  - rejilla_rota
+  - caída_distinto_nivel
+  - resbalones
+  - seguridad_estructural
+  riesgo_principal_id: NA
+  area_id: NA
+- id: P046
+  nombre: Almacenamiento de cilindros de gas sin cadena
+  descripcion: Cilindros de gas comprimido (oxígeno, acetileno) almacenados sin sujeción
+    adecuada, con riesgo de volcamiento o golpe.
+  riesgo_principal: Golpeado por / Explosión (si el cilindro falla)
+  clasificacion: Condición peligrosa
+  area: Almacén de Cilindros de Gas
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - cilindros_gas
+  - almacenamiento_inseguro
+  - sin_cadena
+  - volcamiento
+  - golpeado_por
+  - gases_comprimidos
+  - seguridad_industrial
+  riesgo_principal_id: NA
+  area_id:
+  - MRA
+  - CHP
+  - TME
+  - STM
+  - PLC
+- id: P047
+  nombre: Uso de equipo no apto para área clasificada
+  descripcion: Operación de equipos eléctricos o electrónicos no certificados como
+    intrínsecamente seguros en zonas con riesgo de atmósfera explosiva.
+  riesgo_principal: Incendio / Explosión
+  clasificacion: Acto inseguro
+  area: Zona Clasificada (ATEX)
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - área_clasificada
+  - zonas_ATEX
+  - equipo_no_certificado
+  - intrínsecamente_seguro
+  - riesgo_explosión
+  - seguridad_eléctrica
+  riesgo_principal_id: NA
+  area_id:
+  - MRA
+  - CHP
+  - TME
+  - STM
+  - PLC
+- id: P048
+  nombre: Conductor de camión de alto tonelaje sin licencia
+  descripcion: Operador de vehículo pesado que carece de la licencia de conducir o
+    autorización interna para ese tipo de maquinaria.
+  riesgo_principal: Colisión / Atropellamiento / Accidente vehicular
+  clasificacion: Acto inseguro
+  area: Vías de Tránsito de Mina
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - conductor_sin_licencia
+  - camión_alto_tonelaje
+  - operación_vehicular
+  - colisión
+  - atropellamiento
+  - seguridad_vehicular
+  riesgo_principal_id: NA
+  area_id: NA
+- id: P049
+  nombre: Falta de programa de inspección de extintores
+  descripcion: Extintores de incendios sin etiquetas de inspección periódica o con
+    fecha vencida, lo que indica falta de mantenimiento.
+  riesgo_principal: Incendio descontrolado
+  clasificacion: Condición peligrosa
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - extintor
+  - inspección_extintores
+  - mantenimiento_deficiente
+  - riesgo_incendio
+  - seguridad_contraincendios
+  riesgo_principal_id: NA
+  area_id:
+  - MRA
+  - CHP
+  - TME
+  - STM
+  - PLC
+- id: P050
+  nombre: Obstáculos en vías de escape subterráneas
+  descripcion: Materiales, escombros o vehículos que bloquean los accesos y salidas
+    de emergencia en labores mineras subterráneas.
+  riesgo_principal: Atrapamiento / Dificultad de evacuación
+  clasificacion: Condición peligrosa
+  area: Mina Subterránea
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - mina_subterránea
+  - vías_escape
+  - obstrucción
+  - evacuación
+  - atrapamiento
+  - seguridad_subterránea
+  riesgo_principal_id: NA
+  area_id: NA
+- id: P051
+  nombre: Ropa suelta o joyas en maquinaria rotativa
+  descripcion: Uso de vestimenta holgada, cabello largo sin recoger o joyas que puedan
+    ser enganchadas por partes móviles de maquinaria.
+  riesgo_principal: Atrapamiento / Amputación
+  clasificacion: Acto inseguro
+  area: Taller / Planta
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - ropa_suelta
+  - joyas
+  - maquinaria_rotativa
+  - atrapamiento
+  - amputación
+  - seguridad_personal
+  riesgo_principal_id: NA
+  area_id: NA
+- id: P052
+  nombre: Exposición a temperaturas extremas (calor/frío)
+  descripcion: Trabajadores expuestos a condiciones de calor excesivo o frío extremo
+    sin medidas de control o EPP adecuado.
+  riesgo_principal: Estrés térmico / Hipotermia / Hipertermia
+  clasificacion: Condición peligrosa
+  area: Mina Rajo Abierto / Fundición / Zonas Frías
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - temperaturas_extremas
+  - calor_extremo
+  - frío_extremo
+  - estrés_térmico
+  - hipotermia
+  - hipertermia
+  - salud_ocupacional
+  riesgo_principal_id: NA
+  area_id:
+  - MRA
+- id: P053
+  nombre: Manipulación manual de cargas pesadas sin ayuda
+  descripcion: Levantamiento o transporte de objetos de gran peso por una sola persona,
+    excediendo los límites seguros.
+  riesgo_principal: Lesiones músculo-esqueléticas (LME)
+  clasificacion: Acto inseguro
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - manipulación_cargas
+  - carga_pesada
+  - sin_ayuda
+  - lesiones_musculoesqueleticas
+  - ergonomía
+  - levantamiento_manual
+  riesgo_principal_id: NA
+  area_id:
+  - MRA
+  - CHP
+  - TME
+  - STM
+  - PLC
+- id: P054
+  nombre: Falta de equipo de rescate en emergencias
+  descripcion: Ausencia de herramientas, camillas o kits de primeros auxilios necesarios
+    en caso de accidente grave o rescate.
+  riesgo_principal: Retraso en respuesta a emergencia / Agravamiento de lesiones
+  clasificacion: Condición peligrosa
+  area: Puntos de Rescate / Brigadas
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - equipo_rescate
+  - emergencias
+  - primeros_auxilios
+  - camilla
+  - rescate_deficiente
+  - respuesta_emergencias
+  riesgo_principal_id: NA
+  area_id: NA
+- id: P055
+  nombre: Vehículo ligero con neumáticos en mal estado
+  descripcion: Neumáticos desgastados, con cortes, baja presión o deformaciones en
+    vehículos de transporte de personal o carga menor.
+  riesgo_principal: Pérdida de control / Pinchazo
+  clasificacion: Condición peligrosa
+  area: Vías de Tránsito / Estacionamiento
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - neumáticos_mal_estado
+  - vehículo_ligero
+  - pérdida_control
+  - pinchazo
+  - seguridad_vehicular
+  - mantenimiento_vehicular
+  riesgo_principal_id: NA
+  area_id: NA
+- id: P056
+  nombre: Acumulación de agua en pasillos o rampas
+  descripcion: Presencia de charcos o escurrimiento de agua que crea superficies resbaladizas
+    o riesgo eléctrico.
+  riesgo_principal: Resbalones / Caídas / Riesgo eléctrico
+  clasificacion: Condición peligrosa
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - agua_acumulada
+  - pasillos_húmedos
+  - rampas_resbaladizas
+  - resbalones
+  - riesgo_eléctrico
+  - drenaje_deficiente
+  riesgo_principal_id: NA
+  area_id:
+  - MRA
+  - CHP
+  - TME
+  - STM
+  - PLC
+- id: P057
+  nombre: Uso de escaleras portátiles en mal estado
+  descripcion: Escaleras con peldaños rotos, largueros fisurados, o sistemas de seguridad
+    (patas antideslizantes) defectuosos.
+  riesgo_principal: Caída de altura
+  clasificacion: Condición peligrosa
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - escaleras_portátiles
+  - mal_estado
+  - peldaños_rotos
+  - largueros_fisurados
+  - caída_altura
+  - seguridad_escaleras
+  riesgo_principal_id: R01
+  area_id:
+  - MRA
+  - CHP
+  - TME
+  - STM
+  - PLC
+- id: P058
+  nombre: Materiales apilados inestablemente
+  descripcion: Pilas de materiales o productos sin una base sólida, exceso de altura
+    o sin amarre adecuado, con riesgo de colapso.
+  riesgo_principal: Derrumbe / Golpeado por
+  clasificacion: Condición peligrosa
+  area: Almacén de Materiales / Patios
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - almacenamiento_inestable
+  - apilamiento_riesgoso
+  - derrumbe
+  - golpeado_por
+  - seguridad_almacenamiento
+  riesgo_principal_id: NA
+  area_id: NA
+- id: P059
+  nombre: Trabajos en taludes sin sostenimiento adecuado
+  descripcion: Operaciones cerca de taludes o frentes de trabajo sin la fortificación
+    o monitoreo geotécnico necesario.
+  riesgo_principal: Derrumbe / Caída de rocas
+  clasificacion: Condición peligrosa
+  area: Mina Rajo Abierto / Labores Subterráneas
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - taludes
+  - sostenimiento_deficiente
+  - caída_rocas
+  - derrumbe
+  - estabilidad_geotécnica
+  - minería_rajo_abierto
+  - minería_subterránea
+  riesgo_principal_id: NA
+  area_id:
+  - MRA
+- id: P060
+  nombre: Exposición a gases o vapores tóxicos
+  descripcion: Presencia de sustancias químicas volátiles en el ambiente en concentraciones
+    que superan los límites de exposición permisibles.
+  riesgo_principal: Intoxicación / Asfixia
+  clasificacion: Condición peligrosa
+  area: Plantas de Proceso / Labores Subterráneas
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - gases_tóxicos
+  - vapores_peligrosos
+  - intoxicación
+  - asfixia
+  - exposición_química
+  - calidad_aire
+  - salud_ocupacional
+  riesgo_principal_id: NA
+  area_id: NA
+- id: P061
+  nombre: Falta de comunicación en equipo de trabajo
+  descripcion: Ausencia de intercambio de información clave entre miembros de un equipo,
+    generando descoordinación y errores.
+  riesgo_principal: Accidente por descoordinación / Falla de procedimiento
+  clasificacion: Acto inseguro
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - falta_comunicación
+  - descoordinación
+  - error_equipo
+  - trabajo_conjunto
+  - seguridad_operacional
+  riesgo_principal_id: NA
+  area_id:
+  - MRA
+  - CHP
+  - TME
+  - STM
+  - PLC
+- id: P062
+  nombre: Vehículos de transporte de personal con exceso de ocupantes
+  descripcion: Vehículo llevando más personas de su capacidad diseñada, comprometiendo
+    la seguridad en caso de accidente.
+  riesgo_principal: Volcamiento / Colisión / Lesiones múltiples
+  clasificacion: Acto inseguro
+  area: Vías de Tránsito de Mina
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - exceso_ocupantes
+  - transporte_personal
+  - vehículo_sobrecargado
+  - seguridad_vehicular
+  - colisión
+  - volcamiento
+  riesgo_principal_id: NA
+  area_id: NA
+- id: P063
+  nombre: Presencia de material rodante en rampas sin calzar
+  descripcion: Carros, buggies o equipo menor con ruedas en pendientes sin bloqueo,
+    con riesgo de movimiento incontrolado.
+  riesgo_principal: Atropellamiento / Golpeado por
+  clasificacion: Condición peligrosa
+  area: Mina Subterránea / Rampas
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - material_rodante
+  - sin_calzar
+  - rampas
+  - movimiento_incontrolado
+  - atropellamiento
+  - seguridad_minera_subterránea
+  riesgo_principal_id: NA
+  area_id: NA
+- id: P064
+  nombre: Carga sobredimensionada en vías de tránsito
+  descripcion: Vehículos transportando cargas que exceden las dimensiones seguras,
+    obstruyendo la visibilidad o generando golpes.
+  riesgo_principal: Colisión / Atropellamiento
+  clasificacion: Condición peligrosa / Acto inseguro
+  area: Vías de Tránsito de Mina
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - carga_sobredimensionada
+  - obstrucción_vías
+  - colisión
+  - atropellamiento
+  - visibilidad_reducida
+  - seguridad_logística
+  riesgo_principal_id: NA
+  area_id: MRA
+- id: P065
+  nombre: Manipulación de residuos peligrosos sin EPP
+  descripcion: Personal manejando desechos tóxicos, corrosivos o inflamables sin el
+    equipo de protección personal adecuado.
+  riesgo_principal: Contacto químico / Inhalación / Quemaduras
+  clasificacion: Acto inseguro
+  area: Gestión de Residuos
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - residuos_peligrosos
+  - sin_EPP
+  - contacto_químico
+  - inhalación_tóxicos
+  - quemaduras_químicas
+  - gestión_residuos
+  - seguridad_ambiental
+  riesgo_principal_id: NA
+  area_id: NA
+- id: P066
+  nombre: Sistemas de extinción de incendios inoperativos
+  descripcion: Redes contra incendios, rociadores o bombas de agua con fallas o sin
+    mantenimiento preventivo.
+  riesgo_principal: Incendio descontrolado
+  clasificacion: Condición peligrosa
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - sistema_contraincendios
+  - inoperativo
+  - fallas_sistema
+  - mantenimiento_deficiente
+  - riesgo_incendio
+  - protección_pasiva
+  riesgo_principal_id: NA
+  area_id:
+  - MRA
+  - CHP
+  - TME
+  - STM
+  - PLC
+- id: P067
+  nombre: Bloqueo de dispositivos de emergencia (paradas)
+  descripcion: Interruptores de parada de emergencia o botones de "paro de emergencia"
+    bloqueados, cubiertos o inoperativos.
+  riesgo_principal: Accidente por imposibilidad de detener equipo
+  clasificacion: Condición peligrosa
+  area: Áreas con Maquinaria
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - parada_emergencia
+  - bloqueo_dispositivo
+  - interruptor_inoperativo
+  - seguridad_maquinaria
+  - respuesta_emergencias
+  riesgo_principal_id: NA
+  area_id:
+  - MRA
+  - CHP
+  - TME
+  - STM
+  - PLC
+- id: P068
+  nombre: Trabajos bajo carga suspendida
+  descripcion: Presencia de personal directamente debajo de una carga que está siendo
+    izada o suspendida.
+  riesgo_principal: Caída de objetos / Golpeado por
+  clasificacion: Acto inseguro
+  area: Zona de Izaje
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - carga_suspendida
+  - trabajo_bajo_carga
+  - caída_objetos
+  - golpeado_por
+  - seguridad_izaje
+  riesgo_principal_id: NA
+  area_id:
+  - MRA
+  - CHP
+  - TME
+  - STM
+  - PLC
+- id: P069
+  nombre: Falta de formación en primeros auxilios
+  descripcion: Personal no capacitado o con conocimientos desactualizados en técnicas
+    básicas de primeros auxilios y respuesta inicial.
+  riesgo_principal: Agravamiento de lesiones / Retraso en atención médica
+  clasificacion: Condición peligrosa / Acto inseguro (en ciertos roles)
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - primeros_auxilios
+  - falta_formación
+  - capacitación_insuficiente
+  - respuesta_emergencias
+  - salud_ocupacional
+  riesgo_principal_id: NA
+  area_id:
+  - MRA
+  - CHP
+  - TME
+  - STM
+  - PLC
+- id: P070
+  nombre: Conductor excediendo límite de velocidad
+  descripcion: Vehículo en movimiento a una velocidad superior a la permitida para
+    el área o condición de la vía.
+  riesgo_principal: Colisión / Volcamiento / Atropellamiento
+  clasificacion: Acto inseguro
+  area: Vías de Tránsito de Mina
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - exceso_velocidad
+  - conducción_peligrosa
+  - colisión
+  - volcamiento
+  - atropellamiento
+  - seguridad_vial
+  riesgo_principal_id: NA
+  area_id: MRA
+- id: P071
+  nombre: Ruidos súbitos o explosiones inesperadas
+  descripcion: Ocurrencia de ruidos fuertes y repentinos, o detonaciones no controladas,
+    generando riesgo de daño auditivo o susto.
+  riesgo_principal: Daño auditivo / Shock / Estrés
+  clasificacion: Evento peligroso (precursor de incidente)
+  area: Áreas de Voladura / Planta de Chancado
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - ruido_súbito
+  - explosiones_inesperadas
+  - daño_auditivo
+  - shock_acústico
+  - voladuras
+  - seguridad_acústica
+  riesgo_principal_id: NA
+  area_id: CHP
+- id: P072
+  nombre: Contacto con líneas eléctricas aéreas sin desenergizar
+  descripcion: Realización de trabajos (ej. izaje, construcción) cerca de cables eléctricos
+    aéreos sin las distancias de seguridad o desenergización.
+  riesgo_principal: Electrocución / Arco eléctrico
+  clasificacion: Acto inseguro
+  area: Líneas Eléctricas Exteriores
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - líneas_eléctricas_aéreas
+  - sin_desenergizar
+  - electrocución
+  - arco_eléctrico
+  - trabajos_cerca_energía
+  - seguridad_eléctrica
+  riesgo_principal_id: NA
+  area_id: CHP
+- id: P073
+  nombre: Manipulación de válvulas/controles sin autorización
+  descripcion: Intervención en sistemas de tuberías o controles de proceso por personal
+    no autorizado, alterando condiciones operacionales.
+  riesgo_principal: Fuga de fluidos / Explosión / Presurización
+  clasificacion: Acto inseguro
+  area: Plantas de Proceso / Salas de Válvulas
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - manipulación_no_autorizada
+  - válvulas
+  - controles_proceso
+  - fuga_fluidos
+  - explosión
+  - presurización
+  - seguridad_operacional
+  riesgo_principal_id: NA
+  area_id: NA
+- id: P074
+  nombre: Desconocimiento de planes de emergencia
+  descripcion: Personal sin conocimiento de las rutas de evacuación, puntos de encuentro
+    o roles en caso de emergencia.
+  riesgo_principal: Dificultad de evacuación / Descoordinación
+  clasificacion: Condición peligrosa (por falta de entrenamiento)
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - desconocimiento_planes
+  - planes_emergencia
+  - rutas_evacuación
+  - puntos_encuentro
+  - respuesta_emergencias
+  - capacitación_emergencias
+  riesgo_principal_id: NA
+  area_id:
+  - MRA
+  - CHP
+  - TME
+  - STM
+  - PLC
+- id: P075
+  nombre: Maquinaria pesada con neumáticos lisos/desgastados
+  descripcion: Neumáticos de equipos de gran tamaño con banda de rodadura insuficiente,
+    comprometiendo la tracción y frenado.
+  riesgo_principal: Volcamiento / Colisión / Pérdida de control
+  clasificacion: Condición peligrosa
+  area: Mina Rajo Abierto / Vías de Transporte
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - neumáticos_lisos
+  - neumáticos_desgastados
+  - maquinaria_pesada
+  - pérdida_tracción
+  - frenado_deficiente
+  - volcamiento
+  - colisión
+  - seguridad_vehicular
+  riesgo_principal_id: NA
+  area_id:
+  - MRA
+- id: P076
+  nombre: Trabajos cerca de bordes de piques/chimeneas sin protección
+  descripcion: Operaciones en proximidad a aberturas verticales profundas sin barandas,
+    mallas o sistemas de detención de caídas.
+  riesgo_principal: Caída a desnivel profundo / Caída de objetos
+  clasificacion: Condición peligrosa
+  area: Mina Subterránea / Piques
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - piques
+  - chimeneas
+  - bordes_sin_protección
+  - caída_profunda
+  - caída_objetos
+  - seguridad_subterránea
+  riesgo_principal_id: NA
+  area_id: NA
+- id: P077
+  nombre: Uso de equipos en atmósferas explosivas sin certificación
+  descripcion: Operación de dispositivos electrónicos o maquinaria que no cuenta con
+    certificación Ex (intrínsecamente seguro) en zonas con gases/polvos combustibles.
+  riesgo_principal: Explosión
+  clasificacion: Acto inseguro
+  area: Zonas Clasificadas (ATEX)
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - atmósferas_explosivas
+  - sin_certificación_Ex
+  - equipo_no_certificado
+  - intrínsecamente_seguro
+  - riesgo_explosión
+  - zonas_ATEX
+  riesgo_principal_id: NA
+  area_id:
+  - MRA
+  - CHP
+  - TME
+  - STM
+  - PLC
+- id: P078
+  nombre: Falta de barreras de seguridad para tráfico vehicular/peatonal
+  descripcion: Ausencia de segregación física o señalización clara entre el movimiento
+    de vehículos y el tránsito de personas.
+  riesgo_principal: Atropellamiento / Colisión
+  clasificacion: Condición peligrosa
+  area: Vías de Tránsito de Mina / Plantas
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - segregación_tráfico
+  - barreras_seguridad
+  - tráfico_vehicular
+  - tráfico_peatonal
+  - atropellamiento
+  - colisión
+  - seguridad_vial
+  riesgo_principal_id: NA
+  area_id: NA
+- id: P079
+  nombre: Trabajos de carguío y transporte sin señalización adecuada
+  descripcion: Operaciones de movimiento de material por camiones/palas sin las señales,
+    balizas o comunicación necesarias.
+  riesgo_principal: Atropellamiento / Colisión
+  clasificacion: Acto inseguro
+  area: Mina Rajo Abierto / Botaderos
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - carguío_transporte
+  - sin_señalización
+  - camiones_mina
+  - palas_cargadoras
+  - atropellamiento
+  - colisión
+  - seguridad_logística
+  riesgo_principal_id: NA
+  area_id:
+  - MRA
+- id: P080
+  nombre: Acumulación de basura o escombros en áreas de trabajo
+  descripcion: Presencia de desechos que obstruyen el paso, generan riesgo de tropiezos
+    o atraen plagas.
+  riesgo_principal: Caídas / Riesgo biológico / Contaminación
+  clasificacion: Condición peligrosa
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - acumulación_basura
+  - escombros
+  - desorden
+  - tropiezos
+  - riesgo_biológico
+  - contaminación
+  - orden_limpieza
+  riesgo_principal_id: NA
+  area_id:
+  - MRA
+  - CHP
+  - TME
+  - STM
+  - PLC
+- id: P081
+  nombre: Uso de herramientas neumáticas sin silenciador
+  descripcion: Herramientas que generan alto ruido por aire comprimido sin dispositivos
+    para atenuar el sonido.
+  riesgo_principal: Hipoacusia inducida por ruido
+  clasificacion: Condición peligrosa
+  area: Taller / Área de perforación
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - herramientas_neumáticas
+  - sin_silenciador
+  - ruido_excesivo
+  - hipoacusia
+  - protección_auditiva
+  riesgo_principal_id: NA
+  area_id: NA
+- id: P082
+  nombre: Falta de protectores en correas transportadoras
+  descripcion: Ausencia de cubiertas o guardas en los puntos de pellizco o atrapamiento
+    de las correas.
+  riesgo_principal: Atrapamiento / Amputación
+  clasificacion: Condición peligrosa
+  area: Plantas de Chancado / Correas Transportadoras
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - correas_transportadoras
+  - sin_protectores
+  - guardas_faltantes
+  - atrapamiento
+  - amputación
+  - puntos_pellizco
+  - seguridad_máquina
+  riesgo_principal_id: NA
+  area_id:
+  - CHP
+  - STM
+- id: P083
+  nombre: Conducción en condiciones de visibilidad reducida sin medidas
+  descripcion: Operar vehículos o equipos en niebla, polvo intenso o lluvia sin activar
+    luces especiales o reducir velocidad.
+  riesgo_principal: Colisión / Atropellamiento
+  clasificacion: Acto inseguro
+  area: Vías de Tránsito de Mina
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - visibilidad_reducida
+  - niebla
+  - polvo_intenso
+  - lluvia
+  - colisión
+  - atropellamiento
+  - conducción_segura
+  - condiciones_climáticas
+  riesgo_principal_id: NA
+  area_id: NA
+- id: P084
+  nombre: Acceso no autorizado a áreas restringidas
+  descripcion: Ingreso de personal a zonas con acceso controlado (ej. zonas calientes,
+    áreas eléctricas) sin permiso o sin acompañamiento.
+  riesgo_principal: Exposición a peligros específicos / Accidente
+  clasificacion: Acto inseguro
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - acceso_no_autorizado
+  - áreas_restringidas
+  - zona_peligrosa
+  - seguridad_perimetral
+  - control_acceso
+  riesgo_principal_id: NA
+  area_id:
+  - MRA
+  - CHP
+  - TME
+  - STM
+  - PLC
+- id: P085
+  nombre: Falta de capacitación en el uso de detectores de gas
+  descripcion: Personal que trabaja en espacios confinados sin el conocimiento adecuado
+    para operar o interpretar lecturas de detectores de gas.
+  riesgo_principal: Exposición a atmósferas peligrosas
+  clasificacion: Condición peligrosa (por falta de competencia)
+  area: Espacios Confinados
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - capacitación_deficiente
+  - detectores_gas
+  - espacios_confinados
+  - atmósfera_peligrosa
+  - lectura_incorrecta
+  - seguridad_gas
+  riesgo_principal_id: NA
+  area_id:
+  - MRA
+  - CHP
+  - TME
+  - STM
+  - PLC
+- id: P086
+  nombre: Pasos peatonales sin señalización o demarcación
+  descripcion: Ausencia de senderos claros y delimitados para el tránsito seguro de
+    peatones en áreas compartidas con vehículos.
+  riesgo_principal: Atropellamiento / Colisión
+  clasificacion: Condición peligrosa
+  area: Vías de Tránsito de Mina / Plantas
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - pasos_peatonales
+  - sin_señalización
+  - demarcación_ausente
+  - segregación_tráfico
+  - atropellamiento
+  - seguridad_peatonal
+  riesgo_principal_id: NA
+  area_id:
+  - MRA
+  - CHP
+  - TME
+  - STM
+  - PLC
+- id: P087
+  nombre: Equipos de levante sin certificación al día
+  descripcion: Grúas, montacargas o polipastos que no han pasado las inspecciones
+    y certificaciones periódicas requeridas.
+  riesgo_principal: Falla de equipo / Caída de carga
+  clasificacion: Condición peligrosa
+  area: Talleres / Patios de Carga
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - equipos_levante
+  - sin_certificación
+  - grúas
+  - montacargas
+  - polipastos
+  - falla_equipo
+  - caída_carga
+  - seguridad_izaje
+  riesgo_principal_id: NA
+  area_id:
+  - MRA
+  - CHP
+  - TME
+  - STM
+  - PLC
+- id: P088
+  nombre: Fugas de líquidos/fluidos corrosivos o inflamables
+  descripcion: Derrames o goteos de sustancias químicas peligrosas desde tuberías,
+    tanques o equipos.
+  riesgo_principal: Quemaduras / Incendio / Contaminación
+  clasificacion: Condición peligrosa
+  area: Plantas de Proceso / Almacenes Químicos
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - fugas
+  - líquidos_corrosivos
+  - inflamables
+  - derrames
+  - sustancias_peligrosas
+  - quemaduras_químicas
+  - riesgo_incendio
+  - contaminación
+  riesgo_principal_id: NA
+  area_id: NA
+- id: P089
+  nombre: Ausencia de procedimiento de trabajo seguro
+  descripcion: Realización de tareas complejas o de alto riesgo sin un método de trabajo
+    documentado y autorizado.
+  riesgo_principal: Errores operacionales / Accidente
+  clasificacion: Condición peligrosa (organizacional)
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - procedimiento_faltante
+  - trabajo_seguro
+  - alto_riesgo
+  - método_trabajo
+  - seguridad_operacional
+  riesgo_principal_id: NA
+  area_id:
+  - MRA
+  - CHP
+  - TME
+  - STM
+  - PLC
+- id: P090
+  nombre: Vehículos de transporte con sobrecarga
+  descripcion: Vehículos (camiones, camionetas) que exceden su capacidad máxima de
+    carga, comprometiendo la estabilidad y frenado.
+  riesgo_principal: Volcamiento / Falla de frenos / Colisión
+  clasificacion: Acto inseguro
+  area: Vías de Tránsito de Mina
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - sobrecarga_vehículo
+  - camiones
+  - camionetas
+  - volcamiento
+  - falla_frenos
+  - colisión
+  - seguridad_vehicular
+  riesgo_principal_id: NA
+  area_id:
+  - MRA
+  - CHP
+- id: P091
+  nombre: Equipo eléctrico sin puesta a tierra
+  descripcion: Maquinaria o instalación eléctrica que no cuenta con un sistema de
+    conexión a tierra funcional, aumentando riesgo de electrocución.
+  riesgo_principal: Electrocución
+  clasificacion: Condición peligrosa
+  area: Talleres / Plantas
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - puesta_a_tierra
+  - sin_tierra
+  - electrocución
+  - seguridad_eléctrica
+  - falla_eléctrica
+  riesgo_principal_id: NA
+  area_id:
+  - MRA
+  - CHP
+  - TME
+  - STM
+  - PLC
+- id: P092
+  nombre: Falta de guardas de seguridad en aberturas de piso
+  descripcion: Agujeros o vanos en el suelo sin cubrir o proteger adecuadamente, riesgo
+    de caída a distinto nivel.
+  riesgo_principal: Caída a distinto nivel
+  clasificacion: Condición peligrosa
+  area: Plantas de Proceso / Construcción
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - aberturas_piso
+  - vanos
+  - sin_guardas
+  - caída_distinto_nivel
+  - seguridad_estructural
+  riesgo_principal_id: NA
+  area_id: PLC
+- id: P093
+  nombre: Conductor utilizando audífonos en operación de equipo
+  descripcion: Operador de maquinaria pesada o vehículo usando dispositivos de audio
+    que impiden la percepción de alarmas o comunicación.
+  riesgo_principal: Colisión / Atropellamiento / Descoordinación
+  clasificacion: Acto inseguro
+  area: Áreas de Operación de Equipo
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - audífonos
+  - distracción
+  - percepción_sonora
+  - equipo_pesado
+  - colisión
+  - atropellamiento
+  - seguridad_operacional
+  riesgo_principal_id: NA
+  area_id:
+  - MRA
+  - CHP
+  - TME
+  - STM
+  - PLC
+- id: P094
+  nombre: Exposición a vibraciones excesivas
+  descripcion: Trabajadores expuestos a vibraciones de herramientas o maquinaria por
+    encima de los límites permisibles.
+  riesgo_principal: Lesiones músculo-esqueléticas / Síndrome de vibración
+  clasificacion: Condición peligrosa
+  area: Taller / Perforación
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - vibraciones_excesivas
+  - herramientas_vibratorias
+  - maquinaria_vibratoria
+  - lesiones_musculoesqueleticas
+  - síndrome_vibración_mano_brazo
+  - salud_ocupacional
+  riesgo_principal_id: NA
+  area_id: NA
+- id: P095
+  nombre: Falta de kit de primeros auxilios en vehículos
+  descripcion: Vehículos de transporte de personal o de uso en campo sin un botiquín
+    completo y al día.
+  riesgo_principal: Retraso en atención médica / Agravamiento de lesiones
+  clasificacion: Condición peligrosa
+  area: Vías de Tránsito / Flota Vehicular
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - botiquín_faltante
+  - vehículo
+  - primeros_auxilios
+  - atención_médica_retardada
+  - seguridad_vehicular
+  riesgo_principal_id: NA
+  area_id:
+  - MRA
+  - CHP
+- id: P096
+  nombre: Acumulación de escombros en accesos/salidas
+  descripcion: Materiales o desechos que bloquean parcial o totalmente las vías de
+    acceso y escape en edificios o áreas de trabajo.
+  riesgo_principal: Dificultad de evacuación / Tropiezos
+  clasificacion: Condición peligrosa
+  area: Edificios / Accesos
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - escombros
+  - obstrucción_accesos
+  - vías_escape
+  - tropiezos
+  - evacuación
+  - orden_limpieza
+  riesgo_principal_id: NA
+  area_id: NA
+- id: P097
+  nombre: Cableado eléctrico provisional sin protección
+  descripcion: Cables temporales expuestos, sin aislamiento adecuado, en el suelo
+    o colgando, aumentando riesgo de contacto.
+  riesgo_principal: Electrocución / Tropiezos
+  clasificacion: Condición peligrosa
+  area: Zonas de Construcción / Mantenimiento Temporal
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - cableado_provisional
+  - eléctrico_expuesto
+  - sin_aislamiento
+  - electrocución
+  - tropiezos
+  - seguridad_eléctrica
+  riesgo_principal_id: NA
+  area_id:
+  - MRA
+  - CHP
+  - TME
+  - STM
+  - PLC
+- id: P098
+  nombre: Falta de señalización de excavaciones
+  descripcion: Excavaciones o zanjas no debidamente delimitadas con barreras o avisos
+    de peligro.
+  riesgo_principal: Caída a distinto nivel / Derrumbe
+  clasificacion: Condición peligrosa
+  area: Zonas de Construcción / Obras Civiles
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - excavaciones
+  - zanjas
+  - sin_señalización
+  - delimitación_ausente
+  - caída_distinto_nivel
+  - derrumbe
+  riesgo_principal_id: NA
+  area_id: NA
+- id: P099
+  nombre: Uso de equipos en pendientes excesivas
+  descripcion: Operación de maquinaria o vehículos en taludes o rampas con inclinación
+    superior a la recomendada por el fabricante.
+  riesgo_principal: Volcamiento / Pérdida de control
+  clasificacion: Acto inseguro
+  area: Mina Rajo Abierto / Rampas
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - pendientes_excesivas
+  - operación_maquinaria
+  - volcamiento
+  - pérdida_control
+  - seguridad_operacional
+  riesgo_principal_id: NA
+  area_id:
+  - MRA
+- id: P100
+  nombre: Falta de protección contra el arco eléctrico
+  descripcion: Personal realizando trabajos eléctricos energizados sin usar EPP específico
+    para arco eléctrico (traje, protector facial, guantes).
+  riesgo_principal: Quemaduras por arco eléctrico / Electrocución
+  clasificacion: Acto inseguro
+  area: Mantenimiento Eléctrico
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - arco_eléctrico
+  - sin_protección
+  - EPP_específico
+  - quemaduras_eléctricas
+  - electrocución
+  - seguridad_eléctrica
+  riesgo_principal_id: NA
+  area_id:
+  - MRA
+  - CHP
+  - TME
+  - STM
+  - PLC
+- id: P101
+  nombre: Andamio sin barandas laterales
+  descripcion: Se observa montaje de andamio sin instalación de barandas laterales
+    ni rodapiés. Esto expone al trabajador a riesgo de caída desde más de 2 metros
+    de altura durante labores de montaje o inspección.
+  riesgo_principal: Caída de altura
+  riesgo_principal_id: R01
+  clasificacion: Condición peligrosa
+  area: Planta Concentradora
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - caida_altura
+  - andamio
+  - barandas
+  - estructura
+  area_id:
+  - MRA
+  - CHP
+  - TME
+  - STM
+  - PLC
+- id: P102
+  nombre: Escaleras portátiles defectuosas
+  descripcion: Escaleras metálicas con peldaños sueltos y sin superficie antideslizante
+    utilizadas en faenas. El deterioro compromete la estabilidad y aumenta la probabilidad
+    de caída del usuario.
+  riesgo_principal: Caída de altura
+  riesgo_principal_id: R01
+  clasificacion: Condición peligrosa
+  area: Planta de Chancado Primario
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - caida_altura
+  - escalera
+  - antideslizante
+  - deterioro
+  area_id:
+  - MRA
+  - CHP
+  - TME
+  - STM
+  - PLC
+- id: P103
+  nombre: Trabajos en techumbres sin línea de vida
+  descripcion: Personal realizando reparaciones en cubiertas de techos sin sistema
+    anticaídas ni supervisión directa. Existe exposición a caída desde altura con
+    alto potencial de lesión grave.
+  riesgo_principal: Caída de altura
+  riesgo_principal_id: R01
+  clasificacion: Acto inseguro
+  area: Taller de Mantenimiento Eléctrico
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - caida_altura
+  - linea_vida
+  - techo
+  - arnes
+  area_id:
+  - MRA
+  - CHP
+  - TME
+  - STM
+  - PLC
+- id: P104
+  nombre: Acceso a tolvas sin puntos de anclaje
+  descripcion: Ingreso de operadores a tolvas para labores de inspección sin puntos
+    de anclaje disponibles para conexión de arnés. Riesgo de caída a distinto nivel
+    en espacio confinado.
+  riesgo_principal: Caída de altura
+  riesgo_principal_id: R01
+  clasificacion: Condición peligrosa
+  area: Planta de Chancado Primario
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - caida_altura
+  - tolva
+  - arnes
+  - inspeccion
+  area_id: CHP
+- id: P105
+  nombre: Caminar sobre estructuras metálicas sin protección
+  descripcion: Trabajadores desplazándose sobre vigas y ductos elevados sin barandas
+    ni protección colectiva, aumentando el riesgo de caída libre.
+  riesgo_principal: Caída de altura
+  riesgo_principal_id: R01
+  clasificacion: Acto inseguro
+  area: Mina Rajo Abierto
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - caida_altura
+  - estructuras
+  - vigas
+  - ductos
+  area_id: MRA
+- id: P106
+  nombre: Plataformas móviles sin estabilizadores
+  descripcion: Uso de plataformas de elevación sin fijación de estabilizadores laterales.
+    La inestabilidad compromete la seguridad del operador y puede provocar vuelco
+    y caída.
+  riesgo_principal: Caída de altura
+  riesgo_principal_id: R01
+  clasificacion: Condición peligrosa
+  area: Planta Concentradora
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - caida_altura
+  - plataforma
+  - estabilizadores
+  - elevacion
+  area_id:
+  - MRA
+  - CHP
+  - TME
+  - STM
+  - PLC
+- id: P107
+  nombre: Pasarelas corroídas con riesgo de colapso
+  descripcion: Corrosión avanzada en estructuras de pasarelas en altura. El deterioro
+    estructural eleva el riesgo de colapso parcial y caída de trabajadores.
+  riesgo_principal: Caída de altura
+  riesgo_principal_id: R01
+  clasificacion: Condición peligrosa
+  area: Sistema de Transporte Mecanizado
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - caida_altura
+  - pasarela
+  - corrosion
+  - colapso
+  area_id: STM
+- id: P108
+  nombre: Ingreso a zonas de altura sin permiso de trabajo
+  descripcion: Personal accediendo a plataformas elevadas sin autorización formal
+    ni evaluación de riesgos previa. Riesgo de caída por ausencia de controles críticos.
+  riesgo_principal: Caída de altura
+  riesgo_principal_id: R01
+  clasificacion: Acto inseguro
+  area: Mina Rajo Abierto
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - caida_altura
+  - permiso_trabajo
+  - plataforma
+  - supervision
+  area_id: MRA
+- id: P109
+  nombre: Caída por apertura de escotillas no protegidas
+  descripcion: Escotillas abiertas en pisos superiores sin tapas de seguridad ni barandas
+    de protección, generando riesgo de caída a distinto nivel.
+  riesgo_principal: Caída de altura
+  riesgo_principal_id: R01
+  clasificacion: Condición peligrosa
+  area: Planta de Chancado Primario
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - caida_altura
+  - escotilla
+  - proteccion
+  - barandas
+  area_id: CHP
+- id: P110
+  nombre: Tuberías almacenadas sin cuñas de seguridad
+  descripcion: Apilamiento de tuberías cilíndricas sin cuñas de retención. El movimiento
+    puede generar rodamiento y caída hacia zonas de tránsito peatonal.
+  riesgo_principal: Caída de objetos
+  riesgo_principal_id: R02
+  clasificacion: Condición peligrosa
+  area: Planta Concentradora
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - caida_objetos
+  - tuberia
+  - almacenamiento
+  - rodamiento
+  area_id: PLC
+- id: P111
+  nombre: Sobrecarga en canastillos de herramientas
+  descripcion: Canastillos de herramientas suspendidos con sobrepeso, generando riesgo
+    de desprendimiento de objetos hacia el personal ubicado en la parte inferior.
+  riesgo_principal: Caída de objetos
+  riesgo_principal_id: R02
+  clasificacion: Condición peligrosa
+  area: Taller de Mantenimiento Eléctrico
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - caida_objetos
+  - canastillo
+  - sobrecarga
+  - herramientas
+  area_id:
+  - MRA
+  - CHP
+  - TME
+  - STM
+  - PLC
+- id: P112
+  nombre: Vibraciones desprendiendo pernos de estructuras
+  descripcion: Vibraciones de equipos generan aflojamiento de pernos en correas transportadoras,
+    con riesgo de caída hacia áreas de mantenimiento.
+  riesgo_principal: Caída de objetos
+  riesgo_principal_id: R02
+  clasificacion: Condición peligrosa
+  area: Sistema de Transporte Mecanizado
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - caida_objetos
+  - pernos
+  - vibraciones
+  - estructura
+  area_id: STM
+- id: P113
+  nombre: Cajas de insumos mal aseguradas en altura
+  descripcion: Material almacenado en repisas superiores sin fijación adecuada, expuesto
+    a caídas por vibración o manipulación.
+  riesgo_principal: Caída de objetos
+  riesgo_principal_id: R02
+  clasificacion: Condición peligrosa
+  area: Planta de Chancado Primario
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - caida_objetos
+  - cajas
+  - almacenamiento
+  - altura
+  area_id: CHP
+- id: P114
+  nombre: Pernos dejados en maquinaria en mantenimiento
+  descripcion: Restos de pernos y piezas dejados en partes superiores de equipos en
+    mantención. Riesgo de caída sobre personal al reiniciar la operación.
+  riesgo_principal: Caída de objetos
+  riesgo_principal_id: R02
+  clasificacion: Acto inseguro
+  area: Taller de Mantenimiento Eléctrico
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - caida_objetos
+  - pernos
+  - maquinaria
+  - mantenimiento
+  area_id: TME
+- id: P115
+  nombre: Accesorios de izaje defectuosos
+  descripcion: Eslingas y ganchos de izaje deteriorados que pueden soltar la carga
+    durante operaciones de levante con grúa.
+  riesgo_principal: Caída de objetos
+  riesgo_principal_id: R02
+  clasificacion: Condición peligrosa
+  area: Mina Rajo Abierto
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - caida_objetos
+  - izaje
+  - eslingas
+  - grua
+  area_id: MRA
+- id: P116
+  nombre: Piedras desprendidas en caminos de acarreo
+  descripcion: Material de talud en condición inestable que se desprende sobre caminos
+    de acarreo, con riesgo de impacto sobre camiones en tránsito.
+  riesgo_principal: Caída de objetos
+  riesgo_principal_id: R02
+  clasificacion: Condición peligrosa
+  area: Mina Rajo Abierto
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - caida_objetos
+  - piedras
+  - talud
+  - acarreo
+  area_id: MRA
+- id: P117
+  nombre: Luminarias en altura sin fijación adecuada
+  descripcion: Instalaciones de luminarias montadas sin fijación completa. Riesgo
+    de caída por vibraciones mecánicas o ráfagas de viento.
+  riesgo_principal: Caída de objetos
+  riesgo_principal_id: R02
+  clasificacion: Condición peligrosa
+  area: Planta Concentradora
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - caida_objetos
+  - luminaria
+  - vibracion
+  - instalacion
+  area_id:
+  - MRA
+  - CHP
+  - TME
+  - STM
+  - PLC
+- id: P118
+  nombre: Cilindros de gas sin sujeción vertical
+  descripcion: Cilindros de gas almacenados en forma inestable, con riesgo de vuelco
+    y caída sobre trabajadores o equipos.
+  riesgo_principal: Caída de objetos
+  riesgo_principal_id: R02
+  clasificacion: Condición peligrosa
+  area: Taller de Mantenimiento Eléctrico
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - caida_objetos
+  - cilindros
+  - gas
+  - almacenamiento
+  area_id:
+  - MRA
+  - CHP
+  - TME
+  - STM
+  - PLC
+- id: P119
+  nombre: Carga en grúa viajera sin ganchos de seguridad
+  descripcion: Movilización de carga en grúa viajera sin dispositivos de cierre de
+    seguridad en los ganchos. Riesgo de caída de material pesado.
+  riesgo_principal: Caída de objetos
+  riesgo_principal_id: R02
+  clasificacion: Condición peligrosa
+  area: Planta Concentradora
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - caida_objetos
+  - grua
+  - viajera
+  - ganchos
+  area_id: PLC
+- id: P120
+  nombre: Extensiones eléctricas en mal estado
+  descripcion: Cables de extensión con empalmes improvisados y aislación deficiente
+    expuestos a tránsito peatonal, con riesgo de choque eléctrico.
+  riesgo_principal: Contacto con energía eléctrica
+  riesgo_principal_id: R03
+  clasificacion: Condición peligrosa
+  area: Mina Rajo Abierto
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - electricidad
+  - cables
+  - extension
+  - empalme
+  area_id: MRA
+- id: P121
+  nombre: Tomas de corriente sobrecargadas
+  descripcion: Múltiples equipos conectados en un mismo punto eléctrico sin protección
+    adecuada, aumentando el riesgo de sobrecalentamiento e incendio.
+  riesgo_principal: Contacto con energía eléctrica
+  riesgo_principal_id: R03
+  clasificacion: Condición peligrosa
+  area: Planta de Chancado Primario
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - electricidad
+  - sobrecarga
+  - tomas
+  - incendio
+  area_id:
+  - MRA
+  - CHP
+  - TME
+  - STM
+  - PLC
+- id: P122
+  nombre: Personal sin guantes dieléctricos en trabajos eléctricos
+  descripcion: Trabajadores ejecutando maniobras eléctricas sin uso de guantes dieléctricos,
+    quedando expuestos a contacto directo con energía.
+  riesgo_principal: Contacto con energía eléctrica
+  riesgo_principal_id: R03
+  clasificacion: Acto inseguro
+  area: Taller de Mantenimiento Eléctrico
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - electricidad
+  - guantes
+  - dieletrico
+  - maniobra
+  area_id: TME
+- id: P123
+  nombre: Armarios eléctricos con humedad interna
+  descripcion: Condensación y filtración de agua en armarios eléctricos, provocando
+    riesgo de cortocircuito y electrocución.
+  riesgo_principal: Contacto con energía eléctrica
+  riesgo_principal_id: R03
+  clasificacion: Condición peligrosa
+  area: Planta Concentradora
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - electricidad
+  - armarios
+  - humedad
+  - cortocircuito
+  area_id: PLC
+- id: P124
+  nombre: Uso de extensiones en zonas húmedas
+  descripcion: Extensiones eléctricas utilizadas en áreas con agua acumulada, aumentando
+    el riesgo de descarga eléctrica al personal.
+  riesgo_principal: Contacto con energía eléctrica
+  riesgo_principal_id: R03
+  clasificacion: Acto inseguro
+  area: Mina Rajo Abierto
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - electricidad
+  - extension
+  - humedad
+  - descarga
+  area_id:
+  - MRA
+  - CHP
+  - TME
+  - STM
+  - PLC
+- id: P125
+  nombre: Equipos de soldadura sin conexión a tierra
+  descripcion: Falta de puesta a tierra en equipos de soldadura, generando riesgo
+    de choque eléctrico para el operador.
+  riesgo_principal: Contacto con energía eléctrica
+  riesgo_principal_id: R03
+  clasificacion: Condición peligrosa
+  area: Taller de Mantenimiento Eléctrico
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - electricidad
+  - soldadura
+  - tierra
+  - riesgo
+  area_id: TME
+- id: P126
+  nombre: Falta de señalización en áreas de alta tensión
+  descripcion: Sectores de alta tensión sin señalización visible ni advertencias de
+    riesgo eléctrico, exponiendo a personal no autorizado.
+  riesgo_principal: Contacto con energía eléctrica
+  riesgo_principal_id: R03
+  clasificacion: Condición peligrosa
+  area: Planta de Chancado Primario
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - electricidad
+  - alta_tension
+  - senalizacion
+  - riesgo
+  area_id: CHP
+- id: P127
+  nombre: Intervención de cables energizados sin detector de voltaje
+  descripcion: Operaciones de mantenimiento en cables sin comprobar la ausencia de
+    tensión mediante detector de voltaje. Riesgo de electrocución.
+  riesgo_principal: Contacto con energía eléctrica
+  riesgo_principal_id: R03
+  clasificacion: Acto inseguro
+  area: Planta Concentradora
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - electricidad
+  - cables
+  - voltaje
+  - mantenimiento
+  area_id: PLC
+- id: P128
+  nombre: Uso de escaleras metálicas en trabajos eléctricos
+  descripcion: Personal empleando escaleras de material conductor para trabajos eléctricos
+    en altura, con riesgo elevado de descarga.
+  riesgo_principal: Contacto con energía eléctrica
+  riesgo_principal_id: R03
+  clasificacion: Acto inseguro
+  area: Taller de Mantenimiento Eléctrico
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - electricidad
+  - escalera
+  - metalica
+  - trabajo_altura
+  area_id:
+  - MRA
+  - CHP
+  - TME
+  - STM
+  - PLC
+- id: P129
+  nombre: Transformadores sin mantención preventiva
+  descripcion: Transformadores operando sin inspecciones periódicas ni limpieza, generando
+    riesgo de fallas eléctricas y explosión por sobrecalentamiento.
+  riesgo_principal: Contacto con energía eléctrica
+  riesgo_principal_id: R03
+  clasificacion: Condición peligrosa
+  area: Planta Concentradora
+  aplicabilidad: Detección de peligros
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - electricidad
+  - transformador
+  - mantenimiento
+  - explosion
+  area_id: PLC

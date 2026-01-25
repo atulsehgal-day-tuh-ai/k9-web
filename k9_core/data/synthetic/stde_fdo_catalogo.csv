@@ -1,0 +1,8 @@
+fdo_id,descripcion,tipo
+fdo_produccion,"Variabilidad en el desempeño productivo diario, afecta cargas operativas y presión por resultados.",operacional
+fdo_backlog,Acumulación de tareas pendientes que incrementa la presión operativa y aumenta condiciones subóptimas.,organizacional
+fdo_congestion,Nivel de interferencias operativas y congestión de equipos/áreas.,operacional
+fdo_fatiga,"Fatiga operacional derivada de condiciones de trabajo, turnos, intensidad y clima.",humano
+fdo_clima,Factores climáticos que degradan la estabilidad operacional o aumentan el riesgo.,entorno
+fdo_dotacion,"Cambios o restricciones en la dotación disponible, afecta supervisión y capacidad de control.",organizacional
+fdo_variabilidad,Variabilidad global del sistema ante perturbaciones no anticipadas.,sistema

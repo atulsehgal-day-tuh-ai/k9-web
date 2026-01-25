@@ -1,0 +1,2544 @@
+- id: FE_001
+  nombre: Trabajo en Altura
+  descripcion: Realización de tareas sobre plataformas elevadas, estructuras metálicas o zonas sin protección perimetral. Este factor implica exposición directa a riesgos de caída por pérdida de equilibrio, tropiezos o ausencia de puntos de anclaje adecuados. Las tareas suelen involucrar inspecciones, mantenimientos o montaje de componentes, requiriendo sistemas anticaída certificados, líneas de vida, barandas o andamios seguros.
+  tareas_asociadas:
+  - MRA_TA_001
+  riesgos_asociados:
+  - R01
+  roles_asociados:
+  - MRA_ROL_01
+  areas_asociadas:
+  - MRA
+
+- id: FE_002
+  nombre: Proximidad a Energía Eléctrica
+  descripcion: Presencia cercana a líneas energizadas, tableros eléctricos o conductores sin aislamiento identificado. Este factor implica exposición al riesgo de electrocución, arco eléctrico o quemaduras graves, especialmente en tareas de inspección o mantenimiento donde los elementos energizados están al alcance del trabajador sin barreras físicas ni señalización apropiada.
+  tareas_asociadas:
+  - MRA_TA_001
+  riesgos_asociados:
+  - R01
+  roles_asociados:
+  - MRA_ROL_01
+  areas_asociadas:
+  - MRA
+
+- id: FE_003
+  nombre: Proyección de Fragmentos
+  descripcion: Exposición a impactos por partículas de roca, herramientas o materiales desprendidos durante tareas de perforación, voladuras o trabajo en frentes inestables. Este factor requiere establecer zonas de exclusión, uso de barreras físicas, y EPP como gafas de seguridad y cascos con protección facial.
+  tareas_asociadas:
+  - MRA_TA_001
+  riesgos_asociados:
+  - R01
+  roles_asociados:
+  - MRA_ROL_01
+  areas_asociadas:
+  - MRA
+
+- id: FE_004
+  nombre: Proyección en Voladuras
+  descripcion: Exposición a fragmentos generados por detonaciones o fracturas espontáneas en zonas de tronadura o excavación. Afecta principalmente al personal de operación y apoyo que trabaja cerca del frente. Requiere estrictas medidas de delimitación, monitoreo previo, y validación de carga y retardo.
+  tareas_asociadas:
+  - MRA_TA_002
+  riesgos_asociados:
+  - R02
+  roles_asociados:
+  - MRA_ROL_01
+  areas_asociadas:
+  - MRA
+
+- id: FE_005
+  nombre: Ruido de Alta Intensidad
+  descripcion: Presencia prolongada en áreas donde se superan los 85 dB debido al uso de maquinaria pesada, martillos neumáticos, plantas trituradoras u otros equipos de gran potencia. Este factor puede provocar pérdida auditiva irreversible si no se utilizan protectores auditivos certificados y si no se realizan mediciones acústicas periódicas.
+  tareas_asociadas:
+  - MRA_TA_002
+  riesgos_asociados:
+  - R02
+  roles_asociados:
+  - MRA_ROL_01
+  areas_asociadas:
+  - MRA
+
+- id: FE_006
+  nombre: Vibración Mecánica
+  descripcion: Exposición a vibraciones generadas por equipos como perforadoras, vehículos pesados o herramientas manuales. Este factor puede comprometer la estabilidad del trabajador, provocar fatiga o contribuir a lesiones músculo-esqueléticas. Debe gestionarse mediante tiempos de exposición controlados, mantenimiento preventivo del equipo y evaluación ergonómica.
+  tareas_asociadas:
+  - MRA_TA_002
+  riesgos_asociados:
+  - R02
+  roles_asociados:
+  - MRA_ROL_01
+  areas_asociadas:
+  - MRA
+
+- id: FE_007
+  nombre: Contacto con Voltaje Alto
+  descripcion: Riesgo de contacto directo o indirecto con circuitos de media o alta tensión durante trabajos de inspección, mantenimiento o conexión eléctrica. Puede producirse por fallas en procedimientos LOTO, error humano o deterioro del aislamiento. Este factor exige entrenamiento especializado, uso de EPP dieléctrico, y chequeo de energización.
+  tareas_asociadas:
+  - MRA_TA_003
+  riesgos_asociados:
+  - R03
+  roles_asociados:
+  - MRA_ROL_01
+  areas_asociadas:
+  - MRA
+
+- id: FE_008
+  nombre: Arco Eléctrico
+  descripcion: Formación repentina de un arco eléctrico por cortocircuitos, conexiones defectuosas o manipulación inadecuada de interruptores. El fenómeno puede alcanzar temperaturas extremas y liberar ondas de choque. La protección exige barreras físicas, herramientas certificadas, análisis de energía incidente y ropa ignífuga.
+  tareas_asociadas:
+  - MRA_TA_003
+  riesgos_asociados:
+  - R03
+  roles_asociados:
+  - MRA_ROL_01
+  areas_asociadas:
+  - MRA
+
+- id: FE_009
+  nombre: Izaje de Equipos Eléctricos
+  descripcion: Riesgo asociado a la manipulación manual de componentes eléctricos pesados (transformadores, tableros, bancos de baterías) sin herramientas de izaje adecuadas. Puede generar atrapamientos, lesiones por sobreesfuerzo o caídas de carga. Se requiere planificación de maniobras, revisión de puntos de izaje y uso de grúas o polipastos certificados.
+  tareas_asociadas:
+  - MRA_TA_003
+  riesgos_asociados:
+  - R03
+  roles_asociados:
+  - MRA_ROL_01
+  areas_asociadas:
+  - MRA
+
+- id: FE_010
+  nombre: Trabajo en Altura (Montaje)
+  descripcion: Montaje o desmontaje de estructuras en altura, donde el trabajador debe posicionarse sobre andamios, plataformas móviles o estructuras sin protección perimetral. El riesgo de caída es elevado, especialmente cuando se utilizan herramientas manuales o se realizan fijaciones. Se requiere línea de vida vertical y supervisión directa del anclaje.
+  tareas_asociadas:
+  - MRA_TA_004
+  riesgos_asociados:
+  - R01
+  roles_asociados:
+  - MRA_ROL_02
+  areas_asociadas:
+  - MRA
+- id: FE_011
+  nombre: Clima Adverso
+  descripcion: Condiciones como viento fuerte o lluvia afectan la estabilidad, visibilidad y desplazamiento durante tareas en altura. Este factor incrementa el riesgo de caídas y errores al manipular herramientas o equipos sobre plataformas elevadas. Requiere monitoreo meteorológico, protocolos de suspensión de tareas y resguardo adecuado del personal.
+  tareas_asociadas:
+  - MRA_TA_004
+  riesgos_asociados:
+  - R01
+  roles_asociados:
+  - MRA_ROL_02
+  areas_asociadas:
+  - MRA
+
+- id: FE_012
+  nombre: Espacios Confinados
+  descripcion: Trabajo en zonas de acceso restringido o volumen reducido (como compartimientos en altura), donde se limita la movilidad, ventilación y vías de escape. Este factor puede dificultar maniobras seguras y aumentar la exposición a caídas o atrapamientos. Exige evaluación previa, equipos de rescate y supervisión directa.
+  tareas_asociadas:
+  - MRA_TA_004
+  riesgos_asociados:
+  - R01
+  roles_asociados:
+  - MRA_ROL_02
+  areas_asociadas:
+  - MRA
+
+- id: FE_013
+  nombre: Caída de Material del Balde
+  descripcion: Exposición al desprendimiento de rocas u otros materiales desde el balde de la pala durante el carguío o descarga. Este factor puede provocar golpes a personas, daño a equipos o bloqueo de vías. Requiere establecer zonas de exclusión, señalización clara y comunicación efectiva entre operadores.
+  tareas_asociadas:
+  - MRA_TA_005
+  riesgos_asociados:
+  - R02
+  roles_asociados:
+  - MRA_ROL_02
+  areas_asociadas:
+  - MRA
+
+- id: FE_014
+  nombre: Movimientos Inesperados de Equipos
+  descripcion: Riesgo de colisión o atropello por movimientos imprevistos de pala o camión durante maniobras de carga. Puede ocurrir por fallas mecánicas, errores de coordinación o visibilidad reducida. Este factor exige comunicación radial efectiva, uso de alarmas y protocolos de detención segura.
+  tareas_asociadas:
+  - MRA_TA_005
+  riesgos_asociados:
+  - R02
+  roles_asociados:
+  - MRA_ROL_02
+  areas_asociadas:
+  - MRA
+
+- id: FE_015
+  nombre: Ingreso a Zona de Exclusión
+  descripcion: Presencia no autorizada de personas o equipos en áreas restringidas durante el carguío, como debajo del balde o dentro del radio de acción. Este factor aumenta el riesgo de atrapamiento, caída de objetos o impacto. Debe gestionarse con control de acceso, señalización robusta y vigilancia continua.
+  tareas_asociadas:
+  - MRA_TA_005
+  riesgos_asociados:
+  - R02
+  roles_asociados:
+  - MRA_ROL_02
+  areas_asociadas:
+  - MRA
+
+- id: FE_016
+  nombre: Energía Residual o Estática
+  descripcion: Exposición a descargas por acumulación de energía estática o tensión residual en paneles eléctricos, incluso cuando el sistema no está energizado. Este factor puede provocar quemaduras o contracciones musculares. Requiere procedimientos LOTO rigurosos y uso de dispositivos de descarga controlada.
+  tareas_asociadas:
+  - MRA_TA_006
+  riesgos_asociados:
+  - R03
+  roles_asociados:
+  - MRA_ROL_02
+  areas_asociadas:
+  - MRA
+
+- id: FE_017
+  nombre: Falla de Aislamiento Eléctrico
+  descripcion: Deterioro o daño en el aislamiento de cables de arrastre, con riesgo de energización de la estructura de la pala. Puede generar contacto indirecto con partes metálicas expuestas. Este factor exige inspección periódica, pruebas de resistencia de aislamiento y mantenimiento correctivo inmediato.
+  tareas_asociadas:
+  - MRA_TA_006
+  riesgos_asociados:
+  - R03
+  roles_asociados:
+  - MRA_ROL_02
+  areas_asociadas:
+  - MRA
+
+- id: FE_018
+  nombre: Arco Eléctrico en Alta Tensión
+  descripcion: Formación de arco eléctrico debido a fallas internas en componentes de alta tensión, como interruptores o celdas. Este evento puede generar calor extremo, onda de choque y proyección de partículas metálicas. Debe mitigarse con aislamiento reforzado, distancia de seguridad y procedimientos de verificación sin contacto.
+  tareas_asociadas:
+  - MRA_TA_006
+  riesgos_asociados:
+  - R03
+  roles_asociados:
+  - MRA_ROL_02
+  areas_asociadas:
+  - MRA
+
+- id: FE_019
+  nombre: Pendientes y Terreno Irregular
+  descripcion: Conducción sobre rampas inclinadas y caminos sin nivelación adecuada, lo que incrementa el riesgo de deslizamiento o volcamiento. Este factor requiere control de velocidad, mantenimiento del camino, inspección del terreno y entrenamiento en operación defensiva.
+  tareas_asociadas:
+  - MRA_TA_007
+  riesgos_asociados:
+  - R01
+  roles_asociados:
+  - MRA_ROL_03
+  areas_asociadas:
+  - MRA
+
+- id: FE_020
+  nombre: Baja Visibilidad Ambiental
+  descripcion: Presencia de niebla, lluvia intensa o polvo en suspensión que dificulta la percepción de obstáculos, señales o pendientes. Este factor compromete la conducción segura y requiere faros auxiliares, conducción a la defensiva y suspensión de operaciones si los límites de visibilidad se exceden.
+  tareas_asociadas:
+  - MRA_TA_007
+  riesgos_asociados:
+  - R01
+  roles_asociados:
+  - MRA_ROL_03
+  areas_asociadas:
+  - MRA
+
+- id: FE_021
+  nombre: Inercia y Maniobrabilidad de Camiones
+  descripcion: El gran tamaño y peso de los camiones de extracción aumenta la inercia y la dificultad para frenar o maniobrar en rampas o espacios reducidos. Este factor incrementa el riesgo de colisiones, salidas de camino o pérdida de control, especialmente en pendientes o condiciones adversas.
+  tareas_asociadas:
+  - MRA_TA_007
+  riesgos_asociados:
+  - R01
+  roles_asociados:
+  - MRA_ROL_03
+  areas_asociadas:
+  - MRA
+
+- id: FE_022
+  nombre: Carga Insegura sobre Camión
+  descripcion: La caída de material desde el balde de la pala o una mala distribución del carguío puede impactar el camión, dañar componentes o generar condiciones inestables durante el traslado. Requiere posicionamiento preciso, comunicación clara y verificación del volumen de carga.
+  tareas_asociadas:
+  - MRA_TA_008
+  riesgos_asociados:
+  - R02
+  roles_asociados:
+  - MRA_ROL_03
+  areas_asociadas:
+  - MRA
+
+- id: FE_023
+  nombre: Maniobras en Espacios Reducidos
+  descripcion: Realizar maniobras frente a la pala o en zonas de botadero con espacio limitado incrementa el riesgo de colisión con otros equipos o caída desde el talud. Este factor exige máxima atención del operador, guiado visual o cámaras y procedimientos de ingreso controlado.
+  tareas_asociadas:
+  - MRA_TA_008
+  riesgos_asociados:
+  - R02
+  roles_asociados:
+  - MRA_ROL_03
+  areas_asociadas:
+  - MRA
+
+- id: FE_024
+  nombre: Ausencia de Bermas en Botadero
+  descripcion: El no respetar los bermas de seguridad durante las maniobras de descarga puede provocar la caída del camión por el talud. Este factor exige una revisión permanente de las condiciones del botadero y cumplimiento estricto de la distancia mínima de retroceso.
+  tareas_asociadas:
+  - MRA_TA_008
+  riesgos_asociados:
+  - R02
+  roles_asociados:
+  - MRA_ROL_03
+  areas_asociadas:
+  - MRA
+
+- id: FE_025
+  nombre: Contacto con Baterías Energizadas
+  descripcion: Manipular bornes de baterías o cableado dañado sin precaución puede causar cortocircuitos o descargas leves. Este factor es frecuente en tareas de inspección y mantenimiento eléctrico en vehículos mineros, especialmente si se usan herramientas metálicas sin aislamiento.
+  tareas_asociadas:
+  - MRA_TA_009
+  - MRA_TA_012
+  - MRA_TA_015
+  riesgos_asociados:
+  - R03
+  roles_asociados:
+  - MRA_ROL_03
+  - MRA_ROL_04
+  - MRA_ROL_05
+  areas_asociadas:
+  - MRA
+
+- id: FE_026
+  nombre: Arco Eléctrico en Conexión de Baterías
+  descripcion: Durante la conexión o desconexión de baterías, puede generarse un pequeño arco eléctrico si no se siguen los pasos adecuados. Este factor puede provocar susto, quemaduras menores o inflamación de gases cercanos. Requiere uso de EPP dieléctrico y procedimientos seguros de desconexión.
+  tareas_asociadas:
+  - MRA_TA_009
+  - MRA_TA_012
+  riesgos_asociados:
+  - R03
+  roles_asociados:
+  - MRA_ROL_03
+  - MRA_ROL_04
+  areas_asociadas:
+  - MRA
+
+- id: FE_027
+  nombre: Cables con Aislamiento Dañado
+  descripcion: El deterioro del aislamiento en cables eléctricos puede exponer conductores activos, generando riesgo de descarga o cortocircuito. Este factor exige inspección visual frecuente, reemplazo preventivo y uso de conectores certificados.
+  tareas_asociadas:
+  - MRA_TA_009
+  - MRA_TA_015
+  riesgos_asociados:
+  - R03
+  roles_asociados:
+  - MRA_ROL_03
+  - MRA_ROL_05
+  areas_asociadas:
+  - MRA
+
+- id: FE_028
+  nombre: Terreno Inestable en Frentes
+  descripcion: Operar equipos como cargadores frontales sobre material suelto o pendientes inestables puede provocar volcamiento o pérdida de tracción. Este factor exige evaluación previa del terreno, rutas seguras de tránsito y límite de carga en zonas blandas.
+  tareas_asociadas:
+  - MRA_TA_010
+  riesgos_asociados:
+  - R01
+  roles_asociados:
+  - MRA_ROL_04
+  areas_asociadas:
+  - MRA
+
+- id: FE_029
+  nombre: Visibilidad Limitada en Maniobras
+  descripcion: La operación en reversa o en zonas con puntos ciegos, especialmente sin guías o cámaras funcionales, puede resultar en colisiones o atropellos. Requiere espejos convexos, alarmas sonoras y entrenamiento específico en maniobras con visibilidad reducida.
+  tareas_asociadas:
+  - MRA_TA_010
+  riesgos_asociados:
+  - R01
+  roles_asociados:
+  - MRA_ROL_04
+  areas_asociadas:
+  - MRA
+
+- id: FE_030
+  nombre: Superficie Resbaladiza en Cabina
+  descripcion: El ascenso o descenso de la cabina en condiciones de lluvia, barro o grasa representa riesgo de resbalón y caída. Este factor debe ser mitigado con escalas antideslizantes, tres puntos de apoyo, limpieza periódica y calzado adecuado.
+  tareas_asociadas:
+  - MRA_TA_010
+  riesgos_asociados:
+  - R01
+  roles_asociados:
+  - MRA_ROL_04
+  areas_asociadas:
+  - MRA
+- id: FE_031
+  nombre: Caída de Material del Balde
+  descripcion: Durante el carguío con cargador frontal, el material puede desprenderse desde el balde en movimiento o mal nivelado, impactando personas o equipos. Este factor exige control de sobrecarga, correcta manipulación del brazo hidráulico y zona de trabajo despejada.
+  tareas_asociadas:
+  - MRA_TA_011
+  riesgos_asociados:
+  - R02
+  roles_asociados:
+  - MRA_ROL_04
+  areas_asociadas:
+  - MRA
+
+- id: FE_032
+  nombre: Movimiento Inesperado del Brazo del Cargador
+  descripcion: Movimientos imprevistos del brazo o balde del cargador pueden golpear a personal o colisionar con otros equipos. Este riesgo se incrementa por errores de control, mal estado del sistema hidráulico o fallas en la comunicación.
+  tareas_asociadas:
+  - MRA_TA_011
+  riesgos_asociados:
+  - R02
+  roles_asociados:
+  - MRA_ROL_04
+  areas_asociadas:
+  - MRA
+
+- id: FE_033
+  nombre: Proyección de Fragmentos del Frente
+  descripcion: Exposición a fragmentos de roca u otros materiales lanzados desde frentes inestables o durante el trabajo con palas y cargadores. Este factor requiere zonas de exclusión y control de fragmentación del material.
+  tareas_asociadas:
+  - MRA_TA_011
+  riesgos_asociados:
+  - R02
+  roles_asociados:
+  - MRA_ROL_04
+  areas_asociadas:
+  - MRA
+
+- id: FE_034
+  nombre: Uso Incorrecto de Herramientas Eléctricas
+  descripcion: Manipular componentes eléctricos con herramientas no certificadas o sin el aislamiento correspondiente puede provocar descargas o cortocircuitos. Este factor exige el uso de herramientas dieléctricas y chequeo de voltaje previo.
+  tareas_asociadas:
+  - MRA_TA_012
+  riesgos_asociados:
+  - R03
+  roles_asociados:
+  - MRA_ROL_04
+  areas_asociadas:
+  - MRA
+
+- id: FE_035
+  nombre: Trabajo Bajo Equipos sin Soporte Seguro
+  descripcion: Realizar mantenimiento bajo vehículos o en zanjas sin soporte mecánico adecuado puede provocar atrapamientos o aplastamientos. Se requiere uso obligatorio de torres, calzos, gatos hidráulicos certificados y control de liberación de energía.
+  tareas_asociadas:
+  - MRA_TA_013
+  riesgos_asociados:
+  - R01
+  roles_asociados:
+  - MRA_ROL_05
+  areas_asociadas:
+  - MRA
+
+- id: FE_036
+  nombre: Mantenimiento en Altura sin Protección
+  descripcion: Realizar trabajos sobre componentes elevados de equipos móviles o estructuras sin medidas anticaídas adecuadas. Este factor demanda líneas de vida, barandas o uso de plataformas de trabajo en altura.
+  tareas_asociadas:
+  - MRA_TA_013
+  riesgos_asociados:
+  - R01
+  roles_asociados:
+  - MRA_ROL_05
+  areas_asociadas:
+  - MRA
+
+- id: FE_037
+  nombre: Restricción de Movimiento en Espacios Reducidos
+  descripcion: Ejecutar labores en compartimientos estrechos, zanjas o bajo estructuras que limitan la movilidad y dificultan la evacuación en caso de emergencia. Este factor requiere evaluación de atmósfera, autorización de ingreso y sistema de rescate disponible.
+  tareas_asociadas:
+  - MRA_TA_013
+  riesgos_asociados:
+  - R01
+  roles_asociados:
+  - MRA_ROL_05
+  areas_asociadas:
+  - MRA
+
+- id: FE_038
+  nombre: Caída de Carga en Izaje
+  descripcion: Riesgo de caída de neumáticos, motores u otros componentes pesados durante operaciones de izaje. Puede deberse a fallas en el aparejo, equipos defectuosos o uso incorrecto de grúas. Requiere checklist previo, cálculo de carga y señalización del área.
+  tareas_asociadas:
+  - MRA_TA_014
+  riesgos_asociados:
+  - R02
+  roles_asociados:
+  - MRA_ROL_05
+  areas_asociadas:
+  - MRA
+
+- id: FE_039
+  nombre: Golpe por Movimiento de Carga Suspendida
+  descripcion: Componentes suspendidos pueden oscilar o desplazarse bruscamente por viento, frenado o error de operador, provocando colisiones con estructuras o personas. Este factor exige señalización, cuerdas guías y control del entorno.
+  tareas_asociadas:
+  - MRA_TA_014
+  riesgos_asociados:
+  - R02
+  roles_asociados:
+  - MRA_ROL_05
+  areas_asociadas:
+  - MRA
+
+- id: FE_040
+  nombre: Aplastamiento por Componente Mal Asegurado
+  descripcion: Durante el montaje o desmontaje de partes pesadas, un mal aseguramiento o inestabilidad puede provocar el colapso del componente. Este factor se mitiga con herramientas adecuadas, inspección previa y señalización de zonas de trabajo.
+  tareas_asociadas:
+  - MRA_TA_014
+  riesgos_asociados:
+  - R02
+  roles_asociados:
+  - MRA_ROL_05
+  areas_asociadas:
+  - MRA
+- id: FE_041
+  nombre: Arco Eléctrico por Fusibles o Baterías
+  descripcion: Manipular fusibles o baterías sin precaución puede generar un arco eléctrico leve, especialmente durante la conexión o desconexión de terminales. Aunque la tensión es baja, este evento puede causar quemaduras menores o sustos por chispas. Se requiere el uso de guantes y herramientas aisladas.
+  tareas_asociadas:
+  - MRA_TA_015
+  riesgos_asociados:
+  - R03
+  roles_asociados:
+  - MRA_ROL_05
+  areas_asociadas:
+  - MRA
+
+- id: FE_042
+  nombre: Terreno Irregular en Labores Topográficas
+  descripcion: Desplazarse por zonas con pendientes, rocas sueltas o terreno erosionado aumenta el riesgo de caídas. Este factor afecta al personal topográfico que debe caminar en condiciones sin estabilización, y puede prevenirse con planificación de rutas y calzado con tracción reforzada.
+  tareas_asociadas:
+  - MRA_TA_016
+  riesgos_asociados:
+  - R01
+  roles_asociados:
+  - MRA_ROL_06
+  areas_asociadas:
+  - MRA
+
+- id: FE_043
+  nombre: Visibilidad Reducida por Polvo o Niebla
+  descripcion: La presencia de niebla, lluvia intensa o polvo en suspensión limita la percepción de obstáculos y desniveles. Este factor aumenta la posibilidad de tropiezos y desorientación, especialmente en labores a pie. Se recomienda pausar tareas hasta mejorar las condiciones o usar luces de seguridad.
+  tareas_asociadas:
+  - MRA_TA_016
+  riesgos_asociados:
+  - R01
+  roles_asociados:
+  - MRA_ROL_06
+  areas_asociadas:
+  - MRA
+
+- id: FE_044
+  nombre: Tránsito de Equipos en Zonas de Medición
+  descripcion: Las labores topográficas se realizan frecuentemente en áreas operativas activas, donde circulan camiones, cargadores y perforadoras. El movimiento constante de estos equipos representa riesgo de atropello si no hay coordinación y visibilidad mutua. Se requiere chaleco reflectante y contacto radial.
+  tareas_asociadas:
+  - MRA_TA_016
+  riesgos_asociados:
+  - R01
+  roles_asociados:
+  - MRA_ROL_06
+  areas_asociadas:
+  - MRA
+
+- id: FE_045
+  nombre: Caída de Prismas o Accesorios
+  descripcion: Al instalar o retirar prismas en postes o soportes, pueden soltarse piezas pequeñas que al caer desde altura representan riesgo de impacto. Este factor requiere uso de bolsos con cierre, herramientas aseguradas y casco con barbuquejo.
+  tareas_asociadas:
+  - MRA_TA_017
+  riesgos_asociados:
+  - R02
+  roles_asociados:
+  - MRA_ROL_06
+  areas_asociadas:
+  - MRA
+
+- id: FE_046
+  nombre: Fragmentos desde Taludes o Voladuras
+  descripcion: La cercanía a frentes inestables o zonas donde se realizan tronaduras puede exponer al trabajador a fragmentos proyectados. Requiere zonas de exclusión, monitoreo de estabilidad y coordinación previa con operaciones de perforación.
+  tareas_asociadas:
+  - MRA_TA_017
+  riesgos_asociados:
+  - R02
+  roles_asociados:
+  - MRA_ROL_06
+  areas_asociadas:
+  - MRA
+
+- id: FE_047
+  nombre: Falta de Coordinación con Maquinaria
+  descripcion: Transitar o realizar actividades en zonas donde operan camiones y equipos pesados sin coordinación o señalización puede llevar a situaciones de riesgo por desconocimiento mutuo de presencia. Se requiere uso de chaleco de alta visibilidad y notificación previa al supervisor de turno.
+  tareas_asociadas:
+  - MRA_TA_017
+  riesgos_asociados:
+  - R02
+  roles_asociados:
+  - MRA_ROL_06
+  areas_asociadas:
+  - MRA
+
+- id: FE_048
+  nombre: Manipulación de Baterías sin Precaución
+  descripcion: Aunque el voltaje es bajo, el mal manejo de baterías puede provocar cortocircuitos, quemaduras por electrolito o proyección de chispas. Este factor requiere almacenamiento seguro, inspección de terminales y uso de guantes dieléctricos.
+  tareas_asociadas:
+  - MRA_TA_018
+  riesgos_asociados:
+  - R03
+  roles_asociados:
+  - MRA_ROL_06
+  areas_asociadas:
+  - MRA
+
+- id: FE_049
+  nombre: Daño a Equipos por Condiciones Ambientales
+  descripcion: El uso continuo de estaciones totales, GPS u otros instrumentos electrónicos en ambientes con polvo, humedad o vibración puede deteriorar el aislamiento o producir fallas internas. Este factor requiere limpieza periódica, uso de estuches sellados y revisiones antes de la jornada.
+  tareas_asociadas:
+  - MRA_TA_018
+  riesgos_asociados:
+  - R03
+  roles_asociados:
+  - MRA_ROL_06
+  areas_asociadas:
+  - MRA
+
+- id: FE_050
+  nombre: Falta de Revisión de Conectores Eléctricos
+  descripcion: Conectores sucios, flojos o con fisuras pueden producir falsos contactos, sobrecalentamientos o cortocircuitos durante el uso de equipos electrónicos portátiles. Este factor se mitiga con una inspección visual sistemática antes de su utilización.
+  tareas_asociadas:
+  - MRA_TA_018
+  riesgos_asociados:
+  - R03
+  roles_asociados:
+  - MRA_ROL_06
+  areas_asociadas:
+  - MRA
+- id: FE_051
+  nombre: Terreno Irregular y Pendiente
+  descripcion: Desplazarse en zonas con desniveles, piedras sueltas o barro, especialmente durante la noche o con lluvia, incrementa el riesgo de caídas. Este factor requiere rutas definidas, iluminación adecuada y uso de calzado con suela antideslizante.
+  tareas_asociadas:
+  - MRA_TA_019
+  riesgos_asociados:
+  - R01
+  roles_asociados:
+  - MRA_ROL_07
+  areas_asociadas:
+  - MRA
+
+- id: FE_052
+  nombre: Cercanía a Equipos sin Coordinación
+  descripcion: Estar próximo a maquinaria en operación sin coordinación previa ni señalización visible puede llevar a atropellos o colisiones. Es fundamental mantener contacto radial y respetar zonas de exclusión operativa.
+  tareas_asociadas:
+  - MRA_TA_019
+  riesgos_asociados:
+  - R01
+  roles_asociados:
+  - MRA_ROL_07
+  areas_asociadas:
+  - MRA
+
+- id: FE_053
+  nombre: Falta de Adherencia a Procedimientos
+  descripcion: La omisión de normas básicas de seguridad por parte del personal inspeccionado puede provocar incidentes o exposiciones innecesarias. Este factor exige intervención inmediata, reforzamiento conductual y seguimiento documental.
+  tareas_asociadas:
+  - MRA_TA_019
+  riesgos_asociados:
+  - R01
+  roles_asociados:
+  - MRA_ROL_07
+  areas_asociadas:
+  - MRA
+
+- id: FE_054
+  nombre: Supervisión en Zonas de Caída de Objetos
+  descripcion: Observar operaciones sin mantener distancia prudente de frentes, taludes o baldes elevados puede resultar en impacto por caída de herramientas o rocas. Requiere aplicación de perímetros de seguridad y vigilancia de altura.
+  tareas_asociadas:
+  - MRA_TA_020
+  riesgos_asociados:
+  - R02
+  roles_asociados:
+  - MRA_ROL_07
+  areas_asociadas:
+  - MRA
+
+- id: FE_055
+  nombre: Ingreso a Zonas de Maniobra sin Señal
+  descripcion: Ingresar a áreas de operación de carguío, descarga o perforación sin visibilidad mutua o aviso al operador puede derivar en impactos por equipo móvil. Este factor demanda procedimientos de ingreso seguro y uso de balizas personales.
+  tareas_asociadas:
+  - MRA_TA_020
+  riesgos_asociados:
+  - R02
+  roles_asociados:
+  - MRA_ROL_07
+  areas_asociadas:
+  - MRA
+
+- id: FE_056
+  nombre: Presión Operacional sin Controles
+  descripcion: La urgencia por cumplir metas productivas puede inducir a relajar o ignorar controles críticos de seguridad, como permisos, distancias o bloqueos. Este factor debe ser abordado desde la cultura de liderazgo visible en terreno.
+  tareas_asociadas:
+  - MRA_TA_020
+  riesgos_asociados:
+  - R02
+  roles_asociados:
+  - MRA_ROL_07
+  areas_asociadas:
+  - MRA
+
+- id: FE_057
+  nombre: Falta de Verificación de Controles Eléctricos
+  descripcion: Supervisar trabajos eléctricos sin confirmar el uso de LOTO, herramientas aisladas o EPP dieléctrico deja al equipo expuesto a incidentes graves. Este factor exige revisión previa completa antes de autorizar inicio de tareas.
+  tareas_asociadas:
+  - MRA_TA_021
+  riesgos_asociados:
+  - R03
+  roles_asociados:
+  - MRA_ROL_07
+  areas_asociadas:
+  - MRA
+
+- id: FE_058
+  nombre: Aprobación sin Revisar Permisos o EPP
+  descripcion: Validar el inicio de una tarea eléctrica sin comprobar permisos firmados o dotación completa de EPP puede derivar en accidentes evitables. Este factor requiere checklist obligatorio antes de cualquier intervención de riesgo.
+  tareas_asociadas:
+  - MRA_TA_021
+  riesgos_asociados:
+  - R03
+  roles_asociados:
+  - MRA_ROL_07
+  areas_asociadas:
+  - MRA
+
+- id: FE_059
+  nombre: Supervisión sin Conocimiento Técnico Eléctrico
+  descripcion: La falta de comprensión del riesgo específico de cada sistema eléctrico puede llevar al supervisor a pasar por alto fallas críticas. Este factor demanda capacitación periódica en riesgos eléctricos de media y baja tensión.
+  tareas_asociadas:
+  - MRA_TA_021
+  riesgos_asociados:
+  - R03
+  roles_asociados:
+  - MRA_ROL_07
+  areas_asociadas:
+  - MRA
+
+- id: FE_060
+  nombre: Tránsito Cercano a Equipos con Puntos Ciegos
+  descripcion: Dirigir el tránsito a pie cerca de equipos pesados como palas, camiones o perforadoras implica riesgo de impacto si el operador no ve al señalizador. Este factor requiere posición estratégica, uso de banderines y contacto radial constante.
+  tareas_asociadas:
+  - MRA_TA_022
+  riesgos_asociados:
+  - R01
+  roles_asociados:
+  - MRA_ROL_08
+  areas_asociadas:
+  - MRA
+- id: FE_061
+  nombre: Visibilidad Reducida por Polvo o Lluvia
+  descripcion: La presencia de polvo en suspensión, niebla o lluvia intensa reduce la visibilidad del señalizador en terreno, dificultando la detección por parte de operadores de camiones o perforadoras, y aumentando el riesgo de atropellos.
+  tareas_asociadas:
+  - MRA_TA_022
+  riesgos_asociados:
+  - R01
+  roles_asociados:
+  - MRA_ROL_08
+  areas_asociadas:
+  - MRA
+
+- id: FE_062
+  nombre: Exposición por Desplazamiento en Terreno
+  descripcion: La necesidad de desplazarse continuamente para dirigir equipos pesados en terreno obliga al trabajador a ubicarse en zonas de riesgo, cerca de trayectorias operativas, lo que incrementa la posibilidad de contacto no visual con operadores.
+  tareas_asociadas:
+  - MRA_TA_022
+  riesgos_asociados:
+  - R01
+  roles_asociados:
+  - MRA_ROL_08
+  areas_asociadas:
+  - MRA
+
+- id: FE_063
+  nombre: Tránsito en Altura con Vibración y Ruido
+  descripcion: Transitar por pasarelas o escaleras elevadas en ambientes con vibración estructural y ruido excesivo (>90 dB) puede provocar pérdida de equilibrio, desorientación y distracción sensorial, aumentando el riesgo de caída desde altura.
+  tareas_asociadas:
+  - CHP_TA_001
+  riesgos_asociados:
+  - R01
+  roles_asociados:
+  - CHP_ROL_01
+  areas_asociadas:
+  - CHP
+
+- id: FE_064
+  nombre: Baja Visibilidad por Polvo en Suspensión
+  descripcion: El polvo fino en suspensión puede ocultar bordes de plataformas, zonas de tránsito y señalización, dificultando la orientación y aumentando el riesgo de tropiezos, caídas o contacto accidental con maquinaria.
+  tareas_asociadas:
+  - CHP_TA_001
+  riesgos_asociados:
+  - R01
+  roles_asociados:
+  - CHP_ROL_01
+  areas_asociadas:
+  - CHP
+
+- id: FE_065
+  nombre: Proyección de Fragmentos en Boca del Chancador
+  descripcion: Durante la observación del proceso de chancado pueden liberarse fragmentos de roca o partículas metálicas a alta velocidad, generando riesgo de impacto en rostro, torso o extremidades. Requiere delimitación visual y EPP facial reforzado.
+  tareas_asociadas:
+  - CHP_TA_002
+  riesgos_asociados:
+  - R02
+  roles_asociados:
+  - CHP_ROL_01
+  areas_asociadas:
+  - CHP
+
+- id: FE_066
+  nombre: Riesgo de Impacto por Maniobras de Alimentación
+  descripcion: La operación de cargadores y camiones en áreas cercanas al chancador genera puntos ciegos y riesgo de atropello o atrapamiento de personal que realiza inspección o tareas de mantención en la zona.
+  tareas_asociadas:
+  - CHP_TA_002
+  riesgos_asociados:
+  - R02
+  roles_asociados:
+  - CHP_ROL_01
+  areas_asociadas:
+  - CHP
+
+- id: FE_067
+  nombre: Trabajo sobre Superficie Resbaladiza
+  descripcion: Realizar tareas en plataformas contaminadas con aceite, grasa o lodo en altura incrementa el riesgo de resbalón y caída. Este factor requiere limpieza preventiva, delimitación de zona sucia y uso obligatorio de antideslizantes.
+  tareas_asociadas:
+  - CHP_TA_003
+  riesgos_asociados:
+  - R01
+  - R02
+  roles_asociados:
+  - CHP_ROL_02
+  areas_asociadas:
+  - CHP
+
+- id: FE_068
+  nombre: Caída de Carga en Izaje
+  descripcion: Al levantar componentes pesados como camisas o revestimientos, un mal cálculo del centro de gravedad, punto de anclaje débil o eslingado incorrecto puede provocar caída de la carga sobre operadores o estructuras.
+  tareas_asociadas:
+  - CHP_TA_003
+  riesgos_asociados:
+  - R01
+  - R02
+  roles_asociados:
+  - CHP_ROL_02
+  areas_asociadas:
+  - CHP
+
+- id: FE_069
+  nombre: Atmósfera Peligrosa en Espacios Confinados
+  descripcion: Ingresar al interior del chancador sin ventilación, sin medición de gases o sin autorización puede derivar en asfixia, intoxicación o atrapamiento. Requiere evaluación atmosférica, permisos de entrada y monitoreo continuo desde el exterior.
+  tareas_asociadas:
+  - CHP_TA_004
+  riesgos_asociados:
+  - R02
+  roles_asociados:
+  - CHP_ROL_02
+  areas_asociadas:
+  - CHP
+
+- id: FE_070
+  nombre: Caída de Herramientas en Mantenimiento
+  descripcion: El uso de herramientas sin amarre en altura puede provocar su caída sobre personal ubicado en niveles inferiores o dentro del chancador, con riesgo de lesiones graves por impacto directo. Se requiere sistema de retención y control visual de herramientas.
+  tareas_asociadas:
+  - CHP_TA_004
+  riesgos_asociados:
+  - R02
+  roles_asociados:
+  - CHP_ROL_02
+  areas_asociadas:
+  - CHP
+- id: FE_071
+  nombre: Inyección de Fluidos a Presión
+  descripcion: Durante tareas de mantenimiento hidráulico, la ruptura de mangueras o conexiones defectuosas puede liberar fluidos a alta presión capaces de penetrar la piel y provocar lesiones internas severas. Este riesgo exige despresurización previa y protección mecánica en las líneas.
+  tareas_asociadas:
+  - CHP_TA_005
+  riesgos_asociados: []
+  roles_asociados:
+  - CHP_ROL_02
+  areas_asociadas:
+  - CHP
+
+- id: FE_072
+  nombre: Contacto con Superficies Calientes
+  descripcion: Componentes del sistema hidráulico o del chancador pueden alcanzar altas temperaturas durante la operación. El contacto accidental sin verificación térmica o sin guantes adecuados puede causar quemaduras por conducción.
+  tareas_asociadas:
+  - CHP_TA_005
+  riesgos_asociados: []
+  roles_asociados:
+  - CHP_ROL_02
+  areas_asociadas:
+  - CHP
+
+- id: FE_073
+  nombre: Baja Iluminación en Áreas de Mantenimiento
+  descripcion: Ejecutar inspecciones o ajustes en zonas con iluminación insuficiente dificulta la detección de riesgos, aumenta la probabilidad de tropiezos y compromete la identificación de componentes eléctricos o mecánicos defectuosos.
+  tareas_asociadas:
+  - CHP_TA_006
+  riesgos_asociados:
+  - R03
+  roles_asociados:
+  - CHP_ROL_03
+  areas_asociadas:
+  - CHP
+
+- id: FE_074
+  nombre: Ruido Excesivo y Exposición Prolongada
+  descripcion: El entorno del chancador genera niveles de ruido constantes superiores a 85 dB. La exposición sin protección auditiva adecuada provoca fatiga, desorientación y deterioro auditivo irreversible en el tiempo.
+  tareas_asociadas:
+  - CHP_TA_006
+  riesgos_asociados:
+  - R03
+  roles_asociados:
+  - CHP_ROL_03
+  areas_asociadas:
+  - CHP
+
+- id: FE_075
+  nombre: Vibración durante Supervisión o Ajustes
+  descripcion: El monitoreo del chancador mientras opera o se ajustan piezas cercanas expone al trabajador a vibraciones que pueden desestabilizar su postura, generar fatiga o interferir con la manipulación precisa de herramientas.
+  tareas_asociadas:
+  - CHP_TA_007
+  riesgos_asociados:
+  - R02
+  roles_asociados:
+  - CHP_ROL_03
+  areas_asociadas:
+  - CHP
+
+- id: FE_076
+  nombre: Acceso Riesgoso en Zonas Internas
+  descripcion: Las zonas internas del chancador pueden carecer de escaleras seguras, pasarelas o puntos de anclaje. El ingreso a estas áreas sin control anticaídas representa riesgo crítico de caída a distinto nivel.
+  tareas_asociadas:
+  - CHP_TA_007
+  riesgos_asociados:
+  - R01
+  roles_asociados:
+  - CHP_ROL_03
+  areas_asociadas:
+  - CHP
+
+- id: FE_077
+  nombre: Herramientas sin Aislamiento Eléctrico
+  descripcion: Usar herramientas no dieléctricas o dañadas al realizar ajustes en componentes eléctricos puede causar electrocución o arco eléctrico, especialmente en zonas húmedas o con espacio limitado para maniobras.
+  tareas_asociadas:
+  - CHP_TA_008
+  riesgos_asociados:
+  - R03
+  roles_asociados:
+  - CHP_ROL_04
+  areas_asociadas:
+  - CHP
+
+- id: FE_078
+  nombre: Tableros sin Verificación de Energía
+  descripcion: Abrir o manipular tableros sin medir tensión, ni aplicar el procedimiento LOTO, puede resultar en contacto directo con conductores energizados, generando descargas, quemaduras o arco eléctrico.
+  tareas_asociadas:
+  - CHP_TA_008
+  riesgos_asociados:
+  - R03
+  roles_asociados:
+  - CHP_ROL_04
+  areas_asociadas:
+  - CHP
+
+- id: FE_079
+  nombre: Cableado Expuesto o Improvisado
+  descripcion: La presencia de cables dañados, sin canalización o con tendido improvisado en salas técnicas puede provocar tropiezos, contactos accidentales o cortocircuitos ante condiciones de humedad o sobrecarga.
+  tareas_asociadas:
+  - CHP_TA_009
+  riesgos_asociados:
+  - R03
+  roles_asociados:
+  - CHP_ROL_04
+  areas_asociadas:
+  - CHP
+
+- id: FE_080
+  nombre: Ausencia de LOTO en Equipos Energizados
+  descripcion: Intervenir motores, tableros o sistemas eléctricos sin aplicar bloqueo y etiquetado (LOTO) representa riesgo inmediato de contacto con energía activa. Este factor es crítico y debe ser controlado con rigor documental y operativo.
+  tareas_asociadas:
+  - CHP_TA_009
+  riesgos_asociados:
+  - R03
+  roles_asociados:
+  - CHP_ROL_04
+  areas_asociadas:
+  - CHP
+- id: FE_081
+  nombre: Polvo Mineral Conductivo en Equipos
+  descripcion: La acumulación de polvo fino en áreas eléctricas o equipos sin sellado puede generar rutas de fuga de corriente, cortocircuitos o fallas de aislamiento. Este factor requiere limpieza preventiva y encapsulado de componentes sensibles.
+  tareas_asociadas:
+  - CHP_TA_010
+  riesgos_asociados:
+  - R03
+  roles_asociados:
+  - CHP_ROL_04
+  areas_asociadas:
+  - CHP
+
+- id: FE_082
+  nombre: Equipos sin Aterrizamiento Efectivo
+  descripcion: La falta de puesta a tierra o desconexión del sistema de protección diferencial expone al personal a riesgos de electrocución ante una falla de aislamiento o contacto accidental con carcasa metálica energizada.
+  tareas_asociadas:
+  - CHP_TA_010
+  riesgos_asociados:
+  - R03
+  roles_asociados:
+  - CHP_ROL_04
+  areas_asociadas:
+  - CHP
+
+- id: FE_083
+  nombre: Ausencia de Señalización Crítica
+  descripcion: La inexistencia o deterioro de señalética en áreas de intervención eléctrica, tránsito restringido o zonas de riesgo impide alertar a trabajadores y operadores, favoreciendo el ingreso no controlado o acciones inseguras.
+  tareas_asociadas:
+  - CHP_TA_011
+  riesgos_asociados:
+  - R03
+  roles_asociados:
+  - CHP_ROL_04
+  areas_asociadas:
+  - CHP
+
+- id: FE_084
+  nombre: Acceso Inseguro a Sala Eléctrica
+  descripcion: Ingresar a salas eléctricas sin autorización, sin EPP adecuado o sin verificación de atmósfera, representa riesgo de electrocución, quemaduras o atrapamiento por falta de rutas de evacuación seguras.
+  tareas_asociadas:
+  - CHP_TA_011
+  riesgos_asociados:
+  - R03
+  roles_asociados:
+  - CHP_ROL_04
+  areas_asociadas:
+  - CHP
+
+- id: FE_085
+  nombre: Acumulación de Polvo por Falla en Extractores
+  descripcion: Sistemas de ventilación o extracción inoperativos permiten acumulación de polvo mineral en suspensión, lo que reduce visibilidad, contamina componentes y agrava la exposición respiratoria del personal cercano.
+  tareas_asociadas:
+  - CHP_TA_012
+  riesgos_asociados:
+  - R02
+  roles_asociados:
+  - CHP_ROL_05
+  areas_asociadas:
+  - CHP
+
+- id: FE_086
+  nombre: Exposición a Polvo Metálico en Seco
+  descripcion: Operaciones de limpieza, pulido o desarme generan partículas metálicas en suspensión, que al ser inhaladas pueden causar daño pulmonar o irritación. Este factor exige mascarillas específicas y ventilación forzada.
+  tareas_asociadas:
+  - CHP_TA_012
+  riesgos_asociados:
+  - R02
+  roles_asociados:
+  - CHP_ROL_05
+  areas_asociadas:
+  - CHP
+
+- id: FE_087
+  nombre: Sobreesfuerzo en Manipulación Manual
+  descripcion: Levantar, cargar o desplazar piezas pesadas sin equipos de asistencia o técnica adecuada puede provocar lesiones músculo-esqueléticas agudas o crónicas. Este factor debe mitigarse con ergonomía, pausas activas y ayudas mecánicas.
+  tareas_asociadas:
+  - CHP_TA_013
+  riesgos_asociados:
+  - R02
+  roles_asociados:
+  - CHP_ROL_05
+  areas_asociadas:
+  - CHP
+
+- id: FE_088
+  nombre: Atrapamiento por Cierre Inesperado
+  descripcion: Al reinstalar tapas, cubiertas o estructuras móviles, una falla de retención, presión residual o liberación no controlada puede producir atrapamientos graves en extremidades o torso.
+  tareas_asociadas:
+  - CHP_TA_013
+  riesgos_asociados:
+  - R02
+  roles_asociados:
+  - CHP_ROL_05
+  areas_asociadas:
+  - CHP
+
+- id: FE_089
+  nombre: Radiación Térmica en Sistemas de Lubricación
+  descripcion: Las proximidades a bombas, cañerías o componentes de lubricación en operación pueden emitir calor intenso, generando riesgo de quemaduras por radiación indirecta o por contacto con vapor o metal caliente.
+  tareas_asociadas:
+  - CHP_TA_014
+  riesgos_asociados:
+  - R02
+  roles_asociados:
+  - CHP_ROL_05
+  areas_asociadas:
+  - CHP
+
+- id: FE_090
+  nombre: Superficie Resbaladiza por Fluidos
+  descripcion: Aceites, grasas o refrigerantes derramados en zonas de paso o trabajo crean condiciones de deslizamiento, especialmente en plataformas metálicas, rampas o escaleras. Este factor exige limpieza inmediata y señalización visible.
+  tareas_asociadas:
+  - CHP_TA_014
+  riesgos_asociados:
+  - R02
+  roles_asociados:
+  - CHP_ROL_05
+  areas_asociadas:
+  - CHP
+- id: FE_091
+  nombre: Uso de Repuestos No Certificados
+  descripcion: La instalación de componentes no originales, sin certificación o fuera de especificación técnica puede provocar fallas mecánicas, incompatibilidad funcional y pérdida de confiabilidad en sistemas críticos de planta.
+  tareas_asociadas:
+  - CHP_TA_015
+  riesgos_asociados:
+  - R02
+  roles_asociados:
+  - CHP_ROL_06
+  areas_asociadas:
+  - CHP
+
+- id: FE_092
+  nombre: Inspección Incompleta o Superficial
+  descripcion: No desmontar componentes clave o usar herramientas inadecuadas en la inspección puede dejar ocultos defectos estructurales, fatiga de materiales o conexiones defectuosas, generando fallas operativas posteriores.
+  tareas_asociadas:
+  - CHP_TA_015
+  riesgos_asociados:
+  - R02
+  roles_asociados:
+  - CHP_ROL_06
+  areas_asociadas:
+  - CHP
+
+- id: FE_093
+  nombre: Obstrucción Visual por Suciedad
+  descripcion: Acumulación de polvo, grasa o residuos en superficies críticas impide la lectura de instrumentos, la identificación de válvulas y la correcta ejecución de tareas. Este factor incrementa errores operativos y dificulta el control visual.
+  tareas_asociadas:
+  - CHP_TA_015
+  riesgos_asociados:
+  - R02
+  roles_asociados:
+  - CHP_ROL_06
+  areas_asociadas:
+  - CHP
+
+- id: FE_094
+  nombre: Ausencia de Planos o Procedimientos Vigentes
+  descripcion: Ejecutar trabajos eléctricos o mecánicos sin documentación técnica actualizada aumenta el riesgo de montaje incorrecto, error de conexión o intervención sobre componentes incompatibles con la configuración actual.
+  tareas_asociadas:
+  - CHP_TA_016
+  riesgos_asociados:
+  - R02
+  roles_asociados:
+  - CHP_ROL_06
+  areas_asociadas:
+  - CHP
+
+- id: FE_095
+  nombre: Iluminación Natural Insuficiente o Desigual
+  descripcion: Trabajar en áreas con fuerte contraste de luz, sombras intensas o sin iluminación artificial complementaria compromete la capacidad visual del trabajador y puede causar tropiezos, lecturas erróneas o posturas inadecuadas.
+  tareas_asociadas:
+  - CHP_TA_016
+  riesgos_asociados:
+  - R02
+  roles_asociados:
+  - CHP_ROL_06
+  areas_asociadas:
+  - CHP
+
+- id: FE_096
+  nombre: Contaminación Metálica en Sistemas Críticos
+  descripcion: Virutas, rebabas o restos de pernos presentes en sistemas hidráulicos, eléctricos o mecánicos pueden generar interferencias funcionales, desgaste acelerado o bloqueo de válvulas y filtros.
+  tareas_asociadas:
+  - CHP_TA_017
+  riesgos_asociados:
+  - R02
+  roles_asociados:
+  - CHP_ROL_06
+  areas_asociadas:
+  - CHP
+
+- id: FE_097
+  nombre: Falta de Anclaje en Equipos Auxiliares
+  descripcion: Bases, soportes o estructuras móviles no aseguradas pueden volcarse o desplazarse al ser usadas como plataforma de trabajo o al apoyar herramientas pesadas. Este factor compromete la estabilidad durante maniobras.
+  tareas_asociadas:
+  - CHP_TA_017
+  riesgos_asociados:
+  - R01
+  roles_asociados:
+  - CHP_ROL_06
+  areas_asociadas:
+  - CHP
+
+- id: FE_098
+  nombre: Gestión Deficiente de Residuos
+  descripcion: El mal manejo de residuos industriales en zonas operativas genera contaminación cruzada, riesgo de incendio y obstrucción de rutas de evacuación. Incluye aceite, cables, empaques contaminados o solventes no contenidos.
+  tareas_asociadas:
+  - CHP_TA_018
+  riesgos_asociados:
+  - R02
+  roles_asociados:
+  - CHP_ROL_07
+  areas_asociadas:
+  - CHP
+
+- id: FE_099
+  nombre: Tareas sin Validación de Listas de Chequeo
+  descripcion: La omisión del checklist de seguridad o su ejecución sin revisión real compromete la detección oportuna de condiciones inseguras. Este factor contribuye a la normalización del desvío operacional.
+  tareas_asociadas:
+  - CHP_TA_018
+  riesgos_asociados:
+  - R02
+  roles_asociados:
+  - CHP_ROL_07
+  areas_asociadas:
+  - CHP
+
+- id: FE_100
+  nombre: Supervisión Intermitente o Incompleta
+  descripcion: Cuando la supervisión se realiza solo en etapas iniciales o sin presencia continua durante maniobras críticas, se reduce la capacidad de intervención temprana, detección de desvíos o reforzamiento de controles.
+  tareas_asociadas:
+  - CHP_TA_019
+  riesgos_asociados:
+  - R02
+  roles_asociados:
+  - CHP_ROL_07
+  areas_asociadas:
+  - CHP
+- id: FE_101
+  nombre: Ambiente Caliente y Húmedo por Procesos
+  descripcion: Las zonas cercanas a sistemas hidráulicos, motores o ductos de ventilación pueden acumular calor y humedad, reduciendo la capacidad de respuesta del trabajador y afectando la efectividad del EPP. Este factor exige pausas térmicas y monitoreo de condiciones.
+  tareas_asociadas:
+  - CHP_TA_019
+  riesgos_asociados:
+  - R02
+  roles_asociados:
+  - CHP_ROL_07
+  areas_asociadas:
+  - CHP
+
+- id: FE_102
+  nombre: Ingreso de Personas No Autorizadas
+  descripcion: La entrada de terceros no registrados en el permiso de trabajo puede exponerlos a riesgos eléctricos o mecánicos sin conocimiento de los controles aplicados, generando interferencias, desvíos o exposición inadvertida a energía activa.
+  tareas_asociadas:
+  - CHP_TA_020
+  riesgos_asociados:
+  - R02
+  roles_asociados:
+  - CHP_ROL_08
+  areas_asociadas:
+  - CHP
+
+- id: FE_103
+  nombre: Trabajo en Altura Cercano a Energía
+  descripcion: Realizar inspecciones o mediciones sobre plataformas elevadas cercanas a equipos energizados incrementa el riesgo de caída y arco eléctrico. Este factor exige barreras, señalización, sistema anticaída y verificación de distancias mínimas seguras.
+  tareas_asociadas:
+  - TME_TA_001
+  riesgos_asociados:
+  - R01
+  - R03
+  roles_asociados:
+  - TME_ROL_01
+  areas_asociadas:
+  - TME
+
+- id: FE_104
+  nombre: Inspección de Equipos Bajo Tensión
+  descripcion: La inspección visual o termográfica de componentes energizados sin aislamiento o desde distancias inadecuadas puede producir descargas o arco. Se requiere EPP clase 3, herramientas aisladas y cumplimiento estricto del procedimiento.
+  tareas_asociadas:
+  - TME_TA_001
+  riesgos_asociados:
+  - R01
+  - R03
+  roles_asociados:
+  - TME_ROL_01
+  areas_asociadas:
+  - TME
+
+- id: FE_105
+  nombre: Arco Eléctrico por Fallo en LOTO
+  descripcion: La omisión de pasos en el procedimiento de bloqueo y etiquetado (LOTO) puede liberar energía inesperadamente, generando un arco eléctrico severo. Este factor requiere verificación visual y medición de ausencia de tensión.
+  tareas_asociadas:
+  - TME_TA_002
+  riesgos_asociados:
+  - R03
+  roles_asociados:
+  - TME_ROL_01
+  areas_asociadas:
+  - TME
+
+- id: FE_106
+  nombre: Herramientas sin Protección en Media Tensión
+  descripcion: El uso de instrumentos o llaves no aisladas en cercanía a componentes energizados puede provocar descargas o arco. Requiere herramientas certificadas, uso de guantes dieléctricos y puntos de contacto controlados.
+  tareas_asociadas:
+  - TME_TA_002
+  riesgos_asociados:
+  - R03
+  roles_asociados:
+  - TME_ROL_01
+  areas_asociadas:
+  - TME
+
+- id: FE_107
+  nombre: Acceso a Espacios Estrechos en Altura
+  descripcion: Ingresar a racks de cables, estructuras con ductos o plataformas con espacio limitado limita la movilidad, favorece el desequilibrio y dificulta la evacuación en caso de incidente. Se requiere evaluación de acceso y protección corporal.
+  tareas_asociadas:
+  - TME_TA_003
+  riesgos_asociados:
+  - R01
+  roles_asociados:
+  - TME_ROL_02
+  areas_asociadas:
+  - TME
+
+- id: FE_108
+  nombre: Desorden Operacional en Plataforma
+  descripcion: Herramientas, mangueras o cables extendidos sin orden generan riesgo de tropiezo en plataformas elevadas o zonas estrechas. Este factor se previene con housekeeping permanente y rutas de desplazamiento despejadas.
+  tareas_asociadas:
+  - TME_TA_003
+  riesgos_asociados:
+  - R01
+  roles_asociados:
+  - TME_ROL_02
+  areas_asociadas:
+  - TME
+
+- id: FE_109
+  nombre: Descarga Estática en Baja Tensión
+  descripcion: La manipulación de tarjetas electrónicas o conectores en ambientes secos o sin control de humedad puede producir descargas electrostáticas que dañan los equipos o causan lesiones leves. Requiere pulseras antiestáticas y protección de contacto.
+  tareas_asociadas:
+  - TME_TA_004
+  riesgos_asociados:
+  - R03
+  roles_asociados:
+  - TME_ROL_02
+  areas_asociadas:
+  - TME
+
+- id: FE_110
+  nombre: Cortocircuito por Herramienta sin Aislamiento
+  descripcion: Usar herramientas metálicas comunes en tableros eléctricos o bornes sin protección puede causar cortocircuitos, chispas o pequeñas explosiones. Este factor exige checklist previo del equipo y cumplimiento de protocolo de intervención.
+  tareas_asociadas:
+  - TME_TA_004
+  riesgos_asociados:
+  - R03
+  roles_asociados:
+  - TME_ROL_02
+  areas_asociadas:
+  - TME
+- id: FE_111
+  nombre: Supervisión de Altura con Riesgo Eléctrico
+  descripcion: Supervisar trabajos en altura próximos a líneas energizadas sin planificación ni verificación activa incrementa el riesgo de caída y descarga para el personal y el supervisor. Se requiere monitoreo constante y distancias seguras.
+  tareas_asociadas:
+  - TME_TA_005
+  riesgos_asociados:
+  - R01
+  - R03
+  roles_asociados:
+  - TME_ROL_03
+  areas_asociadas:
+  - TME
+
+- id: FE_112
+  nombre: Validación Incompleta de Condiciones Seguras
+  descripcion: Una verificación superficial de EPP, distancias de seguridad o protecciones puede llevar a una falsa sensación de control. Este factor requiere que el supervisor actúe activamente ante desviaciones y no se limite a observar.
+  tareas_asociadas:
+  - TME_TA_005
+  riesgos_asociados:
+  - R01
+  - R03
+  roles_asociados:
+  - TME_ROL_03
+  areas_asociadas:
+  - TME
+
+- id: FE_113
+  nombre: Aprobación sin Verificar LOTO Aplicado
+  descripcion: Autorizar tareas en sistemas eléctricos sin validar visualmente la implementación del bloqueo y la verificación de tensión cero expone al equipo a contacto con energía residual o activación involuntaria.
+  tareas_asociadas:
+  - TME_TA_006
+  riesgos_asociados:
+  - R03
+  roles_asociados:
+  - TME_ROL_03
+  areas_asociadas:
+  - TME
+
+- id: FE_114
+  nombre: Fallo Indirecto en Sistema LOTO
+  descripcion: Aunque el supervisor no interactúe directamente con el sistema, la omisión en revisar etiquetas, candados o testeo puede resultar en liberación de energía inesperada durante la ejecución del trabajo.
+  tareas_asociadas:
+  - TME_TA_006
+  riesgos_asociados:
+  - R03
+  roles_asociados:
+  - TME_ROL_03
+  areas_asociadas:
+  - TME
+
+- id: FE_115
+  nombre: Exposición a Tensión Elevada en Pruebas
+  descripcion: Equipos de prueba como megóhmetros o hipot pueden generar tensiones superiores a 30–50kV. Este factor exige aislación física, monitoreo visual, señalización y segregación del área de trabajo.
+  tareas_asociadas:
+  - TME_TA_007
+  riesgos_asociados:
+  - R03
+  roles_asociados:
+  - TME_ROL_04
+  areas_asociadas:
+  - TME
+
+- id: FE_116
+  nombre: Contacto con Aislamiento Deficiente
+  descripcion: Realizar pruebas o mantenimiento con cables o equipos con deterioro de aislación puede provocar descargas eléctricas leves o severas. Se requiere revisión previa del estado físico del equipo.
+  tareas_asociadas:
+  - TME_TA_007
+  riesgos_asociados:
+  - R03
+  roles_asociados:
+  - TME_ROL_04
+  areas_asociadas:
+  - TME
+
+- id: FE_117
+  nombre: Trabajo en Cubiertas sin Anticaídas
+  descripcion: Inspeccionar o intervenir sistemas sobre techos, bandejas o plataformas sin línea de vida o barandas representa alto riesgo de caída. Debe establecerse el método de acceso seguro antes de comenzar.
+  tareas_asociadas:
+  - TME_TA_008
+  riesgos_asociados:
+  - R01
+  - R03
+  roles_asociados:
+  - TME_ROL_04
+  areas_asociadas:
+  - TME
+
+- id: FE_118
+  nombre: Contacto Eléctrico por Energización Inesperada
+  descripcion: Intervenir equipos asumiendo que están desenergizados cuando aún tienen tensión, ya sea por error de maniobra o señalización insuficiente, genera riesgo de descarga eléctrica severa.
+  tareas_asociadas:
+  - TME_TA_008
+  riesgos_asociados:
+  - R01
+  - R03
+  roles_asociados:
+  - TME_ROL_04
+  areas_asociadas:
+  - TME
+
+- id: FE_119
+  nombre: Falta de Experiencia en Tareas Críticas
+  descripcion: Asignar actividades de alto riesgo como tendido eléctrico en altura o montaje sin formación técnica ni experiencia suficiente aumenta la probabilidad de error y exposición a riesgos eléctricos y de caída.
+  tareas_asociadas:
+  - TME_TA_009
+  riesgos_asociados:
+  - R01
+  - R03
+  roles_asociados:
+  - TME_ROL_05
+  areas_asociadas:
+  - TME
+
+- id: FE_120
+  nombre: Error Operacional Bajo Supervisión
+  descripcion: La ejecución directa de tareas eléctricas por aprendices sin control detallado del supervisor puede derivar en cortocircuitos, choques eléctricos o errores de conexión. Exige acompañamiento cercano y checklist por parte del tutor.
+  tareas_asociadas:
+  - TME_TA_009
+  riesgos_asociados:
+  - R01
+  - R03
+  roles_asociados:
+  - TME_ROL_05
+  areas_asociadas:
+  - TME
+- id: FE_121
+  nombre: Caída en Plataformas de Motores
+  descripcion: Trabajar sobre plataformas elevadas sin barandas, señalización o superficie antideslizante aumenta el riesgo de resbalón o caída, especialmente en condiciones húmedas o con presencia de aceite.
+  tareas_asociadas:
+  - TME_TA_010
+  riesgos_asociados:
+  - R01
+  - R02
+  roles_asociados:
+  - TME_ROL_06
+  areas_asociadas:
+  - TME
+
+- id: FE_122
+  nombre: Lesiones por Cables Pesados
+  descripcion: Manipular alambre de cobre o cables de gran calibre sin ayudas mecánicas ni postura ergonómica genera riesgo de lesiones lumbares, atrapamiento de dedos o fatiga muscular severa.
+  tareas_asociadas:
+  - TME_TA_010
+  riesgos_asociados:
+  - R01
+  - R02
+  roles_asociados:
+  - TME_ROL_06
+  areas_asociadas:
+  - TME
+
+- id: FE_123
+  nombre: Caída de Componentes Pesados
+  descripcion: Durante montaje o desmontaje de motores, el uso incorrecto de polipastos o puntos de izaje puede provocar caída de partes como rotores o tapas, generando impacto severo.
+  tareas_asociadas:
+  - TME_TA_011
+  riesgos_asociados:
+  - R02
+  roles_asociados:
+  - TME_ROL_06
+  areas_asociadas:
+  - TME
+
+- id: FE_124
+  nombre: Aplastamiento por Piezas Voluminosas
+  descripcion: Manipular componentes grandes y pesados sin guías ni ayudas mecánicas genera riesgo de atrapamiento o caída de piezas sobre pies, manos o cuerpo del operador.
+  tareas_asociadas:
+  - TME_TA_011
+  riesgos_asociados:
+  - R02
+  roles_asociados:
+  - TME_ROL_06
+  areas_asociadas:
+  - TME
+
+- id: FE_125
+  nombre: Contacto con Baja Tensión en Pruebas
+  descripcion: Pruebas funcionales en motores sin aislamiento o barreras pueden generar contacto con bornes vivos. El riesgo incluye quemaduras menores o choques eléctricos.
+  tareas_asociadas:
+  - TME_TA_012
+  riesgos_asociados:
+  - R03
+  roles_asociados:
+  - TME_ROL_06
+  areas_asociadas:
+  - TME
+
+- id: FE_126
+  nombre: Arco por Falla de Aislamiento
+  descripcion: Una mala conexión o falla en la aislación durante pruebas eléctricas puede producir un arco eléctrico, con proyección de chispas y daño al equipo o al trabajador.
+  tareas_asociadas:
+  - TME_TA_012
+  riesgos_asociados:
+  - R03
+  roles_asociados:
+  - TME_ROL_06
+  areas_asociadas:
+  - TME
+
+- id: FE_127
+  nombre: Caída desde Escaleras o Carros
+  descripcion: Acceder a estanterías altas con escaleras inestables o carros sin freno, en superficies irregulares o contaminadas, aumenta el riesgo de caída desde altura.
+  tareas_asociadas:
+  - TME_TA_013
+  riesgos_asociados:
+  - R01
+  - R02
+  roles_asociados:
+  - TME_ROL_07
+  areas_asociadas:
+  - TME
+
+- id: FE_128
+  nombre: Materiales Mal Apilados
+  descripcion: Almacenar cables, repuestos o herramientas sin racks adecuados o sin respetar límites de carga puede provocar su caída ante vibraciones o manipulación accidental.
+  tareas_asociadas:
+  - TME_TA_013
+  riesgos_asociados:
+  - R01
+  - R02
+  roles_asociados:
+  - TME_ROL_07
+  areas_asociadas:
+  - TME
+
+- id: FE_129
+  nombre: Caída de Carga sin Elementos de Transporte
+  descripcion: Transportar componentes eléctricos pesados sin carros o grúas expone a caídas por deslizamiento, mala postura o tropiezos durante el trayecto.
+  tareas_asociadas:
+  - TME_TA_014
+  riesgos_asociados:
+  - R02
+  roles_asociados:
+  - TME_ROL_07
+  areas_asociadas:
+  - TME
+- id: FE_130
+  nombre: Aplastamiento en Posicionamiento de Cargas
+  descripcion: Durante el posicionamiento final de transformadores, tableros o motores, los movimientos no controlados pueden causar atrapamientos. Este factor exige comunicación y señalización clara.
+  tareas_asociadas:
+  - TME_TA_014
+  riesgos_asociados:
+  - R02
+  roles_asociados:
+  - TME_ROL_07
+  areas_asociadas:
+  - TME
+- id: FE_131
+  nombre: Riesgo Eléctrico en Áreas de Prueba
+  descripcion: Transitar o trabajar cerca de áreas donde se realizan pruebas eléctricas o se energizan equipos de forma parcial representa riesgo por contacto indirecto o interferencia involuntaria.
+  tareas_asociadas:
+  - TME_TA_015
+  riesgos_asociados:
+  - R03
+  roles_asociados:
+  - TME_ROL_07
+  areas_asociadas:
+  - TME
+
+- id: FE_132
+  nombre: Omisión de Distancias de Seguridad en Áreas Eléctricas
+  descripcion: Ingresar o trabajar sin respetar las distancias mínimas respecto a equipos energizados, sin barreras físicas o visuales, incrementa el riesgo de arco eléctrico o descarga. Este factor requiere segregación efectiva y control visual.
+  tareas_asociadas:
+  - TME_TA_015
+  riesgos_asociados:
+  - R03
+  roles_asociados:
+  - TME_ROL_07
+  areas_asociadas:
+  - TME
+
+- id: FE_133
+  nombre: Energía Residual en Equipos de Prueba
+  descripcion: Durante pruebas de inyección o simulación en tableros eléctricos, pueden persistir niveles de tensión residual que representan riesgo de descarga eléctrica por contacto indirecto. Este factor requiere verificación con instrumentos y señalización de zonas de prueba.
+  tareas_asociadas:
+  - TME_TA_016
+  riesgos_asociados:
+  - R03
+  roles_asociados:
+  - TME_ROL_08
+  areas_asociadas:
+  - TME
+
+- id: FE_134
+  nombre: Arco Eléctrico por Falla de Configuración
+  descripcion: Durante el ajuste o calibración de relés de protección, errores en la configuración, contactos flojos o fallas de aislamiento pueden generar arcos eléctricos. Este factor requiere doble verificación del circuito y uso de EPP especializado.
+  tareas_asociadas:
+  - TME_TA_016
+  riesgos_asociados:
+  - R03
+  roles_asociados:
+  - TME_ROL_08
+  areas_asociadas:
+  - TME
+
+- id: FE_135
+  nombre: Trabajo en Posiciones Forzadas en Tableros
+  descripcion: Las tareas de configuración y ajuste dentro de tableros eléctricos requieren mantener posturas incómodas por tiempo prolongado, con espacio limitado para maniobras, lo que incrementa el riesgo de fatiga, errores operativos o lesiones musculares.
+  tareas_asociadas:
+  - TME_TA_016
+  riesgos_asociados:
+  - R03
+  roles_asociados:
+  - TME_ROL_08
+  areas_asociadas:
+  - TME
+
+- id: FE_136
+  nombre: Trabajo en Altura con Vibración y Viento
+  descripcion: Realizar tareas en plataformas o pasarelas elevadas expuestas a viento lateral y vibración estructural compromete el equilibrio del trabajador, incrementando el riesgo de caída desde altura. Requiere línea de vida, puntos de anclaje y monitoreo del entorno.
+  tareas_asociadas:
+  - STM_TA_001
+  riesgos_asociados:
+  - R01
+  roles_asociados:
+  - STM_ROL_01
+  areas_asociadas:
+  - STM
+
+- id: FE_137
+  nombre: Uso de Escaleras Verticales con Herramientas
+  descripcion: Subir por escaleras verticales portando herramientas sin amarre o contención adecuada expone al operador a pérdida de equilibrio, caída de objetos y lesiones personales. Este factor requiere técnica de tres puntos y equipo de transporte seguro.
+  tareas_asociadas:
+  - STM_TA_001
+  riesgos_asociados:
+  - R01
+  roles_asociados:
+  - STM_ROL_01
+  areas_asociadas:
+  - STM
+
+- id: FE_138
+  nombre: Contacto con Controles Energizados en Cabina
+  descripcion: La presencia de controles eléctricos expuestos o mal aislados dentro de la cabina representa riesgo de descarga para el operador, especialmente en tareas de inspección o mantenimiento.
+  tareas_asociadas:
+  - STM_TA_002
+  riesgos_asociados:
+  - R03
+  roles_asociados:
+  - STM_ROL_01
+  areas_asociadas:
+  - STM
+
+- id: FE_139
+  nombre: Exposición a Ruido y Vibración en Cabina
+  descripcion: Permanecer por tiempos prolongados dentro de la cabina de operación bajo condiciones de ruido intenso y vibración constante puede generar fatiga, pérdida auditiva o desorientación.
+  tareas_asociadas:
+  - STM_TA_002
+  riesgos_asociados:
+  - R03
+  roles_asociados:
+  - STM_ROL_01
+  areas_asociadas:
+  - STM
+
+- id: FE_140
+  nombre: Trabajo en Altura sobre Pasarelas Contaminadas
+  descripcion: Ejecutar tareas sobre pasarelas con presencia de polvo, vibración y derrames (aceite, agua, lodo) aumenta significativamente el riesgo de caída por resbalamiento o pérdida de estabilidad.
+  tareas_asociadas:
+  - STM_TA_003
+  riesgos_asociados:
+  - R01
+  roles_asociados:
+  - STM_ROL_02
+  areas_asociadas:
+  - STM
+- id: FE_141
+  nombre: Atrapamiento por Partes Móviles de Correas
+  descripcion: La exposición a componentes en movimiento como rodillos, tambores o la cinta transportadora sin protecciones adecuadas puede generar atrapamiento o cizallamiento de extremidades.
+  tareas_asociadas:
+  - STM_TA_003
+  riesgos_asociados:
+  - R01
+  roles_asociados:
+  - STM_ROL_02
+  areas_asociadas:
+  - STM
+
+- id: FE_142
+  nombre: Contacto Directo con Energía sin Aislamiento
+  descripcion: Intervenir equipos eléctricos sin confirmar su desenergización o sin barreras físicas puede resultar en contacto con partes vivas por fallas de aislamiento o errores en LOTO.
+  tareas_asociadas:
+  - STM_TA_004
+  riesgos_asociados:
+  - R03
+  roles_asociados:
+  - STM_ROL_02
+  areas_asociadas:
+  - STM
+
+- id: FE_143
+  nombre: Exposición a Arco Eléctrico por Maniobra
+  descripcion: Manipular sistemas de media o baja tensión sin los controles adecuados puede desencadenar un arco eléctrico con efectos térmicos, sonoros y mecánicos graves.
+  tareas_asociadas:
+  - STM_TA_004
+  riesgos_asociados:
+  - R03
+  roles_asociados:
+  - STM_ROL_02
+  areas_asociadas:
+  - STM
+
+- id: FE_144
+  nombre: Superficie Irregular y Resbaladiza en Ruta de Acceso
+  descripcion: Caminar por rutas de tránsito o zonas operativas con superficies irregulares, mojadas o con obstáculos sin señalizar expone al trabajador a caídas a nivel o esguinces.
+  tareas_asociadas:
+  - STM_TA_005
+  riesgos_asociados:
+  - R01
+  roles_asociados:
+  - STM_ROL_03
+  areas_asociadas:
+  - STM
+
+- id: FE_145
+  nombre: Evaluación Visual desde Zonas de Difícil Acceso
+  descripcion: La necesidad de evaluar condiciones operativas en puntos altos, estrechos o sin pasarelas obliga al trabajador a adoptar posturas riesgosas o ingresar a zonas sin protección.
+  tareas_asociadas:
+  - STM_TA_005
+  riesgos_asociados:
+  - R01
+  roles_asociados:
+  - STM_ROL_03
+  areas_asociadas:
+  - STM
+
+- id: FE_146
+  nombre: Proximidad a Equipos Energizados sin Capacitación
+  descripcion: Estar cerca de equipos eléctricos energizados sin formación específica en riesgos eléctricos aumenta la probabilidad de incidentes por contacto involuntario o falta de percepción del peligro.
+  tareas_asociadas:
+  - STM_TA_006
+  riesgos_asociados:
+  - R03
+  roles_asociados:
+  - STM_ROL_03
+  areas_asociadas:
+  - STM
+
+- id: FE_147
+  nombre: Áreas Energizadas sin Señalización
+  descripcion: La ausencia de señalización visual o barreras temporales en zonas con riesgo eléctrico expone al personal a ingreso no autorizado, contacto accidental o ejecución de tareas inseguras.
+  tareas_asociadas:
+  - STM_TA_006
+  riesgos_asociados:
+  - R03
+  roles_asociados:
+  - STM_ROL_03
+  areas_asociadas:
+  - STM
+
+- id: FE_148
+  nombre: Fatiga Visual por Uso Prolongado de Pantallas
+  descripcion: La exposición continua a pantallas de visualización puede generar fatiga visual, dolores de cabeza y problemas posturales. En casos crónicos, puede contribuir al desarrollo de Síndrome del Túnel Carpiano y baja productividad.
+  tareas_asociadas:
+  - STM_TA_007
+  riesgos_asociados: []
+  roles_asociados:
+  - STM_ROL_04
+  areas_asociadas:
+  - STM
+
+- id: FE_149
+  nombre: Posturas Estáticas y Estaciones Mal Diseñadas
+  descripcion: Permanecer en posiciones fijas por largos períodos en estaciones de trabajo sin criterios ergonómicos adecuados puede generar molestias musculares, fatiga acumulada y lesiones musculoesqueléticas.
+  tareas_asociadas:
+  - STM_TA_007
+  riesgos_asociados: []
+  roles_asociados:
+  - STM_ROL_04
+  areas_asociadas:
+  - STM
+
+- id: FE_150
+  nombre: Errores de Comunicación de Comandos Críticos
+  descripcion: La falta de procedimientos formales o medios de verificación en la comunicación de comandos como arranque/parada puede provocar activaciones inseguras o interferencias con personal en campo.
+  tareas_asociadas:
+  - STM_TA_008
+  riesgos_asociados: []
+  roles_asociados:
+  - STM_ROL_04
+  areas_asociadas:
+  - STM
+- id: FE_151
+  nombre: Omisión de Protocolos por Presión Operacional
+  descripcion: Las exigencias de mantener la operación continua pueden llevar a omitir verificaciones, validaciones cruzadas o pasos formales de seguridad, especialmente en comunicaciones críticas.
+  tareas_asociadas:
+  - STM_TA_008
+  riesgos_asociados: []
+  roles_asociados:
+  - STM_ROL_04
+  areas_asociadas:
+  - STM
+
+- id: FE_152
+  nombre: Acceso en Altura sin Plataformas Estables
+  descripcion: Realizar tareas de inspección o mantenimiento en zonas elevadas de difícil acceso sin plataformas certificadas o con escaleras deterioradas expone al trabajador a caídas graves.
+  tareas_asociadas:
+  - STM_TA_009
+  riesgos_asociados:
+  - R01
+  roles_asociados:
+  - STM_ROL_05
+  areas_asociadas:
+  - STM
+
+- id: FE_153
+  nombre: Atrapamiento por Cinta Transportadora en Movimiento
+  descripcion: Realizar inspección o intervención cerca de componentes móviles sin detener la cinta y sin asegurar el área puede generar atrapamiento de extremidades u objetos personales.
+  tareas_asociadas:
+  - STM_TA_009
+  riesgos_asociados:
+  - R01
+  roles_asociados:
+  - STM_ROL_05
+  areas_asociadas:
+  - STM
+
+- id: FE_154
+  nombre: Contacto Accidental con Circuitos en Diagnóstico
+  descripcion: La ejecución de diagnósticos eléctricos sin aislamiento de terminales o sin barreras de protección expone al personal a descargas de baja tensión o activación accidental.
+  tareas_asociadas:
+  - STM_TA_010
+  riesgos_asociados:
+  - R03
+  roles_asociados:
+  - STM_ROL_05
+  areas_asociadas:
+  - STM
+
+- id: FE_155
+  nombre: Arco Eléctrico en Paneles de Empalme
+  descripcion: Al intervenir cajas de empalme o tableros con conexiones flojas o sin desenergizar, pueden producirse arcos de baja energía que causan quemaduras leves y fallas en el sistema.
+  tareas_asociadas:
+  - STM_TA_010
+  riesgos_asociados:
+  - R03
+  roles_asociados:
+  - STM_ROL_05
+  areas_asociadas:
+  - STM
+
+- id: FE_156
+  nombre: Trabajo en Altura sobre Estructuras Inestables
+  descripcion: Realizar tareas sobre estructuras metálicas, plataformas deterioradas o superficies resbaladizas aumenta el riesgo de caída desde altura. Este factor requiere evaluación estructural, línea de vida y control del entorno inmediato.
+  tareas_asociadas:
+  - STM_TA_011
+  riesgos_asociados:
+  - R01
+  roles_asociados:
+  - STM_ROL_06
+  areas_asociadas:
+  - STM
+
+- id: FE_157
+  nombre: Aplastamiento por Cinta o Equipos No Asegurados
+  descripcion: El posicionamiento de equipos sin fijación o interferencia con la cinta en movimiento puede generar atrapamientos graves durante trabajos de empalme. Requiere bloqueo mecánico y monitoreo visual continuo.
+  tareas_asociadas:
+  - STM_TA_011
+  riesgos_asociados:
+  - R01
+  roles_asociados:
+  - STM_ROL_06
+  areas_asociadas:
+  - STM
+
+- id: FE_158
+  nombre: Contacto con Superficies Calientes en Vulcanizado
+  descripcion: El trabajo con equipos de vulcanizado involucra el uso de calor elevado, exponiendo al operador a quemaduras por contacto directo con placas térmicas o material recién procesado. Requiere EPP especializado.
+  tareas_asociadas:
+  - STM_TA_012
+  riesgos_asociados:
+  - R03
+  roles_asociados:
+  - STM_ROL_06
+  areas_asociadas:
+  - STM
+
+- id: FE_159
+  nombre: Riesgo Eléctrico en Conexión de Equipos de Vulcanizado
+  descripcion: Durante la conexión y monitoreo de equipos de vulcanizado, fallas en aislación o errores en LOTO pueden provocar arco eléctrico o descarga. Este factor requiere verificación completa de tensión y bloqueo total.
+  tareas_asociadas:
+  - STM_TA_012
+  riesgos_asociados:
+  - R03
+  roles_asociados:
+  - STM_ROL_06
+  areas_asociadas:
+  - STM
+
+- id: FE_160
+  nombre: Supervisión de Tareas en Altura sin Control
+  descripcion: Supervisar actividades en altura o cerca de componentes en movimiento sin mantener vigilancia activa o validación de controles puede derivar en caídas, atrapamientos o activación accidental de equipos.
+  tareas_asociadas:
+  - STM_TA_013
+  riesgos_asociados:
+  - R01
+  roles_asociados:
+  - STM_ROL_07
+  areas_asociadas:
+  - STM
+
+- id: FE_161
+  nombre: Riesgo por Tránsito en Áreas con Obstáculos
+  descripcion: Transitar por zonas de mantenimiento con cables, repuestos u objetos mal distribuidos incrementa el riesgo de caídas por tropiezo. Este factor requiere orden operativo y rutas señalizadas.
+  tareas_asociadas:
+  - STM_TA_013
+  riesgos_asociados:
+  - R01
+  roles_asociados:
+  - STM_ROL_07
+  areas_asociadas:
+  - STM
+
+- id: FE_162
+  nombre: Supervisión de Seguridad Eléctrica sin Validación Técnica
+  descripcion: Asumir la responsabilidad de liberar trabajos eléctricos sin verificar técnicamente el estado de tensión, el LOTO o la integridad del sistema expone a todo el equipo a descargas inesperadas.
+  tareas_asociadas:
+  - STM_TA_014
+  riesgos_asociados:
+  - R03
+  roles_asociados:
+  - STM_ROL_07
+  areas_asociadas:
+  - STM
+
+- id: FE_163
+  nombre: Error en Autorización o Confirmación de LOTO
+  descripcion: Un error humano en la autorización de trabajos o en la verificación de tensión residual puede permitir el inicio de labores en un equipo aún energizado, generando eventos severos por descarga o arco eléctrico.
+  tareas_asociadas:
+  - STM_TA_014
+  riesgos_asociados:
+  - R03
+  roles_asociados:
+  - STM_ROL_07
+  areas_asociadas:
+  - STM
+
+- id: FE_164
+  nombre: Caída desde Andamios sin Protección
+  descripcion: Trabajar sobre andamios o estructuras sin barandas, puntos de anclaje ni inspección estructural incrementa el riesgo de caída desde altura, especialmente en tareas prolongadas o en condiciones ambientales adversas.
+  tareas_asociadas:
+  - STM_TA_015
+  riesgos_asociados:
+  - R01
+  - R02
+  roles_asociados:
+  - STM_ROL_08
+  areas_asociadas:
+  - STM
+
+- id: FE_165
+  nombre: Manipulación de Piezas Pesadas en Terreno Irregular
+  descripcion: Trasladar o posicionar componentes metálicos en zonas con pendiente, desnivel o sin señalización puede provocar pérdidas de control, caídas del material o atrapamiento del operador.
+  tareas_asociadas:
+  - STM_TA_015
+  riesgos_asociados:
+  - R01
+  - R02
+  roles_asociados:
+  - STM_ROL_08
+  areas_asociadas:
+  - STM
+
+- id: FE_166
+  nombre: Contacto con Tensión de Soldadura
+  descripcion: El contacto directo con la tensión de salida de equipos de soldadura o con partes metálicas conectadas a tierra en mal estado puede provocar descarga eléctrica o quemaduras. Requiere inspección previa y uso de guantes dieléctricos.
+  tareas_asociadas:
+  - STM_TA_016
+  riesgos_asociados:
+  - R03
+  roles_asociados:
+  - STM_ROL_08
+  areas_asociadas:
+  - STM
+
+- id: FE_167
+  nombre: Exposición a Arco Eléctrico y Radiación UV/IR
+  descripcion: Durante el proceso de soldadura se generan arcos eléctricos con radiación ultravioleta e infrarroja que pueden dañar los ojos y la piel si no se utiliza máscara de protección con filtro adecuado y ropa certificada.
+  tareas_asociadas:
+  - STM_TA_016
+  riesgos_asociados:
+  - R03
+  roles_asociados:
+  - STM_ROL_08
+  areas_asociadas:
+  - STM
+
+- id: FE_168
+  nombre: Caída de Carga Pesada Durante Izaje
+  descripcion: La manipulación de estructuras, motores o piezas durante maniobras de izaje, especialmente en altura, conlleva riesgo de caída libre o aplastamiento por pérdida de control, viento cruzado o mala distribución del peso.
+  tareas_asociadas:
+  - STM_TA_017
+  - STM_TA_018
+  riesgos_asociados:
+  - R02
+  roles_asociados:
+  - STM_ROL_09
+  areas_asociadas:
+  - STM
+
+- id: FE_169
+  nombre: Uso de Aparejos o Eslingas Dañadas
+  descripcion: El uso de elementos de izaje que presentan desgaste, cortes, ganchos sin traba o cadenas con eslabones deformados puede provocar ruptura en carga, caída de objetos y lesiones graves. Requiere inspección visual y trazabilidad.
+  tareas_asociadas:
+  - STM_TA_017
+  - STM_TA_018
+  riesgos_asociados:
+  - R02
+  roles_asociados:
+  - STM_ROL_09
+  areas_asociadas:
+  - STM
+
+- id: FE_170
+  nombre: Contacto con Bornes Energizados o Cableado Deficiente
+  descripcion: Al manipular sistemas de baterías, el contacto con bornes activos o cables con aislación dañada puede provocar descarga o cortocircuito. Este factor requiere verificación de continuidad y estado físico antes de conectar o desconectar.
+  tareas_asociadas:
+  - STM_TA_019
+  riesgos_asociados:
+  - R03
+  roles_asociados:
+  - STM_ROL_09
+  areas_asociadas:
+  - STM
+
+- id: FE_171
+  nombre: Arco Eléctrico en Conexión de Baterías
+  descripcion: Al conectar o desconectar baterías sin procedimiento adecuado o sin protecciones terminales, puede producirse un arco eléctrico leve que afecte la vista o genere chispa. Requiere uso de gafas y control de polaridad.
+  tareas_asociadas:
+  - STM_TA_019
+  riesgos_asociados:
+  - R03
+  roles_asociados:
+  - STM_ROL_09
+  areas_asociadas:
+  - STM
+
+- id: FE_172
+  nombre: Superficie Resbaladiza por Derrames de Pulpa
+  descripcion: La presencia de pulpa, agua o lodo sobre el piso genera una superficie resbaladiza que incrementa el riesgo de caída a nivel, especialmente durante rondas operativas o inspecciones sin rutas definidas.
+  tareas_asociadas:
+  - PLC_TA_001
+  riesgos_asociados:
+  - R01
+  roles_asociados:
+  - PLC_ROL_01
+  areas_asociadas:
+  - PLC
+
+- id: FE_173
+  nombre: Tránsito por Pasarelas Estrechas sin Protección
+  descripcion: Desplazarse por pasarelas irregulares, angostas o sin barandas expone al trabajador al riesgo de caída desde altura o tropiezos, especialmente en áreas con acceso ocasional o mala visibilidad.
+  tareas_asociadas:
+  - PLC_TA_001
+  riesgos_asociados:
+  - R01
+  roles_asociados:
+  - PLC_ROL_01
+  areas_asociadas:
+  - PLC
+
+- id: FE_174
+  nombre: Proximidad a Equipos Energizados sin Protección
+  descripcion: Acercarse a tableros o celdas eléctricas sin distanciamiento ni control de energía puede generar exposición a liberación de energía no controlada en caso de falla interna.
+  tareas_asociadas:
+  - PLC_TA_002
+  riesgos_asociados:
+  - R03
+  roles_asociados:
+  - PLC_ROL_01
+  areas_asociadas:
+  - PLC
+
+- id: FE_175
+  nombre: Distancia de Seguridad Inadecuada en Maniobras Eléctricas
+  descripcion: Mantenerse cerca de celdas o barras energizadas sin respetar las distancias mínimas puede derivar en arco eléctrico o contacto indirecto. Este factor requiere señalización clara y barreras de protección.
+  tareas_asociadas:
+  - PLC_TA_002
+  riesgos_asociados:
+  - R03
+  roles_asociados:
+  - PLC_ROL_01
+  areas_asociadas:
+  - PLC
+
+- id: FE_176
+  nombre: Cercanía a Equipos Rotatorios sin Contención
+  descripcion: Estar próximo a molinos u otros componentes de alta velocidad sin protecciones físicas o señalización puede generar atrapamiento, proyección de partículas o impacto.
+  tareas_asociadas:
+  - PLC_TA_003
+  riesgos_asociados:
+  - R02
+  roles_asociados:
+  - PLC_ROL_02
+  areas_asociadas:
+  - PLC
+
+- id: FE_177
+  nombre: Proyección de Fragmentos desde Molino
+  descripcion: En caso de falla de contención, bolas de molienda o fragmentos de roca pueden ser proyectados con alta energía. Este factor requiere blindaje, zona de exclusión y monitoreo estructural.
+  tareas_asociadas:
+  - PLC_TA_003
+  riesgos_asociados:
+  - R02
+  roles_asociados:
+  - PLC_ROL_02
+  areas_asociadas:
+  - PLC
+
+- id: FE_178
+  nombre: Proximidad a Alta Tensión sin Inducción
+  descripcion: Visitas ocasionales a salas eléctricas sin haber recibido inducción específica sobre riesgo eléctrico aumentan la probabilidad de contacto accidental o ingreso a zonas restringidas.
+  tareas_asociadas:
+  - PLC_TA_004
+  riesgos_asociados:
+  - R03
+  roles_asociados:
+  - PLC_ROL_02
+  areas_asociadas:
+  - PLC
+
+- id: FE_179
+  nombre: Ignorar Señales de Seguridad en Sala Eléctrica
+  descripcion: La omisión de señalética de advertencia o traspaso de barreras sin autorización puede derivar en contacto con partes vivas o zonas con arco eléctrico potencial.
+  tareas_asociadas:
+  - PLC_TA_004
+  riesgos_asociados:
+  - R03
+  roles_asociados:
+  - PLC_ROL_02
+  areas_asociadas:
+  - PLC
+
+- id: FE_180
+  nombre: Superficie Contaminada por Derrames de Pulpa
+  descripcion: Las operaciones cercanas a celdas de flotación generan derrames constantes de pulpa que dejan la superficie contaminada, favoreciendo resbalones, caída de objetos o tropiezos.
+  tareas_asociadas:
+  - PLC_TA_005
+  riesgos_asociados:
+  - R01
+  roles_asociados:
+  - PLC_ROL_03
+  areas_asociadas:
+  - PLC
+- id: FE_181
+  nombre: Salpicadura de Reactivos Corrosivos
+  descripcion: La mezcla y transporte de pulpa con adición de reactivos químicos corrosivos o irritantes (como xantatos o espumantes) representa riesgo para piel, mucosas y ojos en caso de contacto directo.
+  tareas_asociadas:
+  - PLC_TA_005
+  riesgos_asociados:
+  - R01
+  roles_asociados:
+  - PLC_ROL_03
+  areas_asociadas:
+  - PLC
+
+- id: FE_182
+  nombre: Acceso a Paneles Eléctricos Locales
+  descripcion: Realizar mediciones o reinicios en paneles eléctricos locales sin bloqueo previo, sin verificación de tensión o sin el EPP adecuado puede generar contacto eléctrico involuntario.
+  tareas_asociadas:
+  - PLC_TA_006
+  riesgos_asociados:
+  - R03
+  roles_asociados:
+  - PLC_ROL_03
+  areas_asociadas:
+  - PLC
+
+- id: FE_183
+  nombre: Arco Eléctrico por Falla de Aislamiento
+  descripcion: El deterioro de componentes, aislación deficiente o conexiones flojas puede generar arcos eléctricos de baja energía con riesgo de quemaduras, chispas o fallas en el equipo.
+  tareas_asociadas:
+  - PLC_TA_006
+  riesgos_asociados:
+  - R03
+  roles_asociados:
+  - PLC_ROL_03
+  areas_asociadas:
+  - PLC
+
+- id: FE_184
+  nombre: Trabajo en Altura en Plataformas Inestables
+  descripcion: Realizar tareas sobre andamios mal montados, plataformas sin barandas o estructuras elevadas en mal estado incrementa el riesgo de caída a distinto nivel.
+  tareas_asociadas:
+  - PLC_TA_007
+  riesgos_asociados:
+  - R01
+  - R02
+  roles_asociados:
+  - PLC_ROL_04
+  areas_asociadas:
+  - PLC
+
+- id: FE_185
+  nombre: Caída de Carga Durante Maniobras de Izaje
+  descripcion: Manipular componentes pesados con polipastos o grúas sin verificación de eslingas o puntos de amarre puede provocar caída de carga, atrapamiento o impacto.
+  tareas_asociadas:
+  - PLC_TA_007
+  riesgos_asociados:
+  - R01
+  - R02
+  roles_asociados:
+  - PLC_ROL_04
+  areas_asociadas:
+  - PLC
+
+- id: FE_186
+  nombre: Cercanía a Equipos Rotatorios sin Protección
+  descripcion: Estar próximo a componentes móviles como ejes, poleas o agitadores sin cubiertas de protección puede generar atrapamiento o impacto accidental durante tareas de mantenimiento.
+  tareas_asociadas:
+  - PLC_TA_007
+  riesgos_asociados:
+  - R01
+  - R02
+  roles_asociados:
+  - PLC_ROL_04
+  areas_asociadas:
+  - PLC
+
+- id: FE_187
+  nombre: Trabajo en Espacios Confinados sin Ventilación
+  descripcion: Intervenir dentro de equipos o estructuras cerradas sin medición de gases, ventilación o autorización específica puede derivar en hipoxia, atrapamiento o intoxicación.
+  tareas_asociadas:
+  - PLC_TA_008
+  riesgos_asociados:
+  - R01
+  - R02
+  roles_asociados:
+  - PLC_ROL_04
+  areas_asociadas:
+  - PLC
+
+- id: FE_188
+  nombre: Caída de Material o Persona en Tolvas
+  descripcion: Acceder a zonas superiores de tolvas o molinos sin protección o control del ingreso puede generar caídas de materiales o del trabajador hacia el interior del equipo.
+  tareas_asociadas:
+  - PLC_TA_008
+  riesgos_asociados:
+  - R01
+  - R02
+  roles_asociados:
+  - PLC_ROL_04
+  areas_asociadas:
+  - PLC
+
+- id: FE_189
+  nombre: Contacto Directo con Equipos Energizados
+  descripcion: Manipular cables, bornes o equipos bajo tensión sin verificación ni bloqueo puede provocar descarga eléctrica o quemaduras por arco.
+  tareas_asociadas:
+  - PLC_TA_009
+  riesgos_asociados:
+  - R03
+  roles_asociados:
+  - PLC_ROL_05
+  areas_asociadas:
+  - PLC
+
+- id: FE_190
+  nombre: Arco Eléctrico por Falla de Conexión
+  descripcion: Durante fallas en interruptores o errores de maniobra, puede generarse un arco eléctrico de alta energía con riesgo de quemaduras severas y daño estructural al equipo.
+  tareas_asociadas:
+  - PLC_TA_009
+  riesgos_asociados:
+  - R03
+  roles_asociados:
+  - PLC_ROL_05
+  areas_asociadas:
+  - PLC
+- id: FE_191
+  nombre: Caída desde Estructuras Elevadas sin Protección
+  descripcion: Realizar tareas sobre vigas, marcos estructurales o techos de equipos sin línea de vida ni barandas implica riesgo de caída desde altura ante cualquier desequilibrio o fatiga física.
+  tareas_asociadas:
+  - PLC_TA_010
+  riesgos_asociados:
+  - R01
+  - R03
+  roles_asociados:
+  - PLC_ROL_05
+  areas_asociadas:
+  - PLC
+
+- id: FE_192
+  nombre: Manipulación de Cableado sin Verificación de Energía
+  descripcion: Intervenir o desplazar cableado sin confirmar su condición de desenergizado, o en áreas donde no se aplicó LOTO, representa riesgo de descarga, arco eléctrico o cortocircuito.
+  tareas_asociadas:
+  - PLC_TA_010
+  riesgos_asociados:
+  - R01
+  - R03
+  roles_asociados:
+  - PLC_ROL_05
+  areas_asociadas:
+  - PLC
+
+- id: FE_193
+  nombre: Falla de Equipos de Izaje por Sobrecarga
+  descripcion: El uso de grúas o accesorios de izaje con mantenimiento deficiente, sin inspección o en condiciones de sobrecarga puede derivar en ruptura de componentes y caída de carga.
+  tareas_asociadas:
+  - PLC_TA_011
+  riesgos_asociados:
+  - R02
+  roles_asociados:
+  - PLC_ROL_06
+  areas_asociadas:
+  - PLC
+
+- id: FE_194
+  nombre: Golpe con Estructuras Durante Maniobras
+  descripcion: Un error en la operación del equipo de izaje puede generar colisión de la carga con estructuras metálicas o personal cercano, provocando atrapamientos o daño estructural.
+  tareas_asociadas:
+  - PLC_TA_011
+  riesgos_asociados:
+  - R02
+  roles_asociados:
+  - PLC_ROL_06
+  areas_asociadas:
+  - PLC
+
+- id: FE_195
+  nombre: Caída desde Estructura de Grúa
+  descripcion: El acceso a zonas superiores de la grúa, sin línea de vida ni puntos de anclaje, representa riesgo crítico de caída desde altura por pérdida de equilibrio o fatiga.
+  tareas_asociadas:
+  - PLC_TA_012
+  riesgos_asociados:
+  - R01
+  - R03
+  roles_asociados:
+  - PLC_ROL_06
+  areas_asociadas:
+  - PLC
+
+- id: FE_196
+  nombre: Manipulación de Equipos Energizados en Altura
+  descripcion: Realizar ajustes eléctricos en altura sin bloqueo, con herramientas inadecuadas o sin acceso controlado, puede derivar en contacto eléctrico o caída por desequilibrio.
+  tareas_asociadas:
+  - PLC_TA_012
+  riesgos_asociados:
+  - R01
+  - R03
+  roles_asociados:
+  - PLC_ROL_06
+  areas_asociadas:
+  - PLC
+
+- id: FE_197
+  nombre: Acceso Difícil a Instrumentos en Altura
+  descripcion: Los instrumentos ubicados en puntos elevados sin acceso estructurado exigen posturas forzadas o escaleras inadecuadas, lo que eleva el riesgo de caída o esfuerzo físico excesivo.
+  tareas_asociadas:
+  - PLC_TA_013
+  riesgos_asociados:
+  - R01
+  - R03
+  roles_asociados:
+  - PLC_ROL_07
+  areas_asociadas:
+  - PLC
+
+- id: FE_198
+  nombre: Exposición a Reactivos Químicos Durante Calibración
+  descripcion: El manejo de químicos corrosivos o irritantes en tareas de calibración o purga de líneas puede generar quemaduras, intoxicación o daño ocular si no se usa EPP adecuado ni se ventila el área.
+  tareas_asociadas:
+  - PLC_TA_013
+  riesgos_asociados:
+  - R01
+  - R03
+  roles_asociados:
+  - PLC_ROL_07
+  areas_asociadas:
+  - PLC
+
+- id: FE_199
+  nombre: Contacto con Circuitos de Baja Tensión
+  descripcion: La conexión de instrumentos o equipos en condiciones inseguras, sin verificar la polaridad o sin protección, puede generar pequeñas descargas o quemaduras leves.
+  tareas_asociadas:
+  - PLC_TA_013
+  riesgos_asociados:
+  - R01
+  - R03
+  roles_asociados:
+  - PLC_ROL_07
+  areas_asociadas:
+  - PLC
+
+- id: FE_200
+  nombre: Fatiga Postural en Estaciones de Control
+  descripcion: El trabajo prolongado en estaciones fijas con pantallas, sin pausas ni ergonomía adecuada, puede causar fatiga visual, lesiones musculares y disminución del rendimiento.
+  tareas_asociadas:
+  - PLC_TA_014
+  riesgos_asociados:
+  - R03
+  roles_asociados:
+  - PLC_ROL_07
+  areas_asociadas:
+  - PLC
+- id: FE_201
+  nombre: Cortocircuito en Gabinetes de Control
+  descripcion: La manipulación de conexiones en tableros de control sin protección adecuada, con terminales expuestos o uso de herramientas metálicas no aisladas, puede generar arco, chispa o daño en el sistema.
+  tareas_asociadas:
+  - PLC_TA_014
+  riesgos_asociados:
+  - R03
+  roles_asociados:
+  - PLC_ROL_07
+  areas_asociadas:
+  - PLC
+
+- id: FE_202
+  nombre: Terreno Resbaladizo Cerca de Pozas de Relave
+  descripcion: El tránsito en zonas perimetrales a pozas de relave, con terreno irregular y mojado, expone al trabajador a caídas a nivel o caída a distinto nivel en bordes sin barandas.
+  tareas_asociadas:
+  - PLC_TA_015
+  riesgos_asociados:
+  - R01
+  roles_asociados:
+  - PLC_ROL_08
+  areas_asociadas:
+  - PLC
+
+- id: FE_203
+  nombre: Contacto con Pulpa de Relave con Químicos
+  descripcion: El contacto con la pulpa de relaves, que puede contener reactivos, metales pesados o compuestos corrosivos, representa riesgo para piel, vías respiratorias y ojos en caso de salpicaduras o exposición prolongada.
+  tareas_asociadas:
+  - PLC_TA_015
+  riesgos_asociados:
+  - R01
+  roles_asociados:
+  - PLC_ROL_08
+  areas_asociadas:
+  - PLC
+
+- id: FE_204
+  nombre: Contacto Eléctrico en Ambientes Húmedos
+  descripcion: Manipular tableros o motores eléctricos ubicados en zonas con alta humedad o charcos de agua incrementa el riesgo de descarga eléctrica o corto circuito por puenteo de corriente.
+  tareas_asociadas:
+  - PLC_TA_016
+  riesgos_asociados:
+  - R03
+  roles_asociados:
+  - PLC_ROL_08
+  areas_asociadas:
+  - PLC
+
+- id: FE_205
+  nombre: Salpicaduras de Pulpa Durante Inspección
+  descripcion: Durante tareas de inspección o mantenimiento de bombas, puede ocurrir la proyección de pulpa hacia el operador si no se ha drenado adecuadamente o si hay presión residual.
+  tareas_asociadas:
+  - PLC_TA_016
+  riesgos_asociados:
+  - R03
+  roles_asociados:
+  - PLC_ROL_08
+  areas_asociadas:
+  - PLC
+
+- id: FE_206
+  nombre: Entorno Resbaladizo por Condiciones Húmedas
+  descripcion: Las condiciones normales de operación en planta generan humedad constante sobre pisos, lo que incrementa el riesgo de resbalones o tropiezos si no se controla la limpieza ni se usa calzado adecuado.
+  tareas_asociadas:
+  - PLC_TA_017
+  riesgos_asociados:
+  - R01
+  roles_asociados:
+  - PLC_ROL_09
+  areas_asociadas:
+  - PLC
+
+- id: FE_207
+  nombre: Tránsito Multinivel sin Protección
+  descripcion: Las tareas en plantas multietapa requieren desplazamientos por escaleras o plataformas elevadas. La ausencia de barandas o mala visibilidad eleva el riesgo de caída desde altura.
+  tareas_asociadas:
+  - PLC_TA_017
+  riesgos_asociados:
+  - R01
+  roles_asociados:
+  - PLC_ROL_09
+  areas_asociadas:
+  - PLC
+
+- id: FE_208
+  nombre: Falta de Coordinación en Maniobras Supervisadas
+  descripcion: Supervisar tareas de izaje o movimiento de componentes pesados sin establecer rutas claras, zonas de exclusión o coordinación efectiva incrementa el riesgo de golpe por caída de carga o colisión.
+  tareas_asociadas:
+  - PLC_TA_018
+  riesgos_asociados:
+  - R02
+  roles_asociados:
+  - PLC_ROL_09
+  areas_asociadas:
+  - PLC
+
+- id: FE_209
+  nombre: Supervisión sin Verificación de Desenergización
+  descripcion: Acompañar tareas cerca de equipos en movimiento o energizados sin validar que se hayan aplicado los bloqueos y etiquetas puede derivar en atrapamientos o contactos eléctricos severos.
+  tareas_asociadas:
+  - PLC_TA_018
+  riesgos_asociados:
+  - R02
+  roles_asociados:
+  - PLC_ROL_09
+  areas_asociadas:
+  - PLC
+
+- id: FE_210
+  nombre: Fallas en Validación de Controles Críticos
+  descripcion: Si el supervisor no verifica la aplicación real de los controles críticos eléctricos, se genera una condición peligrosa de falsa seguridad con alto potencial de falla operativa.
+  tareas_asociadas:
+  - PLC_TA_019
+  riesgos_asociados:
+  - R03
+  roles_asociados:
+  - PLC_ROL_09
+  areas_asociadas:
+  - PLC
+- id: FE_211
+  nombre: Aprobación de Tareas sin Revisión del Permiso
+  descripcion: Autorizar la ejecución de un trabajo sin validar que se cuente con el permiso vigente, las firmas correspondientes o el EPP requerido, representa una omisión crítica en la gestión del riesgo.
+  tareas_asociadas:
+  - PLC_TA_019
+  riesgos_asociados:
+  - R03
+  roles_asociados:
+  - PLC_ROL_09
+  areas_asociadas:
+  - PLC

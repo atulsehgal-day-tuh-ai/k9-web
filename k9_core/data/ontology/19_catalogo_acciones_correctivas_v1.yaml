@@ -1,0 +1,946 @@
+- id: AC01
+  nombre: Actualizar Procedimiento de Trabajo Seguro (PTS) para tareas en altura
+  descripcion: >
+    Revisar y modificar el Procedimiento de Trabajo Seguro (PTS) existente para actividades en altura. Esto incluye la incorporación de nuevas mejores prácticas, lecciones aprendidas de incidentes, cambios normativos o tecnológicos, y asegurar que el procedimiento sea claro, práctico y fácilmente comprensible por todos los trabajadores involucrados. El objetivo es reforzar las instrucciones para la planificación, ejecución y supervisión segura de los trabajos en altura.
+  riesgo_asociado: R01
+  tipo_control: preventivo
+  aplicable_a:
+  - IMEN
+  - NMS
+  - OPG
+  - OCC
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Implementación de acciones correctivas
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  tags:
+  - r01
+  - pts
+  - procedimiento_seguro
+  - trabajo_altura
+  - actualización_documento
+  - mejora_procedimiento
+  - seguridad_operacional
+  - control_administrativo
+
+- id: AC02
+  nombre: Sustituir herramientas no certificadas por equipos con acreditación vigente
+  descripcion: >
+    Reemplazar cualquier herramienta o equipo utilizado en tareas de alto riesgo, especialmente en trabajos en altura o eléctricos, que no cuente con la certificación de seguridad adecuada o cuya acreditación haya expirado. Se busca garantizar que solo se utilicen equipos que cumplan con los estándares técnicos y de seguridad actuales, reduciendo el riesgo de fallas mecánicas o eléctricas.
+  riesgo_asociado: R02 # Originalmente R01, ajustado a R02 por contexto de herramientas que caen, o por seguridad de la herramienta. Si es por riesgo eléctrico, iría R03. Asumo riesgo de caída de la herramienta (R02).
+  tipo_control: preventivo
+  aplicable_a:
+  - IMEN
+  - NMS
+  - OCC
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Implementación de acciones correctivas
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  tags:
+  - r02
+  - herramientas_certificadas
+  - equipos_acreditados
+  - sustitución_equipo
+  - seguridad_herramientas
+  - prevención_fallas
+  - control_ingenieria
+
+- id: AC03
+  nombre: Instalar redes o bandejas de contención en plataformas elevadas
+  descripcion: >
+    Diseñar e instalar sistemas de contención adicionales, como redes de seguridad, mallas o bandejas de recolección, debajo de plataformas elevadas o pasarelas. Esto tiene como objetivo atrapar cualquier herramienta, material o escombro que pueda caer accidentalmente, evitando que impacte a personal o equipos en niveles inferiores y minimizando el riesgo de caída de objetos.
+  riesgo_asociado: R02 # Originalmente R03, ajustado a R02 por contexto de caída de objetos
+  tipo_control: mitigacion
+  aplicable_a:
+  - IMEN
+  - NMS
+  - OPG
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Implementación de acciones correctivas
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  tags:
+  - r02
+  - redes_contención
+  - bandejas_seguridad
+  - plataformas_elevadas
+  - prevención_caída_objetos
+  - seguridad_perimetral
+  - control_ingenieria
+
+- id: AC04
+  nombre: Reforzar capacitación en uso y verificación de SPDC
+  descripcion: >
+    Implementar sesiones de capacitación intensivas y prácticas sobre el uso correcto, inspección pre-uso, almacenamiento y mantenimiento de los Sistemas Personales de Detención de Caídas (SPDC). La capacitación debe incluir ejercicios prácticos de enganche, ajuste de arneses y reconocimiento de componentes dañados, asegurando que todos los trabajadores que realicen tareas en altura sean competentes en el manejo de su EPP crítico.
+  riesgo_asociado: R01
+  tipo_control: preventivo
+  aplicable_a:
+  - IMEN
+  - NMS
+  - OPG
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Implementación de acciones correctivas
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  tags:
+  - r01
+  - capacitación_SPDC
+  - uso_EPP
+  - inspección_pre_uso
+  - trabajo_altura
+  - detención_caídas
+  - entrenamiento_seguridad
+  - control_administrativo
+  - EPP
+
+- id: AC05
+  nombre: Realizar inspección técnica periódica de equipos de levante
+  descripcion: >
+    Establecer y ejecutar un programa riguroso de inspecciones técnicas regulares para todos los equipos de levante (grúas, polipastos, montacargas, eslingas, ganchos). Estas inspecciones deben ser realizadas por personal certificado, con el fin de identificar desgaste, daños, deformaciones o cualquier anomalía que pueda comprometer la integridad del equipo y prevenir la caída de cargas.
+  riesgo_asociado: R02
+  tipo_control: preventivo
+  aplicable_a:
+  - IMEN
+  - NMS
+  - OPG
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Implementación de acciones correctivas
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  tags:
+  - r02
+  - inspección_equipo
+  - equipos_levante
+  - grúas
+  - eslingas
+  - mantenimiento_preventivo
+  - seguridad_izaje
+  - prevención_caída_cargas
+  - control_ingenieria
+  - control_administrativo
+
+- id: AC06
+  nombre: Fortalecer protocolo de corte y verificación de tensión cero (LOTO)
+  descripcion: >
+    Revisar y mejorar el protocolo de Bloqueo y Etiquetado (LOTO) para asegurar que todos los puntos de energía (eléctrica, mecánica, hidráulica, neumática) estén debidamente aislados y verificados como "tensión cero" antes de cualquier intervención. Esto incluye auditorías de cumplimiento, capacitación avanzada al personal y la provisión de dispositivos de bloqueo adecuados y suficientes para prevenir energizaciones inesperadas.
+  riesgo_asociado: R03 # Originalmente R01, ajustado a R03 por el contexto de tensión cero.
+  tipo_control: preventivo
+  aplicable_a:
+  - IMEN
+  - NMS
+  - OCC
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Implementación de acciones correctivas
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  tags:
+  - r03
+  - protocolo_LOTO
+  - tensión_cero
+  - bloqueo_etiquetado
+  - aislamiento_energía
+  - seguridad_eléctrica
+  - control_administrativo
+
+- id: AC07
+  nombre: Coordinar formalmente trabajos simultáneos en la misma vertical
+  descripcion: >
+    Establecer un procedimiento estricto para la coordinación y autorización de trabajos que se realicen simultáneamente en diferentes niveles de una misma vertical. Esto incluye la planificación de horarios, delimitación de áreas de exclusión, comunicación constante entre equipos y la implementación de sistemas de contención para evitar la caída de objetos o interacción no deseada entre actividades.
+  riesgo_asociado: R02 # Originalmente R03, ajustado a R02 por el contexto de caída de objetos.
+  tipo_control: preventivo
+  aplicable_a:
+  - OCC
+  - IMEN
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Implementación de acciones correctivas
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  tags:
+  - r02
+  - trabajos_simultáneos
+  - coordinación_vertical
+  - prevención_caída_objetos
+  - seguridad_operacional
+  - control_administrativo
+
+- id: AC08
+  nombre: Mejorar señalización en zonas de riesgo de caída de objetos
+  descripcion: >
+    Diseñar e instalar señalización clara, visible y estandarizada en todas las áreas donde exista riesgo potencial de caída de objetos (ej. zonas de izaje, trabajos en altura, almacenamientos elevados). Esto incluye letreros de advertencia, conos, barreras físicas y demarcación de zonas de exclusión para alertar al personal y restringir el acceso innecesario.
+  riesgo_asociado: R02 # Originalmente R03, ajustado a R02 por el contexto de caída de objetos.
+  tipo_control: preventivo
+  aplicable_a:
+  - OPG
+  - OCC
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Implementación de acciones correctivas
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  tags:
+  - r02
+  - señalización_seguridad
+  - zonas_riesgo
+  - caída_objetos
+  - demarcación_áreas
+  - control_ingenieria
+  - control_administrativo
+
+- id: AC09
+  nombre: Realizar auditorías de cumplimiento de procedimiento LOTO
+  descripcion: >
+    Establecer un programa regular de auditorías y verificaciones en terreno para asegurar el estricto cumplimiento del procedimiento de Bloqueo y Etiquetado (LOTO) por parte de todo el personal involucrado en tareas de mantenimiento o intervención de equipos. Las auditorías deben identificar desviaciones, reforzar buenas prácticas y documentar hallazgos para acciones correctivas inmediatas y mejora continua.
+  riesgo_asociado: R03
+  tipo_control: preventivo
+  aplicable_a:
+  - IMEN
+  - NMS
+  - OPG
+  - OCC
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Implementación de acciones correctivas
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  tags:
+  - r03
+  - auditoría_LOTO
+  - cumplimiento_procedimiento
+  - seguridad_eléctrica
+  - aislamiento_energía
+  - supervisión
+  - control_administrativo
+
+- id: AC10
+  nombre: Implementar programa de capacitación para trabajos eléctricos energizados
+  descripcion: >
+    Desarrollar e impartir un programa de capacitación especializado y certificado para el personal que, de manera excepcional y justificada, deba realizar trabajos eléctricos energizados. La capacitación debe cubrir los riesgos inherentes, procedimientos seguros específicos, uso de herramientas aisladas y EPP dieléctrico adecuado, así como protocolos de rescate y primeros auxilios para incidentes eléctricos.
+  riesgo_asociado: R03
+  tipo_control: preventivo
+  aplicable_a:
+  - IMEN
+  - NMS
+  - OCC
+  area: Mantenimiento Eléctrico
+  aplicabilidad: Implementación de acciones correctivas
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  tags:
+  - r03
+  - capacitación_eléctrica
+  - trabajo_energizado
+  - seguridad_eléctrica
+  - EPP_dieléctrico
+  - protocolo_rescate
+  - entrenamiento_seguridad
+  - control_administrativo
+
+- id: AC11
+  nombre: Instalar o reparar barandas de protección perimetral en plataformas
+  descripcion: >
+    Diseñar e instalar nuevas barandas de seguridad o reparar las existentes que se encuentren dañadas o incompletas en plataformas, pasarelas, escaleras y aberturas en altura. El objetivo es proporcionar una barrera física robusta que prevenga la caída de personas y objetos, cumpliendo con las normativas de altura y resistencia.
+  riesgo_asociado: R01
+  tipo_control: preventivo
+  aplicable_a:
+  - IMEN
+  - OPG
+  - OCC
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Implementación de acciones correctivas
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  tags:
+  - r01
+  - barandas_protección
+  - seguridad_perimetral
+  - plataforma
+  - prevención_caída_altura
+  - control_ingenieria
+
+- id: AC12
+  nombre: Realizar mantenimiento preventivo de cableado eléctrico y tableros
+  descripcion: >
+    Establecer un programa de mantenimiento preventivo y correctivo para toda la infraestructura eléctrica, incluyendo la revisión y reparación de cableado expuesto, dañado o con aislamiento deteriorado, así como la inspección y adecuación de tableros eléctricos (cubiertas, señalización, bloqueo). El objetivo es prevenir cortocircuitos, sobrecargas y contactos accidentales con energía.
+  riesgo_asociado: R03
+  tipo_control: preventivo
+  aplicable_a:
+  - IMEN
+  - NMS
+  - OPG
+  area: Mantenimiento Eléctrico
+  aplicabilidad: Implementación de acciones correctivas
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  tags:
+  - r03
+  - mantenimiento_eléctrico
+  - cableado
+  - tableros_eléctricos
+  - aislamiento
+  - prevención_contacto_eléctrico
+  - seguridad_eléctrica
+  - control_ingenieria
+
+- id: AC13
+  nombre: Demarcar y señalizar áreas de exclusión para caída de objetos
+  descripcion: >
+    Delimitar claramente las zonas donde existe riesgo de caída de objetos mediante demarcación en el suelo (líneas pintadas), señalización vertical (letreros de advertencia) y, si es posible, barreras físicas (cintas, vallas). Estas áreas deben ser de acceso restringido para personal no autorizado durante operaciones que puedan generar desprendimientos.
+  riesgo_asociado: R02
+  tipo_control: preventivo
+  aplicable_a:
+  - OPG
+  - OCC
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Implementación de acciones correctivas
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  tags:
+  - r02
+  - demarcación_áreas
+  - señalización_seguridad
+  - zonas_exclusión
+  - caída_objetos
+  - seguridad_operacional
+  - control_administrativo
+
+- id: AC14
+  nombre: Proporcionar y exigir uso de EPP dieléctrico certificado
+  descripcion: >
+    Asegurar la disponibilidad de Equipo de Protección Personal (EPP) dieléctrico (guantes, botas, alfombras aislantes, ropa ignífuga) certificado y en buen estado para todo el personal que realice trabajos eléctricos. Es fundamental no solo proporcionar el EPP, sino también exigir su uso constante y correcto mediante supervisión y campañas de concientización.
+  riesgo_asociado: R03
+  tipo_control: preventivo
+  aplicable_a:
+  - IMEN
+  - NMS
+  - OPG
+  - OCC
+  area: Mantenimiento Eléctrico
+  aplicabilidad: Implementación de acciones correctivas
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  tags:
+  - r03
+  - epp_dieléctrico
+  - guantes_aislantes
+  - ropa_ignífuga
+  - seguridad_eléctrica
+  - uso_obligatorio
+  - prevención_electrocución
+  - control_epp
+
+- id: AC15
+  nombre: Realizar charlas de seguridad diarias enfocadas en riesgos críticos
+  descripcion: >
+    Implementar y mantener un programa de charlas de seguridad pre-turno o diarias que aborden específicamente los riesgos críticos identificados en la operación (ej. trabajos en altura, caída de objetos, riesgos eléctricos). Estas charlas deben ser interactivas, destacar lecciones aprendidas y reforzar la importancia de los controles implementados.
+  riesgo_asociado: R01 # General, puede aplicarse a R01, R02, R03
+  tipo_control: preventivo
+  aplicable_a:
+  - OPG
+  - OCC
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Implementación de acciones correctivas
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  tags:
+  - charlas_seguridad
+  - comunicación_riesgos
+  - concientización
+  - inducción
+  - seguridad_operacional
+  - control_administrativo
+
+- id: AC16
+  nombre: Instalar sistemas de puesta a tierra y protección diferencial en equipos
+  descripcion: >
+    Asegurar que todos los equipos y herramientas eléctricas cuenten con sistemas de puesta a tierra efectivos y, si es aplicable, dispositivos de protección diferencial (interruptores diferenciales). Estos sistemas son esenciales para desenergizar rápidamente un circuito en caso de falla de aislamiento o fuga de corriente, protegiendo al personal de choques eléctricos.
+  riesgo_asociado: R03
+  tipo_control: preventivo
+  aplicable_a:
+  - IMEN
+  - NMS
+  - OPG
+  area: Mantenimiento Eléctrico
+  aplicabilidad: Implementación de acciones correctivas
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  tags:
+  - r03
+  - puesta_a_tierra
+  - protección_diferencial
+  - seguridad_eléctrica
+  - prevención_choque
+  - instalación_eléctrica
+  - control_ingenieria
+
+- id: AC17
+  nombre: Establecer programa de verificación de zonas de impacto de objetos
+  descripcion: >
+    Crear y ejecutar un protocolo para la verificación regular de áreas bajo trabajos en altura o zonas de izaje, para asegurar que estén libres de personal y debidamente acordonadas. Esto incluye el monitoreo continuo durante la actividad para evitar el ingreso no autorizado y el riesgo de ser golpeado por la caída de objetos.
+  riesgo_asociado: R02
+  tipo_control: preventivo
+  aplicable_a:
+  - OPG
+  - OCC
+  area: Zona de Izaje / Trabajo en Altura
+  aplicabilidad: Implementación de acciones correctivas
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  tags:
+  - r02
+  - verificación_zona_impacto
+  - acordonamiento_área
+  - exclusión_personal
+  - caída_objetos
+  - seguridad_operacional
+  - control_administrativo
+
+- id: AC18
+  nombre: Realizar mantenimiento de estructuras y pasarelas para prevenir caídas
+  descripcion: >
+    Implementar un programa de inspección y mantenimiento continuo para todas las estructuras elevadas, pasarelas, escaleras y superficies de trabajo. Esto incluye reparar o reemplazar elementos corroídos, deformados o dañados que puedan comprometer la estabilidad y la resistencia, previniendo así caídas de personas y fallas estructurales.
+  riesgo_asociado: R01
+  tipo_control: preventivo
+  aplicable_a:
+  - IMEN
+  - NMS
+  - OPG
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Implementación de acciones correctivas
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  tags:
+  - r01
+  - mantenimiento_estructuras
+  - pasarelas
+  - escaleras
+  - seguridad_estructural
+  - prevención_caídas
+  - control_ingenieria
+
+- id: AC19
+  nombre: Establecer matriz de competencias y autorizaciones para trabajos críticos
+  descripcion: >
+    Desarrollar e implementar una matriz de competencias que defina claramente los requisitos de formación, experiencia y autorización para cada tipo de trabajo crítico (ej. eléctrico, en altura, espacios confinados). Se debe asegurar que solo el personal debidamente calificado y autorizado realice estas tareas, reduciendo el riesgo de errores por incompetencia.
+  riesgo_asociado: R03 # Puede ser R01, R02, R03. Lo asociamos a R03 por el contexto de AC10.
+  tipo_control: preventivo
+  aplicable_a:
+  - IMEN
+  - NMS
+  - OCC
+  area: Gestión de Personal
+  aplicabilidad: Implementación de acciones correctivas
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  tags:
+  - r03
+  - matriz_competencias
+  - autorizaciones_trabajo
+  - personal_calificado
+  - capacitación
+  - seguridad_operacional
+  - control_administrativo
+
+- id: AC20
+  nombre: Realizar campañas de sensibilización sobre peligros de objetos sueltos
+  descripcion: >
+    Lanzar campañas de concientización y sensibilización dirigidas a todo el personal, destacando los riesgos asociados a herramientas y materiales sueltos en altura, la importancia del orden y la limpieza, y las consecuencias de la caída de objetos. Esto busca fomentar una cultura de prevención y buenas prácticas en el manejo de materiales.
+  riesgo_asociado: R02
+  tipo_control: preventivo
+  aplicable_a:
+  - OPG
+  - OCC
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Implementación de acciones correctivas
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  tags:
+  - r02
+  - campañas_sensibilización
+  - concientización
+  - objetos_sueltos
+  - caída_objetos
+  - orden_limpieza
+  - cultura_seguridad
+  - control_administrativo
+
+- id: AC21
+  nombre: Revisar y actualizar señalización de seguridad para trabajos en altura
+  descripcion: >
+    Inspeccionar la señalización existente para trabajos en altura y actualizarla o complementarla según sea necesario. Esto incluye avisos de uso obligatorio de SPDC, delimitación de áreas de trabajo en altura, señalización de accesos y salidas, y advertencias sobre riesgos específicos. El objetivo es mejorar la visibilidad y el entendimiento de las precauciones necesarias.
+  riesgo_asociado: R01
+  tipo_control: preventivo
+  aplicable_a:
+  - OPG
+  - OCC
+  area: Trabajo en Altura
+  aplicabilidad: Implementación de acciones correctivas
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  tags:
+  - r01
+  - señalización_seguridad
+  - trabajo_altura
+  - SPDC
+  - prevención_caídas
+  - control_administrativo
+
+- id: AC22
+  nombre: Inspeccionar y mantener los equipos de protección personal (EPP)
+  descripcion: >
+    Establecer un programa de inspección, mantenimiento y reemplazo periódico de todos los Equipos de Protección Personal (EPP). Esto incluye verificar el estado (desgaste, daños, fecha de caducidad) de cascos, gafas, guantes, calzado, y especialmente arneses y líneas de vida, asegurando que el EPP proporcione la protección esperada.
+  riesgo_asociado: R01 # Aplica a todos los riesgos, pero lo centramos en R01 por el SPDC. Podríamos añadir AC genéricas de EPP.
+  tipo_control: preventivo
+  aplicable_a:
+  - IMEN
+  - NMS
+  - OPG
+  - OCC
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Implementación de acciones correctivas
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  tags:
+  - epp
+  - inspección_epp
+  - mantenimiento_epp
+  - reemplazo_epp
+  - seguridad_personal
+  - control_administrativo
+
+- id: AC23
+  nombre: Desarrollar e implementar plan de rescate en altura y eléctrico
+  descripcion: >
+    Crear y poner en marcha un plan de emergencia y rescate específico para situaciones de caída desde altura y para incidentes eléctricos (electrocución, quemaduras). Este plan debe incluir equipos de rescate especializados, personal capacitado en rescate vertical y RCP, puntos de rescate predefinidos y coordinación con servicios de emergencia externos, para minimizar las consecuencias de un incidente.
+  riesgo_asociado: R01 # Aplica a R01 y R03. Se podría desdoblar si se quiere más especificidad.
+  tipo_control: mitigacion
+  aplicable_a:
+  - IMEN
+  - NMS
+  - OPG
+  - OCC
+  area: Emergencias
+  aplicabilidad: Implementación de acciones correctivas
+  registro_aplicable_a:
+  - incidente
+  tags:
+  - r01
+  - r03
+  - plan_rescate
+  - rescate_altura
+  - rescate_eléctrico
+  - emergencia
+  - respuesta_emergencias
+  - control_administrativo
+
+- id: AC24
+  nombre: Establecer sistema de permisos de trabajo para áreas energizadas
+  descripcion: >
+    Implementar un sistema riguroso de Permisos de Trabajo (PT) para cualquier actividad que involucre la intervención de sistemas eléctricos energizados o la proximidad a ellos. Este permiso debe ser un documento formal que autorice el trabajo, especifique los riesgos, los controles requeridos, el personal autorizado y los equipos de seguridad a utilizar, asegurando que se cumplen todas las precauciones antes de iniciar la tarea.
+  riesgo_asociado: R03
+  tipo_control: preventivo
+  aplicable_a:
+  - IMEN
+  - NMS
+  - OPG
+  - OCC
+  area: Mantenimiento Eléctrico
+  aplicabilidad: Implementación de acciones correctivas
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  tags:
+  - r03
+  - permiso_trabajo
+  - trabajo_energizado
+  - seguridad_eléctrica
+  - control_administrativo
+  - autorización
+
+- id: AC25
+  nombre: Instalar tapas o cubiertas en aberturas de piso y vanos
+  descripcion: >
+    Colocar tapas resistentes y aseguradas o cubiertas temporales sobre cualquier abertura en el piso, vano o pozo que represente un riesgo de caída para personas o de objetos. Las cubiertas deben ser capaces de soportar el peso de las personas y equipos, y estar debidamente señalizadas para advertir del peligro.
+  riesgo_asociado: R01 # Aplica a R01 y R02. Centrado en R01 (caída de personas)
+  tipo_control: preventivo
+  aplicable_a:
+  - IMEN
+  - OPG
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Implementación de acciones correctivas
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  tags:
+  - r01
+  - r02
+  - tapas_seguridad
+  - cubiertas
+  - aberturas_piso
+  - vanos
+  - prevención_caídas
+  - seguridad_estructural
+  - control_ingenieria
+
+- id: AC26
+  nombre: Implementar sistema de gestión de herramientas de mano
+  descripcion: >
+    Establecer un sistema de control y seguimiento para todas las herramientas de mano, especialmente aquellas utilizadas en altura. Esto incluye inspecciones regulares, etiquetado de herramientas en buen estado, retiro de herramientas dañadas o defectuosas, y promoción del uso de herramientas con amarre anticaída para evitar su desprendimiento.
+  riesgo_asociado: R02
+  tipo_control: preventivo
+  aplicable_a:
+  - IMEN
+  - NMS
+  - OCC
+  area: Herramientas
+  aplicabilidad: Implementación de acciones correctivas
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  tags:
+  - r02
+  - gestión_herramientas
+  - herramientas_mano
+  - inspección_herramientas
+  - amarre_anticaída
+  - prevención_caída_objetos
+  - control_administrativo
+
+- id: AC27
+  nombre: Realizar simulacros de emergencia de caída de altura y electrocución
+  descripcion: >
+    Organizar y ejecutar simulacros periódicos de situaciones de emergencia que involucren caídas desde altura y/o incidentes eléctricos (electrocución). Los simulacros deben evaluar la efectividad de los planes de rescate, la respuesta de las brigadas de emergencia, la comunicación y la evacuación, identificando áreas de mejora para la preparación ante eventos reales.
+  riesgo_asociado: R01 # Aplica a R01 y R03.
+  tipo_control: mitigacion
+  aplicable_a:
+  - OPG
+  - OCC
+  area: Emergencias
+  aplicabilidad: Implementación de acciones correctivas
+  registro_aplicable_a:
+  - incidente
+  tags:
+  - r01
+  - r03
+  - simulacros_emergencia
+  - rescate_altura
+  - rescate_eléctrico
+  - plan_emergencia
+  - entrenamiento_emergencias
+  - control_administrativo
+
+- id: AC28
+  nombre: Mejorar iluminación en áreas de alto riesgo
+  descripcion: >
+    Evaluar y optimizar los niveles de iluminación en todas las áreas de trabajo, especialmente en aquellas donde se realicen tareas en altura, manipulación de cargas o trabajos eléctricos. Una iluminación adecuada reduce el riesgo de tropiezos, caídas y errores operacionales, mejorando la visibilidad y la percepción de peligros.
+  riesgo_asociado: R01 # Aplica a todos los riesgos indirectamente, pero lo asociamos más a R01 y R02 por la visibilidad.
+  tipo_control: preventivo
+  aplicable_a:
+  - IMEN
+  - NMS
+  - OPG
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Implementación de acciones correctivas
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  tags:
+  - r01
+  - r02
+  - iluminación_seguridad
+  - visibilidad
+  - prevención_caídas
+  - prevención_tropiezos
+  - control_ingenieria
+
+- id: AC29
+  nombre: Implementar sistema de monitoreo de aislamiento eléctrico
+  descripcion: >
+    Instalar y mantener sistemas de monitoreo continuo del estado de aislamiento en redes eléctricas y equipos críticos. Estos sistemas permiten detectar fallas incipientes, fugas de corriente o deterioro del aislamiento antes de que se conviertan en un riesgo de choque eléctrico o cortocircuito, activando alarmas y permitiendo acciones preventivas.
+  riesgo_asociado: R03
+  tipo_control: preventivo
+  aplicable_a:
+  - IMEN
+  - NMS
+  - OPG
+  area: Mantenimiento Eléctrico
+  aplicabilidad: Implementación de acciones correctivas
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  tags:
+  - r03
+  - monitoreo_aislamiento
+  - sistema_eléctrico
+  - prevención_choque_eléctrico
+  - mantenimiento_predictivo
+  - seguridad_eléctrica
+  - control_ingenieria
+
+- id: AC30
+  nombre: Realizar análisis de riesgos específicos para trabajos de izaje
+  descripcion: >
+    Exigir la realización de un Análisis de Riesgos del Trabajo (ART) o una evaluación de riesgos específica para cada operación de izaje de cargas. Este análisis debe identificar los peligros asociados (tipo de carga, equipo, condiciones del terreno, personal), evaluar los riesgos y definir los controles necesarios antes de iniciar la maniobra, asegurando que se contemplen todos los escenarios de caída de carga.
+  riesgo_asociado: R02
+  tipo_control: preventivo
+  aplicable_a:
+  - IMEN
+  - NMS
+  - OPG
+  - OCC
+  area: Zona de Izaje
+  aplicabilidad: Implementación de acciones correctivas
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  tags:
+  - r02
+  - análisis_riesgos
+  - trabajos_izaje
+  - ART
+  - planificación_operacional
+  - seguridad_izaje
+  - prevención_caída_carga
+  - control_administrativo
+
+- id: AC31
+  nombre: Prohibir el uso de teléfonos móviles en áreas operacionales
+  descripcion: >
+    Establecer una política estricta que prohíba el uso de teléfonos móviles y otros dispositivos electrónicos personales en áreas operacionales activas, especialmente al operar maquinaria o transitar por zonas de alto riesgo. El objetivo es eliminar distracciones que puedan llevar a errores humanos y accidentes.
+  riesgo_asociado: R01 # Aplica a todos los riesgos, pero es una acción de comportamiento.
+  tipo_control: preventivo
+  aplicable_a:
+  - OPG
+  - OCC
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Implementación de acciones correctivas
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  tags:
+  - distracción
+  - uso_celular
+  - política_seguridad
+  - seguridad_operacional
+  - control_administrativo
+
+- id: AC32
+  nombre: Capacitar en primeros auxilios y RCP para incidentes eléctricos
+  descripcion: >
+    Entrenar a brigadas de emergencia y personal clave en técnicas de primeros auxilios específicas para víctimas de electrocución, incluyendo reanimación cardiopulmonar (RCP) y manejo inicial de quemaduras eléctricas. Este entrenamiento busca proporcionar una respuesta inmediata y efectiva para mitigar las consecuencias de los incidentes eléctricos.
+  riesgo_asociado: R03
+  tipo_control: mitigacion
+  aplicable_a:
+  - OPG
+  - OCC
+  area: Salud y Emergencias
+  aplicabilidad: Implementación de acciones correctivas
+  registro_aplicable_a:
+  - incidente
+  tags:
+  - r03
+  - primeros_auxilios
+  - RCP
+  - electrocución
+  - quemaduras_eléctricas
+  - respuesta_emergencias
+  - capacitación_médica
+  - control_administrativo
+
+- id: AC33
+  nombre: Instalar protectores de partes móviles y puntos de atrapamiento
+  descripcion: >
+    Diseñar e instalar guardas de seguridad, cubiertas o protecciones en todas las partes móviles de la maquinaria (ej. correas transportadoras, engranajes, poleas) y en los puntos donde pueda existir riesgo de atrapamiento o aplastamiento. Estas protecciones deben ser fijas o interbloqueadas para evitar el acceso accidental durante la operación.
+  riesgo_asociado: R02 # Generalmente asociado a atrapamiento, pero la "caída de objetos" también puede ser por fallas en estas partes. Podría ser un nuevo riesgo "Atrapamiento".
+  tipo_control: preventivo
+  aplicable_a:
+  - IMEN
+  - NMS
+  - OPG
+  area: Mantenimiento Mecánico
+  aplicabilidad: Implementación de acciones correctivas
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  tags:
+  - protectores_maquinaria
+  - guardas_seguridad
+  - partes_móviles
+  - puntos_atrapamiento
+  - prevención_atrapamiento
+  - seguridad_máquina
+  - control_ingenieria
+
+- id: AC34
+  nombre: Realizar simulacros de evacuación y respuesta a emergencias eléctricas
+  descripcion: >
+    Organizar simulacros de evacuación y respuesta a emergencias eléctricas (incendios por corto circuito, electrocución masiva) para evaluar la efectividad de los planes de emergencia. Estos ejercicios permiten identificar fallas en la comunicación, coordinación, uso de equipos y procedimientos de evacuación ante un evento eléctrico de gran magnitud.
+  riesgo_asociado: R03
+  tipo_control: mitigacion
+  aplicable_a:
+  - OPG
+  - OCC
+  area: Emergencias
+  aplicabilidad: Implementación de acciones correctivas
+  registro_aplicable_a:
+  - incidente
+  tags:
+  - r03
+  - simulacros_emergencia
+  - evacuación
+  - respuesta_eléctrica
+  - plan_emergencia
+  - entrenamiento_emergencias
+  - control_administrativo
+
+- id: AC35
+  nombre: Implementar protocolo de orden y limpieza "5S" en áreas de trabajo
+  descripcion: >
+    Establecer e implementar la metodología "5S" (Clasificar, Ordenar, Limpiar, Estandarizar, Sostener) en todas las áreas operacionales. Esto busca mantener un ambiente de trabajo ordenado y limpio, eliminando materiales innecesarios, demarcando áreas, facilitando la identificación de peligros y previniendo tropiezos o caídas.
+  riesgo_asociado: R01 # Aplica a todos los riesgos por reducción de desorden. Principalmente caídas, golpes.
+  tipo_control: preventivo
+  aplicable_a:
+  - OPG
+  - OCC
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Implementación de acciones correctivas
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  tags:
+  - 5s
+  - orden_limpieza
+  - housekeeping
+  - prevención_caídas
+  - seguridad_operacional
+  - control_administrativo
+
+- id: AC36
+  nombre: Revisar y actualizar procedimientos de comunicación de riesgos
+  descripcion: >
+    Evaluar y mejorar los canales y métodos de comunicación de riesgos en la organización. Esto incluye asegurar que la información sobre peligros, controles y lecciones aprendidas se difunda de manera efectiva a todos los niveles, utilizando formatos claros y accesibles, y fomentando la retroalimentación del personal.
+  riesgo_asociado: R01 # Aplica a todos los riesgos
+  tipo_control: preventivo
+  aplicable_a:
+  - OPG
+  - OCC
+  area: Gestión de Seguridad
+  aplicabilidad: Implementación de acciones correctivas
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  tags:
+  - comunicación_riesgos
+  - difusión_información
+  - lecciones_aprendidas
+  - cultura_seguridad
+  - control_administrativo
+
+- id: AC37
+  nombre: Programa de reemplazo y actualización de luminarias en zonas críticas
+  descripcion: >
+    Desarrollar un plan para el reemplazo sistemático de luminarias antiguas o de bajo rendimiento por tecnología más eficiente y de mayor capacidad en áreas críticas (ej. trabajos en altura, zonas con maquinaria pesada, áreas de maniobra). El objetivo es asegurar niveles óptimos de iluminación que mejoren la visibilidad y reduzcan el riesgo de accidentes.
+  riesgo_asociado: R01 # Aplica a R01, R02 (visibilidad para evitar caídas y golpes).
+  tipo_control: preventivo
+  aplicable_a:
+  - IMEN
+  - NMS
+  - OPG
+  area: Infraestructura
+  aplicabilidad: Implementación de acciones correctivas
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  tags:
+  - iluminación_seguridad
+  - luminarias
+  - visibilidad
+  - prevención_accidentes
+  - control_ingenieria
+
+- id: AC38
+  nombre: Instalar detectores de movimiento y alarmas en áreas de izaje
+  descripcion: >
+    Implementar sistemas de detección de movimiento o presencia, junto con alarmas sonoras y visuales, en las zonas donde se realicen operaciones de izaje de cargas. Esto alertará al personal en las proximidades sobre la actividad de la grúa y la carga suspendida, ayudando a prevenir atropellamientos o golpes por objetos que caen.
+  riesgo_asociado: R02
+  tipo_control: preventivo
+  aplicable_a:
+  - IMEN
+  - NMS
+  - OPG
+  area: Zona de Izaje
+  aplicabilidad: Implementación de acciones correctivas
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  tags:
+  - r02
+  - detectores_movimiento
+  - alarmas_seguridad
+  - izaje_cargas
+  - carga_suspendida
+  - prevención_atropellamiento
+  - control_ingenieria
+
+- id: AC39
+  nombre: Realizar cursos de rescate en espacios confinados y con gases tóxicos
+  descripcion: >
+    Capacitar a brigadas de emergencia y personal clave en técnicas de rescate especializado para espacios confinados, incluyendo el uso de equipos de monitoreo de gases, equipos de respiración autónoma (SCBA), sistemas de rescate con cuerdas y protocolos de atención a víctimas de asfixia o intoxicación por gases.
+  riesgo_asociado: R06 # Este sería un nuevo riesgo "Espacios Confinados / Gases Peligrosos". Se asume que habría un R06.
+  tipo_control: mitigacion
+  aplicable_a:
+  - OPG
+  - OCC
+  area: Emergencias
+  aplicabilidad: Implementación de acciones correctivas
+  registro_aplicable_a:
+  - incidente
+  tags:
+  - rescate_confinado
+  - gases_tóxicos
+  - SCBA
+  - equipos_rescate
+  - entrenamiento_emergencias
+  - control_administrativo
+
+- id: AC40
+  nombre: Implementar sistema de gestión de cambios (MOC)
+  descripcion: >
+    Establecer un proceso formal de Gestión de Cambios (Management of Change - MOC) para evaluar y controlar cualquier modificación en equipos, procesos, procedimientos o infraestructura antes de su implementación. Esto asegura que los nuevos riesgos sean identificados y controlados adecuadamente, y que las acciones correctivas se integren de forma segura.
+  riesgo_asociado: R00 # Riesgo general, aplica a todos los riesgos
+  tipo_control: preventivo
+  aplicable_a:
+  - IMEN
+  - NMS
+  - OPG
+  - OCC
+  area: Gestión de Seguridad
+  aplicabilidad: Implementación de acciones correctivas
+  registro_aplicable_a:
+  - incidente
+  tags:
+  - gestión_cambios
+  - moc
+  - evaluación_riesgos
+  - seguridad_operacional
+  - control_administrativo

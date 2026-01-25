@@ -1,0 +1,48 @@
+# 26_tipos_observaciones_v2.yaml (mejorado)
+
+- id: OPG
+  nombre: Observación Preventiva General
+  descripcion: >
+    Observación de seguridad que documenta **comportamientos,
+    condiciones o actos no seguros** que pueden dar lugar a un incidente
+    si no se corrigen. Estas observaciones, aunque no requieren una
+    consecuencia inmediata, ayudan a identificar tendencias y a prevenir
+    riesgos antes de que se materialicen. No tienen que estar
+    directamente asociadas a un riesgo pre-identificado.
+  requiere_control_critico: false
+  riesgo_opcional: true  # Clarifica que el campo 'tipo_riesgo' es opcional en la OPG
+  observacion_valorativa: true  # positiva / negativa
+  asociacion_bowtie: false
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Clasificación de observaciones
+  registro_aplicable_a:
+    - observacion
+  tags:
+    - observación preventiva
+    - condiciones inseguras
+    - actos peligrosos
+    - documentación de campo
+    - análisis de tendencia
+
+- id: OCC
+  nombre: Observación de Controles Críticos
+  descripcion: >
+    Observación focalizada en verificar el **estado, efectividad y
+    cumplimiento** de los controles críticos definidos en el BowTie.
+    Incluye evaluaciones positivas o negativas según si el control está
+    "cumplido" y funcionando, o deficiente si está "no cumplido" o
+    presenta desviaciones.
+  requiere_control_critico: true
+  riesgo_opcional: false  # Clarifica que el campo 'tipo_riesgo' es obligatorio
+  observacion_valorativa: true  # positiva / negativa
+  asociacion_bowtie: true  # Siempre asociada a un riesgo y sus controles en el BowTie
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Clasificación de observaciones
+  registro_aplicable_a:
+    - observacion
+  tags:
+    - observación control crítico
+    - control crítico
+    - cumplimiento
+    - desviaciones
+    - seguridad operacional

@@ -1,0 +1,45 @@
+id_auditoria,fecha,semana,dia_semana,turno,id_area,tipo_auditoria,resultado,hallazgos_clave
+AUD_000001,11/11/2024,1,Lunes,T1D,STM,AUC,Cumple requisitos revisados.,Sin hallazgos críticos; observaciones menores.
+AUD_000002,11/11/2024,1,Lunes,T2N,STM,AUC,Cumple requisitos revisados.,Sin hallazgos críticos; observaciones menores.
+AUD_000003,11/12/2024,1,Martes,T2N,CHP,AUC,Cumple requisitos revisados.,Sin hallazgos críticos; observaciones menores.
+AUD_000004,11/13/2024,1,Miércoles,T2N,TME,AUC,Cumple requisitos revisados.,Sin hallazgos críticos; observaciones menores.
+AUD_000005,11/15/2024,1,Viernes,T2N,PLC,AUC,Cumple requisitos revisados.,Sin hallazgos críticos; observaciones menores.
+AUD_000006,11/15/2024,1,Viernes,T1D,MRA,AUC,Cumple requisitos revisados.,Sin hallazgos críticos; observaciones menores.
+AUD_000007,11/16/2024,1,Sábado,T1D,CHP,AUC,Cumple requisitos revisados.,Sin hallazgos críticos; observaciones menores.
+AUD_000008,11/24/2024,2,Domingo,T1D,MRA,AUC,Cumple requisitos revisados.,Sin hallazgos críticos; observaciones menores.
+AUD_000009,11/27/2024,3,Miércoles,T2N,STM,AUF,No cumple todos los requisitos.,Se identifican desviaciones relevantes.
+AUD_000010,11/28/2024,3,Jueves,T2N,STM,AUC,Cumple requisitos revisados.,Sin hallazgos críticos; observaciones menores.
+AUD_000011,12/1/2024,3,Domingo,T2N,STM,AUC,Cumple requisitos revisados.,Sin hallazgos críticos; observaciones menores.
+AUD_000012,12/7/2024,4,Sábado,T2N,CHP,AUC,Cumple requisitos revisados.,Sin hallazgos críticos; observaciones menores.
+AUD_000013,12/9/2024,5,Lunes,T1D,TME,AUC,Cumple requisitos revisados.,Sin hallazgos críticos; observaciones menores.
+AUD_000014,12/9/2024,5,Lunes,T2N,MRA,AUC,Cumple requisitos revisados.,Sin hallazgos críticos; observaciones menores.
+AUD_000015,12/10/2024,5,Martes,T2N,PLC,AUC,Cumple requisitos revisados.,Sin hallazgos críticos; observaciones menores.
+AUD_000016,12/10/2024,5,Martes,T2N,PLC,AUC,Cumple requisitos revisados.,Sin hallazgos críticos; observaciones menores.
+AUD_000017,12/11/2024,5,Miércoles,T2N,MRA,AUF,No cumple todos los requisitos.,Se identifican desviaciones relevantes.
+AUD_000018,12/12/2024,5,Jueves,T1D,STM,AUC,Cumple requisitos revisados.,Sin hallazgos críticos; observaciones menores.
+AUD_000019,12/17/2024,6,Martes,T1D,MRA,AUC,Cumple requisitos revisados.,Sin hallazgos críticos; observaciones menores.
+AUD_000020,12/17/2024,6,Martes,T1D,TME,AUC,Cumple requisitos revisados.,Sin hallazgos críticos; observaciones menores.
+AUD_000021,12/17/2024,6,Martes,T1D,CHP,AUC,Cumple requisitos revisados.,Sin hallazgos críticos; observaciones menores.
+AUD_000022,12/17/2024,6,Martes,T2N,TME,AUC,Cumple requisitos revisados.,Sin hallazgos críticos; observaciones menores.
+AUD_000023,12/18/2024,6,Miércoles,T2N,MRA,AUC,Cumple requisitos revisados.,Sin hallazgos críticos; observaciones menores.
+AUD_000024,12/19/2024,6,Jueves,T1D,STM,AUC,Cumple requisitos revisados.,Sin hallazgos críticos; observaciones menores.
+AUD_000025,12/22/2024,6,Domingo,T2N,CHP,AUC,Cumple requisitos revisados.,Sin hallazgos críticos; observaciones menores.
+AUD_000026,12/23/2024,7,Lunes,T1D,STM,AUC,Cumple requisitos revisados.,Sin hallazgos críticos; observaciones menores.
+AUD_000027,12/23/2024,7,Lunes,T1D,PLC,AUC,Cumple requisitos revisados.,Sin hallazgos críticos; observaciones menores.
+AUD_000028,12/30/2024,8,Lunes,T2N,MRA,AUC,Cumple requisitos revisados.,Sin hallazgos críticos; observaciones menores.
+AUD_000029,1/3/2025,8,Viernes,T2N,MRA,AUC,Cumple requisitos revisados.,Sin hallazgos críticos; observaciones menores.
+AUD_000030,1/4/2025,8,Sábado,T2N,MRA,AUC,Cumple requisitos revisados.,Sin hallazgos críticos; observaciones menores.
+AUD_000031,1/5/2025,8,Domingo,T2N,MRA,AUC,Cumple requisitos revisados.,Sin hallazgos críticos; observaciones menores.
+AUD_000032,1/8/2025,9,Miércoles,T2N,PLC,AUC,Cumple requisitos revisados.,Sin hallazgos críticos; observaciones menores.
+AUD_000033,1/11/2025,9,Sábado,T2N,PLC,AUC,Cumple requisitos revisados.,Sin hallazgos críticos; observaciones menores.
+AUD_000034,1/13/2025,10,Lunes,T2N,STM,AUF,No cumple todos los requisitos.,Se identifican desviaciones relevantes.
+AUD_000035,1/17/2025,10,Viernes,T2N,MRA,AUF,No cumple todos los requisitos.,Se identifican desviaciones relevantes.
+AUD_000036,1/19/2025,10,Domingo,T2N,MRA,AUF,No cumple todos los requisitos.,Se identifican desviaciones relevantes.
+AUD_000037,1/24/2025,11,Viernes,T2N,CHP,AUC,Cumple requisitos revisados.,Sin hallazgos críticos; observaciones menores.
+AUD_000038,1/24/2025,11,Viernes,T2N,TME,AUC,Cumple requisitos revisados.,Sin hallazgos críticos; observaciones menores.
+AUD_000039,1/24/2025,11,Viernes,T1D,STM,AUC,Cumple requisitos revisados.,Sin hallazgos críticos; observaciones menores.
+AUD_000040,1/25/2025,11,Sábado,T1D,CHP,AUC,Cumple requisitos revisados.,Sin hallazgos críticos; observaciones menores.
+AUD_000041,1/27/2025,12,Lunes,T2N,PLC,AUC,Cumple requisitos revisados.,Sin hallazgos críticos; observaciones menores.
+AUD_000042,1/28/2025,12,Martes,T2N,PLC,AUF,No cumple todos los requisitos.,Se identifican desviaciones relevantes.
+AUD_000043,1/30/2025,12,Jueves,T1D,STM,AUC,Cumple requisitos revisados.,Sin hallazgos críticos; observaciones menores.
+AUD_000044,2/2/2025,12,Domingo,T2N,TME,AUC,Cumple requisitos revisados.,Sin hallazgos críticos; observaciones menores.

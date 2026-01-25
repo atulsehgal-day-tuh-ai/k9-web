@@ -1,0 +1,51 @@
+# Catálogo de tipos de auditoría
+# Alineado a 26_tipos_observaciones_v2.yaml (mismos campos y convenciones)
+
+- id: AUC
+  nombre: Auditoría Completa
+  descripcion: >
+    Auditoría exhaustiva posterior a un Incidente Mayor con consecuencias severas
+    (lesión grave o fatalidad). Incluye recolección de evidencia, entrevistas,
+    análisis de controles críticos y análisis de causas (inmediatas, contribuyentes y latentes).
+  requiere_control_critico: true
+  riesgo_opcional: false
+  observacion_valorativa: false
+  asociacion_bowtie: true
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Clasificación de auditorías post-incidente (Incidente Mayor)
+  registro_aplicable_a:
+    - auditoria
+  tags:
+    - auditoria
+    - completa
+    - incidente_mayor
+    - alto_potencial
+    - icam
+    - controles_criticos
+  # Metadatos semánticos (documentales, no funcionales)
+  riesgo_unico: true
+  requiere_controles_criticos: true
+
+- id: AUF
+  nombre: Auditoría Focalizada
+  descripcion: >
+    Auditoría acotada posterior a un Incidente Menor de Alto Potencial. Se centra
+    en validar controles críticos y causas inmediatas, definiendo medidas
+    específicas y rápidas de mejora.
+  requiere_control_critico: true
+  riesgo_opcional: false
+  observacion_valorativa: false
+  asociacion_bowtie: true
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Clasificación de auditorías post-incidente (Incidente Menor de Alto Potencial)
+  registro_aplicable_a:
+    - auditoria
+  tags:
+    - auditoria
+    - focalizada
+    - incidente_menor
+    - alto_potencial
+    - verificacion_controles
+  # Metadatos semánticos (documentales, no funcionales)
+  riesgo_unico: true
+  requiere_controles_criticos: true

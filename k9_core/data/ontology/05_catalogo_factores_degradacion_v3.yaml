@@ -1,0 +1,285 @@
+- id: R01FD01
+  nombre: Etiquetado de inspección vencido o inexistente
+  descripcion: >
+    Ausencia o expiración de etiquetas e indicadores de inspección en equipos y
+    estructuras de protección. Provoca incertidumbre sobre la integridad del sistema
+    de control y dificulta la identificación de elementos con mantenimiento vencido,
+    aumentando la probabilidad de fallas no detectadas y accidentes de caída.
+  riesgo_asociado: R01
+  tipo_factor: Administrativo/Mantenimiento
+  tags:
+    - inspección
+    - etiquetado
+    - vencido
+    - mantenimiento
+    - procedimiento
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Prevención de condiciones degradadas
+  registro_aplicable_a:
+    - incidente
+    - observacion
+  controles_asociados_criticos_y_preventivos:
+    - R01CC03
+    - R01CP06
+
+- id: R01FD02
+  nombre: Desmontaje de barandas para agilizar tareas
+  descripcion: >
+    Retiro temporal o definitivo de barandas perimetrales para acelerar labores
+    operativas. Esta práctica expone bordes sin protección, eliminando barreras
+    físicas críticas y elevando el riesgo de caídas desde altura con posible
+    resultado de lesiones graves.
+  riesgo_asociado: R01
+  tipo_factor: Comportamiento/Procedimiento
+  tags:
+    - barandas
+    - agilizar
+    - incumplimiento
+    - seguridad perimetral
+    - atajo
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Prevención de condiciones degradadas
+  registro_aplicable_a:
+    - incidente
+    - observacion
+  controles_asociados_criticos_y_preventivos:
+    - R01CC04
+    - R01CP01
+
+- id: R01FD03
+  nombre: Falta de verificación pre-uso de EPP/equipo
+  descripcion: >
+    Omisión de la revisión obligatoria de equipos de protección personal (EPP) y
+    herramientas antes de su uso. Esta negligencia puede llevar a operar con
+    elementos dañados o inadecuados, comprometiendo su funcionalidad y eficacia.
+    Incrementa significativamente la probabilidad de fallos del equipo durante la
+    ejecución de tareas críticas.
+  riesgo_asociado: R01
+  tipo_factor: Comportamiento/Procedimiento
+  tags:
+    - EPP
+    - verificación
+    - pre-uso
+    - inspección
+    - equipo
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Prevención de condiciones degradadas
+  registro_aplicable_a:
+    - incidente
+    - observacion
+  controles_asociados_criticos_y_preventivos:
+    - R01CC06
+    - R01CP05
+
+- id: R01FD04
+  nombre: Superficie de trabajo resbaladiza/irregular
+  descripcion: >
+    Presencia de humedad, aceite, hielo, escombros o irregularidades en pisos y
+    plataformas. Genera condiciones inseguras para el tránsito y el trabajo,
+    aumentando la probabilidad de tropiezos, resbalones y caídas a nivel o desde
+    altura.
+  riesgo_asociado: R01
+  tipo_factor: Condiciones Ambientales/Infraestructura
+  tags:
+    - superficie
+    - resbaladizo
+    - irregular
+    - limpieza
+    - orden
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Prevención de condiciones degradadas
+  registro_aplicable_a:
+    - incidente
+    - observacion
+  controles_asociados_criticos_y_preventivos:
+    - R01CC02
+    - R01CP04
+
+- id: R02FD01
+  nombre: Almacenamiento inadecuado en altura
+  descripcion: >
+    Materiales, herramientas o equipos apilados o ubicados en altura sin sujeción
+    adecuada, generando inestabilidad. Un movimiento, vibración o error humano
+    puede causar su desprendimiento y caída incontrolada.
+  riesgo_asociado: R02
+  tipo_factor: Procedimiento/Comportamiento
+  tags:
+    - almacenamiento
+    - altura
+    - sujeción
+    - inestabilidad
+    - materiales
+    - herramientas
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Prevención de condiciones degradadas
+  registro_aplicable_a:
+    - incidente
+    - observacion
+  controles_asociados_criticos_y_preventivos:
+    - R02CC01
+    - R02CP02
+
+- id: R02FD02
+  nombre: Condiciones climáticas adversas (viento, lluvia)
+  descripcion: >
+    Fenómenos meteorológicos como vientos fuertes, lluvias intensas o granizo
+    que aumentan la probabilidad de caída de objetos. El viento puede desprender
+    materiales ligeros o desestabilizar cargas, y la lluvia puede reducir la
+    visibilidad o hacer superficies resbaladizas.
+  riesgo_asociado: R02
+  tipo_factor: Ambiental
+  tags:
+    - clima
+    - viento
+    - lluvia
+    - visibilidad
+    - ambiental
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Prevención de condiciones degradadas
+  registro_aplicable_a:
+    - incidente
+    - observacion
+  controles_asociados_criticos_y_preventivos:
+    - R02CC04
+    - R02CP05
+
+- id: R02FD03
+  nombre: Falla de herramientas o equipos de elevación
+  descripcion: >
+    Mal funcionamiento o ruptura de grúas, polipastos, eslingas, cadenas o cuerdas
+    debido a mantenimiento deficiente, sobrecarga o desgaste. Compromete la capacidad
+    de levantar y sostener cargas de forma segura, resultando en caídas de objetos.
+  riesgo_asociado: R02
+  tipo_factor: Fallas de Equipos/Mantenimiento
+  tags:
+    - herramientas
+    - equipo de elevación
+    - grúa
+    - mantenimiento
+    - falla
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Prevención de condiciones degradadas
+  registro_aplicable_a:
+    - incidente
+    - observacion
+  controles_asociados_criticos_y_preventivos:
+    - R02CC02
+    - R02CP03
+
+- id: R02FD04
+  nombre: Inexistencia de barreras inferiores/rodapiés
+  descripcion: >
+    Falta de rodapiés o barreras de contención a nivel del suelo o en plataformas
+    elevadas. Permite que herramientas, materiales o escombros pequeños rueden
+    o caigan por los bordes, impactando en niveles inferiores.
+  riesgo_asociado: R02
+  tipo_factor: Fallas de infraestructura
+  tags:
+    - rodapiés
+    - barreras
+    - contención
+    - infraestructura
+    - seguridad perimetral
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Prevención de condiciones degradadas
+  registro_aplicable_a:
+    - incidente
+    - observacion
+  controles_asociados_criticos_y_preventivos:
+    - R02CC05
+    - R02CP06
+
+- id: R03FD01
+  nombre: Aislamiento eléctrico deteriorado/expuesto
+  descripcion: >
+    Cables o componentes eléctricos con cubiertas protectoras rotas, desgastadas
+    o ausentes. Esto expone conductores energizados al contacto directo o indirecto,
+    aumentando el riesgo de choque eléctrico o cortocircuito.
+  riesgo_asociado: R03
+  tipo_factor: Fallas de infraestructura
+  tags:
+    - aislamiento
+    - cableado
+    - expuesto
+    - deterioro
+    - eléctrico
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Prevención de condiciones degradadas
+  registro_aplicable_a:
+    - incidente
+    - observacion
+  controles_asociados_criticos_y_preventivos:
+    - R03CC03
+    - R03CP06
+
+- id: R03FD02
+  nombre: Bloqueo y etiquetado (LOTO) deficiente
+  descripcion: >
+    Fallas en la aplicación o verificación de procedimientos LOTO, como etiquetado
+    incorrecto de interruptores o ausencia de candados de seguridad. Permite la
+    reactivación accidental de equipos durante el mantenimiento, exponiendo al
+    personal a energía inesperada.
+  riesgo_asociado: R03
+  tipo_factor: Procedimiento/Administrativo
+  tags:
+    - LOTO
+    - bloqueo
+    - etiquetado
+    - seguridad eléctrica
+    - procedimiento
+    - administrativo
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Prevención de condiciones degradadas
+  registro_aplicable_a:
+    - incidente
+    - observacion
+  controles_asociados_criticos_y_preventivos:
+    - R03CC05
+    - R03CP02
+
+- id: R03FD03
+  nombre: Herramientas no verificadas tras traslado entre turnos
+  descripcion: >
+    Flujo de herramientas entre operarios sin inspección ni prueba de funcionalidad.
+    Pueden existir daños ocultos o conexiones flojas en dispositivos eléctricos,
+    incrementando la probabilidad de fallos y accidentes.
+  riesgo_asociado: R03
+  tipo_factor: Procedimiento/Mantenimiento
+  tags:
+    - herramientas
+    - verificación
+    - turno
+    - mantenimiento
+    - eléctrico
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Prevención de condiciones degradadas
+  registro_aplicable_a:
+    - incidente
+    - observacion
+  controles_asociados_criticos_y_preventivos:
+    - R03CC02
+    - R03CP04
+
+- id: R03FD04
+  nombre: Designación de tareas eléctricas a personal no calificado
+  descripcion: >
+    Asignación de trabajos en instalaciones energizadas a operarios sin competencias
+    ni certificaciones apropiadas. La falta de capacitación aumenta la probabilidad
+    de errores, exposiciones peligrosas y fallos en procedimientos de seguridad.
+  riesgo_asociado: R03
+  tipo_factor: Organizacional/Competencia
+  tags:
+    - personal no calificado
+    - competencia
+    - capacitación
+    - entrenamiento
+    - eléctrico
+    - factor humano
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Prevención de condiciones degradadas
+  registro_aplicable_a:
+    - incidente
+    - observacion
+  controles_asociados_criticos_y_preventivos:
+    - R03CC04
+    - R03CP05

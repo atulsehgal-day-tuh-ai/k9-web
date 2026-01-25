@@ -1,0 +1,542 @@
+- id: R01CA01
+  nombre: Bordes o aberturas sin protección
+  descripcion: 'Ausencia total o parcial de sistemas de protección perimetral (barandas,
+    rodapiés, cubiertas) en bordes de plataformas, vanos, aberturas en el piso, o
+    desniveles significativos. Esto permite que una persona, herramienta o material
+    caiga sin contención. Puede variar en la altura del desnivel, el tipo de borde
+    (recto, curvo), la presencia o ausencia de señalización, y el tipo de actividad
+    que se realiza cerca del borde. Ejemplos incluyen la falta de barandas en una
+    plataforma de trabajo, una abertura sin cubrir en un piso, o un desnivel sin rodapiés
+    en una pasarela.
+
+    '
+  riesgo_asociado: R01
+  tipo_causa: Fallas de infraestructura
+  tags:
+  - seguridad perimetral
+  - barandas
+  - rodapiés
+  - infraestructura
+  - diseño
+  - protección de borde
+  - apertura
+  - vano
+  - desnivel
+  - contención
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Prevención de incidentes
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  controles_que_previenen:
+  - R01CP01
+  - R01CC03
+
+- id: R01CA02
+  nombre: Andamios o plataformas defectuosas o mal montadas
+  descripcion: 'Utilización de andamios, plataformas elevadoras o estructuras temporales
+    que presentan fallas estructurales (corrosión, piezas faltantes, deformaciones),
+    o que han sido montadas de forma incorrecta o incompleta, sin seguir las instrucciones
+    del fabricante o las normativas de seguridad. Esto puede llevar a la inestabilidad
+    de la estructura, colapsos, o caídas de elementos. Las variaciones incluyen el
+    tipo de material del andamio (metálico, madera), la altura, el tipo de anclaje,
+    y la frecuencia de inspección.
+
+    '
+  riesgo_asociado: R01
+  tipo_causa: Fallas de infraestructura
+  tags:
+  - andamios
+  - plataformas
+  - montaje
+  - infraestructura
+  - estructura
+  - estabilidad
+  - colapso
+  - inspección
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Prevención de incidentes
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  controles_que_previenen:
+  - R01CP02
+  - R01CC02
+
+- id: R01CA03
+  nombre: Escaleras portátiles inestables o mal posicionadas
+  descripcion: 'Uso de escaleras portátiles que no cumplen con los requisitos de estabilidad
+    (ej. peldaños dañados, base resbaladiza), o que han sido colocadas en un ángulo
+    incorrecto, sobre superficies inestables, o sin asegurar su fijación. Esto genera
+    un riesgo inminente de deslizamiento, volcado o pérdida de equilibrio del usuario,
+    resultando en una caída. El tipo de escalera (tijera, extensible), material,
+    condiciones del terreno, y la técnica de ascenso/descenso influyen en el nivel
+    de riesgo.
+
+    '
+  riesgo_asociado: R01
+  tipo_causa: Equipos/Herramientas
+  tags:
+  - escaleras
+  - inestabilidad
+  - posicionamiento
+  - deslizamiento
+  - volcado
+  - equilibrio
+  - uso seguro
+  - verificación
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Prevención de incidentes
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  controles_que_previenen:
+  - R01CP03
+  - R01CC05
+
+- id: R01CA04
+  nombre: Trabajos sin uso o mal uso de SPDC/EPP de altura
+  descripcion: 'Omisión del uso de Sistemas Personales de Detención de Caídas (SPDC),
+    como arneses de seguridad, líneas de vida o absorbedores de energía, o su utilización
+    incorrecta (ej. arnés mal ajustado, punto de anclaje no certificado, línea de
+    vida holgada, EPP dañado). Esto anula o reduce drásticamente la efectividad del
+    equipo para detener una caída, dejando al trabajador expuesto. La variación puede
+    incluir la falta de inspección pre-uso o la selección de EPP inadecuado.
+
+    '
+  riesgo_asociado: R01
+  tipo_causa: Factores humanos/Comportamiento
+  tags:
+  - EPP
+  - SPDC
+  - arnés
+  - línea de vida
+  - mal uso
+  - omisión
+  - seguridad personal
+  - protección individual
+  - inspección
+  - anclaje
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Prevención de incidentes
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  controles_que_previenen:
+  - R01CP04
+  - R01CC01
+
+- id: R01CA05
+  nombre: Condiciones climáticas adversas (viento, lluvia, hielo)
+  descripcion: 'Exposición a fenómenos meteorológicos que comprometen la seguridad
+    en trabajos en altura. El viento fuerte puede desestabilizar personas y objetos,
+    la lluvia y el hielo pueden hacer resbaladizas las superficies de trabajo (plataformas,
+    techos, escaleras), y la niebla o baja visibilidad dificulta la percepción de
+    riesgos y el control visual. Estas condiciones aumentan drásticamente la probabilidad
+    de caídas.
+
+    '
+  riesgo_asociado: R01
+  tipo_causa: Condiciones ambientales
+  tags:
+  - clima
+  - viento
+  - lluvia
+  - hielo
+  - visibilidad
+  - condiciones extremas
+  - resbaladizo
+  - desestabilización
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Prevención de incidentes
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  controles_que_previenen:
+  - R01CP05
+  - R01CC06
+
+- id: R01CA06
+  nombre: Falta de señalización o demarcación de zonas de riesgo
+  descripcion: 'Ausencia o insuficiencia de advertencias visuales (letreros, conos,
+    cintas de seguridad) que delimiten claramente las áreas donde existe riesgo de
+    caída. Esto puede llevar a que personal no autorizado o inadvertido acceda a zonas
+    peligrosas, aumentando la exposición y la probabilidad de un incidente. La claridad,
+    visibilidad y pertinencia de la señalización son variables clave.
+
+    '
+  riesgo_asociado: R01
+  tipo_causa: Administrativa/Procedimental
+  tags:
+  - señalización
+  - demarcación
+  - zonas de riesgo
+  - advertencia
+  - acceso
+  - seguridad perimetral
+  - procedimientos
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Prevención de incidentes
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  controles_que_previenen:
+  - R01CP06
+  - R01CC04
+
+- id: R02CA01
+  nombre: No asegurar herramientas o materiales en altura
+  descripcion: 'Omisión del uso de cuerdas, redes, cinturones porta-herramientas,
+    o contenedores cerrados para fijar herramientas y materiales mientras se trabaja
+    en altura. Esto permite que objetos puedan deslizarse, caer o ser accidentalmente
+    desplazados por el viento o el movimiento, impactando a personal o equipos en
+    niveles inferiores. La variación incluye el tipo de objeto (pesado, punzante),
+    la altura de la caída, y el tipo de fijación utilizada.
+
+    '
+  riesgo_asociado: R02
+  tipo_causa: Procedimiento/Comportamiento
+  tags:
+  - herramientas
+  - materiales
+  - objetos
+  - asegurar
+  - caída de objetos
+  - fijación
+  - altura
+  - EPP
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Prevención de incidentes
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  controles_que_previenen:
+  - R02CP01
+  - R02CC01
+
+- id: R02CA02
+  nombre: Almacenamiento deficiente de materiales en niveles elevados
+  descripcion: 'Acumulación de materiales, equipos o escombros en plataformas, andamios,
+    o zonas elevadas sin contención adecuada o de forma inestable. Esto genera una
+    carga excesiva o una disposición precaria que puede provocar el colapso de la
+    estructura o el desprendimiento de los objetos almacenados. Se considera el peso,
+    volumen, estabilidad del apilamiento, y el tipo de superficie de soporte.
+
+    '
+  riesgo_asociado: R02
+  tipo_causa: Procedimiento/Infraestructura
+  tags:
+  - almacenamiento
+  - materiales
+  - equipos
+  - escombros
+  - inestable
+  - colapso
+  - infraestructura
+  - apilamiento
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Prevención de incidentes
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  controles_que_previenen:
+  - R02CP02
+  - R02CC02
+
+- id: R02CA03
+  nombre: Uso inadecuado de izaje o grúas
+  descripcion: 'Operación de equipos de izaje (grúas, polipastos, montacargas) por
+    personal no certificado, sobrecarga de la capacidad de carga, uso de aparejos
+    dañados o inadecuados, o falta de señalización y coordinación durante la maniobra.
+    Esto puede causar la caída de la carga, colapso del equipo, o impacto con estructuras
+    cercanas, resultando en lesiones graves y daños materiales.
+
+    '
+  riesgo_asociado: R02
+  tipo_causa: Equipos/Procedimiento
+  tags:
+  - izaje
+  - grúas
+  - operación
+  - sobrecarga
+  - aparejos
+  - caída de carga
+  - colapso
+  - certificación
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Prevención de incidentes
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  controles_que_previenen:
+  - R02CP03
+  - R02CC03
+
+- id: R02CA04
+  nombre: Demoliciones o trabajos de desprendimiento sin control
+  descripcion: 'Ejecución de trabajos de demolición o desprendimiento de rocas/estructuras
+    sin establecer una zona de exclusión segura, sin asegurar los elementos a demoler,
+    o sin el equipo de protección adecuado para contener la caída de fragmentos. Esto
+    expone a trabajadores y terceros a impactos de objetos proyectados o caídos. Incluye
+    variaciones en el tamaño de los fragmentos, la altura de la demolición, y el
+    tipo de material.
+
+    '
+  riesgo_asociado: R02
+  tipo_causa: Procedimiento/Ingeniería
+  tags:
+  - demolición
+  - desprendimiento
+  - control
+  - fragmentos
+  - proyección
+  - zona de exclusión
+  - seguridad de demolición
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Prevención de incidentes
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  controles_que_previenen:
+  - R02CP04
+  - R02CC04
+
+- id: R02CA05
+  nombre: Redes o mallas de contención de objetos dañadas o ausentes
+  descripcion: 'Falta de instalación, o presencia de redes, mallas, o barreras de
+    contención en mal estado (rotas, rasgadas, mal ancladas) en áreas donde existe
+    riesgo de caída de objetos. Esto permite que herramientas, materiales o escombros
+    atraviesen la protección y caigan libremente, exponiendo a personal y equipos
+    inferiores. La integridad de la red, su capacidad de resistencia, y la frecuencia
+    de inspección son factores clave.
+
+    '
+  riesgo_asociado: R02
+  tipo_causa: Fallas de infraestructura
+  tags:
+  - redes de contención
+  - mallas
+  - barreras
+  - protección de objetos
+  - infraestructura
+  - ingeniería
+  - integridad
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Prevención de incidentes
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  controles_que_previenen:
+  - R02CP05
+  - R02CC05
+
+- id: R02CA06
+  nombre: Exposición a caída de elementos de la mina (roca, mineral, sostenimiento)
+  descripcion: 'Personal o equipos ubicados en zonas subterráneas o superficiales
+    con riesgo de desprendimiento de roca o mineral no consolidado, o donde el sostenimiento
+    (ciblería, pernos, cuadros) es insuficiente o ha fallado. La ausencia de barreras
+    físicas o la inestabilidad geomecánica aumenta la probabilidad de impacto por
+    elementos de gran tamaño. Considera la calidad del macizo rocoso, el método de
+    explotación y la ventilación.
+
+    '
+  riesgo_asociado: R02
+  tipo_causa: Geomecánica/Condiciones Operacionales
+  tags:
+  - roca
+  - mineral
+  - sostenimiento
+  - mina
+  - desprendimiento
+  - geomecánica
+  - estabilidad
+  - subterráneo
+  - superficie
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Prevención de incidentes
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  controles_que_previenen:
+  - R02CP06
+  - R02CC06
+
+- id: R03CA01
+  nombre: No desenergizar o verificar ausencia de tensión (LOTO incompleto)
+  descripcion: 'Omisión del procedimiento de Bloqueo y Etiquetado (LOTO) en equipos
+    eléctricos antes de la intervención, o no verificar la ausencia de tensión eléctrica
+    antes de iniciar los trabajos. Esto expone directamente al personal a componentes
+    energizados inesperadamente, resultando en contacto directo o indirecto con corriente.
+    Las variaciones incluyen errores en la identificación de fuentes de energía, falta
+    de verificación con equipos adecuados, o bypasseo del procedimiento.
+
+    '
+  riesgo_asociado: R03
+  tipo_causa: Procedimiento/Comportamiento
+  tags:
+  - LOTO
+  - desenergización
+  - tensión
+  - electricidad
+  - bloqueo
+  - etiquetado
+  - procedimiento
+  - seguridad eléctrica
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Prevención de incidentes
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  controles_que_previenen:
+  - R03CP01
+  - R03CC01
+
+- id: R03CA02
+  nombre: Cables eléctricos dañados, conexiones expuestas o improvisadas
+  descripcion: 'Uso de cableado eléctrico con aislamiento defectuoso (rasgado, quemado),
+    conexiones mal realizadas o sin aislamiento adecuado (empalmes improvisados, terminales
+    expuestas), o cables que no cumplen con la normativa (calibre incorrecto, sobrecargados).
+    Esto genera puntos de fuga de corriente, cortocircuitos o contacto accidental
+    con conductores energizados, aumentando el riesgo de choque eléctrico, incendio
+    o explosión.
+
+    '
+  riesgo_asociado: R03
+  tipo_causa: Equipos/Infraestructura
+  tags:
+  - cables
+  - conexiones
+  - aislamiento
+  - defectuoso
+  - improvisado
+  - cortocircuito
+  - fuga de corriente
+  - seguridad eléctrica
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Prevención de incidentes
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  controles_que_previenen:
+  - R03CP02
+  - R03CC02
+
+- id: R03CA03
+  nombre: Falta de EPP dieléctrico o uso de EPP inadecuado/dañado
+  descripcion: 'Omisión del uso de Equipos de Protección Personal (EPP) diseñados
+    para trabajos eléctricos (guantes dieléctricos, calzado aislante, casco con protección
+    facial, ropa ignífuga), o utilización de EPP que está dañado, caducado, no certificado,
+    o es inadecuado para el nivel de tensión o la tarea. Esto anula la barrera de
+    protección personal contra el paso de corriente eléctrica, exponiendo al trabajador
+    a lesiones severas.
+
+    '
+  riesgo_asociado: R03
+  tipo_causa: Equipos/Comportamiento
+  tags:
+  - EPP
+  - dieléctrico
+  - guantes
+  - calzado
+  - casco
+  - ropa ignífuga
+  - aislamiento
+  - protección personal
+  - mal uso
+  - inadecuado
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Prevención de incidentes
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  controles_que_previenen:
+  - R03CP03
+  - R03CC03
+
+- id: R03CA04
+  nombre: Acceso no autorizado a zonas o equipos energizados
+  descripcion: 'Ingreso de personal (propio o externo) sin permiso, capacitación,
+    o acompañamiento adecuado a áreas de riesgo eléctrico (subestaciones, tableros
+    eléctricos, salas de control, cercanías de líneas de alta tensión), o manipulación
+    de equipos eléctricos por personas no autorizadas. Esto incrementa drásticamente
+    la probabilidad de contacto con energía eléctrica debido a desconocimiento o imprudencia.
+
+    '
+  riesgo_asociado: R03
+  tipo_causa: Procedimiento/Comportamiento
+  tags:
+  - acceso no autorizado
+  - zonas energizadas
+  - equipos eléctricos
+  - seguridad perimetral
+  - señalización
+  - control de acceso
+  - imprudencia
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Prevención de incidentes
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  controles_que_previenen:
+  - R03CP04
+  - R03CC04
+
+- id: R03CA05
+  nombre: Falta de capacitación o competencia en seguridad eléctrica
+  descripcion: 'Personal que realiza trabajos con riesgo eléctrico sin la formación
+    teórica y práctica necesaria sobre los peligros de la electricidad, los procedimientos
+    seguros de trabajo, el uso correcto de EPP dieléctrico, o las normativas aplicables.
+    Esto incluye la falta de acreditación formal para el tipo de trabajo (ej. electricista
+    sin curso de seguridad eléctrica de media tensión). Esto se traduce en desconocimiento
+    de los riesgos, procedimientos y uso correcto de EPP, aumentando la probabilidad
+    de errores críticos.
+
+    '
+  riesgo_asociado: R03
+  tipo_causa: Factores humanos/Organizacionales
+  tags:
+  - personal calificado
+  - acreditación
+  - capacitación
+  - entrenamiento
+  - eléctrico
+  - competencia
+  - factor humano
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Prevención de incidentes
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  controles_que_previenen:
+  - R03CP05
+  - R03CC05
+
+- id: R03CA06
+  nombre: Instalaciones eléctricas defectuosas, expuestas o sin mantenimiento
+  descripcion: 'Condiciones de la infraestructura eléctrica que presentan riesgo de
+    contacto. Incluye cableado expuesto o dañado (aislamiento roto), tableros eléctricos
+    sin cubiertas o bloqueos de seguridad, empalmes irregulares, equipos sin puesta
+    a tierra o con sistemas de protección (interruptores, disyuntores) inoperativos
+    o sin mantenimiento preventivo. También considera la presencia de humedad o líquidos
+    en cercanía a equipos energizados.
+
+    '
+  riesgo_asociado: R03
+  tipo_causa: Fallas de infraestructura
+  tags:
+  - instalaciones eléctricas
+  - cableado
+  - tablero eléctrico
+  - mantenimiento
+  - infraestructura
+  - puesta a tierra
+  - aislamiento
+  - defectuoso
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Prevención de incidentes
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  controles_que_previenen:
+  - R03CP06
+  - R03CC06

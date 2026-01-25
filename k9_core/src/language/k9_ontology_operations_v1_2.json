@@ -1,0 +1,31 @@
+{
+  "ontology_version": "1.2",
+
+  "families": {
+    "A_DESCRIPTIVE": {
+      "retrieve": ["risk", "task", "role", "control", "cause", "bowtie"],
+      "describe": ["risk", "task", "role", "control", "cause", "area", "ppe"]
+    },
+
+    "B_DIRECT_RELATION": {
+      "get_controls": ["risk"],
+      "get_causes": ["risk"],
+      "get_consequences": ["risk"],
+      "get_bowtie": ["risk"],
+      "get_tasks": ["risk", "role"],
+      "get_roles": ["task", "control"]
+    },
+
+    "C_OPERATIONAL_EXPOSURE": {
+      "get_tasks_and_roles": ["risk"]
+    }
+  },
+
+  "explicitly_forbidden": [
+    "get_roles_generic",
+    "relate_anything",
+    "infer_roles",
+    "get_exposed_roles",
+    "get_entities"
+  ]
+}

@@ -1,0 +1,72 @@
+id_bowtie: R02_BOW_OBJETOS_V001
+riesgo:
+  id: R02
+  nombre: Caída de Objetos
+causas:
+  - R02CA01
+  - R02CA02
+  - R02CA03
+  - R02CA04
+  - R02CA05
+  - R02CA06
+controles_criticos: 
+  - R02CC01 
+  - R02CC02 
+  - R02CC03 
+  - R02CC04 
+  - R02CC05 
+  - R02CC06 
+controles_preventivos: 
+  - R02CP01
+  - R02CP02
+  - R02CP03
+  - R02CP04
+  - R02CP05
+  - R02CP06
+controles_mitigacion: 
+  - R02CM01
+  - R02CM02
+  - R02CM03
+  - R02CM04
+consecuencias: 
+  - R02CON01 
+  - R02CON02 
+  - R01CON04 
+  - R02CON03 
+  - R02CON04 
+  - R02CON05 
+factores_degradacion: 
+  - R02FD01
+  - R02FD02
+  - R02FD03
+  - R02FD04
+barreras_recuperacion: 
+  - R02BR01
+  - R02BR02
+  - R02BR03
+relacion causa-control_critico_control_preventivo:
+  R02CA01: [R02CC02, R02CC06, R02CP01]
+  R02CA02: [R02CC01, R02CC05, R02CP02]
+  R02CA03: [R02CC03, R02CC06, R02CP03]
+  R02CA04: [R02CC04, R02CP04]
+  R02CA05: [R02CC01, R02CP05]
+  R02CA06: [R02CC06, R02CP06]
+relacion consecuencia-control_mitigacion:
+  R02CON01: [R02CM01, R02CM02] 
+  R02CON02: [R02CM03] 
+  R01CON04: [R02CM04]
+R02CON03: [R02CM01, R02CM04]
+R02CON04: [R02CM01, R02CM04]
+R02CON05: [R02CM02]
+relacion factor_degradacion-control_critico_control_preventivo:
+  R02FD01: [R02CC03, R02CP03]
+  R02FD02: [R02CC06, R02CP06]
+  R02FD03: [R02CC02, R02CP01]
+  R02FD04: [R02CC04, R02CP04]
+relacion consecuencia-barrera_recuperacion:
+  R02CON01: [R02BR01] 
+  R02CON02: [R02BR02, R02BR03] 
+  R01CON04: [R02BR02, R02BR03] 
+R02CON03: [R02BR02, R02BR03]
+R02CON04: [R02BR02, R02BR03]
+R02CON05: [R02BR01, R02BR03]

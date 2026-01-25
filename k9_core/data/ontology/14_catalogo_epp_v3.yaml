@@ -1,0 +1,1050 @@
+- id: EPP_001
+  nombre: Casco de seguridad
+  descripcion: Casco de seguridad estándar, para protección de la cabeza contra impactos
+    y objetos que caen.
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Uso de equipo de protección personal
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  tags:
+  - protección_cabeza
+  - impacto
+  - caída_objetos
+  - seguridad_craneal
+  - barbuquejo
+  - norma_EN_397
+  - hard_hat
+- id: EPP_002
+  nombre: Gafas de seguridad
+  descripcion: Gafas de seguridad con protección lateral, para protección ocular contra
+    impactos de partículas, polvo y salpicaduras.
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Uso de equipo de protección personal
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  tags:
+  - protección_ocular
+  - impacto_partículas
+  - polvo
+  - salpicaduras
+  - norma_EN_166
+  - lentes_seguridad
+- id: EPP_003
+  nombre: Botas de seguridad
+  descripcion: Botas de seguridad con puntera reforzada (composite o acero) y suela
+    antideslizante, resistentes a la perforación y a aceites.
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Uso de equipo de protección personal
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  tags:
+  - protección_pies
+  - puntera_reforzada
+  - antideslizante
+  - perforación
+  - aceites
+  - calzado_seguridad
+  - botines
+- id: EPP_004
+  nombre: Arnés de seguridad con doble cabo de anclaje
+  descripcion: Arnés de cuerpo completo con doble cabo de anclaje, para trabajos en
+    altura con riesgo de caída.
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Uso de equipo de protección personal
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  tags:
+  - protección_caídas
+  - trabajos_altura
+  - arnés_cuerpo_completo
+  - doble_cabo
+  - línea_de_vida
+  - detención_caída
+  - seguridad_vertical
+- id: EPP_005
+  nombre: Guantes de cuero
+  descripcion: Guantes de cuero para protección de manos contra abrasiones, cortes
+    leves y manipulación general de materiales.
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Uso de equipo de protección personal
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  tags:
+  - protección_manos
+  - abrasión
+  - cortes_leves
+  - manipulación_materiales
+  - guantes_trabajo
+  - cuero
+- id: EPP_006
+  nombre: Chaleco reflectante
+  descripcion: Chaleco de alta visibilidad con material reflectante, para mejorar
+    la detección del trabajador en ambientes de poca luz o alto tráfico vehicular.
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Uso de equipo de protección personal
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  tags:
+  - alta_visibilidad
+  - reflectante
+  - poca_luz
+  - tráfico_vehicular
+  - seguridad_peatonal
+  - chaleco_seguridad
+- id: EPP_007
+  nombre: Protección auditiva (orejeras)
+  descripcion: Orejeras con atenuación de ruido, para protección de los oídos en ambientes
+    ruidosos.
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Uso de equipo de protección personal
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  tags:
+  - protección_auditiva
+  - ruido
+  - orejeras
+  - hipoacusia
+  - decibelios
+  - protección_sonido
+- id: EPP_008
+  nombre: Protección auditiva (tapones)
+  descripcion: Tapones para oídos desechables o reutilizables, para protección auditiva
+    en niveles de ruido moderados.
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Uso de equipo de protección personal
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  tags:
+  - protección_auditiva
+  - ruido
+  - tapones_oídos
+  - desechables
+  - reutilizables
+- id: EPP_009
+  nombre: Careta facial
+  descripcion: Careta de protección facial completa contra proyecciones, salpicaduras
+    químicas o escorias en trabajos de soldadura.
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Uso de equipo de protección personal
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  tags:
+  - protección_facial
+  - proyecciones
+  - salpicaduras_químicas
+  - soldadura
+  - escoria
+  - pantalla_facial
+- id: EPP_010
+  nombre: Guantes de nitrilo
+  descripcion: Guantes de nitrilo desechables para protección contra productos químicos,
+    aceites y grasas.
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Uso de equipo de protección personal
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  tags:
+  - protección_manos
+  - químicos
+  - aceites
+  - grasas
+  - nitrilo
+  - guantes_desechables
+- id: EPP_011
+  nombre: Guantes anti-corte (Nivel 5)
+  descripcion: Guantes de alta resistencia al corte (Nivel 5), para trabajos con objetos
+    afilados o con riesgo elevado de corte.
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Uso de equipo de protección personal
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  tags:
+  - protección_manos
+  - anti_corte
+  - objetos_afilados
+  - guantes_especiales
+  - nivel_5
+- id: EPP_012
+  nombre: Traje Tyvek (protección química)
+  descripcion: Traje de protección química Tyvek, para protección contra partículas
+    secas, aerosoles y salpicaduras de líquidos no peligrosos.
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Uso de equipo de protección personal
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  tags:
+  - protección_cuerpo
+  - protección_química
+  - partículas_secas
+  - aerosoles
+  - salpicaduras
+  - traje_desechable
+  - overol
+- id: EPP_013
+  nombre: Traje ignífugo
+  descripcion: Traje resistente al fuego y al arco eléctrico, para trabajos en zonas
+    con riesgo de incendio o explosión.
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Uso de equipo de protección personal
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  tags:
+  - protección_cuerpo
+  - ignífugo
+  - resistente_fuego
+  - arco_eléctrico
+  - incendio
+  - explosión
+  - soldadura_corte
+- id: EPP_014
+  nombre: Mascarilla N95
+  descripcion: Mascarilla de protección respiratoria tipo N95, efectiva contra partículas
+    no oleosas y aerosoles.
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Uso de equipo de protección personal
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  tags:
+  - protección_respiratoria
+  - mascarilla
+  - N95
+  - polvo_fino
+  - aerosoles_no_oleosos
+  - partículas_suspendidas
+- id: EPP_015
+  nombre: Capuchón ignífugo (balaclava)
+  descripcion: Capuchón ignífugo para protección de cabeza y cuello contra llamas
+    y calor, usado bajo el casco.
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Uso de equipo de protección personal
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  tags:
+  - protección_cabeza
+  - protección_cuello
+  - ignífugo
+  - balaclava
+  - llamas
+  - calor
+  - soldadura
+- id: EPP_016
+  nombre: Delantal de soldador
+  descripcion: Delantal de cuero resistente al calor y a las chispas, para protección
+    del tronco y piernas durante trabajos de soldadura.
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Uso de equipo de protección personal
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  tags:
+  - protección_cuerpo
+  - soldadura
+  - cuero
+  - calor
+  - chispas
+  - quemaduras
+- id: EPP_017
+  nombre: Polainas de seguridad
+  descripcion: Polainas de protección para piernas y pies, usadas sobre el calzado
+    para proteger contra salpicaduras, escorias o impactos leves.
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Uso de equipo de protección personal
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  tags:
+  - protección_piernas
+  - protección_pies
+  - salpicaduras
+  - escoria
+  - impacto_leve
+  - soldadura
+  - fundición
+- id: EPP_018
+  nombre: Botas de goma (dieléctricas/resistentes a químicos)
+  descripcion: Botas de goma diseñadas para ofrecer protección dieléctrica contra
+    la electricidad o resistencia a productos químicos y líquidos corrosivos.
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Uso de equipo de protección personal
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  tags:
+  - protección_pies
+  - goma
+  - dieléctricas
+  - eléctricos
+  - químicos
+  - líquidos_corrosivos
+  - impermeables
+- id: EPP_019
+  nombre: Zapatos de seguridad
+  descripcion: Calzado de seguridad general, con puntera protectora y suela resistente
+    a la perforación, para protección básica del pie en entornos industriales.
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Uso de equipo de protección personal
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  tags:
+  - protección_pies
+  - puntera_protectora
+  - suela_resistente
+  - perforación
+  - calzado_industrial
+- id: EPP_020
+  nombre: Protección respiratoria (P100 o similar)
+  descripcion: Mascarilla de protección respiratoria con filtro P100 o similar, efectiva
+    contra el 99.97% de partículas en el aire, incluyendo polvo fino y aerosoles.
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Uso de equipo de protección personal
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  tags:
+  - protección_respiratoria
+  - mascarilla
+  - filtro_P100
+  - partículas_aerosoles
+  - polvo_fino
+  - alta_eficiencia
+- id: EPP_021
+  nombre: Ropa con protección UV
+  descripcion: Ropa de trabajo que incorpora protección contra los rayos ultravioleta,
+    especialmente diseñada para trabajos al aire libre bajo exposición solar intensa.
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Uso de equipo de protección personal
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  tags:
+  - protección_cuerpo
+  - protección_UV
+  - exposición_solar
+  - ropa_trabajo_exterior
+  - radiación_solar
+- id: EPP_022
+  nombre: Chaleco salvavidas
+  descripcion: Chaleco flotante para seguridad personal en trabajos cerca de cuerpos
+    de agua o con riesgo de inmersión.
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Uso de equipo de protección personal
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  tags:
+  - seguridad_acuática
+  - flotación
+  - riesgo_inmersión
+  - trabajos_agua
+  - salvavidas
+- id: EPP_023
+  nombre: Línea de vida retráctil
+  descripcion: Dispositivo retráctil que limita la distancia de caída libre y reduce
+    las fuerzas de detención en trabajos en altura.
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Uso de equipo de protección personal
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  tags:
+  - protección_caídas
+  - trabajos_altura
+  - línea_vida_retráctil
+  - dispositivo_anticaída
+  - detención_caída
+- id: EPP_024
+  nombre: Protección auditiva electrónica (con comunicación)
+  descripcion: Orejeras electrónicas que atenúan ruidos peligrosos mientras permiten
+    la comunicación y la percepción de sonidos importantes (ej. alarmas).
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Uso de equipo de protección personal
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  tags:
+  - protección_auditiva
+  - comunicación
+  - ruidos_peligrosos
+  - orejeras_electrónicas
+  - percepción_sonidos_ambiente
+- id: EPP_025
+  nombre: Traje de enfriamiento (cooling vest)
+  descripcion: Chaleco o traje diseñado para mantener la temperatura corporal baja
+    en ambientes de alto calor, previniendo el golpe de calor.
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Uso de equipo de protección personal
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  tags:
+  - control_temperatura
+  - golpe_calor
+  - ambientes_calurosos
+  - enfriamiento_personal
+  - hidratación
+- id: EPP_026
+  nombre: Calzado dieléctrico
+  descripcion: Calzado especial diseñado para aislar al trabajador de la electricidad,
+    sin puntera metálica para evitar conducción.
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Uso de equipo de protección personal
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  tags:
+  - protección_pies
+  - dieléctrico
+  - aislamiento_eléctrico
+  - sin_puntera_metálica
+  - trabajos_eléctricos
+- id: EPP_027
+  nombre: Guantes dieléctricos
+  descripcion: Guantes aislantes de goma para protección contra choques eléctricos
+    en trabajos con energía eléctrica. Clasificados por voltaje.
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Uso de equipo de protección personal
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  tags:
+  - protección_manos
+  - dieléctricos
+  - aislamiento_eléctrico
+  - choques_eléctricos
+  - trabajos_eléctricos
+  - por_voltaje
+- id: EPP_028
+  nombre: Protector facial para arco eléctrico
+  descripcion: Protector facial de alta resistencia diseñado para proteger la cara
+    del trabajador contra el calor y la radiación de un arco eléctrico.
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Uso de equipo de protección personal
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  tags:
+  - protección_facial
+  - arco_eléctrico
+  - radiación_calor
+  - protección_térmica
+  - soldadura_eléctrica
+- id: EPP_029
+  nombre: Ropa ignífuga (FR - Flame Resistant)
+  descripcion: Ropa de trabajo con propiedades de resistencia a las llamas, que no
+    se derrite ni gotea cuando se expone al calor o fuego.
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Uso de equipo de protección personal
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  tags:
+  - protección_cuerpo
+  - ignífuga
+  - flame_resistant
+  - resistencia_llama
+  - no_derrite
+  - no_gotea
+  - trabajos_calientes
+  - soldadura
+  - corte
+- id: EPP_030
+  nombre: Guantes de alta temperatura
+  descripcion: Guantes especializados para protección de manos contra calor extremo
+    en procesos como soldadura, fundición o manejo de materiales calientes.
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Uso de equipo de protección personal
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  tags:
+  - protección_manos
+  - alta_temperatura
+  - calor_extremo
+  - soldadura
+  - fundición
+  - manejo_materiales_calientes
+- id: EPP_031
+  nombre: Traje encapsulado (Nivel A)
+  descripcion: Traje de protección química totalmente encapsulado (Nivel A), que ofrece
+    máxima protección respiratoria, ocular y cutánea contra gases, vapores y líquidos
+    peligrosos.
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Uso de equipo de protección personal
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  tags:
+  - protección_total
+  - químico
+  - nivel_A
+  - gases_peligrosos
+  - vapores
+  - líquidos_peligrosos
+  - respuesta_emergencias_químicas
+  - hazmat
+- id: EPP_032
+  nombre: Equipo de respiración autónomo (SCBA)
+  descripcion: Aparato de respiración autónomo (SCBA) que suministra aire respirable
+    de una fuente independiente, para uso en atmósferas tóxicas o con deficiencia
+    de oxígeno.
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Uso de equipo de protección personal
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  tags:
+  - protección_respiratoria
+  - SCBA
+  - atmósfera_tóxica
+  - deficiencia_oxígeno
+  - espacios_confinados
+  - emergencia_respiratoria
+- id: EPP_033
+  nombre: Guantes anti-vibración
+  descripcion: Guantes diseñados para reducir la transmisión de vibraciones a las
+    manos y brazos, en operaciones con herramientas vibratorias.
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Uso de equipo de protección personal
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  tags:
+  - protección_manos
+  - anti_vibración
+  - herramientas_vibratorias
+  - síndrome_vibración_mano_brazo
+- id: EPP_034
+  nombre: Protección auditiva con banda de nuca
+  descripcion: Orejeras o tapones montados en una banda que se ajusta detrás de la
+    nuca, ideal para usar con cascos de seguridad o gorras.
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Uso de equipo de protección personal
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  tags:
+  - protección_auditiva
+  - banda_nuca
+  - orejeras
+  - tapones_con_banda
+  - compatibilidad_casco
+- id: EPP_035
+  nombre: Delantal de PVC/impermeable
+  descripcion: Delantal de PVC o material impermeable para protección contra líquidos,
+    salpicaduras y productos químicos no corrosivos.
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Uso de equipo de protección personal
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  tags:
+  - protección_cuerpo
+  - PVC
+  - impermeable
+  - líquidos
+  - salpicaduras
+  - productos_químicos_leves
+- id: EPP_036
+  nombre: Rodilleras de protección
+  descripcion: Rodilleras ergonómicas para protección de las rodillas contra impactos,
+    abrasiones y presión en trabajos que requieren arrodillarse.
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Uso de equipo de protección personal
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  tags:
+  - protección_rodillas
+  - impacto
+  - abrasión
+  - trabajos_arrodillado
+  - ergonomía
+- id: EPP_037
+  nombre: Cinturón de posicionamiento
+  descripcion: Cinturón diseñado para posicionar al trabajador en un lugar de trabajo
+    elevado y permitirle trabajar con las manos libres, no para detención de caídas.
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Uso de equipo de protección personal
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  tags:
+  - trabajos_altura
+  - posicionamiento
+  - manos_libres
+  - seguridad_vertical
+  - restricción_caída
+- id: EPP_038
+  nombre: Protector auditivo con comunicación integrada
+  descripcion: Orejeras o tapones con micrófono y altavoz integrados para facilitar
+    la comunicación en ambientes ruidosos sin quitar la protección.
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Uso de equipo de protección personal
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  tags:
+  - protección_auditiva
+  - comunicación_integrada
+  - ambientes_ruidosos
+  - orejeras_con_microfono
+  - intercomunicación
+- id: EPP_039
+  nombre: Guantes para riesgo biológico
+  descripcion: Guantes desechables de nitrilo o látex con barrera contra agentes biológicos,
+    para trabajos con riesgo de exposición a sangre, fluidos o microorganismos.
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Uso de equipo de protección personal
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  tags:
+  - protección_manos
+  - riesgo_biológico
+  - sangre
+  - fluidos_corporales
+  - microorganismos
+  - bioseguridad
+  - salud_ocupacional
+- id: EPP_040
+  nombre: Traje de protección solar
+  descripcion: Ropa ligera de manga larga y pantalón largo con tejido especializado
+    que bloquea los rayos UV, para protección extendida en trabajos al sol.
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Uso de equipo de protección personal
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  tags:
+  - protección_cuerpo
+  - protección_UV
+  - exposición_solar_intensa
+  - trabajos_al_aire_libre
+  - radiación_solar
+  - ropa_ligera
+- id: EPP_041
+  nombre: Arneses de seguridad para rescate
+  descripcion: Arneses especializados con puntos de anclaje adicionales y características
+    diseñadas para facilitar operaciones de rescate y evacuación.
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Uso de equipo de protección personal
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  tags:
+  - protección_caídas
+  - rescate
+  - evacuación
+  - arnés_especializado
+  - seguridad_vertical
+  - emergencia
+- id: EPP_042
+  nombre: Líneas de vida temporales
+  descripcion: Sistemas de líneas de vida horizontales o verticales portátiles, que
+    pueden instalarse y desinstalarse en diferentes puntos de trabajo para protección
+    contra caídas.
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Uso de equipo de protección personal
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  tags:
+  - protección_caídas
+  - líneas_vida_temporales
+  - portátiles
+  - anclaje_flexible
+  - trabajos_altura
+- id: EPP_043
+  nombre: Mosquetones y conectores de seguridad
+  descripcion: Conectores certificados con doble seguro de apertura, esenciales para
+    unir componentes del sistema anticaídas (arneses, líneas de vida, puntos de anclaje).
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Uso de equipo de protección personal
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  tags:
+  - protección_caídas
+  - mosquetón
+  - conector
+  - sistema_anticaídas
+  - doble_seguro
+  - seguridad_vertical
+- id: EPP_044
+  nombre: Dispositivos de descenso (descensores)
+  descripcion: Dispositivos controlados para un descenso seguro desde alturas, utilizados
+    en rescate o acceso por cuerda.
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Uso de equipo de protección personal
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  tags:
+  - trabajos_altura
+  - descenso
+  - rescate
+  - acceso_cuerda
+  - seguridad_vertical
+- id: EPP_045
+  nombre: Bloqueadores de cuerda (ascensores)
+  descripcion: Dispositivos que permiten el ascenso por una cuerda de forma segura,
+    bloqueando en una dirección y deslizando en la otra.
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Uso de equipo de protección personal
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  tags:
+  - trabajos_altura
+  - ascenso
+  - acceso_cuerda
+  - seguridad_vertical
+  - bloqueador
+- id: EPP_046
+  nombre: Cuerdas de seguridad (estáticas y dinámicas)
+  descripcion: Cuerdas certificadas para trabajos en altura, estáticas para acceso
+    y rescate, dinámicas para absorber energía de caídas.
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Uso de equipo de protección personal
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  tags:
+  - trabajos_altura
+  - cuerdas_seguridad
+  - estáticas
+  - dinámicas
+  - rescate
+  - acceso_cuerda
+  - seguridad_vertical
+- id: EPP_047
+  nombre: Arnés de rescate/salvamento (tipo chaleco)
+  descripcion: Arnés sencillo y rápido de colocar, diseñado para ser usado por la
+    víctima en una operación de rescate.
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Uso de equipo de protección personal
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  tags:
+  - rescate
+  - salvamento
+  - arnés_rápido
+  - evacuación
+  - seguridad_vertical
+- id: EPP_048
+  nombre: Equipo de rescate en espacios confinados
+  descripcion: Conjunto de equipos (trípode, winche de rescate, arnés específico,
+    SCBA, detectores de gas) para operaciones seguras en espacios confinados.
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Uso de equipo de protección personal
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  tags:
+  - rescate
+  - espacios_confinados
+  - trípode_rescate
+  - winche
+  - SCBA
+  - detector_gas
+  - seguridad_espacios_confinados
+- id: EPP_049
+  nombre: Botiquín de primeros auxilios (portátil)
+  descripcion: Botiquín compacto y portátil con insumos básicos para atender lesiones
+    menores y emergencias iniciales en el campo.
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Uso de equipo de protección personal
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  tags:
+  - primeros_auxilios
+  - botiquín_portátil
+  - emergencias_menores
+  - atención_inicial
+  - salud_ocupacional
+- id: EPP_050
+  nombre: Camilla de rescate (tipo canasta o rígida)
+  descripcion: Camilla especializada para inmovilizar y transportar víctimas en terrenos
+    difíciles o espacios confinados, minimizando lesiones adicionales.
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Uso de equipo de protección personal
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  tags:
+  - rescate
+  - transporte_víctima
+  - inmovilización
+  - terreno_difícil
+  - espacios_confinados
+  - camilla_emergencia
+- id: EPP_051
+  nombre: Manta ignífuga de rescate
+  descripcion: Manta resistente al fuego utilizada para cubrir y proteger a una persona
+    o equipo en zonas de fuego o para sofocar pequeñas llamas.
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Uso de equipo de protección personal
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  tags:
+  - rescate
+  - ignífuga
+  - protección_fuego
+  - sofocación_llamas
+  - manta_seguridad
+- id: EPP_052
+  nombre: Equipo de protección contra el frío (ropa térmica)
+  descripcion: Ropa térmica multicapa diseñada para proporcionar aislamiento y mantener
+    el calor corporal en ambientes fríos o a bajas temperaturas.
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Uso de equipo de protección personal
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  tags:
+  - protección_frío
+  - ropa_térmica
+  - aislamiento_térmico
+  - bajas_temperaturas
+  - intemperie
+- id: EPP_053
+  nombre: Guantes anticorte y anti-impacto
+  descripcion: Guantes que ofrecen resistencia tanto a cortes como a impactos en la
+    parte dorsal de la mano, para tareas de alto riesgo.
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Uso de equipo de protección personal
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  tags:
+  - protección_manos
+  - anti_corte
+  - anti_impacto
+  - alto_riesgo
+  - herramientas_manuales
+  - industria_pesada
+- id: EPP_054
+  nombre: Casco con protección facial integrada (Forestal/Multi-riesgo)
+  descripcion: Casco que incluye una malla o pantalla facial integrada y protectores
+    auditivos, común en trabajos forestales o con múltiples riesgos.
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Uso de equipo de protección personal
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  tags:
+  - protección_cabeza
+  - protección_facial_integrada
+  - protección_auditiva
+  - multi_riesgo
+  - forestal
+  - visor_malla
+- id: EPP_055
+  nombre: Lentes de seguridad con filtro UV y anti-empaño
+  descripcion: Gafas de seguridad con tratamiento especial para filtrar rayos UV dañinos
+    y evitar el empañamiento en condiciones de humedad o cambios de temperatura.
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Uso de equipo de protección personal
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  tags:
+  - protección_ocular
+  - filtro_UV
+  - anti_empaño
+  - radiación_solar
+  - condiciones_climáticas
+  - lentes_polarizados
+- id: EPP_056
+  nombre: Guantes de protección química de manga larga
+  descripcion: Guantes de materiales resistentes a químicos (ej. neopreno, PVC) con
+    puño extendido para proteger el antebrazo de salpicaduras peligrosas.
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Uso de equipo de protección personal
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  tags:
+  - protección_manos
+  - protección_antebrazo
+  - protección_química
+  - manga_larga
+  - sustancias_peligrosas
+  - corrosivos
+- id: EPP_057
+  nombre: Arnés de suspensión (para trabajos prolongados)
+  descripcion: Arnés diseñado para la comodidad en trabajos que implican suspensión
+    prolongada, con acolchado extra y puntos de soporte.
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Uso de equipo de protección personal
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  tags:
+  - trabajos_altura
+  - suspensión_prolongada
+  - comodidad
+  - arnés_especializado
+  - seguridad_vertical
+- id: EPP_058
+  nombre: Dispositivos de anclaje portátiles
+  descripcion: Puntos de anclaje temporales y reubicables que se sujetan a estructuras
+    existentes para la conexión de sistemas anticaídas.
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Uso de equipo de protección personal
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  tags:
+  - protección_caídas
+  - anclaje_portátil
+  - anclaje_temporal
+  - seguridad_vertical
+  - reubicable
+- id: EPP_059
+  nombre: Redes de seguridad (anticaídas)
+  descripcion: Redes instaladas horizontal o verticalmente para atrapar personas o
+    escombros en caso de caída, proporcionando protección colectiva.
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Uso de equipo de protección personal
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  tags:
+  - protección_colectiva
+  - redes_seguridad
+  - anticaídas
+  - detención_caída
+  - escombros
+  - seguridad_altura
+- id: EPP_060
+  nombre: Kits de comunicación intrínsecamente seguros
+  descripcion: Equipos de radio o intercomunicadores diseñados para operar de forma
+    segura en atmósferas explosivas (intrínsecamente seguros).
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Uso de equipo de protección personal
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  tags:
+  - comunicación
+  - intrínsecamente_seguro
+  - atmósferas_explosivas
+  - zonas_ATEX
+  - equipos_comunicación
+- id: EPP_061
+  nombre: Detectores de gas portátiles
+  descripcion: Dispositivos personales que monitorean y alertan sobre la presencia
+    de gases tóxicos, inflamables u oxígeno en el ambiente.
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Uso de equipo de protección personal
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  tags:
+  - monitoreo_ambiente
+  - detector_gas
+  - gases_tóxicos
+  - gases_inflamables
+  - deficiencia_oxígeno
+  - espacios_confinados
+  - seguridad_gas
+- id: EPP_062
+  nombre: Luces de seguridad para casco (intrínsecamente seguras)
+  descripcion: Linternas o luces LED para casco, certificadas para uso en atmósferas
+    explosivas, proporcionando iluminación segura en áreas peligrosas.
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Uso de equipo de protección personal
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  tags:
+  - iluminación
+  - casco
+  - intrínsecamente_seguro
+  - atmósferas_explosivas
+  - zonas_ATEX
+  - visibilidad
+- id: EPP_063
+  nombre: Bloqueo y Etiquetado (LOTO) Kit Personal
+  descripcion: Conjunto de candados, dispositivos de bloqueo y etiquetas de advertencia
+    para aislar energías peligrosas de forma individual.
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Uso de equipo de protección personal
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  tags:
+  - LOTO
+  - bloqueo_etiquetado
+  - aislamiento_energías
+  - energías_peligrosas
+  - seguridad_eléctrica
+  - seguridad_maquinaria
+- id: EPP_064
+  nombre: Kit de derrame de químicos
+  descripcion: Contiene absorbentes, guantes, gafas y bolsas para la contención y
+    limpieza segura de derrames de líquidos químicos.
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Uso de equipo de protección personal
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  tags:
+  - respuesta_emergencias
+  - derrame_químicos
+  - absorbentes
+  - contención
+  - limpieza_segura
+  - materiales_peligrosos
+- id: EPP_065
+  nombre: Camilla de arrastre (para espacios confinados)
+  descripcion: Camilla flexible o plegable diseñada para extricación y transporte
+    de víctimas en espacios muy reducidos o de difícil acceso.
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Uso de equipo de protección personal
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  tags:
+  - rescate
+  - espacios_confinados
+  - camilla_flexible
+  - extricación
+  - transporte_víctima
+- id: EPP_066
+  nombre: Equipos de protección colectiva (EPC) varios
+  descripcion: Categoría general para equipos de protección que benefician a múltiples
+    trabajadores simultáneamente (ej. barandas temporales, cubiertas de fosos, ventilación
+    forzada).
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Implementación de medidas de seguridad
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  tags:
+  - protección_colectiva
+  - barandas
+  - cubiertas_fosos
+  - ventilación_forzada
+  - seguridad_general
+  - EPC

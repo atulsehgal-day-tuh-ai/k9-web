@@ -1,0 +1,490 @@
+- id: R01CON01
+  nombre: Lesiones graves
+  descripcion: 'Fracturas óseas múltiples, traumatismos craneoencefálicos y contusiones
+    profundas que requieren atención médica de urgencia. Estas lesiones suelen
+    derivar en hospitalización prolongada, intervenciones quirúrgicas y tiempo
+    de inactividad laboral significativo. El impacto puede incluir secuelas a
+    largo plazo como limitaciones de movilidad o déficit neurológico.
+    '
+  riesgo_asociado: R01
+  tipo_consecuencia: Salud_Persona
+  severidad_consecuencia: ALTA
+  tags:
+  - gravedad
+  - trauma
+  - incapacidad
+  - lesiones
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Evaluación de consecuencias
+  registro_aplicable_a:
+  - incidente
+  controles_mitigacion_asociados:
+  - R01CM01
+  - R01CM03
+  - R03CM03
+  barreras_recuperacion_asociadas:
+  - R01BR01
+  - R01BR03
+  - R03BR02
+  - R03BR03
+
+- id: R01CON02
+  nombre: Fatalidad
+  descripcion: 'Muerte de uno o más trabajadores como resultado directo del incidente.
+    Este evento tiene implicaciones legales y éticas severas, además de un
+    profundo impacto en la moral del equipo y la reputación de la organización.
+    Genera investigación exhaustiva, posibles sanciones regulatorias y medidas
+    de remediación costosas.
+    '
+  riesgo_asociado: R01
+  tipo_consecuencia: Salud_Persona
+  severidad_consecuencia: ALTA
+  tags:
+  - mortalidad
+  - muerte
+  - fatal
+  - alta_gravedad
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Evaluación de consecuencias
+  registro_aplicable_a:
+  - incidente
+  controles_mitigacion_asociados:
+  - R01CM01
+  - R01CM03
+  - R03CM01
+  - R03CM03
+  barreras_recuperacion_asociadas:
+  - R01BR01
+  - R01BR03
+  - R03BR01
+  - R03BR02
+
+- id: R01CON03
+  nombre: Impacto ambiental significativo
+  descripcion: 'Derrames de sustancias peligrosas, contaminación de fuentes hídricas
+    o suelos, o liberación de emisiones tóxicas que afectan gravemente el ecosistema
+    circundante. Requiere acciones de mitigación complejas, monitoreo a largo
+    plazo y puede resultar en multas y litigios.
+    '
+  riesgo_asociado: R01
+  tipo_consecuencia: Ambiental
+  severidad_consecuencia: ALTA
+  tags:
+  - contaminación
+  - derrame
+  - impacto ambiental
+  - tóxico
+  - ecosistema
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Evaluación de consecuencias
+  registro_aplicable_a:
+  - incidente
+  controles_mitigacion_asociados:
+  - R01CM03
+  barreras_recuperacion_asociadas:
+  - R01BR02
+  - R01BR04
+
+- id: R01CON04
+  nombre: Lesiones leves
+  descripcion: 'Cortos, contusiones menores, o esguinces que no requieren hospitalización,
+    pero sí atención de primeros auxilios o visita a enfermería. Generan un día
+    o menos de incapacidad laboral. El impacto es principalmente en el bienestar
+    del trabajador y requiere un seguimiento básico.
+    '
+  riesgo_asociado: R01
+  tipo_consecuencia: Salud_Persona
+  severidad_consecuencia: BAJA
+  tags:
+  - leve
+  - contusión
+  - primeros auxilios
+  - baja_gravedad
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Evaluación de consecuencias
+  registro_aplicable_a:
+  - incidente
+  controles_mitigacion_asociados:
+  - R02CM04
+  - R03CM02
+  barreras_recuperacion_asociadas:
+  - R01BR02
+  - R01BR04
+  - R02BR02
+  - R02BR03
+  - R03BR03
+  - R03BR04
+
+- id: R01CON05
+  nombre: Daño a la reputación
+  descripcion: 'Pérdida de confianza de stakeholders, clientes y la comunidad debido
+    a un incidente que afecte la imagen de la empresa. Puede resultar en sanciones
+    legales, pérdida de contratos y disminución del valor de mercado.
+    '
+  riesgo_asociado: R01
+  tipo_consecuencia: Reputacional
+  severidad_consecuencia: ALTA
+  tags:
+  - reputación
+  - imagen
+  - confianza
+  - stakeholders
+  - sanciones
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Evaluación de consecuencias
+  registro_aplicable_a:
+  - incidente
+  controles_mitigacion_asociados:
+  - R01CM01
+  barreras_recuperacion_asociadas:
+  - R01BR03
+  - R01BR04
+
+- id: R01CON06
+  nombre: Daño a equipo crítico
+  descripcion: 'Destrucción o falla severa de equipos esenciales para la operación
+    (ej. transformadores, grandes motores, vehículos especializados). Requiere reparaciones
+    costosas o reemplazo completo, generando paradas prolongadas, retrasos en la
+    producción y pérdidas económicas.
+    '
+  riesgo_asociado: R01
+  tipo_consecuencia: Daño_Material
+  severidad_consecuencia: ALTA
+  tags:
+  - equipo crítico
+  - daño material
+  - falla
+  - costoso
+  - interrupción
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Evaluación de consecuencias
+  registro_aplicable_a:
+  - incidente
+  controles_mitigacion_asociados:
+  - R01CM02
+  - R01CM04
+  - R02CM01
+  - R02CM04
+  - R03CM02
+  - R03CM04
+  barreras_recuperacion_asociadas:
+  - R01BR03
+  - R02BR02
+  - R02BR03
+  - R03BR03
+  - R03BR04
+
+- id: R01CON07
+  nombre: Interrupción de la operación
+  descripcion: 'Detención total o parcial de procesos productivos o servicios clave
+    por un periodo prolongado (horas a días). Conlleva pérdidas económicas directas
+    por baja de producción, penalizaciones por retraso en entregas y sobrecostos
+    por recuperación.
+    '
+  riesgo_asociado: R01
+  tipo_consecuencia: Impacto_Operacional
+  severidad_consecuencia: ALTA
+  tags:
+  - interrupción
+  - operación
+  - producción
+  - retraso
+  - pérdidas
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Evaluación de consecuencias
+  registro_aplicable_a:
+  - incidente
+  controles_mitigacion_asociados:
+  - R01CM02
+  - R01CM04
+  - R02CM01
+  - R02CM04
+  - R03CM02
+  - R03CM04
+  barreras_recuperacion_asociadas:
+  - R01BR03
+  - R02BR02
+  - R02BR03
+  - R03BR03
+  - R03BR04
+
+- id: R02CON01
+  nombre: Fracturas y traumatismos (cabeza, extremidades)
+  descripcion: 'Lesiones físicas como fracturas de cráneo, costillas, o extremidades,
+    así como traumatismos internos por impacto de objetos. Requieren atención
+    médica especializada, cirugías y rehabilitación, con periodos de recuperación
+    extensos.
+    '
+  riesgo_asociado: R02
+  tipo_consecuencia: Salud_Persona
+  severidad_consecuencia: ALTA
+  tags:
+  - fractura
+  - traumatismo
+  - impacto
+  - salud
+  - incapacidad
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Evaluación de consecuencias
+  registro_aplicable_a:
+  - incidente
+  controles_mitigacion_asociados:
+  - R02CM01
+  - R02CM02
+  barreras_recuperacion_asociadas:
+  - R02BR01
+
+- id: R02CON02
+  nombre: Muerte por impacto
+  descripcion: 'Fatalidad directa causada por el impacto de un objeto en caída. Las
+    consecuencias son similares a R01CON02, incluyendo graves implicaciones
+    legales, reputacionales y morales.
+    '
+  riesgo_asociado: R02
+  tipo_consecuencia: Salud_Persona
+  severidad_consecuencia: ALTA
+  tags:
+  - fatalidad
+  - muerte
+  - impacto
+  - alta_gravedad
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Evaluación de consecuencias
+  registro_aplicable_a:
+  - incidente
+  controles_mitigacion_asociados:
+  - R02CM03
+  barreras_recuperacion_asociadas:
+  - R02BR02
+  - R02BR03
+
+- id: R02CON03
+  nombre: Daño a infraestructura crítica (edificios, estructuras)
+  descripcion: 'Impacto severo que compromete la integridad estructural de edificios,
+    puentes, o cimentaciones. Puede requerir evacuación, cierre de áreas y extensas
+    reparaciones o reconstrucciones, con alto costo y tiempo de inactividad.
+    '
+  riesgo_asociado: R02
+  tipo_consecuencia: Daño_Material
+  severidad_consecuencia: ALTA
+  tags:
+  - infraestructura
+  - daño estructural
+  - edificios
+  - alto costo
+  - reconstrucción
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Evaluación de consecuencias
+  registro_aplicable_a:
+  - incidente
+  controles_mitigacion_asociados:
+  - R02CM01
+  - R02CM04
+  barreras_recuperacion_asociadas:
+  - R02BR02
+  - R02BR03
+
+- id: R02CON04
+  nombre: Daño a equipos menores/vehículos
+  descripcion: 'Impacto de objetos que provoca abolladuras, rotura de cristales o
+    fallas en sistemas no críticos de vehículos livianos o equipos de mano. Requiere
+    reparaciones menores y no interrumpe la operación principal.
+    '
+  riesgo_asociado: R02
+  tipo_consecuencia: Daño_Material
+  severidad_consecuencia: MEDIA
+  tags:
+  - daño material
+  - equipo menor
+  - vehículos
+  - abolladura
+  - reparación menor
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Evaluación de consecuencias
+  registro_aplicable_a:
+  - incidente
+  controles_mitigacion_asociados:
+  - R02CM01
+  - R02CM04
+  barreras_recuperacion_asociadas:
+  - R02BR02
+  - R02BR03
+
+- id: R02CON05
+  nombre: Derrame de sustancias peligrosas por impacto
+  descripcion: 'Fallo de contención de recipientes que almacenan materiales peligrosos
+    debido a un impacto, resultando en fugas o derrames. Puede contaminar el ambiente
+    o exponer al personal a riesgos químicos/biológicos.
+    '
+  riesgo_asociado: R02
+  tipo_consecuencia: Ambiental
+  severidad_consecuencia: MEDIA
+  tags:
+  - derrame
+  - sustancias peligrosas
+  - impacto
+  - contaminación
+  - riesgo químico
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Evaluación de consecuencias
+  registro_aplicable_a:
+  - incidente
+  controles_mitigacion_asociados:
+  - R02CM02
+  barreras_recuperacion_asociadas:
+  - R02BR01
+  - R02BR03
+
+- id: R03CON01
+  nombre: Electrocución con resultado fatal
+  descripcion: 'Descarga eléctrica que provoca el cese de funciones vitales y la muerte
+    del individuo. Genera las mismas implicaciones legales, éticas y reputacionales
+    que R01CON02.
+    '
+  riesgo_asociado: R03
+  tipo_consecuencia: Salud_Persona
+  severidad_consecuencia: ALTA
+  tags:
+  - electrocución
+  - fatal
+  - muerte
+  - alta_gravedad
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Evaluación de consecuencias
+  registro_aplicable_a:
+  - incidente
+  controles_mitigacion_asociados:
+  - R03CM01
+  - R03CM03
+  barreras_recuperacion_asociadas:
+  - R03BR01
+  - R03BR02
+
+- id: R03CON02
+  nombre: Quemaduras graves (2do/3er grado)
+  descripcion: 'Lesiones térmicas profundas en la piel y tejidos subyacentes causadas
+    por arco eléctrico o contacto con superficies calientes por electricidad. Requieren
+    tratamiento especializado, injertos de piel y prolongada recuperación, con riesgo
+    de cicatrices permanentes e infecciones.
+    '
+  riesgo_asociado: R03
+  tipo_consecuencia: Salud_Persona
+  severidad_consecuencia: ALTA
+  tags:
+  - quemaduras
+  - arco eléctrico
+  - grave
+  - salud
+  - cicatrices
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Evaluación de consecuencias
+  registro_aplicable_a:
+  - incidente
+  controles_mitigacion_asociados:
+  - R03CM01
+  - R03CM04
+  barreras_recuperacion_asociadas:
+  - R03BR01
+  - R03BR02
+
+- id: R03CON03
+  nombre: Incendio o explosión de origen eléctrico
+  descripcion: 'Eventos destructivos resultantes de fallas eléctricas (cortocircuitos,
+    sobrecargas, arcos voltaicos). Provocan daños materiales extensos a instalaciones
+    y equipos, riesgos para el personal por humo/llamas, y detención prolongada
+    de la operación.
+    '
+  riesgo_asociado: R03
+  tipo_consecuencia: Daño_Material/Impacto_Operacional
+  severidad_consecuencia: ALTA
+  tags:
+  - incendio
+  - explosión
+  - eléctrico
+  - daño material
+  - interrupción
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Evaluación de consecuencias
+  registro_aplicable_a:
+  - incidente
+  controles_mitigacion_asociados:
+  - R03CM01
+  - R03CM03
+  barreras_recuperacion_asociadas:
+  - R03BR01
+  - R03BR02
+
+- id: R03CON04
+  nombre: Choque eléctrico no fatal / calambre
+  descripcion: 'Descarga eléctrica que provoca una contracción muscular involuntaria
+    o sensación de hormigueo, sin causar lesiones graves o permanentes. Puede generar
+    sobresalto, caídas secundarias o pequeñas quemaduras superficiales.
+    '
+  riesgo_asociado: R03
+  tipo_consecuencia: Salud_Persona
+  severidad_consecuencia: BAJA
+  tags:
+  - calambre
+  - advertencia
+  - aislamiento
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Evaluación de consecuencias
+  registro_aplicable_a:
+  - incidente
+  controles_mitigacion_asociados:
+  - R03CM01
+  - R03CM03
+  barreras_recuperacion_asociadas:
+  - R03BR01
+  - R03BR02
+
+- id: R03CON05
+  nombre: Daño menor a componente eléctrico
+  descripcion: 'Quema de fusibles, deterioro de aislamientos o desconexiones leves en
+    cables, deteniendo circuitos auxiliares pero sin provocar apagones
+    mayores. Exige reemplazo rápido de componentes y verificación de condiciones
+    eléctricas.
+    '
+  riesgo_asociado: R03
+  tipo_consecuencia: Daño_Material
+  severidad_consecuencia: BAJA
+  tags:
+  - fusible
+  - cable
+  - aislamiento
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Evaluación de consecuencias
+  registro_aplicable_a:
+  - incidente
+  controles_mitigacion_asociados:
+  - R03CM02
+  - R03CM04
+  barreras_recuperacion_asociadas:
+  - R03BR03
+  - R03BR04
+
+- id: R03CON06
+  nombre: Activación de protecciones eléctricas
+  descripcion: 'Corte automático de suministro eléctrico por disparo de protecciones de
+    sobrecorriente o falla a tierra. Interrumpe temporalmente el servicio para
+    evitar daños mayores y se restablece la operación en pocos segundos tras
+    la resolución de la falla.
+    '
+  riesgo_asociado: R03
+  tipo_consecuencia: Impacto_Operacional
+  severidad_consecuencia: BAJA
+  tags:
+  - interrupción
+  - electricidad
+  - protección
+  - restablecimiento
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Evaluación de consecuencias
+  registro_aplicable_a:
+  - incidente
+  controles_mitigacion_asociados:
+  - R03CM02
+  - R03CM04
+  barreras_recuperacion_asociadas:
+  - R03BR03
+  - R03BR04

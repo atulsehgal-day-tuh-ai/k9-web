@@ -1,0 +1,120 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "K9 Canonical Command 1.2",
+  "oneOf": [
+    { "$ref": "#/definitions/K9_COMMAND" },
+    { "$ref": "#/definitions/COMPOSITE_K9_COMMAND" }
+  ],
+
+  "definitions": {
+
+    "K9_COMMAND": {
+      "type": "object",
+      "required": ["intent", "entity", "operation", "output"],
+      "additionalProperties": false,
+      "properties": {
+        "intent": {
+          "type": "string",
+          "enum": [
+            "OPERATIONAL_QUERY",
+            "ANALYTICAL_QUERY",
+            "COMPARATIVE_QUERY",
+            "TEMPORAL_RELATION_QUERY",
+            "ONTOLOGY_QUERY",
+            "SYSTEM_QUERY"
+          ]
+        },
+
+        "entity": {
+          "type": "string",
+          "enum": [
+            "observations",
+            "events",
+            "audits",
+            "fdo",
+            "trajectories",
+            "signals",
+            "risks",
+            "proactive_model",
+            "data_coverage",
+
+            "risk",
+            "task",
+            "role",
+            "control",
+            "cause",
+            "consequence",
+            "bowtie",
+            "area",
+            "ppe",
+
+            "domain_guard"
+          ]
+        },
+
+        "operation": {
+          "type": "string",
+          "description": "Cognitive operation defining the reasoning path."
+        },
+
+        "filters": {
+          "type": "object",
+          "additionalProperties": true
+        },
+
+        "time": {
+          "type": "object",
+          "required": ["type", "value"],
+          "additionalProperties": false,
+          "properties": {
+            "type": {
+              "type": "string",
+              "enum": ["absolute", "relative", "window"]
+            },
+            "value": {
+              "type": "string"
+            }
+          }
+        },
+
+        "relations": {
+          "type": "object",
+          "additionalProperties": true
+        },
+
+        "output": {
+          "type": "string",
+          "enum": ["raw", "analysis", "summary", "trace"]
+        }
+      }
+    },
+
+    "COMPOSITE_K9_COMMAND": {
+      "type": "object",
+      "required": ["type", "goal", "plan"],
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "const": "COMPOSITE_K9_COMMAND"
+        },
+        "goal": {
+          "type": "string",
+          "description": "High-level cognitive objective (non-executable)."
+        },
+        "output": {
+          "type": "string",
+          "enum": ["raw", "analysis", "narrative"]
+        },
+        "plan": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/definitions/K9_COMMAND"
+          }
+        }
+      }
+    }
+  }
+}
+
+

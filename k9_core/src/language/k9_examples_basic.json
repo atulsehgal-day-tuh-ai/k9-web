@@ -1,0 +1,518 @@
+{
+  "examples": [
+
+    {
+      "example_id": "BASIC_01",
+      "example_type": "simple",
+      "question_type": "ontology_descriptive",
+
+      "human_input": "¿Qué es el riesgo R01?",
+
+      "interpretation_output": {
+        "type": "K9_COMMAND",
+        "intent": "ONTOLOGY_QUERY",
+        "entity": "risk",
+        "operation": "retrieve",
+        "filters": { "risk_id": "R01" },
+        "output": "summary"
+      },
+
+      "system_result": {
+        "analysis": {
+          "risk_id": "R01",
+          "name": "Caída de altura",
+          "description": "Exposición a caída desde un nivel superior con potencial de lesiones graves o fatales."
+        }
+      },
+
+      "expected_synthesis": "El riesgo R01 corresponde a la caída de altura, asociada a la exposición a desniveles con potencial de generar lesiones graves o fatales.",
+
+      "rules_applied": [
+        "Pregunta descriptiva",
+        "Respuesta directa",
+        "No se agrega interpretación",
+        "Se utiliza solo la información entregada por el sistema"
+      ]
+    },
+
+    {
+      "example_id": "BASIC_02",
+      "example_type": "simple",
+      "question_type": "ontology_descriptive",
+
+      "human_input": "Descríbeme el riesgo de caída de altura",
+
+      "interpretation_output": {
+        "type": "K9_COMMAND",
+        "intent": "ONTOLOGY_QUERY",
+        "entity": "risk",
+        "operation": "describe",
+        "filters": { "risk_id": "R01" },
+        "output": "summary"
+      },
+
+      "system_result": {
+        "analysis": {
+          "risk_id": "R01",
+          "description": "Riesgo asociado a trabajos en altura sin controles adecuados, con probabilidad de caída."
+        }
+      },
+
+      "expected_synthesis": "El riesgo de caída de altura está asociado a la realización de trabajos en niveles elevados sin controles adecuados, lo que puede derivar en caídas.",
+
+      "rules_applied": [
+        "Pregunta descriptiva",
+        "Lenguaje explicativo simple",
+        "No se agregan causas ni consecuencias adicionales"
+      ]
+    },
+
+    {
+      "example_id": "BASIC_03",
+      "example_type": "simple",
+      "question_type": "ontology_relations",
+
+      "human_input": "¿Cuáles son los controles del riesgo R01?",
+
+      "interpretation_output": {
+        "type": "K9_COMMAND",
+        "intent": "ONTOLOGY_QUERY",
+        "entity": "risk",
+        "operation": "get_controls",
+        "filters": { "risk_id": "R01" },
+        "output": "raw"
+      },
+
+      "system_result": {
+        "analysis": {
+          "controls": [
+            "Líneas de vida certificadas",
+            "Uso obligatorio de arnés",
+            "Procedimientos de trabajo seguro"
+          ]
+        }
+      },
+
+      "expected_synthesis": "Los controles asociados al riesgo R01 incluyen líneas de vida certificadas, el uso obligatorio de arnés y procedimientos de trabajo seguro.",
+
+      "rules_applied": [
+        "Listado simple",
+        "No se evalúa efectividad",
+        "No se priorizan controles"
+      ]
+    },
+
+    {
+      "example_id": "BASIC_04",
+      "example_type": "simple",
+      "question_type": "ontology_relations",
+
+      "human_input": "¿Qué causas están asociadas al riesgo de caída de objetos?",
+
+      "interpretation_output": {
+        "type": "K9_COMMAND",
+        "intent": "ONTOLOGY_QUERY",
+        "entity": "risk",
+        "operation": "get_causes",
+        "filters": { "risk_id": "R02" },
+        "output": "raw"
+      },
+
+      "system_result": {
+        "analysis": {
+          "causes": [
+            "Manipulación inadecuada de materiales",
+            "Falta de barreras físicas",
+            "Orden y limpieza deficientes"
+          ]
+        }
+      },
+
+      "expected_synthesis": "Las causas asociadas al riesgo de caída de objetos incluyen la manipulación inadecuada de materiales, la falta de barreras físicas y deficiencias en el orden y limpieza.",
+
+      "rules_applied": [
+        "Respuesta enumerativa",
+        "No se infiere causalidad adicional",
+        "No se agregan ejemplos operacionales"
+      ]
+    },
+
+    {
+      "example_id": "BASIC_05",
+      "example_type": "simple",
+      "question_type": "ontology_relations",
+
+      "human_input": "Muéstrame el bowtie del riesgo R03",
+
+      "interpretation_output": {
+        "type": "K9_COMMAND",
+        "intent": "ONTOLOGY_QUERY",
+        "entity": "risk",
+        "operation": "get_bowtie",
+        "filters": { "risk_id": "R03" },
+        "output": "raw"
+      },
+
+      "system_result": {
+        "analysis": {
+          "bowtie_available": true,
+          "risk_id": "R03"
+        }
+      },
+
+      "expected_synthesis": "El riesgo R03 cuenta con un análisis BowTie disponible que describe sus causas, controles preventivos, consecuencias y controles de mitigación.",
+
+      "rules_applied": [
+        "Confirmación de disponibilidad",
+        "No se describe el diagrama",
+        "No se enumeran elementos internos"
+      ]
+    }
+    ,
+    {
+      "example_id": "BASIC_06",
+      "example_type": "simple",
+      "question_type": "operational_count",
+
+      "human_input": "¿Cuántas observaciones hubo la última semana?",
+
+      "interpretation_output": {
+        "type": "K9_COMMAND",
+        "intent": "OPERATIONAL_QUERY",
+        "entity": "observations",
+        "operation": "count",
+        "time": { "type": "relative", "value": "last_week" },
+        "output": "raw"
+      },
+
+      "system_result": {
+        "analysis": {
+          "count": 42,
+          "time_window": "LAST_WEEK"
+        }
+      },
+
+      "expected_synthesis": "Durante la última semana se registraron 42 observaciones.",
+
+      "rules_applied": [
+        "Conteo directo",
+        "Respuesta factual",
+        "Una sola frase",
+        "Sin explicación adicional"
+      ]
+    },
+
+    {
+      "example_id": "BASIC_07",
+      "example_type": "simple",
+      "question_type": "operational_count_zero",
+
+      "human_input": "¿Cuántos incidentes se registraron ayer?",
+
+      "interpretation_output": {
+        "type": "K9_COMMAND",
+        "intent": "OPERATIONAL_QUERY",
+        "entity": "incidents",
+        "operation": "count",
+        "time": { "type": "relative", "value": "yesterday" },
+        "output": "raw"
+      },
+
+      "system_result": {
+        "analysis": {
+          "count": 0,
+          "time_window": "YESTERDAY"
+        }
+      },
+
+      "expected_synthesis": "Ayer no se registraron incidentes.",
+
+      "rules_applied": [
+        "Conteo cero",
+        "Respuesta directa",
+        "No se justifica el resultado"
+      ]
+    },
+
+    {
+      "example_id": "BASIC_08",
+      "example_type": "simple",
+      "question_type": "operational_list",
+
+      "human_input": "Lista las observaciones del riesgo R01 esta semana",
+
+      "interpretation_output": {
+        "type": "K9_COMMAND",
+        "intent": "OPERATIONAL_QUERY",
+        "entity": "observations",
+        "operation": "list",
+        "filters": { "risk_id": ["R01"] },
+        "time": { "type": "relative", "value": "current_week" },
+        "output": "raw"
+      },
+
+      "system_result": {
+        "analysis": {
+          "total": 3,
+          "items": [
+            { "id": "OBS_001" },
+            { "id": "OBS_002" },
+            { "id": "OBS_003" }
+          ]
+        }
+      },
+
+      "expected_synthesis": "Durante esta semana se registraron 3 observaciones asociadas al riesgo R01.",
+
+      "rules_applied": [
+        "Resumen de listado",
+        "No se enumeran elementos individuales",
+        "Se privilegia síntesis sobre detalle"
+      ]
+    },
+
+    {
+      "example_id": "BASIC_09",
+      "example_type": "simple",
+      "question_type": "operational_retrieve",
+
+      "human_input": "Muéstrame el detalle del evento EVT_2025_004",
+
+      "interpretation_output": {
+        "type": "K9_COMMAND",
+        "intent": "OPERATIONAL_QUERY",
+        "entity": "events",
+        "operation": "retrieve_by_id",
+        "filters": { "event_id": ["EVT_2025_004"] },
+        "output": "raw"
+      },
+
+      "system_result": {
+        "analysis": {
+          "event_id": "EVT_2025_004",
+          "event_type": "Near Miss",
+          "risk_id": "R01"
+        }
+      },
+
+      "expected_synthesis": "El evento EVT_2025_004 corresponde a un Near Miss asociado al riesgo R01.",
+
+      "rules_applied": [
+        "Respuesta descriptiva puntual",
+        "No se agregan detalles no solicitados"
+      ]
+    },
+
+    {
+      "example_id": "BASIC_10",
+      "example_type": "simple",
+      "question_type": "analytical_trend",
+
+      "human_input": "¿Cómo ha evolucionado el riesgo R01 en las últimas semanas?",
+
+      "interpretation_output": {
+        "type": "K9_COMMAND",
+        "intent": "ANALYTICAL_QUERY",
+        "entity": "risks",
+        "operation": "evolution",
+        "filters": { "risk_id": ["R01"] },
+        "time": { "type": "relative", "value": "last_4_weeks" },
+        "output": "analysis"
+      },
+
+      "system_result": {
+        "analysis": {
+          "trend": "increasing",
+          "risk_id": "R01"
+        }
+      },
+
+      "expected_synthesis": "En las últimas semanas, el riesgo R01 ha mostrado una tendencia de aumento.",
+
+      "rules_applied": [
+        "Lenguaje direccional",
+        "No se explican causas",
+        "No se cuantifica sin datos explícitos"
+      ]
+    }
+    ,
+    {
+      "example_id": "BASIC_11",
+      "example_type": "simple",
+      "question_type": "comparative_analysis",
+
+      "human_input": "¿Qué riesgos del modelo K9 está subestimando el modelo proactivo?",
+
+      "interpretation_output": {
+        "type": "K9_COMMAND",
+        "intent": "COMPARATIVE_QUERY",
+        "entity": "risks",
+        "operation": "compare",
+        "filters": {
+          "scope": "K9_CORE",
+          "model": "proactive_model",
+          "baseline": "K9"
+        },
+        "output": "analysis"
+      },
+
+      "system_result": {
+        "analysis": {
+          "underestimated_risks": ["R02"]
+        }
+      },
+
+      "expected_synthesis": "El modelo proactivo está subestimando el riesgo R02 en comparación con la evaluación realizada por K9.",
+
+      "rules_applied": [
+        "Comparación directa",
+        "Énfasis en diferencias",
+        "No se agregan juicios de valor"
+      ]
+    },
+
+    {
+      "example_id": "BASIC_12",
+      "example_type": "simple",
+      "question_type": "comparative_ranking",
+
+      "human_input": "Compara el ranking del modelo proactivo con K9",
+
+      "interpretation_output": {
+        "type": "K9_COMMAND",
+        "intent": "COMPARATIVE_QUERY",
+        "entity": "risks",
+        "operation": "compare",
+        "filters": {
+          "baseline_model": "proactive_model",
+          "comparison_model": "K9"
+        },
+        "output": "analysis"
+      },
+
+      "system_result": {
+        "analysis": {
+          "ranking_differences": {
+            "R01": "aligned",
+            "R02": "higher_in_K9"
+          }
+        }
+      },
+
+      "expected_synthesis": "Al comparar los rankings, el riesgo R02 presenta una mayor criticidad en K9 respecto del modelo proactivo, mientras que R01 muestra una evaluación alineada entre ambos modelos.",
+
+      "rules_applied": [
+        "Comparación relativa",
+        "No se detallan puntajes",
+        "Se prioriza diferencia relevante"
+      ]
+    },
+
+    {
+      "example_id": "BASIC_13",
+      "example_type": "simple",
+      "question_type": "temporal_relation",
+
+      "human_input": "¿Qué pasó antes y después del lunes crítico?",
+
+      "interpretation_output": {
+        "type": "K9_COMMAND",
+        "intent": "TEMPORAL_RELATION_QUERY",
+        "entity": "signals",
+        "operation": "sequence",
+        "filters": { "anchor_event": "CRITICAL_MONDAY" },
+        "time": { "type": "window", "value": "pre_post" },
+        "output": "analysis"
+      },
+
+      "system_result": {
+        "analysis": {
+          "before": "incremento progresivo de señales de exposición",
+          "after": "evento crítico seguido de múltiples controles fallidos"
+        }
+      },
+
+      "expected_synthesis": "Previo al lunes crítico se observó un incremento progresivo de señales de exposición. Posteriormente, se registró un evento crítico acompañado por múltiples fallas en controles.",
+
+      "rules_applied": [
+        "Relación temporal",
+        "Orden secuencial",
+        "No se infiere causalidad adicional"
+      ]
+    },
+
+    {
+      "example_id": "BASIC_14",
+      "example_type": "simple",
+      "question_type": "system_query",
+
+      "human_input": "¿Qué datos tiene disponibles el sistema?",
+
+      "interpretation_output": {
+        "type": "K9_COMMAND",
+        "intent": "SYSTEM_QUERY",
+        "entity": "data_coverage",
+        "operation": "summarize",
+        "output": "summary"
+      },
+
+      "system_result": {
+        "analysis": {
+          "data_types": [
+            "observations",
+            "incidents",
+            "risks",
+            "controls",
+            "signals"
+          ]
+        }
+      },
+
+      "expected_synthesis": "El sistema dispone de datos sobre observaciones, incidentes, riesgos, controles y señales operacionales.",
+
+      "rules_applied": [
+        "Enumeración simple",
+        "No se describe origen de datos",
+        "No se evalúa calidad"
+      ]
+    },
+
+    {
+      "example_id": "BASIC_15",
+      "example_type": "simple",
+      "question_type": "system_query",
+
+      "human_input": "¿Qué información puede responder K9?",
+
+      "interpretation_output": {
+        "type": "K9_COMMAND",
+        "intent": "SYSTEM_QUERY",
+        "entity": "capabilities",
+        "operation": "describe",
+        "output": "summary"
+      },
+
+      "system_result": {
+        "analysis": {
+          "capabilities": [
+            "consultas operacionales",
+            "análisis de tendencias",
+            "comparaciones de riesgo",
+            "relaciones temporales",
+            "consultas ontológicas"
+          ]
+        }
+      },
+
+      "expected_synthesis": "K9 puede responder consultas operacionales, realizar análisis de tendencias, comparar riesgos, analizar relaciones temporales y resolver consultas ontológicas.",
+
+      "rules_applied": [
+        "Descripción funcional",
+        "No se menciona arquitectura interna",
+        "Lenguaje institucional"
+      ]
+    }
+
+  ]
+}
+  

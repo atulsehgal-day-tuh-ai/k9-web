@@ -1,0 +1,689 @@
+- id: MRA_ROL_01
+  nombre: Operador de Perforadora
+  descripcion: Responsable de la operación segura y eficiente de equipos de perforación
+    rotatoria para la creación de pozos de voladura en minería a cielo abierto. Incluye
+    la inspección preoperacional, posicionamiento del equipo, perforación según diseño,
+    control de parámetros de perforación y mantenimiento básico. Debe seguir estrictamente
+    los procedimientos de seguridad, usar el EPP adecuado y estar certificado para
+    trabajos en altura y manejo de equipos pesados. Su trabajo es crítico para la
+    fragmentación eficiente de la roca.
+  area_operacional: MRA
+  tareas_asociadas:
+  - MRA_TA_001
+  - MRA_TA_002
+  - MRA_TA_003
+  clasificacion_funcional: Operativo
+  rol_categoria: Operador
+- id: MRA_ROL_02
+  nombre: Operador de Pala Eléctrica
+  descripcion: Encargado de la operación de palas eléctricas de gran envergadura para
+    el carguío de material. Sus responsabilidades incluyen la inspección preoperacional
+    de la pala, el carguío preciso de camiones de extracción, la gestión del banco
+    de trabajo para optimizar la eficiencia y seguridad, y el monitoreo constante
+    de las condiciones del terreno y el equipo para detectar anomalías. Requiere alta
+    concentración, excelente coordinación visual y motriz, y un seguimiento riguroso
+    de los protocolos de seguridad para evitar caídas de rocas, contactos eléctricos
+    o colisiones con otros equipos. Es un rol vital para el flujo de material desde
+    el frente de mina.
+  area_operacional: MRA
+  tareas_asociadas:
+  - MRA_TA_004
+  - MRA_TA_005
+  - MRA_TA_006
+  clasificacion_funcional: Operativo
+  rol_categoria: Operador
+- id: MRA_ROL_03
+  nombre: Operador de Camión de Extracción (CAEX)
+  descripcion: Conduce camiones de alto tonelaje (CAEX) para el transporte de mineral
+    o estéril desde los frentes de carguío hasta las plantas de chancado o depósitos
+    de estéril. Implica el cumplimiento de rutas preestablecidas, velocidades máximas
+    permitidas y procedimientos específicos de carga y descarga en rampas o tolvas.
+    La seguridad vial en la mina, el control de la fatiga, la comunicación constante
+    con el control de tráfico y otros operadores, y la pericia en la conducción en
+    terrenos irregulares son fundamentales para prevenir accidentes por colisión,
+    volcamiento o pérdida de control del equipo.
+  area_operacional: MRA
+  tareas_asociadas:
+  - MRA_TA_007
+  - MRA_TA_008
+  - MRA_TA_009
+  clasificacion_funcional: Operativo
+  rol_categoria: Operador
+- id: MRA_ROL_04
+  nombre: Operador de Cargador Frontal
+  descripcion: Opera cargadores frontales para la manipulación y movimiento de material
+    a granel, carga de camiones más pequeños, limpieza de frentes de trabajo o apoyo
+    en operaciones de acarreo. Requiere destreza en la operación del equipo, conocimiento
+    de las capacidades de carga del balde, atención a la estabilidad del terreno y
+    de las pilas de material, y manejo de la visibilidad reducida en ciertos movimientos
+    para evitar volcamiento, atrapamientos o colisiones con personal o vehículos.
+    Es crucial para mantener la operatividad y orden en el área.
+  area_operacional: MRA
+  tareas_asociadas:
+  - MRA_TA_010
+  - MRA_TA_011
+  - MRA_TA_012
+  clasificacion_funcional: Operativo
+  rol_categoria: Operador
+- id: MRA_ROL_05
+  nombre: Operador de Motoniveladora/Bulldozer
+  descripcion: Responsable del mantenimiento y conformación de caminos, rampas, frentes
+    de trabajo y zonas de descarga mediante el uso de motoniveladoras y bulldozers.
+    Asegura superficies estables, niveladas y seguras para el tránsito de equipos
+    y personal, lo cual es fundamental para prevenir caídas de equipos, mejorar la
+    visibilidad y reducir el desgaste de la flota. Requiere habilidad para operar
+    con precisión las cuchillas y rippers, y conocimiento de las pendientes y drenajes
+    para garantizar la estabilidad del terreno.
+  area_operacional: MRA
+  tareas_asociadas:
+  - MRA_TA_013
+  - MRA_TA_014
+  - MRA_TA_015
+  clasificacion_funcional: Operativo
+  rol_categoria: Operador
+- id: MRA_ROL_06
+  nombre: Mecánico de Equipos Pesados
+  descripcion: Realiza el mantenimiento preventivo y correctivo de la maquinaria de
+    gran tamaño en la mina, incluyendo palas, perforadoras y camiones de extracción.
+    Sus tareas abarcan diagnósticos de fallas, reparaciones complejas de motores diésel,
+    sistemas hidráulicos, transmisiones y circuitos eléctricos, a menudo en altura,
+    en espacios confinados o bajo equipos izados. Requiere conocimientos técnicos
+    avanzados, el uso de herramientas especializadas y la aplicación estricta de procedimientos
+    LOTO (Bloqueo y Etiquetado) y de trabajo seguro en altura para prevenir atrapamientos,
+    aplastamientos o descargas eléctricas.
+  area_operacional: MRA
+  tareas_asociadas:
+  - MRA_TA_016
+  - MRA_TA_017
+  - MRA_TA_018
+  clasificacion_funcional: Mantenimiento
+  rol_categoria: Mantenedor
+- id: MRA_ROL_07
+  nombre: Supervisor de Mina
+  descripcion: Lidera, coordina y supervisa las operaciones diarias en la mina a rajo
+    abierto, asegurando el cumplimiento de la planificación de producción, los estándares
+    de seguridad y las normativas ambientales. Es responsable de la supervisión directa
+    del personal, la inspección de las condiciones del terreno, los equipos y el cumplimiento
+    de los procedimientos de trabajo. Su rol es clave en la identificación proactiva
+    y mitigación de riesgos, la implementación de medidas correctivas inmediatas y
+    en la respuesta efectiva a emergencias. Es el primer punto de contacto para cualquier
+    situación crítica en su turno.
+  area_operacional: MRA
+  tareas_asociadas:
+  - MRA_TA_019
+  - MRA_TA_020
+  - MRA_TA_021
+  clasificacion_funcional: Supervisión
+  rol_categoria: Supervisor
+- id: MRA_ROL_08
+  nombre: Guía/Controlador de Tráfico
+  descripcion: Gestiona y regula el flujo de vehículos y equipos pesados dentro de
+    la mina, utilizando sistemas de comunicación, señalización manual y visual para
+    prevenir congestiones, colisiones e interferencias operacionales. Coordina la
+    entrada y salida de camiones en las zonas de carguío y descarga, y dirige el movimiento
+    de equipos especiales. Es un rol crítico para mantener la fluidez operativa, optimizar
+    los ciclos de transporte y asegurar la seguridad vial en un entorno de alto riesgo
+    de tráfico.
+  area_operacional: MRA
+  tareas_asociadas:
+  - MRA_TA_022
+  clasificacion_funcional: Soporte
+  rol_categoria: Logística
+- id: CHP_ROL_01
+  nombre: Operador de Chancador Giratorio
+  descripcion: Opera y monitorea la planta de chancado primario, controlando el flujo
+    de material desde la descarga de camiones hasta la entrada del chancador giratorio.
+    Sus tareas incluyen la alimentación de la tolva, la detección visual y auditiva
+    de atascamientos en la boca del chancador, la activación de sistemas de despeje
+    y la supervisión de los sistemas de transporte asociados (correas, alimentadores).
+    Requiere atención constante a los puntos de atrapamiento, proyección de material,
+    ruido excesivo y la posibilidad de atascamientos que puedan comprometer la integridad
+    del equipo y la seguridad del personal.
+  area_operacional: CHP
+  tareas_asociadas:
+  - CHP_TA_001
+  - CHP_TA_002
+  clasificacion_funcional: Operativo
+  rol_categoria: Operador
+- id: CHP_ROL_02
+  nombre: Técnico de Mantenimiento Mecánico
+  descripcion: Realiza el mantenimiento preventivo y correctivo de los equipos mecánicos
+    críticos en la planta de chancado, como chancadores giratorios, alimentadores
+    de placa, correas transportadoras y sistemas de zarandeo. A menudo trabaja en
+    altura sobre plataformas elevadas, en espacios confinados o con componentes de
+    gran peso que requieren el uso de equipos de izaje. Su labor es vital para la
+    continuidad operativa de la planta y para prevenir fallas mecánicas que puedan
+    causar caídas de objetos, atrapamientos o liberación incontrolada de energía.
+  area_operacional: CHP
+  tareas_asociadas:
+  - CHP_TA_003
+  - CHP_TA_004
+  - CHP_TA_005
+  clasificacion_funcional: Mantenimiento
+  rol_categoria: Mantenedor
+- id: CHP_ROL_03
+  nombre: Operador de Correas Transportadoras
+  descripcion: Supervisa y opera el complejo sistema de correas transportadoras que
+    mueve el material triturado desde el chancador primario hacia etapas posteriores.
+    Sus responsabilidades incluyen la inspección visual y táctil de las correas, el
+    monitoreo de los puntos de transferencia, la detección de rodillos trabados o
+    desgastados, la limpieza manual o mecánica de derrames de material y el ajuste
+    de tensores. Debe estar constantemente atento a los riesgos de atrapamiento por
+    partes móviles, caídas desde altura de pasarelas, proyección de material y acumulación
+    de polvo que pueda generar riesgo de explosión.
+  area_operacional: CHP
+  tareas_asociadas:
+  - CHP_TA_006
+  - CHP_TA_007
+  clasificacion_funcional: Operativo
+  rol_categoria: Operador
+- id: CHP_ROL_04
+  nombre: Ayudante de Planta
+  descripcion: Apoya las operaciones de la planta de chancado en diversas tareas de
+    soporte y mantenimiento. Sus responsabilidades incluyen la limpieza de derrames
+    de mineral en pasarelas y debajo de correas, el apoyo en mantenimientos menores
+    bajo supervisión directa, la lubricación de puntos de equipo y la asistencia general
+    a operadores y técnicos. Es un rol expuesto a múltiples riesgos (caídas, atrapamientos,
+    ruido, polvo), por lo que debe seguir estrictamente las instrucciones de seguridad
+    y usar el EPP adecuado en todo momento. Su labor es fundamental para mantener
+    el orden y la limpieza.
+  area_operacional: CHP
+  tareas_asociadas:
+  - CHP_TA_008
+  clasificacion_funcional: Operativo
+  rol_categoria: Operador
+- id: CHP_ROL_05
+  nombre: Operador de Puente Grúa
+  descripcion: Opera puentes grúa de gran capacidad para el movimiento de componentes
+    pesados (por ejemplo, piezas del chancador, motores, tolvas) durante las tareas
+    de mantenimiento, montaje o para el despeje de atascamientos mayores. Requiere
+    una alta precisión en el manejo de la grúa, un conocimiento exhaustivo de las
+    tablas de carga, la capacidad de evaluar centros de gravedad y el seguimiento
+    estricto de los procedimientos de izaje seguro para evitar la caída de objetos,
+    el volcamiento de la grúa o daños a la infraestructura y al personal. A menudo
+    trabaja en altura, en cabinas elevadas.
+  area_operacional: CHP
+  tareas_asociadas:
+  - CHP_TA_009
+  - CHP_TA_010
+  clasificacion_funcional: Operativo
+  rol_categoria: Operador
+- id: CHP_ROL_06
+  nombre: Jefe de Turno de Chancado
+  descripcion: Lidera, organiza y supervisa las operaciones de un turno completo en
+    la planta de chancado, siendo responsable de la seguridad del personal y la eficiencia
+    de la producción. Coordina las actividades entre operadores y personal de mantenimiento,
+    resuelve problemas operativos imprevistos, gestiona permisos de trabajo y actúa
+    como primer respondedor y coordinador de emergencias. Su liderazgo es clave para
+    el cumplimiento de los procedimientos de seguridad y para la toma de decisiones
+    rápidas y efectivas en situaciones críticas.
+  area_operacional: CHP
+  tareas_asociadas:
+  - CHP_TA_011
+  - CHP_TA_012
+  clasificacion_funcional: Supervisión
+  rol_categoria: Supervisor
+- id: CHP_ROL_07
+  nombre: Mecánico de Planta/Técnico de Mantenimiento
+  descripcion: Realiza mantenimiento preventivo y correctivo en equipos de chancado,
+    incluyendo reparaciones en altura sobre estructuras, manipulación de componentes
+    pesados y trabajos con sistemas mecánicos complejos (ej. ejes, rodamientos, reductores).
+    A menudo trabaja en ambientes ruidosos y polvorientos. Su rol es crítico para
+    la disponibilidad de los equipos y para evitar fallas que puedan generar riesgos
+    como atrapamientos, aplastamientos o caídas de material. Requiere habilidad para
+    el diagnóstico y la reparación de sistemas mecánicos complejos.
+  area_operacional: CHP
+  tareas_asociadas:
+  - CHP_TA_013
+  - CHP_TA_014
+  - CHP_TA_015
+  clasificacion_funcional: Mantenimiento
+  rol_categoria: Mantenedor
+- id: CHP_ROL_08
+  nombre: Técnico Eléctrico
+  descripcion: Encargado del mantenimiento, diagnóstico y reparación de sistemas eléctricos
+    en la planta de chancado, incluyendo motores de gran potencia, tableros de control,
+    sistemas de iluminación y redes de baja y media tensión. Trabaja con equipos energizados
+    o con energía residual, requiriendo estricto apego a los procedimientos LOTO (Bloqueo
+    y Etiquetado) y el uso de EPP dieléctrico e ignífugo. Su pericia es fundamental
+    para prevenir contactos eléctricos, arcos eléctricos o incendios.
+  area_operacional: CHP
+  tareas_asociadas:
+  - CHP_TA_016
+  - CHP_TA_017
+  clasificacion_funcional: Mantenimiento
+  rol_categoria: Mantenedor
+- id: CHP_ROL_09
+  nombre: Supervisor de Mantenimiento
+  descripcion: Planifica, coordina y supervisa todas las actividades de mantenimiento
+    en la planta de chancado. Gestiona los recursos humanos y materiales, programa
+    las tareas de mantenimiento preventivo y correctivo, revisa y autoriza permisos
+    de trabajo, y asegura que todos los trabajos se realicen de manera segura y eficiente,
+    aplicando los controles de riesgo necesarios. Su gestión es vital para la confiabilidad
+    de los equipos y la seguridad del personal de mantenimiento.
+  area_operacional: CHP
+  tareas_asociadas:
+  - CHP_TA_018
+  - CHP_TA_019
+  - CHP_TA_020
+  clasificacion_funcional: Supervisión
+  rol_categoria: Supervisor
+- id: TME_ROL_01
+  nombre: Electricista de Media Tensión
+  descripcion: Realiza la instalación, mantenimiento, diagnóstico y reparación de
+    sistemas eléctricos de media tensión (generalmente entre 1 kV y 33 kV) en el taller
+    de mantenimiento eléctrico y en terreno. Involucra el trabajo en subestaciones,
+    transformadores, grandes motores y sistemas de distribución eléctrica. Requiere
+    certificación especializada, aplicación rigurosa de los procedimientos LOTO y
+    uso de EPP específico para protección contra arco eléctrico, debido al alto potencial
+    de energía. Su trabajo es de alta criticidad para la continuidad operativa y la
+    seguridad.
+  area_operacional: TME
+  tareas_asociadas:
+  - TME_TA_001
+  - TME_TA_002
+  clasificacion_funcional: Mantenimiento
+  rol_categoria: Mantenedor
+- id: TME_ROL_02
+  nombre: Instrumentista de Planta
+  descripcion: Instala, calibra, mantiene y repara instrumentos de control y sistemas
+    de automatización en la planta. Trabaja con circuitos de bajo voltaje, sistemas
+    electrónicos, sensores, transmisores y actuadores. A menudo realiza tareas en
+    altura (para acceder a instrumentos montados en equipos) o dentro de paneles eléctricos.
+    Es fundamental para la precisión, confiabilidad y seguridad de los procesos automatizados,
+    ya que una falla en la instrumentación puede llevar a condiciones operacionales
+    peligrosas.
+  area_operacional: TME
+  tareas_asociadas:
+  - TME_TA_003
+  - TME_TA_004
+  clasificacion_funcional: Mantenimiento
+  rol_categoria: Mantenedor
+- id: TME_ROL_03
+  nombre: Supervisor de Subestaciones
+  descripcion: Supervisa las operaciones, el mantenimiento y la seguridad de las subestaciones
+    eléctricas dentro de la operación minera, garantizando la distribución segura
+    y confiable de energía a toda la planta. Coordina los trabajos de mantenimiento
+    eléctrico, gestiona los permisos de trabajo para intervenciones de alto voltaje
+    y asegura el estricto cumplimiento de los procedimientos de seguridad eléctrica,
+    especialmente en trabajos con riesgo de arco eléctrico o contacto con tensión.
+    Su liderazgo es clave para la prevención de incidentes eléctricos mayores.
+  area_operacional: TME
+  tareas_asociadas:
+  - TME_TA_005
+  - TME_TA_006
+  clasificacion_funcional: Supervisión
+  rol_categoria: Supervisor
+- id: TME_ROL_04
+  nombre: Técnico de Mantenimiento de Equipos Eléctricos
+  descripcion: Diagnostica, repara y realiza el mantenimiento preventivo y correctivo
+    de una amplia gama de equipos eléctricos, como motores, generadores, bombas, tableros
+    de distribución y sistemas de iluminación, tanto en el taller como en terreno.
+    Debe conocer a fondo los riesgos eléctricos (contacto directo/indirecto, arco
+    eléctrico), aplicar los procedimientos de seguridad (LOTO, uso de EPP dieléctrico)
+    y utilizar herramientas calibradas y certificadas para evitar contactos y descargas.
+  area_operacional: TME
+  tareas_asociadas:
+  - TME_TA_007
+  - TME_TA_008
+  clasificacion_funcional: Mantenimiento
+  rol_categoria: Mantenedor
+- id: TME_ROL_05
+  nombre: Aprendiz de Electricista
+  descripcion: Asiste a electricistas y técnicos experimentados en diversas tareas
+    de mantenimiento eléctrico, aprendiendo las prácticas de trabajo seguro y los
+    procedimientos técnicos. Realiza trabajos bajo supervisión directa, apoyando en
+    el tendido de cables, limpieza de equipos, o preparación de herramientas. Dada
+    su condición de aprendizaje, está expuesto a riesgos eléctricos si no sigue estrictamente
+    las instrucciones y la supervisión no es constante y rigurosa. Su formación en
+    seguridad es primordial.
+  area_operacional: TME
+  tareas_asociadas:
+  - TME_TA_009
+  clasificacion_funcional: Mantenimiento
+  rol_categoria: Mantenedor
+- id: TME_ROL_06
+  nombre: Técnico de Bobinado de Motores
+  descripcion: Especialista en la reparación y bobinado de motores eléctricos de gran
+    tamaño, incluyendo la remoción de bobinas antiguas, la preparación y el enrollado
+    de nuevas bobinas, y el aislamiento y secado de los estatores. Trabaja con componentes
+    pesados, expuesto a riesgos de aplastamiento, y a riesgos eléctricos durante las
+    pruebas de aislamiento y funcionamiento. Su precisión y conocimiento de materiales
+    dieléctricos son clave para el rendimiento y la vida útil de los motores reparados.
+  area_operacional: TME
+  tareas_asociadas:
+  - TME_TA_010
+  - TME_TA_011
+  - TME_TA_012
+  clasificacion_funcional: Mantenimiento
+  rol_categoria: Mantenedor
+- id: TME_ROL_07
+  nombre: Encargado de Bodega de Repuestos Eléctricos
+  descripcion: Gestiona el inventario, la recepción, el almacenamiento y la distribución
+    de repuestos y materiales eléctricos críticos para el mantenimiento de la planta.
+    Asegura que los componentes se almacenen adecuadamente (protegidos de la humedad,
+    temperatura) y que la entrega de materiales se realice de manera oportuna y segura.
+    Su rol indirecto en la seguridad es crucial al garantizar la disponibilidad de
+    materiales certificados, en buen estado y de la calidad requerida, evitando el
+    uso de componentes defectuosos o no homologados.
+  area_operacional: TME
+  tareas_asociadas:
+  - TME_TA_013
+  - TME_TA_014
+  - TME_TA_015
+  clasificacion_funcional: Mantenimiento
+  rol_categoria: Mantenedor
+- id: TME_ROL_08
+  nombre: Especialista en Protección Eléctrica
+  descripcion: Diseña, configura, calibra y mantiene los sistemas de protección y
+    relés en las instalaciones eléctricas de toda la operación minera, incluyendo
+    subestaciones, tableros de distribución, centros de control de motores y salas
+    eléctricas. Trabaja con sistemas de sobrecorriente, subtensión, diferenciales
+    y relés multifunción, realizando pruebas funcionales y ajustes que son fundamentales
+    para prevenir sobrecargas, cortocircuitos, fallas de aislamiento, incendios o
+    electrocuciones. Su conocimiento avanzado en sistemas de control y protección
+    es vital para la seguridad y estabilidad eléctrica en todas las áreas operacionales.
+  area_operacional: TME
+  tareas_asociadas:
+  - TME_TA_016
+  clasificacion_funcional: Soporte
+  rol_categoria: Otro
+- id: STM_ROL_01
+  nombre: Operador de Stacker/Reclaimer
+  descripcion: Opera equipos de apilamiento (stacker) y recuperación (reclaimer) de
+    mineral en los patios de acopio. Estas son grandes estructuras móviles que se
+    desplazan sobre rieles. La operación implica el control de movimientos complejos
+    del equipo, el seguimiento del diseño de la pila de material y el trabajo cerca
+    de grandes volúmenes de mineral que pueden generar riesgos de inestabilidad o
+    desprendimientos. Requiere atención constante a los movimientos del equipo, al
+    personal en el área y a las condiciones del terreno para evitar colisiones, volcamiento
+    o atrapamientos.
+  area_operacional: STM
+  tareas_asociadas:
+  - STM_TA_001
+  - STM_TA_002
+  clasificacion_funcional: Operativo
+  rol_categoria: Operador
+- id: STM_ROL_02
+  nombre: Técnico de Correas Overland
+  descripcion: Realiza el mantenimiento preventivo y correctivo de las correas transportadoras
+    de larga distancia (overland), que conectan distintas áreas de la operación minera.
+    Sus tareas incluyen la inspección de poleas, rodillos, estructuras de soporte,
+    rascadores y la tensión de la cinta. A menudo trabaja en estructuras elevadas
+    (pasarelas, torres de transferencia) y en grandes extensiones, lo que lo expone
+    a riesgos de caída desde altura, atrapamiento por partes móviles de la cinta o
+    riesgos eléctricos en motores y sistemas de control. Requiere movilidad y capacidad
+    para trabajar en diversos entornos.
+  area_operacional: STM
+  tareas_asociadas:
+  - STM_TA_003
+  - STM_TA_004
+  clasificacion_funcional: Mantenimiento
+  rol_categoria: Mantenedor
+- id: STM_ROL_03
+  nombre: Planificador de Mantenimiento
+  descripcion: Elabora los programas de mantenimiento preventivo y correctivo para
+    todos los sistemas de transporte mecanizado, incluyendo cintas, stackers, reclaimers
+    y dumpers. Su trabajo implica coordinar recursos (personal, repuestos, equipos),
+    estimar tiempos de ejecución y asegurar la disponibilidad de los equipos. Su rol
+    impacta directamente en la seguridad al asegurar que los mantenimientos preventivos
+    se realicen a tiempo, reduciendo la probabilidad de fallas inesperadas de equipos
+    que podrían generar incidentes como atrapamientos o colisiones. También valida
+    la inclusión de controles de seguridad en los planes.
+  area_operacional: STM
+  tareas_asociadas:
+  - STM_TA_005
+  - STM_TA_006
+  clasificacion_funcional: Supervisión
+  rol_categoria: Supervisor
+- id: STM_ROL_04
+  nombre: Operador de Dumper
+  descripcion: Opera equipos dumper para la descarga controlada de material, generalmente
+    en áreas de acopio, tolvas de alimentación o puntos de transferencia del sistema
+    de transporte. Requiere precisión en la maniobra del equipo para posicionarse
+    correctamente en el punto de descarga y elevar la tolva de manera segura, evitando
+    volcamiento, caídas de material fuera del área designada o colisiones con otros
+    equipos o estructuras. Es un rol que demanda atención constante al entorno y al
+    estado del equipo.
+  area_operacional: STM
+  tareas_asociadas:
+  - STM_TA_007
+  - STM_TA_008
+  clasificacion_funcional: Operativo
+  rol_categoria: Operador
+- id: STM_ROL_05
+  nombre: Técnico/Inspector de Cinta Transportadora
+  descripcion: Inspecciona regularmente las cintas transportadoras (poleas, rodillos,
+    estructuras, cinta) para detectar desgastes, daños, desalineaciones o acumulación
+    de material. Identifica puntos críticos de riesgo de atrapamiento, deslizamiento,
+    ruido excesivo o vibración que puedan indicar una falla inminente. Sus inspecciones
+    son vitales para identificar riesgos y reportarlos a mantenimiento, contribuyendo
+    directamente a la prevención de incidentes y a la vida útil de las cintas.
+  area_operacional: STM
+  tareas_asociadas:
+  - STM_TA_009
+  - STM_TA_010
+  clasificacion_funcional: Mantenimiento
+  rol_categoria: Mantenedor
+- id: STM_ROL_06
+  nombre: Empalmador de Cinta Transportadora
+  descripcion: Especialista en la unión y reparación de cintas transportadoras mediante
+    técnicas de vulcanizado en frío o caliente. Trabaja con herramientas especializadas,
+    adhesivos y materiales inflamables, y a menudo en espacios reducidos o en altura.
+    La manipulación de secciones pesadas de la cinta y el uso de herramientas calientes
+    o prensas son riesgos inherentes. La calidad de su trabajo es crítica para la
+    integridad y seguridad operativa de toda la cinta transportadora, previniendo
+    roturas o desgarros catastróficos.
+  area_operacional: STM
+  tareas_asociadas:
+  - STM_TA_011
+  - STM_TA_012
+  clasificacion_funcional: Soporte
+  rol_categoria: Otro
+- id: STM_ROL_07
+  nombre: Supervisor de Mantenimiento (Transporte)
+  descripcion: Supervisa las actividades de mantenimiento en el sistema de transporte
+    mecanizado. Es responsable de asegurar que los procedimientos de seguridad se
+    apliquen rigurosamente durante todas las reparaciones e inspecciones, que el personal
+    tenga las competencias y el EPP adecuados, y que se realicen los bloqueos y etiquetados
+    necesarios. Coordina las intervenciones con las operaciones y es el primer punto
+    de contacto para cualquier emergencia relacionada con el mantenimiento de estos
+    equipos.
+  area_operacional: STM
+  tareas_asociadas:
+  - STM_TA_013
+  - STM_TA_014
+  clasificacion_funcional: Supervisión
+  rol_categoria: Supervisor
+- id: STM_ROL_08
+  nombre: Operador de Sala de Control (Transporte)
+  descripcion: Monitorea y controla remotamente el sistema de transporte mecanizado
+    (cintas, stackers, reclaimers, dumpers) desde una sala de control centralizada.
+    Reacciona a alarmas de equipos, gestiona el flujo de material, ajusta velocidades
+    de cinta y coordina con el personal en terreno a través de comunicaciones radiales.
+    Su capacidad para identificar anomalías en los sistemas de monitoreo y reaccionar
+    rápidamente es clave para prevenir incidentes (atascamientos, derrames, fallas
+    de equipo) y mantener la eficiencia operativa.
+  area_operacional: STM
+  tareas_asociadas:
+  - STM_TA_015
+  - STM_TA_016
+  clasificacion_funcional: Operativo
+  rol_categoria: Operador
+- id: PLC_ROL_01
+  nombre: Operador de Sala de Control (Planta Concentradora)
+  descripcion: Supervisa y controla los complejos procesos de la planta concentradora
+    (molienda, flotación, filtrado, espesado) desde una sala de control centralizada.
+    Utiliza sistemas SCADA y HMI para ajustar parámetros operativos, monitorear niveles
+    de pulpa, dosificación de reactivos y el rendimiento general de los equipos. Responde
+    a alarmas, coordina con los operadores de terreno y toma decisiones en tiempo
+    real. Su rol es crítico para la estabilidad del proceso, la optimización de la
+    recuperación de mineral y la detección temprana de anomalías que puedan derivar
+    en riesgos operacionales o de seguridad.
+  area_operacional: PLC
+  tareas_asociadas:
+  - PLC_TA_001
+  - PLC_TA_002
+  clasificacion_funcional: Operativo
+  rol_categoria: Operador
+- id: PLC_ROL_02
+  nombre: Operador de Molinos SAG
+  descripcion: Opera y monitorea los molinos SAG (Semi-Autógeno) o de bolas, que son
+    equipos de gran tamaño y potencia para la molienda del mineral. Sus tareas incluyen
+    la alimentación del molino, el monitoreo del consumo de energía, las condiciones
+    internas (ruido, vibración), la detección de atascamientos y el mantenimiento
+    básico. Expuesto a riesgos de atrapamiento por el movimiento rotatorio de los
+    molinos, proyección de bolas de molienda o fragmentos de roca, y alto nivel de
+    ruido.
+  area_operacional: PLC
+  tareas_asociadas:
+  - PLC_TA_003
+  - PLC_TA_004
+  clasificacion_funcional: Operativo
+  rol_categoria: Operador
+- id: PLC_ROL_03
+  nombre: Operador de Celdas de Flotación
+  descripcion: Gestiona y optimiza el proceso de flotación, donde se separan los minerales
+    valiosos de la pulpa mediante el uso de reactivos químicos y aire. Sus responsabilidades
+    incluyen el monitoreo de niveles de pulpa, dosificación de reactivos, control
+    de la calidad del concentrado, limpieza de espumas y mantenimiento de las celdas.
+    Trabaja en ambientes con riesgo de exposición a derrames químicos, caídas por
+    superficies resbalosas y ruido, por lo que el uso de EPP químico es fundamental.
+  area_operacional: PLC
+  tareas_asociadas:
+  - PLC_TA_005
+  - PLC_TA_006
+  clasificacion_funcional: Operativo
+  rol_categoria: Operador
+- id: PLC_ROL_04
+  nombre: Técnico Químico de Planta
+  descripcion: Realiza análisis de laboratorio para controlar la calidad y eficiencia
+    de los procesos metalúrgicos en diversas etapas (desde el mineral bruto hasta
+    el concentrado final y los relaves). Manipula reactivos químicos peligrosos, toma
+    muestras en distintos puntos de la planta (pulpa, soluciones) y asegura la correcta
+    dosificación de químicos en el proceso. Requiere un riguroso cumplimiento de los
+    protocolos de seguridad química, uso de campanas de extracción y EPP especializado
+    para evitar quemaduras, intoxicaciones o exposiciones.
+  area_operacional: PLC
+  tareas_asociadas:
+  - PLC_TA_007
+  - PLC_TA_008
+  clasificacion_funcional: Mantenimiento
+  rol_categoria: Mantenedor
+- id: PLC_ROL_05
+  nombre: Mecánico de Planta Concentradora
+  descripcion: Realiza el mantenimiento preventivo y correctivo de la maquinaria en
+    la planta concentradora, incluyendo molinos, bombas de pulpa, agitadores, espesadores,
+    filtros, y cintas transportadoras. A menudo trabaja en espacios confinados (interior
+    de molinos o tanques), en altura sobre estructuras o con equipos de gran peso.
+    Su labor es fundamental para la confiabilidad y seguridad de los equipos, previniendo
+    fallas mecánicas que podrían generar atrapamientos, aplastamientos, fugas de pulpa
+    o químicos, o inestabilidad estructural.
+  area_operacional: PLC
+  tareas_asociadas:
+  - PLC_TA_009
+  - PLC_TA_010
+  clasificacion_funcional: Mantenimiento
+  rol_categoria: Mantenedor
+- id: PLC_ROL_06
+  nombre: Metalurgista
+  descripcion: Especialista en la optimización de los procesos de concentración, buscando
+    mejorar la recuperación de minerales, la calidad del concentrado y la eficiencia
+    general de la planta. Realiza estudios metalúrgicos, propone ajustes operativos
+    en los parámetros de molienda y flotación, y apoya al personal en terreno en la
+    resolución de problemas técnicos. Su enfoque técnico y analítico es clave para
+    la innovación de procesos y para asegurar que la planta opere en sus condiciones
+    óptimas y seguras.
+  area_operacional: PLC
+  tareas_asociadas:
+  - PLC_TA_011
+  - PLC_TA_012
+  clasificacion_funcional: Soporte
+  rol_categoria: Especialista
+- id: PLC_ROL_07
+  nombre: Manipulador de Reactivos
+  descripcion: Encargado de la recepción, almacenamiento seguro, preparación y dosificación
+    de los reactivos químicos (ej. colectores, espumantes, depresores) utilizados
+    en el proceso de flotación y otras etapas. Manipula sustancias que pueden ser
+    corrosivas, tóxicas o inflamables, por lo que requiere un riguroso cumplimiento
+    de los procedimientos de seguridad para el manejo de químicos, uso de EPP especializado
+    (trajes encapsulados, respiradores) y conocimiento de las hojas de seguridad (MSDS/SDS).
+    Su rol es crítico para la seguridad química de la planta.
+  area_operacional: PLC
+  tareas_asociadas:
+  - PLC_TA_013
+  - PLC_TA_014
+  clasificacion_funcional: Soporte
+  rol_categoria: Logística
+- id: PLC_ROL_08
+  nombre: Técnico Operador de Bombas
+  descripcion: Opera y mantiene las bombas que transportan la pulpa de mineral, soluciones
+    de reactivos y relaves a través de la planta. Realiza inspecciones periódicas
+    de las bombas, tuberías y válvulas; efectúa reparaciones menores (ej. cambio de
+    sellos, rodetes) y asegura el flujo continuo y estable de los fluidos. Trabaja
+    en ambientes húmedos y puede estar expuesto a ruido, vibraciones y salpicaduras
+    de pulpa o químicos. La correcta operación y mantenimiento de las bombas es clave
+    para evitar derrames y pérdidas de contención.
+  area_operacional: PLC
+  tareas_asociadas:
+  - PLC_TA_015
+  - PLC_TA_016
+  clasificacion_funcional: Operativo
+  rol_categoria: Operador
+- id: PLC_ROL_09
+  nombre: Supervisor de Molienda/Flotación
+  descripcion: Supervisa las operaciones en las áreas de molienda y flotación de la
+    planta concentradora durante su turno. Es responsable de garantizar el cumplimiento
+    de los programas de producción, la calidad del concentrado y los estándares de
+    seguridad. Lidera al personal de operadores, resuelve problemas operativos, gestiona
+    permisos de trabajo y asegura la aplicación de los controles de riesgo específicos
+    de cada área. Su liderazgo es esencial para mantener la disciplina operativa y
+    la seguridad en dos de los procesos más críticos de la concentradora.
+  area_operacional: PLC
+  tareas_asociadas:
+  - PLC_TA_017
+  - PLC_TA_018
+  - PLC_TA_019
+  clasificacion_funcional: Supervisión
+  rol_categoria: Supervisor
+- id: PLC_ROL_10
+  nombre: Soldador de Planta
+  descripcion: Realiza trabajos de soldadura (SMAW, GMAW, GTAW, etc.) en la reparación
+    y fabricación de estructuras metálicas, tuberías, chutes y componentes de equipos
+    en la planta concentradora. Expuesto a riesgos de quemaduras, exposición a gases
+    tóxicos, radiación UV/IR del arco eléctrico, y trabajos en altura o espacios confinados.
+    Requiere certificación en soldadura, uso de EPP específico (careta, guantes, ropa
+    ignífuga) y estricto apego a los procedimientos de soldadura segura y permisos
+    de trabajo en caliente.
+  area_operacional: PLC
+  tareas_asociadas:
+  - PLC_TA_020
+  clasificacion_funcional: Mantenimiento
+  rol_categoria: Mantenedor
+- id: PLC_ROL_11
+  nombre: Operador de Filtros y Secadores
+  descripcion: Opera y monitorea los equipos de filtrado y secado del concentrado
+    de mineral, que buscan reducir la humedad del producto final antes de su transporte
+    o almacenamiento. Trabaja con equipos a presión (filtros prensa, filtros de disco)
+    y temperatura (secadores rotatorios), y debe manejar los riesgos asociados a fugas,
+    sobrepresiones, temperaturas elevadas o fallas mecánicas. Su rol es asegurar que
+    el concentrado cumpla con las especificaciones de humedad de manera segura y eficiente.
+  area_operacional: PLC
+  tareas_asociadas:
+  - PLC_TA_021
+  clasificacion_funcional: Operativo
+  rol_categoria: Operador
+- id: PLC_ROL_12
+  nombre: Laboratorista Químico
+  descripcion: Realiza análisis químicos y físicos de muestras de mineral, pulpa y
+    concentrado en el laboratorio de la planta, utilizando equipos de precisión (espectrómetros,
+    tituladores, hornos). Manipula diversos reactivos químicos, ácidos y bases, y
+    gestiona residuos de laboratorio. Su trabajo es fundamental para el control de
+    calidad del proceso metalúrgico, y requiere un alto grado de atención a los detalles,
+    así como el estricto cumplimiento de las normas de seguridad en el laboratorio
+    (ventilación, uso de EPP, manejo de derrames).
+  area_operacional: PLC
+  tareas_asociadas:
+  - PLC_TA_022
+  clasificacion_funcional: Soporte
+  rol_categoria: Laboratorio

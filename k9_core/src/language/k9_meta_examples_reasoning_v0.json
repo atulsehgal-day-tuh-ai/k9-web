@@ -1,0 +1,117 @@
+{
+  "id": "META_REASONING_01",
+  "type": "meta_reasoning_example",
+  "domain": "K9_Mining_Safety",
+
+  "intent_pattern": "selection_then_explanation",
+
+  "activation_rule": {
+    "applies_when": [
+      "The user question requests a selection or ranking of risks",
+      "AND a comparative metric is mentioned (e.g. criticidad, presión, nivel)",
+      "AND an explicit time window is present (e.g. última semana, último mes)",
+      "AND the question includes an explanatory or causal clause (e.g. 'y explica', 'y por qué', 'factores causales')"
+    ],
+    "priority": "mandatory",
+    "on_match": "apply_this_meta_reasoning",
+    "clarification_policy": "do_not_request_clarification"
+  },
+
+  "natural_question": "Muéstrame cuál fue el riesgo con mayor nivel de criticidad durante la última semana y explica los factores causales asociados.",
+
+  "reasoning_trace": {
+    "step_1_understanding": {
+      "description": "La pregunta contiene dos acciones implícitamente encadenadas.",
+      "detected_actions": [
+        {
+          "action": "identify_dominant_risk",
+          "description": "Seleccionar el riesgo con mayor valor de una métrica comparativa (criticidad) dentro de una ventana temporal explícita.",
+          "requires_entity": false,
+          "produces_entity": true
+        },
+        {
+          "action": "explain_causal_factors",
+          "description": "Explicar los factores causales asociados exclusivamente al riesgo identificado en el paso previo.",
+          "requires_entity": true,
+          "entity_source": "output_of_previous_action"
+        }
+      ]
+    },
+
+    "step_2_dependency_resolution": {
+      "description": "La segunda acción depende obligatoriamente del resultado de la primera.",
+      "binding_logic": {
+        "source": "dominant_risk_id",
+        "target": "payload.entity",
+        "binding_type": "implicit_sequential_binding",
+        "allowed": true,
+        "reason": "El lenguaje natural presupone que la explicación se refiere al riesgo recién seleccionado."
+      }
+    },
+
+    "step_3_canonical_translation": {
+      "description": "La pregunta se traduce a un plan compuesto con operaciones canónicas explícitas.",
+      "resulting_plan_type": "COMPOSITE_K9_COMMAND"
+    }
+  },
+
+  "canonical_command": {
+    "type": "COMPOSITE_K9_COMMAND",
+    "plan": [
+      {
+        "type": "K9_COMMAND",
+        "intent": "GET_RISK_METRIC",
+        "payload": {
+          "intent": "GET_RISK_METRIC",
+          "operation": "rank",
+          "entity": "ALL_RISKS",
+          "metric": "criticality",
+          "time_window": "last_week"
+        },
+        "produces": {
+          "entity": "dominant_risk_id"
+        }
+      },
+      {
+        "type": "K9_COMMAND",
+        "intent": "EXPLAIN_CAUSAL_FACTORS",
+        "payload": {
+          "intent": "EXPLAIN_CAUSAL_FACTORS",
+          "operation": "explain",
+          "entity": "$dominant_risk_id",
+          "time_window": "last_week"
+        }
+      }
+    ]
+  },
+
+  "expected_system_behavior": {
+    "clarification_required": false,
+    "fail_closed": false,
+    "reason": "Cuando la regla de activación coincide, este meta-reasoning es obligatorio y suficiente para completar todas las operaciones requeridas."
+  },
+
+  "anti_patterns": [
+    {
+      "description": "Solicitar clarificación cuando la regla de activación coincide.",
+      "not_allowed": true
+    },
+    {
+      "description": "Inventar riesgos, métricas u operaciones no definidas en el schema canónico.",
+      "not_allowed": true
+    },
+    {
+      "description": "Omitir el campo 'operation' en cualquier payload.",
+      "not_allowed": true
+    }
+  ],
+
+  "notes_for_llm": [
+    "If the activation_rule matches, you MUST apply this meta-reasoning.",
+    "Do NOT treat this example as illustrative when the pattern matches.",
+    "Selection or ranking of risks requires operation = 'rank'.",
+    "Explanatory or causal actions require operation = 'explain'.",
+    "Bindings between steps are mandatory when an action produces an entity used by the next.",
+    "If no valid operation exists, fail closed."
+  ]
+}

@@ -1,0 +1,82 @@
+# Catálogo de formatos de análisis en seguridad minera
+# Incluye incidentes, observaciones y ahora auditorías
+
+- id: FMT_INC_001
+  nombre: Formato ICAM Completo
+  descripcion: >
+    Formato estructurado para el análisis detallado de incidentes mayores,
+    incluyendo causas inmediatas, contribuyentes, latentes y fallas de controles.
+  registro_aplicable_a:
+    - incidente
+  tags:
+    - icam
+    - incidente
+    - mayor
+    - analisis_completo
+
+- id: FMT_INC_002
+  nombre: Formato Incidente Simplificado
+  descripcion: >
+    Formato de análisis para incidentes menores sin alto potencial. Incluye
+    descripción breve del evento, causas inmediatas y acciones correctivas básicas.
+  registro_aplicable_a:
+    - incidente
+  tags:
+    - incidente
+    - menor
+    - analisis_simplificado
+
+- id: FMT_OBS_001
+  nombre: Formato Observación Preventiva
+  descripcion: >
+    Formato de registro de observaciones preventivas generales, asociadas a
+    condiciones o comportamientos en terreno.
+  registro_aplicable_a:
+    - observacion
+  tags:
+    - observacion
+    - preventiva
+    - condiciones
+    - comportamientos
+
+- id: FMT_OBS_002
+  nombre: Formato Observación de Control Crítico
+  descripcion: >
+    Formato de registro de observaciones asociadas directamente a la verificación
+    de controles críticos en tareas y roles definidos en el BowTie.
+  registro_aplicable_a:
+    - observacion
+  tags:
+    - observacion
+    - control_critico
+    - bowtie
+
+# === Nuevos formatos para auditorías ===
+
+- id: FMT_AUD_001
+  nombre: Formato Auditoría Completa
+  descripcion: >
+    Formato exhaustivo para documentar auditorías realizadas después de un
+    Incidente Mayor. Incluye contexto, evidencia, análisis de controles críticos,
+    análisis de causas (ICAM), hallazgos, acciones correctivas y acciones futuras.
+  registro_aplicable_a:
+    - auditoria
+  tags:
+    - auditoria
+    - completa
+    - incidente_mayor
+    - alto_potencial
+
+- id: FMT_AUD_002
+  nombre: Formato Auditoría Focalizada
+  descripcion: >
+    Formato simplificado para documentar auditorías posteriores a incidentes
+    menores de alto potencial. Incluye contexto breve, revisión de controles,
+    causas inmediatas, hallazgos y acciones correctivas rápidas.
+  registro_aplicable_a:
+    - auditoria
+  tags:
+    - auditoria
+    - focalizada
+    - incidente_menor
+    - alto_potencial

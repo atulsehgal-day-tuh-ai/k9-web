@@ -1,0 +1,267 @@
+- id: ORG
+  nombre: Factor Organizacional
+  descripcion: Factores relacionados con la estructura, cultura, liderazgo o políticas
+    de la organización que contribuyen al incidente.
+  metodologia_asociada: ICAM
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Análisis de causas raíz (ICAM)
+  registro_aplicable_a:
+  - incidente
+  tags:
+  - cultura organizacional
+  - gestión
+  - políticas organizacionales
+  - comunicación
+  - presión de producción
+  ejemplos:
+  - id_ejemplo: ORG-001
+    descripcion: Falta de programa de mantenimiento preventivo o su incumplimiento.
+    tags:
+    - mantenimiento_preventivo
+    - incumplimiento
+    - sistema_gestión
+    - organización
+  - id_ejemplo: ORG-002
+    descripcion: Comunicación deficiente sobre los riesgos laborales.
+    tags:
+    - comunicación
+    - riesgos_laborales
+    - información
+    - seguridad
+  - id_ejemplo: ORG-003
+    descripcion: Presión excesiva para cumplir plazos, comprometiendo la seguridad.
+    tags:
+    - presión_plazos
+    - productividad
+    - seguridad
+    - cultura_organizacional
+  - id_ejemplo: ORG-004
+    descripcion: Ausencia de supervisión operacional efectiva o insuficiente cobertura
+      de supervisores.
+    tags:
+    - supervisión
+    - gestión
+    - liderazgo
+    - deficiencia_control
+- id: HUM
+  nombre: Factor Humano
+  descripcion: Factores relacionados con las decisiones, acciones, habilidades o condiciones
+    físicas/mentales de las personas involucradas.
+  metodologia_asociada: ICAM
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Análisis de causas raíz (ICAM)
+  registro_aplicable_a:
+  - incidente
+  tags:
+  - factor humano
+  - error humano
+  - habilidades
+  - fatiga
+  - distracción
+  ejemplos:
+  - id_ejemplo: HUM-001
+    descripcion: Uso inadecuado o nulo del EPP (Equipo de Protección Personal) requerido.
+    tags:
+    - epp
+    - uso_inadecuado
+    - protección_personal
+    - comportamiento
+  - id_ejemplo: HUM-002
+    descripcion: Falta de atención o distracción durante la tarea.
+    tags:
+    - atención
+    - distracción
+    - concentración
+    - error_humano
+  - id_ejemplo: HUM-003
+    descripcion: Incumplimiento de procedimientos de seguridad por prisa o negligencia.
+    tags:
+    - procedimientos_seguridad
+    - incumplimiento
+    - prisa
+    - negligencia
+  - id_ejemplo: HUM-004
+    descripcion: Omisión o ejecución incorrecta de la verificación de energía cero
+      (ej. LOTO).
+    tags:
+    - loto
+    - energía_cero
+    - procedimiento_bloqueo
+    - seguridad_eléctrica
+  - id_ejemplo: HUM-005
+    descripcion: Desconocimiento total o parcial del procedimiento de trabajo aplicable.
+    tags:
+    - procedimiento_trabajo
+    - conocimiento
+    - capacitación
+    - incompetencia
+  - id_ejemplo: HUM-006
+    descripcion: Fatiga, distracción o bajo estado de alerta en el momento de la tarea.
+    tags:
+    - fatiga
+    - distracción
+    - alerta
+    - estado_físico
+- id: TAR
+  nombre: Factor de Tarea
+  descripcion: Factores relacionados con el diseño, la naturaleza, la complejidad
+    o la ejecución de la tarea en sí.
+  metodologia_asociada: ICAM
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Análisis de causas raíz (ICAM)
+  registro_aplicable_a:
+  - incidente
+  tags:
+  - procedimiento
+  - tarea
+  - complejidad de tarea
+  - supervisión
+  - instrucciones
+  ejemplos:
+  - id_ejemplo: TAR-001
+    descripcion: Procedimiento de trabajo poco claro o ambiguo.
+    tags:
+    - procedimiento_trabajo
+    - claridad
+    - ambigüedad
+    - instrucciones
+  - id_ejemplo: TAR-002
+    descripcion: Diseño ergonómico deficiente de la estación de trabajo.
+    tags:
+    - ergonomía
+    - diseño_estación
+    - condiciones_trabajo
+    - factores_físicos
+  - id_ejemplo: TAR-003
+    descripcion: Sobrecarga de trabajo o ritmo excesivo.
+    tags:
+    - sobrecarga_trabajo
+    - ritmo_excesivo
+    - fatiga
+    - estrés
+  - id_ejemplo: TAR-004
+    descripcion: Tarea crítica realizada sin la autorización formal (permiso de trabajo).
+    tags:
+    - permiso_trabajo
+    - autorización
+    - tarea_crítica
+    - procedimiento_especial
+  - id_ejemplo: TAR-005
+    descripcion: Cambio no comunicado en la secuencia de la tarea o en sus condiciones.
+    tags:
+    - cambio_tarea
+    - comunicación
+    - secuencia_operacional
+    - desvío_procedimiento
+- id: ENT
+  nombre: Factor de Entorno
+  descripcion: Factores relacionados con las condiciones físicas, ambientales o sociales
+    del lugar de trabajo.
+  metodologia_asociada: ICAM
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Análisis de causas raíz (ICAM)
+  registro_aplicable_a:
+  - incidente
+  tags:
+  - condiciones ambientales
+  - clima
+  - visibilidad
+  - temperatura
+  - terreno irregular
+  ejemplos:
+  - id_ejemplo: ENT-001
+    descripcion: Iluminación inadecuada en el área de trabajo.
+    tags:
+    - iluminación
+    - visibilidad
+    - condiciones_ambientales
+    - seguridad_física
+  - id_ejemplo: ENT-002
+    descripcion: Condiciones climáticas adversas (lluvia, viento, calor extremo).
+    tags:
+    - clima
+    - condiciones_climáticas
+    - seguridad_externa
+    - riesgos_naturales
+  - id_ejemplo: ENT-003
+    descripcion: Ruido excesivo que dificulta la comunicación.
+    tags:
+    - ruido
+    - comunicación
+    - contaminación_acústica
+    - salud_laboral
+  - id_ejemplo: ENT-004
+    descripcion: Superficie de trabajo resbalosa, inestable o contaminada por derrames.
+    tags:
+    - superficie
+    - resbaladizo
+    - inestabilidad
+    - derrame
+    - limpieza
+  - id_ejemplo: ENT-005
+    descripcion: Espacio confinado con ventilación inadecuada o acceso/salida limitado.
+    tags:
+    - espacio_confinado
+    - ventilación
+    - acceso_limitado
+    - riesgos_atmosféricos
+- id: TEC
+  nombre: Factor Técnico
+  descripcion: Factores relacionados con el diseño, la fabricación, el mantenimiento
+    o el estado de los equipos, herramientas o infraestructura.
+  metodologia_asociada: ICAM
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Análisis de causas raíz (ICAM)
+  registro_aplicable_a:
+  - incidente
+  tags:
+  - fallo técnico
+  - mantenimiento
+  - instrumentación
+  - calibración
+  - fiabilidad de equipos
+  ejemplos:
+  - id_ejemplo: TEC-001
+    descripcion: Falla de un componente crítico de una máquina.
+    tags:
+    - falla_equipo
+    - componente_crítico
+    - mantenimiento
+    - seguridad_máquina
+  - id_ejemplo: TEC-002
+    descripcion: Diseño inseguro de una herramienta.
+    tags:
+    - diseño_herramienta
+    - ergonomía
+    - seguridad_herramientas
+    - factores_técnicos
+  - id_ejemplo: TEC-003
+    descripcion: Inspección inadecuada de un equipo de izaje.
+    tags:
+    - inspección_equipo
+    - izaje
+    - seguridad_izaje
+    - mantenimiento_preventivo
+  - id_ejemplo: TEC-004
+    descripcion: Herramienta o equipo defectuoso, sin mantenimiento o con historial
+      de fallas.
+    tags:
+    - equipo_defectuoso
+    - mantenimiento_deficiente
+    - historial_fallas
+    - seguridad_equipo
+  - id_ejemplo: TEC-005
+    descripcion: Instrumento de medición o sensor fuera de calibración o inoperativo.
+    tags:
+    - instrumento_calibración
+    - sensor
+    - medición_incorrecta
+    - falla_instrumento
+  - id_ejemplo: TEC-006
+    descripcion: Sistema de alarma, protección o interbloqueo inoperativo o bypassado.
+    tags:
+    - sistema_alarma
+    - interbloqueo
+    - bypass
+    - seguridad_maquinaria
+    - control_ingeniería

@@ -1,0 +1,110 @@
+- id: IMAY
+  nombre: Incidente Mayor
+  descripcion: >
+    Evento con consecuencias severas como lesiones graves, incapacidad permanente o fatalidad.
+    Requiere una investigación exhaustiva para identificar todas las causas y factores contribuyentes.
+  formato_analisis_id: ICAM # Referencia al ID del formato de análisis en 'formatos_analisis_v0.yaml'
+  metodo_analisis_nombre: Incident Cause Analysis Method (ICAM)
+  requiere_control_critico: true
+  asociacion_bowtie: true
+  campos_obligatorios_reporte: # Detalle de los campos que este tipo de incidente debe reportar
+    - id_incidente
+    - fecha
+    - hora
+    - area_trabajo # ID del área operacional (ej. MRA, CHP, TME)
+    - actividad_involucrada # Descripción de la tarea o actividad al momento del incidente
+    - riesgo_principal_asociado # ID del riesgo (ej. R01, R02, R03)
+    - evento_principal_ocurrido # ID del evento principal (ej. EVT01, EVT02, EVT03)
+    - descripcion_incidente
+    - consecuencias_reportadas # IDs de las consecuencias (ej. R01CON01, R01CON02)
+    - severidad_estimada # ID de la severidad (ej. SEV4, SEV5)
+    - factores_contributivos_icam # Categorías ICAM: Organizacional, Humano, Tarea, Entorno, Técnico
+    - acciones_correctivas_implementadas # IDs de acciones correctivas (ej. AC01, AC02)
+  ejemplos_consecuencias: # Ejemplos de consecuencias para este tipo de incidente
+    - Lesiones con hospitalización o amputación
+    - Fatalidad
+    - Daños estructurales mayores
+    - Paralización prolongada de operaciones
+
+- id: IMEN
+  nombre: Incidente Menor
+  descripcion: >
+    Evento con consecuencias menores, como lesión leve que no requiere hospitalización
+    (ej. primeros auxilios, atención médica sin reposo), o daño material menor a equipos.
+    Requiere un análisis causal para identificar las causas inmediatas y sistémicas.
+  formato_analisis_id: 5WHYS # Referencia al ID del formato de análisis
+  metodo_analisis_nombre: Análisis de los 5 Porqués
+  requiere_control_critico: true
+  asociacion_bowtie: true
+  campos_obligatorios_reporte:
+    - id_incidente
+    - fecha
+    - hora
+    - area_trabajo
+    - actividad_involucrada
+    - riesgo_principal_asociado
+    - evento_principal_ocurrido
+    - descripcion_evento
+    - consecuencias_reportadas # (ej. R01CON01 si es leve)
+    - severidad_estimada # (ej. SEV1, SEV2)
+    - analisis_5whys_resumen # Resultado del análisis 5 porqués
+    - causa_raiz_identificada # ID de la causa raíz (ej. R01CA03, R03CA01)
+    - control_critico_relacionado # ID del control crítico (ej. R01CC01, R03CC02)
+    - accion_correctiva_inmediata # IDs de acciones correctivas (ej. AC01, AC02)
+  ejemplos_consecuencias:
+    - Lesión con primeros auxilios
+    - Pequeños daños a maquinaria sin afectar operatividad
+    - Cierre temporal de área por derrame menor
+
+- id: NMS
+  nombre: Near Miss (Cuasi Accidente)
+  descripcion: >
+    Evento sin consecuencias reales (lesiones o daños), pero con alto potencial de haberlas tenido.
+    Representa una valiosa oportunidad de aprendizaje y prevención para evitar incidentes futuros.
+  formato_analisis_id: 5WHYS # Referencia al ID del formato de análisis
+  metodo_analisis_nombre: Análisis de los 5 Porqués
+  requiere_control_critico: true
+  asociacion_bowtie: true
+  campos_obligatorios_reporte:
+    - id_incidente
+    - fecha
+    - hora
+    - area_trabajo
+    - actividad_involucrada
+    - riesgo_principal_asociado
+    - evento_principal_ocurrido
+    - descripcion_evento
+    - potencial_consecuencia_severidad # Severidad potencial (ej. SEV3, SEV4)
+    - analisis_5whys_resumen
+    - causa_raiz_identificada
+    - control_critico_relacionado
+    - accion_correctiva_inmediata
+  ejemplos_consecuencias:
+    - Objeto que cae cerca de un trabajador sin golpearlo
+    - Contacto con equipo energizado que no produce descarga por EPP
+    - Desprendimiento de roca que no impacta a vehículos
+
+- id: HAZARD
+  nombre: Peligro Detectado, Hazard
+  descripcion: >
+    Condición insegura o acto subestándar identificado que tiene el potencial de causar un incidente,
+    pero que aún no ha resultado en una liberación de energía o un evento.
+    Se documenta para su corrección y es una medida proactiva de seguridad.
+  formato_analisis_id: OBS # Referencia al ID del formato de análisis
+  metodo_analisis_nombre: Observación Técnica de Peligro Detectado
+  requiere_control_critico: false
+  asociacion_bowtie: true # Puede estar asociado a un riesgo del BowTie
+  campos_obligatorios_reporte:
+    - id_peligro_detectado
+    - fecha
+    - hora
+    - area_trabajo
+    - peligro_identificado_id # ID del peligro (ej. P001, P002)
+    - descripcion_peligro
+    - riesgo_principal_asociado # ID del riesgo si aplica (ej. R01, R02)
+    - accion_correctiva_sugerida # IDs de acciones correctivas (ej. AC01, AC02)
+    - severidad_potencial_peligro # ID de la severidad (ej. SEV1, SEV3)
+  ejemplos_peligros:
+    - Cableado eléctrico expuesto sin señalización
+    - Baranda removida temporalmente en una plataforma
+    - Herramienta suelta en altura

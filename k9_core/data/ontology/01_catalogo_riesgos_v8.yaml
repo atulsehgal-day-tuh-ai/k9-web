@@ -1,0 +1,433 @@
+- id: R01
+  nombre: Caída desde Altura
+  descripcion: 'Este riesgo se refiere a la probabilidad de que una persona caiga
+    desde un nivel superior a uno inferior, resultando en lesiones graves o fatales.
+    Se materializa en situaciones como trabajos en andamios, plataformas elevadas,
+    techos, escaleras verticales, o al transitar cerca de bordes desprotegidos (vanos,
+    aberturas). La altura crítica suele definirse a partir de 1.8 metros, pero cualquier
+    desnivel con potencial de lesión grave es relevante. Las consecuencias pueden
+    variar desde fracturas y traumatismos severos hasta la muerte, además de daños
+    a equipos o interrupción de la operación si la caída afecta infraestructura crítica.
+
+    '
+  bowtie_id: R01_BOW_CAIDA_V001
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Identificación y evaluación de riesgos críticos
+  tags:
+  - caída de altura
+  - impacto
+  - seguridad en altura
+  - trabajo en altura
+  peligro_asociado: Trabajos en altura (≥1,8m o cerca de bordes sin protección)
+  causas_asociadas:
+  - R01CA01
+  - R01CA02
+  - R01CA03
+  - R01CA04
+  - R01CA05
+  - R01CA06
+  controles_preventivos_asociados:
+  - R01CP01
+  - R01CP02
+  - R01CP03
+  - R01CP04
+  - R01CP05
+  - R01CP06
+  controles_criticos_asociados:
+  - R01CC01
+  - R01CC02
+  - R01CC03
+  - R01CC04
+  - R01CC05
+  - R01CC06
+  factores_degradacion_asociados:
+  - R01FD01
+  - R01FD02
+  - R01FD03
+  - R01FD04
+  consecuencias_asociadas:
+  - R01CON01
+  - R01CON02
+  - R01CON03
+  - R01CON04
+  - R01CON05
+  - R01CON06
+  - R01CON07
+  controles_mitigacion_asociados:
+  - R01CM01
+  - R01CM02
+  - R01CM03
+  - R01CM04
+  barreras_recuperacion_asociadas:
+  - R01BR01
+  - R01BR02
+  - R01BR03
+  - R01BR04
+  factores_exposicion_relacionados:
+  - FE_001
+  - FE_002
+  - FE_003
+  - FE_010
+  - FE_011
+  - FE_012
+  - FE_019
+  - FE_020
+  - FE_021
+  - FE_028
+  - FE_029
+  - FE_030
+  - FE_035
+  - FE_036
+  - FE_037
+  - FE_042
+  - FE_043
+  - FE_044
+  - FE_051
+  - FE_052
+  - FE_053
+  - FE_060
+  - FE_061
+  - FE_062
+  - FE_063
+  - FE_064
+  - FE_067
+  - FE_068
+  - FE_076
+  - FE_097
+  - FE_103
+  - FE_104
+  - FE_107
+  - FE_108
+  - FE_111
+  - FE_112
+  - FE_117
+  - FE_118
+  - FE_119
+  - FE_120
+  - FE_121
+  - FE_122
+  - FE_127
+  - FE_128
+  - FE_136
+  - FE_137
+  - FE_140
+  - FE_141
+  - FE_144
+  - FE_145
+  - FE_152
+  - FE_153
+  - FE_156
+  - FE_157
+  - FE_160
+  - FE_161
+  - FE_164
+  - FE_165
+  - FE_172
+  - FE_173
+  - FE_180
+  - FE_181
+  - FE_184
+  - FE_185
+  - FE_186
+  - FE_187
+  - FE_188
+  - FE_191
+  - FE_192
+  - FE_195
+  - FE_196
+  - FE_197
+  - FE_198
+  - FE_199
+  - FE_202
+  - FE_203
+  - FE_206
+  - FE_207
+- id: R02
+  nombre: Caída de Objetos
+  descripcion: 'Este riesgo se refiere a la probabilidad de que objetos (herramientas,
+    materiales, fragmentos de roca, componentes) se desprendan o caigan desde una
+    altura, impactando a personal, equipos o infraestructura en niveles inferiores.
+    Se manifiesta en zonas de trabajo elevadas, áreas de izaje de cargas, o en labores
+    de demolición y excavación. La gravedad del impacto depende de la altura de la
+    caída, el peso y la forma del objeto, y la presencia de protecciones. Puede generar
+    lesiones desde leves a fatales, interrupciones operacionales y pérdidas económicas.
+
+    '
+  bowtie_id: R02_BOW_OBJETOS_001
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Identificación y evaluación de riesgos críticos
+  tags:
+  - caída de objetos
+  - impacto
+  - herramientas
+  - seguridad en altura
+  peligro_asociado: Trabajo en altura con riesgo de caída de herramientas, materiales
+    o partes
+  causas_asociadas:
+  - R02CA01
+  - R02CA02
+  - R02CA03
+  - R02CA04
+  - R02CA05
+  - R02CA06
+  controles_preventivos_asociados:
+  - R02CP01
+  - R02CP02
+  - R02CP03
+  - R02CP04
+  - R02CP05
+  - R02CP06
+  controles_criticos_asociados:
+  - R02CC01
+  - R02CC02
+  - R02CC03
+  - R02CC04
+  - R02CC05
+  - R02CC06
+  factores_degradacion_asociados:
+  - R02FD01
+  - R02FD02
+  - R02FD03
+  - R02FD04
+  consecuencias_asociadas:
+  - R02CON01
+  - R02CON02
+  - R01CON04
+  - R02CON03
+  - R02CON04
+  - R02CON05
+  controles_mitigacion_asociados:
+  - R02CM01
+  - R02CM02
+  - R02CM03
+  - R02CM04
+  barreras_recuperacion_asociadas:
+  - R02BR01
+  - R02BR02
+  - R02BR03
+  - R02BR04
+  factores_exposicion_relacionados:
+  - FE_004
+  - FE_005
+  - FE_006
+  - FE_013
+  - FE_014
+  - FE_015
+  - FE_022
+  - FE_023
+  - FE_024
+  - FE_031
+  - FE_032
+  - FE_033
+  - FE_038
+  - FE_039
+  - FE_040
+  - FE_045
+  - FE_046
+  - FE_047
+  - FE_054
+  - FE_055
+  - FE_056
+  - FE_065
+  - FE_066
+  - FE_067
+  - FE_068
+  - FE_069
+  - FE_070
+  - FE_075
+  - FE_085
+  - FE_086
+  - FE_087
+  - FE_088
+  - FE_089
+  - FE_090
+  - FE_091
+  - FE_092
+  - FE_093
+  - FE_094
+  - FE_095
+  - FE_096
+  - FE_098
+  - FE_099
+  - FE_100
+  - FE_101
+  - FE_102
+  - FE_121
+  - FE_122
+  - FE_123
+  - FE_124
+  - FE_127
+  - FE_128
+  - FE_129
+  - FE_130
+  - FE_164
+  - FE_165
+  - FE_168
+  - FE_169
+  - FE_176
+  - FE_177
+  - FE_184
+  - FE_185
+  - FE_186
+  - FE_187
+  - FE_188
+  - FE_193
+  - FE_194
+  - FE_208
+  - FE_209
+- id: R03
+  nombre: Contacto con Energía Eléctrica
+  descripcion: 'Este riesgo se refiere al contacto directo o indirecto de una persona
+    con energía eléctrica, ya sea por intervención en equipos energizados, fallas
+    de aislamiento, equipos defectuosos, o falta de aplicación de procedimientos de
+    seguridad eléctrica. Es prevalente en áreas con alta concentración de maquinaria
+    eléctrica, subestaciones, tableros de control, o donde se realizan tareas de mantenimiento
+    eléctrico. Las consecuencias pueden ser extremadamente graves, incluyendo electrocución,
+    quemaduras severas por arco eléctrico, fibrilación ventricular, o fatalidad. Adicionalmente,
+    puede causar daños extensos a la infraestructura eléctrica y provocar incendios
+    o explosiones.
+
+    '
+  bowtie_id: R03_BOW_ELECTRICO_001
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Identificación y evaluación de riesgos críticos
+  tags:
+  - contacto eléctrico
+  - energía eléctrica
+  - electrocución
+  - quemadura
+  - seguridad eléctrica
+  peligro_asociado: Intervención en sistemas eléctricos energizados o mal aislados
+  causas_asociadas:
+  - R03CA01
+  - R03CA02
+  - R03CA03
+  - R03CA04
+  - R03CA05
+  - R03CA06
+  controles_preventivos_asociados:
+  - R03CP01
+  - R03CP02
+  - R03CP03
+  - R03CP04
+  - R03CP05
+  - R03CP06
+  controles_criticos_asociados:
+  - R03CC01
+  - R03CC02
+  - R03CC03
+  - R03CC04
+  - R03CC05
+  - R03CC06
+  factores_degradacion_asociados:
+  - R03FD01
+  - R03FD02
+  - R03FD03
+  - R03FD04
+  consecuencias_asociadas:
+  - R03CON01
+  - R03CON02
+  - R03CON03
+  - R01CON01
+  - R01CON04
+  - R03CON04
+  - R03CON05
+  - R03CON06
+  controles_mitigacion_asociados:
+  - R03CM01
+  - R03CM02
+  - R03CM03
+  - R03CM04
+  barreras_recuperacion_asociadas:
+  - R03BR01
+  - R03BR02
+  - R03BR03
+  - R03BR04
+  factores_exposicion_relacionados:
+  - FE_007
+  - FE_008
+  - FE_009
+  - FE_016
+  - FE_017
+  - FE_018
+  - FE_025
+  - FE_026
+  - FE_027
+  - FE_034
+  - FE_041
+  - FE_048
+  - FE_049
+  - FE_050
+  - FE_057
+  - FE_058
+  - FE_059
+  - FE_073
+  - FE_074
+  - FE_077
+  - FE_078
+  - FE_079
+  - FE_080
+  - FE_081
+  - FE_082
+  - FE_083
+  - FE_084
+  - FE_103
+  - FE_104
+  - FE_105
+  - FE_106
+  - FE_109
+  - FE_110
+  - FE_111
+  - FE_112
+  - FE_113
+  - FE_114
+  - FE_115
+  - FE_116
+  - FE_117
+  - FE_118
+  - FE_119
+  - FE_120
+  - FE_125
+  - FE_126
+  - FE_131
+  - FE_132
+  - FE_133
+  - FE_134
+  - FE_135
+  - FE_138
+  - FE_139
+  - FE_142
+  - FE_143
+  - FE_146
+  - FE_147
+  - FE_154
+  - FE_155
+  - FE_158
+  - FE_159
+  - FE_162
+  - FE_163
+  - FE_166
+  - FE_167
+  - FE_170
+  - FE_171
+  - FE_174
+  - FE_175
+  - FE_178
+  - FE_179
+  - FE_182
+  - FE_183
+  - FE_189
+  - FE_190
+  - FE_191
+  - FE_192
+  - FE_195
+  - FE_196
+  - FE_197
+  - FE_198
+  - FE_199
+  - FE_200
+  - FE_201
+  - FE_204
+  - FE_205
+  - FE_210
+  - FE_211

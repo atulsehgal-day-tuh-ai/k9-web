@@ -1,0 +1,2 @@
+fecha,semana,id_riesgo,criticidad_real_sem12,criticidad_real_lunes_critico,posicion_proactivo_sem12,nota_modelo,fdo_clima,fdo_fatiga,fdo_congestion,fdo_backlog,fdo_dotacion,fdo_variabilidad
+2/3/2025,13,R01,72,96,2,"El modelo proactivo sigue usando el ranking #12 (domingo anterior), sin incorporar todavía el salto de criticidad de R01 observado el lunes crítico.",88,75,90,95,50,78

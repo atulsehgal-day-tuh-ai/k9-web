@@ -1,0 +1,1058 @@
+Ok, no me parece bien ese plan, después de implementar el LLM, debemos inyectar el lunes crítico con un botón en streamlit, y que el sistema sea capaz de comparar el estado del sistema antes de la inyección y después de la inyección,
+
+Nuevo orden correcto (alineado con tu visión)
+1. LLM como traductor (mínimo indispensable)
+
+Se mantiene, pero acotado.
+
+Rol exacto del LLM:
+
+Entrada:
+Traduce pregunta humana → user_query + posible normalización semántica
+
+Salida:
+Traduce answer + metrics + reasoning → lenguaje humano claro
+
+Restricciones:
+
+No razona
+
+No compara estados
+
+No decide métricas
+
+No toca data
+
+Esto solo elimina fricción lingüística para el usuario y no interfiere con lo que viene.
+
+2. Botón “Inyectar Lunes Crítico” en Streamlit (siguiente paso real)
+
+Este es el salto clave del sistema, y tienes razón: debe venir antes de memoria, simulación formal o gobernanza.
+
+Qué debe hacer el botón
+
+Al presionarlo:
+
+Captura snapshot PRE
+
+Estado del sistema antes de la inyección
+
+analysis_pre
+
+metrics_pre
+
+Inyecta el lunes crítico
+
+Modifica la fuente de datos (o flag de inyección)
+
+Re-ejecuta el mismo grafo
+
+Sin cambiar lógica ni nodos
+
+Captura snapshot POST
+
+analysis_post
+
+metrics_post
+
+Entrega ambos estados al sistema
+
+No al LLM
+
+No a Streamlit directamente
+
+Al flujo determinista
+
+3. Comparación PRE vs POST (sin nuevo nodo)
+
+Aquí hay un punto clave que quiero dejar muy claro:
+
+NO necesitas crear un nuevo nodo.
+
+La comparación debe vivir en:
+
+analysis["delta"]
+
+o metrics["comparative_insights"]
+
+Ejemplos de comparaciones válidas:
+
+Cambio en riesgo dominante
+
+Cambio en ranking
+
+Cambio en trayectorias
+
+Activación de nuevos umbrales
+
+Aparición de desalineación Proactivo vs K9
+
+Todo esto:
+
+Usa las mismas reglas
+
+Usa los mismos datos
+
+Solo cambia el estado inicial
+
+Esto es extremadamente sólido arquitectónicamente.
+
+4. MetricsNode extendido (no reemplazado)
+
+El MetricsNode no se reemplaza, se extiende para entender:
+
+mode = normal
+
+mode = comparative
+
+Y cuando está en modo comparativo:
+
+Produce métricas del tipo:
+
+delta_risk_priority
+
+delta_trend
+
+before_after_comparison
+
+Esto alimenta directamente:
+
+Visualizaciones comparativas
+
+Narrativa de impacto
+
+Sin agregar nodos.
+
+5. Streamlit: rol exacto (muy importante)
+
+Streamlit NO:
+
+Lee data raw
+
+Decide gráficos
+
+Calcula métricas
+
+Interpreta resultados
+
+Streamlit SÍ:
+
+Tiene el botón “Inyectar lunes crítico”
+
+Muestra:
+
+Estado antes
+
+Estado después
+
+Diferencias
+
+Renderiza solo lo que el adapter entrega
+
+El adapter:
+
+Traduce metrics → plotly
+
+Nada más
+
+Esto mantiene la separación limpia.
+
+Resultado final de esta fase
+
+Con esto, el sistema puede demostrar en vivo:
+
+“Así estaba el sistema.
+Inyectamos un evento crítico.
+Así cambió el estado.
+Estas son las consecuencias.”
+
+Eso es:
+
+Simulación práctica
+
+Explicabilidad
+
+Decisión asistida
+
+Sin AGI, sin agentes, sin humo
+
+----------------
+
+Después de inyectar el lunes crítico debemos mejorar las descripciones en texto libre de la data sintética de manera que en la demo poder mostrar una observación o un incidente sintéticos
+
+Dónde encaja esto en el flujo (muy importante)
+
+El orden correcto queda así:
+
+Sistema base determinista (ya está)
+
+LLM como traductor (mínimo)
+
+Inyección del lunes crítico
+
+Comparación PRE vs POST
+
+⬅️ AQUÍ entra lo que propones
+
+Visualización + narrativa final
+
+Es decir:
+👉 el texto libre NO se mejora antes del lunes crítico, sino como consecuencia de él.
+
+Eso es lo que lo hace potente.
+
+Qué problema estamos resolviendo realmente
+
+Hoy el sistema:
+
+Calcula bien
+
+Prioriza bien
+
+Explica bien a nivel agregado
+
+Pero en una demo, el evaluador siempre hace esto:
+
+“Ok… muéstrame una observación concreta”
+“¿Qué pasó exactamente en terreno?”
+“Enséñame un incidente”
+
+Si no hay una historia concreta, el cerebro humano no termina de confiar.
+
+Qué debemos mejorar exactamente (alcance controlado)
+
+⚠️ No es generación narrativa libre
+⚠️ No es creatividad del LLM
+
+Es texto sintético estructurado, gobernado por reglas.
+
+Tipos de texto libre que debemos enriquecer
+1. Observaciones (OCC / OPG)
+
+Ejemplo de lo que debe existir:
+
+Contexto operacional
+
+Condición observada
+
+Riesgo asociado
+
+Control crítico degradado
+
+Consecuencia potencial
+
+Ubicación / área
+
+Momento relativo al lunes crítico
+
+Ejemplo sintético creíble:
+
+“Durante la inspección de turno mañana en el área de Chancado, se observó una protección incompleta en un punto de atrapamiento del transportador. La condición expone a los operadores a contacto con energía mecánica en caso de intervención no planificada. El control crítico de resguardo físico se encuentra degradado.”
+
+Esto no lo inventa el LLM.
+Esto se deriva de la ontología + estado post-inyección.
+
+2. Incidentes (near miss o potencial)
+
+Especialmente valioso para la demo.
+
+Ejemplo:
+
+“Durante labores de mantención correctiva, un operador perdió el equilibrio al transitar por una plataforma con acumulación de material. No se produjo lesión, pero el evento tuvo potencial de caída a distinto nivel. El riesgo R01 muestra una tendencia creciente consistente con este tipo de eventos.”
+
+Esto conecta:
+
+Texto
+
+Riesgo
+
+Tendencia
+
+Lunes crítico
+
+
+
+Dónde vive esto en la arquitectura (sin agregar nodos)
+
+Esto NO requiere nuevos nodos.
+
+Vive en:
+
+La data sintética
+
+Asociada a:
+
+riesgos
+
+áreas
+
+controles
+
+momento (pre/post)
+
+Y se expone a través de:
+
+analysis["observations_detail"]
+
+o analysis["synthetic_cases"]
+
+Luego:
+
+El MetricsNode puede sugerir:
+
+“¿Quieres ver el detalle de la observación X?”
+
+Streamlit solo renderiza
+
+Rol del LLM aquí (cuando toque)
+
+El LLM no genera el texto base.
+
+Solo puede:
+
+Resumir
+
+Reescribir
+
+Adaptar tono al usuario
+
+Pero la fuente de verdad es la data sintética.
+
+Esto mantiene:
+
+Determinismo
+
+Auditabilidad
+
+Confianza
+
+Qué desbloquea esto para la demo
+
+Con esto puedes hacer en vivo:
+
+Inyectar lunes crítico
+
+Mostrar cambio en ranking
+
+Mostrar gráfico
+
+Decir:
+
+“Veamos qué pasó en terreno”
+
+Abrir una observación concreta
+
+Leer un texto creíble
+
+Conectar todo
+
+Eso es demo de clase mundial.
+
+----------------
+
+A continuación te dejo un plan correcto y compatible con lo que ya tienes, sin inflar nodos.
+
+1) Separación conceptual obligatoria (para no contaminar K9)
+
+Vamos a distinguir dos usos del LLM:
+
+A) LLM Traductor (runtime)
+
+Entrada: humano → sistema
+
+Salida: sistema → humano
+
+No crea data
+
+No modifica datasets
+
+B) LLM Generador de datos sintéticos (offline / pre-demo / botón explícito)
+
+Genera texto para filas existentes en:
+
+stde_observaciones_12s.csv
+
+stde_eventos.csv (incidentes / near miss)
+
+auditorías (si existe dataset)
+
+No decide riesgos ni métricas
+
+Solo genera texto_libre consistente con metadatos
+
+👉 Este segundo uso NO viola el principio “LLM no razona” porque no está razonando sobre decisiones del sistema: está actuando como motor de lenguaje controlado.
+
+2) Qué significa “motor unido a un LLM” (definición operativa)
+
+El motor NO es un nuevo nodo del grafo.
+
+Es un módulo de generación (script o función invocable) que:
+
+Lee cada registro (fila) existente
+
+Construye un prompt determinista con:
+
+riesgo_id (R01/R02/R03)
+
+área (Mina Rajo, Planta, etc.)
+
+tipo de registro (OCC/OPG / incidente / auditoría)
+
+control crítico (si aplica: control_critico_id, is_control_critico)
+
+severidad / potencial (si existe)
+
+semana / contexto temporal (week)
+
+Llama al LLM para producir:
+
+descripcion
+
+observacion_detalle / narrativa_evento
+
+accion_inmediata (si aplica)
+
+potencial_consecuencia
+
+Valida el output con reglas (deterministas)
+
+Escribe de vuelta al CSV como nuevas columnas
+
+Resultado: datasets enriquecidos con texto libre “demo-ready”.
+
+3) Reglas duras para que el texto sea realista (y no “LLM vibes”)
+
+Para que esto funcione en demo, el motor debe imponer constraints:
+
+Idioma: español, tono técnico operacional, no poético
+
+Longitud: 60–140 palabras por registro (configurable)
+
+No inventar roles/entidades inexistentes si no están en columnas
+
+Siempre referenciar el riesgo_id explícitamente o implícitamente según template
+
+Si is_control_critico=True → mencionar degradación del control
+
+Si semana alta (p.ej. 10–12) y trayectoria “degrading” → lenguaje más urgente (pero no inventar un evento crítico)
+
+Prohibido: números inventados, “según sensores”, “IA detectó” si no existe
+
+Cada texto debe incluir 2–3 detalles concretos (ubicación, equipo, condición, acción)
+
+Esto hace que el LLM sea “escritor”, pero el motor sea “director”.
+
+4) Dónde vive esto en el repo (sin crear nodos)
+
+Recomendación mínima y limpia:
+
+src/
+  synthetic/
+    narrative_generator.py
+    prompt_templates.py
+    validators.py
+scripts/
+  generate_text_payloads.py
+
+
+scripts/generate_text_payloads.py se corre antes de la demo
+
+O si quieres “wow factor”: se expone en Streamlit como botón “Generar texto libre” (pero ojo con latencia)
+
+En cualquier caso: NO entra al grafo.
+
+5) Cómo se demuestra en la demo (sin dashboards nuevos)
+
+En Streamlit:
+
+Tabla / selector para “Buscar Observación / Incidente / Auditoría”
+
+Mostrar:
+
+campos estructurados (riesgo, área, semana, control crítico)
+
+texto libre generado
+
+Botón opcional:
+
+“Regenerar texto” (solo si quieres demostrar motor + LLM en vivo)
+
+Esto es suficiente para que el evaluador vea:
+
+datos + lenguaje
+
+coherencia ontológica
+
+calidad narrativa
+
+6) Qué necesitas de mí para implementarlo bien (sin pedirte más nodos)
+
+Para avanzar sólido, necesito ver (solo archivos, no preguntas):
+
+El esquema real de columnas de:
+
+stde_observaciones_12s.csv
+
+stde_eventos.csv
+
+dataset de auditorías (nombre real)
+
+Si ya existen columnas tipo:
+
+descripcion, detalle, comentario, narrativa, etc.
+
+Con eso, te devuelvo:
+
+diseño exacto del prompt por tipo de registro
+
+validador determinista por tipo
+
+script que escribe columnas nuevas sin romper el dataset
+
+Decisión clave (para que quede cerrado)
+
+Sí: motor + LLM para generar texto en todas las observaciones/incidentes/auditorías existentes.
+No: inventar nuevos registros post-lunes crítico si no existen.
+
+-----------------
+
+Para sugerir un graafico se necesita entonces una pregunta del sistema y una respuesta del usuario:
+
+Perfecto — y aquí es donde se ve que estás pensando el sistema como cognitivo y no como UI.
+Tu observación es correcta siempre que hagamos una distinción clave.
+
+Voy a ordenar esto con precisión técnica.
+
+La clave: tolerancia léxica ≠ razonamiento lingüístico
+
+Aceptar respuestas como:
+
+“sí”
+
+“sí quiero”
+
+“sí, dámelo”
+
+“dale”
+
+“muéstralo”
+
+👉 NO implica que el sistema esté razonando en lenguaje natural
+👉 SÍ implica que tenga una tabla de aceptación léxica controlada
+
+Eso es parsing determinista, no interpretación semántica.
+
+Qué NO estamos haciendo (importante)
+
+❌ No estamos:
+
+inferiendo intención compleja
+
+desambiguando frases largas
+
+entendiendo contexto conversacional
+
+resolviendo ambigüedad real
+
+Eso sí requeriría LLM.
+
+Qué SÍ estamos haciendo
+
+Estamos haciendo esto:
+
+“Si la respuesta contiene un token afirmativo conocido → aceptar”
+
+Eso es equivalente a:
+
+if any(token in user_input.lower() for token in ACCEPT_TOKENS):
+    accept()
+
+
+Eso es lógica booleana, no cognición lingüística.
+
+Implementación correcta (y limpia)
+1️⃣ Definir vocabulario cerrado (contractual)
+ACCEPT_TOKENS = {
+    "si",
+    "sí",
+    "si quiero",
+    "sí quiero",
+    "damelo",
+    "dámelo",
+    "dale",
+    "ok",
+    "okey",
+    "muéstralo",
+    "mostrar",
+}
+
+REJECT_TOKENS = {
+    "no",
+    "no quiero",
+    "más tarde",
+    "después",
+}
+
+
+Esto es configuración, no IA.
+
+2️⃣ Normalización mínima (sin NLP)
+def normalize(text: str) -> str:
+    return (
+        text.lower()
+        .replace("á", "a")
+        .replace("é", "e")
+        .replace("í", "i")
+        .replace("ó", "o")
+        .replace("ú", "u")
+        .strip()
+    )
+
+3️⃣ Decisión determinista
+text = normalize(user_input)
+
+if any(t in text for t in ACCEPT_TOKENS):
+    decision = "accept"
+elif any(t in text for t in REJECT_TOKENS):
+    decision = "reject"
+else:
+    decision = "unknown"
+
+
+accept → render gráfico
+
+reject → continuar
+
+unknown → repetir pregunta
+
+Por qué esto sigue siendo coherente con K9
+
+Porque:
+
+El MetricsNode ya decidió que el gráfico es relevante
+
+El usuario solo confirma ejecución
+
+No hay reinterpretación del análisis
+
+No hay nuevos caminos cognitivos
+
+Esto es equivalente a:
+
+botón con múltiples labels
+
+shortcut de teclado
+
+comando simple
+
+Diferencia crítica con LLM (para que quede claro)
+Esto que propones	LLM traductor
+lista cerrada	espacio abierto
+tokens conocidos	intención inferida
+determinista	probabilístico
+testeable	aproximado
+
+👉 Por eso esto sí es válido ahora
+👉 y no contradice tu regla de “LLM solo traduce”
+
+Recomendación práctica (muy concreta)
+Para la demo y la siguiente sesión
+
+Implementa tolerancia léxica cerrada
+
+Documenta explícitamente:
+
+“Este parsing es determinista y temporal”
+
+Deja el punto de extensión para LLM claro
+
+Ejemplo comentario en código:
+
+# NOTE:
+# La aceptación de visualizaciones se basa en un vocabulario cerrado.
+# En fases posteriores, esta lógica será reemplazada por un LLM traductor.
+
+Conclusión directa
+
+Tu intuición es correcta.
+
+Aceptar:
+
+“sí”, “sí quiero”, “dámelo”
+
+no convierte al sistema en un chatbot
+ni rompe la arquitectura cognitiva.
+
+Es simplemente una interfaz humana tolerante,
+con control total del sistema.
+
+Has encontrado un muy buen punto intermedio entre:
+
+rigor técnico
+
+naturalidad en demo
+
+y alineación futura
+
+En la próxima sesión, esto se puede implementar sin tocar MetricsNode, solo Streamlit + adapter.
+
+
+------------------
+
+Voy a dejarlo cerrado, claro y “arquitectónicamente correcto”, porque aquí ya no hay ambigüedad.
+
+Qué significa determinista en este contexto (definición final)
+
+Cuando tú dices determinista, aquí significa:
+
+Existe un vocabulario cerrado, explícito y acotado.
+Todo input fuera de ese vocabulario cae en fallback.
+
+Nada más.
+Nada menos.
+
+Eso NO es:
+
+NLP
+
+interpretación semántica
+
+razonamiento lingüístico
+
+LLM encubierto
+
+Eso SÍ es:
+
+control de flujo
+
+validación de comandos
+
+parsing de tokens
+
+El contrato correcto (y definitivo)
+Entrada
+
+Texto libre del usuario.
+
+Normalización
+
+lower
+
+sin acentos
+
+trim
+
+Evaluación (en orden)
+
+ACCEPT
+
+REJECT
+
+FALLBACK
+
+DECISION = {
+    "accept": {...tokens...},
+    "reject": {...tokens...},
+}
+
+
+Cualquier cosa fuera → fallback.
+
+Por qué esto es arquitectónicamente sano
+1️⃣ El sistema no infiere
+
+No intenta “entender” nada.
+
+Solo verifica:
+
+“¿Esto pertenece a un conjunto permitido?”
+
+Eso es matemáticamente determinista.
+
+2️⃣ Es completamente testeable
+
+Puedes escribir tests como:
+
+assert parse("sí, dámelo") == ACCEPT
+assert parse("ok") == ACCEPT
+assert parse("mmm") == FALLBACK
+
+
+Sin mocks. Sin modelos.
+
+3️⃣ El LLM encaja después sin romper nada
+
+Cuando metas el LLM:
+
+Reemplazas el parser
+
+No cambias el contrato
+
+El resultado sigue siendo:
+
+accept
+
+reject
+
+fallback
+
+Eso es diseño evolutivo limpio.
+
+Cómo se ve esto en K9 (alineado a tu visión)
+
+MetricsNode
+Decide qué sería útil mostrar.
+
+Streamlit / Adapter
+Pregunta al usuario.
+
+Parser determinista
+Decide si se ejecuta.
+
+Visualización
+Solo si hay aceptación explícita.
+
+Esto mantiene:
+
+separación de responsabilidades
+
+control cognitivo
+
+trazabilidad completa
+
+Frase clave (para que quede sellado)
+
+“Determinista no significa rígido.
+Significa decisión basada en conjuntos cerrados.”
+
+Con eso, tu enfoque está bien definido, bien acotado y bien defendido.
+
+En la próxima sesión:
+
+implementamos el parser
+
+lo testeamos
+
+lo conectamos al adapter
+
+y dejas listo el switch al LLM traductor
+
+-------------
+
+Eso es lo que necesito probar gráficas, lo otro que necesito es ver FDOs y ranking de riesgos que no son del modelo proactivo
+
+Perfecto. Con lo que dices ahora, ya se puede cerrar con mucha claridad qué falta para poder “probar gráficas” de verdad y qué capacidades nuevas deben aparecer, sin romper nada de lo que ya construiste.
+
+Voy a separar esto en dos bloques, porque son dos necesidades distintas pero complementarias.
+
+1️⃣ Lo que necesitas para probar gráficas (estado actual)
+
+Con lo que ya tienes hoy:
+
+MetricsNode ✔️
+
+reglas 001–006 ✔️
+
+adapter ✔️ (en progreso, pero conceptualmente correcto)
+
+Streamlit integrado al grafo ✔️
+
+aceptación determinista (“sí / no”) ✔️
+
+👉 Ya puedes probar gráficas de:
+
+trayectorias temporales de riesgos (line chart)
+
+comparación entre riesgos (bar chart)
+
+ranking básico de riesgos (bar chart)
+
+Eso cubre el 70 % de la demo visual.
+
+Lo que falta aquí no es cognición, es cobertura de métricas.
+
+2️⃣ Lo que te falta realmente: FDOs y ranking NO proactivo
+
+Aquí está el punto importante que tú detectaste muy bien.
+
+🔴 Problema actual
+
+Hoy el sistema:
+
+compara riesgos K9 vs modelo proactivo ✔️
+
+explica desalineaciones ✔️
+
+Pero no tiene aún una capa explícita para decir:
+
+“Estos riesgos están siendo empujados por condiciones operacionales actuales,
+independientemente del modelo proactivo.”
+
+Eso es exactamente lo que representan los FDOs.
+
+3️⃣ Qué son los FDOs en términos de K9 (definición operativa)
+
+En K9, un FDO no es solo un dato.
+
+Es:
+
+Un factor operacional dinámico que degrada el estado del sistema
+y explica por qué un riesgo sube aunque el modelo proactivo no lo anticipe.
+
+Ejemplos típicos:
+
+backlog operacional
+
+fatiga
+
+presión productiva
+
+fallas repetidas de controles críticos
+
+acumulación de OCC
+
+4️⃣ Qué falta hoy en el sistema (con precisión)
+❌ Lo que NO existe aún
+
+un bloque explícito en analysis para FDOs
+
+un ranking de riesgos explicado por FDOs
+
+una visualización sugerida basada en FDOs
+
+✅ Lo que YA existe (y podemos reutilizar)
+
+operational_evidence
+
+OCC enriquecidas
+
+trayectorias degradantes
+
+thresholds
+
+👉 Eso significa que no necesitas nueva data,
+solo reagrupar y explicitar.
+
+5️⃣ La forma correcta de introducir FDOs (sin romper nada)
+🔹 NO crear un nuevo nodo ahora
+
+(no MetricsNode, no AnalystNode nuevo, no DataEngine nuevo)
+
+🔹 SÍ extender el analysis consolidado
+
+Ejemplo conceptual:
+
+analysis["fdo_summary"] = {
+    "active_fdos": [
+        "critical_control_failures",
+        "high_occ_frequency",
+    ],
+    "fdo_by_risk": {
+        "R01": ["critical_control_failures"],
+        "R02": ["high_occ_frequency"],
+    }
+}
+
+
+Esto puede vivir perfectamente en:
+
+AnalystNode (FASE 2 temprana)
+
+o como extensión lógica del análisis actual
+
+6️⃣ Ranking de riesgos NO proactivo (clave para la demo)
+
+Esto es muy importante para lo que tú quieres mostrar.
+
+Qué significa “ranking no proactivo”
+
+No es:
+
+contra el modelo proactivo
+
+ni recalibración
+
+Es:
+
+Ranking basado en estado operacional actual,
+explicado por evidencia y FDOs.
+
+Ejemplo:
+
+analysis["operational_risk_ranking"] = [
+    {"risk": "R01", "reason": "degradación + OCC críticas"},
+    {"risk": "R02", "reason": "alta frecuencia operacional"},
+]
+
+
+Esto te permite decir en la demo:
+
+“Este ranking no viene de un modelo histórico,
+viene del estado vivo del sistema.”
+
+Eso es oro para K9.
+
+7️⃣ Cómo se conecta esto con métricas y gráficas
+
+Una vez que tengas eso:
+
+MetricsNode puede sugerir nuevas visualizaciones:
+
+Ranking por presión operacional (FDO-based)
+
+Comparación Proactivo vs Operacional
+
+Mapa riesgo ↔ FDO
+
+Sin tocar Streamlit, solo reglas nuevas.
+
+8️⃣ Qué te recomiendo hacer en la próxima sesión (orden exacto)
+
+Para no dispersarnos:
+
+Paso 1 — Terminar adapter + tests
+
+(para poder renderizar sin fricción)
+
+Paso 2 — Introducir fdo_summary en analysis
+
+(sin nuevas fuentes de data)
+
+Paso 3 — Agregar 1 regla nueva en MetricsNode
+
+Ejemplo:
+
+“Si existen FDOs activos → sugerir ranking operacional”
+
+Paso 4 — Probar gráficas en Streamlit
+
+con preguntas como:
+
+“¿Qué riesgos están siendo empujados por condiciones operacionales?”
+
+“Muéstrame el ranking operativo actual, no el proactivo”
+
+9️⃣ Cierre conceptual (importante)
+
+Lo que estás construyendo ahora es exactamente esto:
+
+La diferencia entre riesgo predicho y riesgo vivido.
+
+Y eso:
+
+no lo hacen dashboards
+
+no lo hacen modelos aislados
+
+solo lo hace un sistema cognitivo con contexto
+
+Vas por el camino correcto.
+
+Cuando quieras, en la próxima sesión entramos solo a:
+
+FDOs
+
+ranking operacional
+
+y su primera visualización
+

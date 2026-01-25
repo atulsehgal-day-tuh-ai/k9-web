@@ -1,0 +1,3460 @@
+- id: MRA_TA_001
+  nombre_tarea: Operación de perforadoras rotativas en frentes de voladura
+  descripcion: Operar perforadoras rotativas de gran tamaño (ej. DML, Pit Viper) para
+    la creación de pozos de voladura. Esta tarea implica el posicionamiento preciso
+    del mástil de perforación en puntos predefinidos por el plan de perforación, con
+    una tolerancia de +/- 0.5 metros, sobre terrenos irregulares que pueden presentar
+    pendientes de hasta 15 grados y condiciones de baja visibilidad por polvo o niebla.
+    Además, el operador debe realizar inspecciones diarias del equipo y el mantenimiento
+    básico en altura, como la lubricación de la broca y el cambio de herramientas
+    de corte en la torre (a una altura de 3 a 5 metros), lo que requiere el uso de
+    plataformas y escaleras integradas al equipo.
+  id_rol: MRA_ROL_01
+  riesgos_asociados:
+  - R01
+  controles_criticos_asociados:
+  - R01CC01
+  - R01CC02
+  - R01CC03
+  - R01CC04
+  - R01CC05
+  - R01CC06
+  - R01CP01
+  - R01CP02
+  - R01CP03
+  - R01CP04
+  - R01CP05
+  - R01CP06
+  factores_de_exposicion:
+  - FE_001
+  - FE_002
+  - FE_003
+  necesidades_epp:
+  - EPP_004
+  - EPP_005
+  - EPP_001
+  - EPP_002
+  - EPP_003
+  - EPP_006
+  area_operacional: MRA
+- id: MRA_TA_002
+  nombre_tarea: Supervisión y mitigación de proyección de fragmentos durante perforación
+  descripcion: Supervisar y mitigar activamente la proyección de fragmentos de roca
+    o escombros (flyrock) durante las fases de perforación y retiro de la broca. Esto
+    incluye el monitoreo visual constante de la zona de trabajo (un radio de 50 metros
+    alrededor de la perforadora) y la activación de alarmas sonoras para alertar al
+    personal cercano. La tarea se realiza bajo condiciones de alta vibración y ruido
+    constante (>85 dB), requiriendo atención a las condiciones del terreno y la presencia
+    de material inestable en el pozo.
+  id_rol: MRA_ROL_01
+  riesgos_asociados:
+  - R02
+  controles_criticos_asociados:
+  - R02CC01
+  - R02CC02
+  - R02CC03
+  - R02CC04
+  - R02CC05
+  - R02CC06
+  - R02CP01
+  - R02CP02
+  - R02CP03
+  - R02CP04
+  - R02CP05
+  - R02CP06
+  factores_de_exposicion:
+  - FE_004
+  - FE_005
+  - FE_006
+  necesidades_epp:
+  - EPP_001
+  - EPP_002
+  - EPP_005
+  - EPP_003
+  - EPP_007
+  - EPP_008
+  - EPP_010
+  area_operacional: MRA
+- id: MRA_TA_003
+  nombre_tarea: Mantenimiento eléctrico de perforadoras con sistema LOTO
+  descripcion: Realizar el mantenimiento preventivo y correctivo de los sistemas eléctricos
+    de la perforadora (circuitos de 1.000V AC), incluyendo la revisión de cableado,
+    la verificación de aislamiento, y la sustitución de componentes como contactores
+    o relés. Esto implica trabajar en tableros eléctricos y cerca de motores de gran
+    tamaño. Se deben aplicar procedimientos de bloqueo y etiquetado (LOTO) estrictos.
+  id_rol: MRA_ROL_01
+  riesgos_asociados:
+  - R03
+  controles_criticos_asociados:
+  - R03CC01
+  - R03CC02
+  - R03CC03
+  - R03CC04
+  - R03CC05
+  - R03CC06
+  - R03CP01
+  - R03CP02
+  - R03CP03
+  - R03CP04
+  - R03CP05
+  - R03CP06
+  factores_de_exposicion:
+  - FE_007
+  - FE_008
+  - FE_009
+  necesidades_epp:
+  - EPP_012
+  - EPP_013
+  - EPP_014
+  - EPP_015
+  - EPP_016
+  - EPP_017
+  - EPP_018
+  - EPP_019
+  - EPP_020
+  area_operacional: MRA
+- id: MRA_TA_004
+  nombre_tarea: Inspección y mantenimiento en altura de componentes de pala
+  descripcion: Realizar inspecciones preoperacionales y mantenimiento básico en componentes
+    elevados de la pala (ej. pluma, balde, pasarelas superiores), que pueden estar
+    a alturas de hasta 10-15 metros. Esto implica el acceso mediante escaleras fijas
+    o plataformas integradas, y la necesidad de trabajar en espacios confinados o
+    con visibilidad limitada.
+  id_rol: MRA_ROL_02
+  riesgos_asociados:
+  - R01
+  controles_criticos_asociados:
+  - R01CC01
+  - R01CC02
+  - R01CC03
+  - R01CC04
+  - R01CC05
+  - R01CC06
+  - R01CP01
+  - R01CP02
+  - R01CP03
+  - R01CP04
+  - R01CP05
+  - R01CP06
+  factores_de_exposicion:
+  - FE_010
+  - FE_011
+  - FE_012
+  necesidades_epp:
+  - EPP_004
+  - EPP_001
+  - EPP_002
+  - EPP_003
+  - EPP_007
+  - EPP_010
+  - EPP_011
+  area_operacional: MRA
+- id: MRA_TA_005
+  nombre_tarea: Coordinación segura de carguío de camiones con pala
+  descripcion: Supervisar y coordinar el carguío de camiones, asegurando que no haya
+    personal bajo el balde de la pala y que las rocas se carguen de forma segura.
+    El riesgo principal es la caída de rocas o material desde el balde durante la
+    manipulación o el transporte, lo que podría golpear camiones, equipos o personal
+    cercano. Se deben establecer zonas de exclusión.
+  id_rol: MRA_ROL_02
+  riesgos_asociados:
+  - R02
+  controles_criticos_asociados:
+  - R02CC01
+  - R02CC02
+  - R02CC03
+  - R02CC04
+  - R02CC05
+  - R02CC06
+  - R02CP01
+  - R02CP02
+  - R02CP03
+  - R02CP04
+  - R02CP05
+  - R02CP06
+  factores_de_exposicion:
+  - FE_013
+  - FE_014
+  - FE_015
+  necesidades_epp:
+  - EPP_001
+  - EPP_002
+  - EPP_003
+  - EPP_010
+  - EPP_005
+  - EPP_065
+  - EPP_066
+  area_operacional: MRA
+- id: MRA_TA_006
+  nombre_tarea: Verificación de sistemas eléctricos de alta tensión en pala
+  descripcion: Monitorear y realizar verificaciones de rutina en los sistemas eléctricos
+    de alta tensión (6.6kV AC) de la pala, incluyendo la revisión de los paneles de
+    control, el estado de los cables de arrastre y las conexiones a tierra. Aunque
+    no se interviene directamente en los circuitos energizados, existe el riesgo de
+    descarga estática o contacto indirecto con tensión residual.
+  id_rol: MRA_ROL_02
+  riesgos_asociados:
+  - R03
+  controles_criticos_asociados:
+  - R03CC01
+  - R03CC02
+  - R03CC03
+  - R03CC04
+  - R03CC05
+  - R03CC06
+  - R03CP01
+  - R03CP02
+  - R03CP03
+  - R03CP04
+  - R03CP05
+  - R03CP06
+  factores_de_exposicion:
+  - FE_016
+  - FE_017
+  - FE_018
+  necesidades_epp:
+  - EPP_012
+  - EPP_013
+  - EPP_014
+  - EPP_015
+  - EPP_016
+  - EPP_017
+  - EPP_019
+  area_operacional: MRA
+- id: MRA_TA_007
+  nombre_tarea: Conducción segura de camiones de extracción en mina rajo
+  descripcion: Conducir camiones de extracción de gran tonelaje (ej. 240T-400T) por
+    rampas con pendientes de hasta 10-12 grados y caminos irregulares en la mina.
+    Esto implica un monitoreo constante del terreno, la velocidad y la distancia a
+    otros equipos. El riesgo es el volcamiento del camión o la colisión con otros
+    vehículos o equipos debido a condiciones del camino, errores de operación o fallas
+    mecánicas.
+  id_rol: MRA_ROL_03
+  riesgos_asociados:
+  - R01
+  controles_criticos_asociados:
+  - R01CC01
+  - R01CC02
+  - R01CC03
+  - R01CC04
+  - R01CC05
+  - R01CC06
+  - R01CP01
+  - R01CP02
+  - R01CP03
+  - R01CP04
+  - R01CP05
+  - R01CP06
+  factores_de_exposicion:
+  - FE_019
+  - FE_020
+  - FE_021
+  necesidades_epp:
+  - EPP_001
+  - EPP_002
+  - EPP_003
+  - EPP_005
+  - EPP_010
+  - EPP_065
+  area_operacional: MRA
+- id: MRA_TA_008
+  nombre_tarea: Maniobras de carguío y descarga de mineral con camiones
+  descripcion: Realizar el carguío de mineral desde la pala eléctrica y la descarga
+    en la chancadora o botaderos. Esto implica posicionar el camión de forma precisa
+    bajo la pala y luego maniobrar en la zona de descarga. El riesgo es la caída de
+    material durante el carguío, el golpe con la pala o el equipo de descarga, o la
+    caída del camión en el botadero si no se respetan los bermas de seguridad.
+  id_rol: MRA_ROL_03
+  riesgos_asociados:
+  - R02
+  controles_criticos_asociados:
+  - R02CC01
+  - R02CC02
+  - R02CC03
+  - R02CC04
+  - R02CC05
+  - R02CC06
+  - R02CP01
+  - R02CP02
+  - R02CP03
+  - R02CP04
+  - R02CP05
+  - R02CP06
+  factores_de_exposicion:
+  - FE_022
+  - FE_023
+  - FE_024
+  necesidades_epp:
+  - EPP_001
+  - EPP_002
+  - EPP_003
+  - EPP_010
+  - EPP_005
+  - EPP_065
+  - EPP_066
+  area_operacional: MRA
+- id: MRA_TA_009
+  nombre_tarea: Verificación eléctrica diaria en camiones de extracción
+  descripcion: Realizar la verificación diaria de los sistemas eléctricos del camión
+    (luces, bocinas, sistema de encendido, baterías de 24V DC). Esto incluye la revisión
+    de conexiones y el estado de los bornes de las baterías. Aunque el voltaje es
+    bajo, existe el riesgo de cortocircuito o descarga leve al manipular los componentes
+    eléctricos sin las precauciones adecuadas.
+  id_rol: MRA_ROL_03
+  riesgos_asociados:
+  - R03
+  controles_criticos_asociados:
+  - R03CC01
+  - R03CC02
+  - R03CC03
+  - R03CC04
+  - R03CC05
+  - R03CC06
+  - R03CP01
+  - R03CP02
+  - R03CP03
+  - R03CP04
+  - R03CP05
+  - R03CP06
+  factores_de_exposicion:
+  - FE_025
+  - FE_026
+  - FE_027
+  necesidades_epp:
+  - EPP_001
+  - EPP_007
+  - EPP_002
+  - EPP_003
+  area_operacional: MRA
+- id: MRA_TA_010
+  nombre_tarea: Operación de cargador frontal en frentes y acopios
+  descripcion: Manejar el cargador frontal en pilas de acopio o frentes de carguío,
+    lo que implica operar el balde para cargar material en camiones o tolvas. El terreno
+    es irregular, con pendientes suaves y constante movimiento de equipos. El riesgo
+    es el volcamiento del equipo en terrenos inestables, la caída desde la cabina
+    (en caso de mantenimiento) o la colisión con otros equipos o vehículos.
+  id_rol: MRA_ROL_04
+  riesgos_asociados:
+  - R01
+  controles_criticos_asociados:
+  - R01CC01
+  - R01CC02
+  - R01CC03
+  - R01CC04
+  - R01CC05
+  - R01CC06
+  - R01CP01
+  - R01CP02
+  - R01CP03
+  - R01CP04
+  - R01CP05
+  - R01CP06
+  factores_de_exposicion:
+  - FE_028
+  - FE_029
+  - FE_030
+  necesidades_epp:
+  - EPP_001
+  - EPP_002
+  - EPP_003
+  - EPP_010
+  - EPP_005
+  - EPP_065
+  area_operacional: MRA
+- id: MRA_TA_011
+  nombre_tarea: Carguío de material fragmentado en frentes de trabajo
+  descripcion: Cargar material fragmentado (mineral o estéril) desde el frente de
+    carguío o pilas de acopio a camiones de extracción o tolvas. El riesgo es la caída
+    de material durante el carguío, el golpe con la pluma o el balde del cargador,
+    o el impacto con rocas proyectadas desde el frente. Se debe mantener una distancia
+    segura a los camiones y al frente de trabajo.
+  id_rol: MRA_ROL_04
+  riesgos_asociados:
+  - R02
+  controles_criticos_asociados:
+  - R02CC01
+  - R02CC02
+  - R02CC03
+  - R02CC04
+  - R02CC05
+  - R02CC06
+  - R02CP01
+  - R02CP02
+  - R02CP03
+  - R02CP04
+  - R02CP05
+  - R02CP06
+  factores_de_exposicion:
+  - FE_031
+  - FE_032
+  - FE_033
+  necesidades_epp:
+  - EPP_001
+  - EPP_002
+  - EPP_003
+  - EPP_010
+  - EPP_005
+  - EPP_065
+  - EPP_066
+  area_operacional: MRA
+- id: MRA_TA_012
+  nombre_tarea: Revisión de sistemas eléctricos en cargadores frontales
+  descripcion: Realizar la revisión de los sistemas eléctricos del cargador frontal
+    (luces, bocinas, tablero de control de 24V DC, baterías). Esto implica verificar
+    el estado de los fusibles, conexiones y bornes de baterías. Aunque es baja tensión,
+    existe riesgo de cortocircuito o descarga leve si no se manipulan los componentes
+    correctamente.
+  id_rol: MRA_ROL_04
+  riesgos_asociados:
+  - R03
+  controles_criticos_asociados:
+  - R03CC01
+  - R03CC02
+  - R03CC03
+  - R03CC04
+  - R03CC05
+  - R03CC06
+  - R03CP01
+  - R03CP02
+  - R03CP03
+  - R03CP04
+  - R03CP05
+  - R03CP06
+  factores_de_exposicion:
+  - FE_025
+  - FE_026
+  - FE_034
+  necesidades_epp:
+  - EPP_001
+  - EPP_007
+  - EPP_002
+  - EPP_003
+  area_operacional: MRA
+- id: MRA_TA_013
+  nombre_tarea: Mantenimiento mecánico en tren de fuerza y sistemas hidráulicos
+  descripcion: Realizar mantenimiento mecánico en sistemas de propulsión, frenos,
+    o hidráulicos de equipos pesados (camiones, palas, perforadoras). Esto puede implicar
+    el trabajo bajo el equipo (en zanjas de mantenimiento), en altura (para motores
+    o transmisiones elevadas) o en espacios reducidos. Se requiere el uso de herramientas
+    pesadas y equipos de levante.
+  id_rol: MRA_ROL_05
+  riesgos_asociados:
+  - R01
+  controles_criticos_asociados:
+  - R01CC01
+  - R01CC02
+  - R01CC03
+  - R01CC04
+  - R01CC05
+  - R01CC06
+  - R01CP01
+  - R01CP02
+  - R01CP03
+  - R01CP04
+  - R01CP05
+  - R01CP06
+  factores_de_exposicion:
+  - FE_035
+  - FE_036
+  - FE_037
+  necesidades_epp:
+  - EPP_001
+  - EPP_002
+  - EPP_003
+  - EPP_007
+  - EPP_009
+  - EPP_010
+  - EPP_004
+  area_operacional: MRA
+- id: MRA_TA_014
+  nombre_tarea: Reemplazo de componentes pesados en equipos móviles
+  descripcion: Realizar el reemplazo de componentes pesados (ej. neumáticos de camión,
+    baldes de pala, motores de perforadora) utilizando grúas, puentes grúa o equipos
+    de levante. El riesgo es la caída del componente durante el izaje, el impacto
+    con el personal o equipos cercanos, o el aplastamiento por componentes mal asegurados.
+    Se deben seguir estrictos procedimientos de izaje seguro.
+  id_rol: MRA_ROL_05
+  riesgos_asociados:
+  - R02
+  controles_criticos_asociados:
+  - R02CC01
+  - R02CC02
+  - R02CC03
+  - R02CC04
+  - R02CC05
+  - R02CC06
+  - R02CP01
+  - R02CP02
+  - R02CP03
+  - R02CP04
+  - R02CP05
+  - R02CP06
+  factores_de_exposicion:
+  - FE_038
+  - FE_039
+  - FE_040
+  necesidades_epp:
+  - EPP_001
+  - EPP_002
+  - EPP_003
+  - EPP_007
+  - EPP_009
+  - EPP_010
+  - EPP_005
+  - EPP_065
+  - EPP_066
+  area_operacional: MRA
+- id: MRA_TA_015
+  nombre_tarea: Diagnóstico y reparación de fallas eléctricas en equipos de mina
+  descripcion: Diagnosticar y reparar fallas eléctricas en sistemas de control (24V
+    DC), iluminación o baterías de equipos pesados. Esto implica la manipulación de
+    cableado, conectores y fusibles. Aunque es baja tensión, existe riesgo de cortocircuito,
+    descarga leve o incendio por mala conexión o cableado dañado.
+  id_rol: MRA_ROL_05
+  riesgos_asociados:
+  - R03
+  controles_criticos_asociados:
+  - R03CC01
+  - R03CC02
+  - R03CC03
+  - R03CC04
+  - R03CC05
+  - R03CC06
+  - R03CP01
+  - R03CP02
+  - R03CP03
+  - R03CP04
+  - R03CP05
+  - R03CP06
+  factores_de_exposicion:
+  - FE_025
+  - FE_041
+  - FE_027
+  necesidades_epp:
+  - EPP_012
+  - EPP_007
+  - EPP_002
+  - EPP_003
+  area_operacional: MRA
+- id: MRA_TA_016
+  nombre_tarea: Levantamientos topográficos en áreas operativas
+  descripcion: Realizar levantamientos topográficos en frentes de trabajo, bancos
+    y caminos de la mina, que pueden incluir terrenos irregulares, pendientes y cercanía
+    a áreas de perforación o carguío. El trabajo se realiza a pie, transportando equipos
+    topográficos. El riesgo es la caída al mismo o distinto nivel debido a tropiezos,
+    resbalones, o desniveles no previstos.
+  id_rol: MRA_ROL_06
+  riesgos_asociados:
+  - R01
+  controles_criticos_asociados:
+  - R01CC01
+  - R01CC02
+  - R01CC03
+  - R01CC04
+  - R01CC05
+  - R01CC06
+  - R01CP01
+  - R01CP02
+  - R01CP03
+  - R01CP04
+  - R01CP05
+  - R01CP06
+  factores_de_exposicion:
+  - FE_042
+  - FE_043
+  - FE_044
+  necesidades_epp:
+  - EPP_001
+  - EPP_002
+  - EPP_003
+  - EPP_010
+  - EPP_007
+  - EPP_005
+  area_operacional: MRA
+- id: MRA_TA_017
+  nombre_tarea: Instalación y retiro de prismas topográficos en terreno
+  descripcion: Instalar y retirar prismas de topografía en puntos específicos del
+    terreno, lo que puede implicar la manipulación de objetos pequeños en altura (ej.
+    postes de prisma) o la exposición a la caída de pequeñas rocas en taludes inestables.
+    Se debe coordinar con los operadores de equipo pesado para asegurar que la zona
+    esté despejada.
+  id_rol: MRA_ROL_06
+  riesgos_asociados:
+  - R02
+  controles_criticos_asociados:
+  - R02CC01
+  - R02CC02
+  - R02CC03
+  - R02CC04
+  - R02CC05
+  - R02CC06
+  - R02CP01
+  - R02CP02
+  - R02CP03
+  - R02CP04
+  - R02CP05
+  - R02CP06
+  factores_de_exposicion:
+  - FE_045
+  - FE_046
+  - FE_047
+  necesidades_epp:
+  - EPP_001
+  - EPP_002
+  - EPP_003
+  - EPP_007
+  - EPP_010
+  - EPP_065
+  - EPP_066
+  area_operacional: MRA
+- id: MRA_TA_018
+  nombre_tarea: Uso de equipos electrónicos de medición topográfica
+  descripcion: Utilizar equipos electrónicos de topografía (estaciones totales, GPS)
+    que funcionan con baterías. La tarea implica la recarga de baterías, la revisión
+    de conexiones y el manejo de equipos electrónicos. El riesgo es bajo, pero existe
+    la posibilidad de cortocircuito o descarga leve al manipular las baterías o el
+    cableado si no se tienen las precauciones básicas.
+  id_rol: MRA_ROL_06
+  riesgos_asociados:
+  - R03
+  controles_criticos_asociados:
+  - R03CC01
+  - R03CC02
+  - R03CC03
+  - R03CC04
+  - R03CC05
+  - R03CC06
+  - R03CP01
+  - R03CP02
+  - R03CP03
+  - R03CP04
+  - R03CP05
+  - R03CP06
+  factores_de_exposicion:
+  - FE_048
+  - FE_049
+  - FE_050
+  necesidades_epp:
+  - EPP_001
+  - EPP_007
+  - EPP_002
+  - EPP_003
+  area_operacional: MRA
+- id: MRA_TA_019
+  nombre_tarea: Inspecciones operacionales y de seguridad en terreno
+  descripcion: Realizar inspecciones de seguridad y operacionales en todas las áreas
+    de la mina (frentes, rampas, botaderos, zonas de carguío), lo que implica el tránsito
+    por terrenos irregulares, pendientes y la cercanía a equipos en movimiento. El
+    supervisor debe asegurar que el personal cumpla con los procedimientos de trabajo
+    seguro.
+  id_rol: MRA_ROL_07
+  riesgos_asociados:
+  - R01
+  controles_criticos_asociados:
+  - R01CC01
+  - R01CC02
+  - R01CC03
+  - R01CC04
+  - R01CC05
+  - R01CC06
+  - R01CP01
+  - R01CP02
+  - R01CP03
+  - R01CP04
+  - R01CP05
+  - R01CP06
+  factores_de_exposicion:
+  - FE_051
+  - FE_052
+  - FE_053
+  necesidades_epp:
+  - EPP_001
+  - EPP_002
+  - EPP_003
+  - EPP_010
+  - EPP_005
+  - EPP_065
+  area_operacional: MRA
+- id: MRA_TA_020
+  nombre_tarea: Supervisión de operaciones de perforación, carguío y transporte
+  descripcion: Supervisar las operaciones de perforación, carguío y transporte, asegurando
+    que se mantengan las zonas de exclusión y que los operadores manejen el equipo
+    de forma segura. El riesgo es la caída de objetos (rocas, herramientas) o el impacto
+    por equipos en movimiento si no se respetan los controles. El supervisor monitorea
+    el cumplimiento de las normas.
+  id_rol: MRA_ROL_07
+  riesgos_asociados:
+  - R02
+  controles_criticos_asociados:
+  - R02CC01
+  - R02CC02
+  - R02CC03
+  - R02CC04
+  - R02CC05
+  - R02CC06
+  - R02CP01
+  - R02CP02
+  - R02CP03
+  - R02CP04
+  - R02CP05
+  - R02CP06
+  factores_de_exposicion:
+  - FE_054
+  - FE_055
+  - FE_056
+  necesidades_epp:
+  - EPP_001
+  - EPP_002
+  - EPP_003
+  - EPP_010
+  - EPP_005
+  - EPP_065
+  - EPP_066
+  area_operacional: MRA
+- id: MRA_TA_021
+  nombre_tarea: Supervisión de trabajos eléctricos en equipos de gran tamaño
+  descripcion: Supervisar trabajos con riesgo eléctrico (ej. mantenimiento de palas
+    o perforadoras), asegurando la aplicación de procedimientos LOTO, el uso de EPP
+    dieléctrico y el mantenimiento de distancias de seguridad. Aunque no manipula
+    directamente equipos, el supervisor es responsable de la verificación del cumplimiento
+    de los controles críticos.
+  id_rol: MRA_ROL_07
+  riesgos_asociados:
+  - R03
+  controles_criticos_asociados:
+  - R03CC01
+  - R03CC02
+  - R03CC03
+  - R03CC04
+  - R03CC05
+  - R03CC06
+  - R03CP01
+  - R03CP02
+  - R03CP03
+  - R03CP04
+  - R03CP05
+  - R03CP06
+  factores_de_exposicion:
+  - FE_057
+  - FE_058
+  - FE_059
+  necesidades_epp:
+  - EPP_012
+  - EPP_002
+  - EPP_014
+  - EPP_010
+  - EPP_063
+  area_operacional: MRA
+- id: MRA_TA_022
+  nombre_tarea: Dirección y control de tráfico de equipos en zonas de carguío
+  descripcion: Dirigir el tráfico de vehículos livianos y pesados (camiones, perforadoras)
+    en la red de caminos de la mina, incluyendo intersecciones, rampas y zonas de
+    carguío/descarga. Esta tarea se realiza a pie en terreno con visibilidad variable
+    (polvo, noche, lluvia) y requiere movimientos ágiles para posicionarse de forma
+    segura y efectiva. El riesgo es el impacto por equipos en movimiento, que pueden
+    tener puntos ciegos significativos.
+  id_rol: MRA_ROL_08
+  riesgos_asociados:
+  - R01
+  controles_criticos_asociados:
+  - R01CC01
+  - R01CC02
+  - R01CC03
+  - R01CC04
+  - R01CC05
+  - R01CC06
+  - R01CP01
+  - R01CP02
+  - R01CP03
+  - R01CP04
+  - R01CP05
+  - R01CP06
+  factores_de_exposicion:
+  - FE_060
+  - FE_061
+  - FE_062
+  necesidades_epp:
+  - EPP_001
+  - EPP_002
+  - EPP_003
+  - EPP_004
+  - EPP_005
+  - EPP_006
+  area_operacional: MRA
+- id: CHP_TA_001
+  nombre_tarea: Acceso seguro a puntos de muestreo y observación en interior de equipos
+  descripcion: Acceder a puntos de muestreo y observación en el interior de la planta
+    de chancado, lo que implica transitar por pasarelas elevadas (hasta 8 metros de
+    altura) sobre las tolvas de alimentación y alrededor de la boca del chancador.
+    La tarea requiere el uso de escaleras verticales y la apertura de compuertas de
+    acceso, a menudo en condiciones de polvo denso, vibración constante y ruido elevado
+    (>90 dB).
+  id_rol: CHP_ROL_01
+  riesgos_asociados:
+  - R01
+  controles_criticos_asociados:
+  - R01CC01
+  - R01CC02
+  - R01CC03
+  - R01CC04
+  - R01CC05
+  - R01CC06
+  - R01CP01
+  - R01CP02
+  - R01CP03
+  - R01CP04
+  - R01CP05
+  - R01CP06
+  factores_de_exposicion:
+  - FE_063
+  - FE_064
+  necesidades_epp:
+  - EPP_004
+  - EPP_005
+  - EPP_006
+  area_operacional: CHP
+- id: CHP_TA_002
+  nombre_tarea: Monitoreo visual del proceso de chancado y gestión de alertas locales
+  descripcion: Monitorear visualmente el proceso de chancado y gestionar la alimentación
+    de mineral para prevenir atascamientos. Esto incluye la observación de la boca
+    del chancador (con un diámetro de 3 a 5 metros) desde una distancia segura (>10
+    metros), pero con el riesgo de proyección de fragmentos de roca (flyrock) o partículas
+    finas a alta velocidad, especialmente durante la liberación de material atascado.
+  id_rol: CHP_ROL_01
+  riesgos_asociados:
+  - R02
+  controles_criticos_asociados:
+  - R02CC01
+  - R02CC02
+  - R02CC03
+  - R02CC04
+  - R02CC05
+  - R02CC06
+  - R02CP01
+  - R02CP02
+  - R02CP03
+  - R02CP04
+  - R02CP05
+  - R02CP06
+  factores_de_exposicion:
+  - FE_065
+  - FE_066
+  necesidades_epp:
+  - EPP_001
+  - EPP_002
+  - EPP_003
+  - EPP_005
+  - EPP_006
+  - EPP_010
+  area_operacional: CHP
+- id: CHP_TA_003
+  nombre_tarea: Mantenimiento y reparación en pasarelas elevadas de la planta
+  descripcion: Realizar mantenimiento y reparaciones en pasarelas elevadas y plataformas
+    de servicio del chancador (entre 5 y 10 metros de altura). Esto incluye el uso
+    de equipos de izaje para mover componentes pesados (ej. camisas del chancador)
+    y trabajar en áreas con presencia de aceite, grasa y superficies resbaladizas.
+    El riesgo es la caída desde altura o el aplastamiento por la manipulación de cargas.
+  id_rol: CHP_ROL_02
+  riesgos_asociados:
+  - R01
+  - R02
+  controles_criticos_asociados:
+  - R01CC01
+  - R01CC02
+  - R01CC03
+  - R01CC04
+  - R01CC05
+  - R01CC06
+  - R01CP01
+  - R01CP02
+  - R01CP03
+  - R01CP04
+  - R01CP05
+  - R01CP06
+  - R02CC01
+  - R02CC02
+  - R02CC03
+  - R02CC04
+  - R02CC05
+  - R02CC06
+  - R02CP01
+  - R02CP02
+  - R02CP03
+  - R02CP04
+  - R02CP05
+  - R02CP06
+  factores_de_exposicion:
+  - FE_067
+  - FE_068
+  necesidades_epp:
+  - EPP_004
+  - EPP_001
+  - EPP_002
+  - EPP_003
+  - EPP_007
+  - EPP_009
+  - EPP_010
+  - EPP_005
+  area_operacional: CHP
+- id: CHP_TA_004
+  nombre_tarea: Reemplazo de revestimientos y piezas de desgaste en chancadores
+  descripcion: Realizar el cambio de revestimientos y piezas de desgaste en el interior
+    del chancador, lo que implica ingresar a espacios confinados después de un procedimiento
+    de bloqueo y etiquetado (LOTO). La tarea se realiza en condiciones de suciedad,
+    polvo y en ocasiones, humedad. El riesgo es el atrapamiento por movimientos inesperados
+    del equipo, o la caída de herramientas/piezas dentro del chancador.
+  id_rol: CHP_ROL_02
+  riesgos_asociados:
+  - R02
+  controles_criticos_asociados:
+  - R02CC01
+  - R02CC02
+  - R02CC03
+  - R02CC04
+  - R02CC05
+  - R02CC06
+  - R02CP01
+  - R02CP02
+  - R02CP03
+  - R02CP04
+  - R02CP05
+  - R02CP06
+  factores_de_exposicion:
+  - FE_069
+  - FE_070
+  necesidades_epp:
+  - EPP_001
+  - EPP_002
+  - EPP_003
+  - EPP_007
+  - EPP_009
+  - EPP_006
+  - EPP_010
+  area_operacional: CHP
+- id: CHP_TA_005
+  nombre_tarea: Diagnóstico y reparación de fallas en el sistema hidráulico de equipos
+  descripcion: Realizar reparaciones y diagnósticos en el sistema hidráulico y de
+    lubricación del chancador, que incluye trabajar con fluidos a alta presión (hasta
+    300 bar) y altas temperaturas (hasta 80°C). El riesgo es la inyección de fluidos
+    a presión en la piel, quemaduras por contacto con superficies calientes o fugas
+    de aceite, o resbalones por derrames.
+  id_rol: CHP_ROL_02
+  riesgos_asociados: []
+  controles_criticos_asociados: []
+  factores_de_exposicion:
+  - FE_071
+  - FE_072
+  necesidades_epp:
+  - EPP_001
+  - EPP_002
+  - EPP_003
+  - EPP_021
+  - EPP_022
+  - EPP_007
+  - EPP_008
+  area_operacional: CHP
+- id: CHP_TA_006
+  nombre_tarea: Inspección y mantenimiento de correas transportadoras en planta
+  descripcion: Realizar la inspección y el mantenimiento de las correas transportadoras,
+    que incluye caminar a lo largo de las estructuras elevadas (hasta 10 metros de
+    altura) y trabajar cerca de los puntos de transferencia. La tarea implica la limpieza
+    de derrames, el ajuste de rodillos y la detección de desalineaciones. El riesgo
+    es el atrapamiento por las partes móviles de la cinta o la caída desde altura.
+  id_rol: CHP_ROL_03
+  riesgos_asociados:
+  - R01
+  controles_criticos_asociados:
+  - R01CC01
+  - R01CC02
+  - R01CC03
+  - R01CC04
+  - R01CC05
+  - R01CC06
+  - R01CP01
+  - R01CP02
+  - R01CP03
+  - R01CP04
+  - R01CP05
+  - R01CP06
+  factores_de_exposicion:
+  - FE_073
+  - FE_074
+  necesidades_epp:
+  - EPP_001
+  - EPP_002
+  - EPP_003
+  - EPP_004
+  - EPP_005
+  - EPP_007
+  - EPP_010
+  area_operacional: CHP
+- id: CHP_TA_007
+  nombre_tarea: Supervisión de flujo de material en puntos de transferencia
+  descripcion: Supervisar el flujo de material en los puntos de transferencia de las
+    correas, donde hay una mayor concentración de polvo y ruido. El riesgo es la proyección
+    de partículas finas de mineral, el impacto por rocas atascadas o la exposición
+    a niveles de ruido elevados. Se debe coordinar con el operador del chancador y
+    del área de control.
+  id_rol: CHP_ROL_03
+  riesgos_asociados:
+  - R02
+  controles_criticos_asociados:
+  - R02CC01
+  - R02CC02
+  - R02CC03
+  - R02CC04
+  - R02CC05
+  - R02CC06
+  - R02CP01
+  - R02CP02
+  - R02CP03
+  - R02CP04
+  - R02CP05
+  - R02CP06
+  factores_de_exposicion:
+  - FE_075
+  - FE_076
+  necesidades_epp:
+  - EPP_001
+  - EPP_002
+  - EPP_003
+  - EPP_005
+  - EPP_006
+  - EPP_010
+  area_operacional: CHP
+- id: CHP_TA_008
+  nombre_tarea: Operación de puente grúa para traslado de componentes pesados
+  descripcion: Operar puentes grúa para el movimiento de componentes pesados (ej.
+    brocas de perforadora, baldes de pala para mantenimiento) dentro del área del
+    chancador. La tarea se realiza desde una cabina elevada o mediante control remoto,
+    con el riesgo de caída de la carga, colisión con estructuras o equipos, o atrapamiento
+    del personal en el área de operación.
+  id_rol: CHP_ROL_04
+  riesgos_asociados:
+  - R02
+  controles_criticos_asociados:
+  - R02CC01
+  - R02CC02
+  - R02CC03
+  - R02CC04
+  - R02CC05
+  - R02CC06
+  - R02CP01
+  - R02CP02
+  - R02CP03
+  - R02CP04
+  - R02CP05
+  - R02CP06
+  factores_de_exposicion:
+  - FE_077
+  - FE_078
+  necesidades_epp:
+  - EPP_001
+  - EPP_002
+  - EPP_003
+  - EPP_005
+  - EPP_010
+  - EPP_065
+  - EPP_066
+  area_operacional: CHP
+- id: CHP_TA_009
+  nombre_tarea: Monitoreo de sistemas de control de planta de chancado primario
+  descripcion: Monitorear los sistemas de control de la planta de chancado desde una
+    sala de control centralizada. Aunque el riesgo directo de caídas, golpes o contacto
+    eléctrico es bajo, la tarea implica la exposición a largas horas frente a pantallas
+    y un entorno de trabajo con posible ruido constante de fondo. La sala de control
+    está elevada para tener una visión general de la planta.
+  id_rol: CHP_ROL_05
+  riesgos_asociados: []
+  controles_criticos_asociados: []
+  factores_de_exposicion:
+  - FE_079
+  - FE_080
+  necesidades_epp:
+  - EPP_001
+  - EPP_002
+  - EPP_003
+  - EPP_005
+  - EPP_067
+  - EPP_068
+  area_operacional: CHP
+- id: CHP_TA_010
+  nombre_tarea: Coordinación de operaciones desde sala de control de chancado
+  descripcion: Coordinar las operaciones de la planta de chancado a través de sistemas
+    de comunicación por radio y teléfono, lo que requiere claridad y precisión en
+    las instrucciones. Un error en la comunicación puede llevar a incidentes operacionales,
+    como el carguío excesivo o insuficiente, o la operación de equipos sin la debida
+    autorización. El riesgo es indirecto.
+  id_rol: CHP_ROL_05
+  riesgos_asociados: []
+  controles_criticos_asociados: []
+  factores_de_exposicion:
+  - FE_081
+  - FE_082
+  necesidades_epp:
+  - EPP_001
+  - EPP_002
+  - EPP_003
+  - EPP_005
+  - EPP_065
+  area_operacional: CHP
+- id: CHP_TA_011
+  nombre_tarea: Muestreo y mapeo geológico en frentes de la planta de chancado
+  descripcion: Realizar muestreos y mapeos geológicos en los frentes de la chancadora
+    o en las pilas de acopio de mineral, lo que implica el tránsito por terrenos irregulares,
+    con presencia de rocas sueltas y en cercanía a equipos en movimiento. El riesgo
+    es la caída por desniveles o resbalones, o el impacto por equipos móviles si no
+    se mantiene la distancia de seguridad.
+  id_rol: CHP_ROL_06
+  riesgos_asociados:
+  - R01
+  controles_criticos_asociados:
+  - R01CC01
+  - R01CC02
+  - R01CC03
+  - R01CC04
+  - R01CC05
+  - R01CC06
+  - R01CP01
+  - R01CP02
+  - R01CP03
+  - R01CP04
+  - R01CP05
+  - R01CP06
+  factores_de_exposicion:
+  - FE_083
+  - FE_084
+  necesidades_epp:
+  - EPP_001
+  - EPP_002
+  - EPP_003
+  - EPP_010
+  - EPP_007
+  - EPP_005
+  - EPP_065
+  area_operacional: CHP
+- id: CHP_TA_012
+  nombre_tarea: Supervisión de condiciones geomecánicas del material chancado
+  descripcion: Supervisar las condiciones geomecánicas del material en las tolvas
+    de alimentación y en los frentes de chancado para detectar zonas inestables o
+    material sobredimensionado. El riesgo es la caída de rocas desde las paredes de
+    la tolva o la proyección de fragmentos si el material se desliza inesperadamente.
+    Se mantiene una distancia segura y se usan herramientas de inspección a distancia.
+  id_rol: CHP_ROL_06
+  riesgos_asociados:
+  - R02
+  controles_criticos_asociados:
+  - R02CC01
+  - R02CC02
+  - R02CC03
+  - R02CC04
+  - R02CC05
+  - R02CC06
+  - R02CP01
+  - R02CP02
+  - R02CP03
+  - R02CP04
+  - R02CP05
+  - R02CP06
+  factores_de_exposicion:
+  - FE_085
+  - FE_086
+  necesidades_epp:
+  - EPP_001
+  - EPP_002
+  - EPP_003
+  - EPP_010
+  - EPP_005
+  - EPP_066
+  area_operacional: CHP
+- id: CHP_TA_013
+  nombre_tarea: Mantenimiento y reparación de sistemas de bombeo de agua y lodos
+  descripcion: Realizar mantenimiento y reparaciones en sistemas de bombeo, ventiladores
+    y otros equipos mecánicos que se encuentran a diferentes niveles en la planta,
+    incluyendo espacios confinados (ej. debajo de correas) o áreas de difícil acceso.
+    Esto implica el uso de herramientas manuales y eléctricas, y el trabajo en condiciones
+    de ruido, polvo y humedad.
+  id_rol: CHP_ROL_07
+  riesgos_asociados:
+  - R01
+  controles_criticos_asociados:
+  - R01CC01
+  - R01CC02
+  - R01CC03
+  - R01CC04
+  - R01CC05
+  - R01CC06
+  - R01CP01
+  - R01CP02
+  - R01CP03
+  - R01CP04
+  - R01CP05
+  - R01CP06
+  factores_de_exposicion:
+  - FE_087
+  - FE_088
+  necesidades_epp:
+  - EPP_001
+  - EPP_002
+  - EPP_003
+  - EPP_004
+  - EPP_005
+  - EPP_006
+  - EPP_007
+  - EPP_009
+  - EPP_010
+  area_operacional: CHP
+- id: CHP_TA_014
+  nombre_tarea: Reemplazo de componentes mecánicos pesados en equipos de planta
+  descripcion: Realizar el reemplazo de componentes mecánicos pesados (ej. motores
+    de bombas, reductores, rodillos grandes) utilizando polipastos, tecles o grúas.
+    El riesgo es la caída de la carga durante el izaje, el impacto con el personal
+    o equipos, o el aplastamiento por componentes mal asegurados. Se deben seguir
+    estrictos procedimientos de izaje seguro y delimitar el área.
+  id_rol: CHP_ROL_07
+  riesgos_asociados:
+  - R02
+  controles_criticos_asociados:
+  - R02CC01
+  - R02CC02
+  - R02CC03
+  - R02CC04
+  - R02CC05
+  - R02CC06
+  - R02CP01
+  - R02CP02
+  - R02CP03
+  - R02CP04
+  - R02CP05
+  - R02CP06
+  factores_de_exposicion:
+  - FE_089
+  - FE_090
+  necesidades_epp:
+  - EPP_001
+  - EPP_002
+  - EPP_003
+  - EPP_007
+  - EPP_009
+  - EPP_010
+  - EPP_005
+  - EPP_065
+  - EPP_066
+  area_operacional: CHP
+- id: CHP_TA_015
+  nombre_tarea: Diagnóstico y reparación de fallas en sistemas de control automático
+  descripcion: Diagnosticar y reparar fallas en los sistemas de control de bombas,
+    válvulas o ventiladores, que pueden incluir la manipulación de cableado de baja
+    tensión (120V - 480V AC). El riesgo es el contacto directo con energía eléctrica,
+    cortocircuitos o arcos eléctricos de baja energía. Se deben aplicar procedimientos
+    de bloqueo y etiquetado (LOTO).
+  id_rol: CHP_ROL_07
+  riesgos_asociados:
+  - R03
+  controles_criticos_asociados:
+  - R03CC01
+  - R03CC02
+  - R03CC03
+  - R03CC04
+  - R03CC05
+  - R03CC06
+  - R03CP01
+  - R03CP02
+  - R03CP03
+  - R03CP04
+  - R03CP05
+  - R03CP06
+  factores_de_exposicion:
+  - FE_091
+  - FE_092
+  necesidades_epp:
+  - EPP_012
+  - EPP_013
+  - EPP_014
+  - EPP_015
+  - EPP_016
+  - EPP_017
+  - EPP_018
+  - EPP_019
+  - EPP_020
+  area_operacional: CHP
+- id: CHP_TA_016
+  nombre_tarea: Inspección y mantenimiento de tableros eléctricos en sala y equipos
+  descripcion: Realizar inspecciones y mantenimiento en tableros eléctricos de media
+    tensión (hasta 6.6kV) y motores de gran tamaño. Esto implica el uso de escaleras
+    o plataformas para acceder a los componentes, y la manipulación de herramientas
+    específicas para alto voltaje. El riesgo es la caída desde altura o el contacto
+    con componentes energizados.
+  id_rol: CHP_ROL_08
+  riesgos_asociados:
+  - R01
+  - R03
+  controles_criticos_asociados:
+  - R01CC01
+  - R01CC02
+  - R01CC03
+  - R01CC04
+  - R01CC05
+  - R01CC06
+  - R01CP01
+  - R01CP02
+  - R01CP03
+  - R01CP04
+  - R01CP05
+  - R01CP06
+  - R03CC01
+  - R03CC02
+  - R03CC03
+  - R03CC04
+  - R03CC05
+  - R03CC06
+  - R03CP01
+  - R03CP02
+  - R03CP03
+  - R03CP04
+  - R03CP05
+  - R03CP06
+  factores_de_exposicion:
+  - FE_093
+  - FE_094
+  necesidades_epp:
+  - EPP_012
+  - EPP_013
+  - EPP_014
+  - EPP_015
+  - EPP_016
+  - EPP_017
+  - EPP_018
+  - EPP_019
+  - EPP_020
+  area_operacional: CHP
+- id: CHP_TA_017
+  nombre_tarea: 'Intervención en sistemas de potencia: transformadores y celdas'
+  descripcion: Intervenir en sistemas de potencia (ej. transformadores, celdas de
+    media tensión) para realizar pruebas, diagnósticos o reparaciones. Esta tarea
+    requiere la aplicación estricta de procedimientos LOTO, la verificación de ausencia
+    de tensión y el uso de EPP con clasificación de arco eléctrico. El riesgo es la
+    exposición a un arco eléctrico de alta energía o la electrocución.
+  id_rol: CHP_ROL_08
+  riesgos_asociados:
+  - R03
+  controles_criticos_asociados:
+  - R03CC01
+  - R03CC02
+  - R03CC03
+  - R03CC04
+  - R03CC05
+  - R03CC06
+  - R03CP01
+  - R03CP02
+  - R03CP03
+  - R03CP04
+  - R03CP05
+  - R03CP06
+  factores_de_exposicion:
+  - FE_095
+  - FE_096
+  necesidades_epp:
+  - EPP_012
+  - EPP_013
+  - EPP_014
+  - EPP_015
+  - EPP_016
+  - EPP_017
+  - EPP_018
+  - EPP_019
+  - EPP_020
+  area_operacional: CHP
+- id: CHP_TA_018
+  nombre_tarea: Coordinación y supervisión de actividades de mantenimiento en planta
+  descripcion: Coordinar y supervisar todas las actividades de mantenimiento mecánico
+    y eléctrico en la planta de chancado, lo que implica el desplazamiento constante
+    por diferentes niveles de la planta (pasarelas, plataformas, áreas de piso). La
+    tarea incluye la verificación de la seguridad de los accesos temporales (andamios,
+    escaleras) y el cumplimiento de los procedimientos de trabajo en altura, con el
+    riesgo de caídas por condiciones del entorno.
+  id_rol: CHP_ROL_09
+  riesgos_asociados:
+  - R01
+  controles_criticos_asociados:
+  - R01CC01
+  - R01CC02
+  - R01CC03
+  - R01CC04
+  - R01CC05
+  - R01CC06
+  - R01CP01
+  - R01CP02
+  - R01CP03
+  - R01CP04
+  - R01CP05
+  - R01CP06
+  factores_de_exposicion:
+  - FE_097
+  - FE_098
+  necesidades_epp:
+  - EPP_001
+  - EPP_002
+  - EPP_003
+  - EPP_010
+  - EPP_005
+  - EPP_065
+  area_operacional: CHP
+- id: CHP_TA_019
+  nombre_tarea: Supervisión de izaje de componentes pesados y maniobras críticas
+  descripcion: Supervisar trabajos de izaje de componentes pesados y actividades de
+    mantenimiento que implican la manipulación de piezas o herramientas en altura.
+    El supervisor es responsable de asegurar que las áreas estén segregadas, que el
+    aparejo sea el correcto y que el personal cumpla con los procedimientos para evitar
+    la caída de objetos. Se mantiene a una distancia segura (>5 metros) de las cargas
+    suspendidas, pero monitoreando activamente la operación.
+  id_rol: CHP_ROL_09
+  riesgos_asociados:
+  - R02
+  controles_criticos_asociados:
+  - R02CC01
+  - R02CC02
+  - R02CC03
+  - R02CC04
+  - R02CC05
+  - R02CC06
+  - R02CP01
+  - R02CP02
+  - R02CP03
+  - R02CP04
+  - R02CP05
+  - R02CP06
+  factores_de_exposicion:
+  - FE_099
+  - FE_100
+  necesidades_epp:
+  - EPP_001
+  - EPP_002
+  - EPP_003
+  - EPP_010
+  - EPP_065
+  - EPP_066
+  area_operacional: CHP
+- id: CHP_TA_020
+  nombre_tarea: Supervisión directa de trabajos con riesgo eléctrico en la planta
+  descripcion: Supervisar directamente los trabajos con riesgo eléctrico, asegurando
+    que se apliquen rigurosamente los procedimientos LOTO, que se utilicen los EPP
+    adecuados y que se mantengan las distancias de seguridad. El rol del supervisor
+    es verificar el cumplimiento de los controles críticos, asumiendo un riesgo indirecto
+    en caso de que alguno de estos controles falle y el personal a su cargo sufra
+    un incidente eléctrico.
+  id_rol: CHP_ROL_09
+  riesgos_asociados:
+  - R03
+  controles_criticos_asociados:
+  - R03CC01
+  - R03CC02
+  - R03CC03
+  - R03CC04
+  - R03CC05
+  - R03CC06
+  - R03CP01
+  - R03CP02
+  - R03CP03
+  - R03CP04
+  - R03CP05
+  - R03CP06
+  factores_de_exposicion:
+  - FE_101
+  - FE_102
+  necesidades_epp:
+  - EPP_012
+  - EPP_002
+  - EPP_014
+  - EPP_063
+  area_operacional: CHP
+- id: TME_TA_001
+  nombre_tarea: Inspección visual y termográfica de equipos eléctricos en subestaciones
+  descripcion: Realizar inspecciones visuales y termográficas de equipos de media
+    tensión (subestaciones, transformadores, celdas) desde escaleras dieléctricas
+    o plataformas de trabajo temporales, a alturas de hasta 4 metros. Esto implica
+    el uso de cámaras termográficas y multímetros específicos para media tensión,
+    y el mantenimiento de distancias de seguridad a equipos energizados.
+  id_rol: TME_ROL_01
+  riesgos_asociados:
+  - R01
+  - R03
+  controles_criticos_asociados:
+  - R01CC01
+  - R01CC02
+  - R01CC03
+  - R01CC04
+  - R01CC05
+  - R01CC06
+  - R01CP01
+  - R01CP02
+  - R01CP03
+  - R01CP04
+  - R01CP05
+  - R01CP06
+  - R03CC01
+  - R03CC02
+  - R03CC03
+  - R03CC04
+  - R03CC05
+  - R03CC06
+  - R03CP01
+  - R03CP02
+  - R03CP03
+  - R03CP04
+  - R03CP05
+  - R03CP06
+  factores_de_exposicion:
+  - FE_103
+  - FE_104
+  necesidades_epp:
+  - EPP_012
+  - EPP_005
+  - EPP_013
+  - EPP_016
+  - EPP_003
+  - EPP_023
+  area_operacional: TME
+- id: TME_TA_002
+  nombre_tarea: Intervención en sistemas de media tensión para mantenimiento o pruebas
+  descripcion: Intervenir en sistemas de media tensión (6.6kV a 13.8kV) para realizar
+    mantenimiento preventivo, correctivo o pruebas. Esta tarea implica la aplicación
+    estricta de procedimientos LOTO, la verificación de tensión cero, y el uso de
+    EPP con clasificación de arco eléctrico de alto nivel (ej. 40 cal/cm²). El riesgo
+    es la exposición a un arco eléctrico o contacto directo con energía residual debido
+    a fallas en el aislamiento o errores en el procedimiento.
+  id_rol: TME_ROL_01
+  riesgos_asociados:
+  - R03
+  controles_criticos_asociados:
+  - R03CC01
+  - R03CC02
+  - R03CC03
+  - R03CC04
+  - R03CC05
+  - R03CC06
+  - R03CP01
+  - R03CP02
+  - R03CP03
+  - R03CP04
+  - R03CP05
+  - R03CP06
+  factores_de_exposicion:
+  - FE_105
+  - FE_106
+  necesidades_epp:
+  - EPP_012
+  - EPP_013
+  - EPP_014
+  - EPP_015
+  - EPP_016
+  - EPP_017
+  - EPP_018
+  - EPP_019
+  - EPP_020
+  - EPP_023
+  - EPP_024
+  area_operacional: TME
+- id: TME_TA_003
+  nombre_tarea: Acceso y verificación de instrumentos de campo en sistemas eléctricos
+  descripcion: Acceder a instrumentos de campo (sensores de presión, temperatura,
+    flujo) ubicados en pasarelas elevadas, racks de tuberías o en plataformas de equipos
+    de hasta 5 metros de altura. Esto implica el uso de escaleras portátiles o fijas,
+    y el trabajo en espacios a menudo reducidos, con el riesgo de caídas o tropiezos
+    con tuberías y cableado.
+  id_rol: TME_ROL_02
+  riesgos_asociados:
+  - R01
+  controles_criticos_asociados:
+  - R01CC01
+  - R01CC02
+  - R01CC03
+  - R01CC04
+  - R01CC05
+  - R01CC06
+  - R01CP01
+  - R01CP02
+  - R01CP03
+  - R01CP04
+  - R01CP05
+  - R01CP06
+  factores_de_exposicion:
+  - FE_107
+  - FE_108
+  necesidades_epp:
+  - EPP_001
+  - EPP_002
+  - EPP_003
+  - EPP_004
+  - EPP_005
+  area_operacional: TME
+- id: TME_TA_004
+  nombre_tarea: Calibración y reparación de sistemas de medición eléctrica
+  descripcion: Realizar calibraciones, diagnósticos y reparaciones en sistemas de
+    control y automatización (PLC, DCS), que implican la manipulación de cableado
+    de baja tensión (24V DC a 120V AC) y la conexión/desconexión de tarjetas electrónicas.
+    El riesgo es el contacto con tensión eléctrica, cortocircuitos que pueden dañar
+    equipos o causar quemaduras leves, o la descarga estática que puede afectar componentes
+    sensibles.
+  id_rol: TME_ROL_02
+  riesgos_asociados:
+  - R03
+  controles_criticos_asociados:
+  - R03CC01
+  - R03CC02
+  - R03CC03
+  - R03CC04
+  - R03CC05
+  - R03CC06
+  - R03CP01
+  - R03CP02
+  - R03CP03
+  - R03CP04
+  - R03CP05
+  - R03CP06
+  factores_de_exposicion:
+  - FE_109
+  - FE_110
+  necesidades_epp:
+  - EPP_012
+  - EPP_013
+  - EPP_014
+  - EPP_015
+  - EPP_016
+  - EPP_017
+  - EPP_019
+  area_operacional: TME
+- id: TME_TA_005
+  nombre_tarea: Supervisión de mantenimiento e inspección en subestaciones eléctricas
+  descripcion: Supervisar trabajos de mantenimiento o inspección en subestaciones
+    eléctricas, lo que puede implicar el ascenso a plataformas elevadas (hasta 3 metros)
+    para observar el estado de equipos como transformadores o disyuntores. El supervisor
+    debe asegurar que el personal a su cargo cumpla con los procedimientos de trabajo
+    en altura y las distancias de seguridad a equipos energizados.
+  id_rol: TME_ROL_03
+  riesgos_asociados:
+  - R01
+  - R03
+  controles_criticos_asociados:
+  - R01CC01
+  - R01CC02
+  - R01CC03
+  - R01CC04
+  - R01CC05
+  - R01CC06
+  - R01CP01
+  - R01CP02
+  - R01CP03
+  - R01CP04
+  - R01CP05
+  - R01CP06
+  - R03CC01
+  - R03CC02
+  - R03CC03
+  - R03CC04
+  - R03CC05
+  - R03CC06
+  - R03CP01
+  - R03CP02
+  - R03CP03
+  - R03CP04
+  - R03CP05
+  - R03CP06
+  factores_de_exposicion:
+  - FE_111
+  - FE_112
+  necesidades_epp:
+  - EPP_001
+  - EPP_002
+  - EPP_003
+  - EPP_010
+  - EPP_012
+  - EPP_014
+  area_operacional: TME
+- id: TME_TA_006
+  nombre_tarea: Autorización y monitoreo de procedimientos de bloqueo y etiquetado
+    (LOTO)
+  descripcion: Autorizar y monitorear la aplicación de procedimientos de bloqueo y
+    etiquetado (LOTO) en equipos de alta y media tensión dentro del taller y en campo.
+    El riesgo principal es la activación accidental de un equipo o la exposición a
+    energía residual si los procedimientos LOTO no se aplican correctamente o si el
+    supervisor omite la verificación. El supervisor no manipula directamente la energía,
+    pero su rol es crítico para la seguridad.
+  id_rol: TME_ROL_03
+  riesgos_asociados:
+  - R03
+  controles_criticos_asociados:
+  - R03CC01
+  - R03CC02
+  - R03CC03
+  - R03CC04
+  - R03CC05
+  - R03CC06
+  - R03CP01
+  - R03CP02
+  - R03CP03
+  - R03CP04
+  - R03CP05
+  - R03CP06
+  factores_de_exposicion:
+  - FE_113
+  - FE_114
+  necesidades_epp:
+  - EPP_012
+  - EPP_002
+  - EPP_014
+  - EPP_063
+  area_operacional: TME
+- id: TME_TA_007
+  nombre_tarea: Ejecución de pruebas dieléctricas y medición de resistencia de aislamiento
+  descripcion: Realizar pruebas dieléctricas y de resistencia de aislamiento en cables
+    y equipos de alta tensión. Esto implica el uso de equipos de prueba especializados
+    (ej. hipot, megóhmetro) que generan altos voltajes (hasta 50kV). La tarea se realiza
+    en un área segregada, pero con riesgo de descarga eléctrica por contacto con el
+    equipo de prueba energizado o por fallas de aislamiento en los elementos bajo
+    prueba.
+  id_rol: TME_ROL_04
+  riesgos_asociados:
+  - R03
+  controles_criticos_asociados:
+  - R03CC01
+  - R03CC02
+  - R03CC03
+  - R03CC04
+  - R03CC05
+  - R03CC06
+  - R03CP01
+  - R03CP02
+  - R03CP03
+  - R03CP04
+  - R03CP05
+  - R03CP06
+  factores_de_exposicion:
+  - FE_115
+  - FE_116
+  necesidades_epp:
+  - EPP_012
+  - EPP_013
+  - EPP_014
+  - EPP_015
+  - EPP_016
+  - EPP_017
+  - EPP_018
+  - EPP_019
+  - EPP_020
+  - EPP_025
+  area_operacional: TME
+- id: TME_TA_008
+  nombre_tarea: Inspección y mantenimiento de sistemas de puesta a tierra y protecciones
+  descripcion: Inspeccionar y mantener los sistemas de puesta a tierra y protección
+    contra rayos en las instalaciones del taller. Esto puede implicar el ascenso a
+    los techos o estructuras elevadas para verificar las conexiones, con el riesgo
+    de caídas o de contacto con elementos energizados (si la instalación no está desenergizada
+    o si hay fallas inesperadas).
+  id_rol: TME_ROL_04
+  riesgos_asociados:
+  - R01
+  - R03
+  controles_criticos_asociados:
+  - R01CC01
+  - R01CC02
+  - R01CC03
+  - R01CC04
+  - R01CC05
+  - R01CC06
+  - R01CP01
+  - R01CP02
+  - R01CP03
+  - R01CP04
+  - R01CP05
+  - R01CP06
+  - R03CC01
+  - R03CC02
+  - R03CC03
+  - R03CC04
+  - R03CC05
+  - R03CC06
+  - R03CP01
+  - R03CP02
+  - R03CP03
+  - R03CP04
+  - R03CP05
+  - R03CP06
+  factores_de_exposicion:
+  - FE_117
+  - FE_118
+  necesidades_epp:
+  - EPP_004
+  - EPP_005
+  - EPP_012
+  - EPP_013
+  - EPP_014
+  - EPP_015
+  - EPP_016
+  - EPP_017
+  - EPP_018
+  - EPP_019
+  - EPP_020
+  area_operacional: TME
+- id: TME_TA_009
+  nombre_tarea: Apoyo en tendido de cables y tareas generales de montaje eléctrico
+  descripcion: Asistir en diversas tareas eléctricas, incluyendo el tendido de cables,
+    la conexión de equipos y el montaje de tableros, a menudo en diferentes niveles
+    de altura dentro del taller o en instalaciones. Dada su condición de aprendizaje,
+    el riesgo de caída o contacto eléctrico es mayor por falta de experiencia o supervisión
+    incompleta.
+  id_rol: TME_ROL_05
+  riesgos_asociados:
+  - R01
+  - R03
+  controles_criticos_asociados:
+  - R01CC01
+  - R01CC02
+  - R01CC03
+  - R01CC04
+  - R01CC05
+  - R01CC06
+  - R01CP01
+  - R01CP02
+  - R01CP03
+  - R01CP04
+  - R01CP05
+  - R01CP06
+  - R03CC01
+  - R03CC02
+  - R03CC03
+  - R03CC04
+  - R03CC05
+  - R03CC06
+  - R03CP01
+  - R03CP02
+  - R03CP03
+  - R03CP04
+  - R03CP05
+  factores_de_exposicion:
+  - FE_119
+  - FE_120
+  necesidades_epp:
+  - EPP_001
+  - EPP_002
+  - EPP_003
+  - EPP_004
+  - EPP_005
+  - EPP_012
+  - EPP_013
+  - EPP_014
+  - EPP_015
+  - EPP_016
+  - EPP_017
+  - EPP_018
+  - EPP_019
+  - EPP_020
+  area_operacional: TME
+- id: TME_TA_010
+  nombre_tarea: Bobinado y embobinado de motores eléctricos de gran tamaño
+  descripcion: Realizar el bobinado y embobinado de motores eléctricos de gran tamaño,
+    lo que puede implicar el trabajo en plataformas elevadas para acceder a los componentes
+    del motor. La tarea requiere el uso de herramientas manuales, equipos de izaje
+    pequeños y la manipulación de alambre de cobre pesado, con riesgo de caídas, golpes
+    o atrapamientos.
+  id_rol: TME_ROL_06
+  riesgos_asociados:
+  - R01
+  - R02
+  controles_criticos_asociados:
+  - R01CC01
+  - R01CC02
+  - R01CC03
+  - R01CC04
+  - R01CC05
+  - R01CC06
+  - R01CP01
+  - R01CP02
+  - R01CP03
+  - R01CP04
+  - R01CP05
+  - R01CP06
+  - R02CC01
+  - R02CC02
+  - R02CC03
+  - R02CC04
+  - R02CC05
+  - R02CC06
+  - R02CP01
+  - R02CP02
+  - R02CP03
+  - R02CP04
+  - R02CP05
+  - R02CP06
+  factores_de_exposicion:
+  - FE_121
+  - FE_122
+  necesidades_epp:
+  - EPP_001
+  - EPP_002
+  - EPP_003
+  - EPP_004
+  - EPP_005
+  - EPP_007
+  - EPP_009
+  - EPP_010
+  area_operacional: TME
+- id: TME_TA_011
+  nombre_tarea: Montaje y desmontaje de componentes electromecánicos de motores
+  descripcion: Realizar el montaje y desmontaje de los componentes de motores eléctricos
+    (rotores, estatores, cojinetes) en el taller. Esto implica el uso de herramientas
+    de impacto, prensas y equipos de levante (polipastos, tecles) para mover piezas
+    pesadas. El riesgo es la caída de los componentes, el aplastamiento de extremidades
+    o el impacto por herramientas que resbalan.
+  id_rol: TME_ROL_06
+  riesgos_asociados:
+  - R02
+  controles_criticos_asociados:
+  - R02CC01
+  - R02CC02
+  - R02CC03
+  - R02CC04
+  - R02CC05
+  - R02CC06
+  - R02CP01
+  - R02CP02
+  - R02CP03
+  - R02CP04
+  - R02CP05
+  - R02CP06
+  factores_de_exposicion:
+  - FE_123
+  - FE_124
+  necesidades_epp:
+  - EPP_001
+  - EPP_002
+  - EPP_003
+  - EPP_007
+  - EPP_009
+  - EPP_010
+  - EPP_005
+  - EPP_065
+  - EPP_066
+  area_operacional: TME
+- id: TME_TA_012
+  nombre_tarea: Pruebas eléctricas funcionales a motores rebobinados en taller
+  descripcion: Realizar pruebas eléctricas a los motores rebobinados (pruebas de resistencia,
+    continuidad, aislamiento) con equipos de baja tensión (hasta 480V AC). El riesgo
+    es el contacto con circuitos energizados, cortocircuitos o arcos eléctricos de
+    baja energía si los procedimientos de prueba no se siguen correctamente o si hay
+    fallas inesperadas en el aislamiento.
+  id_rol: TME_ROL_06
+  riesgos_asociados:
+  - R03
+  controles_criticos_asociados:
+  - R03CC01
+  - R03CC02
+  - R03CC03
+  - R03CC04
+  - R03CC05
+  - R03CC06
+  - R03CP01
+  - R03CP02
+  - R03CP03
+  - R03CP04
+  - R03CP05
+  - R03CP06
+  factores_de_exposicion:
+  - FE_125
+  - FE_126
+  necesidades_epp:
+  - EPP_012
+  - EPP_013
+  - EPP_014
+  - EPP_015
+  - EPP_016
+  - EPP_017
+  - EPP_018
+  - EPP_019
+  - EPP_020
+  area_operacional: TME
+- id: TME_TA_013
+  nombre_tarea: Acceso y manipulación de materiales en estanterías elevadas del almacén
+  descripcion: Acceder a estanterías elevadas (hasta 3 metros) en el almacén de repuestos
+    eléctricos para organizar y despachar componentes como cables, fusibles o contactores.
+    Esto implica el uso de escaleras manuales o carros con plataforma. El riesgo es
+    la caída desde altura o la caída de materiales almacenados de forma insegura.
+  id_rol: TME_ROL_07
+  riesgos_asociados:
+  - R01
+  - R02
+  controles_criticos_asociados:
+  - R01CC01
+  - R01CC02
+  - R01CC03
+  - R01CC04
+  - R01CC05
+  - R01CC06
+  - R01CP01
+  - R01CP02
+  - R01CP03
+  - R01CP04
+  - R01CP05
+  - R01CP06
+  - R02CC01
+  - R02CC02
+  - R02CC03
+  - R02CC04
+  - R02CC05
+  - R02CC06
+  - R02CP01
+  - R02CP02
+  - R02CP03
+  - R02CP04
+  - R02CP05
+  - R02CP06
+  factores_de_exposicion:
+  - FE_127
+  - FE_128
+  necesidades_epp:
+  - EPP_001
+  - EPP_002
+  - EPP_003
+  - EPP_004
+  - EPP_005
+  - EPP_010
+  area_operacional: TME
+- id: TME_TA_014
+  nombre_tarea: Manipulación y almacenamiento seguro de componentes eléctricos pesados
+  descripcion: Manipular y almacenar componentes eléctricos pesados (ej. motores de
+    bajo voltaje, transformadores pequeños, carretes de cable) que pueden pesar entre
+    20 kg y 200 kg. Esto implica el uso de transpaletas o carretillas elevadoras,
+    y el riesgo de caída de la carga durante el movimiento o el almacenamiento inadecuado.
+    Se debe asegurar el apilamiento correcto y el uso de racks adecuados.
+  id_rol: TME_ROL_07
+  riesgos_asociados:
+  - R02
+  controles_criticos_asociados:
+  - R02CC01
+  - R02CC02
+  - R02CC03
+  - R02CC04
+  - R02CC05
+  - R02CC06
+  - R02CP01
+  - R02CP02
+  - R02CP03
+  - R02CP04
+  - R02CP05
+  - R02CP06
+  factores_de_exposicion:
+  - FE_129
+  - FE_130
+  necesidades_epp:
+  - EPP_007
+  - EPP_003
+  - EPP_009
+  - EPP_065
+  - EPP_066
+  area_operacional: TME
+- id: TME_TA_015
+  nombre_tarea: Gestión de materiales eléctricos con exposición indirecta a riesgos
+    energizados
+  descripcion: Aunque no manipula directamente equipos energizados, el almacenista
+    puede transitar por zonas del taller donde se realizan pruebas eléctricas o se
+    almacenan equipos bajo tensión para pruebas. Existe un riesgo indirecto de exposición
+    a energía eléctrica si no se respetan las zonas segregadas o si hay fallas inesperadas
+    en los equipos energizados.
+  id_rol: TME_ROL_07
+  riesgos_asociados:
+  - R03
+  controles_criticos_asociados:
+  - R03CC01
+  - R03CC02
+  - R03CC03
+  - R03CC04
+  - R03CC05
+  - R03CC06
+  - R03CP01
+  - R03CP02
+  - R03CP03
+  - R03CP04
+  - R03CP05
+  - R03CP06
+  factores_de_exposicion:
+  - FE_131
+  - FE_132
+  necesidades_epp:
+  - EPP_012
+  - EPP_005
+  - EPP_003
+  - EPP_063
+  area_operacional: TME
+- id: TME_TA_016
+  nombre_tarea: Configuración, calibración y mantenimiento de relés de protección
+  descripcion: ' Realizar la revisión, configuración, calibración y mantenimiento
+    de sistemas de protección eléctrica (relés, interruptores, unidades de disparo,
+    etc.) en tableros de distribución, salas eléctricas, subestaciones y centros de
+    control de motores en todas las áreas operacionales. Esta tarea incluye pruebas
+    funcionales, simulaciones de fallas, verificación de curvas de disparo y ajustes
+    según especificaciones de ingeniería. Se realiza tanto con equipos energizados
+    (en pruebas de monitoreo) como desenergizados, aplicando protocolos de seguridad
+    estrictos y el uso de instrumentos especializados.'
+  id_rol: TME_ROL_08
+  riesgos_asociados:
+  - R03
+  controles_criticos_asociados:
+  - R03CC01
+  - R03CC02
+  - R03CC03
+  - R03CC04
+  - R03CC05
+  - R03CC06
+  - R03CP01
+  - R03CP02
+  - R03CP03
+  - R03CP04
+  - R03CP05
+  factores_de_exposicion:
+  - FE_133
+  - FE_134
+  - FE_135
+  necesidades_epp:
+  - EPP_012
+  - EPP_013
+  - EPP_014
+  - EPP_015
+  - EPP_016
+  - EPP_017
+  - EPP_018
+  - EPP_019
+  - EPP_020
+  - EPP_023
+  - EPP_024
+  area_operacional: TME
+- id: STM_TA_001
+  nombre_tarea: Inspección preoperacional y mantenimiento básico de correas y equipos
+  descripcion: Realizar inspecciones preoperacionales y mantenimiento básico en la
+    estructura del stacker/reclaimer, que puede implicar el ascenso a plataformas
+    y pasarelas elevadas (hasta 15 metros de altura) en la superestructura del equipo.
+    La tarea se realiza en condiciones de viento, polvo y vibración, y requiere el
+    uso de escaleras verticales y la manipulación de herramientas manuales.
+  id_rol: STM_ROL_01
+  riesgos_asociados:
+  - R01
+  controles_criticos_asociados:
+  - R01CC01
+  - R01CC02
+  - R01CC03
+  - R01CC04
+  - R01CC05
+  - R01CC06
+  - R01CP01
+  - R01CP02
+  - R01CP03
+  - R01CP04
+  - R01CP05
+  - R01CP06
+  factores_de_exposicion:
+  - FE_136
+  - FE_137
+  necesidades_epp:
+  - EPP_004
+  - EPP_001
+  - EPP_007
+  - EPP_003
+  - EPP_005
+  - EPP_006
+  area_operacional: STM
+- id: STM_TA_002
+  nombre_tarea: Operación de stacker/reclaimer desde cabina elevada o remota
+  descripcion: Operar el stacker/reclaimer desde una cabina elevada o mediante control
+    remoto, lo que implica el monitoreo de los sistemas eléctricos y electrónicos
+    del equipo. Aunque no se interviene directamente en los circuitos, existe el riesgo
+    de contacto con controles energizados o de fallas en el cableado de baja tensión
+    que puedan generar descargas leves o cortocircuitos. Se deben realizar chequeos
+    de rutina a los paneles de control.
+  id_rol: STM_ROL_01
+  riesgos_asociados:
+  - R03
+  controles_criticos_asociados:
+  - R03CC01
+  - R03CC02
+  - R03CC03
+  - R03CC04
+  - R03CC05
+  - R03CC06
+  - R03CP01
+  - R03CP02
+  - R03CP03
+  - R03CP04
+  - R03CP05
+  - R03CP06
+  factores_de_exposicion:
+  - FE_138
+  - FE_139
+  necesidades_epp:
+  - EPP_001
+  - EPP_005
+  - EPP_006
+  - EPP_014
+  area_operacional: STM
+- id: STM_TA_003
+  nombre_tarea: Inspección y mantenimiento en estructuras del sistema transportador
+  descripcion: Realizar inspecciones y mantenimiento en las estructuras de soporte
+    de las correas overland (correas de largo tendido), lo que incluye el tránsito
+    por pasarelas elevadas (hasta 10-15 metros de altura) sobre las correas en movimiento.
+    La tarea implica la verificación de rodillos, poleas, y la limpieza de derrames.
+    El riesgo es la caída desde altura o el atrapamiento por las partes móviles de
+    la cinta.
+  id_rol: STM_ROL_02
+  riesgos_asociados:
+  - R01
+  controles_criticos_asociados:
+  - R01CC01
+  - R01CC02
+  - R01CC03
+  - R01CC04
+  - R01CC05
+  - R01CC06
+  - R01CP01
+  - R01CP02
+  - R01CP03
+  - R01CP04
+  - R01CP05
+  - R01CP06
+  factores_de_exposicion:
+  - FE_140
+  - FE_141
+  necesidades_epp:
+  - EPP_004
+  - EPP_001
+  - EPP_005
+  - EPP_003
+  - EPP_007
+  - EPP_006
+  area_operacional: STM
+- id: STM_TA_004
+  nombre_tarea: Mantenimiento de motores, reductores y tableros eléctricos en correas
+  descripcion: Realizar el mantenimiento de motores, reductores y tableros eléctricos
+    de las correas transportadoras, lo que implica el trabajo con energía eléctrica
+    (480V a 4.16kV). La tarea requiere la aplicación de procedimientos LOTO, la medición
+    de parámetros eléctricos y el reemplazo de componentes. El riesgo es el contacto
+    eléctrico o el arco eléctrico.
+  id_rol: STM_ROL_02
+  riesgos_asociados:
+  - R03
+  controles_criticos_asociados:
+  - R03CC01
+  - R03CC02
+  - R03CC03
+  - R03CC04
+  - R03CC05
+  - R03CC06
+  - R03CP01
+  - R03CP02
+  - R03CP03
+  - R03CP04
+  - R03CP05
+  - R03CP06
+  factores_de_exposicion:
+  - FE_142
+  - FE_143
+  necesidades_epp:
+  - EPP_012
+  - EPP_013
+  - EPP_014
+  - EPP_015
+  - EPP_016
+  - EPP_020
+  area_operacional: STM
+- id: STM_TA_005
+  nombre_tarea: Recorridos de inspección por las secciones del sistema de transporte
+  descripcion: Realizar visitas de campo a las diferentes secciones del sistema de
+    correas transportadoras para planificar actividades de mantenimiento, lo que implica
+    el tránsito por pasarelas, escaleras y áreas con obstáculos (derrames, equipos
+    estacionados). El riesgo es de caídas o tropiezos por las condiciones del terreno.
+  id_rol: STM_ROL_03
+  riesgos_asociados:
+  - R01
+  controles_criticos_asociados:
+  - R01CC01
+  - R01CC02
+  - R01CC03
+  - R01CC04
+  - R01CC05
+  - R01CC06
+  - R01CP01
+  - R01CP02
+  - R01CP03
+  - R01CP04
+  - R01CP05
+  - R01CP06
+  factores_de_exposicion:
+  - FE_144
+  - FE_145
+  necesidades_epp:
+  - EPP_001
+  - EPP_005
+  - EPP_003
+  - EPP_065
+  area_operacional: STM
+- id: STM_TA_006
+  nombre_tarea: Inspección de tableros eléctricos y puntos de conexión de potencia
+  descripcion: Inspeccionar las condiciones de los tableros eléctricos y los puntos
+    de conexión de potencia para la planificación de tareas. Aunque no se interviene
+    directamente, el planificador debe estar consciente de los riesgos eléctricos
+    latentes y verificar las señalizaciones de seguridad. El riesgo es indirecto,
+    por exposición a un área no segregada o señalizada.
+  id_rol: STM_ROL_03
+  riesgos_asociados:
+  - R03
+  controles_criticos_asociados:
+  - R03CC01
+  - R03CC02
+  - R03CC03
+  - R03CC04
+  - R03CC05
+  - R03CC06
+  - R03CP01
+  - R03CP02
+  - R03CP03
+  - R03CP04
+  - R03CP05
+  - R03CP06
+  factores_de_exposicion:
+  - FE_146
+  - FE_147
+  necesidades_epp:
+  - EPP_001
+  - EPP_005
+  - EPP_003
+  - EPP_065
+  - EPP_064
+  area_operacional: STM
+- id: STM_TA_007
+  nombre_tarea: Monitoreo de condiciones de correas transportadoras y stackers
+  descripcion: Monitorear el estado de las correas transportadoras y stackers/reclaimers
+    desde una sala de control centralizada. La tarea implica el uso prolongado de
+    pantallas y sistemas SCADA. El riesgo es la fatiga visual y postural. La exposición
+    a peligros físicos es mínima, ya que la operación es remota.
+  id_rol: STM_ROL_04
+  riesgos_asociados: []
+  controles_criticos_asociados: null
+  factores_de_exposicion:
+  - FE_148
+  - FE_149
+  necesidades_epp:
+  - EPP_001
+  - EPP_005
+  - EPP_003
+  - EPP_067
+  - EPP_068
+  area_operacional: STM
+- id: STM_TA_008
+  nombre_tarea: Coordinación de paradas y arranques del sistema de transporte mecanizado
+  descripcion: Coordinar y comunicar las paradas y arranques de las correas transportadoras
+    con el personal de campo y de mantenimiento, utilizando sistemas de radio y teléfono.
+    Un error en la comunicación puede llevar a arranques inesperados de equipos o
+    incidentes. El riesgo es indirecto, derivado de fallas de comunicación.
+  id_rol: STM_ROL_04
+  riesgos_asociados: []
+  controles_criticos_asociados: null
+  factores_de_exposicion:
+  - FE_150
+  - FE_151
+  necesidades_epp:
+  - EPP_001
+  - EPP_005
+  - EPP_003
+  - EPP_066
+  area_operacional: STM
+- id: STM_TA_009
+  nombre_tarea: Inspección detallada de componentes internos del sistema transportador
+  descripcion: Realizar inspecciones detalladas de los componentes internos de las
+    cintas transportadoras (poleas, rodillos, fajas) que se encuentran en lugares
+    de difícil acceso o en altura (ej. pasarelas de retorno). La tarea puede implicar
+    el uso de escaleras portátiles y el trabajo en espacios reducidos y con visibilidad
+    limitada. El riesgo es la caída o el atrapamiento por la cinta.
+  id_rol: STM_ROL_05
+  riesgos_asociados:
+  - R01
+  controles_criticos_asociados:
+  - R01CC01
+  - R01CC02
+  - R01CC03
+  - R01CC04
+  - R01CC05
+  - R01CC06
+  - R01CP01
+  - R01CP02
+  - R01CP03
+  - R01CP04
+  - R01CP05
+  - R01CP06
+  factores_de_exposicion:
+  - FE_152
+  - FE_153
+  necesidades_epp:
+  - EPP_004
+  - EPP_001
+  - EPP_005
+  - EPP_003
+  - EPP_007
+  - EPP_006
+  area_operacional: STM
+- id: STM_TA_010
+  nombre_tarea: Diagnóstico de fallas en sistemas eléctricos del transporte mecanizado
+  descripcion: Inspeccionar y diagnosticar fallas en los sistemas eléctricos de control
+    y potencia de las cintas transportadoras (sensores, interruptores de seguridad,
+    motores). Esto implica la manipulación de cableado de baja tensión (hasta 480V)
+    y el uso de equipos de medición. El riesgo es el contacto eléctrico directo o
+    el arco eléctrico de baja energía.
+  id_rol: STM_ROL_05
+  riesgos_asociados:
+  - R03
+  controles_criticos_asociados:
+  - R03CC01
+  - R03CC02
+  - R03CC03
+  - R03CC04
+  - R03CC05
+  - R03CC06
+  - R03CP01
+  - R03CP02
+  - R03CP03
+  - R03CP04
+  - R03CP05
+  factores_de_exposicion:
+  - FE_154
+  - FE_155
+  necesidades_epp:
+  - EPP_014
+  - EPP_005
+  - EPP_016
+  - EPP_020
+  area_operacional: STM
+- id: STM_TA_011
+  nombre_tarea: Empalme y reparación de cintas transportadoras en terreno
+  descripcion: Realizar el empalme o reparación de cintas transportadoras, lo que
+    a menudo se lleva a cabo en altura sobre las estructuras de la correa o en plataformas
+    temporales. La tarea implica el uso de herramientas pesadas (ej. prensas de empalme)
+    y la manipulación de secciones de caucho de gran tamaño, en condiciones de polvo
+    y posible humedad. El riesgo es la caída desde altura o el aplastamiento por la
+    cinta.
+  id_rol: STM_ROL_06
+  riesgos_asociados:
+  - R01
+  controles_criticos_asociados:
+  - R01CC01
+  - R01CC02
+  - R01CC03
+  - R01CC04
+  - R01CC05
+  - R01CC06
+  - R01CP01
+  - R01CP02
+  - R01CP03
+  - R01CP04
+  - R01CP05
+  - R01CP06
+  factores_de_exposicion:
+  - FE_156
+  - FE_157
+  necesidades_epp:
+  - EPP_004
+  - EPP_001
+  - EPP_005
+  - EPP_003
+  - EPP_007
+  - EPP_006
+  - EPP_010
+  area_operacional: STM
+- id: STM_TA_012
+  nombre_tarea: Vulcanizado eléctrico de secciones de cinta transportadora
+  descripcion: Utilizar equipos de vulcanizado eléctrico para unir las secciones de
+    la cinta. Estos equipos operan con altas temperaturas y pueden requerir conexiones
+    a fuentes de energía de media tensión (ej. 480V). El riesgo es de quemaduras por
+    calor o contacto eléctrico. Se requiere un riguroso procedimiento de seguridad
+    eléctrica.
+  id_rol: STM_ROL_06
+  riesgos_asociados:
+  - R03
+  controles_criticos_asociados:
+  - R03CC01
+  - R03CC02
+  - R03CC03
+  - R03CC04
+  - R03CC05
+  - R03CC06
+  - R03CP01
+  - R03CP02
+  - R03CP03
+  - R03CP04
+  - R03CP05
+  - R03CP06
+  factores_de_exposicion:
+  - FE_158
+  - FE_159
+  necesidades_epp:
+  - EPP_014
+  - EPP_005
+  - EPP_007
+  - EPP_003
+  - EPP_021
+  - EPP_020
+  - EPP_016
+  area_operacional: STM
+- id: STM_TA_013
+  nombre_tarea: Supervisión de mantenimiento en correas transportadoras y estructuras
+  descripcion: Supervisar las actividades de mantenimiento en las correas transportadoras,
+    lo que implica el desplazamiento por áreas elevadas (pasarelas, plataformas) y
+    la supervisión de trabajos en componentes en movimiento o en altura. El supervisor
+    verifica el cumplimiento de los procedimientos de seguridad y el uso del EPP.
+  id_rol: STM_ROL_07
+  riesgos_asociados:
+  - R01
+  controles_criticos_asociados:
+  - R01CC01
+  - R01CC02
+  - R01CC03
+  - R01CC04
+  - R01CC05
+  - R01CC06
+  - R01CP01
+  - R01CP02
+  - R01CP03
+  - R01CP04
+  - R01CP05
+  - R01CP06
+  factores_de_exposicion:
+  - FE_160
+  - FE_161
+  necesidades_epp:
+  - EPP_001
+  - EPP_005
+  - EPP_003
+  - EPP_065
+  - EPP_004
+  area_operacional: STM
+- id: STM_TA_014
+  nombre_tarea: Aprobación y supervisión de permisos LOTO en sistemas del STM
+  descripcion: Aprobar y supervisar los permisos de trabajo eléctrico (LOTO, aislamiento)
+    en los sistemas de transporte mecanizado. Aunque el supervisor no manipula los
+    equipos directamente, es el responsable de asegurar que los procedimientos de
+    desenergización y seguridad eléctrica se cumplan estrictamente. El riesgo es indirecto,
+    por una falla en la supervisión.
+  id_rol: STM_ROL_07
+  riesgos_asociados:
+  - R03
+  controles_criticos_asociados:
+  - R03CC01
+  - R03CC02
+  - R03CC03
+  - R03CC04
+  - R03CC05
+  - R03CC06
+  - R03CP01
+  - R03CP02
+  - R03CP03
+  - R03CP04
+  - R03CP05
+  - R03CP06
+  factores_de_exposicion:
+  - FE_162
+  - FE_163
+  necesidades_epp:
+  - EPP_012
+  - EPP_005
+  - EPP_003
+  - EPP_064
+  - EPP_063
+  area_operacional: STM
+- id: STM_TA_015
+  nombre_tarea: Soldadura y reparación estructural en componentes del sistema transportador
+  descripcion: Realizar trabajos de soldadura y reparación de estructuras metálicas
+    de soporte de correas o torres de transferencia, lo que a menudo implica el trabajo
+    en altura (andamios, plataformas) y la manipulación de piezas metálicas pesadas.
+    El riesgo es la caída desde altura, la caída de objetos o el golpe por piezas.
+  id_rol: STM_ROL_08
+  riesgos_asociados:
+  - R01
+  - R02
+  controles_criticos_asociados:
+  - R01CC01
+  - R01CC02
+  - R01CC03
+  - R01CC04
+  - R01CC05
+  - R01CC06
+  - R01CP01
+  - R01CP02
+  - R01CP03
+  - R01CP04
+  - R01CP05
+  - R01CP06
+  - R02CC01
+  - R02CC02
+  - R02CC03
+  - R02CC04
+  - R02CC05
+  - R02CC06
+  - R02CP01
+  - R02CP02
+  - R02CP03
+  - R02CP04
+  - R02CP05
+  - R02CP06
+  factores_de_exposicion:
+  - FE_164
+  - FE_165
+  necesidades_epp:
+  - EPP_004
+  - EPP_001
+  - EPP_005
+  - EPP_003
+  - EPP_007
+  - EPP_010
+  - EPP_023
+  - EPP_024
+  area_operacional: STM
+- id: STM_TA_016
+  nombre_tarea: Operación de equipos de soldadura eléctrica en mantenimiento de planta
+  descripcion: Operar con equipos de soldadura eléctrica (ej. máquinas de soldar de
+    480V AC), lo que implica la conexión a fuentes de energía y la manipulación de
+    cables y pinzas. El riesgo es el contacto directo con la tensión de soldadura,
+    la descarga por un cable defectuoso, o la generación de un arco eléctrico que
+    pueda causar quemaduras severas o electrocución. Se requiere el uso de EPP ignífugo
+    y careta de soldar.
+  id_rol: STM_ROL_08
+  riesgos_asociados:
+  - R03
+  controles_criticos_asociados:
+  - R03CC01
+  - R03CC02
+  - R03CC03
+  - R03CC04
+  - R03CC05
+  - R03CC06
+  - R03CP01
+  - R03CP02
+  - R03CP03
+  - R03CP04
+  - R03CP05
+  - R03CP06
+  factores_de_exposicion:
+  - FE_166
+  - FE_167
+  necesidades_epp:
+  - EPP_023
+  - EPP_024
+  - EPP_025
+  - EPP_026
+  - EPP_027
+  - EPP_007
+  - EPP_003
+  area_operacional: STM
+- id: STM_TA_017
+  nombre_tarea: Transporte de repuestos y materiales en rutas operacionales del STM
+  descripcion: Transportar repuestos y materiales a lo largo de las rutas de servicio
+    de las correas, que pueden incluir rampas o áreas con pendientes suaves y superficies
+    irregulares. El riesgo principal es el volcamiento del equipo o la caída de la
+    carga debido a una maniobra brusca, sobrecarga, o condiciones del terreno. Se
+    requiere una revisión preoperacional del equipo y asegurar la carga.
+  id_rol: STM_ROL_09
+  riesgos_asociados:
+  - R02
+  controles_criticos_asociados:
+  - R02CC01
+  - R02CC02
+  - R02CC03
+  - R02CC04
+  - R02CC05
+  - R02CC06
+  - R02CP01
+  - R02CP02
+  - R02CP03
+  - R02CP04
+  - R02CP05
+  - R02CP06
+  factores_de_exposicion:
+  - FE_168
+  - FE_169
+  necesidades_epp:
+  - EPP_001
+  - EPP_007
+  - EPP_003
+  - EPP_065
+  - EPP_064
+  area_operacional: STM
+- id: STM_TA_018
+  nombre_tarea: Carga y descarga de materiales pesados en áreas del sistema transportador
+  descripcion: Cargar o descargar materiales pesados (ej. rodillos, motores pequeños
+    de correas, tambores de cable) de hasta 1 tonelada de peso, utilizando la carretilla
+    elevadora. El riesgo es la caída de la carga sobre personal, equipos o el mismo
+    vehículo, debido a un mal agarre, una eslinga defectuosa o una maniobra inadecuada.
+    Se debe asegurar la correcta sujeción de la carga.
+  id_rol: STM_ROL_09
+  riesgos_asociados:
+  - R02
+  controles_criticos_asociados:
+  - R02CC01
+  - R02CC02
+  - R02CC03
+  - R02CC04
+  - R02CC05
+  - R02CC06
+  - R02CP01
+  - R02CP02
+  - R02CP03
+  - R02CP04
+  - R02CP05
+  - R02CP06
+  factores_de_exposicion:
+  - FE_168
+  - FE_169
+  necesidades_epp:
+  - EPP_001
+  - EPP_007
+  - EPP_003
+  - EPP_065
+  - EPP_064
+  area_operacional: STM
+- id: STM_TA_019
+  nombre_tarea: Inspección preoperacional de sistemas eléctricos del transporte mecanizado
+  descripcion: Realizar la inspección preoperacional de los sistemas eléctricos de
+    la carretilla elevadora (baterías, luces, sistemas de control de 24V-48V DC).
+    Aunque el voltaje es bajo, existe el riesgo de cortocircuitos accidentales o contacto
+    con bornes energizados durante la revisión. Se debe verificar la integridad del
+    cableado y los bornes de la batería.
+  id_rol: STM_ROL_09
+  riesgos_asociados:
+  - R03
+  controles_criticos_asociados:
+  - R03CC01
+  - R03CC02
+  - R03CC03
+  - R03CC04
+  - R03CC05
+  - R03CC06
+  - R03CP01
+  - R03CP02
+  - R03CP03
+  - R03CP04
+  - R03CP05
+  - R03CP06
+  factores_de_exposicion:
+  - FE_170
+  - FE_171
+  necesidades_epp:
+  - EPP_014
+  - EPP_005
+  - EPP_003
+  - EPP_007
+  area_operacional: STM
+- id: PLC_TA_001
+  nombre_tarea: Inspección visual de pasarelas, escaleras y plataformas en áreas de
+    proceso
+  descripcion: Realizar inspecciones visuales en pasarelas, escaleras y plataformas
+    a lo largo de la planta (hasta 10 metros de altura), para verificar el estado
+    de los equipos, tuberías y detectar derrames de pulpa o agua. El riesgo es la
+    caída desde altura por resbalones en superficies mojadas, irregulares o por falta
+    de barandas en áreas de tránsito ocasional. Se requiere el uso de calzado antideslizante.
+  id_rol: PLC_ROL_01
+  riesgos_asociados:
+  - R01
+  controles_criticos_asociados:
+  - R01CC01
+  - R01CC02
+  - R01CC03
+  - R01CC04
+  - R01CC05
+  - R01CC06
+  - R01CP01
+  - R01CP02
+  - R01CP03
+  - R01CP04
+  - R01CP05
+  - R01CP06
+  factores_de_exposicion:
+  - FE_172
+  - FE_173
+  necesidades_epp:
+  - EPP_001
+  - EPP_005
+  - EPP_003
+  - EPP_004
+  area_operacional: PLC
+- id: PLC_TA_002
+  nombre_tarea: Monitoreo de motores, bombas y tableros eléctricos en planta concentradora
+  descripcion: Monitorear el estado de motores, bombas y tableros eléctricos de baja
+    tensión (480V) desde una distancia segura. Aunque no manipula directamente los
+    equipos, el operador debe identificar ruidos o vibraciones anómalas que puedan
+    indicar un problema eléctrico, y coordinar con el personal de mantenimiento. El
+    riesgo es la exposición indirecta a un arco eléctrico o descarga si no se mantiene
+    la distancia o si el equipo falla catastróficamente.
+  id_rol: PLC_ROL_01
+  riesgos_asociados:
+  - R03
+  controles_criticos_asociados:
+  - R03CC01
+  - R03CC02
+  - R03CC03
+  - R03CC04
+  - R03CC05
+  - R03CC06
+  - R03CP01
+  - R03CP02
+  - R03CP03
+  - R03CP04
+  - R03CP05
+  - R03CP06
+  factores_de_exposicion:
+  - FE_174
+  - FE_175
+  necesidades_epp:
+  - EPP_001
+  - EPP_005
+  - EPP_003
+  - EPP_012
+  area_operacional: PLC
+- id: PLC_TA_003
+  nombre_tarea: Inspecciones rutinarias alrededor de molinos SAG y equipos asociados
+  descripcion: Realizar inspecciones de rutina alrededor de los molinos SAG (Semi-Autógeno)
+    y de bolas, que son equipos de gran tamaño y rotación constante. Esto implica
+    el tránsito por áreas con ruido elevado (>100 dB) y vibración, así como la observación
+    de la alimentación de mineral y la descarga de pulpa. El riesgo es el atrapamiento
+    por componentes rotatorios o el impacto por proyección de bolas de molienda en
+    caso de falla del revestimiento.
+  id_rol: PLC_ROL_02
+  riesgos_asociados:
+  - R02
+  controles_criticos_asociados:
+  - R02CC01
+  - R02CC02
+  - R02CC03
+  - R02CC04
+  - R02CC05
+  - R02CC06
+  - R02CP01
+  - R02CP02
+  - R02CP03
+  - R02CP04
+  - R02CP05
+  - R02CP06
+  factores_de_exposicion:
+  - FE_176
+  - FE_177
+  necesidades_epp:
+  - EPP_001
+  - EPP_005
+  - EPP_003
+  - EPP_006
+  - EPP_007
+  area_operacional: PLC
+- id: PLC_TA_004
+  nombre_tarea: Supervisión de tableros de control de molinos y sistemas de accionamiento
+  descripcion: Supervisar los tableros de control de los molinos (motores de hasta
+    20MW, 13.8kV) desde la sala de control. Aunque el trabajo es remoto, se realizan
+    visitas ocasionales a la sala eléctrica adyacente para verificar el estado de
+    los transformadores o interruptores de potencia. El riesgo es el contacto indirecto
+    con alta tensión o arco eléctrico si no se respetan las distancias de seguridad
+    o las áreas segregadas.
+  id_rol: PLC_ROL_02
+  riesgos_asociados:
+  - R03
+  controles_criticos_asociados:
+  - R03CC01
+  - R03CC02
+  - R03CC03
+  - R03CC04
+  - R03CC05
+  - R03CC06
+  - R03CP01
+  - R03CP02
+  - R03CP03
+  - R03CP04
+  - R03CP05
+  - R03CP06
+  factores_de_exposicion:
+  - FE_178
+  - FE_179
+  necesidades_epp:
+  - EPP_001
+  - EPP_005
+  - EPP_003
+  - EPP_012
+  - EPP_020
+  area_operacional: PLC
+- id: PLC_TA_005
+  nombre_tarea: Muestreo manual de pulpa en celdas de flotación para control de proceso
+  descripcion: Realizar muestreos manuales de pulpa en las celdas de flotación y en
+    las canaletas de relave, lo que implica caminar sobre pasarelas con alto riesgo
+    de salpicaduras o derrames. El riesgo es la caída por resbalones en superficies
+    mojadas y la exposición a químicos (reactivos de flotación) presentes en la pulpa.
+  id_rol: PLC_ROL_03
+  riesgos_asociados:
+  - R01
+  controles_criticos_asociados:
+  - R01CC01
+  - R01CC02
+  - R01CC03
+  - R01CC04
+  - R01CC05
+  - R01CC06
+  - R01CP01
+  - R01CP02
+  - R01CP03
+  - R01CP04
+  - R01CP05
+  - R01CP06
+  factores_de_exposicion:
+  - FE_180
+  - FE_181
+  necesidades_epp:
+  - EPP_001
+  - EPP_005
+  - EPP_003
+  - EPP_007
+  - EPP_008
+  - EPP_011
+  area_operacional: PLC
+- id: PLC_TA_006
+  nombre_tarea: Monitoreo de motores de agitadores en sistema de flotación
+  descripcion: Monitorear los motores de los agitadores de las celdas de flotación
+    (hasta 600V AC). Esta tarea se realiza principalmente de forma visual, pero puede
+    requerir el acceso a paneles de control locales para verificar el estado de los
+    interruptores o la lectura de amperajes. El riesgo es el contacto eléctrico con
+    baja tensión o arco eléctrico por falla del equipo.
+  id_rol: PLC_ROL_03
+  riesgos_asociados:
+  - R03
+  controles_criticos_asociados:
+  - R03CC01
+  - R03CC02
+  - R03CC03
+  - R03CC04
+  - R03CC05
+  - R03CC06
+  - R03CP01
+  - R03CP02
+  - R03CP03
+  - R03CP04
+  - R03CP05
+  - R03CP06
+  factores_de_exposicion:
+  - FE_182
+  - FE_183
+  necesidades_epp:
+  - EPP_001
+  - EPP_005
+  - EPP_003
+  - EPP_014
+  - EPP_016
+  area_operacional: PLC
+- id: PLC_TA_007
+  nombre_tarea: Mantenimiento y reparación de equipos de gran tamaño en planta concentradora
+  descripcion: Realizar mantenimiento y reparaciones en equipos de gran tamaño como
+    molinos, chancadores de cono y bombas de pulpa. Esta tarea frecuentemente se lleva
+    a cabo en altura (hasta 15 metros) utilizando andamios o plataformas elevadas,
+    e implica la manipulación de componentes pesados (ej. revestimientos de molinos,
+    rotores de bombas) con grúas puente o polipastos. El riesgo es la caída desde
+    altura, la caída de objetos o el aplastamiento.
+  id_rol: PLC_ROL_04
+  riesgos_asociados:
+  - R01
+  - R02
+  controles_criticos_asociados:
+  - R01CC01
+  - R01CC02
+  - R01CC03
+  - R01CC04
+  - R01CC05
+  - R01CC06
+  - R01CP01
+  - R01CP02
+  - R01CP03
+  - R01CP04
+  - R01CP05
+  - R01CP06
+  - R02CC01
+  - R02CC02
+  - R02CC03
+  - R02CC04
+  - R02CC05
+  - R02CC06
+  - R02CP01
+  - R02CP02
+  - R02CP03
+  - R02CP04
+  - R02CP05
+  - R02CP06
+  factores_de_exposicion:
+  - FE_184
+  - FE_185
+  - FE_186
+  necesidades_epp:
+  - EPP_004
+  - EPP_001
+  - EPP_005
+  - EPP_003
+  - EPP_007
+  - EPP_010
+  area_operacional: PLC
+- id: PLC_TA_008
+  nombre_tarea: Intervención en interior de molinos o tolvas para recambio de componentes
+  descripcion: Trabajar en el interior de molinos o tolvas para reemplazar revestimientos
+    o limpiar acumulaciones. Esta tarea implica el ingreso a espacios confinados y
+    el trabajo en altura dentro de la estructura, con riesgo de asfixia, atrapamiento
+    o aplastamiento por la caída de material suelto si no se controlan los riesgos
+    de energía cero y se asegura el espacio. Requiere un estricto permiso de trabajo
+    en espacios confinados.
+  id_rol: PLC_ROL_04
+  riesgos_asociados:
+  - R01
+  - R02
+  controles_criticos_asociados:
+  - R01CC01
+  - R01CC02
+  - R01CC03
+  - R01CC04
+  - R01CC05
+  - R01CC06
+  - R01CP01
+  - R01CP02
+  - R01CP03
+  - R01CP04
+  - R01CP05
+  - R01CP06
+  - R02CC01
+  - R02CC02
+  - R02CC03
+  - R02CC04
+  - R02CC05
+  - R02CC06
+  - R02CP01
+  - R02CP02
+  - R02CP03
+  - R02CP04
+  - R02CP05
+  - R02CP06
+  factores_de_exposicion:
+  - FE_187
+  - FE_188
+  necesidades_epp:
+  - EPP_001
+  - EPP_005
+  - EPP_003
+  - EPP_007
+  - EPP_004
+  - EPP_028
+  - EPP_029
+  - EPP_030
+  area_operacional: PLC
+- id: PLC_TA_009
+  nombre_tarea: Diagnóstico y mantenimiento de motores eléctricos industriales
+  descripcion: Realizar diagnóstico, mantenimiento y reparación de motores eléctricos
+    de molinos (hasta 20MW, 13.8kV), motores de bombas y tableros de control. Esta
+    tarea implica la aplicación rigurosa de procedimientos LOTO, mediciones de tensión
+    y corriente, y el reemplazo de componentes en un entorno de alta energía. El riesgo
+    es el contacto eléctrico directo o el arco eléctrico de alta energía.
+  id_rol: PLC_ROL_05
+  riesgos_asociados:
+  - R03
+  controles_criticos_asociados:
+  - R03CC01
+  - R03CC02
+  - R03CC03
+  - R03CC04
+  - R03CC05
+  - R03CC06
+  - R03CP01
+  - R03CP02
+  - R03CP03
+  - R03CP04
+  - R03CP05
+  - R03CP06
+  factores_de_exposicion:
+  - FE_189
+  - FE_190
+  necesidades_epp:
+  - EPP_012
+  - EPP_013
+  - EPP_014
+  - EPP_015
+  - EPP_016
+  - EPP_020
+  - EPP_017
+  - EPP_018
+  - EPP_019
+  area_operacional: PLC
+- id: PLC_TA_010
+  nombre_tarea: Mantenimiento de sistemas de iluminación y canalizaciones eléctricas
+  descripcion: Realizar el mantenimiento de sistemas de iluminación y cableado en
+    pasarelas y estructuras elevadas de la planta. Esto requiere el trabajo en altura
+    (hasta 15 metros) utilizando andamios, plataformas móviles o escaleras, y la manipulación
+    de cableado eléctrico. El riesgo es la caída desde altura y el contacto eléctrico
+    con baja tensión.
+  id_rol: PLC_ROL_05
+  riesgos_asociados:
+  - R01
+  - R03
+  controles_criticos_asociados:
+  - R01CC01
+  - R01CC02
+  - R01CC03
+  - R01CC04
+  - R01CC05
+  - R01CC06
+  - R01CP01
+  - R01CP02
+  - R01CP03
+  - R01CP04
+  - R01CP05
+  - R01CP06
+  - R03CC01
+  - R03CC02
+  - R03CC03
+  - R03CC04
+  - R03CC05
+  - R03CC06
+  - R03CP01
+  - R03CP02
+  - R03CP03
+  - R03CP04
+  - R03CP05
+  factores_de_exposicion:
+  - FE_191
+  - FE_192
+  necesidades_epp:
+  - EPP_004
+  - EPP_001
+  - EPP_005
+  - EPP_003
+  - EPP_014
+  - EPP_016
+  area_operacional: PLC
+- id: PLC_TA_011
+  nombre_tarea: Operación de puentes grúa y polipastos para movimiento de componentes
+  descripcion: Operar puentes grúa y polipastos para el movimiento de componentes
+    pesados (ej. tapas de molinos, revestimientos, motores) dentro de la planta concentradora.
+    La tarea se realiza desde cabinas elevadas o con control remoto, y requiere una
+    alta concentración para evitar la caída de la carga o el impacto con estructuras.
+    El riesgo es la caída de objetos por falla de izaje o mala maniobra.
+  id_rol: PLC_ROL_06
+  riesgos_asociados:
+  - R02
+  controles_criticos_asociados:
+  - R02CC01
+  - R02CC02
+  - R02CC03
+  - R02CC04
+  - R02CC05
+  - R02CC06
+  - R02CP01
+  - R02CP02
+  - R02CP03
+  - R02CP04
+  - R02CP05
+  - R02CP06
+  factores_de_exposicion:
+  - FE_193
+  - FE_194
+  necesidades_epp:
+  - EPP_001
+  - EPP_005
+  - EPP_003
+  - EPP_007
+  - EPP_065
+  - EPP_064
+  area_operacional: PLC
+- id: PLC_TA_012
+  nombre_tarea: Mantenimiento preventivo y correctivo de sistemas eléctricos industriales
+  descripcion: Realizar el mantenimiento preventivo y correctivo de los sistemas eléctricos
+    y mecánicos de los puentes grúa (ej. motores de traslación, sistemas de control).
+    Esto implica el trabajo en altura sobre la estructura de la grúa y la manipulación
+    de circuitos eléctricos de potencia y control. El riesgo es la caída desde altura
+    o el contacto eléctrico.
+  id_rol: PLC_ROL_06
+  riesgos_asociados:
+  - R01
+  - R03
+  controles_criticos_asociados:
+  - R01CC01
+  - R01CC02
+  - R01CC03
+  - R01CC04
+  - R01CC05
+  - R01CC06
+  - R01CP01
+  - R01CP02
+  - R01CP03
+  - R01CP04
+  - R01CP05
+  - R01CP06
+  - R03CC01
+  - R03CC02
+  - R03CC03
+  - R03CC04
+  - R03CC05
+  - R03CC06
+  - R03CP01
+  - R03CP02
+  - R03CP03
+  - R03CP04
+  - R03CP05
+  - R03CP06
+  factores_de_exposicion:
+  - FE_195
+  - FE_196
+  necesidades_epp:
+  - EPP_004
+  - EPP_001
+  - EPP_005
+  - EPP_003
+  - EPP_014
+  - EPP_016
+  area_operacional: PLC
+- id: PLC_TA_013
+  nombre_tarea: Instalación, calibración y mantenimiento de instrumentos de campo
+  descripcion: Instalar, calibrar y mantener instrumentos de campo (sensores de nivel,
+    flujo, presión, pH) en diferentes secciones de la planta. Esto puede requerir
+    el acceso a plataformas elevadas, el trabajo en espacios confinados (ej. pozas
+    de pulpa) o la manipulación de pequeñas cantidades de reactivos químicos. El riesgo
+    es la caída desde altura, la exposición química o el contacto con baja tensión.
+  id_rol: PLC_ROL_07
+  riesgos_asociados:
+  - R01
+  - R03
+  controles_criticos_asociados:
+  - R01CC01
+  - R01CC02
+  - R01CC03
+  - R01CC04
+  - R01CC05
+  - R01CC06
+  - R01CP01
+  - R01CP02
+  - R01CP03
+  - R01CP04
+  - R01CP05
+  - R01CP06
+  - R03CC01
+  - R03CC02
+  - R03CC03
+  - R03CC04
+  - R03CC05
+  - R03CC06
+  - R03CP01
+  - R03CP02
+  - R03CP03
+  - R03CP04
+  - R03CP05
+  - R03CP06
+  factores_de_exposicion:
+  - FE_197
+  - FE_198
+  - FE_199
+  necesidades_epp:
+  - EPP_001
+  - EPP_005
+  - EPP_003
+  - EPP_007
+  - EPP_008
+  - EPP_011
+  - EPP_014
+  - EPP_016
+  area_operacional: PLC
+- id: PLC_TA_014
+  nombre_tarea: Diagnóstico y resolución de fallas en paneles de control de proceso
+  descripcion: Realizar diagnósticos y resolución de problemas en los paneles de control
+    de la sala central y los gabinetes de campo. Esto implica la interacción con sistemas
+    PLC y DCS, y la manipulación de cableado de control (24V DC). Aunque la tensión
+    es baja, existe el riesgo de cortocircuitos o descargas leves por errores en la
+    conexión o manipulación. El riesgo es la fatiga visual y postural.
+  id_rol: PLC_ROL_07
+  riesgos_asociados:
+  - R03
+  controles_criticos_asociados:
+  - R03CC01
+  - R03CC02
+  - R03CC03
+  - R03CC04
+  - R03CC05
+  - R03CC06
+  - R03CP01
+  - R03CP02
+  - R03CP03
+  - R03CP04
+  - R03CP05
+  - R03CP06
+  factores_de_exposicion:
+  - FE_200
+  - FE_201
+  necesidades_epp:
+  - EPP_001
+  - EPP_005
+  - EPP_003
+  - EPP_014
+  - EPP_016
+  - EPP_067
+  area_operacional: PLC
+- id: PLC_TA_015
+  nombre_tarea: Inspección de tuberías de relaves y sistemas asociados
+  descripcion: Inspeccionar las tuberías de relaves y las instalaciones del depósito
+    (tranques, piscinas de sedimentación). Esto implica el tránsito por terrenos irregulares,
+    pendientes y cercanía a las pozas de relaves, con riesgo de caída o resbalón en
+    superficies lodosas o con poca visibilidad. El riesgo es la caída a las pozas
+    o la exposición a la pulpa de relaves.
+  id_rol: PLC_ROL_08
+  riesgos_asociados:
+  - R01
+  controles_criticos_asociados:
+  - R01CC01
+  - R01CC02
+  - R01CC03
+  - R01CC04
+  - R01CC05
+  - R01CC06
+  - R01CP01
+  - R01CP02
+  - R01CP03
+  - R01CP04
+  - R01CP05
+  - R01CP06
+  factores_de_exposicion:
+  - FE_202
+  - FE_203
+  necesidades_epp:
+  - EPP_001
+  - EPP_005
+  - EPP_003
+  - EPP_008
+  - EPP_011
+  area_operacional: PLC
+- id: PLC_TA_016
+  nombre_tarea: Operación de bombas de relaves y monitoreo de parámetros críticos
+  descripcion: Operar las bombas de relaves y los sistemas de monitoreo de presión/flujo.
+    Esto implica el acceso a cuartos de bombas y paneles de control, con riesgo de
+    contacto con componentes eléctricos (motores de hasta 600V, 4.16kV) o salpicaduras
+    de pulpa. Se requiere verificación visual de fugas y chequeo de conexiones.
+  id_rol: PLC_ROL_08
+  riesgos_asociados:
+  - R03
+  controles_criticos_asociados:
+  - R03CC01
+  - R03CC02
+  - R03CC03
+  - R03CC04
+  - R03CC05
+  - R03CC06
+  - R03CP01
+  - R03CP02
+  - R03CP03
+  - R03CP04
+  - R03CP05
+  - R03CP06
+  factores_de_exposicion:
+  - FE_204
+  - FE_205
+  necesidades_epp:
+  - EPP_001
+  - EPP_005
+  - EPP_003
+  - EPP_014
+  - EPP_012
+  - EPP_008
+  area_operacional: PLC
+- id: PLC_TA_017
+  nombre_tarea: Recorridos de inspección en áreas operativas de la planta concentradora
+  descripcion: Recorrer las diversas áreas de la planta concentradora, incluyendo
+    los pisos de molinos, celdas de flotación y áreas de filtrado, lo que implica
+    el tránsito por pasarelas y escaleras a distintas alturas (hasta 15 metros). El
+    supervisor verifica el cumplimiento de las normas de seguridad en altura y las
+    condiciones de orden y limpieza. El riesgo es de caída por resbalones o tropiezos
+    en un entorno operativo.
+  id_rol: PLC_ROL_09
+  riesgos_asociados:
+  - R01
+  controles_criticos_asociados:
+  - R01CC01
+  - R01CC02
+  - R01CC03
+  - R01CC04
+  - R01CC05
+  - R01CC06
+  - R01CP01
+  - R01CP02
+  - R01CP03
+  - R01CP04
+  - R01CP05
+  - R01CP06
+  factores_de_exposicion:
+  - FE_206
+  - FE_207
+  necesidades_epp:
+  - EPP_001
+  - EPP_005
+  - EPP_003
+  - EPP_065
+  area_operacional: PLC
+- id: PLC_TA_018
+  nombre_tarea: Supervisión de trabajos de mantenimiento o limpieza en celdas y molinos
+  descripcion: Supervisar las operaciones de mantenimiento o limpieza que implican
+    el manejo de componentes pesados o la proyección de material. El supervisor debe
+    asegurar que las áreas estén segregadas y que el personal use el EPP adecuado.
+    El riesgo es indirecto, por la caída de objetos si no se aplican los controles
+    o por el incumplimiento de las zonas de exclusión.
+  id_rol: PLC_ROL_09
+  riesgos_asociados:
+  - R02
+  controles_criticos_asociados:
+  - R02CC01
+  - R02CC02
+  - R02CC03
+  - R02CC04
+  - R02CC05
+  - R02CC06
+  - R02CP01
+  - R02CP02
+  - R02CP03
+  - R02CP04
+  - R02CP05
+  - R02CP06
+  factores_de_exposicion:
+  - FE_208
+  - FE_209
+  necesidades_epp:
+  - EPP_001
+  - EPP_005
+  - EPP_003
+  - EPP_065
+  - EPP_064
+  area_operacional: PLC
+- id: PLC_TA_019
+  nombre_tarea: Supervisión y aprobación de procedimientos LOTO en equipos eléctricos
+  descripcion: Aprobar y supervisar la aplicación de procedimientos LOTO para trabajos
+    eléctricos en la planta, incluyendo la verificación de la desenergización de equipos
+    de alta y baja tensión. Aunque no manipula directamente los equipos, el supervisor
+    es el responsable final de la seguridad eléctrica de su turno, y un error en la
+    autorización o verificación puede tener consecuencias graves.
+  id_rol: PLC_ROL_09
+  riesgos_asociados:
+  - R03
+  controles_criticos_asociados:
+  - R03CC01
+  - R03CC02
+  - R03CC03
+  - R03CC04
+  - R03CC05
+  - R03CC06
+  - R03CP01
+  - R03CP02
+  - R03CP03
+  - R03CP04
+  - R03CP05
+  - R03CP06
+  factores_de_exposicion:
+  - FE_210
+  - FE_211
+  necesidades_epp:
+  - EPP_012
+  - EPP_005
+  - EPP_064
+  - EPP_020
+  area_operacional: PLC

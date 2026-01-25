@@ -1,0 +1,312 @@
+- termino: PTEE
+  significado: Permiso de Trabajo en Equipos Energizados
+  descripcion: Documento formal que autoriza la intervención en equipos eléctricos
+    con riesgo de estar energizados, indicando responsables, procedimientos aplicables,
+    riesgos y EPP requeridos.
+  categoria: Permisos y Procedimientos
+  area: Todas las Áreas Operacionales
+  aplicabilidad:
+  - Gestión de permisos de trabajo
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  tags:
+  - PTEE
+  - permiso
+  - trabajo
+  - equipos
+  - energizados
+  - seguridad eléctrica
+  area_ids:
+  - MRA
+  - CHP
+  - TME
+  - STM
+  - PLC
+  id: GLO_PTEE
+- termino: PTS
+  significado: Procedimiento de Trabajo Seguro
+  descripcion: Documento técnico que describe paso a paso cómo realizar una tarea
+    en forma segura, incluyendo los riesgos asociados y los controles requeridos.
+    Es obligatorio en tareas críticas o no rutinarias.
+  categoria: Procedimientos de Seguridad
+  area: Todas las Áreas Operacionales
+  aplicabilidad:
+  - Planificación y ejecución de tareas
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  tags:
+  - PTS
+  - procedimiento
+  - trabajo
+  - seguro
+  - seguridad operacional
+  - tareas críticas
+  area_ids:
+  - MRA
+  - CHP
+  - TME
+  - STM
+  - PLC
+  id: GLO_PTS
+- termino: SPDC
+  significado: Sistema Personal de Detención de Caídas
+  descripcion: Conjunto de elementos de protección personal diseñados para detener
+    una caída desde altura, incluyendo arnés, líneas de vida, conectores y puntos
+    de anclaje certificados.
+  categoria: Equipos de Protección Personal
+  area: Todas las Áreas Operacionales
+  aplicabilidad:
+  - Trabajos en altura
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  tags:
+  - SPDC
+  - protección personal
+  - altura
+  - caída
+  - arnés
+  area_ids:
+  - MRA
+  - CHP
+  - TME
+  - STM
+  - PLC
+  id: GLO_SPDC
+- termino: LOTO
+  significado: Lock Out Tag Out
+  descripcion: Procedimiento de bloqueo y etiquetado de equipos de energía peligrosa,
+    utilizado para asegurar que un equipo no pueda ser energizado accidentalmente
+    durante trabajos de mantenimiento o intervención.
+  categoria: Procedimientos de Seguridad
+  area: Todas las Áreas Operacionales
+  aplicabilidad:
+  - Aislamiento de energías peligrosas
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  tags:
+  - LOTO
+  - bloqueo
+  - etiquetado
+  - energía cero
+  - seguridad eléctrica
+  area_ids:
+  - MRA
+  - CHP
+  - TME
+  - STM
+  - PLC
+  id: GLO_LOTO
+- termino: ICAM
+  significado: Incident Cause Analysis Method
+  descripcion: Metodología estructurada para investigar incidentes que considera factores
+    organizacionales, humanos, de tarea, técnicos y del entorno, identificando causas
+    raíz en incidentes mayores.
+  categoria: Metodologías de Análisis
+  area: Todas las Áreas Operacionales
+  aplicabilidad:
+  - Análisis de Incidente Mayor (IMAY)
+  registro_aplicable_a:
+  - incidente
+  tags:
+  - ICAM
+  - metodología causal
+  - análisis de incidentes
+  - causas raíz
+  - investigación exhaustiva
+  area_ids:
+  - MRA
+  - CHP
+  - TME
+  - STM
+  - PLC
+  id: GLO_ICAM
+- termino: 5WHYS
+  significado: Análisis de los 5 Porqués
+  descripcion: Técnica de análisis causal simplificada que busca la causa raíz a través
+    de una serie de cinco preguntas sucesivas "¿por qué?". Útil para incidentes menores
+    y near misses.
+  categoria: Metodologías de Análisis
+  area: Todas las Áreas Operacionales
+  aplicabilidad:
+  - Análisis de Incidente Menor (IMEN)
+  - Análisis de Near Miss (NMS)
+  registro_aplicable_a:
+  - incidente
+  tags:
+  - 5WHYS
+  - cinco porqués
+  - análisis causal
+  - incidentes leves
+  - análisis rápido
+  area_ids:
+  - MRA
+  - CHP
+  - TME
+  - STM
+  - PLC
+  id: GLO_5WHYS
+- termino: OBS
+  significado: Observación Técnica
+  descripcion: Método básico de documentación de condiciones inseguras o comportamientos
+    riesgosos en campo para generar recomendaciones inmediatas.
+  categoria: Metodologías de Análisis
+  area: Todas las Áreas Operacionales
+  aplicabilidad:
+  - Registro de Peligros Detectados (PELI)
+  - Registro de Observaciones Preventivas Generales (OPG)
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - OBS
+  - observación de campo
+  - registro de seguridad
+  - reporte proactivo
+  area_ids:
+  - MRA
+  - CHP
+  - TME
+  - STM
+  - PLC
+  id: GLO_OBS
+- termino: OCC
+  significado: Observación de Control Crítico
+  descripcion: Tipo de observación de seguridad enfocada en verificar la existencia,
+    estado y cumplimiento de un control crítico asociado a un BowTie de riesgo.
+  categoria: Observaciones
+  area: Todas las Áreas Operacionales
+  aplicabilidad:
+  - Registro de Observaciones de Controles Críticos
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - OCC
+  - observación de control
+  - control crítico
+  - bowtie
+  - cumplimiento
+  area_ids:
+  - MRA
+  - CHP
+  - TME
+  - STM
+  - PLC
+  id: GLO_OCC
+- termino: OPG
+  significado: Observación Preventiva General
+  descripcion: Observación de seguridad enfocada en prácticas o condiciones generales,
+    sin vinculación directa a un control crítico específico.
+  categoria: Observaciones
+  area: Todas las Áreas Operacionales
+  aplicabilidad:
+  - Registro de Observaciones Preventivas Generales
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - OPG
+  - observación general
+  - condición insegura
+  - acto inseguro
+  - prevención
+  area_ids:
+  - MRA
+  - CHP
+  - TME
+  - STM
+  - PLC
+  id: GLO_OPG
+- termino: IMAY
+  significado: Incidente Mayor
+  descripcion: Evento con consecuencias severas (lesiones graves, fatalidad) que requiere
+    análisis ICAM completo.
+  categoria: Tipos de Incidente
+  area: Todas las Áreas Operacionales
+  aplicabilidad:
+  - Registro y análisis de Incidente Mayor
+  registro_aplicable_a:
+  - incidente
+  tags:
+  - IMAY
+  - incidente grave
+  - alta severidad
+  - fatalidad
+  - evento crítico
+  area_ids:
+  - MRA
+  - CHP
+  - TME
+  - STM
+  - PLC
+  id: GLO_IMAY
+- termino: IMEN
+  significado: Incidente Menor
+  descripcion: Evento con lesiones leves o tiempo perdido. Se analiza mediante 5 Whys
+    y se asocia a controles BowTie.
+  categoria: Tipos de Incidente
+  area: Todas las Áreas Operacionales
+  aplicabilidad:
+  - Registro y análisis de Incidente Menor
+  registro_aplicable_a:
+  - incidente
+  tags:
+  - IMEN
+  - incidente leve
+  - baja severidad
+  - primeros auxilios
+  - daño menor
+  area_ids:
+  - MRA
+  - CHP
+  - TME
+  - STM
+  - PLC
+  id: GLO_IMEN
+- termino: NMS
+  significado: Near Miss (Cuasi Accidente)
+  descripcion: Evento sin consecuencias pero con potencial de daño. Se registra y
+    analiza con herramientas simplificadas.
+  categoria: Tipos de Incidente
+  area: Todas las Áreas Operacionales
+  aplicabilidad:
+  - Registro y análisis de Near Miss
+  registro_aplicable_a:
+  - incidente
+  tags:
+  - NMS
+  - cuasi incidente
+  - casi accidente
+  - potencial de daño
+  - prevención
+  area_ids:
+  - MRA
+  - CHP
+  - TME
+  - STM
+  - PLC
+  id: GLO_NMS
+- termino: HAZARD
+  significado: Peligro Detectado
+  descripcion: Condición riesgosa sin liberación de energía ni consecuencias visibles.
+    Se registra como observación técnica.
+  categoria: Tipos de Incidente
+  area: Todas las Áreas Operacionales
+  aplicabilidad:
+  - Registro y análisis de Peligro Detectado
+  registro_aplicable_a:
+  - observacion
+  tags:
+  - Hazard
+  - peligro
+  - condición insegura
+  - riesgo
+  - identificación proactiva
+  area_ids:
+  - MRA
+  - CHP
+  - TME
+  - STM
+  - PLC
+  id: GLO_HAZARD

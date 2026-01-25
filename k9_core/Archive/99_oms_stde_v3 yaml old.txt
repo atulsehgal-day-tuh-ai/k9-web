@@ -1,0 +1,550 @@
+id_oms: "OMS_STDE_001"
+version: "3.0"
+nombre: "OMS K9 Mining Safety - Escenario Sintético Aster 12 semanas (STDE v3)"
+
+descripcion_general: >
+  Ontología mínima sintética (OMS) utilizada para generar el STDE v3 de 12 semanas
+  previas al lunes crítico (03-02-2025). Define estructura operacional, FDO,
+  mapeos de riesgo por área, uso de observaciones OPG/OCC con estados +/- y
+  tipos de incidentes válidos según el catálogo oficial. Esta versión elimina
+  auditorías AUC dado que solo aplican a incidentes mayores, los cuales no
+  están presentes en el escenario STDE v3.
+
+metadatos:
+  proposito: >
+    Servir como única fuente de verdad para la generación del STDE v3, integrando
+    trayectorias diarias, FDO, señales observacionales, incidentes realistas,
+    auditorías reactivas AUF y el marco del modelo proactivo v4.4.
+  alcance_temporal: "12 semanas previas al lunes crítico"
+  fecha_lunes_critico: "2025-02-03"
+  notas: >
+    Esta OMS v3 integra estructura operacional, factores FDO, definición de
+    observaciones y estados, tipos de incidentes reales de la ontología,
+    mapeos riesgo/área, y la referencia al ranking proactivo v4.4.
+    Se eliminan auditorías AUC por no aplicar a este escenario sin incidentes mayores.
+
+referencias_estructuras:
+  estructura_incidentes: "23_estructura_incidentes_v5.yaml"
+  tipos_incidentes: "25_tipos_incidentes_v1.yaml"
+  estructura_observaciones: "24_estructura_observaciones_v6.yaml"
+  tipos_observaciones: "26_tipos_observaciones_v2.yaml"
+  estructura_auditorias: "31_estructura_auditorias_v1.yaml"
+  tipos_auditoria: "32_tipos_auditoria_v1.yaml"
+
+
+
+fdo:
+  descripcion: >
+    Factores Dinámicos Operativos (FDO) que modulan las probabilidades
+    de observaciones, incidentes y auditorías en el STDE v3. Se modelan
+    como series diarias normalizadas y pueden combinarse en trayectorias
+    derivadas por riesgo.
+  factores:
+    - id: "FDO_CLIMA"
+      nombre: "Condiciones Climáticas"
+      normalizacion: "0-1"
+      notas: >
+        Afecta exposición a R01 y R02 (trabajos en altura, maniobras en exterior).
+    - id: "FDO_FATIGA"
+      nombre: "Fatiga Operacional"
+      normalizacion: "0-1"
+      notas: >
+        Aumenta probabilidad de errores humanos y desvíos en tareas críticas.
+    - id: "FDO_CONGESTION"
+      nombre: "Congestión Operacional"
+      normalizacion: "0-1"
+      notas: >
+        Relacionada a tráfico de equipos, solapes de tareas y colas en frentes.
+    - id: "FDO_BACKLOG"
+      nombre: "Backlog de Mantenimiento"
+      normalizacion: "0-1"
+      notas: >
+        Backlog alto implica mayor degradación de equipos y controles.
+    - id: "FDO_DOTACION"
+      nombre: "Dotación Disponible"
+      normalizacion: "0-1"
+      notas: >
+        Dotación baja aumenta presión operacional y compromete controles.
+    - id: "FDO_VARIABILIDAD"
+      nombre: "Variabilidad Operacional / Producción"
+      normalizacion: "0-1"
+      notas: >
+        Cambios frecuentes de plan, emergencias y rework.
+    - id: "FDO_ESPECIAL"
+      nombre: "Factor Especial del Escenario"
+      normalizacion: "0-1"
+      notas: >
+        Permite modelar efectos específicos del lunes crítico o campañas puntuales.
+
+
+# --------------------------------------------------------------------
+# Escenario de operación sintético
+# --------------------------------------------------------------------
+escenario_operacion:
+  id_escenario: "ESC_STDE_12S_001"
+  nombre: "Escenario sintético Aster - 12 semanas previas a lunes crítico"
+  fecha_inicio: "2024-11-11"
+  numero_semanas: 12
+
+  descripcion: >
+    Escenario de operación minera a cielo abierto con planta, talleres y
+    sistemas de transporte, definido para 12 semanas consecutivas. El lunes
+    crítico ocurre inmediatamente después de este periodo (03-02-2025) y se
+    utilizará como semana de prueba para el modelo proactivo.
+
+  lunes_critico:
+    fecha: "2025-02-03"
+    descripcion: >
+      Día de referencia donde se producen dos near miss relevantes asociados
+      a R01 (Caída desde Altura) y R02 (Caída de Objetos), que revelan señales
+      no plenamente capturadas por el modelo proactivo previo.
+    notas_modelo: >
+      El STDE de 12 semanas se usa para entrenar y calibrar las trayectorias
+      previas. El lunes crítico sirve como hito de validación y recalibración
+      del modelo en la demo.
+    eventos_sinteticos:
+      - id_evento: "LC_EVT_01"
+        tipo_incidente_id: "NMS"
+        riesgo_id: "R01"
+        descripcion: "Caída desde andamio detenida por arnés (caída detenida)."
+      - id_evento: "LC_EVT_02"
+        tipo_incidente_id: "NMS"
+        riesgo_id: "R02"
+        descripcion: "Caída de llave desde altura sin impacto en personas."
+
+
+
+  # Áreas operacionales (desde 13_catalogo_areas_operacionales_v1.yaml)
+  areas_operacionales:
+    descripcion: >
+      Las áreas operacionales se obtienen íntegramente desde el catálogo oficial
+      13_catalogo_areas_operacionales_v1.yaml.
+    referencia_catalogo_areas: "13_catalogo_areas_operacionales_v1.yaml"
+
+  # Turnos simplificados (2x12 horas)
+  turnos:
+    - id_turno: "T1D"
+      nombre: "Turno Día"
+      hora_inicio: "07:00"
+      hora_fin: "19:00"
+      descripcion: "Turno diurno continuo."
+    - id_turno: "T2N"
+      nombre: "Turno Noche"
+      hora_inicio: "19:00"
+      hora_fin: "07:00"
+      descripcion: "Turno nocturno continuo."
+
+  # Roles clave por área (tomados del catálogo de roles, no sólo mina)
+roles_clave:
+  descripcion: >
+    Los roles se obtienen íntegramente del catálogo oficial
+    10_catalogo_roles_v3.yaml. Este escenario STDE v3 no redefine
+    roles; solo los usa como referencia para asignación de tareas
+    y generación de observaciones/incidentes.
+  referencia_catalogo_roles: "10_catalogo_roles_v3.yaml"
+
+  parametros_STDE:
+    poblacion_base_trabajadores: 120
+    normalizacion_lambdas: "Poisson diaria"
+    notas: >
+      Las tasas definidas en las distribuciones semanales se interpretan como
+      conteos esperados por 100 trabajadores por semana. El notebook de
+      generación de STDE las convertirá en lambdas diarias (distribución
+      Poisson) para observaciones, incidentes y auditorías.
+
+# --------------------------------------------------------------------
+# Riesgos considerados en esta OMS
+# --------------------------------------------------------------------
+riesgos_modelados:
+  - id_riesgo: "R01"
+    nombre: "Caída desde Altura"
+    descripcion: >
+      Riesgo crítico asociado a trabajos en altura, plataformas, escaleras,
+      equipos de gran tamaño y bordes de bancos. Su trayectoria de 12 semanas
+      muestra un aumento moderado de señales previas al lunes crítico, pero
+      no tan pronunciado como R02.
+  - id_riesgo: "R02"
+    nombre: "Caída de Objetos"
+    descripcion: >
+      Riesgo principal de la OMS. Presenta la degradación más fuerte en las
+      12 semanas previas al lunes crítico, con aumento de OCC, casi incidentes
+      e incidentes con lesión. Es el riesgo que lidera el ranking en las
+      últimas semanas.
+  - id_riesgo: "R03"
+    nombre: "Contacto con Energía Eléctrica"
+    descripcion: >
+      Riesgo relevante, pero con frecuencia más baja. Muestra señales
+      intermitentes de degradación, especialmente en Talleres y Planta, sin
+      llegar a los niveles de R02.
+
+otros_riesgos:
+  descripcion: >
+    El catálogo completo de riesgos puede contener otros IDs adicionales
+    (R04, R05, etc.). En esta OMS v2 se asume que dichos riesgos existen como
+    IDs, pero no se modelan trayectorias ni análisis detallado; sólo se
+    consideran explícitamente R01, R02 y R03 para efectos de demostración.
+
+mapeos_operacionales:
+  descripcion: >
+    Mapeos sintéticos entre áreas, riesgos y la probabilidad relativa de
+    observar señales en el STDE v3. Los roles y tareas específicos se
+    obtienen desde 10_catalogo_roles_v3.yaml y 12_catalogo_tareas_v1.yaml.
+
+  riesgo_por_area:
+    MRA:
+      - riesgo_id: "R01"
+        peso_relativo: 0.5
+      - riesgo_id: "R02"
+        peso_relativo: 0.3
+      - riesgo_id: "R03"
+        peso_relativo: 0.2
+    CHP:
+      - riesgo_id: "R02"
+        peso_relativo: 0.6
+      - riesgo_id: "R03"
+        peso_relativo: 0.3
+      - riesgo_id: "R01"
+        peso_relativo: 0.1
+    TME:
+      - riesgo_id: "R02"
+        peso_relativo: 0.4
+      - riesgo_id: "R03"
+        peso_relativo: 0.4
+      - riesgo_id: "R01"
+        peso_relativo: 0.2
+    STM:
+      - riesgo_id: "R02"
+        peso_relativo: 0.5
+      - riesgo_id: "R01"
+        peso_relativo: 0.3
+      - riesgo_id: "R03"
+        peso_relativo: 0.2
+    PLC:
+      - riesgo_id: "R03"
+        peso_relativo: 0.5
+      - riesgo_id: "R02"
+        peso_relativo: 0.3
+      - riesgo_id: "R01"
+        peso_relativo: 0.2
+
+  notas: >
+    Estos pesos se utilizan como referencia para asignar áreas dominantes
+    en las trayectorias y para seleccionar roles/tareas desde los catálogos
+    al generar observaciones e incidentes realistas.
+
+# --------------------------------------------------------------------
+# Modelo proactivo de BHP
+# --------------------------------------------------------------------
+
+proactivo:
+  descripcion: >
+    Configuración de referencia para el modelo proactivo semanal sintético.
+    La tabla base v4.4 contiene scores 0–100 y ranking 1–10 por riesgo (R01–R10)
+    para 12 semanas previas al lunes crítico.
+  archivo_ranking_base: "stde_proactivo_semanal_v4_4.csv"
+  campos_esperados:
+    - "semana_id"
+    - "riesgo_id"
+    - "score_proactivo"
+    - "rank_proactivo"
+  notas_uso_stde_v3: >
+    El notebook STDE v3 utilizará este archivo como insumo para derivar
+    thresholds continuos 0–1 por semana y riesgo. El lunes crítico no genera
+    nuevo ranking, pero se utiliza para evaluar el desempeño del modelo
+    frente al outlier (evento del lunes crítico).
+
+
+
+# --------------------------------------------------------------------
+# STDE: definición de tipos de registros
+# --------------------------------------------------------------------
+stde:
+  observaciones:
+    descripcion: >
+      Observaciones de conducta o condición en terreno. Incluye observaciones
+      preventivas generales (OPG) y observaciones de controles críticos (OCC),
+      basadas en 26_tipos_observaciones_v2.yaml.
+    tipo_observaciones_validos:
+      - codigo: "OPG"
+        nombre: "Observación Preventiva General"
+        referencia_catalogo_tipos: "26_tipos_observaciones_v2.yaml"
+        referencia_estructura: "24_estructura_observaciones_v6.yaml"
+      - codigo: "OCC"
+        nombre: "Observación de Control Crítico"
+        referencia_catalogo_tipos: "26_tipos_observaciones_v2.yaml"
+        referencia_estructura: "24_estructura_observaciones_v6.yaml"
+
+    estados_observacion:
+      descripcion: "Estados valorativos utilizados en STDE v3"
+      estados_validos:
+        - codigo: "OPG+"
+          significado: "Buena práctica / gestión segura observada"
+          base: "OPG"
+        - codigo: "OPG-"
+          significado: "Señal de gestión débil o conducta subestándar"
+          base: "OPG"
+        - codigo: "OCC+"
+          significado: "Control crítico verificado en cumplimiento"
+          base: "OCC"
+        - codigo: "OCC-"
+          significado: "Control crítico no cumplido o con desviación relevante"
+          base: "OCC"
+
+    reglas_generacion_alto_nivel:
+      - id_regla: "R_OPG_RUIDO_OPERACIONAL"
+        descripcion: >
+          Generar OPG diarias como ruido operacional, con tasas base por área
+          (MRA 2–4, PLC 1–3, TRN 1–2, TME 1–2) y distribución OPG+/OPG- según
+          FDO y comportamiento del riesgo dominante.
+      - id_regla: "R_OCC_POR_EVENTOS"
+        descripcion: >
+          Generar OCC asociadas a controles críticos cuando existan peligros
+          detectados, near miss o incidentes, con énfasis en OCC- en días con
+          alta degradación de R02 o FDO desfavorables.
+
+  incidentes:
+    descripcion: >
+      Eventos no deseados asociados a los riesgos modelados, basados en el
+      catálogo 25_tipos_incidentes_v1.yaml. Se utilizan cuatro categorías:
+      HAZARD, NMS, IMEN e IMAY.
+    tipos_incidentes_validos:
+      - codigo: "HAZARD"
+        nombre: "Peligro Detectado"
+        uso_en_stde_v3: true
+        referencia_catalogo_tipos: "25_tipos_incidentes_v1.yaml"
+        referencia_estructura: "23_estructura_incidentes_v5.yaml"
+      - codigo: "NMS"
+        nombre: "Near Miss"
+        uso_en_stde_v3: true
+        referencia_catalogo_tipos: "25_tipos_incidentes_v1.yaml"
+        referencia_estructura: "23_estructura_incidentes_v5.yaml"
+      - codigo: "IMEN"
+        nombre: "Incidente Menor con Lesión"
+        uso_en_stde_v3: true
+        referencia_catalogo_tipos: "25_tipos_incidentes_v1.yaml"
+        referencia_estructura: "23_estructura_incidentes_v5.yaml"
+      - codigo: "IMAY"
+        nombre: "Incidente Mayor"
+        uso_en_stde_v3: false
+        referencia_catalogo_tipos: "25_tipos_incidentes_v1.yaml"
+        referencia_estructura: "23_estructura_incidentes_v5.yaml"
+
+    escala_narrativa:
+      descripcion: >
+        Escala de severidad narrativa utilizada para construir las trayectorias
+        de incidentes en el STDE v3.
+      progresion:
+        - desde: "HAZARD"
+          hacia: "NMS"
+          descripcion: "De condición/peligro detectado a cuasi accidente."
+        - desde: "NMS"
+          hacia: "IMEN"
+          descripcion: "Del near miss a incidente menor con lesión."
+        - desde: "IMEN"
+          hacia: "IMAY"
+          descripcion: "Del incidente menor al incidente mayor."
+
+  auditorias:
+    descripcion: >
+      Auditorías e inspecciones de campo que capturan el nivel de cumplimiento
+      de controles críticos y otros requisitos. Basadas en 31_estructura_auditorias_v1.yaml
+      y 32_tipos_auditoria_v1.yaml.
+    tipos_auditoria_validos:
+      - codigo: "AUC"
+        nombre: "Auditoría / Inspección en Cumplimiento"
+        referencia_estructura: "31_estructura_auditorias_v1.yaml"
+      - codigo: "AUF"
+        nombre: "Auditoría / Inspección con Hallazgos"
+        referencia_estructura: "31_estructura_auditorias_v1.yaml"
+
+    origenes:
+      - codigo: "planificada"
+      - codigo: "post_incidente"
+      - codigo: "post_nm"
+      - codigo: "cierre_mes"
+
+    reglas_triggers:
+      - id_regla: "TR_NM_GRAVE_AUF_48H"
+        descripcion: "Near Miss con alta severidad potencial → AUF en ≤ 48 horas."
+      - id_regla: "TR_FALLA_CONTROL_CRITICO_AUF"
+        descripcion: "Falla de control crítico (OCC- grave o IMEN/IMAY) → AUF obligatoria."
+      - id_regla: "TR_PD_CRITICOS_DOS_DIAS"
+        descripcion: "Dos días seguidos con HAZARD críticos → AUF inmediata."
+      - id_regla: "TR_AUDITORIA_MENSUAL"
+        descripcion: "Fin de mes → al menos una auditoría por área (AUC o AUF)."
+
+
+# --------------------------------------------------------------------
+# Distribuciones sintéticas por semana
+# Basadas en el patrón 7S (semanas 1–7) y extendidas a 12 semanas
+# para cubrir todo el periodo previo al lunes crítico.
+# --------------------------------------------------------------------
+distribuciones:
+
+  semana_1:
+    nombre: "Semana 1 – Estabilidad Base"
+    observaciones_por_100:
+      OPG: 22
+      OCC: 3
+    incidentes_por_100:
+      HAZARD: 1.8
+      NMS: 0.9
+      IMEN: 0.2
+      IMAY: 0.0
+    auditorias_por_100:
+      AUC: 1.4
+      AUF: 0.3
+
+  semana_2:
+    nombre: "Semana 2 – Operación Normal"
+    observaciones_por_100:
+      OPG: 23
+      OCC: 3
+    incidentes_por_100:
+      HAZARD: 1.9
+      NMS: 1.0
+      IMEN: 0.2
+      IMAY: 0.0
+    auditorias_por_100:
+      AUC: 1.4
+      AUF: 0.3
+
+  semana_3:
+    nombre: "Semana 3 – Señales Tempranas (R02)"
+    observaciones_por_100:
+      OPG: 22
+      OCC: 3
+    incidentes_por_100:
+      HAZARD: 2.1
+      NMS: 1.1
+      IMEN: 0.25
+      IMAY: 0.0
+    auditorias_por_100:
+      AUC: 1.3
+      AUF: 0.35
+
+  semana_4:
+    nombre: "Semana 4 – R02 Aumenta"
+    observaciones_por_100:
+      OPG: 21
+      OCC: 3
+    incidentes_por_100:
+      HAZARD: 2.3
+      NMS: 1.2
+      IMEN: 0.27
+      IMAY: 0.0
+    auditorias_por_100:
+      AUC: 1.3
+      AUF: 0.35
+
+  semana_5:
+    nombre: "Semana 5 – Degradación Acumulada (R02)"
+    observaciones_por_100:
+      OPG: 20
+      OCC: 3
+    incidentes_por_100:
+      HAZARD: 2.5
+      NMS: 1.3
+      IMEN: 0.30
+      IMAY: 0.0
+    auditorias_por_100:
+      AUC: 1.2
+      AUF: 0.40
+
+  semana_6:
+    nombre: "Semana 6 – Señal Débil de R01"
+    observaciones_por_100:
+      OPG: 19
+      OCC: 3
+    incidentes_por_100:
+      HAZARD: 2.6
+      NMS: 1.3
+      IMEN: 0.32
+      IMAY: 0.0
+    auditorias_por_100:
+      AUC: 1.2
+      AUF: 0.40
+
+  semana_7:
+    nombre: "Semana 7 – Inicio de Variabilidad"
+    observaciones_por_100:
+      OPG: 20
+      OCC: 4
+    incidentes_por_100:
+      HAZARD: 2.7
+      NMS: 1.4
+      IMEN: 0.33
+      IMAY: 0.0
+    auditorias_por_100:
+      AUC: 1.1
+      AUF: 0.42
+
+  semana_8:
+    nombre: "Semana 8 – Ruido Operacional (FDO ↑)"
+    observaciones_por_100:
+      OPG: 19
+      OCC: 4
+    incidentes_por_100:
+      HAZARD: 2.8
+      NMS: 1.4
+      IMEN: 0.35
+      IMAY: 0.0
+    auditorias_por_100:
+      AUC: 1.1
+      AUF: 0.45
+
+  semana_9:
+    nombre: "Semana 9 – Congestión y Fatiga (FDO crítico)"
+    observaciones_por_100:
+      OPG: 19
+      OCC: 4
+    incidentes_por_100:
+      HAZARD: 3.0
+      NMS: 1.5
+      IMEN: 0.38
+      IMAY: 0.0
+    auditorias_por_100:
+      AUC: 1.0
+      AUF: 0.48
+
+  semana_10:
+    nombre: "Semana 10 – Pico de Señales (R02 dominante)"
+    observaciones_por_100:
+      OPG: 18
+      OCC: 4
+    incidentes_por_100:
+      HAZARD: 3.2
+      NMS: 1.6
+      IMEN: 0.40
+      IMAY: 0.0
+    auditorias_por_100:
+      AUC: 0.9
+      AUF: 0.50
+
+  semana_11:
+    nombre: "Semana 11 – Tensión Previa"
+    observaciones_por_100:
+      OPG: 18
+      OCC: 4
+    incidentes_por_100:
+      HAZARD: 3.3
+      NMS: 1.6
+      IMEN: 0.42
+      IMAY: 0.0
+    auditorias_por_100:
+      AUC: 0.9
+      AUF: 0.52
+
+  semana_12:
+    nombre: "Semana 12 – Preludio del Lunes Crítico"
+    observaciones_por_100:
+      OPG: 17
+      OCC: 4
+    incidentes_por_100:
+      HAZARD: 3.4
+      NMS: 1.7
+      IMEN: 0.45
+      IMAY: 0.0
+    auditorias_por_100:
+      AUC: 0.8
+      AUF: 0.55

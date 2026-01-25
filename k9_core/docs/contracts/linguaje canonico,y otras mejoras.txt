@@ -1,0 +1,3424 @@
+1️⃣ Principio rector (esto lo fija todo)
+
+En K9, los hechos no se interpretan dos veces,
+las decisiones no se recalculan,
+y la narrativa nunca inventa.
+
+Traducción técnica:
+
+Hechos → OperationalAnalysis
+
+Juicio → Analyst
+
+Comunicación → Narrative
+
+2️⃣ Redefinición clara de cada nodo (sin cambiar nombres)
+🟦 DataEngineNode — Fuente única de datos
+
+No cambia. Está bien.
+
+Responsabilidad:
+
+Cargar STDE completo
+
+Normalizar estructura
+
+No interpretar
+
+Salida esperada:
+
+engine = {
+  "stde": {...},
+  "observations": [...],
+  "audits": [...],
+  "fdo": {...},
+  "proactive": {...}
+}
+
+🟩 OperationalAnalysisNode — Capa de evidencia (CRÍTICO)
+
+👉 Este es el nodo clave que hoy no está completamente aprovechado.
+
+Responsabilidad REAL
+
+Convertir datos crudos en hechos operacionales verificables
+
+Salida obligatoria y estable
+analysis["operational_analysis"] = {
+    "evidence_by_risk": {
+        "R01": {
+            "occ_count": int,
+            "opg_count": int,
+            "weekly_trend": "increasing|stable|decreasing",
+            "signals_before_critical_monday": bool
+        }
+    },
+    "temporal_signals": {
+        "critical_monday": True,
+        "weeks_analyzed": int
+    },
+    "pressure_by_risk": {
+        "R01": float,
+        "R02": float
+    }
+}
+
+
+📌 Regla inquebrantable
+
+Nada de esto se borra ni se reemplaza después.
+
+🟨 AnalystNode — Juicio y decisión (NO hechos)
+
+El Analyst NO responde preguntas, NO cuenta cosas, NO describe eventos.
+
+Responsabilidad
+
+Tomar evidencia → emitir juicio
+
+Salida:
+
+analysis["risk_summary"] = {
+    "dominant_risk": "R02",
+    "relevant_risks": ["R01"]
+}
+
+analysis["proactive_comparison"] = {
+    "R01": {"alignment_status": "underestimated_by_proactive"},
+    "R02": {"alignment_status": "aligned"}
+}
+
+analysis["preventive_decision"] = {...}
+
+
+📌 El Analyst nunca debe ocultar evidencia
+
+🟧 MetricsNode + Adapter — Visualización, no narrativa
+
+Aquí aclaro la confusión:
+
+¿Para qué sirven?
+
+Tablas
+
+Rankings
+
+Gráficos
+
+Dashboards
+
+¿Para qué NO sirven?
+
+No explican
+
+No narran
+
+No reemplazan texto
+
+👉 Son salida paralela, no insumo narrativo
+
+🟥 NarrativeNode — Comunicación consciente
+
+Aquí va la mejora fuerte, sin romper lo bueno.
+
+Regla de oro
+
+El NarrativeNode elige qué decir,
+pero nunca deduce lo que no existe.
+
+🧠 Nuevo orden interno del NarrativeNode
+1️⃣ Preguntas de HECHOS
+
+Ejemplos:
+
+“¿Qué señales aparecieron antes del lunes crítico?”
+
+“¿Cuántas observaciones hubo?”
+
+“¿Qué pasó la semana pasada?”
+
+➡️ Fuente única: operational_analysis
+
+2️⃣ Preguntas de JUICIO
+
+Ejemplos:
+
+“¿Cuál es el riesgo más importante?”
+
+“¿Está subestimado por el proactivo?”
+
+➡️ Fuente: risk_summary, proactive_comparison
+
+3️⃣ Preguntas MIXTAS
+
+Ejemplo:
+
+“¿Por qué el proactivo no refleja R01?”
+
+➡️ Hechos + Juicio
+
+evidence_by_risk[R01]
+
+alignment_status[R01]
+
+4️⃣ Fallback honesto (ESTA PARTE ESTABA BIEN)
+
+Solo cuando:
+
+No hay evidencia
+
+No hay juicio
+
+No hay intención clara
+
+----------------
+
+1) Lenguaje del sistema: K9 Commands (canónico, estable)
+1.1. Estructura mínima del comando
+
+Usa un string único y parseable (sin LLM):
+
+Prefijo: K9/1.0
+
+Acción: GET, EXPLAIN, LIST
+
+Recurso: RISK, EVENTS, OBS, AUDITS, FDO, PROACTIVE, SUMMARY
+
+Filtros: week, risk_id, type, limit, etc.
+
+Ejemplos:
+
+K9/1.0 GET SUMMARY week=12
+
+K9/1.0 LIST EVENTS week=1
+
+K9/1.0 LIST OBS week=12
+
+K9/1.0 GET RISK risk_id=R02 horizon=weekly
+
+K9/1.0 EXPLAIN PROACTIVE_DIFF risk_id=R01
+
+K9/1.0 GET SIGNALS before=critical_monday
+
+Esto reemplaza (por ahora) el “intent_classifier por keywords”.
+
+1.2. Detección de modo “comando”
+
+Sin LLM:
+
+Si user_query empieza con K9/ → intent = "system_command"
+
+Si no → intent = "natural_language" (y por ahora va a fallback controlado o demo_mode)
+
+2) Qué debe responder cada capa
+
+Aquí está la parte clave: el sistema debe “entender” cuándo usar Operational vs Analyst no por lenguaje natural, sino por el tipo de comando.
+
+2.1. OperationalAnalysisNode = “Hechos consultables”
+
+Debe exponer (no solo resumir) índices para responder preguntas tipo:
+
+“dame los eventos de la semana 1”
+
+“dame observaciones semana 12”
+
+“cuántas OCC/OPG por riesgo en semana X”
+
+“señales antes de lunes crítico” (si está modelado)
+
+Salida requerida (contrato)
+
+En analysis["operational"]:
+
+analysis["operational"] = {
+  "indexes": {
+    "events_by_week": { 1: [...], 2: [...], ... },
+    "obs_by_week": { 1: [...], ... },
+    "audits_by_week": { ... },
+  },
+  "counts": {
+    "obs_counts_by_week": { 12: {"OPG": 34, "OCC": 8, "TOTAL": 42}, ... },
+    "obs_counts_by_risk": { "R01": {"OPG": x, "OCC": y}, ... },
+    "events_counts_by_week": { ... },
+  },
+  "signals": {
+    "critical_monday": {
+      "exists": True,
+      "week": 12,
+      "summary": "…"
+    },
+    "before_critical_monday": {
+      "weeks": [10,11,12],
+      "by_risk": {
+         "R01": {"OPG":..., "OCC":..., "events":...},
+      }
+    }
+  },
+  "traceability": [...]
+}
+
+
+Con esto, LIST EVENTS week=1 es trivial: el narrative solo formatea.
+
+2.2. AnalystNode = “Juicio / decisión”
+
+Debe consumir analysis["operational"] y producir:
+
+risk_summary
+
+proactive_comparison
+
+preventive_decision
+
+(opcional) pressure_assessment
+
+Pero no debe ser el lugar donde se “buscan eventos”.
+
+2.3. NarrativeNode = “Renderer”
+
+Narrative no decide “qué calcular”. Decide “qué decir” según:
+
+el comando recibido (si existe)
+
+los campos presentes en analysis
+
+Narrative debe seguir esta jerarquía:
+
+Si intent == system_command → route por command.resource
+
+Si no, sin LLM aún → respuesta controlada (explica que se requieren comandos o activa modo demo)
+
+3) Router real (sin LLM): en base al comando, no a keywords
+
+Agregar un parser mínimo:
+
+parsed = {
+  "version": "K9/1.0",
+  "action": "LIST",
+  "resource": "EVENTS",
+  "filters": {"week": 1}
+}
+state.command = parsed
+
+
+Luego el router:
+
+resource in ["EVENTS","OBS","AUDITS","FDO"] → exige analysis["operational"] (facts)
+
+resource in ["SUMMARY","RISK","SIGNALS"] → usa operational + analyst
+
+resource in ["PROACTIVE_DIFF","EXPLAIN"] → usa analyst + operational
+
+4) Smoke tests correctos para esta etapa
+
+El smoke ahora debe ser una batería de comandos canónicos, no lenguaje natural.
+
+4.1. Ejemplos de smoke “fase sin LLM”
+
+Riesgo dominante semana 12
+
+Q: K9/1.0 GET SUMMARY week=12
+
+Must contain: R02 (y tokens estructurales: “dominante” o “risk_summary”)
+
+Subestimación proactivo para R01
+
+Q: K9/1.0 EXPLAIN PROACTIVE_DIFF risk_id=R01
+
+Must contain: R01 y proactivo y alignment o subestim
+
+Señales antes de lunes crítico
+
+Q: K9/1.0 GET SIGNALS before=critical_monday
+
+Must contain: lunes o critical y al menos un riesgo
+
+Observaciones semana 12
+
+Q: K9/1.0 GET OBS_COUNTS week=12
+
+Must contain: OPG OCC y TOTAL (o valores)
+
+Eventos semana 1 (tu caso)
+
+Q: K9/1.0 LIST EVENTS week=1
+
+Must satisfy: respuesta no vacía o “no hay eventos registrados en semana 1” (pero basado en data real, no invento)
+
+4.2. Qué valida realmente
+
+Los nodos generan los campos correctos
+
+El router selecciona bien
+
+El narrative sabe “renderizar” facts vs juicio
+
+No dependes de NLP
+
+5) Luego: set amplio de comandos canónicos para el LLM
+
+Cuando integras el LLM, su trabajo es:
+
+Convertir pregunta natural → comando canónico + filtros
+
+Ejecutar el grafo
+
+Convertir salida (analysis, metrics, reasoning) → respuesta natural
+
+Ejemplos de mapeo LLM
+
+“Dame los eventos de la semana 1” → K9/1.0 LIST EVENTS week=1
+
+“¿Qué señales antes del lunes crítico?” → K9/1.0 GET SIGNALS before=critical_monday
+
+“¿Qué riesgo es dominante y por qué?” → K9/1.0 GET SUMMARY week=current + K9/1.0 EXPLAIN WHY dominant
+
+6) Qué hay que mejorar ahora (concreto)
+A) OperationalAnalysisNode (prioridad 1)
+
+Crear índices *_by_week
+
+Crear counts obs_counts_by_week
+
+Exponer events (si existen en engine; si no, crear contenedor vacío coherente)
+
+Exponer signals.before_critical_monday
+
+Objetivo: que cualquier consulta factual tenga respuesta determinista sin LLM.
+
+B) AnalystNode (prioridad 2)
+
+Debe usar operational para justificar
+
+Debe producir proactive_comparison por riesgo siempre (aunque sea “insufficient_evidence”)
+
+C) NarrativeNode (prioridad 3)
+
+Implementar “render por comando”
+
+No inventar
+
+Si el comando pide algo que no existe → respuesta honesta: “no hay registros / no hay evidencia” y reasoning claro.
+
+D) Smoke (prioridad 4)
+
+Reescribir smoke_k9_full.py para ejecutar comandos K9/1.0 ...
+
+Validar contratos (tokens + estructura), no frases humanas
+
+Siguiente paso recomendado (sin preguntas, directo)
+
+Si me adjuntas estos 3 archivos actuales del repo (los reales, no versiones sueltas):
+
+src/nodes/operational_analysis_node.py (o el nombre real)
+
+src/nodes/analyst_node.py
+
+src/nodes/narrative_node.py
+
+y el smoke/smoke_k9_full.py
+
+------------------
+
+Tienes razón: operational y analyst deben quedar blindados para cualquier pregunta sobre data sintética, incluidas fechas reales (“primera semana de enero”), no solo semanas indexadas.
+Pero esa capacidad NO se logra en el narrative, ni en el intent, ni en el smoke en lenguaje natural.
+
+Se logra definiendo correctamente el contrato temporal del sistema cognitivo.
+
+Voy por partes, con precisión.
+
+1️⃣ El error conceptual que nos estaba atrapando
+
+Estábamos intentando que el sistema:
+
+entienda lenguaje natural
+
+resuelva ambigüedad temporal (“primera semana de enero”)
+
+decida si usar operational o analyst
+
+y responda bien
+
+sin LLM, usando intents por keywords.
+
+👉 Eso no es posible ni deseable.
+
+El sistema cognitivo NO debe entender lenguaje humano.
+Debe entender lenguaje temporal canónico.
+
+El LLM vendrá después a traducir.
+
+2️⃣ Principio rector (muy importante)
+
+Operational y Analyst deben ser ciegos al lenguaje humano.
+Solo deben operar sobre:
+
+identificadores canónicos
+
+rangos temporales normalizados
+
+estructuras explícitas
+
+Si una pregunta dice:
+
+“qué eventos pasaron la primera semana de enero”
+
+Eso NO es una pregunta válida para el sistema interno.
+
+Debe convertirse primero en algo como:
+
+K9/1.0 LIST EVENTS date_range=2025-01-01..2025-01-07
+
+
+O, si tu data es semanal:
+
+K9/1.0 LIST EVENTS week_id=2025-W01
+
+3️⃣ Entonces, ¿cómo blindamos operational y analyst?
+🔒 Blindaje real = modelo temporal explícito
+
+La data sintética DEBE tener un modelo temporal formal.
+Uno (o ambos) de estos:
+
+Opción A — Modelo semanal (recomendado para K9 demo)
+event = {
+  "event_id": "...",
+  "week_id": "2025-W01",
+  "week_index": 1,
+  "risk_id": "R01",
+  "date_anchor": "2025-01-01",  # opcional
+}
+
+Opción B — Modelo por fecha (si ya existe)
+event = {
+  "event_id": "...",
+  "date": "2025-01-03",
+  "week_id": "2025-W01",
+  "risk_id": "R01",
+}
+
+
+👉 Operational trabaja SIEMPRE con week_id / date_range, nunca con frases humanas.
+
+4️⃣ Qué debe exponer el OperationalAnalysisNode (blindado)
+
+Este es el núcleo.
+
+📦 Contract obligatorio de analysis["operational"]
+analysis["operational"] = {
+  "calendar": {
+    "weeks": {
+      "2025-W01": {
+        "start": "2025-01-01",
+        "end": "2025-01-07",
+        "index": 1,
+        "label": "Primera semana de enero"
+      },
+      ...
+    }
+  },
+
+  "events": {
+    "by_week": {
+      "2025-W01": [event1, event2],
+      ...
+    }
+  },
+
+  "observations": {
+    "by_week": {
+      "2025-W01": {
+        "OPG": [...],
+        "OCC": [...]
+      }
+    }
+  },
+
+  "counts": {
+    "events_by_week": {
+      "2025-W01": 3
+    },
+    "observations_by_week": {
+      "2025-W01": {
+        "OPG": 12,
+        "OCC": 4,
+        "TOTAL": 16
+      }
+    }
+  },
+
+  "signals": {
+    "critical_monday": {
+      "week_id": "2025-W12"
+    },
+    "before_critical_monday": {
+      "weeks": ["2025-W10", "2025-W11"],
+      "evidence": {...}
+    }
+  }
+}
+
+
+👉 Con esto, cualquier pregunta factual es respondible, siempre que venga en forma canónica.
+
+5️⃣ Rol correcto del AnalystNode (y qué NO debe hacer)
+Analyst SÍ debe:
+
+evaluar tendencias
+
+comparar proactivo vs K9
+
+decidir riesgo dominante
+
+generar juicios (“emergente”, “subestimado”)
+
+Analyst NO debe:
+
+buscar eventos por fecha
+
+contar observaciones crudas
+
+interpretar lenguaje natural
+
+Ejemplo válido:
+
+K9/1.0 EXPLAIN RISK risk_id=R01 horizon=monthly
+
+
+Ejemplo inválido para analyst:
+
+“qué pasó la primera semana de enero”
+
+Eso es operational puro.
+
+6️⃣ NarrativeNode: renderer, no cerebro
+
+Ahora queda claro por qué el narrative fallaba.
+
+El narrative no puede inventar “lunes”, “enero”, “semana”
+si nadie se lo entregó explícitamente.
+
+Narrative debe hacer solo esto:
+
+Si el comando es LIST EVENTS week_id=2025-W01
+
+Renderiza la lista o dice “no hay eventos”
+
+Si el comando es GET SUMMARY
+
+Usa risk_summary
+
+Si el comando es GET SIGNALS before=critical_monday
+
+Usa operational.signals.before_critical_monday
+
+👉 Nunca inferir fechas
+👉 Nunca interpretar lenguaje humano
+
+7️⃣ El smoke correcto (clave de todo)
+
+El smoke que estaban usando no puede funcionar sin LLM.
+El smoke correcto no usa español natural.
+
+Ejemplo de smoke correcto (pre-LLM)
+run_smoke(
+  "K9/1.0 LIST EVENTS week_id=2025-W01",
+  must_contain=["2025-W01"]
+)
+
+run_smoke(
+  "K9/1.0 GET OBS_COUNTS week_id=2025-W12",
+  must_contain=["OPG", "OCC"]
+)
+
+run_smoke(
+  "K9/1.0 GET SIGNALS before=critical_monday",
+  must_contain=["critical"]
+)
+
+Lo que NO se debe testear aún:
+
+“¿qué pasó en enero?”
+
+“¿qué señales hubo antes del lunes crítico?”
+
+Eso es trabajo del LLM, no del core.
+
+8️⃣ Flujo final correcto (muy importante)
+Usuario (lenguaje natural)
+        ↓
+LLM (traductor semántico)
+        ↓
+K9 Command (canónico, temporal)
+        ↓
+Operational / Analyst (blindados)
+        ↓
+Narrative (render)
+        ↓
+LLM (re-expresión humana)
+
+---------------------------
+
+1️⃣ Principio base (no negociable)
+
+Operational y Analyst NO responden preguntas.
+Ejecutan comandos cognitivos sobre un estado estructurado.
+
+Por lo tanto, lo primero que definimos no son “preguntas”, sino:
+
+👉 QUERIES COGNITIVAS CANÓNICAS
+
+2️⃣ Tipos de consultas que el sistema DEBE poder responder
+
+Si miras todas las preguntas posibles (incluidas las que aún no hicimos), se reducen a 6 familias fundamentales:
+
+A. Consultas FACTUALES (Operational puras)
+
+👉 “Qué pasó”
+👉 “Cuántos hubo”
+👉 “Cuándo ocurrió”
+
+Ejemplos humanos:
+
+“Dame los eventos de la semana 1”
+
+“Cuántas observaciones hubo”
+
+“Qué eventos pasaron antes del lunes crítico”
+
+🔑 Esto es 100% Operational
+B. Consultas TEMPORALES (Operational)
+
+👉 “En qué periodo”
+👉 “Antes / después de”
+
+Ejemplos humanos:
+
+“Primera semana de enero”
+
+“Último mes”
+
+“Antes del lunes crítico”
+
+👉 Se traducen a rangos temporales explícitos
+
+C. Consultas DE ESTADO (Analyst)
+
+👉 “Cómo está un riesgo”
+👉 “Cuál es el más importante”
+
+Ejemplos humanos:
+
+“Riesgo dominante”
+
+“Presión operacional”
+
+“Riesgo emergente”
+
+D. Consultas COMPARATIVAS (Analyst)
+
+👉 “Comparar modelos”
+👉 “Desalineación”
+
+Ejemplos humanos:
+
+“Subestimado por el modelo proactivo”
+
+“Por qué K9 difiere del ranking”
+
+E. Consultas EVOLUTIVAS (Analyst + Operational)
+
+👉 “Cómo ha evolucionado”
+
+Ejemplos humanos:
+
+“Evolución del R02”
+
+“Tendencia últimas semanas”
+
+F. Consultas NARRATIVAS (Narrative + Analyst)
+
+👉 “Explícame”
+👉 “Resume”
+
+Ejemplos humanos:
+
+“Análisis del último mes”
+
+“Qué está pasando con los riesgos”
+
+3️⃣ Lenguaje cognitivo canónico (la clave)
+
+Todo lo anterior se reduce a comandos estructurados, no frases.
+
+Voy a definir el set mínimo y suficiente.
+
+4️⃣ INPUT CANÓNICO PARA OPERATIONAL
+📌 Forma general
+K9/1.0 OPERATIONAL <ACTION> <PARAMS>
+
+4.1 Listar eventos
+K9/1.0 OPERATIONAL LIST_EVENTS week_id=2025-W01
+
+K9/1.0 OPERATIONAL LIST_EVENTS date_range=2025-01-01..2025-01-07
+
+4.2 Contar eventos
+K9/1.0 OPERATIONAL COUNT_EVENTS week_id=2025-W01
+
+4.3 Contar observaciones
+K9/1.0 OPERATIONAL COUNT_OBSERVATIONS week_id=2025-W12
+
+
+Salida esperada:
+
+{
+  "OPG": 34,
+  "OCC": 8,
+  "TOTAL": 42
+}
+
+4.4 Señales temporales clave
+K9/1.0 OPERATIONAL GET_SIGNALS before=critical_monday
+
+K9/1.0 OPERATIONAL GET_SIGNALS type=critical_monday
+
+4.5 Eventos por riesgo
+K9/1.0 OPERATIONAL LIST_EVENTS risk_id=R01 week_id=2025-W10
+
+🔒 Resultado
+
+Si Operational soporta SOLO esto, ya puede responder:
+
+fechas
+
+semanas
+
+enero
+
+lunes crítico
+
+eventos
+
+observaciones
+sin ambigüedad
+
+5️⃣ INPUT CANÓNICO PARA ANALYST
+📌 Forma general
+K9/1.0 ANALYST <ACTION> <PARAMS>
+
+5.1 Riesgo dominante
+K9/1.0 ANALYST GET_DOMINANT_RISK period=weekly
+
+5.2 Riesgos emergentes
+K9/1.0 ANALYST GET_EMERGING_RISKS
+
+5.3 Comparación proactivo vs K9
+K9/1.0 ANALYST COMPARE_PROACTIVE
+
+
+Salida esperada:
+
+{
+  "underestimated": ["R01"],
+  "aligned": ["R02"],
+  "overestimated": []
+}
+
+5.4 Estado de un riesgo específico
+K9/1.0 ANALYST EXPLAIN_RISK risk_id=R02 horizon=weekly
+
+5.5 Evolución de un riesgo
+K9/1.0 ANALYST GET_TREND risk_id=R02 window=4w
+
+5.6 Presión operacional
+K9/1.0 ANALYST GET_OPERATIONAL_PRESSURE
+
+6️⃣ Contrato de salida (CRÍTICO)
+
+Todos los nodos devuelven datos, no texto.
+
+Ejemplo Analyst:
+
+{
+  "type": "risk_analysis",
+  "risk_id": "R01",
+  "status": "emerging",
+  "reason": "trend_up + observation_increase",
+  "evidence": {
+    "weeks": ["2025-W10", "2025-W11"]
+  }
+}
+
+
+👉 El NarrativeNode solo renderiza esto.
+
+7️⃣ Por qué con esto se arregla TODO
+
+✔️ “qué eventos pasaron la primera semana de enero”
+→ OPERATIONAL LIST_EVENTS week_id=2025-W01
+
+✔️ “qué señales aparecieron antes del lunes crítico”
+→ OPERATIONAL GET_SIGNALS before=critical_monday
+
+✔️ “por qué R01 no aparece en el ranking”
+→ ANALYST COMPARE_PROACTIVE + EXPLAIN_RISK
+
+✔️ “dame un análisis del último mes”
+→ ANALYST GET_TREND + OPERATIONAL GET_SIGNALS
+
+
+---------------------
+
+K9 – Canonical Cognitive Command Specification
+
+Versión 1.0 (Pre-LLM, Determinista)
+
+1. Propósito del documento
+
+Este documento define el lenguaje cognitivo canónico utilizado internamente por el sistema K9 Mining Safety para interactuar con sus nodos deterministas de análisis:
+
+OperationalAnalysisNode
+
+AnalystNode
+
+El objetivo es desacoplar completamente:
+
+el lenguaje natural,
+
+la lógica de análisis,
+
+la narrativa de salida,
+
+permitiendo que el sistema:
+
+responda cualquier consulta sobre data sintética,
+
+sea verificable por smoke tests,
+
+sea extensible a un LLM sin alterar su núcleo cognitivo.
+
+2. Principios de diseño
+2.1 Separación estricta de responsabilidades
+Capa	Rol
+Operational	Hechos, conteos, listas, tiempo
+Analyst	Interpretación, estado, comparación
+Narrative	Comunicación humana
+LLM (futuro)	Traducción NL ↔ comandos
+2.2 Prohibiciones explícitas
+
+❌ Los nodos NO interpretan lenguaje natural
+
+❌ Los nodos NO generan narrativa
+
+❌ Los nodos NO infieren intención
+
+Cada nodo ejecuta comandos cognitivos explícitos.
+
+3. Estructura general del comando
+K9/<version> <DOMAIN> <ACTION> <PARAMETERS>
+
+3.1 Componentes
+Componente	Descripción
+K9/<version>	Versión del protocolo cognitivo
+DOMAIN	OPERATIONAL | ANALYST
+ACTION	Operación semántica
+PARAMETERS	Filtros y contexto explícito
+
+Ejemplo:
+
+K9/1.0 OPERATIONAL LIST_EVENTS week_id=2025-W01
+
+4. Dominio OPERATIONAL
+4.1 Rol del dominio OPERATIONAL
+
+El dominio OPERATIONAL expone hechos operacionales verificables, derivados directamente de la data sintética:
+
+eventos
+
+observaciones
+
+auditorías
+
+señales temporales
+
+relaciones riesgo–evento
+
+No existe interpretación ni ranking en este nivel.
+
+4.2 Acciones OPERATIONAL
+4.2.1 LIST_EVENTS
+
+Lista eventos operacionales.
+
+K9/1.0 OPERATIONAL LIST_EVENTS
+    [week_id=YYYY-WNN]
+    [date_range=YYYY-MM-DD..YYYY-MM-DD]
+    [risk_id=RXX]
+    [event_type=incident|near_miss]
+
+
+Salida estándar:
+
+{
+  "events": [
+    {
+      "event_id": "EVT-1023",
+      "date": "2025-01-03",
+      "risk_id": "R01",
+      "type": "near_miss"
+    }
+  ]
+}
+
+4.2.2 COUNT_EVENTS
+
+Cuenta eventos bajo un filtro.
+
+K9/1.0 OPERATIONAL COUNT_EVENTS week_id=2025-W01
+
+{
+  "count": 7
+}
+
+4.2.3 LIST_OBSERVATIONS
+K9/1.0 OPERATIONAL LIST_OBSERVATIONS
+    [week_id=YYYY-WNN]
+    [risk_id=RXX]
+    [observation_type=OPG|OCC]
+
+4.2.4 COUNT_OBSERVATIONS
+K9/1.0 OPERATIONAL COUNT_OBSERVATIONS week_id=2025-W12
+
+{
+  "OPG": 34,
+  "OCC": 8,
+  "TOTAL": 42
+}
+
+4.2.5 GET_SIGNALS
+
+Obtiene señales temporales relevantes.
+
+K9/1.0 OPERATIONAL GET_SIGNALS before=critical_monday
+
+{
+  "signals": [
+    {
+      "risk_id": "R02",
+      "occ_count": 5,
+      "opg_count": 12
+    }
+  ]
+}
+
+4.2.6 GET_TIMELINE
+
+Devuelve una línea de tiempo operacional.
+
+K9/1.0 OPERATIONAL GET_TIMELINE risk_id=R02 window=4w
+
+5. Dominio ANALYST
+5.1 Rol del dominio ANALYST
+
+El dominio ANALYST interpreta el estado del sistema utilizando:
+
+resultados OPERATIONAL
+
+métricas
+
+comparaciones de modelos
+
+reglas deterministas
+
+Nunca accede a datos crudos sin pasar por OPERATIONAL.
+
+5.2 Acciones ANALYST
+5.2.1 GET_DOMINANT_RISK
+K9/1.0 ANALYST GET_DOMINANT_RISK period=weekly
+
+{
+  "risk_id": "R02",
+  "reason": "highest_operational_pressure"
+}
+
+5.2.2 GET_EMERGING_RISKS
+K9/1.0 ANALYST GET_EMERGING_RISKS
+
+{
+  "risks": ["R01"]
+}
+
+5.2.3 EXPLAIN_RISK
+K9/1.0 ANALYST EXPLAIN_RISK risk_id=R02 horizon=weekly
+
+{
+  "risk_id": "R02",
+  "status": "emerging",
+  "drivers": ["occ_trend_up", "event_density"]
+}
+
+5.2.4 GET_TREND
+K9/1.0 ANALYST GET_TREND risk_id=R02 window=4w
+
+5.2.5 COMPARE_PROACTIVE
+K9/1.0 ANALYST COMPARE_PROACTIVE
+
+{
+  "underestimated": ["R01"],
+  "aligned": ["R02"],
+  "overestimated": []
+}
+
+5.2.6 GET_OPERATIONAL_PRESSURE
+K9/1.0 ANALYST GET_OPERATIONAL_PRESSURE
+
+6. Contrato de salida (obligatorio)
+
+Todos los nodos devuelven:
+
+{
+  "type": "<analysis_type>",
+  "payload": { ... },
+  "traceability": {
+    "inputs": [...],
+    "rules_applied": [...]
+  }
+}
+
+
+Esto permite:
+
+auditoría,
+
+replay,
+
+explicación,
+
+testing determinista.
+
+7. Relación con Narrative y LLM
+
+NarrativeNode:
+Consume payload y lo traduce a lenguaje humano.
+
+LLM (futuro):
+Traduce lenguaje natural ↔ comandos K9/1.0.
+
+El núcleo no cambia.
+
+8. Beneficios clave
+
+✔️ Responde cualquier consulta sobre data sintética
+✔️ Smoke tests deterministas
+✔️ Cero dependencia de NL
+✔️ Preparado para agentes y multi-LLM
+✔️ Auditable y explicable
+
+9. Estado
+
+Este documento define el lenguaje cognitivo oficial de K9
+y debe considerarse contrato estable para los nodos internos.
+
+------------------
+
+K9 – Canonical Cognitive Command Specification
+Versión 1.1 – Full Temporal & Data Coverage
+1. Principio rector (nuevo, explícito)
+
+Toda la data sintética del sistema K9 debe ser consultable explícitamente por tiempo.
+
+Esto incluye sin excepción:
+
+eventos
+
+observaciones (OPG / OCC)
+
+auditorías (preventivas / reactivas)
+
+FDO
+
+scores del modelo proactivo
+
+métricas derivadas
+
+Si algo no puede consultarse por fecha, no existe cognitivamente.
+
+2. Normalización temporal (obligatoria)
+
+Todos los comandos aceptan uno y solo uno de los siguientes parámetros temporales:
+
+Parámetro	Ejemplo	Uso
+date	2025-01-07	día específico
+week_id	2025-W01	semana ISO
+date_range	2025-01-01..2025-01-07	rango explícito
+relative	last_week, last_4w	abstracción temporal
+
+⚠️ Regla dura
+Si no hay parámetro temporal → error cognitivo (excepto estados globales).
+
+3. Dominio OPERATIONAL (extensión completa)
+3.1 LIST_EVENTS
+K9/1.1 OPERATIONAL LIST_EVENTS
+    time=week_id:2025-W01
+    [risk_id=R01]
+    [event_type=incident|near_miss]
+
+
+Salida
+
+{
+  "events": [
+    {
+      "event_id": "EVT-021",
+      "date": "2025-01-03",
+      "week_id": "2025-W01",
+      "risk_id": "R01",
+      "type": "near_miss",
+      "severity": "low"
+    }
+  ]
+}
+
+3.2 LIST_OBSERVATIONS
+K9/1.1 OPERATIONAL LIST_OBSERVATIONS
+    time=date_range:2025-01-01..2025-01-07
+    [risk_id=R02]
+    [type=OPG|OCC]
+
+{
+  "observations": [
+    {
+      "obs_id": "OBS-334",
+      "date": "2025-01-05",
+      "type": "OCC",
+      "risk_id": "R02",
+      "control_id": "CC-07"
+    }
+  ]
+}
+
+3.3 LIST_AUDITS (nuevo – obligatorio)
+K9/1.1 OPERATIONAL LIST_AUDITS
+    time=week_id:2025-W01
+    [audit_type=preventive|reactive]
+
+{
+  "audits": [
+    {
+      "audit_id": "AUD-009",
+      "date": "2025-01-04",
+      "type": "reactive",
+      "trigger_event": "EVT-021"
+    }
+  ]
+}
+
+3.4 LIST_FDO (nuevo)
+K9/1.1 OPERATIONAL LIST_FDO
+    time=date_range:2025-01-01..2025-01-07
+    [factor=production_pressure|fatigue|backlog]
+
+{
+  "fdo": [
+    {
+      "date": "2025-01-02",
+      "factor": "production_pressure",
+      "value": 0.72
+    }
+  ]
+}
+
+3.5 GET_PROACTIVE_SCORES (nuevo)
+K9/1.1 OPERATIONAL GET_PROACTIVE_SCORES
+    time=week_id:2025-W01
+    [risk_id=R01]
+
+{
+  "scores": [
+    {
+      "risk_id": "R01",
+      "score": 0.31,
+      "rank": 4
+    }
+  ]
+}
+
+3.6 COUNT_* (todos los dominios)
+
+Todos los objetos anteriores tienen su versión COUNT_*:
+
+COUNT_EVENTS
+
+COUNT_OBSERVATIONS
+
+COUNT_AUDITS
+
+COUNT_FDO_ENTRIES
+
+Siempre con time=....
+
+4. Dominio ANALYST (alineado a OPERATIONAL)
+4.1 Regla fundamental
+
+El Analyst nunca inventa datos.
+Solo razona sobre salidas OPERATIONAL.
+
+4.2 GET_DOMINANT_RISK
+K9/1.1 ANALYST GET_DOMINANT_RISK
+    time=week_id:2025-W01
+
+{
+  "risk_id": "R02",
+  "drivers": [
+    "high_occ_density",
+    "event_accumulation",
+    "fdo_pressure"
+  ]
+}
+
+4.3 EXPLAIN_RISK
+K9/1.1 ANALYST EXPLAIN_RISK
+    risk_id=R02
+    time=last_4w
+
+{
+  "risk_id": "R02",
+  "status": "emerging",
+  "trend": "upward",
+  "evidence": [
+    "occ_increase",
+    "fdo_pressure",
+    "proactive_gap"
+  ]
+}
+
+4.4 COMPARE_PROACTIVE
+K9/1.1 ANALYST COMPARE_PROACTIVE
+    time=week_id:2025-W01
+
+{
+  "underestimated": ["R01"],
+  "aligned": ["R02"],
+  "overestimated": []
+}
+
+4.5 GET_OPERATIONAL_PRESSURE
+K9/1.1 ANALYST GET_OPERATIONAL_PRESSURE
+    time=last_2w
+
+5. NarrativeNode (impacto directo)
+
+El NarrativeNode deja de “adivinar” y solo:
+
+detecta el tipo de payload
+
+ordena
+
+redacta
+
+Ejemplo:
+
+LIST_EVENTS → narrativa descriptiva
+
+COUNT_OBSERVATIONS → narrativa factual
+
+EXPLAIN_RISK → narrativa analítica
+
+Nunca más:
+
+“riesgo dominante” sin tiempo
+
+“señales antes del lunes” sin rango explícito
+
+--------------
+
+Extensión K9/1.1 — TRAYECTORIAS (obligatorio)
+1. Qué es una trayectoria en K9 (definición operativa)
+
+Una trayectoria es una serie temporal “canónica” asociada a un risk_id (y opcionalmente a area_id) que representa la evolución del riesgo en el tiempo, incluyendo:
+
+score K9 (señales semanales / diarias según dataset)
+
+presión operacional / degradación (si existe derivado)
+
+marca de umbrales (amarillo/rojo o critical_threshold)
+
+hitos (p.ej. lunes crítico)
+
+La trayectoria es el “eje X” al que se anclan observaciones, eventos, FDO y auditorías.
+
+2. Normalización temporal específica de trayectorias
+
+Trayectorias deben soportar:
+
+granularity=weekly|daily
+
+time=week_id|date|date_range|relative
+
+Regla:
+
+Si granularity=weekly → time se interpreta como semanas.
+
+Si granularity=daily → time se interpreta como fechas.
+
+3. Comandos OPERATIONAL de trayectorias
+3.1 GET_TRAJECTORY (core)
+K9/1.1 OPERATIONAL GET_TRAJECTORY
+    risk_id=R02
+    granularity=weekly
+    time=last_12w
+    [series=k9_score|threshold|pressure]
+
+
+Salida
+
+{
+  "trajectory": {
+    "risk_id": "R02",
+    "granularity": "weekly",
+    "points": [
+      {"week_id": "2025-W01", "k9_score": 0.83, "threshold": 0.80},
+      {"week_id": "2025-W02", "k9_score": 0.82, "threshold": 0.80}
+    ]
+  }
+}
+
+3.2 LIST_TRAJECTORIES (multi-risk)
+K9/1.1 OPERATIONAL LIST_TRAJECTORIES
+    granularity=weekly
+    time=week_id:2025-W01
+    [risk_ids=R01,R02,R03]
+
+
+Salida
+
+{
+  "trajectories": [
+    {"risk_id": "R01", "week_id": "2025-W01", "k9_score": 0.61},
+    {"risk_id": "R02", "week_id": "2025-W01", "k9_score": 0.83},
+    {"risk_id": "R03", "week_id": "2025-W01", "k9_score": 0.44}
+  ]
+}
+
+3.3 DETECT_THRESHOLD_BREACHES (nuevo)
+K9/1.1 OPERATIONAL DETECT_THRESHOLD_BREACHES
+    granularity=weekly
+    time=last_12w
+    threshold=0.80
+
+
+Salida
+
+{
+  "breaches": [
+    {"risk_id": "R02", "first_breach": "2025-W01", "sustained": true},
+    {"risk_id": "R01", "first_breach": null, "sustained": false}
+  ]
+}
+
+3.4 GET_CRITICAL_MONDAY_CONTEXT (nuevo)
+
+Este comando existe porque el “lunes crítico” no es un texto: es un ancla temporal del sistema.
+
+K9/1.1 OPERATIONAL GET_CRITICAL_MONDAY_CONTEXT
+    time=week_id:2025-W12
+
+
+Salida
+
+{
+  "critical_monday": {
+    "date": "2025-03-17",
+    "week_id": "2025-W12",
+    "leading_window": "2025-03-10..2025-03-16"
+  }
+}
+
+4. Comandos ANALYST sobre trayectorias
+4.1 EXPLAIN_TRAJECTORY
+K9/1.1 ANALYST EXPLAIN_TRAJECTORY
+    risk_id=R01
+    granularity=weekly
+    time=last_12w
+
+
+Salida
+
+{
+  "risk_id": "R01",
+  "trend": "upward",
+  "pattern": "emerging",
+  "notes": [
+    "weak_signals_accumulating",
+    "approaching_threshold"
+  ]
+}
+
+4.2 COMPARE_TRAJECTORIES
+K9/1.1 ANALYST COMPARE_TRAJECTORIES
+    granularity=weekly
+    time=last_8w
+    risk_ids=R01,R02
+
+4.3 LINK_SIGNALS_TO_OPERATIONS (nuevo, clave para narrativa)
+
+Este es el puente determinista que te faltaba para preguntas tipo:
+“dame los eventos de la semana 1” + “y cómo eso afecta la trayectoria”.
+
+K9/1.1 ANALYST LINK_SIGNALS_TO_OPERATIONS
+    risk_id=R01
+    time=week_id:2025-W01
+    granularity=weekly
+
+
+Salida
+
+{
+  "risk_id": "R01",
+  "week_id": "2025-W01",
+  "trajectory_point": {"k9_score": 0.61, "threshold": 0.80},
+  "drivers": {
+    "events": 2,
+    "occ": 3,
+    "opg": 7,
+    "fdo_factors": ["production_pressure"]
+  }
+}
+
+5. Impacto directo en el Smoke (corrección)
+
+Ahora el smoke canónico debe incluir trayectorias sí o sí.
+
+Ejemplos:
+
+K9/1.1 OPERATIONAL GET_TRAJECTORY risk_id=R02 granularity=weekly time=last_12w
+
+K9/1.1 OPERATIONAL DETECT_THRESHOLD_BREACHES granularity=weekly time=last_12w threshold=0.80
+
+K9/1.1 ANALYST LINK_SIGNALS_TO_OPERATIONS risk_id=R01 time=week_id:2025-W01 granularity=weekly
+
+
+Si esto pasa, entonces después puedes traducir desde NL con LLM.
+
+6. Checklist de cobertura (ahora sí completo)
+
+Eventos ✅
+
+Observaciones ✅
+
+Auditorías ✅
+
+FDO ✅
+
+Proactivo ✅
+
+Trayectorias ✅ (faltaba, ya está)
+
+Umbrales + breach ✅
+
+Contexto lunes crítico ✅
+
+
+---------------
+
+K9 — Propuesta Agnóstica de Arquitectura Cognitiva (v1.0)
+
+Objetivo:
+Permitir que el sistema K9 pueda responder cualquier consulta sobre data sintética (pasada, presente o agregada), sin depender de lenguaje natural, y sin asumir estructura concreta de datasets.
+
+El LLM no razona datos, solo traduce entre:
+
+Lenguaje humano ↔ comandos canónicos
+
+Resultados estructurados ↔ narrativa final
+
+1. Principio rector (clave)
+
+Ningún nodo interpreta lenguaje natural.
+Todos los nodos operan sobre comandos canónicos.
+
+El problema que viste en el smoke no es un bug, es una señal correcta:
+
+Estábamos forzando NL sin traductor (LLM)
+
+El sistema respondió “lo que podía”, no “lo que debía”
+
+2. Capas del sistema (clarificación definitiva)
+2.1 Data Engine (HECHOS PUROS)
+
+Responsabilidad única:
+
+Exponer TODA la data disponible, normalizada, sin interpretación.
+
+Nunca responde “por qué” ni “qué significa”.
+
+Expone catálogos temporales:
+
+engine.events
+engine.observations
+engine.audits
+engine.fdo
+engine.proactive
+engine.trajectories
+
+
+Cada uno debe cumplir:
+
+{
+  "entity": "...",
+  "time_axis": "daily|weekly",
+  "available_ranges": ["2025-W01..2025-W12"],
+  "indexed_by": ["risk_id", "area_id", "date"]
+}
+
+2.2 Operational Analysis Node (CONSULTAS FACTUALES)
+
+Responsabilidad:
+
+Responder qué pasó, cuándo, cuánto, dónde, para quién.
+
+Nunca interpreta tendencias.
+
+Ejemplos que DEBE poder responder
+
+“Eventos semana 1”
+
+“Observaciones R02 última semana”
+
+“Auditorías por área en marzo”
+
+“Trayectoria semanal R01”
+
+“FDO por fecha”
+
+Lenguaje canónico
+K9 OPERATIONAL QUERY
+    entity=events
+    time=week_id:2025-W01
+    [risk_id=R01]
+
+
+Salida:
+
+{
+  "events": [...],
+  "count": 3
+}
+
+2.3 Analyst Node (RAZONAMIENTO DETERMINISTA)
+
+Responsabilidad:
+
+Conectar hechos → patrones → conclusiones estructuradas.
+
+Nunca inventa datos.
+Nunca hace narrativa libre.
+
+Opera SOLO sobre outputs del Operational.
+
+Capacidades mínimas
+
+Detectar tendencia (up/down/stable)
+
+Detectar acumulación de señales
+
+Detectar desalineación proactivo vs K9
+
+Asociar señales a trayectoria
+
+Marcar hitos temporales (lunes crítico)
+
+Lenguaje canónico
+K9 ANALYST EXPLAIN
+    subject=trajectory
+    risk_id=R02
+    time=last_12w
+
+
+Salida:
+
+{
+  "risk_id": "R02",
+  "trend": "upward",
+  "pattern": "emerging",
+  "drivers": ["events", "occ", "fdo"]
+}
+
+3. Trayectorias (primer-clase, agnóstico)
+3.1 Contrato mínimo
+trajectory = {
+  "risk_id": "R02",
+  "granularity": "weekly",
+  "points": [
+    {
+      "time": "2025-W01",
+      "score": 0.82,
+      "threshold": 0.80
+    }
+  ]
+}
+
+3.2 Regla de oro
+
+Todo análisis temporal debe anclarse a una trayectoria.
+
+Si no hay trayectoria → el Analyst no opina.
+
+4. Narrative Node (TRADUCTOR, no analista)
+
+Responsabilidad correcta:
+
+Convertir estado estructurado en lenguaje humano coherente,
+sin agregar información nueva.
+
+Inputs válidos
+
+operational_results
+
+analyst_results
+
+state.context (intento, tiempo, riesgos)
+
+Prohibiciones
+
+❌ No inferir datos
+
+❌ No decidir qué consultar
+
+❌ No reemplazar Analyst
+
+Ejemplo
+
+Input:
+
+{
+  "analyst": {
+    "risk_id": "R02",
+    "trend": "upward",
+    "pattern": "emerging"
+  }
+}
+
+
+Output:
+
+“El riesgo R02 muestra una tendencia creciente en las últimas semanas, asociada a una acumulación progresiva de señales operacionales.”
+
+5. Smoke Tests — corrección conceptual (CRÍTICO)
+
+El smoke NO debe usar lenguaje natural en esta fase.
+
+❌ Incorrecto (actual)
+"¿Qué señales aparecieron antes del lunes crítico?"
+
+✅ Correcto (ahora)
+K9 OPERATIONAL QUERY
+    entity=signals
+    time=before:critical_monday
+
+
+o
+
+K9 ANALYST EXPLAIN
+    subject=signals
+    time=before:critical_monday
+
+
+El NL vendrá después, vía LLM.
+
+6. Flujo final correcto (visión completa)
+Usuario (NL)
+   ↓
+LLM Translator
+   ↓
+Comando Canónico
+   ↓
+Operational / Analyst
+   ↓
+Resultados estructurados
+   ↓
+Narrative Node
+   ↓
+Respuesta humana
+
+7. Por qué ahora todo encaja
+
+❌ No era un problema del narrative node
+
+❌ No era un bug del analyst
+
+❌ No era falta de datos
+
+✔️ Era orden cognitivo incorrecto
+✔️ El sistema estaba “pensando en humano” sin traductor
+
+--------------------
+
+K9 Mining Safety
+Documento Formal de Comandos Canónicos y Arquitectura Cognitiva
+
+Versión: 1.0
+Estado: Especificación base aprobable
+Ámbito: Sistema Cognitivo K9 – Data Sintética y Real
+Idioma del sistema: Español (lenguaje cognitivo interno independiente del idioma humano)
+
+1. Propósito del Documento
+
+Este documento define de manera formal:
+
+La arquitectura cognitiva funcional del sistema K9.
+
+El lenguaje canónico mediante el cual los nodos interactúan.
+
+Las responsabilidades exactas de cada nodo.
+
+El contrato que garantiza que cualquier consulta sobre data sintética pueda ser respondida correctamente.
+
+La separación estricta entre:
+
+Hechos
+
+Razonamiento
+
+Narrativa
+
+Traducción lingüística (LLM)
+
+Este documento precede a cualquier integración de LLM y no depende de datasets específicos.
+
+2. Principio Fundacional (No negociable)
+
+El sistema K9 no razona lenguaje natural.
+Razonar lenguaje natural es responsabilidad exclusiva del LLM.
+
+El núcleo cognitivo K9 opera únicamente sobre comandos canónicos estructurados.
+
+3. Capas del Sistema Cognitivo K9
+3.1 Capa de Datos — Data Engine Node
+Rol
+
+Exponer toda la data disponible de forma:
+
+Completa
+
+Indexada
+
+Temporalmente consistente
+
+Sin interpretación
+
+Regla clave
+
+El Data Engine no responde preguntas, solo entrega hechos.
+
+Universos de datos soportados (agnóstico)
+Universo	Descripción
+events	Eventos operacionales
+observations	Observaciones (OCC / OPG)
+audits	Auditorías
+fdo	Factores Dinámicos Operacionales
+proactive	Resultados del modelo proactivo
+trajectories	Trayectorias temporales de riesgo
+Contrato mínimo de salida
+{
+  "entity": "events",
+  "records": [...],
+  "time_axis": "daily|weekly",
+  "available_ranges": ["2025-W01..2025-W12"],
+  "indexed_by": ["risk_id", "area_id", "date"]
+}
+
+4. Lenguaje Canónico K9 (Base del Sistema)
+4.1 Definición
+
+El Lenguaje Canónico K9 es un conjunto de comandos estructurados que representan intenciones cognitivas explícitas, no lenguaje humano.
+
+5. Operational Analysis Node
+5.1 Responsabilidad
+
+Responder consultas factuales sobre la data:
+
+Qué ocurrió
+
+Cuándo ocurrió
+
+Cuántos registros existen
+
+Para qué riesgo / área / período
+
+No interpreta, no compara, no concluye.
+
+5.2 Tipos de consultas soportadas
+Tipo	Ejemplo
+Conteo	Observaciones semana 3
+Listado	Eventos semana 1
+Filtro	Auditorías por área
+Temporal	FDO entre fechas
+Trayectoria	Serie semanal de riesgo
+5.3 Comando canónico: OPERATIONAL QUERY
+K9 OPERATIONAL QUERY
+    entity=observations
+    time=week:2025-W03
+    risk_id=R02
+
+Salida estándar
+{
+  "entity": "observations",
+  "risk_id": "R02",
+  "time": "2025-W03",
+  "occ_count": 4,
+  "opg_count": 2
+}
+
+6. Trayectorias (Entidad de Primera Clase)
+6.1 Definición formal
+
+Una trayectoria representa la evolución temporal cuantificada de un riesgo.
+
+{
+  "risk_id": "R02",
+  "granularity": "weekly",
+  "points": [
+    {
+      "time": "2025-W01",
+      "score": 0.72,
+      "threshold": 0.80
+    }
+  ]
+}
+
+6.2 Regla de oro
+
+Ningún análisis temporal es válido sin trayectoria.
+
+7. Analyst Node (Razonamiento Determinista)
+7.1 Responsabilidad
+
+Transformar hechos en interpretaciones estructuradas, sin lenguaje natural libre.
+
+Opera exclusivamente sobre:
+
+Outputs del Data Engine
+
+Outputs del Operational Node
+
+Trayectorias
+
+7.2 Capacidades obligatorias
+
+Detección de tendencia
+
+Identificación de patrones emergentes
+
+Comparación proactivo vs K9
+
+Identificación de hitos temporales
+
+Asociación causa–señal–riesgo
+
+7.3 Comando canónico: ANALYST EXPLAIN
+K9 ANALYST EXPLAIN
+    subject=trajectory
+    risk_id=R02
+    time=last_12w
+
+Salida estándar
+{
+  "risk_id": "R02",
+  "trend": "upward",
+  "pattern": "emerging",
+  "drivers": ["events", "occ", "fdo"],
+  "confidence": "high"
+}
+
+8. Comparación Proactivo vs K9 (Formal)
+8.1 Contrato
+{
+  "risk_id": "R02",
+  "proactive_rank": 4,
+  "k9_rank": 1,
+  "alignment_status": "underestimated_by_proactive"
+}
+
+8.2 Estados válidos
+
+aligned
+
+underestimated_by_proactive
+
+overestimated_by_proactive
+
+insufficient_data
+
+9. Narrative Node (Traducción Semántica)
+9.1 Rol real (no negociable)
+
+El Narrative Node no razona.
+El Narrative Node no consulta datos.
+
+Su única función es:
+
+Traducir resultados estructurados → lenguaje humano coherente.
+
+9.2 Inputs válidos
+
+operational_results
+
+analyst_results
+
+proactive_comparison
+
+state.context
+
+9.3 Output esperado
+
+Texto narrativo fiel al contenido estructurado, sin agregar información.
+
+10. LLM (Fase Posterior)
+10.1 Rol del LLM
+
+Traducir lenguaje humano → comandos canónicos
+
+Traducir narrativa estructurada → lenguaje natural final
+
+10.2 Prohibiciones
+
+❌ El LLM no accede a data
+
+❌ El LLM no razona riesgos
+
+❌ El LLM no calcula métricas
+
+11. Smoke Tests Correctos (Canónicos)
+11.1 Ejemplos válidos
+K9 OPERATIONAL QUERY
+    entity=events
+    time=week:2025-W01
+
+K9 ANALYST EXPLAIN
+    subject=signals
+    time=before:critical_monday
+
+12. Conclusión Formal
+
+Con esta arquitectura:
+
+El sistema puede responder cualquier consulta sobre data sintética
+
+El lenguaje natural deja de ser una dependencia temprana
+
+Los nodos quedan blindados, testeables y auditables
+
+El LLM se integra sin riesgo de alucinación estructural
+
+Próximo paso recomendado
+
+Crear K9 Canonical Command Spec v1.0 (archivo único)
+
+Reescribir smoke tests solo en lenguaje canónico
+
+Validar cobertura completa de:
+
+eventos
+
+observaciones
+
+auditorías
+
+FDO
+
+trayectorias
+
+modelo proactivo
+
+Recién después → integrar LLM
+
+Si quieres, en el siguiente mensaje puedo:
+
+Redactar el Command Spec formal
+
+Diseñar la suite completa de smoke canónicos
+
+Proponer la estructura del prompt del LLM traductor
+
+-------------
+
+1. Para qué servía el intent hasta ahora (y por qué funcionó)
+
+El intent actual nació para simular algo que aún no existía:
+
+Un LLM traductor
+
+Un lenguaje canónico estable
+
+Comandos cognitivos formales
+
+Por eso hoy hace cosas como:
+
+Inferir “analyst”, “riesgos”, “proactive_model”, etc.
+
+Actuar como un pseudo-parser de lenguaje natural
+
+Decidir rutas del grafo con heurísticas frágiles (keywords)
+
+👉 Eso era correcto en Fase 1, porque:
+
+Permitía avanzar sin LLM
+
+Permitía probar nodos
+
+Permitía construir el pipeline cognitivo
+
+Hasta aquí: bien diseñado para su momento.
+
+2. Qué cambió ahora (y por qué el intent empieza a fallar)
+
+Con lo que acabamos de formalizar, el sistema ya no es un chatbot experimental, sino un sistema cognitivo determinista.
+
+Y eso cambia una regla fundamental:
+
+El sistema no debe inferir intención desde lenguaje natural
+La intención debe venir explícita en el comando canónico
+
+Hoy estás forzando al intent a hacer algo imposible:
+
+Deducir si una pregunta es:
+
+factual
+
+analítica
+
+temporal
+
+comparativa
+
+Sin LLM
+
+Sin semántica completa
+
+Con datos que ya existen pero no se enrutan bien
+
+Por eso ves síntomas como:
+
+Respuestas correctas en contenido, incorrectas en foco
+
+Preguntas de “lunes crítico” que no activan evidencia
+
+Conteos de observaciones que caen en fallback
+
+Smoke tests frágiles que buscan tokens en texto
+
+👉 No es un bug puntual
+👉 Es una señal arquitectónica
+
+3. Entonces… ¿el intent se elimina?
+
+No. Pero cambia radicalmente de naturaleza.
+
+Antes (lo que tienes hoy)
+
+intent = inferencia lingüística
+
+Ahora (lo que corresponde)
+
+intent = comando cognitivo explícito
+
+4. El nuevo rol correcto del intent
+
+El intent pasa a ser una etiqueta estructural, no una inferencia.
+
+Ejemplo correcto (sin LLM)
+state.intent = "OPERATIONAL_QUERY"
+state.command = {
+    "entity": "observations",
+    "time": "week:2025-W03",
+    "risk_id": "R02"
+}
+
+
+Aquí el intent:
+
+No interpreta
+
+No adivina
+
+No razona
+
+Solo declara el tipo de operación cognitiva.
+
+5. Qué pasa con el intent_classifier actual
+
+Debe degradarse, no eliminarse.
+
+Nuevo rol transitorio (muy importante)
+
+Mientras no haya LLM:
+
+El intent_classifier:
+
+Traduce lenguaje de sistema (no humano)
+
+Acepta comandos semi-estructurados
+
+Falla de forma explícita si la intención no es clara
+
+Ejemplo aceptable ahora:
+
+QUERY: OPERATIONAL observations week=2025-W01 risk=R02
+
+
+Ejemplo no aceptable (sin LLM):
+
+¿Qué pasó antes del lunes crítico?
+
+
+👉 Y esto es clave:
+El smoke test estaba mal diseñado, no el sistema.
+
+6. Qué va a pasar cuando entre el LLM
+
+Ahí el intent vuelve a cambiar de rol, por tercera vez:
+
+Con LLM
+
+El LLM:
+
+Traduce lenguaje humano → comando canónico
+
+El intent:
+
+Solo valida el comando
+
+Nunca infiere semántica
+
+7. Resumen claro (para decisión)
+Etapa	Intent
+Fase 1 (pasada)	Inferencia heurística
+Fase 2 (ahora)	Selector de comando canónico
+Fase 3 (con LLM)	Validador de intención explícita
+8. Recomendación concreta (siguiente paso)
+
+Congelar el intent actual (no seguir parcheándolo)
+
+Definir formalmente:
+
+OPERATIONAL_QUERY
+
+ANALYST_EXPLAIN
+
+PROACTIVE_COMPARE
+
+Reescribir los smoke tests en lenguaje canónico
+
+Dejar explícito:
+
+El sistema no entiende lenguaje natural sin LLM
+
+Con eso:
+
+Desaparecen los errores de “lunes”, “observaciones”, “R02”
+
+El Narrative deja de ser forzado
+
+El sistema se vuelve coherente consigo mismo
+
+Si quieres, en el próximo mensaje puedo:
+
+Proponer la nueva versión exacta del intent_classifier
+
+Diseñar un set de comandos canónicos reales
+
+Reescribir un smoke test correcto y robusto
+
+-------------
+
+
+📘 K9 Canonical Cognitive Language v1
+
+Sistema de Comandos Cognitivos Deterministas
+
+1. Propósito del Lenguaje Canónico
+
+El Lenguaje Canónico define cómo el sistema K9 piensa internamente.
+
+No es lenguaje natural.
+No es intención inferida.
+No es narrativa.
+
+Es un contrato estructural explícito entre:
+
+Entrada (comando cognitivo)
+
+Motor cognitivo (nodos)
+
+Estado (K9State)
+
+Salida estructurada
+
+👉 El LLM no razona, solo traduce:
+
+lenguaje humano → lenguaje canónico
+lenguaje canónico → narrativa humana
+
+2. Principios de Diseño
+
+Agnóstico a idioma
+
+Determinista
+
+Validable
+
+Extensible
+
+Temporalmente explícito
+
+Cobertura total de la data sintética
+
+3. Estructura Base del Comando Canónico
+
+Todo comando K9 DEBE cumplir esta estructura mínima:
+
+{
+  "intent": "<CANONICAL_INTENT>",
+  "entity": "<PRIMARY_ENTITY>",
+  "operation": "<OPERATION>",
+  "filters": {},
+  "time": {},
+  "group_by": [],
+  "output": "<OUTPUT_MODE>"
+}
+
+4. Intents Canónicos Oficiales (v1)
+4.1 OPERATIONAL_QUERY
+
+Consultas factuales sobre la data.
+
+👉 No interpretación
+👉 No juicio
+👉 No inferencia
+
+Ejemplos:
+
+observaciones
+
+eventos
+
+auditorías
+
+FDO
+
+trayectorias
+
+modelo proactivo (valores)
+
+4.2 ANALYTICAL_QUERY
+
+Consultas de interpretación, evolución o relación.
+
+👉 Comparaciones
+👉 Tendencias
+👉 Degradación
+👉 Emergencia
+
+4.3 COMPARATIVE_QUERY
+
+Comparación explícita entre modelos o fuentes.
+
+Ejemplo:
+
+K9 vs Modelo Proactivo
+
+4.4 SYSTEM_QUERY
+
+Estado del sistema, cobertura, disponibilidad.
+
+5. Entidades Canónicas (entity)
+Entity	Descripción
+observations	OCC / OPG
+events	Eventos operacionales
+audits	Auditorías
+fdo	Factores Dinámicos Operacionales
+trajectories	Trayectorias de riesgo
+risks	Riesgos (R01, R02, …)
+proactive_model	Ranking / scores proactivos
+signals	Señales compuestas
+areas	Áreas operacionales
+6. Operaciones (operation)
+Operaciones Factuales
+
+list
+
+count
+
+summarize
+
+retrieve
+
+Operaciones Analíticas
+
+evolution
+
+trend
+
+compare
+
+detect
+
+explain
+
+7. Dimensión Temporal (time)
+
+La temporalidad nunca es implícita.
+
+"time": {
+  "type": "relative | absolute | window",
+  "value": "last_week | 2025-01-01 | pre_critical_monday"
+}
+
+
+Ejemplos válidos:
+
+"last_week"
+
+"week:2025-W01"
+
+"pre_critical_monday"
+
+"between:2025-01-01,2025-01-07"
+
+8. Filtros (filters)
+"filters": {
+  "risk_id": ["R01", "R02"],
+  "area": ["Planta Concentradora"],
+  "type": ["OCC", "OPG"]
+}
+
+9. Agrupación (group_by)
+"group_by": ["risk", "type", "area", "week"]
+
+10. Modo de Salida (output)
+Output	Uso
+raw	Data estructurada
+summary	Resumen factual
+analysis	Interpretación
+narrative	Texto humano
+
+⚠️ NarrativeNode solo se activa si output = narrative
+
+11. Ejemplos Canónicos Reales
+11.1 “¿Qué señales aparecieron antes del lunes crítico?”
+{
+  "intent": "OPERATIONAL_QUERY",
+  "entity": "signals",
+  "operation": "list",
+  "time": {
+    "type": "relative",
+    "value": "pre_critical_monday"
+  },
+  "output": "summary"
+}
+
+11.2 “¿Cuántas observaciones hubo la semana pasada y de qué tipo?”
+{
+  "intent": "OPERATIONAL_QUERY",
+  "entity": "observations",
+  "operation": "count",
+  "time": {
+    "type": "relative",
+    "value": "last_week"
+  },
+  "group_by": ["type"],
+  "output": "summary"
+}
+
+11.3 “¿Por qué el modelo proactivo no refleja R01?”
+{
+  "intent": "COMPARATIVE_QUERY",
+  "entity": "proactive_model",
+  "operation": "compare",
+  "filters": {
+    "risk_id": ["R01"]
+  },
+  "output": "analysis"
+}
+
+11.4 “Evolución del riesgo R02 en el último mes”
+{
+  "intent": "ANALYTICAL_QUERY",
+  "entity": "trajectories",
+  "operation": "evolution",
+  "filters": {
+    "risk_id": ["R02"]
+  },
+  "time": {
+    "type": "relative",
+    "value": "last_month"
+  },
+  "output": "analysis"
+}
+
+12. Impacto Directo en tu Sistema Actual
+✅ Lo que se mantiene
+
+DataEngineNode
+
+OperationalAnalysisNode
+
+AnalystNode
+
+MetricsNode
+
+NarrativeNode
+
+State
+
+🔁 Lo que cambia
+
+intent_classifier deja de inferir → valida
+
+smoke deja de usar lenguaje natural
+
+NarrativeNode deja de compensar errores
+
+El sistema deja de “adivinar”
+
+13. Frase Clave (importante)
+
+El lenguaje canónico no reemplaza al LLM.
+Lo precede.
+Y lo gobierna.
+
+-----------
+
+Revisión Crítica del Lenguaje Canónico v1
+(Gap Analysis + Extensiones Necesarias)
+1. Evaluación del v1 actual
+
+Lo que ya está bien cubierto:
+
+Consultas:
+
+Observaciones (OCC / OPG)
+
+Eventos
+
+Auditorías
+
+FDO
+
+Trayectorias
+
+Modelo proactivo
+
+Dimensión temporal explícita
+
+Separación:
+
+OPERATIONAL_QUERY
+
+ANALYTICAL_QUERY
+
+COMPARATIVE_QUERY
+
+Operaciones:
+
+list, count, summarize
+
+evolution, compare, explain
+
+👉 Esto cubre aprox. 70–75% del espacio real de consultas.
+
+2. Comandos que FALTAN (y por qué son críticos)
+2.1 ❌ Falta: consultas por evento concreto / identificador
+
+Hoy NO existe una forma canónica de decir:
+
+“Dame el detalle del evento X”
+“Muéstrame la observación OCC_0123”
+
+🔴 Problema
+
+Sin esto:
+
+No hay drill-down
+
+No hay trazabilidad
+
+No hay explicación causal fina
+
+✅ Comando que falta
+Nuevo operation: retrieve_by_id
+{
+  "intent": "OPERATIONAL_QUERY",
+  "entity": "events",
+  "operation": "retrieve_by_id",
+  "filters": {
+    "event_id": ["EVT_2025_0012"]
+  },
+  "output": "raw"
+}
+
+
+✔️ Este comando es obligatorio para:
+
+demos creíbles
+
+explicabilidad
+
+navegación real de la data
+
+2.2 ❌ Falta: consultas por secuencia temporal
+
+Hoy puedes pedir:
+
+“última semana”
+
+“último mes”
+
+Pero NO puedes pedir:
+
+“qué pasó ANTES y DESPUÉS del evento X”
+“qué ocurrió entre la auditoría A y el lunes crítico”
+
+🔴 Problema
+
+El concepto de trayectoria queda cojo
+
+El analyst no puede razonar causalmente
+
+✅ Comando que falta
+Nuevo intent: TEMPORAL_RELATION_QUERY
+{
+  "intent": "TEMPORAL_RELATION_QUERY",
+  "entity": "signals",
+  "operation": "sequence",
+  "filters": {
+    "anchor_event": "CRITICAL_MONDAY"
+  },
+  "time": {
+    "type": "window",
+    "value": "pre_post"
+  },
+  "output": "analysis"
+}
+
+
+✔️ Esto habilita:
+
+“antes / después”
+
+análisis causal
+
+narrativa real, no forzada
+
+2.3 ❌ Falta: consultas por ausencia de datos
+
+Esta es muy importante y casi nadie la modela.
+
+Preguntas reales:
+
+“¿Qué controles NO se observaron?”
+
+“¿Qué riesgos no tuvieron auditorías?”
+
+“¿Dónde faltan observaciones?”
+
+🔴 Problema
+
+El sistema solo habla de lo que existe
+
+No puede detectar silencios peligrosos
+
+✅ Comando que falta
+Nuevo operation: detect_absence
+{
+  "intent": "ANALYTICAL_QUERY",
+  "entity": "observations",
+  "operation": "detect_absence",
+  "filters": {
+    "risk_id": ["R01"]
+  },
+  "time": {
+    "type": "relative",
+    "value": "last_month"
+  },
+  "output": "analysis"
+}
+
+
+✔️ Esto es oro para seguridad operacional.
+
+2.4 ❌ Falta: consultas por relación cruzada de entidades
+
+Hoy no puedes preguntar canónicamente:
+
+“Qué eventos están asociados a las observaciones de R02”
+“Qué auditorías precedieron a los eventos”
+
+🔴 Problema
+
+El grafo cognitivo no se explota
+
+El analyst queda limitado
+
+✅ Comando que falta
+Nuevo operation: relate
+{
+  "intent": "ANALYTICAL_QUERY",
+  "entity": "events",
+  "operation": "relate",
+  "filters": {
+    "related_to": {
+      "entity": "observations",
+      "risk_id": ["R02"]
+    }
+  },
+  "output": "analysis"
+}
+
+2.5 ❌ Falta: consultas de ranking explícito
+
+Hoy hablas de “riesgo dominante”, pero no puedes pedir:
+
+“muéstrame el ranking completo”
+“top 3 riesgos por presión operacional”
+
+🔴 Problema
+
+El smoke fuerza narrativa
+
+MetricsNode no se usa correctamente
+
+✅ Comando que falta
+Nuevo operation: rank
+{
+  "intent": "OPERATIONAL_QUERY",
+  "entity": "risks",
+  "operation": "rank",
+  "filters": {
+    "metric": "operational_pressure"
+  },
+  "time": {
+    "type": "relative",
+    "value": "last_week"
+  },
+  "output": "raw"
+}
+
+
+👉 Esto DEBE venir del MetricsNode, no del Narrative.
+
+2.6 ❌ Falta: comandos de diagnóstico del sistema
+
+Muy útil para debug y demo.
+
+Ejemplos reales:
+
+“Qué data está disponible”
+
+“Qué semanas están cargadas”
+
+“Qué riesgos tienen trayectoria”
+
+✅ Comando que falta
+{
+  "intent": "SYSTEM_QUERY",
+  "entity": "data_coverage",
+  "operation": "summarize",
+  "output": "summary"
+}
+
+3. Resumen: Comandos que hay que agregar
+Nuevos intents
+
+TEMPORAL_RELATION_QUERY
+
+Nuevas operations
+
+retrieve_by_id
+
+sequence
+
+detect_absence
+
+relate
+
+rank
+
+Nuevos conceptos explícitos
+
+Ancla temporal (anchor_event)
+
+Ausencia como señal
+
+Relación cruzada entre entidades
+
+4. Impacto directo en tu problema actual
+
+Esto explica TODO lo que viste:
+
+❌ Narrative intentando “rellenar”
+
+❌ Analyst devolviendo frases genéricas
+
+❌ Smoke forzando tokens (“lunes”, “R02”)
+
+❌ Confusión entre operational vs analyst
+
+👉 No era un bug
+👉 Era un lenguaje incompleto
+
+5. Estado actual (importante)
+
+Con estas extensiones:
+
+El Operational queda blindado
+
+El Analyst deja de improvisar
+
+El Narrative vuelve a ser un traductor
+
+El LLM entra limpio y gobernado
+
+----------------
+
+K9 Mining Safety
+Canonical Cognitive Language – v1.1
+1. Propósito del Lenguaje Canónico
+
+El Lenguaje Canónico K9 es el idioma interno del sistema cognitivo, utilizado por:
+
+DataEngineNode
+
+OperationalAnalysisNode
+
+AnalystNode
+
+MetricsNode
+
+NarrativeNode
+
+LLM (como traductor, no decisor)
+
+Principios clave
+
+No es lenguaje natural
+
+No interpreta intención humana
+
+No inventa narrativa
+
+Describe exactamente qué dato consultar y cómo
+
+Todo output debe ser trazable a datos
+
+2. Estructura General del Comando
+{
+  "intent": "<INTENT_TYPE>",
+  "entity": "<ENTITY_TYPE>",
+  "operation": "<OPERATION_TYPE>",
+  "filters": { ... },
+  "time": { ... },
+  "relations": { ... },
+  "output": "<OUTPUT_TYPE>"
+}
+
+3. INTENTS (Tipos de intención canónica)
+3.1 OPERATIONAL_QUERY
+
+Consultas directas y factuales sobre datos sintéticos.
+
+“Qué pasó”, “cuántos”, “cuáles”, “listar”, “detalle”
+
+3.2 ANALYTICAL_QUERY
+
+Interpretación determinista basada en reglas.
+
+Tendencias, evolución, presión, diagnóstico
+
+3.3 COMPARATIVE_QUERY
+
+Comparación entre modelos o fuentes.
+
+K9 vs Proactivo, antes vs después
+
+3.4 TEMPORAL_RELATION_QUERY
+
+Relaciones temporales antes / después / secuencia.
+
+Causalidad temporal
+
+3.5 SYSTEM_QUERY
+
+Estado del sistema y cobertura de datos.
+
+Debug, demo, validación
+
+4. ENTITIES (Entidades consultables)
+Entity	Descripción
+observations	OCC / OPG
+events	Eventos operacionales
+audits	Auditorías
+fdo	Factores Dinámicos Operacionales
+trajectories	Trayectorias de riesgo
+risks	Riesgos
+controls	Controles críticos
+proactive_model	Modelo proactivo
+signals	Señales agregadas
+data_coverage	Cobertura de datos
+5. OPERATIONS (Acciones)
+5.1 Básicas
+Operation	Uso
+list	Listar entidades
+count	Conteo
+summarize	Resumen factual
+retrieve_by_id	Detalle por ID
+5.2 Temporales
+Operation	Uso
+evolution	Evolución en el tiempo
+sequence	Antes / después
+window	Ventana temporal
+5.3 Analíticas
+Operation	Uso
+rank	Ranking
+detect_absence	Ausencia de datos
+relate	Relación entre entidades
+explain	Explicación determinista
+6. TIME (Dimensión temporal)
+"time": {
+  "type": "absolute | relative | window",
+  "value": "2025-01-01 | last_week | last_month | pre_post"
+}
+
+Ejemplos válidos
+
+last_week
+
+last_4_weeks
+
+week_01_2025
+
+pre_post + anchor_event
+
+7. RELATIONS (Relaciones entre entidades)
+"relations": {
+  "related_to": {
+    "entity": "observations",
+    "risk_id": ["R02"]
+  }
+}
+
+
+Permite:
+
+Eventos asociados a observaciones
+
+Auditorías previas a eventos
+
+Señales derivadas de FDO
+
+8. OUTPUT TYPES
+Output	Uso
+raw	Datos sin interpretación
+analysis	Resultado determinista
+summary	Resumen factual
+trace	Evidencia detallada
+9. EJEMPLOS CANÓNICOS (CRÍTICOS)
+9.1 Conteo de observaciones (blindado)
+{
+  "intent": "OPERATIONAL_QUERY",
+  "entity": "observations",
+  "operation": "count",
+  "time": {
+    "type": "relative",
+    "value": "last_week"
+  },
+  "output": "raw"
+}
+
+9.2 Señales antes del lunes crítico
+{
+  "intent": "TEMPORAL_RELATION_QUERY",
+  "entity": "signals",
+  "operation": "sequence",
+  "filters": {
+    "anchor_event": "CRITICAL_MONDAY"
+  },
+  "time": {
+    "type": "window",
+    "value": "pre_post"
+  },
+  "output": "analysis"
+}
+
+9.3 Riesgos subestimados por el modelo proactivo
+{
+  "intent": "COMPARATIVE_QUERY",
+  "entity": "risks",
+  "operation": "compare",
+  "filters": {
+    "model": "proactive_model",
+    "baseline": "K9"
+  },
+  "output": "analysis"
+}
+
+9.4 Detalle de un evento específico
+{
+  "intent": "OPERATIONAL_QUERY",
+  "entity": "events",
+  "operation": "retrieve_by_id",
+  "filters": {
+    "event_id": ["EVT_2025_001"]
+  },
+  "output": "raw"
+}
+
+9.5 Ausencia de observaciones (señal silenciosa)
+{
+  "intent": "ANALYTICAL_QUERY",
+  "entity": "observations",
+  "operation": "detect_absence",
+  "filters": {
+    "risk_id": ["R01"]
+  },
+  "time": {
+    "type": "relative",
+    "value": "last_month"
+  },
+  "output": "analysis"
+}
+
+9.6 Ranking por presión operacional
+{
+  "intent": "OPERATIONAL_QUERY",
+  "entity": "risks",
+  "operation": "rank",
+  "filters": {
+    "metric": "operational_pressure"
+  },
+  "time": {
+    "type": "relative",
+    "value": "last_week"
+  },
+  "output": "raw"
+}
+
+9.7 Diagnóstico del sistema
+{
+  "intent": "SYSTEM_QUERY",
+  "entity": "data_coverage",
+  "operation": "summarize",
+  "output": "summary"
+}
+
+10. Implicancias Arquitectónicas (clave)
+Nodo	Rol
+DataEngine	Ejecuta OPERATIONAL_QUERY
+OperationalAnalysis	Responde factual
+Analyst	Solo ANALYTICAL / COMPARATIVE
+MetricsNode	Rankings, agregados
+NarrativeNode	Traduce resultados
+LLM	Traduce humano ↔ canónico
+11. Estado del Sistema con v1.1
+
+✅ Operational blindado
+
+✅ Analyst no improvisa
+
+✅ Narrative deja de “inventar”
+
+✅ Smoke debe ser canónico
+
+✅ LLM entra limpio después
+
+------------
+
+Extensión del Lenguaje Canónico K9
+Ontology Query Layer – v1.2 (extensión compatible)
+
+Esta extensión no reemplaza v1.1
+La complementa y mantiene separación cognitiva.
+
+1. Por qué esto es necesario (principio cognitivo)
+
+Hay dos mundos distintos en K9:
+
+Mundo	Qué responde
+Mundo factual	Qué pasó (datos sintéticos)
+Mundo semántico	Qué es qué (ontología)
+
+Preguntas como:
+
+“¿Cuáles son los controles del riesgo R01?”
+
+“¿Qué causas están asociadas a Caída de Objetos?”
+
+“Muéstrame el bowtie del riesgo R02”
+
+“Qué consecuencias tiene este riesgo”
+
+👉 NO deben ir al Operational ni al Analyst, porque:
+
+No dependen del tiempo
+
+No dependen de eventos
+
+No dependen de observaciones
+
+👉 Son consultas ontológicas puras.
+
+Por lo tanto, necesitamos un INTENT explícito para ontología.
+
+2. Nuevo INTENT: ONTOLOGY_QUERY
+Definición
+"intent": "ONTOLOGY_QUERY"
+
+Propósito
+
+Consultar estructura, relaciones y definiciones del sistema K9, incluyendo:
+
+Riesgos
+
+Controles
+
+Causas
+
+Consecuencias
+
+Bowtie
+
+Relaciones entre entidades
+
+👉 Nunca ejecuta análisis ni métricas
+👉 Nunca cruza con datos sintéticos
+
+3. Nuevas ENTITIES ontológicas
+
+Ampliamos el set existente:
+
+Entity	Descripción
+risk	Riesgo individual
+controls	Controles críticos
+causes	Causas
+consequences	Consecuencias
+bowtie	Modelo bowtie
+hazards	Peligros
+barriers	Barreras preventivas / mitigadoras
+ontology_graph	Vista estructural
+4. Operaciones ontológicas permitidas
+4.1 Operaciones básicas
+Operation	Uso
+describe	Descripción de la entidad
+list	Listar entidades relacionadas
+relate	Relaciones entre entidades
+retrieve	Obtener definición completa
+4.2 Operaciones estructurales
+Operation	Uso
+get_controls	Controles de un riesgo
+get_causes	Causas asociadas
+get_consequences	Consecuencias
+get_bowtie	Bowtie completo
+get_barriers	Barreras por tipo
+5. Ejemplos canónicos de consultas ontológicas
+5.1 Controles de un riesgo
+{
+  "intent": "ONTOLOGY_QUERY",
+  "entity": "risk",
+  "operation": "get_controls",
+  "filters": {
+    "risk_id": "R01"
+  },
+  "output": "raw"
+}
+
+5.2 Causas asociadas a un riesgo
+{
+  "intent": "ONTOLOGY_QUERY",
+  "entity": "risk",
+  "operation": "get_causes",
+  "filters": {
+    "risk_id": "R02"
+  },
+  "output": "raw"
+}
+
+5.3 Bowtie completo
+{
+  "intent": "ONTOLOGY_QUERY",
+  "entity": "bowtie",
+  "operation": "retrieve",
+  "filters": {
+    "risk_id": "R02"
+  },
+  "output": "raw"
+}
+
+5.4 Relación control → riesgo
+{
+  "intent": "ONTOLOGY_QUERY",
+  "entity": "controls",
+  "operation": "relate",
+  "filters": {
+    "control_id": "C_014"
+  },
+  "output": "raw"
+}
+
+5.5 Vista estructural del riesgo
+{
+  "intent": "ONTOLOGY_QUERY",
+  "entity": "risk",
+  "operation": "retrieve",
+  "filters": {
+    "risk_id": "R01"
+  },
+  "output": "summary"
+}
+
+6. Nodo responsable (muy importante)
+
+Este tipo de query NO debe ir a:
+
+❌ OperationalAnalysisNode
+
+❌ AnalystNode
+
+❌ MetricsNode
+
+Debe ir a:
+
+🟢 OntologyQueryNode (nuevo o existente según diseño)
+Nodo	Rol
+OntologyQueryNode	Acceso a ontología (YAML / GDB / VDB)
+NarrativeNode	Traducción del resultado
+LLM	Traducción humano ↔ canónico
+7. Cómo convive con el resto del sistema
+Tipo de pregunta	Nodo
+“Qué pasó”	Operational
+“Cómo evolucionó”	Analyst
+“Por qué es importante”	Analyst
+“Qué es este riesgo”	Ontology
+“Qué controles tiene”	Ontology
+“Muéstrame el bowtie”	Ontology
+
+👉 No hay ambigüedad
+👉 No hay mezcla cognitiva
+
+8. Implicación clave para el LLM (futuro)
+
+El LLM no decide si algo es ontología u operacional.
+
+Él solo traduce:
+
+Lenguaje humano → Lenguaje canónico
+
+Ejemplo:
+
+“¿Cuáles son los controles del riesgo R01?”
+
+⬇️
+
+{
+  "intent": "ONTOLOGY_QUERY",
+  "entity": "risk",
+  "operation": "get_controls",
+  "filters": {
+    "risk_id": "R01"
+  },
+  "output": "raw"
+}
+
+9. Estado final del sistema con esta extensión
+
+✅ Datos sintéticos blindados
+
+✅ Análisis determinista protegido
+
+✅ Ontología consultable explícitamente
+
+✅ Sin dependencia de lenguaje natural
+
+✅ Preparado para GDB / VDB / YAML
+
+✅ Smoke canónico completo
+
+
+-----------------
+
+¿Cómo se le enseña a un LLM a traducir lenguaje humano → lenguaje K9 (canónico) sin romper el sistema cognitivo?
+
+La respuesta corta es:
+👉 no se le “enseña” como a un modelo de ML,
+👉 se le instruye, acota y gobierna como intérprete.
+
+Voy por partes.
+
+1. Principio fundacional (esto aclara todo)
+
+En K9:
+
+El LLM NO decide qué hacer.
+El LLM SOLO traduce.
+
+Eso implica una regla dura:
+
+El LLM nunca produce respuestas finales,
+solo produce estructuras intermedias.
+
+Si esto no está claro, todo se desordena.
+
+2. Qué significa “traducir humano → K9”
+
+Traducir no es “entender semánticamente todo”.
+Traducir es mapear una pregunta humana a un comando válido del sistema.
+
+Ejemplo humano:
+
+“¿Qué eventos pasaron la primera semana de enero?”
+
+Eso no es una intención libre, es una consulta estructurada:
+
+{
+  "intent": "OPERATIONAL_QUERY",
+  "entity": "event",
+  "operation": "list",
+  "filters": {
+    "date_range": {
+      "from": "2025-01-01",
+      "to": "2025-01-07"
+    }
+  }
+}
+
+
+👉 El LLM no ejecuta nada, solo genera esto.
+
+3. Cómo se le enseña eso al LLM (método real)
+
+No es fine-tuning (por ahora).
+Es prompt engineering estructural + contratos estrictos.
+
+3.1 El LLM recibe un ROL FIJO
+
+Ejemplo (conceptual):
+
+You are the K9 Language Interpreter.
+Your task is to translate human questions into K9 Canonical Commands.
+You must NEVER answer the user directly.
+
+Esto no es cosmético:
+es una instrucción de identidad funcional.
+
+3.2 Se le entrega el Lenguaje Canónico como SPEC
+
+El LLM debe “ver” algo así (resumido):
+
+K9_CANONICAL_LANGUAGE:
+  intents:
+    - OPERATIONAL_QUERY
+    - ANALYST_QUERY
+    - ONTOLOGY_QUERY
+  entities:
+    - risk
+    - event
+    - observation
+    - audit
+    - fdo
+    - trajectory
+  operations:
+    - list
+    - count
+    - summarize
+    - compare
+  filters:
+    - date_range
+    - risk_id
+    - week
+
+
+👉 El LLM no inventa, solo selecciona.
+
+3.3 Se le muestran ejemplos canónicos (few-shot)
+
+Esto es clave.
+
+Ejemplo:
+
+Input humano
+
+“Dame los eventos de la semana 1”
+
+Output esperado
+
+{
+  "intent": "OPERATIONAL_QUERY",
+  "entity": "event",
+  "operation": "list",
+  "filters": {
+    "week": 1
+  }
+}
+
+
+Con 10–20 ejemplos bien diseñados, el LLM aprende el mapeo.
+
+4. Blindaje: cómo evitamos que el LLM rompa el sistema
+
+Aquí está lo que no habíamos dicho explícitamente y es crítico.
+
+4.1 Validación estructural obligatoria
+
+Todo output del LLM pasa por:
+
+JSON Schema
+
+Validación de enums
+
+Validación de campos obligatorios
+
+Si falla → rechazo + reintento guiado.
+
+4.2 El LLM NO conoce los datos
+
+El LLM:
+
+❌ No ve STDE
+
+❌ No ve auditorías
+
+❌ No ve eventos reales
+
+Solo conoce:
+
+El lenguaje
+
+El contrato
+
+Eso elimina alucinaciones.
+
+5. Qué pasa después de la traducción
+
+Pipeline real:
+
+Usuario humano
+   ↓
+LLM (intérprete)
+   ↓
+Comando canónico K9
+   ↓
+Router
+   ↓
+Operational / Analyst / Ontology
+   ↓
+State estructurado
+   ↓
+NarrativeNode
+   ↓
+(LLM opcional para redacción)
+
+
+👉 El LLM nunca toca los datos.
+
+------------------------------
+

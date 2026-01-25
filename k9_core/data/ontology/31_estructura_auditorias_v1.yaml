@@ -1,0 +1,233 @@
+# Estructura de auditorías por tipo
+# Alineado a 24_estructura_observaciones_v5.yaml (mismo patrón de campos)
+# Incluye trazabilidad, campos *_id opcionales para tabular y puente a OCC por causas.
+
+- tipo_auditoria: AUC
+  nombre: Auditoría Completa
+  descripcion: Auditoría exhaustiva post-Incidente Mayor con enfoque en evidencia, controles críticos e ICAM.
+  estructura_campos:
+    campos_obligatorios:
+      - tipo_auditoria:
+          type: string
+          ref: tipos_auditoria
+          description: Código del tipo de auditoría (AUC/AUF).
+      - id_auditoria:
+          type: string
+          description: ID único y consecutivo de la auditoría.
+      - fecha_auditoria:
+          type: date
+          format: YYYY-MM-DD
+          description: Fecha de realización de la auditoría.
+      - hora_auditoria:
+          type: time
+          format: HH:MM
+          description: Hora de realización (formato 24h).
+      - incidente_asociado:
+          type: string
+          ref: catalogo_incidentes
+          description: ID del incidente al que corresponde la auditoría.
+      - area_operacional:
+          type: string
+          ref: catalogo_areas_operacionales
+          description: Área operacional donde ocurrió el incidente.
+      - riesgo_auditado:
+          type: string
+          ref: catalogo_riesgos
+          description: Riesgo principal auditado (único).
+      - equipo_auditor_responsable:
+          type: list
+          ref: catalogo_roles
+          description: Roles que ejecutan la auditoría (ej. Supervisor Seguridad, Investigador ICAM).
+      - controles_criticos_involucrados:
+          type: list
+          ref: catalogo_controles
+          description: Controles críticos revisados en la auditoría.
+      - controles_criticos_fallidos:
+          type: list
+          ref: catalogo_controles
+          optional: true
+          description: Controles críticos que fallaron según la auditoría.
+      - causas_identificadas:
+          type: list
+          ref: catalogo_causas
+          description: Causas inmediatas, contribuyentes y/o latentes identificadas (modelo ICAM).
+      - evidencia_recopilada:
+          type: list
+          description: Referencias a documentos, entrevistas, fotografías o registros.
+      - hallazgos_clave:
+          type: text
+          description: Brechas detectadas en procedimientos, roles o sistemas de gestión.
+      - acciones_correctivas_recomendadas:
+          type: text
+          optional: true
+          description: Recomendaciones y prioridades de implementación.
+      - generar_observaciones_cc:
+          type: boolean
+          description: >
+            Indica si se deben generar observaciones de Control Crítico (OCC) derivadas de la auditoría.
+      - observaciones_cc_causas_relacionadas:
+          type: list
+          ref: catalogo_causas
+          optional: true
+          description: >
+            Causas a las que deben asociarse las observaciones OCC derivadas (si 'generar_observaciones_cc' = true).
+      # --- Campos operacionales opcionales de alto valor predictivo ---
+      - turno:
+          type: string
+          optional: true
+          description: Turno operativo (ej. diurno, nocturno).
+      - ubicacion:
+          type: string
+          optional: true
+          description: Sub-área o equipo específico (ej. Faja CV-102).
+      # --- Anclas opcionales *_id / *_ids para tabular determinista (Año-0) ---
+      - area_operacional_id:
+          type: string
+          ref: catalogo_areas_operacionales
+          optional: true
+          description: ID de área operacional (si se conoce).
+      - riesgo_auditado_id:
+          type: string
+          ref: catalogo_riesgos
+          optional: true
+          description: ID del riesgo principal auditado.
+      - controles_criticos_involucrados_ids:
+          type: list
+          ref: catalogo_controles
+          optional: true
+          description: IDs de controles críticos revisados.
+      - controles_criticos_fallidos_ids:
+          type: list
+          ref: catalogo_controles
+          optional: true
+          description: IDs de controles críticos que fallaron (si aplica).
+      - causas_identificadas_ids:
+          type: list
+          ref: catalogo_causas
+          optional: true
+          description: IDs de causas (inmediatas/contribuyentes/latentes).
+  metodo_auditoria: AUD
+  asociacion_bowtie: true
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Registro de auditorías post-Incidente Mayor (lesión grave/fatalidad)
+  registro_aplicable_a:
+    - auditoria
+  tags:
+    - auditoria
+    - completa
+    - icam
+    - controles_criticos
+    - post_incidente
+
+- tipo_auditoria: AUF
+  nombre: Auditoría Focalizada
+  descripcion: Auditoría acotada post-Incidente Menor de Alto Potencial enfocada en controles y causas inmediatas.
+  estructura_campos:
+    campos_obligatorios:
+      - tipo_auditoria:
+          type: string
+          ref: tipos_auditoria
+          description: Código del tipo de auditoría (AUC/AUF).
+      - id_auditoria:
+          type: string
+          description: ID único y consecutivo de la auditoría.
+      - fecha_auditoria:
+          type: date
+          format: YYYY-MM-DD
+          description: Fecha de realización de la auditoría.
+      - hora_auditoria:
+          type: time
+          format: HH:MM
+          description: Hora de realización (formato 24h).
+      - incidente_asociado:
+          type: string
+          ref: catalogo_incidentes
+          description: ID del incidente al que corresponde la auditoría.
+      - area_operacional:
+          type: string
+          ref: catalogo_areas_operacionales
+          description: Área operacional donde ocurrió el incidente.
+      - riesgo_auditado:
+          type: string
+          ref: catalogo_riesgos
+          description: Riesgo principal auditado (único).
+      - rol_auditor_responsable:
+          type: string
+          ref: catalogo_roles
+          description: Rol responsable de ejecutar la auditoría.
+      - control_critico_revisado:
+          type: string
+          ref: catalogo_controles
+          description: Control crítico principal revisado.
+      - control_critico_fallido:
+          type: string
+          ref: catalogo_controles
+          optional: true
+          description: Control crítico principal que falló (si aplica).
+      - causas_inmediatas:
+          type: list
+          ref: catalogo_causas
+          description: Causas directas identificadas.
+      - hallazgos_relevantes:
+          type: text
+          description: Hallazgos puntuales sobre procedimientos o roles.
+      - acciones_correctivas_breves:
+          type: text
+          optional: true
+          description: Medidas específicas de implementación rápida.
+      - generar_observaciones_cc:
+          type: boolean
+          description: >
+            Indica si se deben generar observaciones de Control Crítico (OCC) derivadas de la auditoría.
+      - observaciones_cc_causas_relacionadas:
+          type: list
+          ref: catalogo_causas
+          optional: true
+          description: >
+            Causas a las que deben asociarse las observaciones OCC derivadas (si 'generar_observaciones_cc' = true).
+      # --- Campos operacionales opcionales ---
+      - turno:
+          type: string
+          optional: true
+          description: Turno operativo (ej. diurno, nocturno).
+      - ubicacion:
+          type: string
+          optional: true
+          description: Sub-área o equipo específico (ej. Faja CV-102).
+      # --- Anclas opcionales *_id para tabular determinista (Año-0) ---
+      - area_operacional_id:
+          type: string
+          ref: catalogo_areas_operacionales
+          optional: true
+          description: ID de área operacional (si se conoce).
+      - riesgo_auditado_id:
+          type: string
+          ref: catalogo_riesgos
+          optional: true
+          description: ID del riesgo principal auditado.
+      - control_critico_revisado_id:
+          type: string
+          ref: catalogo_controles
+          optional: true
+          description: ID del control crítico principal revisado.
+      - control_critico_fallido_id:
+          type: string
+          ref: catalogo_controles
+          optional: true
+          description: ID del control crítico principal que falló.
+      - causas_inmediatas_ids:
+          type: list
+          ref: catalogo_causas
+          optional: true
+          description: IDs de causas directas identificadas.
+  metodo_auditoria: AUD
+  asociacion_bowtie: true
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Registro de auditorías post-Incidente Menor de Alto Potencial
+  registro_aplicable_a:
+    - auditoria
+  tags:
+    - auditoria
+    - focalizada
+    - verificacion_controles
+    - post_incidente

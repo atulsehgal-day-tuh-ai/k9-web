@@ -1,0 +1,432 @@
+[
+  {
+    "domain": "k9_mining_safety",
+    "language": "es",
+    "purpose": "Semantic grounding for Spanish user queries translated into K9 Canonical Language (English). This file is used exclusively by the LLM as contextual knowledge. It is never executed by the K9 core.",
+
+    "core_principles": [
+      "This file provides semantic understanding, not logic.",
+      "All canonical entities and operations are defined elsewhere.",
+      "The LLM translates user intent; the core validates and executes.",
+      "Ontology concepts and synthetic data concepts must never be mixed.",
+      "Proactive model signals are referential and comparative only; they never redefine ontological entities."
+    ],
+
+    "risk_scopes": {
+      "K9_CORE": {
+        "definition": "Riesgos definidos en la ontología K9 y soportados por datos sintéticos (métricas, señales, trayectorias, FDO y narrativa).",
+        "default": true,
+        "notes": [
+          "Este es el scope por defecto para cualquier mención de 'riesgo' si el usuario no menciona explícitamente el modelo proactivo.",
+          "El análisis causal, FDO, trayectorias y narrativa solo son válidos para riesgos definidos en la ontología K9."
+        ]
+      },
+      "PROACTIVE_REF": {
+        "definition": "Evaluación referencial del modelo proactivo. Incluye 10 riesgos: 3 comparten los mismos IDs que los riesgos de la ontología K9, y 7 son riesgos adicionales no ontológicos.",
+        "default": false,
+        "notes": [
+          "Los 3 riesgos compartidos mantienen el mismo ID en ambos contextos; no representan entidades distintas.",
+          "Los 7 riesgos adicionales no existen en la ontología K9 y no pueden usarse para causalidad, FDO, trayectorias o narrativa.",
+          "La información del modelo proactivo se utiliza solo para comparar qué decía el modelo proactivo frente a las métricas derivadas de la data sintética."
+        ]
+      }
+    },
+
+    "concepts": {
+      "risk": {
+        "k9_entity": "risk",
+        "definition": "Un riesgo operacional definido en la ontología K9. Es una estructura semántica que representa un tipo de peligro recurrente.",
+        "user_spanish_terms": [
+          "riesgo",
+          "riesgo operativo",
+          "riesgo principal",
+          "riesgo crítico",
+          "peligro"
+        ],
+        "notes": [
+          "Un riesgo no es un evento ni una observación.",
+          "Las preguntas estructurales sobre riesgos son ONTOLOGY_QUERY.",
+          "Por defecto, 'riesgo' se interpreta como riesgo del scope K9_CORE, salvo mención explícita del modelo proactivo.",
+          "El término 'riesgo principal' es ambiguo en español; debe interpretarse como consulta agregada (p. ej. ranking/dominancia) sobre riesgos K9_CORE, no como una categoría ontológica.",
+          "Un mismo risk_id puede aparecer en K9_CORE y en PROACTIVE_REF (modelo proactivo). El scope define la fuente de señal y operaciones permitidas, no la identidad del riesgo."
+        ]
+      },
+
+      "cause": {
+        "k9_entity": "cause",
+        "definition": "Una causa es un factor que puede desencadenar un evento no deseado asociado a un riesgo.",
+        "user_spanish_terms": [
+          "causa",
+          "origen",
+          "factor causal",
+          "razón"
+        ],
+        "notes": [
+          "Una causa no es un evento ni una consecuencia.",
+          "Pertenece exclusivamente a la ontología.",
+          "El modelo proactivo no define causas."
+        ]
+      },
+
+      "control": {
+        "k9_entity": "control",
+        "definition": "Un control crítico es una barrera diseñada para prevenir o mitigar un riesgo.",
+        "user_spanish_terms": [
+          "control",
+          "control crítico",
+          "barrera",
+          "medida de control"
+        ],
+        "notes": [
+          "Un control no es una recomendación ni una acción futura.",
+          "Los controles son entidades ontológicas.",
+          "El modelo proactivo no define controles."
+        ]
+      },
+
+      "consequence": {
+        "k9_entity": "consequence",
+        "definition": "Una consecuencia es el resultado potencial si un riesgo se materializa.",
+        "user_spanish_terms": [
+          "consecuencia",
+          "impacto",
+          "resultado",
+          "efecto"
+        ],
+        "notes": [
+          "Las consecuencias son hipotéticas.",
+          "No deben confundirse con eventos reales.",
+          "Las consecuencias pertenecen a la ontología, no al modelo proactivo."
+        ]
+      },
+
+      "task": {
+        "k9_entity": "task",
+        "definition": "Una tarea es una actividad operacional definida en la ontología y asociada a riesgos y roles.",
+        "user_spanish_terms": [
+          "tarea",
+          "actividad",
+          "trabajo",
+          "labor"
+        ],
+        "notes": [
+          "Las tareas conectan riesgos con roles.",
+          "Son clave para análisis de exposición.",
+          "Las tareas pertenecen a la ontología, no al modelo proactivo."
+        ]
+      },
+
+      "role": {
+        "k9_entity": "role",
+        "definition": "Un rol representa una función operacional que ejecuta tareas dentro de la operación minera.",
+        "user_spanish_terms": [
+          "rol",
+          "cargo",
+          "puesto",
+          "operador",
+          "trabajador"
+        ],
+        "notes": [
+          "Un rol no es una persona individual.",
+          "La exposición se infiere vía tareas."
+        ]
+      },
+
+      "audit": {
+        "k9_entity": "audits",
+        "definition": "Una auditoría es una revisión formal y planificada de condiciones operacionales, controles críticos o cumplimiento de estándares.",
+        "user_spanish_terms": [
+          "auditoría",
+          "auditoría de seguridad",
+          "auditoría operacional",
+          "inspección formal",
+          "revisión"
+        ],
+        "notes": [
+          "Las auditorías no son observaciones ni eventos.",
+          "Pertenecen a la data sintética histórica.",
+          "El modelo proactivo no define auditorías."
+        ]
+      },
+
+      "observation": {
+        "k9_entity": "observations",
+        "definition": "Una observación es un registro levantado en terreno que documenta una condición, acto o control relacionado con la seguridad.",
+        "user_spanish_terms": [
+          "observación",
+          "registro",
+          "hallazgo",
+          "observación preventiva"
+        ],
+        "subtypes": {
+          "OCC": {
+            "definition": "Observación de Control Crítico. Verifica la presencia o efectividad de un control crítico.",
+            "user_spanish_terms": [
+              "OCC",
+              "observación de control crítico",
+              "verificación de control crítico"
+            ]
+          },
+          "OPG": {
+            "definition": "Observación Preventiva General. Registra condiciones o actos inseguros sin foco exclusivo en controles críticos.",
+            "user_spanish_terms": [
+              "OPG",
+              "observación preventiva",
+              "observación general"
+            ]
+          }
+        },
+        "notes": [
+          "Las observaciones no implican materialización del riesgo.",
+          "Son diferentes de eventos."
+        ]
+      },
+
+      "event": {
+        "k9_entity": "events",
+        "definition": "Un evento es una ocurrencia operacional registrada que representa la materialización parcial o total de un riesgo.",
+        "user_spanish_terms": [
+          "evento",
+          "incidente",
+          "evento operacional",
+          "evento de seguridad"
+        ],
+        "notes": [
+          "Un evento implica liberación de energía o impacto.",
+          "Es distinto de una observación.",
+          "El modelo proactivo no define eventos; solo produce señales/rankings referenciales."
+        ]
+      },
+
+      "fdo": {
+        "k9_entity": "fdo",
+        "definition": "Los Factores Dinámicos Operacionales (FDO) representan condiciones operativas variables que influyen en el nivel de riesgo.",
+        "user_spanish_terms": [
+          "FDO",
+          "factor dinámico operacional",
+          "condición operacional",
+          "presión operacional",
+          "contexto operacional"
+        ],
+        "examples": [
+          "fatiga",
+          "presión por producción",
+          "backlog",
+          "dotación",
+          "carga de trabajo"
+        ],
+        "notes": [
+          "Los FDO no son eventos ni observaciones.",
+          "Se usan para análisis de presión y tendencia.",
+          "Los FDO aplican a riesgos del scope K9_CORE."
+        ]
+      },
+
+      "signal": {
+        "k9_entity": "signals",
+        "definition": "Una señal es un indicador agregado que resume el comportamiento de un riesgo en un período determinado.",
+        "user_spanish_terms": [
+          "señal",
+          "indicador",
+          "señal semanal",
+          "score K9"
+        ],
+        "notes": [
+          "Las señales son agregaciones.",
+          "Se usan para ranking y evolución.",
+          "Las señales pueden provenir de K9_CORE (derivadas de data sintética) o de PROACTIVE_REF (modelo proactivo) con fines comparativos."
+        ]
+      },
+
+      "critical_monday": {
+        "definition": "El lunes crítico es un punto temporal identificado en la simulación donde múltiples señales de riesgo convergen.",
+        "user_spanish_terms": [
+          "lunes crítico",
+          "lunes clave",
+          "punto crítico semanal"
+        ],
+        "notes": [
+          "No es un evento.",
+          "Se usa como ancla temporal pre/post."
+        ]
+      }
+    },
+
+    "semantic_rules": [
+      "Ontology concepts (risk, cause, control, consequence) belong to ONTOLOGY_QUERY.",
+      "Observations, events, audits and FDO belong to synthetic data queries.",
+      "OCC and OPG are subtypes of observations, not separate entities.",
+      "An event implies risk materialization; an observation does not.",
+      "FDO represents operational context, not incidents.",
+      "Never invent relationships or mix ontology with synthetic data.",
+      "If a user mentions the proactive model explicitly, treat proactive outputs as comparative evidence and never as ontological definitions.",
+      "A risk ID can be shared between K9_CORE and PROACTIVE_REF; scope determines source and allowed operations, not risk identity."
+    ]
+  },
+
+  {
+    "domain": "k9_mining_safety",
+    "language": "es",
+    "purpose": "Semantic grounding for Spanish user queries translated into K9 Canonical Language (English). Uses the official K9 ontology YAML files as source of truth. This file is exclusively for the LLM.",
+
+    "core_principles": [
+      "Entities are canonical and limited (risk, event, audit, observation, fdo, etc.).",
+      "Subtypes are semantic classifications defined by ontology YAML.",
+      "The LLM must never invent event or audit types.",
+      "Ontology and synthetic data must never be mixed.",
+      "Proactive model outputs are referential and comparative only."
+    ],
+
+    "concepts": {
+      "event": {
+        "k9_entity": "events",
+        "definition": "Un evento es una ocurrencia operacional registrada que representa la materialización parcial o total de un riesgo.",
+        "user_spanish_terms": [
+          "evento",
+          "incidente",
+          "evento de seguridad",
+          "incidente operacional"
+        ],
+        "subtypes": {
+          "major_incident": {
+            "definition": "Incidente mayor con consecuencias severas, como lesiones graves o fatalidad.",
+            "user_spanish_terms": [
+              "incidente mayor",
+              "accidente grave",
+              "fatalidad",
+              "lesión grave"
+            ],
+            "source_yaml": "25_tipos_incidentes_v1.yaml"
+          },
+          "minor_incident": {
+            "definition": "Incidente menor con consecuencias leves o daño menor.",
+            "user_spanish_terms": [
+              "incidente menor",
+              "accidente leve",
+              "lesión leve"
+            ],
+            "source_yaml": "25_tipos_incidentes_v1.yaml"
+          },
+          "near_miss": {
+            "definition": "Evento sin consecuencias, pero con alto potencial de daño.",
+            "user_spanish_terms": [
+              "near miss",
+              "cuasi accidente",
+              "casi accidente"
+            ],
+            "source_yaml": "25_tipos_incidentes_v1.yaml"
+          },
+          "hazard": {
+            "definition": "Condición riesgosa detectada sin liberación de energía ni consecuencias.",
+            "user_spanish_terms": [
+              "peligro detectado",
+              "condición insegura",
+              "hazard"
+            ],
+            "source_yaml": "25_tipos_incidentes_v1.yaml"
+          }
+        },
+        "notes": [
+          "Un evento es distinto de una observación.",
+          "El subtipo de evento condiciona el análisis posterior.",
+          "El LLM debe mapear subtipos exactamente como están definidos en YAML y nunca inventar nuevos."
+        ]
+      },
+
+      "audit": {
+        "k9_entity": "audits",
+        "definition": "Una auditoría es una revisión estructurada y documentada del desempeño en seguridad o cumplimiento.",
+        "user_spanish_terms": [
+          "auditoría",
+          "auditoría de seguridad",
+          "revisión formal"
+        ],
+        "subtypes": {
+          "preventive_audit": {
+            "definition": "Auditoría planificada con foco preventivo.",
+            "user_spanish_terms": [
+              "auditoría preventiva",
+              "auditoría planificada"
+            ],
+            "source_yaml": "32_tipos_auditoria_v1.yaml"
+          },
+          "reactive_audit": {
+            "definition": "Auditoría realizada como respuesta a un incidente.",
+            "user_spanish_terms": [
+              "auditoría reactiva",
+              "auditoría post incidente"
+            ],
+            "source_yaml": "32_tipos_auditoria_v1.yaml"
+          },
+          "internal_audit": {
+            "definition": "Auditoría realizada por la organización.",
+            "user_spanish_terms": [
+              "auditoría interna"
+            ],
+            "source_yaml": "32_tipos_auditoria_v1.yaml"
+          },
+          "external_audit": {
+            "definition": "Auditoría realizada por un ente externo.",
+            "user_spanish_terms": [
+              "auditoría externa",
+              "auditoría regulatoria"
+            ],
+            "source_yaml": "32_tipos_auditoria_v1.yaml"
+          }
+        },
+        "notes": [
+          "Las auditorías no son eventos ni observaciones.",
+          "El tipo de auditoría define su contexto y uso.",
+          "El LLM debe mapear subtipos exactamente como están definidos en YAML y nunca inventar nuevos."
+        ]
+      },
+
+      "observation": {
+        "k9_entity": "observations",
+        "definition": "Registro levantado en terreno que documenta una condición, acto o verificación.",
+        "subtypes": {
+          "OCC": {
+            "definition": "Observación de Control Crítico.",
+            "user_spanish_terms": [
+              "OCC",
+              "observación de control crítico"
+            ]
+          },
+          "OPG": {
+            "definition": "Observación Preventiva General.",
+            "user_spanish_terms": [
+              "OPG",
+              "observación preventiva"
+            ]
+          }
+        },
+        "notes": [
+          "OCC y OPG son subtipos semánticos de observaciones, no entidades separadas."
+        ]
+      },
+
+      "fdo": {
+        "k9_entity": "fdo",
+        "definition": "Factores Dinámicos Operacionales que influyen en el nivel de riesgo.",
+        "user_spanish_terms": [
+          "FDO",
+          "presión operacional",
+          "condiciones operacionales"
+        ],
+        "notes": [
+          "Los FDO pertenecen a data sintética y se usan para análisis de presión y tendencia."
+        ]
+      }
+    },
+
+    "semantic_rules": [
+      "Event and audit subtypes must match ontology YAML definitions.",
+      "The LLM must never invent new subtypes.",
+      "Event severity is determined by subtype, not by language.",
+      "Audits and events belong to synthetic data, not ontology.",
+      "Proactive model outputs are comparative; they never define event or audit types."
+    ]
+  }
+]
+
+

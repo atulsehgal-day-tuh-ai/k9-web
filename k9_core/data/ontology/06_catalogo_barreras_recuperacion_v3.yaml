@@ -1,0 +1,246 @@
+# 06_catalogo_barreras_recuperacion_v2.yaml
+
+- id: R01BR01
+  nombre: Activación de plan de emergencia y brigada de rescate
+  descripcion: >
+    Plan de emergencia formalizado que moviliza a la brigada de rescate
+    entrenada para atender incidentes de caída de altura. Incluye protocolos
+    de notificación inmediata, rutas de acceso seguras y equipos de rescate
+    especializados. Permite reducir el tiempo de respuesta a menos de 10 minutos
+    y aumentar la probabilidad de supervivencia y atención oportuna.
+  riesgo_asociado: R01
+  tipo_barrera: Administrativo/Respuesta a Emergencias
+  tags:
+    - plan de emergencia
+    - brigada de rescate
+    - respuesta inmediata
+    - protocolos
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Recuperación tras incidente
+  registro_aplicable_a:
+    - incidente
+  consecuencias_asociadas:
+    - R01CON01
+    - R01CON02
+
+- id: R01BR02
+  nombre: Equipo de comunicación de emergencia operativo
+  descripcion: >
+    Sistemas de radio y telefonía satelital dedicados, con baterías de respaldo,
+    que garantizan comunicación continua entre el sitio del incidente y el centro
+    de control. Diseñado para mantener el enlace aun en condiciones de fallo
+    de red y asegurar coordinación de recursos y evacuación.
+  riesgo_asociado: R01
+  tipo_barrera: Técnico/Comunicación
+  tags:
+    - comunicación de emergencia
+    - radio
+    - satelital
+    - respaldo de energía
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Recuperación tras incidente
+  registro_aplicable_a:
+    - incidente
+  consecuencias_asociadas:
+    - R01CON03
+    - R01CON04
+
+- id: R01BR03
+  nombre: Disponibilidad de equipo de primeros auxilios y personal entrenado
+  descripcion: >
+    Botiquines completos con suministros médicos y un equipo de primeros auxilios
+    certificado en sitio, disponible 24/7. Personal capacitado en Triage y soporte
+    vital básico, capaz de estabilizar víctimas antes de la llegada de servicios
+    médicos externos.
+  riesgo_asociado: R01
+  tipo_barrera: Administrativo/Capacitación
+  tags:
+    - primeros auxilios
+    - botiquín
+    - personal entrenado
+    - soporte vital
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Recuperación tras incidente
+  registro_aplicable_a:
+    - incidente
+  consecuencias_asociadas:
+    - R01CON01
+    - R01CON02
+    - R01CON05
+    - R01CON06
+    - R01CON07
+
+- id: R01BR04
+  nombre: Procedimientos claros para aislamiento y estabilización del área
+  descripcion: >
+    Instrucciones detalladas para acordonar y asegurar la zona afectada tras un
+    incidente de caída. Incluye señalización de advertencia, bloqueo de accesos
+    y estabilización de estructuras inestables para prevenir daños adicionales
+    y facilitar el rescate.
+  riesgo_asociado: R01
+  tipo_barrera: Administrativo/Procedimiento
+  tags:
+    - aislamiento
+    - señalización
+    - estabilización
+    - bloqueo de accesos
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Recuperación tras incidente
+  registro_aplicable_a:
+    - incidente
+  consecuencias_asociadas:
+    - R01CON03
+    - R01CON04
+    - R01CON05
+
+- id: R02BR01
+  nombre: Primeros auxilios y evacuación de lesionados
+  descripcion: >
+    Protocolo para aplicar primeros auxilios en víctimas de impacto de objetos
+    y evacuar de forma segura a zonas médicas. Incluye criterios de movilización,
+    uso de camillas y coordinación con ambulancias internas o externas.
+  riesgo_asociado: R02
+  tipo_barrera: Administrativo/Respuesta Médica
+  tags:
+    - primeros auxilios
+    - evacuación
+    - camilla
+    - movilización
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Recuperación tras incidente
+  registro_aplicable_a:
+    - incidente
+  consecuencias_asociadas:
+    - R02CON01
+    - R02CON02
+
+- id: R02BR02
+  nombre: Aislamiento inmediato de la zona de caída y señalización
+  descripcion: >
+    Barreras físicas y cintas de advertencia utilizadas para aislar el área de
+    impacto y proteger a terceros. Incluye conos, vallas metálicas y luces
+    intermitentes para alerta visual y prevención de accesos no autorizados.
+  riesgo_asociado: R02
+  tipo_barrera: Técnico/Protección del Área
+  tags:
+    - aislamiento de zona
+    - señalización
+    - barrera física
+    - prevención
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Recuperación tras incidente
+  registro_aplicable_a:
+    - incidente
+  consecuencias_asociadas:
+    - R02CON01
+    - R02CON02
+
+- id: R02BR03
+  nombre: Inspección de daños y evaluación de integridad estructural
+  descripcion: >
+    Revisión detallada de maquinaria y estructuras tras el impacto de objetos.
+    Incluye pruebas no destructivas, mediciones de tensión y verificación de
+    puntos críticos para determinar si es seguro reanudar operaciones.
+  riesgo_asociado: R02
+  tipo_barrera: Técnico/Inspección
+  tags:
+    - inspección
+    - integridad estructural
+    - pruebas NDT
+    - seguridad
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Recuperación tras incidente
+  registro_aplicable_a:
+    - incidente
+  consecuencias_asociadas:
+    - R02CON01
+    - R02CON02
+
+- id: R03BR01
+  nombre: Desconexión rápida de la fuente de energía
+  descripcion: >
+    Mecanismos de corte o interruptores de emergencia que permiten aislar
+    instantáneamente el suministro eléctrico al detectar un fallo. Evita
+    electrocuciones y arcos eléctricos tras un incidente.
+  riesgo_asociado: R03
+  tipo_barrera: Técnico/Interrupción de Energía
+  tags:
+    - desconexión rápida
+    - interruptor de emergencia
+    - LOTO
+    - aislamiento
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Recuperación tras incidente
+  registro_aplicable_a:
+    - incidente
+  consecuencias_asociadas:
+    - R03CON01
+    - R03CON02
+    - R03CON03
+
+- id: R03BR02
+  nombre: Reanimación cardiopulmonar inmediata y desfibrilación
+  descripcion: >
+    Capacitación al personal y disponibilidad de desfibriladores automáticos
+    (DEA) para iniciar RCP y administrar descargas controladas. Maximiza
+    la probabilidad de supervivencia en electrocución grave.
+  riesgo_asociado: R03
+  tipo_barrera: Administrativo/Respuesta Médica
+  tags:
+    - RCP
+    - desfibrilador
+    - DEA
+    - supervivencia
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Recuperación tras incidente
+  registro_aplicable_a:
+    - incidente
+  consecuencias_asociadas:
+    - R03CON01
+    - R03CON02
+    - R03CON03
+
+- id: R03BR03
+  nombre: Activación de protocolo de emergencia eléctrica
+  descripcion: >
+    Procedimientos específicos para incidentes eléctricos, incluyendo corte de
+    circuitos, bloqueo de equipos energizados y notificación a personal de
+    mantenimiento especializado. Asegura coordinación y reducción de riesgos
+    secundarios.
+  riesgo_asociado: R03
+  tipo_barrera: Administrativo/Procedimiento
+  tags:
+    - protocolo eléctrico
+    - notificación
+    - bloqueo
+    - coordinación
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Recuperación tras incidente
+  registro_aplicable_a:
+    - incidente
+  consecuencias_asociadas:
+    - R03CON01
+    - R03CON02
+    - R03CON03
+
+- id: R03BR04
+  nombre: Evaluación y reparación de equipos afectados post-evento
+  descripcion: >
+    Análisis de componentes eléctricos tras un incidente y ejecución de
+    reparaciones o reemplazo de piezas dañadas. Incluye pruebas funcionales
+    y certificación de seguridad antes de volver a poner en marcha.
+  riesgo_asociado: R03
+  tipo_barrera: Técnico/Mantenimiento
+  tags:
+    - reparación
+    - evaluación
+    - certificación
+    - pruebas funcionales
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Recuperación tras incidente
+  registro_aplicable_a:
+    - incidente
+  consecuencias_asociadas:
+    - R03CON01
+    - R03CON02
+    - R03CON03

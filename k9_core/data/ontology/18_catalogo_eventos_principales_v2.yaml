@@ -1,0 +1,190 @@
+- id: EVT01
+  nombre: Pérdida de equilibrio y caída desde altura
+  descripcion: >
+    Este evento principal describe la situación en la que una persona pierde el control de su posición y desciende de forma incontrolada desde un nivel superior a uno inferior. Generalmente ocurre en trabajos en altura, al transitar por superficies elevadas o cerca de aberturas desprotegidas. La caída puede ser provocada por fallas en superficies, equipos de protección personal, condiciones climáticas o errores humanos. Es el punto de liberación de energía antes de que se manifiesten las consecuencias de una caída.
+  riesgo_asociado: R01
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Detección de eventos principales
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  tags:
+  - r01
+  - caída_persona
+  - pérdida_equilibrio
+  - caída_altura
+  - trabajo_altura
+  - desnivel
+  - incidente_persona
+
+- id: EVT02
+  nombre: Falla estructural de plataforma o superficie elevada
+  descripcion: >
+    Fallo o colapso de una estructura (andamio, plataforma, pasarela, escalera) diseñada para soportar personal o equipos en altura, resultando en la caída de personas o materiales. Este evento indica una deficiencia en el diseño, construcción, mantenimiento o inspección de la infraestructura.
+  riesgo_asociado: R01
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Detección de eventos principales
+  registro_aplicable_a:
+  - incidente
+  tags:
+  - r01
+  - falla_estructural
+  - andamio
+  - plataforma_colapsada
+  - superficie_elevada
+  - caída_altura
+  - incidente_infraestructura
+
+- id: EVT03
+  nombre: Falla o uso inadecuado de SPDC
+  descripcion: >
+    Activación incorrecta, falla del equipo (arnés, línea de vida, absorbedor) o uso indebido de un Sistema Personal de Detención de Caídas (SPDC), lo que resulta en una caída libre o una caída no amortiguada que provoca impacto o trauma severo. Incluye la selección incorrecta, falta de inspección pre-uso o conexión a un anclaje no certificado.
+  riesgo_asociado: R01
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Detección de eventos principales
+  registro_aplicable_a:
+  - incidente
+  tags:
+  - r01
+  - SPDC_fallido
+  - arnés
+  - línea_vida
+  - absorbedor_energía
+  - uso_inadecuado_EPP
+  - anclaje_deficiente
+  - incidente_EPP
+
+- id: EVT04
+  nombre: Impacto a personas u objetos por caída desde nivel superior
+  descripcion: >
+    Este evento principal se refiere al momento en que un objeto (herramienta, material, fragmento de roca, componente de equipo) se desprende de forma incontrolada desde una altura y golpea a una persona, un vehículo o una estructura en un nivel inferior. Es el punto de liberación de energía cinética que precede a las lesiones por golpe, daños materiales o interrupciones operacionales. Puede ser causado por un manejo inadecuado, fallas de equipo, ausencia de contenciones o condiciones ambientales.
+  riesgo_asociado: R02
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Detección de eventos principales
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  tags:
+  - r02
+  - caída_objetos
+  - impacto_objeto
+  - golpe_por_objeto
+  - objeto_caído
+  - proyección_material
+  - incidente_material
+
+- id: EVT05
+  nombre: Desprendimiento incontrolado de carga suspendida
+  descripcion: >
+    Pérdida de control o liberación no intencional de una carga que está siendo izada, suspendida o transportada por equipos de levante (grúas, montacargas, polipastos). Esto incluye el fallo de eslingas, ganchos, cables, o una operación incorrecta del equipo de levante, resultando en la caída de la carga.
+  riesgo_asociado: R02
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Detección de eventos principales
+  registro_aplicable_a:
+  - incidente
+  tags:
+  - r02
+  - carga_suspendida
+  - izaje
+  - eslinga_rota
+  - gancho_fallido
+  - grúa
+  - caída_carga
+  - incidente_maquinaria
+
+- id: EVT06
+  nombre: Falla de contención o barrera de objetos
+  descripcion: >
+    Incumplimiento de la función de un sistema diseñado para contener objetos o materiales (ej. barandas, rodapiés, mallas, tapas de aberturas), permitiendo que estos caigan desde una altura. Este evento subraya una deficiencia en la protección pasiva o en el mantenimiento de las barreras.
+  riesgo_asociado: R02
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Detección de eventos principales
+  registro_aplicable_a:
+  - incidente
+  tags:
+  - r02
+  - contención_fallida
+  - barrera_ineficaz
+  - rodapié
+  - malla_protección
+  - objetos_sueltos
+  - caída_objetos
+  - incidente_infraestructura
+
+- id: EVT07
+  nombre: Contacto directo o indirecto con energía eléctrica
+  descripcion: >
+    Este evento principal describe la situación en la que una persona establece una conexión eléctrica no deseada con una fuente de energía eléctrica energizada. Puede ocurrir por contacto directo con conductores expuestos, equipos defectuosos, o de forma indirecta por un arco eléctrico o una derivación a tierra. La liberación de energía eléctrica a través del cuerpo humano es el punto crítico antes de la electrocución, quemaduras o fibrilación.
+  riesgo_asociado: R03
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Detección de eventos principales
+  registro_aplicable_a:
+  - incidente
+  - observacion
+  tags:
+  - r03
+  - contacto_eléctrico
+  - directo
+  - indirecto
+  - arco_eléctrico
+  - derivación_tierra
+  - electrocución
+  - quemadura_eléctrica
+  - incidente_eléctrico
+
+- id: EVT08
+  nombre: Falla de aislamiento o puesta a tierra en equipos/instalaciones
+  descripcion: >
+    Pérdida de la integridad del aislamiento eléctrico o de la funcionalidad del sistema de puesta a tierra en cables, equipos o instalaciones. Esto provoca que partes normalmente no energizadas (carcasas metálicas) queden bajo tensión, generando riesgo de choque eléctrico al contacto.
+  riesgo_asociado: R03
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Detección de eventos principales
+  registro_aplicable_a:
+  - incidente
+  tags:
+  - r03
+  - aislamiento_fallido
+  - puesta_a_tierra_deficiente
+  - fuga_corriente
+  - choque_eléctrico
+  - equipo_energizado
+  - instalación_eléctrica
+  - incidente_eléctrico
+
+- id: EVT09
+  nombre: Energización inesperada de equipo/sistema (falla LOTO)
+  descripcion: >
+    Activación o energización súbita y no controlada de un equipo o sistema que se presume desenergizado, debido a una falla o elusión del procedimiento de Bloqueo y Etiquetado (LOTO), o un error humano. Este evento expone al personal a energía peligrosa durante tareas de mantenimiento o reparación.
+  riesgo_asociado: R03
+  area: Todas las Áreas Operacionales
+  aplicabilidad: Detección de eventos principales
+  registro_aplicable_a:
+  - incidente
+  tags:
+  - r03
+  - energización_inesperada
+  - LOTO_fallido
+  - bloqueo_etiquetado
+  - energía_peligrosa
+  - mantenimiento
+  - incidente_LOTO
+  - acto_inseguro
+  - condición_peligrosa
+
+- id: EVT10
+  nombre: Intervención en sistema eléctrico sin autorización/competencia
+  descripcion: >
+    Manipulación o trabajo en circuitos o equipos eléctricos energizados por personal que no posee la capacitación, autorización o competencia requerida para dicha tarea. Este acto directo incrementa exponencialmente el riesgo de contacto con energía peligrosa.
+  riesgo_asociado: R03
+  area: Operaciones Eléctricas
+  aplicabilidad: Detección de eventos principales
+  registro_aplicable_a:
+  - incidente
+  tags:
+  - r03
+  - intervención_no_autorizada
+  - incompetencia
+  - personal_no_calificado
+  - trabajo_energizado
+  - seguridad_eléctrica
+  - acto_inseguro
