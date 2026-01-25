@@ -11,6 +11,7 @@ COPY k9_backend /app/k9_backend
 COPY k9_core /app/k9_core
 
 ENV K9API_K9_CORE_DIR=/app/k9_core
+ENV PYTHONUNBUFFERED=1
 
 EXPOSE 8000
 
