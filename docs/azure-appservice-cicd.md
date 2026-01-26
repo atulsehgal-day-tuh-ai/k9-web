@@ -82,9 +82,12 @@ then **SCM basic-auth publishing credentials are disabled** for the app, or the 
 
 Check the policy (repeat for API and FE apps):
 - Show current policy:
-  - `az resource show -g <rg> --resource-type Microsoft.Web/sites/basicPublishingCredentialsPolicies --parent sites/<app> -n scm --query properties.allow -o tsv`
+  - `az resource show -g <rg> --resource-type Microsoft.Web/sites/basicPublishingCredentialsPolicies -n <app>/scm --query properties.allow -o tsv`
 - Enable it (if it prints `false`):
-  - `az resource update -g <rg> --resource-type Microsoft.Web/sites/basicPublishingCredentialsPolicies --parent sites/<app> -n scm --set properties.allow=true`
+  - `az resource update -g <rg> --resource-type Microsoft.Web/sites/basicPublishingCredentialsPolicies -n <app>/scm --set properties.allow=true`
+
+Notes:
+- If you still see `Not Found`, double-check you’re using the **Web App name** (e.g. `app-k9web-api-demo`) and the correct resource group/subscription.
 
 After enabling, **re-download the publish profile** and update the GitHub secret, then rerun the workflow.
 
