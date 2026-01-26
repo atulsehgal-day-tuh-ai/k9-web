@@ -89,6 +89,15 @@ Check the policy (repeat for API and FE apps):
 Notes:
 - If you still see `Not Found`, double-check you’re using the **Web App name** (e.g. `app-k9web-api-demo`) and the correct resource group/subscription.
 
+#### If `az resource ...` returns `Not Found` (use ARM directly)
+Sometimes `az resource` struggles to resolve this child resource even though it exists. This `az rest` approach is deterministic.
+
+PowerShell example:
+- Check current value:
+  - `az rest --method get --uri "https://management.azure.com/subscriptions/$(az account show --query id -o tsv)/resourceGroups/<rg>/providers/Microsoft.Web/sites/<app>/basicPublishingCredentialsPolicies/scm?api-version=2022-03-01" --query properties.allow -o tsv`
+- Enable:
+  - `az rest --method put --uri "https://management.azure.com/subscriptions/$(az account show --query id -o tsv)/resourceGroups/<rg>/providers/Microsoft.Web/sites/<app>/basicPublishingCredentialsPolicies/scm?api-version=2022-03-01" --body "{""properties"":{""allow"":true}}" -o none`
+
 After enabling, **re-download the publish profile** and update the GitHub secret, then rerun the workflow.
 
 ### Quick ACR sanity checks
