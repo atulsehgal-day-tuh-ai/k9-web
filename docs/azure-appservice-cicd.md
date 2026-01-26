@@ -1,5 +1,11 @@
 # Azure App Service (Docker) + GitHub Actions (CI/CD)
 
+## Quick orientation (plain English)
+This doc is the **technical runbook** for deploying the K9 demo to Azure.
+
+If you want the “what is this / why are there two apps?” overview first, start with `README.md`, then come back here for the setup steps.
+
+## Overview (technical)
 This repo is set up so you **don’t need local Docker**:
 - GitHub Actions builds Docker images on pushes to `main` (or manual runs)
 - Images are pushed to **Azure Container Registry (ACR)**
