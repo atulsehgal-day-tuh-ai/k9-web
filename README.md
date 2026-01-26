@@ -1,30 +1,54 @@
-# k9-web (K9 Mining Safety demo)
+# k9-web (K9 Mining Safety Demo)
 
-## What is this (plain English)?
-This project is a **web demo** that lets a user ask questions (chat) and view a small dashboard about **mining safety risk**.
+**K9 Mining Safety Demo** is a web application for mining safety risk analysis. Users ask natural language questions (in Spanish) about mining risks, and the system provides intelligent responses with visual dashboards.
 
-You’ll see two apps because they do different jobs:
-- **Frontend (`k9_frontend/`)**: the website you open in a browser (UI + chat box + dashboard).
-- **Backend (`k9_backend/`)**: an API server the frontend talks to. It runs the K9 pipeline and returns answers/results.
+## Architecture
 
-The **core logic/data** lives in `k9_core/` (ontology + pipeline + synthetic data). The backend imports and runs this.
+The project has three main components:
 
-### Why do we need both a frontend and backend?
-- Browsers shouldn’t hold secrets (like API keys), and they shouldn’t run the full pipeline.
-- The backend centralizes the “smart” part and keeps keys/config in one place (Azure App Settings).
-- The frontend stays lightweight: it collects user input and shows results.
+| Component | Technology | Purpose |
+|-----------|------------|---------|
+| `k9_frontend/` | Next.js, React 19, TypeScript, Tailwind | Chat UI + KPI dashboard |
+| `k9_backend/` | FastAPI, Python 3.11, Uvicorn | API server orchestrating the K9 pipeline |
+| `k9_core/` | LangGraph, Pandas, Google Gemini | Core analysis engine + ontology |
 
-### High-level flow
-1. User types a question in the frontend.
-2. Frontend calls the backend endpoint `POST /api/chat`.
-3. Backend runs the K9 pipeline (and optionally an LLM) and returns structured results.
-4. Frontend renders the response (answer + “dominant risk”, etc.).
+## How It Works
 
-## Repo layout
-This repo contains:
-- `k9_core/`: the K9 Mining Safety core (LangGraph pipeline + ontology + synthetic data)
-- `k9_backend/`: FastAPI API server (Gemini hybrid: NL→K9 command → graph → NL synthesis)
-- `k9_frontend/`: Next.js dashboard + chat UI
+The system uses a **3-phase hybrid approach**:
+
+1. **Interpretation** - Gemini LLM translates Spanish questions into canonical K9 commands
+2. **Deterministic Analysis** - LangGraph state machine processes data, computes metrics, and builds analysis (data engine → analyst → metrics → narrative)
+3. **Synthesis** - Gemini converts structured analysis back into a Spanish natural language response
+
+```
+User Question (Spanish)
+    ↓
+[Frontend] POST /api/chat
+    ↓
+[Backend] K9Service.interpret()
+    → Gemini: NL → K9 Command JSON
+    ↓
+[Backend] K9Service.run_graph()
+    → LangGraph executes pipeline
+    ↓
+[Backend] K9Service.synthesize()
+    → Gemini: K9 Analysis → Spanish NL response
+    ↓
+[Frontend] Display answer + metrics + reasoning trace
+```
+
+## Key Features
+
+- **Chat interface** for natural language Q&A about mining risks
+- **KPI dashboard** showing dominant risks, trends, and safety metrics
+- **28 YAML ontology files** defining mining safety knowledge (risks, controls, causes, consequences, etc.)
+- **Synthetic datasets** simulating realistic mining operations
+
+## Why Separate Frontend and Backend?
+
+- Browsers shouldn't hold secrets (like API keys) or run the full pipeline
+- The backend centralizes the "smart" part and keeps keys/config secure (Azure App Settings)
+- The frontend stays lightweight: collects user input and displays results
 
 ## Local dev (backend)
 
