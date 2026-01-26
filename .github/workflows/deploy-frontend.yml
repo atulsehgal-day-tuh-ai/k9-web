@@ -1,6 +1,7 @@
 name: Deploy Frontend (k9_frontend) to Azure App Service (Docker)
 
 on:
+  workflow_dispatch:
   push:
     branches: ["main"]
     paths:
