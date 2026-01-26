@@ -58,3 +58,38 @@ Notes:
 - Backend workflow: `.github/workflows/deploy-backend.yml`
 - Frontend workflow: `.github/workflows/deploy-frontend.yml`
 
+## Troubleshooting
+
+### Deploy step fails: `Failed to get app runtime OS`
+This almost always means **the Web App name and publish profile do not belong to the same Azure Web App**, or the app you’re targeting isn’t a **Linux Web App (Container)**.
+
+Checklist:
+- **App name secret is literal**:
+  - `AZURE_WEBAPP_NAME_API` must be exactly `app-k9web-api-...` (no `$API_APP`, no URL, no quotes)
+  - `AZURE_WEBAPP_NAME_FE` must be exactly `app-k9web-fe-...`
+- **Publish profile is for the same app**:
+  - Re-download the publish profile from the Azure Portal for that exact Web App and overwrite the GitHub secret.
+  - If you export with CLI, the publish profile should contain a `publishUrl` like:
+    - `app-k9web-<...>.scm.azurewebsites.net:443`
+- **Web App is Linux**:
+  - In CLI, `az webapp show -g <rg> -n <app> --query reserved` should return `true`
+
+### Deploy step fails with `Unauthorized (CODE: 401)` to `*.scm.azurewebsites.net`
+If the logs show a 401 when calling:
+- `https://<app>.scm.azurewebsites.net:443/diagnostics/runtime`
+
+then **SCM basic-auth publishing credentials are disabled** for the app, or the credentials were rotated after you saved the secret.
+
+Check the policy (repeat for API and FE apps):
+- Show current policy:
+  - `az resource show -g <rg> --resource-type Microsoft.Web/sites/basicPublishingCredentialsPolicies --parent sites/<app> -n scm --query properties.allow -o tsv`
+- Enable it (if it prints `false`):
+  - `az resource update -g <rg> --resource-type Microsoft.Web/sites/basicPublishingCredentialsPolicies --parent sites/<app> -n scm --set properties.allow=true`
+
+After enabling, **re-download the publish profile** and update the GitHub secret, then rerun the workflow.
+
+### Quick ACR sanity checks
+- Confirm images/tags exist:
+  - `az acr repository list -n <acrName> -o table`
+  - `az acr repository show-tags -n <acrName> --repository k9-api -o table`
+  - `az acr repository show-tags -n <acrName> --repository k9-frontend -o table`
