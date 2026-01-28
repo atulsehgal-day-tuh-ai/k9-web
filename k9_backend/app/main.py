@@ -62,6 +62,9 @@ else:
 
 svc = K9Service()
 
+# Demo scenario state (in-memory). For multi-instance deployments, move to storage.
+SCENARIOS: Dict[str, bool] = {"critical_monday": False}
+
 
 class ChatRequest(BaseModel):
     sessionId: Optional[str] = None
@@ -71,6 +74,57 @@ class ChatRequest(BaseModel):
 @app.get("/health")
 def health() -> Dict[str, Any]:
     return {"ok": True}
+
+
+class ScenarioRequest(BaseModel):
+    enabled: bool = True
+
+
+@app.post("/api/scenario/critical-monday")
+def set_critical_monday(req: ScenarioRequest) -> Dict[str, Any]:
+    SCENARIOS["critical_monday"] = bool(req.enabled)
+    return {"ok": True, "scenario": "critical_monday", "enabled": SCENARIOS["critical_monday"]}
+
+
+@app.get("/api/summary")
+def summary(window: str = "CURRENT_WEEK") -> Dict[str, Any]:
+    # Minimal deterministic command (no LLM) to compute metrics + risk_summary.
+    command = {
+        "type": "K9_COMMAND",
+        "intent": "ANALYTICAL_QUERY",
+        "entity": "risks",
+        "operation": "rank",
+        "payload": {"time": {"type": "RELATIVE", "value": window}},
+    }
+    active_event = {"type": "CRITICAL_MONDAY"} if SCENARIOS.get("critical_monday") else None
+    state = svc.run_graph(user_query="summary", k9_command=command, active_event=active_event, demo_mode=True)
+    return {
+        "ok": True,
+        "analysis": state.analysis,
+        "trace": svc.build_trace(state=state, k9_command=command),
+    }
+
+
+@app.get("/api/trajectory")
+def trajectory(risk: str, window: str = "LAST_MONTH") -> Dict[str, Any]:
+    command = {
+        "type": "K9_COMMAND",
+        "intent": "ANALYTICAL_QUERY",
+        "entity": "risks",
+        "operation": "evolution",
+        "filters": {"risk_id": risk},
+        "payload": {"time": {"type": "RELATIVE", "value": window}},
+    }
+    active_event = {"type": "CRITICAL_MONDAY"} if SCENARIOS.get("critical_monday") else None
+    state = svc.run_graph(user_query=f"trajectory {risk}", k9_command=command, active_event=active_event, demo_mode=True)
+    analysis = state.analysis if isinstance(state.analysis, dict) else {}
+    risk_trajectories = (analysis.get("risk_trajectories") or {}).get(risk) if isinstance(analysis.get("risk_trajectories"), dict) else None
+    return {
+        "ok": True,
+        "risk": risk,
+        "trajectory": risk_trajectories,
+        "trace": svc.build_trace(state=state, k9_command=command),
+    }
 
 
 @app.post("/api/chat")
@@ -96,7 +150,8 @@ def chat(req: ChatRequest) -> Dict[str, Any]:
         }
 
     # Run deterministic cognition
-    state = svc.run_graph(user_query=user_query, k9_command=command)
+    active_event = {"type": "CRITICAL_MONDAY"} if SCENARIOS.get("critical_monday") else None
+    state = svc.run_graph(user_query=user_query, k9_command=command, active_event=active_event)
 
     # Synthesize final answer
     answer, synthesis_meta = svc.synthesize(
@@ -111,6 +166,11 @@ def chat(req: ChatRequest) -> Dict[str, Any]:
     if isinstance(metrics, dict):
         visual_suggestions = metrics.get("visual_suggestions")
 
+    # Recommendations from KG (optional)
+    risk_summary = (state.analysis or {}).get("risk_summary") if isinstance(state.analysis, dict) else None
+    dominant_risk = risk_summary.get("dominant_risk") if isinstance(risk_summary, dict) else None
+    recommendations = svc.get_recommendations(risk_id=dominant_risk) if isinstance(dominant_risk, str) else None
+
     return {
         "type": "result",
         "answer": answer,
@@ -119,6 +179,8 @@ def chat(req: ChatRequest) -> Dict[str, Any]:
         "reasoning": state.reasoning,
         "narrative_context": state.narrative_context,
         "visual_suggestions": visual_suggestions,
+        "recommendations": recommendations,
+        "trace": svc.build_trace(state=state, k9_command=command),
         "meta": {
             "demo_mode": state.demo_mode,
             "synthesis": synthesis_meta,

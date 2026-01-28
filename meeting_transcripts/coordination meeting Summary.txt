@@ -1,0 +1,80 @@
+coordination meeting
+Sat, Jan 24, 2026
+
+Summary:
+
+Atul Sehgal is currently exploring job opportunities while remaining focused on contract work and promoting their patented solution to potential partners. Eduardo Sanchez provided updates on interest from Anglo-American, emphasizing the need to finalize a solid demonstration before further engagement. Atul stressed the importance of practical demonstrations over presentations, urging the team to enhance their development process by establishing a continuous integration and continuous deployment (CI/CD) pipeline and managing sensitive information effectively within their codebase.
+
+The discussion included an overview of the data manager's role and the significance of criticality scores in assessing incident severity. Atul sought clarity on how these scores are calculated, with Eduardo explaining their importance in determining safety scores. They recognized the necessity of establishing a consensus on these calculations, noting that larger companies like BHP have established methods that could serve as a model for their approach. The conversation also delved into the complexities of audit types, distinguishing between reactive and planned audits, and the need for clarity in data analysis.
+
+Eduardo outlined a proactive model featuring a ranking system and highlighted challenges with inconsistent data formats. Atul offered to assist by creating a database diagram and suggested using AI tools for data sequencing. Eduardo also discussed his work on a Python notebook to generate data according to an ontology, emphasizing the need for additional fields for comprehensive data representation. The integration of ontology in organizing data was a key focus, as was the potential for creating a dashboard to visualize collected information effectively.
+
+The conversation further explored risk management, with Eduardo detailing risks associated with falling from heights and introducing a "bow tie" model for managing these risks. Atul engaged in discussions about exposure factors and the importance of documenting barriers to mitigate risks. They also examined the role of ICAM in investigation processes and the challenges of predicting accidents based on current data.
+
+Eduardo presented a schema for a Neo4j knowledge graph, which connects various elements and offers prescriptive recommendations. The meeting concluded with discussions on the system architecture, the need for a new node to enhance data handling, and Eduardo's progress on the demo and patent, with a commitment to finalize work soon.
+
+
+Chapters & Topics:
+
+Discussion on Repository and Demo Preparation
+Atul Sehgal is exploring job opportunities with Genpak while focusing on developing a demo of their patented solution for potential partnerships. Eduardo Sanchez mentioned that they are in talks with Anglo-American and CODERCO, highlighting the necessity of having a robust demo ready for these discussions. Atul stressed that having a functional tool is crucial for attracting interest.
+
+Data Management and Incident Criticality Scoring
+The discussion focused on the data manager's function and the details of synthetic data files, which contain records of incidents and their criticality scores. Eduardo clarified that the criticality score is intended to measure the safety status of incidents, while Atul emphasized the need for a clear methodology for calculating these scores based on actual and potential severity.
+
+Audit Types and Data Analysis
+Atul Sehgal and Eduardo Sanchez engaged in a detailed conversation about the nature of audits in their data system. Eduardo explained that reactive audits are conducted after an event, while planned audits are proactive and aim to identify potential issues. They also differentiated between audits and observations, with observations being more general and less structured than audits.
+
+Proactive Model and Data Management
+Eduardo Sanchez presented the proactive model, emphasizing the need for a clear understanding of data formats, as some datasets use week numbers while others use specific dates. He expressed the necessity of creating a table to avoid issues when connecting different data sources. Atul Sehgal proposed using AI to generate a sequence of activities instead of manually creating data.
+
+Risk Assessment and Mitigation Strategies
+Eduardo Sanchez outlined three risks, starting with the risk of falling from heights, detailing its causes and preventive controls. He introduced the concept of a "bow tie" model for risk management, which includes barriers to mitigate incidents. Atul Sehgal contributed by discussing exposure factors related to these risks, such as proximity to electrical energy and noise.
+
+Discussion on ICAM and Incident Data Analysis
+Atul Sehgal questioned the absence of ICAM data in their current investigation framework, while Eduardo Sanchez clarified that major accidents were not included to avoid skewing the analysis. They discussed the implications of risk assessment and the importance of monitoring signals that indicate increasing risk, even if a specific accident cannot be predicted.
+
+Knowledge Graph Development and Applications
+Eduardo Sanchez explained the schema for a Neo4j knowledge graph that organizes information into nodes and edges, linking risks to controls and other factors. Atul Sehgal raised questions about the graph's ability to update with real-time data and its application in analyzing synthetic data trends. The discussion highlighted that the knowledge graph serves as a prescriptive model, providing recommendations based on the relationships within the data.
+
+Synthetic Data and Chatbot Functionality
+Eduardo Sanchez explained how the system utilizes synthetic data to simulate and analyze information over time, allowing for daily updates that enhance its understanding. He described the chatbot's capabilities, which include answering specific analytical and operational queries through a structured language translation process. The chatbot is designed to provide consistent answers based on the underlying data and reasoning.
+
+Streamlit Code and Demo Discussion
+Atul Sehgal asked Eduardo Sanchez for the Streamlit code and whether it contained all necessary logic. Eduardo mentioned needing to retest the code with the actual LLM and confirmed that he had a demo video, which Atul requested to be shared for further insights into the project.
+
+System Architecture and User Interface Development
+Eduardo Sanchez outlined the system's architecture, emphasizing the need for a language that allows the LLM to interpret human queries through a series of nodes, including data manager and analysis nodes. Atul Sehgal asked about creating a new user interface and was advised to create a separate folder for his work without modifying existing data. Eduardo confirmed that modifications could be made after a week once the current work is consolidated.
+* Status update on the agent and its completion timeline.
+
+Project Updates and Future Plans
+Eduardo Sanchez provided an update on his work, indicating he needs about 10 additional hours to complete the demo and patent, which he aims to finalize soon. He highlighted the flexibility of their system's architecture, noting that changes to the ontology could allow for various applications. Atul Sehgal offered to contribute to the research and commercialization aspects, reinforcing the collaborative effort.
+* Discussion on the patent and its commercialization.
+* Adaptability of the architecture for different applications.
+* Importance of ontology in project flexibility.
+
+
+Action Items:
+
+* Atul Sehgal will spend half a day today and all day tomorrow to understand Eduardo Sanchez's repository and make it a functional tool.
+* Eduardo Sanchez will finish the demo of the solution within a couple of weeks to present to Anglo-American.
+* Eduardo Sanchez will send the link to the repository in the chat for Atul Sehgal to access.
+* Atul Sehgal will create a database diagram for the project to clarify the structure and relationships of the data.
+* Atul Sehgal will upload the demo video to the Teams folder for Eduardo Sanchez to review.
+* Eduardo Sanchez will finish the agent and ensure that the data is written correctly by the system within 10 hours.
+* Atul Sehgal will contribute to the research part of the patent and assist with the commercialization objective.
+* Atul Sehgal will drive the upcoming meeting with the oil and gas division of Genpak to demonstrate the solution.
+* Eduardo Sanchez will update the git ignore file to ensure sensitive information is not checked into the repository.
+
+
+Key Questions:
+
+* What is the repository that Eduardo Sanchez is working on?
+* How will the criticality score be calculated in the system?
+* What actions will be taken based on observations and audits?
+* How will the ontology be adapted for different applications?
+
+
+Notepad:
+
+* No notes

@@ -1,0 +1,779 @@
+coordination meeting
+Sat, Jan 24, 2026
+
+1:30 - Atul Sehgal
+I think you brought your read AI and I brought my read AI. That's why we have two. Okay. So listen. So good news. I was talking to my ex boss who is in Genpak right now. And I was talking, so he's trying to get me a job. He's trying to find a job for me, okay? But I told him I'm actually very happy to do contract work right now, okay? And I told him, so he said, what is your specialty? I said mining, safety, blah, blah, blah. And I said, hey we have a solution which is our own patent we are filing the patent so we will not reveal secret sauce to anyone but we can demo the solution okay we can demo the front end of the solution okay without going into the back end okay and he is going to set up meeting with the oil and gas division of Genpak mining oil and gas where we should show our solution to them the idea is we are not getting a job from them we are not going to work for them if at all they have any desire we will partner with them okay okay So today's meeting is very important and I want myself to drive this meeting because I don't understand your repository. Okay. So if you can help me understand your repository, then I can spend half a day today and all day tomorrow to make it a tool. Okay, a real tool. Okay. Okay.
+
+3:40 - Eduardo Sanchez
+So can I just share my screen or do you have anything to add I was talking with Sebastian yesterday okay and Sebastian say say me that he was talking with Anglo-American uh-huh and this guy are interesting to see our solution okay but remember I see I see you're sorry I should let So he knows that the demo is not finished. I said, hey, I am thinking, I am finishing that. So we need to wait a bit, a couple of weeks or something like that to have a solution or a good solution to see this guy. So the good news is that we have a possibility now to talk with Anglo-American and with CODERCO again. Not with the same guys of CODERCO because this guy was part of an operation. Sebastian was talking with something from the core of CODERCO. So this is better. But we need to have a solid, solid idea to sell the solution.
+
+5:06 - Atul Sehgal
+Not idea. I'm not cutting you. I'm trying to elevate your work. You just don't need to have the idea. You need to have that fucking idea in action. People will not look at your PowerPoint. People will not look at your research paper. People will look at the tool that they can play with. That's what, that's my objective. Right now to develop then we will have a very good product we can just put it on the website this is our fucking product okay yeah absolutely okay I can't show you what I want and what I have no no I will ask you if that's okay just hold okay can I I mean I want to understand how to navigate your repository okay so if you can let me do that that will be helpful right just okay give me a minute can I quickly get a coffee if you don't mind sorry go ahead okay I should have I thought my cup was full but it is not let me quickly get it okay okay Bye. Yeah. OK, so let me share my. OK. So the repository that you have is. The repository that you have is safety.ai, right? Safety.ai.
+
+8:36 - Eduardo Sanchez
+Yeah, but inside that the demo, the repository of the demo is canine safety.
+
+8:45 - Atul Sehgal
+OK, OK, hold on. So first I have to find that repository. I cannot even see safety.ai here. Oh, because I did not fork it. Okay, okay, okay, okay. So, yeah.
+
+9:05 - Eduardo Sanchez
+Semantic, no, it's semantics, the main folder.
+
+9:10 - Atul Sehgal
+What is the repository, semantic?
+
+9:12 - Unidentified Speaker
+Yes, semantic.
+
+9:14 - Atul Sehgal
+Okay, this is the repository? Okay.
+
+9:19 - Unidentified Speaker
+Semantic.
+
+9:21 - Atul Sehgal
+Right, you can see my screen. Right this is the repository correct yes but I don't see in this part can I my safety hold on hold on it's the branch thing right here we go yes okay so hold on let me just make sure this is copied okay So. 1. It's semantic, it's not safety AI. Oh. Oh, so I never copied your repository. OK. And so. File. New window.
+
+10:50 - Eduardo Sanchez
+Give me a second because I am updating the that's changes.
+
+10:55 - Atul Sehgal
+OK, OK. OK, that's. There's one open pull request you have to merge the pull request as well can I merge it for you sure you can you should do it go do this merge pull Great. Go on top, you will see pull request. There's one open pull request right now.
+
+11:39 - Unidentified Speaker
+I see that.
+
+11:40 - Atul Sehgal
+So you always have to merge. Good, good. OK, so you don't have anything in actions right no so at some point we will establish CI CD pipeline okay for example can I just show you something quickly so I am working for this beverage company talking rain okay and I have established the entire CI CD pipeline so it goes from death which is main branch and then to release then to And every time I push something, it goes through the entire CI-CD pipeline actions. So this is the build and deploy, dev2 stays to prod. This is a job that you need to run. And this job is this YAML file. So that's how you establish an entire CI-CD. Okay, so I'll go back to your repository. Which is semantic. Hold on, fuck. Why did I lose the repository? Okay, repository here. What the fuck, where does it go all the time? Huh?
+
+13:19 - Unidentified Speaker
+I don't know.
+
+13:22 - Atul Sehgal
+Hold on, hold on. I just had it here. OK, no. Can you just send me the link of the repository, please? In the chat.
+
+13:37 - Eduardo Sanchez
+Yes. Give me a second. Okay, I send you. Okay. Yes, yeah.
+
+14:32 - Atul Sehgal
+So I'll just clone this one. Okay, so here we go, clone repo.
+
+14:48 - Unidentified Speaker
+Semantic.
+
+14:50 - Atul Sehgal
+You also should know that you should never put your repository there are issues you only put it on your local yeah you know that already yes in my in my computer yeah because one drive has issues when you're building the app it builds a lot of cache and then the app gets confused because there's time to sync one drive okay okay so we are still opening up okay so what if you're doing everything we should make the main branch default not the dev branch okay so here we go so you canine safety this has everything correct yes okay so here now if you can explain to me one by one okay so this is what is OMS Let me check.
+
+16:19 - Eduardo Sanchez
+Can I share my screen before? Because your your skin is very little.
+
+16:24 - Atul Sehgal
+Oh, I see. Very high.
+
+16:26 - Eduardo Sanchez
+OK, I prefer to show you in my in my place.
+
+16:30 - Atul Sehgal
+OK. So I can do side by side, you're sharing the screen and I can.
+
+16:41 - Eduardo Sanchez
+in side by side to follow you okay can see that let's see my screen yes yes okay this is the same but in VS code okay okay so archive basically for all all files that are not in.
+
+17:15 - Atul Sehgal
+OK, let's not worry about that then. Yes.
+
+17:18 - Eduardo Sanchez
+Conflict in conflict only have a setting OK. But it's for the Because I have the the APK in my computer so. Yeah.
+
+17:34 - Atul Sehgal
+Yeah, but can I can I hold on hold on? To me listen to me go to config why is your .env file checked in as well it should not be in git your .env file just right above the settings.py you see your .env file yes oh wow you don't have it go to click on .env right above oh man on the left side settings.py .env above that ah yes yes so okay you don't have your Gemini API key that's good but if you actually released it I can see your API key okay yeah so just a tip just a tip for you you need to go and update git ignore file and you have to say that when you check in the dot in we should not be that you specify and get ignore files.
+
+18:37 - Eduardo Sanchez
+Yeah, but that today doesn't matter because in the cold work well. OK. No, no, no, we're going to do that.
+
+18:48 - Atul Sehgal
+But I can see that you're reading your Gemini API key from ENV in this code.
+
+18:57 - Eduardo Sanchez
+So. Yeah but maybe this no worry related to that at all because today I I have my key in the inside the computer okay not in the code it's part okay it's part of the computer values okay so but this this piece is working right the settings.py is working correct I'm not I I get I don't remember that. We need to check the rest of the code because here it's not important, okay? So what is important? This is the main, okay? This is the main point. After that, we can see the other, okay? This is important to show you. Okay. First of all, I have a data manager. What is this? This is basically the node that is in contact with the data. This go to the data and take any information from these files. This is the files that I have for um synthetic data all of this file okay and and this data exists inside the data folder yes here in the data folder we have synthetic here all of this file are the synthetic data okay okay so what we have here is basically basically information, an ID for some document, for example, observation, this is audit, okay? When occur, the area, when occur, the risk, and the type of audit, and if they have an event associated with that. So this is the data that will in some mode okay that is the event id yes this is the event this is the audit id and the event id at today is not included it's only included if the information is the type of audit and the origin but not the rest, what's not necessary at today, okay?
+
+21:53 - Atul Sehgal
+But I have to- Those two, last two columns are blank basically, huh?
+
+21:57 - Eduardo Sanchez
+Yes, yes.
+
+21:58 - Atul Sehgal
+Okay, okay.
+
+22:01 - Eduardo Sanchez
+What's not necessary at today.
+
+22:03 - Unidentified Speaker
+Okay.
+
+22:04 - Eduardo Sanchez
+So, what I have here is the event, okay, that's a cure, hazard, near miss, injury, here is, this is an injury. Not a lot, okay.
+
+22:21 - Eduardo Sanchez
+What does I mean?
+
+22:24 - Eduardo Sanchez
+There is minor, minor incident.
+
+22:30 - Atul Sehgal
+Okay, okay. So what about fatal incident? Do you have that?
+
+22:38 - Eduardo Sanchez
+No, no, no, no.
+
+22:40 - Unidentified Speaker
+Okay.
+
+22:41 - Eduardo Sanchez
+This is only hazard or miss and minor incident.
+
+22:46 - Atul Sehgal
+Okay, can you go all the way the top in this file I want to see column names so weak area this type of event criticality what is this number hold on what is this decimal Oh criticality so cricket is the score huh yes okay criticality score okay okay so criticality is not like high medium So it is a score right now.
+
+23:17 - Eduardo Sanchez
+Yes, so. This is the role of the guy and this is the role of the task.
+
+23:26 - Atul Sehgal
+OK, so let me ask you this. What is the idea of this criticality score?
+
+23:34 - Eduardo Sanchez
+This is basically an Some, I will another, I will another score, general score, okay? For, to try to measure the safety status, okay? So, I use the use the FDO that is factors dynamic factors repeat your last statement FDO FDO F E O FDO what is FDO?
+
+24:29 - Atul Sehgal
+is dynamic factor of operation so so in practical sense okay go go back to that file please std event dose or whatever event file okay so the event has already happened okay because this is historical event right yes so so what is this score criticality score telling This is a
+
+25:02 - Eduardo Sanchez
+It's like a An score related to the the incident to use this incident into the calculation of the general score.
+
+25:16 - Atul Sehgal
+OK, so so no, no. What I'm trying to ask is, let's say incident happened OK and this score so so normally what happens when the investigation happens then they decide like in BHP they used to decide what is the actual severity what is the potential severity right?
+
+25:34 - Eduardo Sanchez
+Yes this is something like the what is the severity of the incident after the incident okay?
+
+25:40 - Atul Sehgal
+After the incident yeah and who calculates that?
+
+25:45 - Eduardo Sanchez
+Oh yeah the people of safety need to calculate something like Is it a normal practice in industry? I don't know. I don't know if it exists or not. But what's the way to include the event into the calculation of the general score?
+
+26:11 - Atul Sehgal
+I see. So that's good because what we can do, like if at all it comes down to, hey, how do you get the score? We can say it can be rule-based, like you have actual severity, you have potential severity, and you can do combination, or we can give you the model. We can give you the model that will calculate.
+
+26:32 - Eduardo Sanchez
+Yes, but wait, wait a moment. The idea, you need to take into account that basically this is an idea, okay? So they can say, oh, but how you calculate that? We need to be agree with you how calculate This is the point, okay? Okay. It's not step by step that we define. You need to be agreeing as a company, okay? What we will measure, okay? And how we will measure. Because it's not possible to... Because if we say, no, no, we calculate this according with this formula, maybe...
+
+27:15 - Atul Sehgal
+No, that's an idea. Yeah, that's only an idea.
+
+27:17 - Eduardo Sanchez
+Yeah, it's not good the formula, okay? And they can say, no, this is bad. Why you are doing that?
+
+27:24 - Atul Sehgal
+Yeah, no. Okay, so let me understand. So I see, okay. But my question to you is a different question. For your model to work, this code is absolutely necessary. Is that right?
+
+27:41 - Eduardo Sanchez
+Yes, yes, it's necessary. To try to have an idea how to define the level of the action, okay? Or the level of what is occurring. Because a hazard will be a simple hazard, but maybe you can have a hazard that is very important. So you need to try to classify that, okay?
+
+28:06 - Atul Sehgal
+I see. The only thing is, like DHP very big company had the categorical way of defining it. You are making it continuous variable.
+
+28:20 - Eduardo Sanchez
+Sure.
+
+28:21 - Unidentified Speaker
+Okay.
+
+28:23 - Eduardo Sanchez
+Okay. In the case of the audit, the audits occur only after an event in my synthetic data, right? After an event, you have an audit, reactive audit. So the other, planify audit, you have to type. Planify is that you have an observation to do and you want to do an audit. But the other is reactive, that's secure after an error miss or another type of event that could be minor event or major event. Not so classic.
+
+29:07 - Atul Sehgal
+So help me understand. Now what in BHP we had was audits were always proactive and investigation was always reactive yes okay but I don't have a investigation I have an outing so I can treat it equivalent I can say the reactive audit is really an investigation and the planned or planificado whatever that is plenty whatever planificado Planify. OK, that is that is that is proactive audit, correct? Yes, OK, good. OK, that's clear. OK, man. And is it tied to an event? No, it is not.
+
+29:52 - Eduardo Sanchez
+The event here. Oh no, I I don't put information in the event, but we have even associated to that. I don't. Maybe with the date we can associate now, but what's something that I lost to do in the code.
+
+30:08 - Atul Sehgal
+I see. OK, this is the file we have seen just before. OK, OK, I got it. Let's go to that. So hey, hold on. I'm so sorry, man. But I really need to get answers to these questions. So you got two auditorias. One is 12S and another is this one. What's the difference?
+
+30:25 - Eduardo Sanchez
+This is the same, but it's basically another view of the information that we have here.
+
+30:38 - Atul Sehgal
+Which one are you using?
+
+30:43 - Eduardo Sanchez
+We can use both according with the information that we have because here we have some information related to the audit. In this another is only who do the the audit, okay? This guy, this role do this audit, okay?
+
+31:09 - Atul Sehgal
+Okay, okay.
+
+31:12 - Eduardo Sanchez
+This is the point. Now here you have the area, you have the risk related, okay? And who write the audit. But in this another, you have what's secure in the audit. For example, this say, Don't apply all requisite. So this is bad. OK, here, say, apply all required and was revisited. So here, say, without any finding, critical finding.
+
+31:48 - Atul Sehgal
+I see.
+
+31:49 - Eduardo Sanchez
+Minor observations, OK? OK.
+
+31:53 - Atul Sehgal
+So that's good. So tell me one thing. Do these contain the same set of records like the audit ID that exists in 12s is also the audit ID that exists in the other file?
+
+32:05 - Eduardo Sanchez
+Yes. But I am not sure why I have more here, but I need to review, but it's supposed that we have the same.
+
+32:15 - Unidentified Speaker
+OK. OK, let's move on.
+
+32:20 - Eduardo Sanchez
+Yes, I think that I don't have all here because I only create this for Some audit, I don't remember what was, but maybe this is for reactive audit, I don't know. I need to check.
+
+32:35 - Atul Sehgal
+That's fine, don't worry. Let's move on.
+
+32:46 - Eduardo Sanchez
+This is basically, this is good because you are trying to categorize the many factors, okay? Weather, congestion, that is basically if you have many work to do and you have some type of queue or some type of time waiting to process material, for example.
+
+33:19 - Eduardo Sanchez
+Okay, so...
+
+33:21 - Atul Sehgal
+Waiting time, basically. You're waiting on something.
+
+33:24 - Eduardo Sanchez
+Yes. Dotación is basically related to operators, okay? When you have, for example, in Chile, in January or February, you have vacation, so you can measure that and say, hey, you don't have the same guys working in field, okay? This is new, and are replacing the other So you have here a KPI to say, hey, the rotation is maybe you have issue in the rotation now.
+
+34:02 - Atul Sehgal
+OK, everything has a score. Everything has a score. OK, I see. OK. Fatigue. Fatigue. Got it.
+
+34:10 - Eduardo Sanchez
+Production. If you have different amount of production in the moment. OK.
+
+34:16 - Atul Sehgal
+OK, so. In production higher value is good or higher value is bad oh high value of score I think that high value is bad always values one okay is that the rule you are following everywhere in all the data higher value is bad yes okay good okay good to know so here we have instance okay and this is the the information of the the incident.
+
+34:47 - Eduardo Sanchez
+What do we have here? Observation, observations and observation. We have a different type of observation. OK, so. I need the same. We have information here here related to the observation that we do.
+
+35:06 - Atul Sehgal
+So hold on, just wait, wait, wait. What you got audit as well. You got observation as well. Two separate data sets?
+
+35:15 - Eduardo Sanchez
+Because this is like TTE and CCO.
+
+35:22 - Atul Sehgal
+Okay. And what is audit?
+
+35:25 - Eduardo Sanchez
+Audit is investigation or something like more like it's not an observation, it's an analysis. Okay. The other is similar to investigation. Sorry, sorry, sorry.
+
+35:46 - Atul Sehgal
+I got but you just five minutes back told me that audit are of two types planned and reactive. So my question to you is how is planned audit different from observation?
+
+36:01 - Eduardo Sanchez
+Because it's different. The observation you have two. One is a general observation.
+
+36:08 - Eduardo Sanchez
+of anything that's occurred but it's simple okay this is simple a planet audit is something that you need to go to one area in some moment to do something to to check something oh so in planned you have a certain objective in mind that I need to find exactly this problem yes but but observation is general observation you're looking around and you can find any problem Yes.
+
+36:37 - Unidentified Speaker
+Okay. Got it. Okay.
+
+36:38 - Eduardo Sanchez
+And you have another observation that is related to critical control. Okay. The audit are not related to the risk necessarily. Okay.
+
+36:48 - Atul Sehgal
+Yes.
+
+36:49 - Unidentified Speaker
+Yes.
+
+36:50 - Atul Sehgal
+But if you remember in BHP, the CCO were related to risk.
+
+36:56 - Eduardo Sanchez
+Yeah. Absolutely. Absolutely. Because it's related to critical control and critical control are related to risk.
+
+37:02 - Atul Sehgal
+So why are you saying it's not related to?
+
+37:04 - Eduardo Sanchez
+Oh, no. Audits are not necessarily related to a risk. This is the point.
+
+37:18 - Atul Sehgal
+Okay, now I'm again confused. Listen to me. Listen to me. Okay, you go on. Sorry. What are you saying?
+
+37:27 - Eduardo Sanchez
+I am saying that the audit, you have two types of audits. One is reactive and the other is planet, okay? Yeah, but what is the difference with the observation? The observation is something that is, okay, maybe the CCO could be planet, but not the same idea of an audit. Is when you go directly to check critical controls, but an audit could be You can review the protocols or you can review some tasks, how the guy are doing the task, but it's planified. This is the point. The CCO is related to a critical control and check some, I don't know, some ideas about the critical control, no more. It's not general.
+
+38:26 - Atul Sehgal
+So let me understand this. And you can just answer yes or no okay so when the audit happens okay so reactive audit is about an event an event happened and the but you do not have event ID there of course I understand why you can use the dates you can say right after the event right after this event if there is an audit happening in that mine and if it is planned it is related to an event just happened okay you can assume that right yes reactive is related to I I I'm sorry yeah if it is reactive then you can say yes it is related to that event okay yes so which which is fine because then we can just update our synthetic data we can write the logic okay but planned audit is you have certain objective in mind it's not like observation but you are not really looking for event you're looking for any failure point. You're looking for causes basically. You're looking for causes, right?
+
+39:36 - Unidentified Speaker
+Yes.
+
+39:37 - Atul Sehgal
+Okay. Okay. Why did you make such fucking complicated system, man?
+
+39:46 - Eduardo Sanchez
+I tried to do something that could be realistic.
+
+39:50 - Atul Sehgal
+And this is real, like this is how it works in mining?
+
+39:54 - Unidentified Speaker
+Yeah.
+
+39:55 - Atul Sehgal
+Okay. Was a little different, right?
+
+40:00 - Eduardo Sanchez
+Yeah, but basically this is PHP. PHP. The audit we have out it in PHP, but wasn't wasn't with another names.
+
+40:14 - Atul Sehgal
+We had that OK, we never use the data I see.
+
+40:19 - Eduardo Sanchez
+We was not. Good source of information in PHP. This was the point. Now, it was not important because it was related to many things that don't have relation to that. But here we can say, hey, we not only put the focus in observation. If you have another way to measure some ideas or some some details related to risk in field, like an audit of the risk in field in a specific area, we cannot here, because basically we think that would be a good idea to have something like that. If you don't have, okay, don't use, but we put that, okay, we put that like a positive yeah that's that's good okay okay here we have the modelo proactivo okay modelo proactivo is basically what we have we have a ranking okay we have a ranking this is weeks okay we have 12 weeks yes this ID is called of the proactive model, rank, okay, what is the rank, the number of the rank from one to 10, okay? And threshold, and critical threshold, okay?
+
+42:04 - Atul Sehgal
+Okay, and first column is the week ID, okay. What year?
+
+42:10 - Eduardo Sanchez
+Oh, the data have three months, okay? November and December, of 2024 and January of 2025.
+
+42:21 - Atul Sehgal
+The first week of November is week one here.
+
+42:25 - Eduardo Sanchez
+It is week two of November I don't remember that. Okay. But in some in some part I have the here.
+
+42:37 - Atul Sehgal
+Beautiful, beautiful, beautiful. So, so are you using week number everywhere or is it like in some data sets you have date and some data sets you have week number.
+
+42:49 - Eduardo Sanchez
+In some data I have weeks and the other half days.
+
+42:54 - Unidentified Speaker
+OK, that's why it is important to know.
+
+42:56 - Eduardo Sanchez
+Yes, this is this is the big the last issue that I found because in some cases when I when I ask something to the LLM, the LLM check what is the So sorry. Translate my question and the system go to the source and select the source wrongly. So what was the point that I found? We need to have a clear idea of how to use each of these files. This file is used for week and for this and this file is used for day. For this, something like a table to be sure that we don't have issues when we connect each of these source. This is something that I don't have now. I need to create that.
+
+44:00 - Atul Sehgal
+I'll create it. Don't worry. You can ask AI to create database diagram for you, architecture diagram.
+
+44:08 - Eduardo Sanchez
+Yeah, sure. But this is the last point that when I found issued. So. OK. So what? OK, this is the The ranking operating model, all of this proactive model of proactive is basically to my idea was to work with that to okay, to compare all the score with the score of the proactive model. Why? Because at the end, my narrative was, okay, in this example, in the proactive model, see your risk, okay? But don't change so fast how we can change, okay, the score. Because what's the cure? The example that I was doing was basically considering this. This is an event, and the name is Critical Monday. When I do the Critical Monday, after the 12 weeks, after the 12 I insert an event in the Monday. And when I insert the event, the react and say oh you have this score for this risk and now is different okay you change that so what you are you are showing that basically the system react to what is happening day by day and that is part of your demo so this is the data that you're not using for training this is the data that you will use for the demo yes I okay my idea is to to have a button and say, pop, insert the Monday, the critical Monday. So we can compare, and this is the point, we can compare the metrics before Monday, the critical Monday, or after that, and how the system is changing, okay? This is the Okay. And this, Last is the trajectories. What is the trajectories? It's basically a way to use, compare all of this information and create some type of line in the time.
+
+46:50 - Atul Sehgal
+But that can be done using AI. Why would you create a data? Like you can just ask, like you don't even have to, it's not your AI, it's not the engine that you built, but you can ask any AI, Gemini, GPT, anyone to take all these files and give a sequence of activities. You don't need to create data, it can be done on the fly.
+
+47:17 - Eduardo Sanchez
+Yes, but for me was an exercise to create the data, to understand how to do that. I create a notebook in Python to create each of these, one cell by cell. Cell by cell, I was creating the data using the ontology. I connect the ontology to the data. So the data is according with the ontology. The only thing that I don't have here is the free text. I need to add the free text to the observation, to the event, to the auditories. This was not important to me, but if I want to show you the operation guides, the synthetic data, I need to create the other field that are not here. Basically, the free text.
+
+48:18 - Unidentified Speaker
+using ontology?
+
+48:20 - Eduardo Sanchez
+Sure, using the ontology.
+
+48:22 - Atul Sehgal
+So tell me one thing, one thing, this is good. So go back to that sequence file. You said you sequenced the events using ontology. What is the role of ontology in sequencing?
+
+48:37 - Eduardo Sanchez
+No, no, no. In the sequence, no. The sequence is related to the FDO event and audit and incident and offset.
+
+48:46 - Atul Sehgal
+Date and time, basically. Date and time of them. Yes, yes. Okay, okay, okay.
+
+48:50 - Eduardo Sanchez
+Yes. What I do is observation is related to areas, roles, okay? And incident is the same. You have areas, role, task in some cases. No, not task. It's in the other theory. Oh, here, this is the event. Here in the event, I have roles and I have tasks, okay? This is an ID of one role, and this is an ID of one task related to this role, okay? And this is the area. We have five areas in my ontology, and three risks. Five areas, three risks. So all of this information is related at the end to The ontology, okay.
+
+49:47 - Atul Sehgal
+So I got the data. So what is an ontology? Well, like I know what ontology means in theory, but what are the elements you cover in ontology?
+
+49:57 - Eduardo Sanchez
+Ontology, this is the ontology.
+
+49:59 - Unidentified Speaker
+Okay.
+
+50:00 - Eduardo Sanchez
+It's in the data folder.
+
+50:02 - Atul Sehgal
+Yeah, show me, walk me through some of the files if you can.
+
+50:07 - Eduardo Sanchez
+Okay, this is REST catalog, okay. What do we have here? We have three risks. This is one risk, risk zero one. Falling from high. Description, ID, the area, occurring in all the areas. Applicability, okay. Tax related to the risk. This is danger, or no, it's associated danger, something like that. I don't know how to say. Causes. Causes of the risk. Preventive controls. Critical. Beautiful.
+
+50:51 - Unidentified Speaker
+Beautiful.
+
+50:52 - Eduardo Sanchez
+This is bow tie.
+
+50:54 - Eduardo Sanchez
+Yeah. Degradation factors. This doesn't have this in this piece. Consequence associated to the causes. Okay. Mitigation control. Barrier, this is...
+
+51:11 - Atul Sehgal
+Swiss cheese, this is bow...
+
+51:13 - Eduardo Sanchez
+No, this is bow tie, but it has more elements, only that. Barrier is basically when you have, after one event, you put some barriers to mitigate or to don't have more accidents related to the same, okay?
+
+51:33 - Atul Sehgal
+exposition factors so all of this information is for one this is the other brief and we have the same three risk okay so good good beautiful so when so let's take exposition factor for example then I will go to file number 11 right go further up yes you see what exposition factor is what beautiful Very good.
+
+52:07 - Eduardo Sanchez
+Exposition factor one. Name, work in high. Okay, what do you do? Okay, the second. Proximity to electrical energy. Field, projection to fragment. Fragment, I don't know if in English it exists. Fragment.
+
+52:26 - Atul Sehgal
+Fragment would be Particulate materials in the air, right?
+
+52:32 - Eduardo Sanchez
+Yes, rock, tools, material falling during task of perforations, explanations, sorry, explosion, anything, okay? Factor five, noise of high Factor six, mechanic vibration. All of these factors will be possible that will be related to incident. This is the point, okay? Okay, okay. It's not, it's something that happened in the operation, but it's not directly related to something, But I can use that to create a synthetic data because I have a risk, okay? I have factor to create even, okay? This is the point. The idea of this factor was to try to have a library of something related to the risk, okay? Okay, here I have the controls. I have the causes, consequences. Consequence, big lesions or something like that. Fatality is another consequence. Ambiental impact, significant ambiental impact.
+
+54:21 - Atul Sehgal
+but with level no short level yes got it got it got it okay this is all of that beautiful so this is all your data yes and here repeat files are there like two files for the same thing oh I no no I No, one file for each of them.
+
+54:54 - Eduardo Sanchez
+I have a catalog of PPE, a catalog of tasks. This is another. This is a catalog of roles. Each of these is a role inside the village. I have many roles. I have tasks for the roles. This is the task and this is the role related to the task. So here we have many, many tasks.
+
+55:25 - Atul Sehgal
+The role of who?
+
+55:30 - Eduardo Sanchez
+Roles related to the areas. Of the person. Yes, person, person, person. Operators. This is operators, for example. Operator on a truck. A bulldozer for example a lot of things this is okay wow this is very deep yes I was spending maybe maybe one year doing that yeah so even even if you you know what even if you did not show your model of course we will show it but even if you just made a dashboard out of all this fucking thing that is self information crazy information yeah this is very good to show you because they can say oh I can say hey do you know what is an ontology this is an all of this information this is all we are checking all the information of safety here okay and I don't have all The bow type, okay, risk, causes, control, consequence, barriers, type of danger, type of factors. All of this, and also have the structure of the areas, okay? Area, task, operators. So what I don't have and could include is equipment, for example. When you have big equipment into one area. Because this is important because if you have equipment for example you can have a planet task okay to review equipment or maintenance the equipment but today I have roles and areas and all is related so this is good this is another part we have an instructor Format of analysis. This says how the incident needs to be. If I can do an icon, I have a format. If I have an incident, a CP5 incident document, I have another format. The idea is that ICANN factors I include ICANN factor two okay organizational factors human factors what's more a factor of task okay okay so god so again a stupid question now the reactive investigation here and I can how deep No, no, no, no.
+
+58:33 - Atul Sehgal
+Listen to me. Listen to me. Investigation.
+
+58:38 - Eduardo Sanchez
+No, no, no, no.
+
+58:42 - Atul Sehgal
+Listen, let me complete my question. I want to ask my question. So the data that you were showing me before. OK, can you go to data, please? The data folder. Come down, come down, come down. No, scroll down. So. In see no no no.
+
+59:06 - Unidentified Speaker
+Even.
+
+59:08 - Atul Sehgal
+No, I'm looking at investigation. Not observation audit. This audit is ICAM.
+
+59:17 - Eduardo Sanchez
+No, it's not ICAM.
+
+59:20 - Atul Sehgal
+Where is ICAM in in this data?
+
+59:25 - Eduardo Sanchez
+Oh. No, we.
+
+59:27 - Atul Sehgal
+have we don't have here icons actually so help me understand okay so I because I am I'm only talking from bhp's point of view okay so in bhp reactive investigation was icam and nothing else yes yes so how come you have them separately here because in that and I come in my idea is only useful for for major accident, not for more. And you don't have any major accident right now in your system? No, no. Why not? You have to sell the product, man. You have to show something major.
+
+1:00:07 - Eduardo Sanchez
+Yes, I understood that, but what secure why I don't include a major accident because a major accident. Uh, if you put a major accident in the middle of the data that is basically two bones. All is Disturbing this major accident will be disturbing the the metrics and all of this thing. OK, so at the end. If if my narrative will be tried to explain how the system work, this major accident will be disturbed. This narrative for this reason I don't put OK. It's OK.
+
+1:00:51 - Atul Sehgal
+so I got it so basically the investigation that you have for not so major accidents they were equivalent to 5y in BHP they used to call them 5y yes okay so what will what is the use of ICAM if there is no incident in your three months data, the idea of ICAM is just previously what happened?
+
+1:01:26 - Eduardo Sanchez
+We can include, the point is that we can create three more data or three more months of data, okay? And include a big accident, okay? But what's secure? If we include one big accident, we can say, hey, or we, they in some moment can say, hey, the system show us, they saw, the system saw the accident before occur, and we need to have some type of trajectories that could be show that, but today was not possible. I say, the only, I create, say, hey, I need three months of data, okay? We have three risk, okay? One risk will be good all time, the other two risks will be increasing but in some moment the risk that is in the top will be second because the second risk the risk that is in the in the second point will be measured more because secure an accident in the critical in the Monday critical so we have one risk that is aligned another that is increasing and you have two tariff increasing and you need to the point is that the system is saying you that the risk is increasing so if in some moment the accident does occur is like uh it's not it's not a consequence of the of the incremental of the risk it basically uh how to say that is uh I don't have the the word sudden it's a sudden something that happens suddenly yes occur but you don't know when will be occur okay what's not possible to say hey tomorrow will be have an accident this is not possible okay it's not possible to say tomorrow we will have an accident will be occur something okay but you have signal but you don't know will be tomorrow or after tomorrow okay or where will be the accident the accident is something to secure and you can say. This accident changed the reality and say hey. Come on, all the information is saying that you need to put attention and now this accident and say this is very important to you. Put attention now because it's occurring something.
+
+1:03:58 - Atul Sehgal
+Yeah, and that I understand and there's a time of high alert and until unless you take an action that alert will stay high alert until unless you do some observation you do some action only then high alert will go down so so by the way do you have any data here which says what action was taken based on the observation some type of like barrier what what barriers were put in place no no No, today I don't have recommendations. No, no, you have a recommendation. I know you do, because your, that model, the Bowtie model has the four possible barriers, five possible barriers. My question to you is, do you have any data which says a barrier was put in place?
+
+1:05:04 - Eduardo Sanchez
+Oh, no, no.
+
+1:05:07 - Unidentified Speaker
+Yeah, yeah.
+
+1:05:11 - Eduardo Sanchez
+Yes, but observation. Yes, but it's possible to say hey. You. You do or you. The audit after the event was was done where we're done or not. And you can analyze that and say no.
+
+1:05:30 - Atul Sehgal
+After this accident we have still pending one audit for two three weeks never was secured and and then in the audit finding there could be a finding hey this barrier was put in place so when the barrier was put in place it can go look at your bowtie and say hey these were four recommended barriers three barriers are in place so we should lower the severity yes yes absolutely yes okay good okay And also, we have, when I create observation, the observation are not all bad, okay?
+
+1:06:07 - Eduardo Sanchez
+We have good observation, okay? Related to controls or something like that. It's not bad, it's good and bad observation together. And more good than bad, okay? It's not taking only the things that are are bad. The things that are good work will change the trajectory or change the score if you are doing the thing good. This is the point. Good, good, okay. Okay, so this was the Why this anthology is good? Because here, if you see this last file, schema. This is the schema to connect in a graph database, all the information. So all the relations that I have inside of this data will be possible to include in a graph database.
+
+1:07:23 - Atul Sehgal
+Oh, hold on. Hold on. Hold on. Neo4j. So come up again. Sorry. Sorry.
+
+1:07:30 - Eduardo Sanchez
+This is the schema to create the Neo4j database.
+
+1:07:35 - Eduardo Sanchez
+Neo4j is knowledge graph.
+
+1:07:38 - Atul Sehgal
+Yes.
+
+1:07:40 - Eduardo Sanchez
+Yes. Neo4j is graph database.
+
+1:07:44 - Atul Sehgal
+Yes. Yes. So what information will go in? All.
+
+1:07:50 - Eduardo Sanchez
+all the information, roles, risks, controls, all. All the information will be as node into the graph.
+
+1:08:02 - Atul Sehgal
+And how are they connected? How are nodes connected? What are the edges?
+
+1:08:08 - Eduardo Sanchez
+Yes, and the edges are this. This is the edges, okay? For example, the risk This risk is connected to all of these tasks, all of these IDs. All of these nodes are connected to the risk. Risk connected to control causes, factors, all of this is connected to the risk. The control is connected to the risk and to the causes and factors, degradation factors.
+
+1:08:46 - Atul Sehgal
+tell me one thing your knowledge graph is based off of all these yaml files okay it's connected to so knowledge graph is it's not going to be updated right it's not going to update based on how things are happening like the knowledge just like just like chat GPT it is trained till 31st December so your knowledge graph is is finding correlation it does not I mean it's saying what is the structure but it is not based on the real incident it is saying this is how things are connected yes okay and risk and controls are the edges yes okay got it okay yes this is this is at the end this not operational graph.
+
+1:09:44 - Eduardo Sanchez
+This is knowledge graph. So you can say, hey, if you read something in observation related to one danger or one factor, you can go to the risk and say, hey, this is related to this control that is failing. Why? Because you have the edges and the node that connect that, okay? And the LLMs can read that and say, hey, if something is occurring related to these factors, you can go to all the graph and say what is the causes and what is the control and take dot, okay? And connect the dot and say something like that is occurring. Also, you have data. When you connect real data, you can, using this structure, you can populate what's occurred in the past because you have the description of what's occurred, what was the role, where occurred, and you can define the entire event related to all this stuff of things. This is the point. So, when you say something that could be similar in the future, okay, you can say, hey, the event before occurred considering this type of thing that occurred before. And you have now something similar. You don't have the event, but you have some pattern to say, hey, this is very to an scenario before, okay?
+
+1:11:44 - Atul Sehgal
+So the way this is structured is ontology, which is like really dimension, risk dimension, cost dimension, control dimension. Then you got this Neo4j YAML, which is connecting all these dimensions. And then you make a knowledge graph using Neo4j, now how do you use that knowledge graph? You use that knowledge graph by applying it on your synthetic data, okay? You have your synthetic data, and synthetic data will show how things are trending over time, and then you go into that knowledge graph, and what will knowledge graph throw back at you? What will knowledge graph tell you back? It will give you the, it will give you recommendation, what will Knowledge Graph tell you?
+
+1:12:39 - Eduardo Sanchez
+Considering that the Knowledge Graph connect all of this stuff, if in the real data you have something that's secure, okay? You find some danger or you find some factors that are are have issues, some factors that have issues. You can see the factor and connect the factor to all the rest of the tree. OK.
+
+1:13:12 - Atul Sehgal
+To get what? The probability.
+
+1:13:18 - Eduardo Sanchez
+No, no, no relations, relations.
+
+1:13:21 - Atul Sehgal
+You can see these relations are a knowledge graph.
+
+1:13:23 - Eduardo Sanchez
+Yes, this is the point. The factors can be connected to the control and causes. You can connect the information that you have in the real data to the structure of what's secure according with the risk. If you see factor, you can find critical control issues in the same day or in the same area, in days before or something like that. You can take actions according with the graph that you have because you have all the relations.
+
+1:14:07 - Atul Sehgal
+So the answer to my question is Knowledge Graph is providing the recommendation. It is a prescriptive model. Knowledge Graph is used for prescription, not for probability. It is used for prescription.
+
+1:14:21 - Eduardo Sanchez
+Yes, it's not yes it's not for probability no no okay okay this is for to connect the dots okay if if you have something here you can analyze all the other things that are related to something okay I see I see okay that that is good so what is your secret sauce your what is your intellectual property here here.
+
+1:14:49 - Atul Sehgal
+How can we show that? I think you have a model, right? What is your model? That's what I'm asking.
+
+1:14:57 - Eduardo Sanchez
+Yes. One is the ontology. OK, OK, OK. The ontology is the source to create the graph, the knowledge graph and the vector database. The vector database is related to the text. OK.
+
+1:15:14 - Atul Sehgal
+Got it. Embedding and all that, OK.
+
+1:15:18 - Eduardo Sanchez
+Why you need to use bot? Because when you will have free text in the future coming, you not only need to understand what is the relation, you need to understand the meaning of what they are saying. So you use the vector database to understand the meaning and the graph database to understand the relations of the information. Information. This is the point. And what is the source? The ontology. Okay, the second point is this, the synthetic data.
+
+1:15:55 - Unidentified Speaker
+Got it.
+
+1:15:56 - Eduardo Sanchez
+This is the second point, simulation. Here we are doing a simulation, okay, but it's not a simulation because we are using all the information and only one day, okay, only one day to But in the future, we can say, hey, this is the base, okay? This is the base of how the system understands what is happening. We have three months of information in the past. And now we can insert day by day, okay? We can insert one day, two day, three day, four day. And according how we will be including more information, the system will be changed, okay? And you could be asked something and the system will say, no, this change today and this week change that. You can ask anything related to the information. The system is prepared to ask anything related to this synthetic data. This is the point.
+
+1:17:07 - Atul Sehgal
+So when you do the demo, the chatbot that you build. Yeah. What are you showing in that chatbot?
+
+1:17:19 - Eduardo Sanchez
+I have, I have, I have a set of 10 questions, right? That is most important. To seek to analyze the information. And this, show you something, maybe it's here. Okay, this is the question. Show me what was the risk with major level of criticism during the last week and explain the causal factor associated. Second question, there are some risks with TTCP during the last month. And yeah, basically that. Third question, show me how is the evolution of the risk of R2, RCl2 falling from high. That's fine. In the last month.
+
+1:18:28 - Atul Sehgal
+What does chatbot give? What is the answer from chatbot? What does chatbot do? You ask it a question, what is its thought process?
+
+1:18:38 - Eduardo Sanchez
+Yeah. This is the point. This question will be written in a stream, right? So, the LLM take this question, okay? Take this question in natural language. And after that... Where is... Oh, here. Language. I create a language, okay? A language so the language is a way to translate what is the the user asking to a language from for the system okay when you have an operational query for example operational query is different to an analytic query when you request another type of thing. This is in English. It's good for you because it's in English. Comparative query. This is another. You have operational, analytical, comparative, temporal relation query, system query, and greetings. This is basically all of the stuff of thing that the user can ask. At the end analyze, the LLM analyze and say, no, no, the user want this analytical query and this another operational query. If you have a combination of things in one question, or it could be a simple question and you only are asking to some analytic point or something related to only you need information. If you need information, it's simple. If you need analytics, it's another way to show that. The LLM is not in the center of the system. The LLM is only used to translate what the user wants to the system. After that, when the system run and create an output, the LLM take this output, read again the question that the user do, and create an answer to the user.
+
+1:21:33 - Atul Sehgal
+Okay, so what is the speciality of K9 model? Like I know you had memory and all that stuff, so where does Okay, my question to you is how do I show that? Is there a way to show that to our users on the front end? How do we highlight that this K9 model is ours only and is a thought process?
+
+1:22:06 - Eduardo Sanchez
+Yeah, because the point is that this is the system will be operate not, you can do how the system is reasoning, okay? Using synthetic data, okay? And we created synthetic data, okay? And can show you how the system reasoning. It's not necessary to have real data at the end. This is something that not, wait a moment. So the system now, Any answer that the system will do that to you, you can trace that. How they create the answer. The code is not an LLM. You don't have a black box. All the steps that you do to go to the answer will be traced. You can know what's And if the answer is not good, you can fix that and go again and repeat the same question and will be the new answer always. Always that you ask something, the answer will be the same because it's a tree. It's not an LLM that is trying to think about the answer.
+
+1:23:40 - Atul Sehgal
+Where is your code for Streamlit?
+
+1:23:46 - Eduardo Sanchez
+Here is the Streamlit.
+
+1:23:49 - Atul Sehgal
+And it has everything? It has all the logic? How it works?
+
+1:23:56 - Eduardo Sanchez
+I think that I need to test it again because I was testing Streamlit but with a fake LLM. Now I need to take again StringLib and use with the LLM, the real LLM.
+
+1:24:15 - Atul Sehgal
+Okay, so the demo that you gave, did you record the video for the demo?
+
+1:24:20 - Unidentified Speaker
+Yes.
+
+1:24:21 - Atul Sehgal
+Where is that? Can you show me that video? Yeah. That I can use it to understand your thought process and develop it on the tools. You see what I'm saying?
+
+1:24:38 - Eduardo Sanchez
+Yes. You need to find the video because I don't. It's here. Can you listen?
+
+1:25:03 - Atul Sehgal
+Yes, I can see.
+
+1:25:04 - Atul Sehgal
+Yes, I can see. Yes. I cannot hear but I can see.
+
+1:25:06 - Unidentified Speaker
+Thank you. This is the stream lead.
+
+1:25:44 - Atul Sehgal
+OK. This is a good demo.
+
+1:27:31 - Eduardo Sanchez
+And in the left side you have the history of the question to come back. To come back to the question.
+
+1:27:39 - Atul Sehgal
+yeah so can you pause it for a second so I cannot hear the video I'm just watching but can you put it on a team's folder can you just or send it to me in the chat this video then I can then I can watch it in English and then I can I will show you the I will send it now. I have nothing else to do. I am today and tomorrow. I'm just building our user interface.
+
+1:28:23 - Eduardo Sanchez
+Yeah, so in Mexico. Document. I cannot document to teams or just.
+
+1:28:44 - Atul Sehgal
+Just yeah, go in the teams folder RMS teams.
+
+1:28:47 - Unidentified Speaker
+Oh yeah.
+
+1:28:48 - Atul Sehgal
+I just uploaded there. It's right at the bottom, man. Here in the demo folder added in a demo.
+
+1:29:49 - Unidentified Speaker
+Okay.
+
+1:29:50 - Atul Sehgal
+Good.
+
+1:29:51 - Eduardo Sanchez
+Okay. Okay. So. Come back to the to the information. Okay.
+
+1:30:01 - Atul Sehgal
+I think I know what I need now. I have everything.
+
+1:30:05 - Eduardo Sanchez
+Yeah, but this is important. Okay. Some I was was necessary to create a language. This was necessary to because the system don't understand human queries. The LLM translate that to a code that the system could understand. These are the intent. The intent basically is the way that you go to the graph. We have all of this node. Analyst node, that engine node, Botai is not ready and I am not using it. But I have another analyst node. First of all, the data engine node. The data engine node is connected with the data manager. Do you remember that I say that we have a data manager? This is the data manager. The data engine node take the information from the data manager. This, according with what is the instruction, you need to understand that in LandGraph you have a state, okay? The state is going to the node and when the state pass for one node, when it starts, in the start of the node, you have some state. And after to pass for the node, the state change according with the information that the node include in the state. So for each node that the state is passing, you will be including more and more information in the state. And at the end, the state is the status of the answer. And when the state go to the last node, the last node say, okay, this is the information that I am adding and send the the operation finish and the state is read by the LLM. And the LLM take this information from the state and transform the ransomware to the user. That is basically that. It's a tree and not always you will go for the same node. Not all the nodes as part of the of the same line of action, okay?
+
+1:32:43 - Atul Sehgal
+So when you say state, you're using a concept somewhere similar to LandGraph.
+
+1:32:49 - Eduardo Sanchez
+Yeah, yeah.
+
+1:32:51 - Atul Sehgal
+Okay.
+
+1:32:51 - Eduardo Sanchez
+This is LandGraph. Okay. So, okay. The first part is data manager. After that, you have the data engine. After the data engine, you have two important notes. One is the analyst note, okay? And the other is the operational analysis note. These are different, okay? The operational analyst note is basically when you need, when they ask you, when the question is related to some data. Give me the, what are the last, or how much observation you have in the last month? Something like that. You pass for the operational analysis because it's not a deep analysis. The analysis node is for deep analysis. It's another type of analysis that you do here. So after that, you have a narrative node. The narrative node is a way to include something in the information that will be taken for the LLS to say hey this analysis considered this or this is this type of answer to to is to don't have to the LLM can create narrative alone or create histories related to the data that is coming from the system you you send to the some key topics to include in the narrative. The idea at the end is don't have the LLM so free because in some moment can include some information that is wrong and this is not the idea. The idea is that they follow instruction, okay, from the system.
+
+1:34:57 - Atul Sehgal
+Good, good, good. I have very good idea about what we are trying to do here and tell me if I was to update and a new user interface. I should just create a separate folder and not touch anything you have done. Is that right?
+
+1:35:15 - Unidentified Speaker
+Sure, sure.
+
+1:35:18 - Atul Sehgal
+Or are you OK if I modify some of the data that you have?
+
+1:35:24 - Eduardo Sanchez
+No, don't modify the data because Today, we can break something. Give me one week to finish all of this stuff, and in this moment, we can consolidate the code and say that this is the code version one. Now, you can fix or put change something if you want. I don't have problem, but have something that is all okay no no hold on so you are saying that I should not work on the user interface this weekend no no you can using you can go and create another another interface extremely have a folder if you can create another folder with another interface no problem sure okay but what I am saying what I am saying the graph or don't modify the node okay this is the point and only if we have to modify then after you are done with your work after one week then we can look into the modification yes but my suggestion is to understand try to understand what what I have here because the only thing that I don't have connected now is extremely okay all the other things are working well what I need to add is basically I need to add now a new node that will be working with the data. Because when I ask related to some specific data, I have some functions. But what I want is to have a node that will be all the best tip related to the data, to be sure that this is data in GNO, but it's not defined, okay?
+
+1:37:29 - Atul Sehgal
+So, this guy- Which I don't understand, but that's all, yeah. So, your streamlined demo that you gave was not a real demo.
+
+1:37:40 - Eduardo Sanchez
+No, it was not a real demo. But the question, the point is that the six questions, five of six questions, that I do in the demo, I test with the system and it's possible to replicate the same answer. It's not, was a fake demo, but considering the synthetic data. So at the end, it's the same, okay? I create the synthetic data before to create the fake demo the video was created using the synthetic data so the information is the same okay okay I got it so but you don't care if I create another folder right no no create another folder go ahead And do you have any readme file here in this entire thing? Oh, I have some. Some contract, but not a lot at the end was. In this folder docs. I have some contract, but in Spanish.
+
+1:39:05 - Atul Sehgal
+What is contract?
+
+1:39:08 - Eduardo Sanchez
+The contract is. It's basically what is the function of the note. I see I see at the end at the at the end of the day I need to have contact for all that I have here. OK.
+
+1:39:25 - Unidentified Speaker
+This is.
+
+1:39:28 - Eduardo Sanchez
+When you yes. In Landgraf in Landgraf basically when you create note.
+
+1:39:36 - Atul Sehgal
+when you create graph an agent you have a contract to follow okay oh I see I see I did not know that okay got it so go back to your one of the contract please yes and do you know how to okay how do you know how to view it in html mode no okay let me teach you let me show you something follow me follow me Go up, top right. Right, right, right, not left. Right, right, right.
+
+1:40:12 - Atul Sehgal
+Keep going.
+
+1:40:13 - Atul Sehgal
+See that lens? Yes, click on that. Open preview. Yes, you were there. It will open as HTML. Of course, you have not structured it in the right way, but let me show you what I mean. This is the last thing, okay, from me. Can I share my screen and show it to you so that you know how to do it?
+
+1:40:30 - Unidentified Speaker
+Yeah, sure.
+
+1:40:31 - Atul Sehgal
+Okay. Oh when you are let's say cursor cursor and VS code are almost similar okay and you go let's just go to this repository oh no hold on I'm not even in the cursor right now this is cursor okay and okay we'll just take your repository itself. Oh, no, no, no.
+
+1:41:10 - Unidentified Speaker
+Okay.
+
+1:41:16 - Atul Sehgal
+You know, this VS code. This is a project. I am doing for that beverage company talking rain. Okay, and you will see this markdown file. Yes. Okay, which is like your contract, right? And then you can see this is all raw text, correct? But if I want to see it in a very beautiful way, I will just do the preview and it will show up like this. Awesome. OK. So it has all the architecture diagram, which means this text here is getting converted to these pictures.
+
+1:42:14 - Eduardo Sanchez
+This is something that I need.
+
+1:42:21 - Atul Sehgal
+Yeah, mermaid, you can use mermaid, but you ask GPT like I went here, so I have Claude integrated with it. OK. So I'll show you. Just to Claude okay so my Claude is integrated with this so I asked Claude read all my repository and create architecture diagram for me okay it did and it just created this file architecture diagram.
+
+1:42:59 - Eduardo Sanchez
+This is very good.
+
+1:43:02 - Atul Sehgal
+Yeah. Yes. And that's what I'm going to do with the app. I'll just make a killer app man like you and I will I'll make an app that we will fucking get the project.
+
+1:43:13 - Unidentified Speaker
+Sure.
+
+1:43:14 - Atul Sehgal
+OK. You have done good work. You have done fantastic work. That work needs to be shown. In the right, in a really good way.
+
+1:43:23 - Eduardo Sanchez
+Yes. Absolutely. Absolutely. I know that.
+
+1:43:28 - Atul Sehgal
+And it will be fantastic. Then our patent will be so useful. It will be so interesting too. I'll also update the website about all the fucking things we are doing. It's just, I have a lot of time right now. We can just do all of that.
+
+1:43:48 - Eduardo Sanchez
+I am open to any, any suggestion for Josiah. This is taking account one point at all. I spent, I spent a lot of time last, last, last year. Okay. Yes. And more time after we decide to go with us. And because in this moment, And we say, hey, go to Aster? Okay, I say, yeah, okay, I will build the demo of that. And in the middle, I was working in parallel with the code of LandGraph, creating all this stuff. And for the other side, I was creating the patent at the same time. So I spend a lot of time, a lot of time. My wife is angry with me because in some moment I was all day working in Micron and after that I still working but in my project, okay? So, what I want to do, I want to finish my part, okay? I want to finish the agent, be sure that you can ask anything and the answer will be the correct answer. I am very close to do that, okay? I think that I need to spend 10 hours or something like that, no more for my cycle. In 10 hours will be ready and after that to rest a little bit because it's a lot of work and now in the last month I was trying to finish that to say hey in some moment of January my milestone was January 6th to have ready that but When January 6 was occurring, I was not finishing. And I say, oh, I need more time, more time. And was fixing and fixing and fixing something. Then today I fixed all that was necessary to fix. And now only need to be sure that the data is written correctly by the system. And maybe use the correct synthetic data for the question and what is they are asking for weeks or they are asking for days or something like that to be sure that all this work and after to finish that in one week more I will be happy because at the end I complete the patent and I complete the demo and both are working and in in this moment and for the future we can take that and go for the liar that is inside of that or over that, that is how we relate to that. What is the narrative to show that? And this is something that you can help me a lot. I know that. But today, I am a prisoner of fear.
+
+1:46:57 - Atul Sehgal
+Yes, yes, yes, yes. No, no, you finish, you finish. So my contribution so far has been zero. Okay. So I'm gonna do my contribution now and you do the research part patent and of course I will I can help with the research of the patent as well I should actually but my objective is to commercialize this okay sure true I am sure and this is the other point I am sure that we can use the same architecture for any anything, okay?
+
+1:47:34 - Eduardo Sanchez
+I have a, you remember that in some moment I talked with you that I have a friend that work with a store in the south? Yes. And I am sure that we can apply that, okay? The same structure. Because only what we need to change is the ontology. The ontology now is for safety. But if we can't do any other thing, we change the ontology and we say, this is for site, or this is for logistic and site, or this is financial, and create another ontology and use similar node, the node, and this is another point. You can consider that you have node and specific functions, you can improve one function and the rest of the node is not, don't suffer nothing because it's alone, okay? You can improve part by part and the system is still working. It's not never will be break if you maintain the same structure of node. Or you can add a new node and only need to change the graph. The graph is how you declare what is the node that you have updated. And how you will go one by one after to the state is changing. So you can add nodes, you can improve node, you can do anything that you want to do with the data and nothing will be break. This is awesome, okay? This is awesome because it's not possible that the system will be broke if you include more future or something like that. Only need to understand how is created the graph and how You have a router, you have an orchestrator that is over the system to manage the LLM and to manage the StreamLib. But this is all. It's not a big deal. At the end, we can use that for anything. This is the point. In some moment, I want to show you this agent, but for and store to my friend and the manager and the owner of this and other guys. Because we have business for anything, many things to do. No problem with that.
+
+1:50:05 - Unidentified Speaker
+Okay.
+
+1:50:06 - Unidentified Speaker
+Yeah.
+
+1:50:09 - Atul Sehgal
+Okay, man.
+
+1:50:10 - Eduardo Sanchez
+Thank you very much. Take a look of the code with Claude and say to Claude, Claude, give me an explanation of what is all of this stuff yeah yep cloud and cursor both so what I do sure I write it in cursor and then I validated it cloud absolutely go ahead okay okay yeah take care have a nice day bye good good bye

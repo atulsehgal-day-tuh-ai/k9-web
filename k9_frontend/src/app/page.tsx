@@ -13,6 +13,7 @@ export default function Home() {
   const [latestResult, setLatestResult] = useState<any>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [criticalMondayEnabled, setCriticalMondayEnabled] = useState(false);
 
   const riskSummary = useMemo(() => {
     const analysis = latestResult?.analysis || {};
@@ -23,6 +24,40 @@ export default function Home() {
     const analysis = latestResult?.analysis || {};
     return analysis?.metrics || null;
   }, [latestResult]);
+
+  const demoQuestions = useMemo(
+    () => [
+      "¿Cuál es el riesgo dominante hoy?",
+      "Explica por qué el riesgo dominante es el más crítico. ¿Qué factores causales y de exposición están asociados?",
+      "Muéstrame la evolución del riesgo R02 en el último mes.",
+      "Compara R01 vs R02: ¿cuál está empeorando más en las últimas 4 semanas?",
+      "¿Cuántas observaciones tuvimos en la última semana y en qué áreas ocurrieron?",
+      "¿Qué auditorías reactivas ocurrieron después de eventos en los últimos 14 días?",
+      "¿Hay desalineación con el modelo proactivo esta semana? ¿Qué umbrales se cruzaron?",
+      "Antes y después de “Lunes Crítico”: ¿cómo cambió el ranking de riesgos?",
+      "Para el riesgo dominante, ¿cuáles son los controles críticos y barreras de recuperación recomendadas?",
+      "¿Qué cambió en los últimos 7 días que explica el aumento del riesgo relevante?",
+    ],
+    [],
+  );
+
+  async function toggleCriticalMonday(enabled: boolean) {
+    setError(null);
+    setCriticalMondayEnabled(enabled);
+    try {
+      const res = await fetch("/api/critical-monday", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ enabled }),
+      });
+      if (!res.ok) {
+        const txt = await res.text();
+        throw new Error(txt || "Failed to toggle scenario");
+      }
+    } catch (e: any) {
+      setError(String(e?.message || e));
+    }
+  }
 
   async function send() {
     const text = input.trim();
@@ -124,6 +159,37 @@ export default function Home() {
               </div>
             </div>
 
+            <div className="border-b border-zinc-200 px-4 py-3">
+              <div className="flex flex-wrap items-center justify-between gap-2">
+                <div className="text-xs font-semibold text-zinc-900">Demo controls</div>
+                <button
+                  type="button"
+                  onClick={() => void toggleCriticalMonday(!criticalMondayEnabled)}
+                  className={[
+                    "rounded-lg px-3 py-1.5 text-xs font-semibold",
+                    criticalMondayEnabled
+                      ? "bg-amber-100 text-amber-900 border border-amber-200"
+                      : "bg-zinc-100 text-zinc-900 border border-zinc-200",
+                  ].join(" ")}
+                >
+                  {criticalMondayEnabled ? "Critical Monday: ON" : "Critical Monday: OFF"}
+                </button>
+              </div>
+              <div className="mt-2 flex flex-wrap gap-2">
+                {demoQuestions.slice(0, 4).map((q) => (
+                  <button
+                    key={q}
+                    type="button"
+                    onClick={() => setInput(q)}
+                    className="rounded-full border border-zinc-200 bg-white px-3 py-1 text-xs text-zinc-700 hover:bg-zinc-50"
+                    title="Click to copy into the input"
+                  >
+                    {q}
+                  </button>
+                ))}
+              </div>
+            </div>
+
             <div className="h-[60vh] overflow-auto px-4 py-4">
               {messages.length === 0 ? (
                 <div className="text-sm text-zinc-500">
@@ -201,6 +267,8 @@ export default function Home() {
           <JsonBlock title="Latest result (raw)" value={latestResult} />
           <JsonBlock title="analysis.metrics" value={metrics} />
           <JsonBlock title="reasoning" value={latestResult?.reasoning || []} />
+          <JsonBlock title="trace" value={latestResult?.trace || null} />
+          <JsonBlock title="recommendations" value={latestResult?.recommendations || null} />
         </section>
       </main>
     </div>

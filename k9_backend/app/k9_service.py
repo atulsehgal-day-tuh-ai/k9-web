@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import json
 from dataclasses import dataclass
-from typing import Any, Dict, Optional, Tuple
+from typing import Any, Dict, Optional, Tuple, List
 
 from src.graph.main_graph import build_k9_graph
 from src.llm.factory import create_llm_client
@@ -17,6 +17,10 @@ from src.llm.payload import (
 from src.llm.validators import validate_llm_output_schema
 from src.llm.json_utils import extract_json_object, safe_json_loads
 from src.state.state import K9State
+
+from app.config import APISettings
+from app.data_catalog import collect_sources, describe_sources
+from app.neo4j_client import Neo4jClient, Neo4jConfig
 
 
 @dataclass(frozen=True)
@@ -50,6 +54,19 @@ class K9Service:
 
         # Compile graph once
         self.graph = build_k9_graph()
+
+        # Optional: Neo4j client (knowledge graph)
+        settings = APISettings()
+        self._neo4j: Optional[Neo4jClient] = None
+        if settings.neo4j_enabled:
+            self._neo4j = Neo4jClient(
+                Neo4jConfig(
+                    uri=settings.neo4j_uri,
+                    username=settings.neo4j_username,
+                    password=settings.neo4j_password,
+                    database=settings.neo4j_database,
+                )
+            )
 
     # ------------------------------------------------------------
     # 1) Interpretation (NL -> K9 command)
@@ -90,17 +107,94 @@ class K9Service:
     # ------------------------------------------------------------
     # 2) Deterministic cognition (graph invoke)
     # ------------------------------------------------------------
-    def run_graph(self, *, user_query: str, k9_command: Dict[str, Any]) -> K9State:
+    def run_graph(
+        self,
+        *,
+        user_query: str,
+        k9_command: Dict[str, Any],
+        active_event: Optional[Dict[str, Any]] = None,
+        demo_mode: bool = False,
+    ) -> K9State:
         # state.k9_command is the graph source of truth
         state = K9State(
             user_query=user_query,
             k9_command=k9_command,
             # keep a backward-compatible mirror for some legacy nodes
             context_bundle={"k9_command": k9_command},
+            demo_mode=demo_mode,
+            active_event=active_event,
         )
 
         result = self.graph.invoke(state)
         return result if isinstance(result, K9State) else K9State(**result)
+
+    def build_trace(self, *, state: K9State, k9_command: Dict[str, Any]) -> Dict[str, Any]:
+        analysis = state.analysis if isinstance(state.analysis, dict) else {}
+        sources = collect_sources(analysis)
+        return {
+            "intent": (k9_command or {}).get("intent"),
+            "entity": (k9_command or {}).get("entity"),
+            "operation": (k9_command or {}).get("operation"),
+            "time_context": state.time_context.model_dump() if state.time_context is not None else None,
+            "data_slice": repr(state.data_slice) if state.data_slice is not None else None,
+            "sources": describe_sources(sources),
+            "nodes": state.reasoning,
+        }
+
+    def get_recommendations(self, *, risk_id: str) -> Optional[Dict[str, Any]]:
+        """
+        Prescriptive recommendations from the knowledge graph.
+        Returns None if Neo4j is not configured.
+        """
+        if self._neo4j is None:
+            return None
+
+        # Controls (by property; ingester preserves riesgo_asociado on control nodes)
+        crit = self._neo4j.query(
+            "MATCH (c:ControlCritico {riesgo_asociado:$rid}) RETURN c.id AS id, c.nombre AS nombre, c.descripcion AS descripcion",
+            {"rid": risk_id},
+            limit=25,
+        )
+        prev = self._neo4j.query(
+            "MATCH (c:ControlPreventivo {riesgo_asociado:$rid}) RETURN c.id AS id, c.nombre AS nombre, c.descripcion AS descripcion",
+            {"rid": risk_id},
+            limit=25,
+        )
+        barriers = self._neo4j.query(
+            "MATCH (b:BarreraRecuperacion {riesgo_asociado:$rid}) RETURN b.id AS id, b.nombre AS nombre, b.descripcion AS descripcion",
+            {"rid": risk_id},
+            limit=25,
+        )
+
+        # Factors/exposure (from list on risk node)
+        factors_exp = self._neo4j.query(
+            """
+MATCH (r:Riesgo {id:$rid})
+UNWIND coalesce(r.factores_exposicion_relacionados, []) AS feId
+MATCH (fe:FactorExposicion {id: feId})
+RETURN fe.id AS id, fe.nombre AS nombre, fe.descripcion AS descripcion
+""",
+            {"rid": risk_id},
+            limit=50,
+        )
+
+        causes = self._neo4j.query(
+            """
+MATCH (c:Causa {riesgo_asociado:$rid})
+RETURN c.id AS id, c.nombre AS nombre, c.descripcion AS descripcion
+""",
+            {"rid": risk_id},
+            limit=25,
+        )
+
+        return {
+            "risk_id": risk_id,
+            "critical_controls": crit,
+            "preventive_controls": prev,
+            "recovery_barriers": barriers,
+            "exposure_factors": factors_exp,
+            "causes": causes,
+        }
 
     # ------------------------------------------------------------
     # 3) Synthesis (K9 -> Spanish answer)

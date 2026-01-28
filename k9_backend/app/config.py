@@ -28,10 +28,21 @@ class APISettings(BaseSettings):
     # CORS (comma-separated list)
     allowed_origins: str = Field(default="*", description="CORS origins, comma-separated or '*'")
 
+    # Neo4j (Knowledge Graph)
+    # Leave uri empty to disable Neo4j integration (demo can still run without KG).
+    neo4j_uri: str = Field(default="", description="Neo4j URI, e.g. bolt://localhost:7687 or neo4j+s://...")
+    neo4j_username: str = Field(default="", description="Neo4j username")
+    neo4j_password: str = Field(default="", description="Neo4j password")
+    neo4j_database: str = Field(default="neo4j", description="Neo4j database name")
+
     model_config = {
         "env_prefix": "K9API_",
         "case_sensitive": False,
     }
+
+    @property
+    def neo4j_enabled(self) -> bool:
+        return bool(self.neo4j_uri and self.neo4j_username and self.neo4j_password)
 
 
 def parse_origins(raw: str) -> list[str]:
