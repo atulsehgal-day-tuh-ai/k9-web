@@ -160,13 +160,23 @@ class MockLLMClient:
     # =====================================================
     def _mock_synthesis(self, payload: LLMPayload) -> str:
         partials = payload.k9.partial_results or []
+        lang = (payload.user.language or "es").lower()
 
-        lines = [
-            "[MOCK_SYNTHESIS]",
-            f"Total partial responses: {len(partials)}",
-        ]
+        if lang.startswith("en"):
+            lines = [
+                "[MOCK_SYNTHESIS]",
+                f"Total partial responses: {len(partials)}",
+            ]
+        else:
+            lines = [
+                "[MOCK_SYNTHESIS]",
+                f"Respuestas parciales totales: {len(partials)}",
+            ]
 
         for i, p in enumerate(partials, start=1):
-            lines.append(f"- Partial {i}: {p.get('intent')}")
+            if lang.startswith("en"):
+                lines.append(f"- Partial {i}: {p.get('intent')}")
+            else:
+                lines.append(f"- Parcial {i}: {p.get('intent')}")
 
         return "\n".join(lines)

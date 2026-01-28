@@ -69,6 +69,7 @@ SCENARIOS: Dict[str, bool] = {"critical_monday": False}
 class ChatRequest(BaseModel):
     sessionId: Optional[str] = None
     message: str
+    language: Optional[str] = None
 
 
 @app.get("/health")
@@ -131,13 +132,17 @@ def trajectory(risk: str, window: str = "LAST_MONTH") -> Dict[str, Any]:
 def chat(req: ChatRequest) -> Dict[str, Any]:
     session_id = req.sessionId or "api"
     user_query = req.message.strip()
+    language = (req.language or "es").strip().lower()
+    if language not in {"en", "es"}:
+        language = "es"
 
-    interp = svc.interpret(user_query, session_id=session_id)
+    interp = svc.interpret(user_query, session_id=session_id, language=language)
     if not interp.ok:
         return {
             "type": "error",
             "message": "Failed to interpret query",
             "details": {"error": interp.error, "parsed": interp.parsed},
+            "meta": {"language": language},
         }
 
     command = interp.parsed or {}
@@ -147,6 +152,7 @@ def chat(req: ChatRequest) -> Dict[str, Any]:
         return {
             "type": "clarify",
             "clarification": command,
+            "meta": {"language": language},
         }
 
     # Run deterministic cognition
@@ -159,6 +165,7 @@ def chat(req: ChatRequest) -> Dict[str, Any]:
         k9_command=command,
         state=state,
         session_id=session_id,
+        language=language,
     )
 
     metrics = (state.analysis or {}).get("metrics") if isinstance(state.analysis, dict) else None
@@ -184,6 +191,7 @@ def chat(req: ChatRequest) -> Dict[str, Any]:
         "meta": {
             "demo_mode": state.demo_mode,
             "synthesis": synthesis_meta,
+            "language": language,
         },
     }
 

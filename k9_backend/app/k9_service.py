@@ -71,7 +71,11 @@ class K9Service:
     # ------------------------------------------------------------
     # 1) Interpretation (NL -> K9 command)
     # ------------------------------------------------------------
-    def interpret(self, user_query: str, *, session_id: str = "api") -> InterpretationResult:
+    def interpret(self, user_query: str, *, session_id: str = "api", language: str = "es") -> InterpretationResult:
+        language = (language or "es").strip().lower()
+        if language not in {"en", "es"}:
+            language = "es"
+
         payload = LLMPayload(
             system=LLMSystemContract(),
             session_id=session_id,
@@ -79,7 +83,7 @@ class K9Service:
             is_composite=False,
             user=LLMUserContext(
                 original_question=user_query,
-                language="es",
+                language=language,
                 turn_index=0,
             ),
             k9=LLMK9Context(
@@ -199,7 +203,20 @@ RETURN c.id AS id, c.nombre AS nombre, c.descripcion AS descripcion
     # ------------------------------------------------------------
     # 3) Synthesis (K9 -> Spanish answer)
     # ------------------------------------------------------------
-    def synthesize(self, *, user_query: str, k9_command: Dict[str, Any], state: K9State, session_id: str = "api") -> Tuple[str, Dict[str, Any]]:
+    def synthesize(
+        self,
+        *,
+        user_query: str,
+        k9_command: Dict[str, Any],
+        state: K9State,
+        session_id: str = "api",
+        language: str = "es",
+    ) -> Tuple[str, Dict[str, Any]]:
+        language = (language or "es").strip().lower()
+        if language not in {"en", "es"}:
+            language = "es"
+
+        synthesis_instruction = "Translate K9 narrative to English" if language == "en" else "Translate K9 narrative to Spanish"
         synthesis_payload = LLMPayload(
             system=LLMSystemContract(),
             session_id=session_id,
@@ -207,7 +224,7 @@ RETURN c.id AS id, c.nombre AS nombre, c.descripcion AS descripcion
             is_composite=False,
             user=LLMUserContext(
                 original_question=user_query,
-                language="es",
+                language=language,
                 turn_index=0,
             ),
             k9=LLMK9Context(
@@ -217,7 +234,7 @@ RETURN c.id AS id, c.nombre AS nombre, c.descripcion AS descripcion
                 analyst_results=state.analysis,
             ),
             knowledge=self.knowledge,
-            instruction="Translate K9 narrative to Spanish",
+            instruction=synthesis_instruction,
         )
 
         raw = self.llm.generate(synthesis_payload)
